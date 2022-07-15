@@ -27,7 +27,7 @@
                             <tr>
                                 <td class="text-center bold">@function.FunctionName</td>
                                 <td>@Html.Raw(function.Description)</td>
-                                <td><button class="btn-chatbot btn-how-it-works">@ChatBot.SeeHowItWorks</button></td>
+                                <td><a role="button" class="btn-chatbot btn-how-it-works" href="@Model.HowToUseLink" target="_blank">@ChatBot.SeeHowItWorks</a></td>
                             </tr>
                         }
                     </tbody>

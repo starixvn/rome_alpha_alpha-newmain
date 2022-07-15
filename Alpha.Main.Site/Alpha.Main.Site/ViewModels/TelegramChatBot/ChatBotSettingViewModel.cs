@@ -1,6 +1,9 @@
 ﻿namespace Alpha.Main.Site.ViewModels.TelegramChatBot
 {
     using Alpha.Main.Site.Requests.TelegramChatBot;
+    using Alpha.Web.Helpers;
+    using Sunplus.Agent.Model.Entities;
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using TelegramBot.Client.Models;
@@ -39,5 +42,10 @@
         public string CustLevel { get; }
 
         public bool IsShowLetstalkChatBot { get; }
+
+        public string HowToUseLink 
+            => UserSession.Current.Site.Equals("789y", StringComparison.OrdinalIgnoreCase) ?
+                MicroSites.MessageUrl("~/StaticMessage/Guide?id=167819") :
+                MicroSites.HowToUseUrl("~/Index.aspx?linktomessagesite=167819");
     }
 }
