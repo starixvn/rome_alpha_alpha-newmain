@@ -1,7 +1,9 @@
 ﻿'use strict';
 
 var changeUserOwnSecurityCode = {
+    topWindow: null,
     initialize: function () {
+        changeUserOwnSecurityCode.topWindow = window.top;
         var $form = $('.form-SC');
         $form.submit(function (e) {
             changeUserOwnSecurityCode.change();
@@ -122,15 +124,25 @@ var changeUserOwnSecurityCode = {
         const functionName = $element.data("function");
         $.post("UpdateSecurityCodeFunction", { function: functionName, isOn: isOff }, function (data) {
             if (data.IsOk) {
-                if (isOff) {
-                    $element
-                        .removeClass("switch-off")
-                        .text(securityCodeResources.switchLableOn);
-                } else {
-                    $element
-                        .addClass("switch-off")
-                        .text(securityCodeResources.switchLableOff);
+                var reportDomain = (<HTMLInputElement>top.document.getElementById('reportDomain')).value;
+                if (reportDomain != '') {
+                    changeUserOwnSecurityCode.topWindow.menuBar.loadAuthFrame();
+                    setTimeout(() => {
+                        (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + '/Auth/SecurityCode' + functionName + '?s=' + isOff;
+                    }, 2000);
                 }
+
+                setTimeout(() => {
+                    if (isOff) {
+                        $element
+                            .removeClass("switch-off")
+                            .text(securityCodeResources.switchLableOn);
+                    } else {
+                        $element
+                            .addClass("switch-off")
+                            .text(securityCodeResources.switchLableOff);
+                    }
+                }, 3000);
             } else {
                 $("#status-message").removeClass("display-none");
                 securityHelper.showFailMessage($("#status-message-content"), data.Message);

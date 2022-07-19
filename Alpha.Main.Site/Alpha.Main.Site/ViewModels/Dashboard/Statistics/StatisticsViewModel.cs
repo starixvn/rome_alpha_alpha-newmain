@@ -29,7 +29,7 @@
             {
                 var reportSiteAppPath = UrlHelper.MapReportsPath("~/");
 
-                return $@"{reportSiteAppPath}/outstanding/{GetOutstandingDefaultReportLevel(UserLevel)}";
+                return $@"{reportSiteAppPath}outstanding/{GetOutstandingDefaultReportLevel(UserLevel)}";
             }
         }
 
@@ -37,15 +37,15 @@
         {
             if (userLevel.IsSuperLevel())
             {
-                return "master";
+                return "masternew";
             }
 
             if (userLevel.IsMasterLevel())
             {
-                return "agent";
+                return "agentnew";
             }
 
-            return "member";
+            return "membernew";
         }
 
         private string GetOutStandingLabelByLevel(UserLevel userLevel)

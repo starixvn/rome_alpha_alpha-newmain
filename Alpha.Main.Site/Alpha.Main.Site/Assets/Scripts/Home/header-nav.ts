@@ -28,7 +28,8 @@ var headerNav = {
         profileImage: null,
         headerNavElement: null,
         liveChat: null,
-        switchMode: null
+        switchMode: null,
+        reportDomain: null
     },
     messageType: {
         Normal: 0,
@@ -202,6 +203,8 @@ var headerNav = {
         headerNav.domElements.headerNavElement = $("#header-nav");
         headerNav.domElements.liveChat = $("#liveChat");
         headerNav.domElements.switchMode = $(".switch-mode");
+
+        headerNav.domElements.reportDomain = $('#reportDomain').val();
     },
 
     initLanguage: function () {
@@ -394,11 +397,27 @@ var headerNav = {
             data: { languageCode: lang },
             success: function (result) {
                 if (result !== undefined) {
-                    // Remove www so that subdomain can override LANGUAGE value
                     var domain = window.location.hostname.replace(/([a-zA-Z0-9]+.)/, '').replace("www.", '');
                     $.cookie("LANGUAGE", lang, { expires: 30, path: domain });
-                    headerNav.reloadPage();
+
+                    if (headerNav.domElements.reportDomain) {
+                        headerNav.syncLang(result);
+                    }
+                    else {
+                        headerNav.reloadPage();
+                    }
                 }
+            }
+        });
+    },
+
+    syncLang: function (lang: string) {
+        $.get(headerNav.domElements.reportDomain + '/Auth/ChangeLang?langCode=' + lang, (result) => {
+            if (result !== 'OK') {
+                headerNav.syncLang(lang);
+            }
+            else {
+                headerNav.reloadPage();
             }
         });
     },
@@ -410,7 +429,22 @@ var headerNav = {
             url: headerNav.urls.changeTheme,
             data: { isDarkMode: !isDarkMode },
             success: function (result) {
-                result && headerNav.reloadPage();
+                if (result && headerNav.domElements.reportDomain) {
+                    headerNav.syncTheme(!isDarkMode);
+                }
+                else {
+                    result && headerNav.reloadPage();
+                }
+            }
+        });
+    },
+
+    syncTheme: function (isDarkMode: boolean) {
+        $.get(headerNav.domElements.reportDomain + '/Auth/ChangeTheme?isDarkMode=' + isDarkMode, (result) => {
+            if (result !== 'OK') {
+                headerNav.syncTheme(isDarkMode);
+            } else {
+                headerNav.reloadPage();
             }
         });
     },

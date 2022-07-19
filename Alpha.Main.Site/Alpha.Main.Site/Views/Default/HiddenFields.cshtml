@@ -22,6 +22,7 @@
 @Html.Hidden("disableMessages", (Model.DisableMessages || Model.IsProtectedMode ? 1 : 0))
 @Html.Hidden("showOldCustomerList", (Model.ShowOldCustomerList ? 1 : 0))
 @Html.Hidden("UMAnnouncementPopupClientIntervalInMinutes", Model.UMAnnouncementPopupClientIntervalInMinutes)
+@Html.Hidden("reportDomain", Model.ReportDomain)
 @Html.Hidden("isDarkMode", Model.IsDarkMode.ToString().ToLowerInvariant())
 @if (Model.IsEnabledCDNReCheckin)
 {

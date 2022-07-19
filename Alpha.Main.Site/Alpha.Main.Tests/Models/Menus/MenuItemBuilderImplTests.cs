@@ -56,7 +56,7 @@
             Assert.IsTrue(
                 actualMenuItem.ResourceKey == "soccer"
                 && actualMenuItem.AppPath == "TotalbetsForecastSiteVirtualPath"
-                && actualMenuItem.Link == "~/Forecast"
+                && actualMenuItem.Link == string.Empty
                 && actualMenuItem.SubMenus != null
                 && !string.IsNullOrEmpty(actualMenuItem.Key));
         }

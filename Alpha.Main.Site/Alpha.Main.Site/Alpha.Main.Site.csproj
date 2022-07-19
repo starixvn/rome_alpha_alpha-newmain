@@ -29,6 +29,7 @@
     <TargetFrameworkProfile />
     <Use64BitIISExpress />
     <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <SonarQubeTestProject>False</SonarQubeTestProject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -81,16 +82,15 @@
     <Reference Include="Alpha.NetThrottling, Version=1.0.18.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Alpha.NetThrottling.1.0.18\lib\net461\Alpha.NetThrottling.dll</HintPath>
     </Reference>
-    <Reference Include="Alpha.SecurityCode, Version=3.0.0.6, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.6\lib\net461\Alpha.SecurityCode.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Alpha.SecurityCode, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.SecurityCode.3.0.1\lib\net461\Alpha.SecurityCode.dll</HintPath>
     </Reference>
     <Reference Include="Alpha.SubAccount, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Alpha.SubAccount.1.0.0\lib\net40\Alpha.SubAccount.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.Web, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Web.1.1.0\lib\net461\Alpha.Web.dll</HintPath>
+    <Reference Include="Alpha.Web, Version=1.1.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Web.1.1.0.1\lib\net461\Alpha.Web.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -252,10 +252,6 @@
       <HintPath>..\packages\MvcPager.1.5.0.28157\lib\net40\MvcPager.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NetUtility, Version=4.5.6325.30210, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NetUtility.4.5.6325.30210\lib\net40\NetUtility.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -320,11 +316,11 @@
     <Reference Include="StackExchange.Redis, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
       <HintPath>..\packages\StackExchange.Redis.2.0.519\lib\net461\StackExchange.Redis.dll</HintPath>
     </Reference>
-    <Reference Include="Sunplus.Agent.Model.Auth, Version=3.0.2.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Auth.3.0.2.3\lib\net461\Sunplus.Agent.Model.Auth.dll</HintPath>
+    <Reference Include="Sunplus.Agent.Model.Auth, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.Auth.3.0.2.4\lib\net461\Sunplus.Agent.Model.Auth.dll</HintPath>
     </Reference>
-    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.5.9, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.6.2\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
+    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.6.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.6.3\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.DataAccessLibrary, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.DataAccessLibrary.3.0.0.2\lib\net40\Sunplus.Agent.Model.DataAccessLibrary.dll</HintPath>
@@ -984,6 +980,9 @@
     <Content Include="Assets\styles\home\ChatBotBanneri1-dark.css">
       <DependentUpon>ChatBotBanneri1-dark.scss</DependentUpon>
     </Content>
+    <Content Include="Assets\styles\home\ChatBotBanneri1-dark.min.css">
+      <DependentUpon>ChatBotBanneri1-dark.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\home\ChatBotBanneri1.css">
       <DependentUpon>ChatBotBanneri1.scss</DependentUpon>
     </Content>
@@ -1618,36 +1617,79 @@
     <Compile Include="App_Start\RouteConfig.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
-    <Compile Include="Controllers\BannerController.cs" />
-    <Compile Include="Controllers\ContactUsController.cs" />
-    <Compile Include="Controllers\NewCustomerCaptchaController.cs" />
-    <Compile Include="Controllers\ChatBotController.cs" />
-    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Constants\SessionConstants.cs" />
+    <Compile Include="Controllers\BannerController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Controllers\ContactUsController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Controllers\NewCustomerCaptchaController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Controllers\ChatBotController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Controllers\DashboardController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Controllers\CustomerProfileController.cs" />
-    <Compile Include="Controllers\ErrorController.cs" />
-    <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\NicknameController.cs" />
+    <Compile Include="Controllers\ErrorController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Controllers\DefaultController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Controllers\NicknameController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Controllers\NetworkSpeedController.cs" />
-    <Compile Include="Controllers\PartialUMController.cs" />
-    <Compile Include="Controllers\ManualCheckProtectedModeController.cs" />
-    <Compile Include="Controllers\ProtectionCodeController.cs" />
+    <Compile Include="Controllers\PartialUMController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Controllers\ManualCheckProtectedModeController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Controllers\ProtectionCodeController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
-    <Compile Include="Controllers\OtpController.cs" />
-    <Compile Include="Controllers\PasswordController.cs" />
-    <Compile Include="Controllers\SecurityCodeController.cs" />
+    <Compile Include="Controllers\OtpController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Controllers\TelegramChatBotController.cs" />
-    <Compile Include="Controllers\ThemeController.cs" />
-    <Compile Include="Controllers\UMMessageController.cs" />
+    <Compile Include="Controllers\PasswordController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Controllers\SecurityCodeController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Controllers\ThemeController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Controllers\UMMessageController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Handlers\BannerHandler.cs" />
-    <Compile Include="Handlers\ChatBotHandler.cs" />
+    <Compile Include="Handlers\BannerHandler.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Handlers\ChatBotHandler.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Handlers\CustomerOtpHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
-    <Compile Include="Handlers\DefaultHandler.cs" />
+    <Compile Include="Handlers\DefaultHandler.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Handlers\NetworkSpeedHandler.cs" />
-    <Compile Include="Handlers\NicknameHandler.cs" />
-    <Compile Include="Handlers\ProtectionCodeHandler.cs" />
+    <Compile Include="Handlers\NicknameHandler.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Handlers\ProtectionCodeHandler.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Handlers\StatisticsHandler.cs" />
     <Compile Include="Handlers\BalanceInfoHandler.cs" />
     <Compile Include="Handlers\MenuBarHandler.cs" />
@@ -1655,24 +1697,42 @@
     <Compile Include="Handlers\PasswordHandler.cs" />
     <Compile Include="Handlers\SecurityCodeHandler.cs" />
     <Compile Include="Handlers\TelegramChatBotHandler.cs" />
-    <Compile Include="Handlers\ThemeHandler.cs" />
-    <Compile Include="Handlers\UMMessageHandler.cs" />
+    <Compile Include="Handlers\ThemeHandler.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Handlers\UMMessageHandler.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Handlers\UserMessageHandler.cs" />
-    <Compile Include="Helpers\DarkModeHelper.cs" />
-    <Compile Include="Helpers\HmacAuthenticator.cs" />
     <Compile Include="Helpers\QRCodeAdapter.cs" />
-    <Compile Include="Helpers\ResourceHelper.cs" />
-    <Compile Include="Helpers\RestClientHelper.cs" />
-    <Compile Include="Helpers\UrlHelper.cs" />
+    <Compile Include="Helpers\DarkModeHelper.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Helpers\HmacAuthenticator.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Helpers\ResourceHelper.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Helpers\RestClientHelper.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Helpers\UrlHelper.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\AllLanguagesQuery.cs" />
-    <Compile Include="Requests\Banner\BannerQuery.cs" />
+    <Compile Include="Requests\Banner\BannerQuery.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\BrowserQuery.cs" />
     <Compile Include="Requests\ChangeLanguageCommand.cs" />
     <Compile Include="Requests\ChatBot\AddAccountCommand.cs" />
     <Compile Include="Requests\ChatBot\ResendVerificationCodeCommand.cs" />
     <Compile Include="Requests\ChatBot\SetUpChatBotQuery.cs" />
     <Compile Include="Requests\ChatBot\UnsubscribeCommand.cs" />
-    <Compile Include="Requests\ChatBot\UpdateFunctionCommand.cs" />
+    <Compile Include="Requests\ChatBot\UpdateFunctionCommand.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\ChatBot\UpdateLanguageCommand.cs" />
     <Compile Include="Requests\ChatBot\UpdateSelfdestructionPeriodCommand.cs" />
     <Compile Include="Requests\ChatBot\VerifyVerificationCodeCommand.cs" />
@@ -1684,57 +1744,95 @@
     <Compile Include="Requests\Dashboard\Statistics\TopTurnoverMembersQuery.cs" />
     <Compile Include="Requests\Dashboard\Statistics\TopWinningMembersQuery.cs" />
     <Compile Include="Requests\IndexQuery.cs" />
-    <Compile Include="Requests\KickoutQuery.cs" />
+    <Compile Include="Requests\KickoutQuery.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\MenuBarQuery.cs" />
     <Compile Include="Requests\NetworkSpeed\NetworkSpeedQuery.cs" />
     <Compile Include="Requests\NetworkSpeed\SaveNetworkSpeedCommand.cs" />
-    <Compile Include="Requests\Nickname\CreateNicknameCommand.cs" />
+    <Compile Include="Requests\Nickname\CreateNicknameCommand.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\Otp\ChangeOtpStatusCommand.cs" />
-    <Compile Include="Requests\Otp\CheckDifferenceDeviceCommand.cs" />
+    <Compile Include="Requests\Otp\CheckDifferenceDeviceCommand.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\Otp\RemoveOtpCommand.cs" />
-    <Compile Include="Requests\Otp\ResetOtpCommand.cs" />
+    <Compile Include="Requests\Otp\ResetOtpCommand.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\Otp\ResetOtpQuery.cs" />
     <Compile Include="Requests\Otp\SetUpOtpCommand.cs" />
-    <Compile Include="Requests\Otp\VerifyOtpQuery.cs" />
-    <Compile Include="Requests\Otp\SetUpOtpQuery.cs" />
-    <Compile Include="Requests\Otp\VerifyOtpCommand.cs" />
+    <Compile Include="Requests\Otp\VerifyOtpQuery.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Requests\Otp\SetUpOtpQuery.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Requests\Otp\VerifyOtpCommand.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\Otp\VerifyOtpDifferentDeviceQuery.cs" />
-    <Compile Include="Requests\Password\SkipForceChangePasswordCommand.cs" />
+    <Compile Include="Requests\Password\SkipForceChangePasswordCommand.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\Password\ChangePasswordCommand.cs" />
-    <Compile Include="Requests\Password\ChangePasswordQuery.cs" />
+    <Compile Include="Requests\Password\ChangePasswordQuery.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\Password\ForceChangePasswordQuery.cs" />
     <Compile Include="Requests\Password\ResetMainAccountPasswordCommand.cs" />
     <Compile Include="Requests\Password\ResetMainAccountPasswordQuery.cs" />
     <Compile Include="Requests\Password\ResetSubAccountPasswordCommand.cs" />
     <Compile Include="Requests\Password\ResetSubAccountPasswordQuery.cs" />
-    <Compile Include="Requests\ProtectionCode\UpdateProtectionCodeCommand.cs" />
-    <Compile Include="Requests\ProtectionCode\ProtectionCodeQuery.cs" />
+    <Compile Include="Requests\ProtectionCode\UpdateProtectionCodeCommand.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Requests\ProtectionCode\ProtectionCodeQuery.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\SecurityCode\SecurityCodeQuery.cs" />
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeByForcingCommand.cs" />
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeFirstLoginCommand.cs" />
-    <Compile Include="Requests\SecurityCode\ChangeUserOwnSecurityCodeCommand.cs" />
+    <Compile Include="Requests\SecurityCode\ChangeUserOwnSecurityCodeCommand.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\SecurityCode\ForceChangeSecurityCodeQuery.cs" />
     <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommand.cs" />
-    <Compile Include="Requests\SecurityCode\UpdateSecurityCodeFunctionCommand.cs" />
+    <Compile Include="Requests\SecurityCode\UpdateSecurityCodeFunctionCommand.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
     <Compile Include="Requests\TelegramBotLanguageQuery.cs" />
     <Compile Include="Requests\TelegramChatBot\GenerateQRCodeCommand.cs" />
     <Compile Include="Requests\TelegramChatBot\ResendOTPCommand.cs" />
+    <Compile Include="Requests\Theme\ChangeThemeQuery.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\TelegramChatBot\SetUpChatBotQuery.cs" />
     <Compile Include="Requests\TelegramChatBot\UnsubscribeCommand.cs" />
     <Compile Include="Requests\TelegramChatBot\UpdateFunctionCommand.cs" />
     <Compile Include="Requests\TelegramChatBot\UpdateLanguageCommand.cs" />
     <Compile Include="Requests\TelegramChatBot\VerifyOTPCommand.cs" />
-    <Compile Include="Requests\Theme\ChangeThemeQuery.cs" />
     <Compile Include="Requests\Theme\ResetAssetAppPathQuery.cs" />
-    <Compile Include="Requests\UMMessage\UMMessageQuery.cs" />
+    <Compile Include="Requests\UMMessage\UMMessageQuery.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
-    <Compile Include="ViewModels\Banner\BannerViewModel.cs" />
+    <Compile Include="ViewModels\Banner\BannerViewModel.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="ViewModels\ChatBot\ChatBotSettingViewModel.cs" />
-    <Compile Include="ViewModels\ChatBot\ChatBotViewModel.cs" />
-    <Compile Include="ViewModels\ChatBot\RegisterAccountViewModel.cs" />
+    <Compile Include="ViewModels\ChatBot\ChatBotViewModel.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="ViewModels\ChatBot\RegisterAccountViewModel.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="ViewModels\ChatBot\VerifyAccountViewModel.cs" />
-    <Compile Include="ViewModels\ContactUs\ContactUsViewModel.cs" />
+    <Compile Include="ViewModels\ContactUs\ContactUsViewModel.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewModel.cs" />
     <Compile Include="ViewModels\HeaderNavViewModel.cs" />
@@ -1752,13 +1850,19 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\NetworkSpeed\NetworkSpeedViewModel.cs" />
-    <Compile Include="ViewModels\Nickname\CreateNicknameViewModel.cs" />
-    <Compile Include="ViewModels\ProtectionCode\ProtectionCodeViewModel.cs" />
+    <Compile Include="ViewModels\Nickname\CreateNicknameViewModel.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="ViewModels\ProtectionCode\ProtectionCodeViewModel.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="ViewModels\Security\ForceChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Security\OtpViewModel.cs" />
     <Compile Include="ViewModels\Security\PasswordViewModel.cs" />
     <Compile Include="ViewModels\Security\ResetOtpViewModel.cs" />
-    <Compile Include="ViewModels\Security\VerifyOTPViewModel.cs" />
+    <Compile Include="ViewModels\Security\VerifyOTPViewModel.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="ViewModels\Security\SecurityCodeViewModel.cs" />
     <Compile Include="ViewModels\Security\ForceChangeSecurityCodeViewModel.cs" />
     <Compile Include="ViewModels\Security\VerifyOtpDifferenceDeviceViewModel.cs" />
@@ -1790,6 +1894,12 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\SonarAnalyzer.CFG.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\SonarAnalyzer.dll" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

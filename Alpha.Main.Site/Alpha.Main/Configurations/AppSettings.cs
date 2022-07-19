@@ -282,8 +282,24 @@
 
         public static bool IsOfferLiveChat => "1" == Settings["IsOfferLiveChat"];
 
-        public static string ContactUsSkypeId => Settings["skypeId"];
+        public static string ReportDomain
+        {
+            get
+            {
+                var reportDomain = string.Empty + Settings["Report:Domain"];
+                reportDomain = reportDomain.IndexOf("{0}", StringComparison.OrdinalIgnoreCase) != -1 ? 
+                    string.Format(reportDomain, HttpContext.Current?.Request?.Headers?["Host"] ?? string.Empty) : reportDomain;
 
+                return reportDomain;
+            }
+        }
+
+        public static string ReportRouting => Settings["Report:Routing"] ?? string.Empty;
+
+        public static bool IsStandaloneReports => !string.IsNullOrWhiteSpace(ReportDomain);
+        
+        public static string ContactUsSkypeId => Settings["skypeId"];
+        
         public static string ContactUsLetstalkId => Settings["letstalkid"];
 
         public static string ContactUsLetstalkIdNew => Settings["letstalkidNew"];

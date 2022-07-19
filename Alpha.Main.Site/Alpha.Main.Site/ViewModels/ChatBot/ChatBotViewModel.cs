@@ -2,8 +2,8 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+    using Alpha.Main.Constants;
     using Chatbot.Client.Models;
-    using Constants;
 
     public class ChatBotViewModel
     {

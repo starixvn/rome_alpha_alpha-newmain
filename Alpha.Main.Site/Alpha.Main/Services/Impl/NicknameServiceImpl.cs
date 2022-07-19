@@ -9,6 +9,7 @@
 
     public class NicknameServiceImpl : NicknameService
     {
+        private const int Code = 100;
         private static readonly Regex NicknameRule = new Regex(@"^[a-zA-Z0-9]{5,20}$");
 
         private readonly IDynamicRepository dynamicRepository;
@@ -48,7 +49,7 @@
                 return Execute(command);
             }
 
-            return Result.CreateErrorResult(Resources.NicknameRule, 100);
+            return Result.CreateErrorResult(Resources.NicknameRule, Code);
         }
 
         private Result UpdateNicknameLoginOnly(UpdateNicknameLoginOnlyParam param)

@@ -9,6 +9,9 @@
 
     public class StatisticsDataAccessImpl : StatisticsDataAccess
     {
+        private const string CustId = "custid";
+        private const string Username = "username";
+
         public Statistics GetStatistics(ICriteria criteria, UserLevel userLevel)
         {
             Statistics statistics = new Statistics();
@@ -60,8 +63,8 @@
                 while (reader.Read())
                 {
                     var winningMember = new TopWinningMember(
-                        custId: !Convert.IsDBNull(reader["custid"]) ? Convert.ToInt32(reader["custid"]) : 0,
-                        userName: !Convert.IsDBNull(reader["username"]) ? Convert.ToString(reader["username"]) : string.Empty,
+                        custId: !Convert.IsDBNull(reader[CustId]) ? Convert.ToInt32(reader[CustId]) : 0,
+                        userName: !Convert.IsDBNull(reader[Username]) ? Convert.ToString(reader[Username]) : string.Empty,
                         winLoss: !Convert.IsDBNull(reader["winlost"]) ? Convert.ToDecimal(reader["winlost"]) : 0);
 
                     topWinningMembers.Add(winningMember);
@@ -87,8 +90,8 @@
                 while (reader.Read())
                 {
                     var turnoverMember = new TopTurnoverMember(
-                        custId: !Convert.IsDBNull(reader["custid"]) ? Convert.ToInt32(reader["custid"]) : 0,
-                        userName: !Convert.IsDBNull(reader["username"]) ? Convert.ToString(reader["username"]) : string.Empty,
+                        custId: !Convert.IsDBNull(reader[CustId]) ? Convert.ToInt32(reader[CustId]) : 0,
+                        userName: !Convert.IsDBNull(reader[Username]) ? Convert.ToString(reader[Username]) : string.Empty,
                         turnOver: !Convert.IsDBNull(reader["turnover"]) ? Convert.ToDecimal(reader["turnover"]) : 0);
 
                     topTurnoverMembers.Add(turnoverMember);

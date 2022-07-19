@@ -27,6 +27,7 @@
         private const int DownlineIsDisabledErrorCode = 600;
         private const int DownlineDoesNotHaveRegisteredDeviceErrorCode = 100;
         private const int FailedToRemoveDownlineOtpErrorCode = 101;
+        private const string CustIdCannotBeNegOrZero = "Cust Id cannot be negative or zero";
 
         private readonly IDynamicRepository dynamicRepository;
         private readonly OtpService otpService;
@@ -87,7 +88,7 @@
         {
             if (custId <= 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(custId), "Cust Id cannot be negative or zero");
+                throw new ArgumentOutOfRangeException(nameof(custId), CustIdCannotBeNegOrZero);
             }
 
             if (subAccId < 0)
@@ -112,7 +113,7 @@
         {
             if (custId <= 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(custId), "Cust Id cannot be negative or zero");
+                throw new ArgumentOutOfRangeException(nameof(custId), CustIdCannotBeNegOrZero);
             }
 
             if (subAccId < 0)
@@ -216,7 +217,7 @@
         {
             if (custId <= 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(custId), "Cust Id cannot be negative or zero");
+                throw new ArgumentOutOfRangeException(nameof(custId), CustIdCannotBeNegOrZero);
             }
 
             if (subAccId < 0)
@@ -321,7 +322,7 @@
         {
             if (custId <= 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(custId), "Cust Id cannot be negative or zero");
+                throw new ArgumentOutOfRangeException(nameof(custId), CustIdCannotBeNegOrZero);
             }
 
             if (string.IsNullOrWhiteSpace(deviceId))

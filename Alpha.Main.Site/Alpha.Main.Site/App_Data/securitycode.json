@@ -12,6 +12,10 @@
     "ChatBot/Setup",
     "ProtectionCode/Setup"
   ],
+  "betListsPaths": [
+  ],
+  "statementPaths": [
+  ],
   "sites": [
   ],
   "verifyingOtpPath": "Otp/VerifyOtp",

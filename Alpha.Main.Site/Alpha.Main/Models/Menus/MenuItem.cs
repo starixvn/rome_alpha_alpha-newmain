@@ -3,15 +3,13 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text.RegularExpressions;
     using System.Web;
     using AppResources;
     using Configurations;
-    using Sunplus.Agent.Model.Entities;
 
     public class MenuItem : IMenuItem
     {
-        private string link;
+        private string link = string.Empty;
         private Func<MenuStatus> getMenuStatusFunc;
         private Predicate<string> authorizeUrlFunc;
         private Func<string> getDisplayName;
@@ -71,14 +69,15 @@
         {
             get
             {
-                var appVirtualPath = AppSettings.GetAppPath(AppPath);
+                var appVirtualPath = AppSettings.GetAppPath(AppPath) ?? string.Empty;
+                var runtimeAppPath = HttpRuntime.AppDomainAppVirtualPath ?? string.Empty;
+                var reportUrl = $"{appVirtualPath}{HttpContext.Current?.Response?.ApplyAppPathModifier(runtimeAppPath)}{link}";
+                reportUrl = !string.IsNullOrWhiteSpace(runtimeAppPath) ? reportUrl.Replace(runtimeAppPath, string.Empty) : reportUrl;
 
-                if (!string.IsNullOrWhiteSpace(appVirtualPath))
-                {
-                    return Regex.Replace(link, HttpRuntime.AppDomainAppVirtualPath, appVirtualPath);
-                }
-
-                return link;
+                return !string.IsNullOrWhiteSpace(UseDomainConfig) ? $"{UseDomainConfig}{link}" :
+                    appVirtualPath.Equals("/site-reports") ? reportUrl : 
+                    !string.IsNullOrWhiteSpace(link) && !string.IsNullOrWhiteSpace(runtimeAppPath) ? 
+                    link.Replace(runtimeAppPath, appVirtualPath) : string.Empty;
             }
 
             set
@@ -134,6 +133,8 @@
         }
 
         public bool IsHiddenInMobile { get; set; }
+
+        public string UseDomainConfig { get; set; }
 
         private bool isVisibleForMobileOrDesktop() => 
             IsMobileView && !IsHiddenInMobile ||

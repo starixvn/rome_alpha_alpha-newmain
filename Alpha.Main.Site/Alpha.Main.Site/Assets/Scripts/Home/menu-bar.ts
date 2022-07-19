@@ -22,7 +22,8 @@ var menuBar = {
         hamburgerIcon: null,
         profileImage: null,
         announcementItems: null,
-        closeIconOnMobile: null
+        closeIconOnMobile: null,
+        reportDomain: null
     },
 
     urls: {
@@ -33,6 +34,12 @@ var menuBar = {
         menuBar.storeElements();
         menuBar.bindEvents();
         menuBar.initSideBar();
+
+        if (menuBar.domElements.reportDomain) {
+            menuBar.loadAuthFrame();
+
+            setInterval(function () { menuBar.loadAuthFrame() }, 60 * 1000);
+        }
     },
 
     storeElements: function () {
@@ -56,6 +63,7 @@ var menuBar = {
         menuBar.domElements.profileImage = $('#logoProfileImg');
         menuBar.domElements.announcementItems = $("#menu-ANNOUNCEMENTS li a");
         menuBar.domElements.closeIconOnMobile = $('#closeIconOnMobile');
+        menuBar.domElements.reportDomain = $('#reportDomain').val();
     },
 
     initSideBar: function () {
@@ -225,11 +233,11 @@ var menuBar = {
             accountInfoUrl = accInfoContent.attr('src');
 
         if (!accountInfoUrl) {
-			accInfoContent.attr('src', menuBar.urls.accountInfo + '?mobileView=' + alpha.isScreenLower768);
+            accInfoContent.attr('src', menuBar.urls.accountInfo + '?mobileView=' + alpha.isScreenLower768);
         }
 
         if (userName !== '' || typeof userName === 'undefined') {
-			accInfoContent.attr('src', menuBar.urls.accountInfo + '?mobileView=' + alpha.isScreenLower768 + '&SearchAccountName=' + userName);
+            accInfoContent.attr('src', menuBar.urls.accountInfo + '?mobileView=' + alpha.isScreenLower768 + '&SearchAccountName=' + userName);
         }
 
         // To work on IE, use plain-old javascript onload event
@@ -248,14 +256,15 @@ var menuBar = {
         };
     },
 
-	activateSubMenuItem: function (subMenu) {
+    activateSubMenuItem: function (subMenu) {
         menuBar.domElements.subMenuItems.removeClass('active');
-		subMenu.addClass('active');
-
-        if (!alpha.core.isIe()) {
-            $('#main').contents().find("head").append($("#AssetCommonCssLink").val());
-            $('#main').contents().find('body').empty().block();
-        }
+        subMenu.addClass('active');
+        try {
+            if (!alpha.core.isIe()) {
+                $('#main').contents().find("head").append($("#AssetCommonCssLink").val());
+                $('#main').contents().find('body').empty().block();
+            }
+        } catch (e) { }
 
         $('#main').attr('src', subMenu.data("url")).attr("target", "main");
     },
@@ -358,6 +367,19 @@ var menuBar = {
                 tabPT.css('left', tabPTLeft);
             }
         }, 400);
+    },
+
+    loadAuthFrame: function () {
+        $.get('Default/Auth', (returnUrl) => {
+            $.get(returnUrl, (result) => {
+                if (result !== 'OK') {
+                    menuBar.loadAuthFrame();
+                }
+                else {
+                    menuBar.domElements.header.find('iframe#reportFrame')[0].src = returnUrl;
+                }
+            });
+        });
     }
 };
 

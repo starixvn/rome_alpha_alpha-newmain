@@ -18,6 +18,7 @@ var indexManager = {
     currentUrlCookieName: 'DFFKDHFJKLDHFJDH',
     requiredNetworkSpeedCalculation: false,
     showOldCustomerList: false,
+    reportDomain: "",
 
     domElements: {
         mainFrame: null,
@@ -51,6 +52,18 @@ var indexManager = {
     registerEvents: function () {
         indexManager.domElements.pagePopup.tinyDraggable();
         setTimeout(indexManager.reCheckin, 30000);
+
+        if (indexManager.reportDomain) {
+            const eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+            const eventer = window[eventMethod];
+            const messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
+            eventer(messageEvent, function (e) {
+                if (e.data.event_id === "daily-statement"
+                    || e.data.event_id === "detail-statement") {
+                    popupManager.open(e.data.url, e.data.title, 900);
+                }
+            }, false);
+        }
     },
 
     cachedDomElements: function () {
@@ -62,6 +75,7 @@ var indexManager = {
         indexManager.currentUrlCookieName = indexManager.domElements.currentURLCookieName.val();
         indexManager.requiredNetworkSpeedCalculation = $('#requiredNetworkSpeedCalculation').val() == '1';
         indexManager.showOldCustomerList = $('#showOldCustomerList').val() == '1';
+        indexManager.reportDomain = $('#reportDomain').val();
     },
 
     changeMenu: function (url) {
@@ -113,10 +127,14 @@ var indexManager = {
     },
 
     cacheCurrentUrl: function () {
-        if ($("#isInternal").val() === "0") {
-            var currentUrl = (<HTMLIFrameElement>document.getElementById("main")).contentWindow.location.href;
-            localStorage.setItem(indexManager.currentUrlCookieName, currentUrl);
-        }
+        try {
+            if ($("#isInternal").val() === "0") {
+                var mainFrame = <HTMLIFrameElement>document.getElementById("main");
+                var mainFrameDocument = mainFrame.contentWindow || mainFrame.contentDocument;
+                var currentUrl = mainFrameDocument && mainFrameDocument.location.href || mainFrame.src;
+                localStorage.setItem(indexManager.currentUrlCookieName, currentUrl);
+            }
+        } catch (e) { }
     },
 
     setCurrentUrl: function () {
@@ -146,14 +164,16 @@ var indexManager = {
                     indexManager.closeAllPopup();
 
                     indexManager.cacheCurrentUrl();
-                    $(iframeWindow.document).on('click touchend',
-                        () => {
-                            menuBar.collapseSideBar();
-                        });
+                    try {
+                        $(iframeWindow.document).on('click touchend',
+                            () => {
+                                menuBar.collapseSideBar();
+                            });
 
-                    if (alpha.isMobile) {
-                        $(iframeWindow.document).find(':focus').blur();
-                    }
+                        if (alpha.isMobile) {
+                            $(iframeWindow.document).find(':focus').blur();
+                        }
+                    } catch (e) { }
                 });
 
             indexManager.domElements.accountInfoContent.load(function () {
@@ -173,31 +193,35 @@ var indexManager = {
 
         $('#btn-header-menu').on('click', closeDropdownSubMenu);
 
-        $(iframeWindow.document).on('click touchend', () => {
-            $('.dropdown-toggle').each((index, dropdown) => {
-                var $dropdown = $(dropdown);
+        try {
+            $(iframeWindow.document).on('click touchend', () => {
+                $('.dropdown-toggle').each((index, dropdown) => {
+                    var $dropdown = $(dropdown);
 
-                if ($dropdown.parent().hasClass('open')) {
-                    $dropdown.dropdown('toggle');
-                }
+                    if ($dropdown.parent().hasClass('open')) {
+                        $dropdown.dropdown('toggle');
+                    }
+                });
+
+                closeDropdownSubMenu();
             });
-
-            closeDropdownSubMenu();
-        });
+        } catch (e) { }
     },
 
     closeAllPopup: function () {
-        var prevUrl = localStorage.getItem(indexManager.currentUrlCookieName) || "";
-        var currentUrl = (<HTMLIFrameElement>document.getElementById("main")).contentWindow.location.href || "";
+        try {
+            var prevUrl = localStorage.getItem(indexManager.currentUrlCookieName) || "";
+            var currentUrl = (<HTMLIFrameElement>document.getElementById("main")).contentWindow.location.href || "";
 
-        var prevUrlWithoutQueryString = prevUrl.split("?")[0];
-        var currentUrlWithoutQueryString = currentUrl.split("?")[0];
+            var prevUrlWithoutQueryString = prevUrl.split("?")[0];
+            var currentUrlWithoutQueryString = currentUrl.split("?")[0];
 
-        var isCloseAllPopup = !this.isSameUrl(prevUrlWithoutQueryString, currentUrlWithoutQueryString);
+            var isCloseAllPopup = !this.isSameUrl(prevUrlWithoutQueryString, currentUrlWithoutQueryString);
 
-        if (isCloseAllPopup) {
-            popupManager.closeAllPopup();
-        }
+            if (isCloseAllPopup) {
+                popupManager.closeAllPopup();
+            }
+        } catch (e) { }
     },
 
     isSameUrl: function (url1, url2) {
@@ -242,7 +266,7 @@ var indexManager = {
     },
 
     isIgnoreRedirectUrl: function (currentUrl: string): boolean {
-        const ignoreUrls = ['error.aspx', 'signin.aspx', 'securitycode', 'dashboard', 'partialum'];
+        const ignoreUrls = ['error.aspx', 'signin.aspx', 'securitycode', 'dashboard', 'partialum', 'auth'];
         const ignoreUrlsLength = ignoreUrls.length;
         const lowerCurrentUrl = currentUrl.toLowerCase();
 

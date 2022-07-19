@@ -2,6 +2,7 @@
 {
     using System;
     using System.Web;
+    using Alpha.Main.Configurations;
     using Web.Helpers;
 
     public static class UrlHelper
@@ -18,7 +19,7 @@
         [ThreadStatic]
         private static Func<string, string> mapHowToUsePath;
 
-        [ThreadStatic]
+        //[ThreadStatic]
         private static Func<string, string> mapReportsPath;
 
         [ThreadStatic]
@@ -86,7 +87,21 @@
         {
             get
             {
-                return mapReportsPath ?? MicroSites.ReportsUrl;
+                if (mapReportsPath != null)
+                {
+                    return mapReportsPath;
+                }
+
+                if (AppSettings.IsStandaloneReports)
+                {
+                    mapReportsPath = MapReportsDomain;
+                }
+                else
+                {
+                    mapReportsPath = MicroSites.ReportsUrl;
+                }
+
+                return mapReportsPath;
             }
 
             internal set
@@ -133,5 +148,8 @@
                 mapMainPath = value;
             }
         }
+
+        internal static string MapReportsDomain(string virtualPath = "~/")
+            => $"{AppSettings.ReportDomain}/";
     }
 }

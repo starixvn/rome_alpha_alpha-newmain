@@ -3,51 +3,51 @@
   <siteMapNode title="Alpha Site">
     <!--Report-->
     <siteMapNode resourceKey="reports" expand="1" menuItemType="ReportMenuItem" functionType="[E]" byPassProtectedMode="true">
-      <siteMapNode resourceKey="memberOutstanding" appPath="ReportsAppPath" url="outstanding/membernew" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="agentOutstanding" appPath="ReportsAppPath" url="outstanding/agentnew" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="masterOutstanding" appPath="ReportsAppPath" url="outstanding/masternew" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="memberOutstanding" appPath="ReportsAppPath" url="/outstanding/membernew" roles="Agent" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="agentOutstanding" appPath="ReportsAppPath" url="/outstanding/agentnew" roles="Master" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="masterOutstanding" appPath="ReportsAppPath" url="/outstanding/masternew" roles="Super" useDomainConfig="Report:Domain"></siteMapNode>
 
-      <siteMapNode menuItemType="ReportsMenuItem" resourceKey="memberWinLoss" appPath="ReportsAppPath" url="enteredresult/member" roles="Agent"></siteMapNode>
-      <siteMapNode menuItemType="ReportsMenuItem" resourceKey="agentwinloss" appPath="ReportsAppPath" url="enteredresult/agent" roles="Master"></siteMapNode>
-      <siteMapNode menuItemType="ReportsMenuItem" resourceKey="masterwinloss" appPath="ReportsAppPath" url="enteredresult/master" roles="Super"></siteMapNode>
+      <siteMapNode menuItemType="ReportsMenuItem" resourceKey="memberWinLoss" appPath="ReportsAppPath" url="/enteredresult/member" roles="Agent" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode menuItemType="ReportsMenuItem" resourceKey="agentwinloss" appPath="ReportsAppPath" url="/enteredresult/agent" roles="Master" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode menuItemType="ReportsMenuItem" resourceKey="masterwinloss" appPath="ReportsAppPath" url="/enteredresult/master" roles="Super" useDomainConfig="Report:Domain"></siteMapNode>
 
-      <siteMapNode menuItemType="NewReportsMenuItem" resourceKey="memberWinLoss" appPath="ReportsAppPath" url="enteredresult/membernew" roles="Agent"></siteMapNode>
-      <siteMapNode menuItemType="NewReportsMenuItem" resourceKey="agentwinloss" appPath="ReportsAppPath" url="enteredresult/agentnew" roles="Master"></siteMapNode>
-      <siteMapNode menuItemType="NewReportsMenuItem" resourceKey="masterwinloss" appPath="ReportsAppPath" url="enteredresult/masternew" roles="Super"></siteMapNode>
+      <siteMapNode menuItemType="NewReportsMenuItem" resourceKey="memberWinLoss" appPath="ReportsAppPath" url="/enteredresult/membernew" roles="Agent" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode menuItemType="NewReportsMenuItem" resourceKey="agentwinloss" appPath="ReportsAppPath" url="/enteredresult/agentnew" roles="Master" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode menuItemType="NewReportsMenuItem" resourceKey="masterwinloss" appPath="ReportsAppPath" url="/enteredresult/masternew" roles="Super" useDomainConfig="Report:Domain"></siteMapNode>
 
-      <siteMapNode resourceKey="memberwinlossdetail" appPath="ReportsAppPath" url="winlossdetail/member" roles="Agent" byPassProtectedMode="true"></siteMapNode>
-      <siteMapNode resourceKey="agentwinlostdetail" appPath="ReportsAppPath" url="winlossdetail/agent" roles="Master" byPassProtectedMode="true"></siteMapNode>
-      <siteMapNode resourceKey="masterwinlostdetail" appPath="ReportsAppPath" url="winlossdetail/master" roles="Super" byPassProtectedMode="true"></siteMapNode>
+      <siteMapNode resourceKey="memberwinlossdetail" appPath="ReportsAppPath" url="/winlossdetail/member" roles="Agent" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="agentwinlostdetail" appPath="ReportsAppPath" url="/winlossdetail/agent" roles="Master" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="masterwinlostdetail" appPath="ReportsAppPath" url="/winlossdetail/master" roles="Super" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
 
-      <siteMapNode resourceKey="matchWinLostDetail" appPath="ReportsAppPath" url="matchwinlossdetail/index"></siteMapNode>
+      <siteMapNode resourceKey="matchWinLostDetail" appPath="ReportsAppPath" url="/matchwinlossdetail/index" useDomainConfig="Report:Domain"></siteMapNode>
 
-      <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="winlossanalysis/member" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="winlossanalysis/agent" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="winlossanalysis/master" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="/winlossanalysis/member" roles="Agent" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="/winlossanalysis/agent" roles="Master" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="/winlossanalysis/master" roles="Super" useDomainConfig="Report:Domain"></siteMapNode>
 
-      <siteMapNode resourceKey="winLossAnalysisChart" appPath="ReportsAppPath" url="winlossanalysischart/member" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="winLossAnalysisChart" appPath="ReportsAppPath" url="winlossanalysischart/agent" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="winLossAnalysisChart" appPath="ReportsAppPath" url="winlossanalysischart/master" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="winLossAnalysisChart" appPath="ReportsAppPath" url="/winlossanalysischart/member" roles="Agent" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="winLossAnalysisChart" appPath="ReportsAppPath" url="/winlossanalysischart/agent" roles="Master" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="winLossAnalysisChart" appPath="ReportsAppPath" url="/winlossanalysischart/master" roles="Super" useDomainConfig="Report:Domain"></siteMapNode>
 
-      <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="WinLossByProduct/member" roles="Agent" byPassProtectedMode="true"></siteMapNode>
-      <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="WinLossByProduct/agent" roles="Master" byPassProtectedMode="true"></siteMapNode>
-      <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="WinLossByProduct/master" roles="Super" byPassProtectedMode="true"></siteMapNode>
+      <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="/WinLossByProduct/member" roles="Agent" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="/WinLossByProduct/agent" roles="Master" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="/WinLossByProduct/master" roles="Super" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
       
-      <siteMapNode resourceKey="superWinLossDetailByPT" appPath="ReportsAppPath" url="SuperWinLossDetailByPT/Index" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="superWinLossDetailByPT" appPath="ReportsAppPath" url="/SuperWinLossDetailByPT/Index" roles="Super" useDomainConfig="Report:Domain"></siteMapNode>
 
-      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/member" roles="Agent" byPassProtectedMode="true"></siteMapNode>
-      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/agent" roles="Master" byPassProtectedMode="true"></siteMapNode>
-      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/master" roles="Super" byPassProtectedMode="true"></siteMapNode>
+      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="/commissionbybettype/member" roles="Agent" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="/commissionbybettype/agent" roles="Master" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="/commissionbybettype/master" roles="Super" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
 
-      <siteMapNode menuItemType="ConsolidatedReportMenuItem" resourceKey="consolidatedreport" appPath="ReportsAppPath" url="consolidation/consolidationbyusername"></siteMapNode>
-      <siteMapNode resourceKey="statement" appPath="ReportsAppPath" url="Statement/SMAStatement"></siteMapNode>
+      <siteMapNode menuItemType="ConsolidatedReportMenuItem" resourceKey="consolidatedreport" appPath="ReportsAppPath" url="/consolidation/consolidationbyusername" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="statement" appPath="ReportsAppPath" url="/Statement/SMAStatement" useDomainConfig="Report:Domain"></siteMapNode>
 
       <siteMapNode resourceKey="result" url="~/Normal" appPath="ResultSiteVirtualPath" byPassProtectedMode="true"></siteMapNode>
 
       <siteMapNode menuItemType="NG2MenuItem" resourceKey="schedule" appPath="NG2SiteVirtualPath" url="~/Schedule"></siteMapNode>
-      <siteMapNode menuItemType="ProgressiveContributionMenuItem" resourceKey="ProgressiveGamesContribution" appPath="ReportsAppPath" url="progressivecontribution/index"></siteMapNode>
-      <siteMapNode menuItemType="BonusDetailMenuItem" resourceKey="BonusDetail" appPath="ReportsAppPath" url="bonusdetail/index" isNew="true"></siteMapNode>
-      <!--<siteMapNode resourceKey="BetCreditTracking" appPath="ReportsAppPath" url="betcredithistory/index" isHiddenInMobile="true" isNew="true"></siteMapNode>-->
+      <siteMapNode menuItemType="ProgressiveContributionMenuItem" resourceKey="ProgressiveGamesContribution" appPath="ReportsAppPath" url="/progressivecontribution/index" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode menuItemType="BonusDetailMenuItem" resourceKey="BonusDetail" appPath="ReportsAppPath" url="/bonusdetail/index" useDomainConfig="Report:Domain"></siteMapNode>
+      <!--<siteMapNode resourceKey="BetCreditTracking" appPath="ReportsAppPath" url="/betcredithistory/index" isHiddenInMobile="true" isNew="true" useDomainConfig="Report:Domain"></siteMapNode>-->
     </siteMapNode>
     <!--/Report-->
     <!--MemberInfo-->
@@ -108,8 +108,8 @@
     </siteMapNode>
 
     <siteMapNode resourceKey="BetStatistics" menuItemType="BetStatisticsMenuItem" functionType="[E]" roles="Super">
-      <siteMapNode resourceKey="IPMatching" appPath="ReportsAppPath" url="~/RiskAnalysisIPMatching" roles="Super"></siteMapNode>
-      <siteMapNode resourceKey="BetChoiceMatching" appPath="ReportsAppPath" url="~/BetChoiceMatching" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="IPMatching" appPath="ReportsAppPath" url="/RiskAnalysisIPMatching" roles="Super" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="BetChoiceMatching" appPath="ReportsAppPath" url="/BetChoiceMatching" roles="Super" useDomainConfig="Report:Domain"></siteMapNode>
     </siteMapNode>
 
     <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItem" url="_Transfer/Master/AgentList.aspx" functionType="[C]" roles="Master"></siteMapNode>

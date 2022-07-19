@@ -16,6 +16,8 @@
 
     public class PasswordServiceImpl : PasswordService
     {
+        private const string Message = "Param cannot be null";
+        private const int V = 3;
         private static readonly Regex PasswordRule1 = new Regex(@"^(?=.*\d).{8,100}$");
         private static readonly Regex PasswordRule2 = new Regex(@"^(?=.*[a-z]).{8,100}$");
         private static readonly Regex PasswordRule3 = new Regex(@"^(?=.*[A-Z]).{8,100}$");
@@ -53,7 +55,7 @@
         {
             if (param == null)
             {
-                throw new ArgumentNullException(nameof(param), "Param cannot be null");
+                throw new ArgumentNullException(nameof(param), Message);
             }
 
             var rawCurrentPassword = Decrypt(param.CurrentPassword, param.HashKey);
@@ -117,7 +119,7 @@
         {
             if (param == null)
             {
-                throw new ArgumentNullException(nameof(param), "Param cannot be null");
+                throw new ArgumentNullException(nameof(param), Message);
             }
 
             var rawCurrentPassword = Decrypt(param.CurrentPassword, param.HashKey);
@@ -181,7 +183,7 @@
         {
             if (param == null)
             {
-                throw new ArgumentNullException(nameof(param), "Param cannot be null");
+                throw new ArgumentNullException(nameof(param), Message);
             }
 
             var rawPassword = Decrypt(param.NewPassword, param.HashKey);
@@ -237,7 +239,7 @@
         {
             if (param == null)
             {
-                throw new ArgumentNullException(nameof(param), "Param cannot be null");
+                throw new ArgumentNullException(nameof(param), Message);
             }
 
             var command = new SkipForceChangePasswordCommand
@@ -261,7 +263,7 @@
         {
             if (param == null)
             {
-                throw new ArgumentNullException(nameof(param), "Param cannot be null");
+                throw new ArgumentNullException(nameof(param), Message);
             }
 
             if (netThrottlingService.IsBlacklist())
@@ -383,7 +385,7 @@
             var r3 = PasswordRule3.Match(password).Success ? 1 : 0;
             var r4 = PasswordRule4.Match(password).Success ? 1 : 0;
 
-            return (r1 + r2 + r3 + r4 >= 3) && NoWhiteSpace.Match(password).Success;
+            return (r1 + r2 + r3 + r4 >= V) && NoWhiteSpace.Match(password).Success;
         }
 
         private string Encode(string password)

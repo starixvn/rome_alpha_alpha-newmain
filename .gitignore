@@ -63,7 +63,6 @@ Libraries/Fanex.Age.Business.Interface/obj/Debug/DesignTimeResolveAssemblyRefere
 .vs/
 Fanex_Razorbill_Website/vwd.webinfo
 Fanex_Razorbill_Website_I7/vwd.webinfo
-/OpenCover/*
 
 *.min.js
 bundles

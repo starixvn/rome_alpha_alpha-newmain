@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Configuration;
     using System.Linq;
     using System.Web;
     using Auth.Services;
@@ -37,6 +38,11 @@
 
         private static void SetDataForMenuItem(IMenuItem menuItem, SiteMapNode node)
         {
+            var useDomainConfigValue = ConfigurationManager.AppSettings[string.Empty + node["UseDomainConfig"]] + string.Empty;
+            var mainDomain = HttpContext.Current == null ? string.Empty : HttpContext.Current.Request.Headers["Host"];
+            useDomainConfigValue = useDomainConfigValue.IndexOf("{0}", StringComparison.OrdinalIgnoreCase) != -1 ? string.Format(useDomainConfigValue, mainDomain) : useDomainConfigValue;
+
+            menuItem.UseDomainConfig = useDomainConfigValue;
             menuItem.Key = node.Key;
             menuItem.ResourceKey = node.ResourceKey;
             menuItem.Link = node.Url;
