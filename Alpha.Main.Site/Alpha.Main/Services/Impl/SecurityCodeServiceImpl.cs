@@ -2,6 +2,7 @@
 {
     using System;
     using System.Text.RegularExpressions;
+    using System.Threading.Tasks;
     using Alpha.Main.Services;
     using AppResources;
     using Criteria.SecurityCode;
@@ -22,15 +23,18 @@
         private readonly SecurityCodeDataAccess securityCodeDataAccess;
         private readonly Encryptor encryptor;
         private readonly INetThrottlingService netThrottlingService;
+        private readonly TelegramBotService telegramBotService;
 
         public SecurityCodeServiceImpl(
             SecurityCodeDataAccess securityCodeDataAccess,
             Encryptor encryptor,
-            INetThrottlingService netThrottlingService)
+            INetThrottlingService netThrottlingService,
+            TelegramBotService telegramBotService)
         {
             this.securityCodeDataAccess = securityCodeDataAccess;
             this.encryptor = encryptor;
             this.netThrottlingService = netThrottlingService;
+            this.telegramBotService = telegramBotService;
         }
 
         public Result ChangeMainAccountSecurityCode(ChangeSecurityCodeParam param)
@@ -46,7 +50,7 @@
                 return validateResult;
             }
 
-            return securityCodeDataAccess.UpdateSecurityCode(
+            var result = securityCodeDataAccess.UpdateSecurityCode(
                  new UpdateMainAccountSecurityCodeCriteria
                  {
                      CustId = param.CustId,
@@ -56,6 +60,13 @@
                      IP = param.IP,
                      Language = param.Language
                  });
+
+            if (result != null && result.IsSuccessful && !param.IsMemberLevel)
+            {
+                Task.Run(() => telegramBotService.NotifyChangeSecurityCode(param.CustId, 0));
+            }
+
+            return result;
         }
 
         public Result ChangeSubAccountSecurityCode(ChangeSecurityCodeParam param)
@@ -80,7 +91,14 @@
                 Language = param.Language
             };
 
-            return securityCodeDataAccess.UpdateSecurityCode(command);
+            var result = securityCodeDataAccess.UpdateSecurityCode(command);
+
+            if (result != null && result.IsSuccessful && !param.IsMemberLevel)
+            {
+                Task.Run(() => telegramBotService.NotifyChangeSecurityCode(param.CustId, param.SubAccId));
+            }
+
+            return result;
         }
 
         public Result ResetSubAccountSecurityCode(ResetSecurityCodeParam param)
@@ -113,9 +131,11 @@
 
             var result = securityCodeDataAccess.UpdateSecurityCode(command);
 
-            if (result != null && result.IsSuccessful)
+            if (result != null && result.IsSuccessful && !param.IsMemberLevel)
             {
                 netThrottlingService.Throttle();
+
+                Task.Run(() => telegramBotService.NotifyChangeSecurityCode(param.CustId, param.SubAccId));
             }
 
             return result;

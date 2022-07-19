@@ -1,0 +1,127 @@
+﻿@import '../Home/_variables-dark.scss';
+@import '../Home/_mixins.scss';
+
+// To remove the 300-350ms tap delay
+html {
+    touch-action: manipulation;
+}
+
+body {
+    background-color: transparent;
+}
+
+.page-title {
+    margin-bottom: 12px;
+}
+
+$border-color: #424242;
+
+label {
+    font-weight: normal;
+}
+
+.m-b-0 {
+    margin-bottom: 0;
+}
+
+[class^='btn'] {
+    height: auto;
+    min-height: $height-normal;
+}
+
+.container-msg {
+    display: table;
+    width: 100%;
+
+    .msg {
+        float: left;
+        min-width: 240px;
+    }
+}
+
+.panel {
+    @include border-radius(0);
+    @include box-shadow-multiple(none);
+    margin-bottom: 5px;
+    background-color: $panel-background-color;
+    //border-color: #dcdcdc;
+    input[type='text'],
+    input[type='tel'] {
+        //border: 1px solid $border-color;
+    }
+}
+
+.panel-heading {
+    padding: 0;
+    border-bottom: 0;
+    @include border-radius(0);
+
+    .panel-title a {
+        background-color: #3A3A3A;
+        @include box-sizing;
+        display: block;
+        height: 36px;
+        line-height: 30px;
+        padding: 0 6px;
+        border: none;
+        font-weight: bold;
+        font-size: 13px;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:before {
+            font-family: 'Iconalpha', sans-serif;
+            font-size: 16px;
+            margin-right: 2px;
+            position: relative;
+            top: 2px;
+        }
+
+        &.collapsed:before {
+            content: '\e929';
+        }
+
+        &:not(.collapsed) {
+            border-color: $border-color;
+
+            &:before {
+                content: '\e928';
+            }
+        }
+
+        &:hover, &:focus {
+            border-color: $border-color;
+            text-decoration: none;
+        }
+    }
+}
+
+.panel-heading + .panel-collapse > .panel-body {
+    border-top: 1px solid $border-color;
+    padding: 16px 0;
+
+
+    &.has-padding {
+        padding: 16px !important;
+    }
+}
+
+.info-list {
+    li {
+        list-style: disc;
+    }
+}
+
+.btn-chatbot {
+    background: #40B3E0;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+}
+
+.btn-chatbot:disabled {
+    opacity: .65;
+}

@@ -84,10 +84,6 @@ namespace Alpha.Main
                 () => ProductManager.IsShowSettings(ProductIdConstants.NG2)),
             ["ProgressiveContributionMenuItem"] = () => new MenuStatus(() => new User().IsEnabledJackpot),
             ["ProgressiveJackpotMenuItem"] = () => new MenuStatus(() => new User().ShowProgressiveJackpotGames),
-            ["ChatBotMenuItem"] = () => new MenuStatus(
-                () => !Current.IsSubAcc
-                    && (AppSettings.OfferChatbotSites.Contains("*")
-                        || AppSettings.OfferChatbotSites.Contains(Current.Site, StringComparer.OrdinalIgnoreCase))),
             ["IndirectLoginAccountMenuItem"] = () => new MenuStatus(
                 () => AppSettings.IsAllowedIndirectLogin(Current.SRecommendId) && !Current.IsIndirectLoggedIn && (Current.IsSuper || Current.IsMaster)),
             ["DormantAccountListMenuItem"] = () => new MenuStatus(() => Current.IsSuper || Current.IsMaster),

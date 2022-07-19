@@ -1,0 +1,28 @@
+﻿@model Alpha.Main.Site.ViewModels.TelegramChatBot.VerifyAccountViewModel
+<li>
+    <p class="bold">@ChatBot.ScanQRCode</p>
+    <div class="list-qr-code">
+        <img class="private-qr-code-img" id="imgPrivateQRCode" src="@(Model.QRCodeDataUrl)" />
+        <div class="private-qr-code-link">@ChatBot.OrUseThisLink <br /> <a class="link" href="@(Model.Url)" target="_blank">@(Model.Url)</a></div>
+    </div>
+    <div>@Html.Raw(ChatBot.SelectStartOnTelegramChatbot)</div>
+</li>
+<li>
+    <p class="bold">@ChatBot.EnterOTP</p>
+    <div id="verification-code-message"></div>
+    <form class="verification-form" id="verification-form" action="@Url.Action("VerifyOTP")" method="post">
+        <div class="form-group">
+            <input name="OTP" id="txtOTP" maxlength="6" class="verify-text" placeholder="@ChatBot.lblOTP" type="number" oninput="this.value=this.value.slice(0,this.maxLength)"/>
+        </div>
+        <div id="captcha-container">
+            @if (Model.IsShowCaptcha)
+            {
+                @Html.Partial("Captcha")
+            }
+        </div>
+        <div class="form-group list-button">
+            <button id="btnVerify" class="btn-chatbot btn-verify" type="submit">@ChatBot.VerifyOTP</button>
+            <span class="msg-expired hide" id="msgExpired"><em>@Html.Raw(@ChatBot.OTPIsExpiredMessage)</em></span>
+        </div>
+    </form>
+</li>

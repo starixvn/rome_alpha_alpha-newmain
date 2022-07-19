@@ -4,6 +4,7 @@
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Mvc;
+    using Alpha.Web.Models;
     using Chatbot.Client.Models;
     using Chatbot.Client.Services;
     using Configurations;
@@ -42,10 +43,11 @@
         public void Index_Always_CallsMediatorSendSetupChatBotQuery()
         {
             // Arrange
+            userSession.RoleId.Returns((byte)4);
             var query = new SetUpChatBotQuery(userSession);
 
             // Act
-            chatbotController.Index().ConfigureAwait(false);
+            chatbotController.Setup().ConfigureAwait(false);
 
             // Assert
             mediator.Received().SendAsync(
@@ -65,22 +67,23 @@
                 MessengerAccounts = new List<Messenger>
                 {
                     new Messenger {
-                        Type= MessengerType.Letstalk,
-                        Enabled=true
+                        Type = MessengerType.Letstalk,
+                        Enabled = true
                     }
                 }
             };
+            userSession.RoleId.Returns((byte)4);
 
             var viewModel = new ChatBotViewModel(user, Enumerable.Empty<Function>());
 
             mediator.SendAsync(Arg.Any<SetUpChatBotQuery>()).Returns(Task.FromResult(viewModel));
 
             // Act
-            var result = chatbotController.Index().GetAwaiter().GetResult() as ViewResult;
+            var result = chatbotController.Setup().GetAwaiter().GetResult() as ViewResult;
 
             // Assert
             Assert.True(result.ViewName.Equals("ChatBotSetting")
-                && compareLogic.Compare(new ChatBotSettingViewModel(viewModel), result.Model).AreEqual);
+                && compareLogic.Compare(new ChatBotSettingViewModel(viewModel, Enumeration.FromValue<UserLevel>(userSession.RoleId).DisplayName), result.Model).AreEqual);
         }
 
         [Test]
@@ -92,17 +95,18 @@
                 CustId = 1,
                 MessengerAccounts = new List<Messenger>()
             };
+            userSession.RoleId.Returns((byte)4);
 
             var viewModel = new ChatBotViewModel(user, Enumerable.Empty<Function>());
 
             mediator.SendAsync(Arg.Any<SetUpChatBotQuery>()).Returns(Task.FromResult(viewModel));
 
             // Act
-            var result = chatbotController.Index().GetAwaiter().GetResult() as ViewResult;
+            var result = chatbotController.Setup().GetAwaiter().GetResult() as ViewResult;
 
             // Assert
             Assert.True(result.ViewName.Equals("RegisterAccount")
-                && compareLogic.Compare(new RegisterAccountViewModel(viewModel, string.Empty), result.Model).AreEqual);
+                && compareLogic.Compare(new RegisterAccountViewModel(viewModel, string.Empty, Enumeration.FromValue<UserLevel>(userSession.RoleId).DisplayName), result.Model).AreEqual);
         }
 
         [Test]

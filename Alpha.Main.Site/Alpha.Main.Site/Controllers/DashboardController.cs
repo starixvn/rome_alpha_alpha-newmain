@@ -3,6 +3,7 @@
 namespace Alpha.Main.Site.Controllers
 {
     using System;
+    using System.Threading.Tasks;
     using System.Web.Mvc;
     using System.Web.SessionState;
     using Alpha.Main.Configurations;
@@ -11,6 +12,7 @@ namespace Alpha.Main.Site.Controllers
     using Requests.Dashboard.BalanceInfo;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
+    using TelegramBot.Client.Services;
     using ViewModels.Dashboard;
     using Web;
 
@@ -19,20 +21,28 @@ namespace Alpha.Main.Site.Controllers
     {
         private readonly IMediator mediator;
         private readonly IUserSession userSession;
+        private readonly IBotService botService;
 
-        public DashboardController(IMediator mediator, IUserSession userSession)
+        public DashboardController(IMediator mediator, IUserSession userSession, IBotService botService)
         {
             this.mediator = mediator;
             this.userSession = userSession;
+            this.botService = botService;
         }
 
         [HttpGet]
         [AllowProtectedMode]
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
             if (userSession.IsProtectedMode)
             {
                 return View("~/Views/Dashboard/IndexProtectedMode.cshtml");
+            }
+
+            if (AppSettings.TelegramBotIsShowBanner)
+            {
+                var bot = await botService.GetBySystem(AppSettings.SiteGroup);
+                return View($"~/Views/Dashboard/ChatBotBanner{(AppSettings.IsMBCSite ? "i1" : "i7")}.cshtml", (object)bot?.DisplayName);
             }
 
             if (AppSettings.IsShowEmptyDashboard)

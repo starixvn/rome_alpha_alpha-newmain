@@ -361,11 +361,116 @@
   <data name="actionExample" xml:space="preserve">
     <value>動作示例</value>
   </data>
-  <data name="BalanceInfoReport" xml:space="preserve">
-    <value>餘額資料報告</value>
+  <data name="BalanceInfo" xml:space="preserve">
+    <value>Balance Info</value>
   </data>
-  <data name="ComingSoon" xml:space="preserve">
-    <value>2022年7月19日 即將上線</value>
+  <data name="Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="EnableDisable" xml:space="preserve">
+    <value>啟用/禁用</value>
+  </data>
+  <data name="EnterOTP" xml:space="preserve">
+    <value>輸入一次性密碼發送從Telegram Chatbot以驗證您的賬戶 （一次性密碼將會在三分鐘內終止）</value>
+  </data>
+  <data name="GeneratePrivateQRCode" xml:space="preserve">
+    <value>產生二維碼</value>
+  </data>
+  <data name="HowItWorks" xml:space="preserve">
+    <value>如何使用</value>
+  </data>
+  <data name="InstallTelegram" xml:space="preserve">
+    <value>在 Google Play/App Store 下載應用程序，或點擊&lt;strong&gt;顯示二維碼&lt;/strong&gt;並使用手機掃描二維碼：</value>
+  </data>
+  <data name="IntroTelegramChatbot" xml:space="preserve">
+    <value>&lt;strong&gt;Telegram Chatbot&lt;/strong&gt;讓您無需訪問代理網即可通過Chatbot進行通訊來獲取最新的業務訊息。Chatbot在Telegram上運動 - 免費、安全、加密和跨平台 即時消息應用程序&lt;br /&gt; 要設置Chatbot, 請根據以下說明操作：</value>
+  </data>
+  <data name="IntroTelegramReports" xml:space="preserve">
+    <value>使用Telegram Chatbot, 您可以直接在Telegram上獲取以下報告，無需訪問代理網：&lt;br /&gt; 在Chatbot上輸入“/help”以獲取完整的指令列表。</value>
+  </data>
+  <data name="lblOTP" xml:space="preserve">
+    <value>一次性密碼</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>通告</value>
+  </data>
+  <data name="NotificationAndSettings" xml:space="preserve">
+    <value>通告和設定</value>
+  </data>
+  <data name="NotificationAndSettingsIntro" xml:space="preserve">
+    <value>選擇哪個報告您是需要通過Telegram Chatbot 通知：</value>
+  </data>
+  <data name="OrUseThisLink" xml:space="preserve">
+    <value>或者點擊此鏈接：</value>
+  </data>
+  <data name="OTPIsExpiredMessage" xml:space="preserve">
+    <value>OTP 已過期，請&lt;span id="btnResend" class="link resend-code"&gt;點擊此處&lt;/span&gt;產生新的 OTP。</value>
+  </data>
+  <data name="Outstanding" xml:space="preserve">
+    <value>Outstanding</value>
+  </data>
+  <data name="PersonalMessage" xml:space="preserve">
+    <value>Personal Message</value>
+  </data>
+  <data name="ProblemAccount" xml:space="preserve">
+    <value>Problem Account</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>報告</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>报告</value>
+  </data>
+  <data name="ResendOTPSuccessfully" xml:space="preserve">
+    <value>重新發送一次性密碼</value>
+  </data>
+  <data name="ScanQRCode" xml:space="preserve">
+    <value>使用您的移動設備掃描二維以開啟Telegram Chatbot</value>
+  </data>
+  <data name="SeeHowItWorks" xml:space="preserve">
+    <value>查看如何使用</value>
+  </data>
+  <data name="SelectStartOnTelegramChatbot" xml:space="preserve">
+    <value>點擊&lt;strong&gt;開始&lt;/strong&gt;Telegram Chatbot，然後進行下一步</value>
+  </data>
+  <data name="StartSettingUp" xml:space="preserve">
+    <value>使用您的電話號碼註冊Telegram，然後點擊 &lt;strong&gt;產生二維碼&lt;/strong&gt;</value>
+  </data>
+  <data name="Telegram" xml:space="preserve">
+    <value>Telegram</value>
+  </data>
+  <data name="TelegramMessengerInc" xml:space="preserve">
+    <value>Telegram Messenger Inc.</value>
+  </data>
+  <data name="TodayWinLossNew" xml:space="preserve">
+    <value>Today Win Loss</value>
+  </data>
+  <data name="UnsubscribeTelegramBotWarning" xml:space="preserve">
+    <value>您確定要取消鏈接？</value>
+  </data>
+  <data name="VerifyOTP" xml:space="preserve">
+    <value>核實一次性密碼</value>
+  </data>
+  <data name="YesterdayWinLossNotificationDescription" xml:space="preserve">
+    <value>Daily send the total row of Alpha Win Loss report of yesterday at 3:00PM (GMT-4)</value>
+  </data>
+  <data name="YouCanTurnOnOff" xml:space="preserve">
+    <value>您可以在此處或通過 Telegram Chatbot 中的設置開啟/關閉上述任何通知。</value>
+  </data>
+  <data name="ChatID" xml:space="preserve">
+    <value>聊天 ID</value>
+  </data>
+  <data name="HasUnlinkedMessage" xml:space="preserve">
+    <value>您的Telegram已與{0}取消鏈接</value>
+  </data>
+  <data name="StartBeforeInputOTP" xml:space="preserve">
+    <value>在輸入一次密碼前，請在Telegram Chatbot 點擊 &lt;strong&gt; 開始 &lt;/strong&gt;</value>
+  </data>
+  <data name="OTPIsRequired" xml:space="preserve">
+    <value>請輸入一次性密碼</value>
+  </data>
+  <data name="InvalidOTP" xml:space="preserve">
+    <value>一次性密碼不正確，請再次嘗試</value>
   </data>
   <data name="Introducing" xml:space="preserve">
     <value>簡介</value>
@@ -378,6 +483,12 @@
   </data>
   <data name="LatestNotifications" xml:space="preserve">
     <value>最新通知</value>
+  </data>
+  <data name="SetupNow" xml:space="preserve">
+    <value>立即設置</value>
+  </data>
+  <data name="BalanceInfoReport" xml:space="preserve">
+    <value>餘額資料報告</value>
   </data>
   <data name="OutstandingReport" xml:space="preserve">
     <value>未結束交易報告</value>

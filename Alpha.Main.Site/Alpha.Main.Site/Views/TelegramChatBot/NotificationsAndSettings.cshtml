@@ -1,0 +1,47 @@
+﻿@model Alpha.Main.Site.ViewModels.TelegramChatBot.ChatBotSettingViewModel
+
+<div class="panel chatbot-setting">
+    <div class="panel-heading" role="tab" id="headingNotification">
+        <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#notification" aria-expanded="false" aria-controls="notification">
+                @ChatBot.NotificationAndSettings
+            </a>
+        </h4>
+    </div>
+    <div id="notification" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingNotification">
+        <div class="panel-body has-padding">
+            <p>@ChatBot.NotificationAndSettingsIntro</p>
+            <table class="tblRpt tblRpt-bordered tbl-notifications">
+                <thead>
+                    <tr>
+                        <th class="col-notification">@ChatBot.Notification</th>
+                        <th>@ChatBot.Description</th>
+                        <th class="col-enable">@ChatBot.EnableDisable</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var function in Model.NotificationFunctions)
+                    {
+                        <tr>
+                            <td class="text-center bold">@function.FunctionName</td>
+                            <td>@Html.Raw(function.Description)</td>
+                            <td class="text-center">
+                                <label class="switch">
+                                    <input data-functionId="@function.FunctionId" 
+                                           data-functionName="@function.FunctionName"
+                                           data-type="@function.Type"
+                                           type="checkbox" 
+                                           class="function"
+                                           @(function.Enabled ? "checked" : string.Empty)
+                                           />
+                                    <span class="slider"></span>
+                                </label>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div>@ChatBot.YouCanTurnOnOff</div>
+        </div>
+    </div>
+</div>

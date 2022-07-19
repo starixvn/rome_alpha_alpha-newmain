@@ -124,6 +124,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Balance Info.
+        /// </summary>
+        public static string BalanceInfo {
+            get {
+                return ResourceManager.GetString("BalanceInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Balance Info Report.
         /// </summary>
         public static string BalanceInfoReport {
@@ -178,6 +187,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chat ID.
+        /// </summary>
+        public static string ChatID {
+            get {
+                return ResourceManager.GetString("ChatID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your request is being processed now, please wait....
         /// </summary>
         public static string cloneAccountNotification {
@@ -210,6 +228,33 @@ namespace Alpha.Main.AppResources {
         public static string Command {
             get {
                 return ResourceManager.GetString("Command", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable/Disable.
+        /// </summary>
+        public static string EnableDisable {
+            get {
+                return ResourceManager.GetString("EnableDisable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the OTP sent from Telegram Chatbot to verify your account (OTP will expire within 3 minutes):.
+        /// </summary>
+        public static string EnterOTP {
+            get {
+                return ResourceManager.GetString("EnterOTP", resourceCulture);
             }
         }
         
@@ -277,11 +322,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generate QR Code.
+        /// </summary>
+        public static string GeneratePrivateQRCode {
+            get {
+                return ResourceManager.GetString("GeneratePrivateQRCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gross Comm.
         /// </summary>
         public static string grossComm {
             get {
                 return ResourceManager.GetString("grossComm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Telegram has been unlinked with {0}..
+        /// </summary>
+        public static string HasUnlinkedMessage {
+            get {
+                return ResourceManager.GetString("HasUnlinkedMessage", resourceCulture);
             }
         }
         
@@ -313,6 +376,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to How it works.
+        /// </summary>
+        public static string HowItWorks {
+            get {
+                return ResourceManager.GetString("HowItWorks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Input command.
         /// </summary>
         public static string inputCommand {
@@ -327,6 +399,15 @@ namespace Alpha.Main.AppResources {
         public static string InstallLetstalk {
             get {
                 return ResourceManager.GetString("InstallLetstalk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download the application on Google Play/App Store, or click &lt;strong&gt;Show QR Code&lt;/strong&gt; and scan the QR code using your phone:.
+        /// </summary>
+        public static string InstallTelegram {
+            get {
+                return ResourceManager.GetString("InstallTelegram", resourceCulture);
             }
         }
         
@@ -403,6 +484,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;strong&gt;Telegram Chatbot&lt;/strong&gt; enables you to get up-to-date business information by communicating with the chatbot without accessing to the Agency Site. The chatbot runs on Telegram – a free, secured, encrypted, and cross-platform instant message application.&lt;br /&gt;To setup the chatbot, please follow the instructions below:.
+        /// </summary>
+        public static string IntroTelegramChatbot {
+            get {
+                return ResourceManager.GetString("IntroTelegramChatbot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Using Telegram Chatbot, you can get the following reports right on Telegram without accessing to the Agency Site: &lt;br /&gt; Type &quot;/help&quot; on the chatbot for the full commands list..
+        /// </summary>
+        public static string IntroTelegramReports {
+            get {
+                return ResourceManager.GetString("IntroTelegramReports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A bot named &quot;&lt;strong&gt;Atom&lt;/strong&gt;&quot; has sent you a 6-digits verification code via Letstalk IM. To verify your Letstalk ID, please input the verification code..
         /// </summary>
         public static string IntroVerificationCode {
@@ -417,6 +516,15 @@ namespace Alpha.Main.AppResources {
         public static string InvalidCaptcha {
             get {
                 return ResourceManager.GetString("InvalidCaptcha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OTP is incorrect, please try again.
+        /// </summary>
+        public static string InvalidOTP {
+            get {
+                return ResourceManager.GetString("InvalidOTP", resourceCulture);
             }
         }
         
@@ -444,6 +552,15 @@ namespace Alpha.Main.AppResources {
         public static string lblMessageSelfDestruct {
             get {
                 return ResourceManager.GetString("lblMessageSelfDestruct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OTP.
+        /// </summary>
+        public static string lblOTP {
+            get {
+                return ResourceManager.GetString("lblOTP", resourceCulture);
             }
         }
         
@@ -529,6 +646,33 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Notification.
+        /// </summary>
+        public static string Notification {
+            get {
+                return ResourceManager.GetString("Notification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notifications and Settings.
+        /// </summary>
+        public static string NotificationAndSettings {
+            get {
+                return ResourceManager.GetString("NotificationAndSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose which reports you want Telegram Chatbot to notify you:.
+        /// </summary>
+        public static string NotificationAndSettingsIntro {
+            get {
+                return ResourceManager.GetString("NotificationAndSettingsIntro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Notification Example.
         /// </summary>
         public static string notificationExample {
@@ -552,6 +696,42 @@ namespace Alpha.Main.AppResources {
         public static string OneHour {
             get {
                 return ResourceManager.GetString("OneHour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Or click this link:.
+        /// </summary>
+        public static string OrUseThisLink {
+            get {
+                return ResourceManager.GetString("OrUseThisLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OTP is expired, please &lt;span id=&quot;btnResend&quot; class=&quot;link resend-code&quot;&gt;click here&lt;/span&gt; to generate new OTP..
+        /// </summary>
+        public static string OTPIsExpiredMessage {
+            get {
+                return ResourceManager.GetString("OTPIsExpiredMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter OTP..
+        /// </summary>
+        public static string OTPIsRequired {
+            get {
+                return ResourceManager.GetString("OTPIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Outstanding.
+        /// </summary>
+        public static string Outstanding {
+            get {
+                return ResourceManager.GetString("Outstanding", resourceCulture);
             }
         }
         
@@ -588,6 +768,15 @@ namespace Alpha.Main.AppResources {
         public static string OverMaxAddAccountTimes {
             get {
                 return ResourceManager.GetString("OverMaxAddAccountTimes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Message.
+        /// </summary>
+        public static string PersonalMessage {
+            get {
+                return ResourceManager.GetString("PersonalMessage", resourceCulture);
             }
         }
         
@@ -655,11 +844,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Problem Account.
+        /// </summary>
+        public static string ProblemAccount {
+            get {
+                return ResourceManager.GetString("ProblemAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Read.
         /// </summary>
         public static string Read {
             get {
                 return ResourceManager.GetString("Read", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report.
+        /// </summary>
+        public static string Report {
+            get {
+                return ResourceManager.GetString("Report", resourceCulture);
             }
         }
         
@@ -673,11 +880,65 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reports.
+        /// </summary>
+        public static string Reports {
+            get {
+                return ResourceManager.GetString("Reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Resend.
         /// </summary>
         public static string Resend {
             get {
                 return ResourceManager.GetString("Resend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resent OTP..
+        /// </summary>
+        public static string ResendOTPSuccessfully {
+            get {
+                return ResourceManager.GetString("ResendOTPSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scan this QR Code using your mobile device to open Telegram Chatbot.
+        /// </summary>
+        public static string ScanQRCode {
+            get {
+                return ResourceManager.GetString("ScanQRCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to See how it works.
+        /// </summary>
+        public static string SeeHowItWorks {
+            get {
+                return ResourceManager.GetString("SeeHowItWorks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click &lt;strong&gt;START&lt;/strong&gt; on Telegram Chatbot then proceed to the next step.
+        /// </summary>
+        public static string SelectStartOnTelegramChatbot {
+            get {
+                return ResourceManager.GetString("SelectStartOnTelegramChatbot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set Up Now.
+        /// </summary>
+        public static string SetupNow {
+            get {
+                return ResourceManager.GetString("SetupNow", resourceCulture);
             }
         }
         
@@ -718,6 +979,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please click &lt;strong&gt;START&lt;/strong&gt; on Telegram Chatbot before you input the OTP..
+        /// </summary>
+        public static string StartBeforeInputOTP {
+            get {
+                return ResourceManager.GetString("StartBeforeInputOTP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign up on Telegram using your phone number, and click &lt;strong&gt;Generate QR Code&lt;/strong&gt;.
+        /// </summary>
+        public static string StartSettingUp {
+            get {
+                return ResourceManager.GetString("StartSettingUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to System Announcement.
         /// </summary>
         public static string systemAnnouncement {
@@ -732,6 +1011,24 @@ namespace Alpha.Main.AppResources {
         public static string systemAnnouncementSample {
             get {
                 return ResourceManager.GetString("systemAnnouncementSample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telegram.
+        /// </summary>
+        public static string Telegram {
+            get {
+                return ResourceManager.GetString("Telegram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telegram Messenger Inc..
+        /// </summary>
+        public static string TelegramMessengerInc {
+            get {
+                return ResourceManager.GetString("TelegramMessengerInc", resourceCulture);
             }
         }
         
@@ -781,6 +1078,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Today Win Loss.
+        /// </summary>
+        public static string TodayWinLossNew {
+            get {
+                return ResourceManager.GetString("TodayWinLossNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 12 hours.
         /// </summary>
         public static string TwelveHours {
@@ -795,6 +1101,15 @@ namespace Alpha.Main.AppResources {
         public static string unLink {
             get {
                 return ResourceManager.GetString("unLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to unlink?.
+        /// </summary>
+        public static string UnsubscribeTelegramBotWarning {
+            get {
+                return ResourceManager.GetString("UnsubscribeTelegramBotWarning", resourceCulture);
             }
         }
         
@@ -853,6 +1168,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Verify OTP.
+        /// </summary>
+        public static string VerifyOTP {
+            get {
+                return ResourceManager.GetString("VerifyOTP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please verify your Letstalk ID to use the below functions..
         /// </summary>
         public static string VerifyTooltip {
@@ -889,11 +1213,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Daily send the total row of Alpha Win Loss report of yesterday at 3:00PM (GMT-4).
+        /// </summary>
+        public static string YesterdayWinLossNotificationDescription {
+            get {
+                return ResourceManager.GetString("YesterdayWinLossNotificationDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Yesterday WL.
         /// </summary>
         public static string YesterdayWL {
             get {
                 return ResourceManager.GetString("YesterdayWL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can turn on/off any of the above notifications right here, or via Settings in Telegram Chatbot..
+        /// </summary>
+        public static string YouCanTurnOnOff {
+            get {
+                return ResourceManager.GetString("YouCanTurnOnOff", resourceCulture);
             }
         }
         

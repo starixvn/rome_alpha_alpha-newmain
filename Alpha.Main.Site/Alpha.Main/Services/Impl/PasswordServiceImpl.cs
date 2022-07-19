@@ -1,18 +1,18 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text.RegularExpressions;
+    using System.Threading.Tasks;
     using AppResources;
     using Criteria.Password;
     using DataAccesses;
     using Fanex.Cryptography.Aes;
     using Fanex.Data.Repository;
-    using Fanex.Logging.Extensions.Web;
     using Models;
     using Params;
     using Params.Password;
     using Sunplus.Agent.Utilities;
-    using System;
-    using System.Collections.Generic;
-    using System.Text.RegularExpressions;
 
     public class PasswordServiceImpl : PasswordService
     {
@@ -29,6 +29,7 @@
         private readonly KickoutCustomerService kickoutCustomerService;
         private readonly IDynamicRepository dynamicRepository;
         private readonly INetThrottlingService netThrottlingService;
+        private readonly TelegramBotService telegramBotService;
 
         public PasswordServiceImpl(
             Encryptor encryptor,
@@ -36,7 +37,8 @@
             IAesService aes,
             KickoutCustomerService kickoutCustomerService,
             IDynamicRepository dynamicRepository,
-            INetThrottlingService netThrottlingService)
+            INetThrottlingService netThrottlingService,
+            TelegramBotService telegramBotService)
         {
             this.encryptor = encryptor;
             this.passwordDataAccess = passwordDataAccess;
@@ -44,6 +46,7 @@
             this.kickoutCustomerService = kickoutCustomerService;
             this.dynamicRepository = dynamicRepository;
             this.netThrottlingService = netThrottlingService;
+            this.telegramBotService = telegramBotService;
         }
 
         public Result ChangeMainAccountPassword(ChangeMainAccountPasswordParam param)
@@ -84,19 +87,27 @@
 
             var updateResult = passwordDataAccess.UpdatePassword(criteria);
 
-            if (updateResult.IsSuccessful && param.IsIndirectLoggedIn)
+            if (updateResult.IsSuccessful)
             {
-                UpdateLastChangePasswordIndirectAccount(new UpdateLastChangePasswordIndirectAccountParam
+                if (param.IsIndirectLoggedIn)
                 {
-                    CustId = param.IndirectCustId,
-                    CustIdIndirect = param.CustId,
-                    DownlineUsername = param.ActorName,
-                    IP = param.IP,
-                    Language = param.LanguageKey,
-                    SubAccId = param.IndirectSubAccId,
-                    SubAccIdIndirect = param.SubAccountId,
-                    UplineUsername = param.IndirectUsername
-                });
+                    UpdateLastChangePasswordIndirectAccount(new UpdateLastChangePasswordIndirectAccountParam
+                    {
+                        CustId = param.IndirectCustId,
+                        CustIdIndirect = param.CustId,
+                        DownlineUsername = param.ActorName,
+                        IP = param.IP,
+                        Language = param.LanguageKey,
+                        SubAccId = param.IndirectSubAccId,
+                        SubAccIdIndirect = param.SubAccountId,
+                        UplineUsername = param.IndirectUsername
+                    });
+                }
+
+                if (!param.CustLevel.IsMemberLevel())
+                {
+                    Task.Run(() => telegramBotService.NotifyChangePassword(param.CustId, 0));
+                }
             }
 
             return updateResult;
@@ -139,19 +150,28 @@
             };
 
             var updateResult = passwordDataAccess.UpdatePassword(criteria);
-            if (updateResult.IsSuccessful && param.IsIndirectLoggedIn)
+
+            if (updateResult.IsSuccessful)
             {
-                UpdateLastChangePasswordIndirectAccount(new UpdateLastChangePasswordIndirectAccountParam
+                if (param.IsIndirectLoggedIn)
                 {
-                    CustId = param.IndirectCustId,
-                    CustIdIndirect = param.CustId,
-                    DownlineUsername = param.ActorName,
-                    IP = param.IP,
-                    Language = param.LanguageKey,
-                    SubAccId = param.IndirectSubAccId,
-                    SubAccIdIndirect = param.SubAccountId,
-                    UplineUsername = param.IndirectUsername
-                });
+                    UpdateLastChangePasswordIndirectAccount(new UpdateLastChangePasswordIndirectAccountParam
+                    {
+                        CustId = param.IndirectCustId,
+                        CustIdIndirect = param.CustId,
+                        DownlineUsername = param.ActorName,
+                        IP = param.IP,
+                        Language = param.LanguageKey,
+                        SubAccId = param.IndirectSubAccId,
+                        SubAccIdIndirect = param.SubAccountId,
+                        UplineUsername = param.IndirectUsername
+                    });
+                }
+
+                if (!param.CustLevel.IsMemberLevel())
+                {
+                    Task.Run(() => telegramBotService.NotifyChangePassword(param.CustId, param.SubAccountId));
+                }
             }
 
             return updateResult;
@@ -195,11 +215,19 @@
 
             if (updateResult.IsSuccessful)
             {
-                KickoutCustomer(new KickoutCustomerParam(
-                    param.CustId,
-                    param.CustLevel,
-                    param.ServerId,
-                    param.IP));
+                Task.Run(() =>
+                {
+                    kickoutCustomerService.Kickout(new KickoutCustomerParam(
+                        param.CustId,
+                        param.CustLevel,
+                        param.ServerId,
+                        param.IP));
+
+                    if (!param.CustLevel.IsMemberLevel())
+                    {
+                        telegramBotService.NotifyChangePassword(param.CustId, 0);
+                    }
+                });
             }
 
             return updateResult;
@@ -273,30 +301,23 @@
             {
                 netThrottlingService.Throttle();
 
-                KickoutCustomer(new KickoutCustomerParam(
-                    param.CustId,
-                    param.CustLevel,
-                    param.ServerId,
-                    param.IP,
-                    param.SubAccountId));
+                Task.Run(() =>
+                {
+                    kickoutCustomerService.Kickout(new KickoutCustomerParam(
+                        param.CustId,
+                        param.CustLevel,
+                        param.ServerId,
+                        param.IP,
+                        param.SubAccountId));
+
+                    if (!param.CustLevel.IsMemberLevel())
+                    {
+                        telegramBotService.NotifyChangePassword(param.CustId, param.SubAccountId);
+                    }
+                });
             }
 
             return updateResult;
-        }
-
-        internal void KickoutCustomer(KickoutCustomerParam param)
-        {
-            try
-            {
-                if (!param.IsDisabledRecheckin)
-                {
-                    kickoutCustomerService.Kickout(param);
-                }
-            }
-            catch (Exception ex)
-            {
-                ExceptionHandler.Handle(ex);
-            }
         }
 
         private Result Validate(

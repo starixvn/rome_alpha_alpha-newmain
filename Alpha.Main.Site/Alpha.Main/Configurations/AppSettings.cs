@@ -294,6 +294,12 @@
 
         public static string ContactUsNewDomains => Settings["newdomains"];
 
+        public static Uri TelegramBotClientUri => new Uri(Settings["TelegramBotClientUri"]);
+
+        public static bool TelegramBotIsShowBanner
+            => !string.IsNullOrWhiteSpace(Settings["TelegramBotEndDateShowBanner"])
+            && DateTime.Parse(Settings["TelegramBotEndDateShowBanner"]) >= DateTime.Today;
+
         public static int CDNReCheckinIntervalInSeconds
             => int.Parse(Settings["CDNReCheckin:IntervalInSeconds"] ?? "60");
     }

@@ -1,0 +1,26 @@
+﻿@model LanguageViewModel
+<div href="javascript:;" data-target="#" class="dropdown-toggle language-selector-container" data-toggle="dropdown" aria-expanded="false">
+    <span class="caret"></span>
+</div>
+<ul class="dropdown-menu list-language" id="language" data-currentlanguage="@Model.CurrentLanguage">
+    @foreach (var languageItem in Model.Data)
+    {
+        var langCodeClass = languageItem.Key.ToLowerInvariant();
+
+        if (languageItem.Key.Equals("zh-Hant"))
+        {
+            langCodeClass = "zh-tw";
+        }
+
+        if (languageItem.Key.Equals("zh-Hans"))
+        {
+            langCodeClass = "zh-cn";
+        }
+
+        <li class="@languageItem.Key">
+            <a class="changelanguage-link" data-value="@languageItem.Key">
+                <span class="icon-flag langFlag-@langCodeClass"></span>@languageItem.Value
+            </a>
+        </li>
+    }
+</ul>

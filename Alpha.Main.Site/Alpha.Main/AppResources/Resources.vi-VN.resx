@@ -631,7 +631,7 @@
     <value>Vui lòng nhấn vào biểu tượng {0} để xem thông tin tổng quan.</value>
   </data>
   <data name="PartialUMAnnouncement" xml:space="preserve">
-    <value>Hệ thống hiện đang bận nên chức năng này tạm thời bị gián đoạn {0} - {1} (GMT+8). Xin vui lòng thử lại sau. Chúng tôi rất xin lỗi vì sự bất tiện này.</value>
+    <value>Chúng tôi đang nâng cấp chức năng này để có trải nghiệm tốt hơn. Do đó, chức năng này tạm gián đoạn ({0} - {1} (GMT+8)). Xin lỗi vì sự bất tiện này, vui lòng thử lại sau.</value>
   </data>
   <data name="LiveMessage" xml:space="preserve">
     <value>Live Message</value>

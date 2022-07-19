@@ -152,11 +152,13 @@
                 return validateResult;
             }
 
+            var custLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
             var result = ChangeSecurityCode(new ChangeSecurityCodeParam
             {
                 CustId = message.CustId,
                 SubAccId = message.SubAccId,
                 UserId = message.UserId,
+                IsMemberLevel = custLevel.IsMemberLevel(),
                 NewSecurityCode = message.SecurityCode,
                 Language = message.Language,
                 IP = message.IP,
@@ -191,11 +193,13 @@
                 return validateResult;
             }
 
+            var custLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
             var result = ChangeSecurityCode(new ChangeSecurityCodeParam
             {
                 CustId = message.CustId,
                 SubAccId = message.SubAccId,
                 UserId = message.UserId,
+                IsMemberLevel = custLevel.IsMemberLevel(),
                 NewSecurityCode = message.SecurityCode,
                 Language = message.Language,
                 IP = message.IP,
@@ -228,11 +232,13 @@
                 return validateResult;
             }
 
+            var custLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
             var param = new ChangeSecurityCodeParam
             {
                 CustId = message.CustId,
                 SubAccId = message.SubAccId,
                 UserId = message.UserId,
+                IsMemberLevel = custLevel.IsMemberLevel(),
                 NewSecurityCode = message.SecurityCode,
                 Language = message.Language,
                 IP = message.IP,
@@ -346,15 +352,15 @@
 
         private CustomResult ResetDownlineSecurityCode(ResetSecurityCodeCommand command)
         {
-            var isResetMember = Enumeration.FromValue<UserLevel>(userSession.RoleId).Equals(UserLevel.Agent);
-
+            var custLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
             var result = securityCodeService.ChangeMainAccountSecurityCode(
                 new ChangeSecurityCodeParam
                 {
                     CustId = command.CustId.Value,
                     UserId = userSession.UserId,
                     SubAccId = userSession.SubAccId,
-                    IsResetMember = isResetMember,
+                    IsMemberLevel = custLevel.IsMemberLevel(),
+                    IsResetMember = custLevel.Equals(UserLevel.Agent),
                     NewSecurityCode = command.SecurityCode,
                     Language = command.Language,
                     IP = command.IP,
@@ -371,12 +377,14 @@
 
         private CustomResult ResetSubAccountSecurityCode(ResetSecurityCodeCommand command)
         {
+            var custLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
             var result = securityCodeService.ResetSubAccountSecurityCode(
                 new ResetSecurityCodeParam
                 {
                     CustId = userSession.CustId,
                     UserId = userSession.UserId,
                     SubAccId = command.SubAccId.Value,
+                    IsMemberLevel = custLevel.IsMemberLevel(),
                     NewSecurityCode = command.SecurityCode,
                     Language = command.Language,
                     IP = command.IP

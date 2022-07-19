@@ -13,6 +13,9 @@
         public const string Korean = "ko-KR";
         public const string Vietnamese = "vi-VN";
 
+        public const string NewChineseTraditional = "zh-Hant";
+        public const string NewChineseSimplified = "zh-Hans";
+
         public const string Default = English;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]
@@ -39,9 +42,37 @@
             [Vietnamese] = "Tiếng Việt"
         };
 
+        public static readonly Dictionary<string, string> TelegramChatBotCodeNames = new Dictionary<string, string>
+        {
+            [English] = "English",
+            [NewChineseTraditional] = "繁體中文",
+            [NewChineseSimplified] = "简体中文",
+            [Thai] = "ภาษาไทย",
+            [Vietnamese] = "Tiếng Việt"
+        };
+
+        public static readonly Dictionary<string, string> TelegramChatBotCodeNamesWithoutVietNamese = TelegramChatBotCodeNames
+            .Where(langauge => langauge.Key != Vietnamese)
+            .ToDictionary(language => language.Key, language => language.Value);
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]
         public static readonly Dictionary<string, string> CodeNamesWithoutVietNamese = CodeNames
             .Where(langauge => langauge.Key != Vietnamese)
             .ToDictionary(language => language.Key, language => language.Value);
+
+        public static string MapNewChineseLanguageCode(string languageCode)
+        {
+            switch (languageCode)
+            {
+                case ChineseTraditional:
+                    return NewChineseTraditional;
+
+                case ChineseSimplified:
+                    return NewChineseSimplified;
+
+                default:
+                    return languageCode;
+            }
+        }
     }
 }

@@ -363,11 +363,116 @@
   <data name="ChatBotTitle" xml:space="preserve">
     <value>Chatbot</value>
   </data>
-  <data name="BalanceInfoReport" xml:space="preserve">
-    <value>Báo Cáo Tài Khoản</value>
+  <data name="BalanceInfo" xml:space="preserve">
+    <value>Balance Info</value>
   </data>
-  <data name="ComingSoon" xml:space="preserve">
-    <value>Sắp Ra Mắt vào 19 Tháng 7, 2022</value>
+  <data name="Description" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="EnableDisable" xml:space="preserve">
+    <value>Bật/Tắt</value>
+  </data>
+  <data name="EnterOTP" xml:space="preserve">
+    <value>Nhập OTP gửi từ Telegram Chatbot để xác nhận tài khoản của bạn (OTP sẽ hết hạn trong 3 phút):</value>
+  </data>
+  <data name="GeneratePrivateQRCode" xml:space="preserve">
+    <value>Tạo mã QR</value>
+  </data>
+  <data name="HowItWorks" xml:space="preserve">
+    <value>Hướng dẫn</value>
+  </data>
+  <data name="InstallTelegram" xml:space="preserve">
+    <value>Tải ứng dụng trên Google Play/App Store, hoặc nhấn &lt;strong&gt;Hiển thị mã QR&lt;/strong&gt; và quét mã QR bằng điện thoại của bạn:</value>
+  </data>
+  <data name="IntroTelegramChatbot" xml:space="preserve">
+    <value>&lt;strong&gt;Telegram Chatbot&lt;/strong&gt; giúp bạn cập nhật thông tin bằng cách tương tác với Chatbot mà không cần truy cập vào trang Agency. Chatbot chạy trên Telegram - một ứng dụng nhắn tin miễn phí, an toàn, được mã hóa, và đa nền tảng.&lt;br /&gt; Để cài đặt Chatbot, vui lòng làm theo hướng dẫn sau:</value>
+  </data>
+  <data name="IntroTelegramReports" xml:space="preserve">
+    <value>Khi dùng Telegram Chatbot, bạn có thể nhận được các thông báo sau ngay trên Telegram mà không cần truy cập trang Agency: &lt;br /&gt; Gõ "/help" trên Chatbot để xem danh sách lệnh đầy đủ.</value>
+  </data>
+  <data name="lblOTP" xml:space="preserve">
+    <value>OTP</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>Thông báo</value>
+  </data>
+  <data name="NotificationAndSettings" xml:space="preserve">
+    <value>Thông Báo và Cài Đặt</value>
+  </data>
+  <data name="NotificationAndSettingsIntro" xml:space="preserve">
+    <value>Chọn báo cáo mà bạn muốn Telegram Chatbot gửi cho bạn:</value>
+  </data>
+  <data name="OrUseThisLink" xml:space="preserve">
+    <value>Hoặc nhấn liên kết này:</value>
+  </data>
+  <data name="OTPIsExpiredMessage" xml:space="preserve">
+    <value>OTP đã hết hạn, vui lòng &lt;span id="btnResend" class="link resend-code"&gt;nhấn vào đây&lt;/span&gt; để tạo OTP mới.</value>
+  </data>
+  <data name="Outstanding" xml:space="preserve">
+    <value>Outstanding</value>
+  </data>
+  <data name="PersonalMessage" xml:space="preserve">
+    <value>Personal Message</value>
+  </data>
+  <data name="ProblemAccount" xml:space="preserve">
+    <value>Problem Account</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Báo cáo</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Báo cáo</value>
+  </data>
+  <data name="ResendOTPSuccessfully" xml:space="preserve">
+    <value>Đã gửi OTP.</value>
+  </data>
+  <data name="ScanQRCode" xml:space="preserve">
+    <value>Quét mã QR này trên thiết bị di động của bạn để mở Telegram Chatbot</value>
+  </data>
+  <data name="SeeHowItWorks" xml:space="preserve">
+    <value>Xem hướng dẫn</value>
+  </data>
+  <data name="SelectStartOnTelegramChatbot" xml:space="preserve">
+    <value>Nhấn &lt;strong&gt;BẮT ĐẦU&lt;/strong&gt; trên Telegram Chatbot để đi đến bước tiếp theo</value>
+  </data>
+  <data name="StartSettingUp" xml:space="preserve">
+    <value>Đăng ký tài khoản Telegram bằng số điện thoại của bạn, và nhấn &lt;strong&gt;Tạo mã QR&lt;/strong&gt;</value>
+  </data>
+  <data name="Telegram" xml:space="preserve">
+    <value>Telegram</value>
+  </data>
+  <data name="TelegramMessengerInc" xml:space="preserve">
+    <value>Telegram Messenger Inc.</value>
+  </data>
+  <data name="TodayWinLossNew" xml:space="preserve">
+    <value>Today Win Loss</value>
+  </data>
+  <data name="UnsubscribeTelegramBotWarning" xml:space="preserve">
+    <value>Bạn có chắc muốn hủy liên kết?</value>
+  </data>
+  <data name="VerifyOTP" xml:space="preserve">
+    <value>Xác nhận OTP</value>
+  </data>
+  <data name="YesterdayWinLossNotificationDescription" xml:space="preserve">
+    <value>Daily send the total row of Alpha Win Loss report of yesterday at 3:00PM (GMT-4)</value>
+  </data>
+  <data name="YouCanTurnOnOff" xml:space="preserve">
+    <value>Bạn có thể bật/tắt bất kỳ thông báo nào ở trên ngay tại đây, hoặc thông qua Cài Đặt trên Telegram Chatbot.</value>
+  </data>
+  <data name="ChatID" xml:space="preserve">
+    <value>ID trò chuyện</value>
+  </data>
+  <data name="HasUnlinkedMessage" xml:space="preserve">
+    <value>Telegram của bạn đã hủy liên kết với {0}</value>
+  </data>
+  <data name="StartBeforeInputOTP" xml:space="preserve">
+    <value>Vui lòng nhấn &lt;strong&gt;BẮT ĐẦU&lt;/strong&gt; trên Telegram Chatbot trước khi nhập OTP.</value>
+  </data>
+  <data name="OTPIsRequired" xml:space="preserve">
+    <value>Vui lòng nhập OTP.</value>
+  </data>
+  <data name="InvalidOTP" xml:space="preserve">
+    <value>OTP không đúng, vui lòng thử lại.</value>
   </data>
   <data name="Introducing" xml:space="preserve">
     <value>Giới thiệu</value>
@@ -380,6 +485,12 @@
   </data>
   <data name="LatestNotifications" xml:space="preserve">
     <value>Thông Báo Mới Nhất</value>
+  </data>
+  <data name="SetupNow" xml:space="preserve">
+    <value>Cài Đặt Ngay</value>
+  </data>
+  <data name="BalanceInfoReport" xml:space="preserve">
+    <value>Báo Cáo Tài Khoản</value>
   </data>
   <data name="OutstandingReport" xml:space="preserve">
     <value>Báo Cáo Tiền Chưa Xử Lý</value>

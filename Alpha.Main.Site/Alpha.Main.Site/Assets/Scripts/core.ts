@@ -6,7 +6,7 @@ var alpha = {
     {
         oldMainRootPath: top.document.getElementById('oldMainRootPath') != null
             ? (<HTMLInputElement>top.document.getElementById('oldMainRootPath')).value
-            : "not found",
+            : "/ex-main/",
         mainRootPath: top.document.getElementById('mainRootPath') != null
             ? (<HTMLInputElement>top.document.getElementById('mainRootPath')).value
                 : "not found",

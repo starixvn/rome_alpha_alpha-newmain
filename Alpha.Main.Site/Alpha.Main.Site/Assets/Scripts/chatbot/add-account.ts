@@ -159,7 +159,7 @@ class AddAccount extends BaseChatBot {
             this.$.ajax({
                 type: "POST",
                 url: alpha.urls.mainRootPath + "ChatBot/Unsubscribe",
-                dataType: "json",
+                dataType: "text",
                 success: self.onUnSubscribeSuccess,
                 complete: self.onComplete
             });

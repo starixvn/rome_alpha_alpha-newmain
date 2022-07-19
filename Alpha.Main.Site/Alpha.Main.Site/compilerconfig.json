@@ -104,10 +104,6 @@
     "inputFile": "Assets/styles/home/popup-announcement-dark.scss"
   },
   {
-    "outputFile": "Assets/styles/home/home-dark.css",
-    "inputFile": "Assets/styles/home/home-dark.scss"
-  },
-  {
     "outputFile": "Assets/styles/home/home-mobile-calculate-07-dark.css",
     "inputFile": "Assets/styles/home/home-mobile-calculate-07-dark.scss"
   },
@@ -164,6 +160,30 @@
     "inputFile": "Assets/styles/contact-us/contact-us-dark.scss"
   },
   {
+    "outputFile": "Assets/styles/telegramchatbot/chatbot-setting-dark.css",
+    "inputFile": "Assets/styles/telegramchatbot/chatbot-setting-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/telegramchatbot/chatbot-setting.css",
+    "inputFile": "Assets/styles/telegramchatbot/chatbot-setting.scss"
+  },
+  {
+    "outputFile": "Assets/styles/telegramchatbot/register-account-dark.css",
+    "inputFile": "Assets/styles/telegramchatbot/register-account-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/telegramchatbot/register-account.css",
+    "inputFile": "Assets/styles/telegramchatbot/register-account.scss"
+  },
+  {
+    "outputFile": "Assets/styles/telegramchatbot/chatbot.css",
+    "inputFile": "Assets/styles/telegramchatbot/chatbot.scss"
+  },
+  {
+    "outputFile": "Assets/styles/telegramchatbot/chatbot-dark.css",
+    "inputFile": "Assets/styles/telegramchatbot/chatbot-dark.scss"
+  },
+  {
     "outputFile": "Assets/styles/home/ChatBotBanneri7-dark.css",
     "inputFile": "Assets/styles/home/ChatBotBanneri7-dark.scss"
   },
@@ -178,5 +198,9 @@
   {
     "outputFile": "Assets/styles/home/ChatBotBanneri1.css",
     "inputFile": "Assets/styles/home/ChatBotBanneri1.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/home-dark.css",
+    "inputFile": "Assets/styles/home/home-dark.scss"
   }
 ]

@@ -1,0 +1,38 @@
+﻿@model Alpha.Main.Site.ViewModels.TelegramChatBot.ChatBotSettingViewModel
+
+@if (Model.ReportFunctions.Any())
+{
+    <div class="panel chatbot-setting">
+        <div class="panel-heading" role="tab" id="headingReport">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" href="#report" aria-expanded="false" aria-controls="report">
+                    @ChatBot.Reports
+                </a>
+            </h4>
+        </div>
+        <div id="report" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingReport">
+            <div class="panel-body has-padding">
+                <p>@Html.Raw(ChatBot.IntroTelegramReports)</p>
+                <table class="tblRpt tblRpt-bordered tbl-reports">
+                    <thead>
+                        <tr>
+                            <th class="col-report">@ChatBot.Report</th>
+                            <th>@ChatBot.Description</th>
+                            <th class="col-how-it-works">@ChatBot.HowItWorks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var function in Model.ReportFunctions)
+                        {
+                            <tr>
+                                <td class="text-center bold">@function.FunctionName</td>
+                                <td>@Html.Raw(function.Description)</td>
+                                <td><a role="button" class="btn-chatbot btn-how-it-works" href="@Model.HowToUseLink" target="_blank">@ChatBot.SeeHowItWorks</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}

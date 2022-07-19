@@ -10,28 +10,13 @@
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/ChatBotBanneri1")
     <style>
-        body {
-            background: transparent;
-        }
-
-        .icon-home {
-            margin-right: 0;
-        }
-
-            .icon-home:after {
-                content: none;
-            }
-
-        .text {
-            padding: 10px 0;
-            margin: 0;
-            font-size: 15px;
-        }
+        body { background: transparent; }
+        .icon-home { margin-right: 0; }
+        .icon-home:after { content: none; }
+        .text { padding: 10px 0; margin: 0; font-size: 15px; }
     </style>
     <style media="screen and (max-device-width: 768px)">
-        .text {
-            font-size: 20px;
-        }
+        .text { font-size: 20px; }
     </style>
 </head>
 <body>
@@ -63,7 +48,7 @@
                 <p class="intro-txt">@ChatBot.Introducing</p>
                 <h2 class="heading-txt"><span>@string.Format(ChatBot.IntroducingTitle, Model)</span> <img src="~/assets/images/icon-telegram.png" alt="Alternate Text" class="icon-tele img-res" /></h2>
                 <p class="description-txt">@ChatBot.IntroducingContent</p>
-                <p class="comming-soon">@ChatBot.ComingSoon</p>
+                <p class="btn-setup">@Html.ActionLink(ChatBot.SetupNow, "Setup", "TelegramChatBot")</p>
             </div>
         </div>
     </div>

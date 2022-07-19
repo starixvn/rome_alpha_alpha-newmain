@@ -1,6 +1,16 @@
 ﻿namespace Alpha.Main.Site.App_Start
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Configuration;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Net;
+    using System.Net.Http;
+    using System.Reflection;
+    using System.Threading;
+    using System.Web.Mvc;
     using Alpha.Captcha.Services;
+    using Alpha.Main.Configurations;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.NetThrottling;
     using Alpha.NetThrottling.Models;
@@ -32,12 +42,7 @@
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
-    using System;
-    using System.Collections.Generic;
-    using System.Configuration;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Reflection;
-    using System.Web.Mvc;
+    using TelegramBot.Client.Services;
     using Web.Helpers;
     using Web.Helpers.Impl;
 
@@ -126,7 +131,11 @@
                 container.GetInstance<JsonHelper>(),
                 container.GetInstance<INetThrottlingService>()));
 
-            container.RegisterPerWebRequest<SettingService, SettingServiceImpl>();
+            container.RegisterPerWebRequest<Chatbot.Client.Services.SettingService, SettingServiceImpl>();
+            container.RegisterPerWebRequest<ISettingService>(() => new TelegramBot.Client.Services.SettingService(CreateTelegramBotHttpClient()));
+            container.RegisterPerWebRequest<IBotService>(() => new BotService(CreateTelegramBotHttpClient()));
+            container.RegisterPerWebRequest<INotificationService>(() => new NotificationService(CreateTelegramBotHttpClient()));
+            container.RegisterPerWebRequest<TelegramBotService, TelegramBotServiceImpl>();
 
             container.RegisterPerWebRequest<IUser, User>();
             container.RegisterSingleton(() => AesService.Default);
@@ -186,6 +195,17 @@
             };
 
             return new RedisCache(redisCacheOptions);
+        }
+
+        private static HttpClient CreateTelegramBotHttpClient()
+        {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+            var telegramClient = HttpClientFactory.Create();
+            telegramClient.BaseAddress = AppSettings.TelegramBotClientUri;
+            telegramClient.DefaultRequestHeaders.Add("Accept-Language", Thread.CurrentThread.CurrentCulture.Name);
+
+            return telegramClient;
         }
     }
 }

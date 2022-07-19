@@ -1,4 +1,4 @@
-﻿@model ChatBotSettingViewModel
+﻿@model Alpha.Main.Site.ViewModels.ChatBot.ChatBotSettingViewModel
 @{
     Layout = "~/Views/ChatBot/Shared/_Layout.cshtml";
 }
@@ -6,8 +6,15 @@
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/chatbot/chatbot-default")
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/chatbot/chatbot-setting")
 }
-<div class="page-title">
-    <span class="pull-left">@Model.Title</span>
+<div class="scroll-tabs" style="margin-bottom: 8px;">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation">
+            @Html.ActionLink("Telegram", "Setup", "TelegramChatBot")
+        </li>
+        <li role="presentation" class="active">
+            <a href="#chatbot" aria-controls="home" role="tab" data-toggle="tab">Letstalk</a>
+        </li>
+    </ul>
 </div>
 <div class="tab-content">
     <div class="panel">

@@ -4,6 +4,7 @@
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Mvc;
+    using Alpha.Web.Models;
     using AppResources;
     using CaptchaMvc.HtmlHelpers;
     using Configurations;
@@ -15,6 +16,7 @@
     using ViewModels.ChatBot;
     using Web;
     using Web.Filters;
+    using Result = Main.Models.Result;
 
     public class ChatBotController : BaseController
     {
@@ -27,14 +29,15 @@
             this.userSession = userSession;
         }
 
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Setup()
         {
             var language = userSession.Language;
+            var custLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
             var model = await mediator.SendAsync(new SetUpChatBotQuery(userSession));
 
             return model.IsAlreadySetup
-                ? View("ChatBotSetting", new ChatBotSettingViewModel(model))
-                : View("RegisterAccount", new RegisterAccountViewModel(model, language));
+                ? View("ChatBotSetting", new ChatBotSettingViewModel(model, custLevel.DisplayName))
+                : View("RegisterAccount", new RegisterAccountViewModel(model, language, custLevel.DisplayName));
         }
 
         [HttpPost, AntiXsrfFilter]

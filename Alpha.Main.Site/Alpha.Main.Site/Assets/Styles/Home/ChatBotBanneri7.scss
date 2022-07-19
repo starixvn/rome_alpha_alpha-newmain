@@ -12,7 +12,7 @@
     background: linear-gradient(100.23deg, #001524 0%, #082C45 51.56%, #001727 100%);
     border-radius: 20px;
     text-align: center;
-    padding: 87px 0 71px;
+    padding: 87px 0 49px;
     position: relative;
 
     &:before {
@@ -201,14 +201,7 @@
         font-size: 24px;
         line-height: 28px;
         color: #C7DDEA;
-        margin-bottom: 11px;
-    }
-
-    .line4 {
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 28px;
-        color: #F05742;
+        margin-bottom: 21px;
     }
 
     .link-setup {
@@ -238,7 +231,7 @@
 
     .chatbot {
         width: 100%;
-        padding: calculateScale(72px) 0 calculateScale(20px);
+        padding: calculateScale(72px) 0 calculateScale(13px);
         margin-top: calculateScale(31px);
 
         .image-chatbot {
@@ -389,11 +382,6 @@
             line-height: calculateScale(19px);
             margin-bottom: calculateScale(19px);
             padding: 0 19%;
-        }
-
-        .line4 {
-            font-size: calculateScale(16px);
-            line-height: calculateScale(19px);
         }
 
         .link-setup {
