@@ -53,7 +53,7 @@ var indexManager = {
         indexManager.domElements.pagePopup.tinyDraggable();
         setTimeout(indexManager.reCheckin, 30000);
 
-        if (indexManager.reportDomain) {
+        //if (indexManager.reportDomain) {
             const eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
             const eventer = window[eventMethod];
             const messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
@@ -63,7 +63,7 @@ var indexManager = {
                     popupManager.open(e.data.url, e.data.title, 900);
                 }
             }, false);
-        }
+        //}
     },
 
     cachedDomElements: function () {

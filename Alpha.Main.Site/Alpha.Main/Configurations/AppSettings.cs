@@ -296,7 +296,7 @@
 
         public static string ReportRouting => Settings["Report:Routing"] ?? string.Empty;
 
-        public static bool IsStandaloneReports => !string.IsNullOrWhiteSpace(ReportDomain);
+        public static bool IsStandaloneReports => !string.IsNullOrWhiteSpace(ReportDomain) && !string.IsNullOrWhiteSpace(Settings["Report:Domain"]);
         
         public static string ContactUsSkypeId => Settings["skypeId"];
         
