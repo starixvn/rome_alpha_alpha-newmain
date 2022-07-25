@@ -175,36 +175,41 @@ body {
     width: 100%;
     z-index: 1500;
 
-    .main-tab li {
-        width: 50%;
+    .main-tab {
+        padding: calculateScale(3px);
+        margin: calculateScale(6px);
 
-        &.nav-close {
-            width: 0;
-        }
+        li {
+            width: 50%;
 
-        &.accountinfo {
-            padding-right: 58px;
-        }
+            &.nav-close {
+                width: 0;
+            }
 
-        a {
-            height: calculateScale(52px);
-            line-height: calculateScale(52px);
-        }
+            &.accountinfo {
+                padding-right: 58px;
+            }
 
-        &.active {
-            background-color: #212223 !important;
+            a {
+                height: calculateScale(32px);
+                line-height: calculateScale(32px);
+            }
+
+            &.active {
+                background-color: #212223 !important;
+            }
         }
     }
 
     .icon-close-left-panel {
         display: block;
         position: absolute;
-        top: 11px;
+        top: calculateScale(8px);
         right: 0;
         height: calculateScale(36px);
         border-radius: 30px 0 0 30px;
         padding: 8px 8px 8px 14px;
-        background-color: #BABABA;
+        background-color: #5a5a5a;
         font-size: 33px;
         color: #EDEDED;
         z-index: 99;
@@ -230,33 +235,75 @@ body {
         top: calculateScale(52px);
     }
 
+    .menu-item {
+        .new-version {
+            font-size: calculateScale(13px);
+            top: calculateScale(-6px);
+            right: calculateScale(2px);
+            width: calculateScale(48px);
+            height: calculateScale(32px);
+            line-height: 1;
+            padding: calculateScale(7px) 0 0 calculateScale(3px);
+        }
+
+        &#menu-MYMONITORACCOUNTS {
+            padding: calculateScale(16px) 0 0;
+            margin-bottom: calculateScale(10px);
+
+            &:after {
+                left: calculateScale(-10px);
+                right: calculateScale(-10px);
+                top: 0;
+                z-index: -1;
+            }
+
+            a {
+                border-radius: 5px;
+                padding-top: 0;
+                padding-bottom: 0;
+                height: calculateScale(38px);
+                line-height: calculateScale(38px);
+
+                .icon {
+                    font-size: calculateScale(20px) !important;
+                }
+            }
+        }
+    }
+
     .menu-item .withripple {
-        padding: calculateScale(16px) calculateScale(8px) calculateScale(16px) calculateScale(18px);
+        height: calculateScale(40px);
+        line-height: calculateScale(40px);
+        padding: 0 calculateScale(20px) 0 calculateScale(40px);
     }
 
     .menu-item .icon-arrow-right {
-        font-size: calculateScale(16px);
+        font-size: calculateScale(20px);
+        top: calculateScale(10px);
+        right: calculateScale(-17px);
     }
 
     .menu-item .icon {
-        font-size: calculateScale(16px);
-        margin-right: calculateScale(18px);
-        top: 2px;
+        font-size: calculateScale(16px) !important;
+        width: calculateScale(24px);
+        height: calculateScale(24px);
+        line-height: calculateScale(24px);
 
-        &.icon-announcements {
-            margin-right: calculateScale(17px);
-            font-size: calculateScale(20px);
-            top: 5px;
-        }
-
-        &.icon-betlists {
-            font-size: calculateScale(17px);
-            margin-right: 24px;
+        &.icon-chatbot {
+            height: calculateScale(20px);
+            width: calculateScale(20px);
+            transform: translate(0, -50%);
+            top: 50%;
         }
     }
 
+    .sub-menu {
+        padding: calculateScale(6px) 0 calculateScale(1px) 0;
+    }
+
     .sub-menu .sub-menu-item {
-        padding: calculateScale(9px) calculateScale(15px) calculateScale(9px) calculateScale(54px);
+        padding: calculateScale(8px) calculateScale(20px) calculateScale(8px) calculateScale(40px);
+        margin-bottom: calculateScale(2px);
     }
 
     .menu-item .beta-version {

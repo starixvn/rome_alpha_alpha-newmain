@@ -28,7 +28,7 @@
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
     <TargetFrameworkProfile />
     <Use64BitIISExpress />
-    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
     <SonarQubeTestProject>False</SonarQubeTestProject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -1034,6 +1034,8 @@
     <Content Include="Assets\styles\home\home-mobile-calculate-07-dark.min.css">
       <DependentUpon>home-mobile-calculate-07-dark.css</DependentUpon>
     </Content>
+    <Content Include="Assets\styles\home\images\bage_bg.svg" />
+    <Content Include="Assets\styles\home\images\bage_bg_dark.svg" />
     <Content Include="Assets\styles\home\images\chatbot-intro.svg" />
     <Content Include="Assets\styles\home\page-dark.css">
       <DependentUpon>page-dark.scss</DependentUpon>

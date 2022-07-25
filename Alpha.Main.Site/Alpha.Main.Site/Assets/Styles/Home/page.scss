@@ -256,7 +256,7 @@ html * {
             border-radius: 5px;
 
             &.active {
-                background: #e5e5e5; 
+                background: #e5e5e5;
 
                 .icon {
                     background: #fafafa;
@@ -266,7 +266,6 @@ html * {
                 .icon-arrow-right {
                     @include transform(rotate(90deg));
                 }
- 
             }
 
             &:hover {
@@ -283,7 +282,8 @@ html * {
         }
 
         &#menu-MYMONITORACCOUNTS {
-            padding: 11px 0 11px;
+            padding: 16px 0 0;
+            margin-bottom: 10px;
 
             &:after {
                 content: "";
@@ -302,6 +302,7 @@ html * {
                 border-radius: 5px;
                 padding-top: 7px;
                 padding-bottom: 7px;
+                color: $menu-color-text;
 
                 .icon {
                     background-color: transparent;
@@ -311,8 +312,8 @@ html * {
                     }
                 }
 
-                &:hover {
-                    background: #e5e5e5;
+                &:hover, &.active {
+                    background: #ededed; 
 
                     .icon {
                         background: #fafafa;
@@ -324,27 +325,18 @@ html * {
 
         .new-version {
             font-family: 'Roboto Bold';
-            font-size: 10px;
+            font-size: 13px;
             position: absolute;
-            top: 10px;
-            right: 17px;
+            top: -6px;
+            right: 2px;
             display: inline-block;
             color: #000000;
             z-index: 1;
-
-            &:after {
-                background: #FFEC44;
-                border-radius: 3px;
-                top: -1px;
-                bottom: -1px;
-                left: -5px;
-                right: -5px;
-                position: absolute;
-                content: "";
-                z-index: -1;
-                transform: skew(-19deg);
-                border: 1px solid #000000;
-            }
+            width: 49px;
+            height: 30px;
+            background: url(Images/bage_bg.svg) no-repeat center center / cover; 
+            padding: 4px 0 0 3px;
+            text-align: center;
         }
 
         .beta-version {
