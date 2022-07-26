@@ -439,6 +439,7 @@ html * {
     #accountinfo-content {
         width: 100%;
         min-height: 500px;
+        max-height: 800px !important;
 
         &.small-device {
             height: 100%;
