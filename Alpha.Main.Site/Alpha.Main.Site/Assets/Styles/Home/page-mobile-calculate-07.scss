@@ -178,17 +178,13 @@ body {
 
     .main-tab {
         padding: calculateScale(4px);
-        margin: calculateScale(6px);
+        margin: calculateScale(6px) calculateScale(10px);
 
         li {
             width: 50%;
 
             &.nav-close {
                 width: 0;
-            }
-
-            &.accountinfo {
-                padding-right: 58px;
             }
 
             a {
@@ -210,6 +206,7 @@ body {
         font-size: 33px;
         color: #67151b;
         z-index: 99;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
 
         &:before {
             position: relative;
@@ -258,7 +255,7 @@ body {
                 border-radius: 5px;
                 padding-top: 0;
                 padding-bottom: 0;
-                height: calculateScale(38px); //
+                height: calculateScale(38px);
                 line-height: calculateScale(38px);
 
                 .icon {
@@ -271,6 +268,7 @@ body {
     .menu-item .withripple {
         height: calculateScale(40px);
         line-height: calculateScale(40px);
+        font-size: calculateScale(14px);
         padding: 0 calculateScale(20px) 0 calculateScale(40px);
     }
 
@@ -287,15 +285,18 @@ body {
         line-height: calculateScale(24px);
 
         &.icon-chatbot {
-            height: calculateScale(20px);
-            width: calculateScale(20px);
             transform: translate(0, -50%);
             top: 50%;
         }
     }
 
-    .sub-menu .sub-menu-item {
+    .sub-menu {
         padding: calculateScale(6px) 0 calculateScale(1px) 0;
+    }
+
+    .sub-menu .sub-menu-item {
+        padding: calculateScale(8px) calculateScale(20px) calculateScale(8px) calculateScale(40px);
+        margin-bottom: calculateScale(2px);
     }
 
     .menu-item .beta-version {
