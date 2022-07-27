@@ -226,6 +226,10 @@ body {
 // sidebar
 
 .mainmenu-container {
+    .list-menu {
+        padding: 0 calculateScale(10px);
+    }
+
     top: calculateScale(52px);
 
     &.disabledViewAccInfo {
