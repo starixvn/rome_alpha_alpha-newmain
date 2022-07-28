@@ -92,7 +92,8 @@ namespace Alpha.Main
             ["NewReportsMenuItem"] = () => new MenuStatus(
                 () => AppSettings.IsUsedNewReports(Current.Site, Current.SRecommendId)),
             ["BonusDetailMenuItem"] = () => new MenuStatus(
-                () => AppSettings.AllowedSitesToViewBonusDetail.Contains(Current.Site.ToUpperInvariant()))
+                () => AppSettings.AllowedSitesToViewBonusDetail.Contains(Current.Site.ToUpperInvariant())),
+            ["MyMonitorAccountsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewMemberInfo)
         };
 
         private static bool TransferMenuItemVisible
