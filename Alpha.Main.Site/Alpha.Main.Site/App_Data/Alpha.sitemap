@@ -155,6 +155,6 @@
       <siteMapNode resourceKey="personalMessage" appPath="MessageAppPath"  url="MessageHistory/Index?messagetype=1" byPassAuthorization="true"></siteMapNode>
     </siteMapNode>
     <siteMapNode resourceKey="chatbot" appPath="MainAppPath" url="TelegramChatBot/Setup"></siteMapNode>
-    <siteMapNode resourceKey="MyMonitorAccounts" menuItemType="MyMonitorAccountsMenuItem" appPath="MemberInfoAppPath" url="ReachedThreshold/Index" roles="Agent" isNew="true" functionType="[H]"></siteMapNode>
+    <siteMapNode resourceKey="MyWatchlist" menuItemType="MyWatchlistMenuItem" appPath="MemberInfoAppPath" url="ReachedThreshold/Index" roles="Agent" isNew="true" functionType="[H]"></siteMapNode>
   </siteMapNode>
 </siteMap>

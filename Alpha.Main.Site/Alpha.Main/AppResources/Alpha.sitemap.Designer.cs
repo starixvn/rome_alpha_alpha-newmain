@@ -610,11 +610,11 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to My Monitor Accounts.
+        ///   Looks up a localized string similar to My Watchlist.
         /// </summary>
-        public static string MyMonitorAccounts {
+        public static string MyWatchlist {
             get {
-                return ResourceManager.GetString("MyMonitorAccounts", resourceCulture);
+                return ResourceManager.GetString("MyWatchlist", resourceCulture);
             }
         }
         

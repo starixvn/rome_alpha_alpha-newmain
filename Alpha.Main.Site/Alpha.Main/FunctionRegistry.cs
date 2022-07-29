@@ -93,7 +93,7 @@ namespace Alpha.Main
                 () => AppSettings.IsUsedNewReports(Current.Site, Current.SRecommendId)),
             ["BonusDetailMenuItem"] = () => new MenuStatus(
                 () => AppSettings.AllowedSitesToViewBonusDetail.Contains(Current.Site.ToUpperInvariant())),
-            ["MyMonitorAccountsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewMemberInfo)
+            ["MyWatchlistMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewMemberInfo)
         };
 
         private static bool TransferMenuItemVisible
