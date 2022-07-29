@@ -244,7 +244,8 @@ namespace Alpha.Main.Site.Controllers
                 userSession.IndirectCustId,
                 userSession.IndirectSubAccId,
                 userSession.IndirectUsername,
-                userSession.IsPasswordExpired
+                userSession.IsPasswordExpired,
+                userSession.NickName
             };
 
             foreach (var item in sessions)

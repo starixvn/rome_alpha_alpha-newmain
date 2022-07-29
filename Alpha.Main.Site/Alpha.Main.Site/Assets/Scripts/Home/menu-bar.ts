@@ -370,14 +370,9 @@ var menuBar = {
     },
 
     loadAuthFrame: function () {
-        $.get('Default/Auth', (returnUrl) => {
+        $.get(alpha.urls.mainRootPath + 'Default/Auth', (returnUrl) => {
             $.get(returnUrl, (result) => {
-                if (result !== 'OK') {
-                    menuBar.loadAuthFrame();
-                }
-                else {
-                    menuBar.domElements.header.find('iframe#reportFrame')[0].src = returnUrl;
-                }
+                menuBar.domElements.header.find('iframe#reportFrame')[0].src = returnUrl;
             });
         });
     }
