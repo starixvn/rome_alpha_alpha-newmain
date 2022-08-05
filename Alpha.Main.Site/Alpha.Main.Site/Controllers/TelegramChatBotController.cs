@@ -119,7 +119,7 @@
         [HttpPost, AntiXsrfFilter]
         public async Task<ActionResult> UpdateLanguage(UpdateLanguageCommand command)
         {
-            if (userSession.IsInternal)
+            if (userSession.IsInternal || string.IsNullOrWhiteSpace(command.Language))
             {
                 return Json(UnauthorizedResult.CreateUnauthorizedResult());
             }
