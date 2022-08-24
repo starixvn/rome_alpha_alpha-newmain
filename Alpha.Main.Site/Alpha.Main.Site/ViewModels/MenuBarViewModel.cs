@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Alpha.Main.Configurations;
     using Main.Models.Menus;
 
     public class MenuBarViewModel
@@ -31,5 +32,7 @@
         public bool IsSmallDevice { get; }
 
         public bool IsDarkMode { get; }
+
+        public bool IsShowMenuBarBanner { get; } = AppSettings.IsShowMenuBarBanner;
     }
 }

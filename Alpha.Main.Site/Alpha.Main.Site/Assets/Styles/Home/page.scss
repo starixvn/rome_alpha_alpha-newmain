@@ -839,3 +839,38 @@ html * {
 .white-space-nowrap {
     white-space: nowrap;
 }
+/********** slider carousel *************/
+.carousel-banner {
+    padding: 0 10px;
+
+    .item {
+        img {
+            border-radius: 5px;
+            width: 100%;
+        }
+    }
+
+    .carousel-indicators {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        z-index: 15;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 5px;
+
+        li {
+            width: 8px;
+            height: 8px;
+            background: #D9D9D9;
+            border: 0;
+            margin: 0 1px;
+            vertical-align: top;
+
+            &.active {
+                width: 16px;
+                background: #838383;
+            }
+        }
+    }
+}

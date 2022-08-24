@@ -60,6 +60,10 @@
             <span class="icon icon-user" id="user-icon"></span>
         }
     </div>
+    @if (Model.IsShowMenuBarBanner)
+    {
+        Html.RenderPartial("MenuBarBanner");
+    }
 </section>
 @Html.Hidden("AssetCommonCssLink", StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common"))
 @if (Model.IsAccountInfoVisible)

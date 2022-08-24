@@ -623,3 +623,18 @@ body {
     }
 }
 
+/********** slider carousel *************/
+.carousel-banner {
+    padding: 0 calculateScale(10px);
+    .carousel-indicators {
+        margin-top: calculateScale(5px);
+        li {
+            width: calculateScale(8px);
+            height: calculateScale(8px);
+            margin: 0 calculateScale(1px);
+            &.active {
+                width: calculateScale(16px);
+            }
+        }
+    }
+}
