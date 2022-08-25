@@ -166,5 +166,7 @@
             && !Web.Configurations.AppSettings.AssetAppPath.Equals(AssetAppPath, StringComparison.OrdinalIgnoreCase);
 
         public int CDNReCheckinIntervalInSeconds { get; } = AppSettings.CDNReCheckinIntervalInSeconds;
+
+        public int RecheckinIntervalMiliseconds => AppSettings.RecheckinIntervalMiliseconds;
     }
 }

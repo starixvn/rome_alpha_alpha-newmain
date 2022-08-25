@@ -24,6 +24,7 @@
 @Html.Hidden("UMAnnouncementPopupClientIntervalInMinutes", Model.UMAnnouncementPopupClientIntervalInMinutes)
 @Html.Hidden("reportDomain", Model.ReportDomain)
 @Html.Hidden("isDarkMode", Model.IsDarkMode.ToString().ToLowerInvariant())
+@Html.Hidden("RecheckinIntervalMiliseconds", Model.RecheckinIntervalMiliseconds)
 @if (Model.IsEnabledCDNReCheckin)
 {
     @Html.Hidden("assetAppPath", Model.AssetAppPath)
