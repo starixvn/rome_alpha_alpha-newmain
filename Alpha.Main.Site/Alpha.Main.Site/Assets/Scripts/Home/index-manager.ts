@@ -19,6 +19,7 @@ var indexManager = {
     requiredNetworkSpeedCalculation: false,
     showOldCustomerList: false,
     reportDomain: "",
+    recheckInIntervalMiliseconds: 30000,
 
     domElements: {
         mainFrame: null,
@@ -51,19 +52,17 @@ var indexManager = {
 
     registerEvents: function () {
         indexManager.domElements.pagePopup.tinyDraggable();
-        setTimeout(indexManager.reCheckin, 30000);
+        setTimeout(indexManager.reCheckin, indexManager.recheckInIntervalMiliseconds);
 
-        //if (indexManager.reportDomain) {
-            const eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-            const eventer = window[eventMethod];
-            const messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
-            eventer(messageEvent, function (e) {
-                if (e.data.event_id === "daily-statement"
-                    || e.data.event_id === "detail-statement") {
-                    popupManager.open(e.data.url, e.data.title, 900);
-                }
-            }, false);
-        //}
+        const eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+        const eventer = window[eventMethod];
+        const messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
+        eventer(messageEvent, function (e) {
+            if (e.data.event_id === "daily-statement"
+                || e.data.event_id === "detail-statement") {
+                popupManager.open(e.data.url, e.data.title, 900);
+            }
+        }, false);
     },
 
     cachedDomElements: function () {
@@ -76,6 +75,7 @@ var indexManager = {
         indexManager.requiredNetworkSpeedCalculation = $('#requiredNetworkSpeedCalculation').val() == '1';
         indexManager.showOldCustomerList = $('#showOldCustomerList').val() == '1';
         indexManager.reportDomain = $('#reportDomain').val();
+        indexManager.recheckInIntervalMiliseconds = $("#RecheckinIntervalMiliseconds").val();
     },
 
     changeMenu: function (url) {
@@ -107,7 +107,7 @@ var indexManager = {
                 }
             },
             complete: () => {
-                setTimeout(indexManager.reCheckin, 30000);
+                setTimeout(indexManager.reCheckin, indexManager.recheckInIntervalMiliseconds);
             }
         });
     },

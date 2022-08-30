@@ -318,5 +318,9 @@
 
         public static int CDNReCheckinIntervalInSeconds
             => int.Parse(Settings["CDNReCheckin:IntervalInSeconds"] ?? "60");
+
+        public static int RecheckinIntervalMiliseconds
+            => string.IsNullOrWhiteSpace(Settings["Recheckin:IntervalMiliseconds"]) ? 30000 : 
+                int.Parse(Settings["Recheckin:IntervalMiliseconds"]);
     }
 }
