@@ -25,6 +25,7 @@
 @Html.Hidden("reportDomain", Model.ReportDomain)
 @Html.Hidden("isDarkMode", Model.IsDarkMode.ToString().ToLowerInvariant())
 @Html.Hidden("RecheckinIntervalMiliseconds", Model.RecheckinIntervalMiliseconds)
+@Html.Hidden("SessionId", Model.SessionID)
 @if (Model.IsEnabledCDNReCheckin)
 {
     @Html.Hidden("assetAppPath", Model.AssetAppPath)

@@ -150,6 +150,11 @@
         }
 
         internal static string MapReportsDomain(string virtualPath = "~/")
-            => $"{AppSettings.ReportDomain}/";
+        {
+            var reportDomain = AppSettings.ReportDomain;
+            var cookieless = HttpContext.Current.Session.IsCookieless ? $"/(S({HttpContext.Current.Session.SessionID}))" : string.Empty;
+
+            return $"{reportDomain}{cookieless}/";
+        }
     }
 }

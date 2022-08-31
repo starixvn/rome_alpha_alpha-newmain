@@ -1,6 +1,7 @@
 ﻿/// <reference path="../core.ts" />
 
 var menuBar = {
+    topWindow: null,
     domElements: {
         subMenuItems: null,
         menuOpeners: null,
@@ -23,7 +24,10 @@ var menuBar = {
         profileImage: null,
         announcementItems: null,
         closeIconOnMobile: null,
-        reportDomain: null
+        reportDomain: null,
+        cookieless: "/",
+        sessionId: "",
+        reportSessionId: ""
     },
 
     urls: {
@@ -32,6 +36,7 @@ var menuBar = {
     },
 
     init: function () {
+        menuBar.topWindow = window.top;
         menuBar.storeElements();
         menuBar.bindEvents();
         menuBar.initSideBar();
@@ -66,6 +71,7 @@ var menuBar = {
         menuBar.domElements.announcementItems = $("#menu-ANNOUNCEMENTS li a");
         menuBar.domElements.closeIconOnMobile = $('#closeIconOnMobile');
         menuBar.domElements.reportDomain = $('#reportDomain').val();
+        menuBar.domElements.sessionId = $('#SessionId').val();
     },
 
     initSideBar: function () {
@@ -268,7 +274,22 @@ var menuBar = {
             }
         } catch (e) { }
 
-        $('#main').attr('src', subMenu.data("url")).attr("target", "main");
+        var authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-Auth";
+        var authCookieValue = $.cookie(authCookie);
+        var subMenuURL = subMenu.data("url");
+        
+        if (subMenu.data("domain") && location.href.indexOf("(S(") !== -1 && authCookieValue && authCookieValue.length > 0) {
+            menuBar.domElements.cookieless = "/(S(" + authCookieValue + "))";
+            menuBar.domElements.reportSessionId = authCookieValue;
+
+            var indexSessionId = subMenu.data("url").indexOf("(S(");
+            var oldsessionId = subMenu.data("url").substr(indexSessionId + 3, 24);
+
+            subMenuURL = subMenuURL.replace(menuBar.domElements.sessionId, authCookieValue)
+                .replace(oldsessionId, authCookieValue);
+        }
+
+        $('#main').attr('src', subMenuURL).attr("target", "main");
     },
 
     expandSideBar: function () {
@@ -372,9 +393,24 @@ var menuBar = {
     },
 
     loadAuthFrame: function () {
+        var authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-Auth";
+        var authCookieValue = $.cookie(authCookie);
+        if (authCookieValue && authCookieValue.length > 0) {
+            menuBar.domElements.cookieless = "/(S(" + authCookieValue + "))";
+        }
+
         $.get(alpha.urls.mainRootPath + 'Default/Auth', (returnUrl) => {
-            $.get(returnUrl, (result) => {
-                menuBar.domElements.header.find('iframe#reportFrame')[0].src = returnUrl;
+            $.get(menuBar.domElements.reportDomain + menuBar.domElements.cookieless + returnUrl, (result) => {
+                var sessionId = "";
+                if (result !== "OK" && result.length === 24) {
+                    menuBar.domElements.reportSessionId = result;
+                    sessionId = "/(S(" + result + "))";
+                    menuBar.domElements.cookieless = sessionId;
+                    
+                    $.cookie(authCookie, result, { path: '/' });
+                }
+
+                menuBar.domElements.header.find('iframe#reportFrame')[0].src = menuBar.domElements.reportDomain + sessionId + returnUrl;                
             });
         });
     },

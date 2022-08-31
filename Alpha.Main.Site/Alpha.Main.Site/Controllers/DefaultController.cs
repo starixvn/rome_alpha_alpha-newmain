@@ -63,7 +63,7 @@ namespace Alpha.Main.Site.Controllers
             Response.Cookies.Add(new HttpCookie("auth_2", sessionKeyValue));
             Response.Cookies.Add(new HttpCookie("auth_3", outputValue));
 
-            return $"{AppSettings.ReportDomain}/Auth?param={param}";
+            return $"/Auth?param={param}";
         }
 
         [AllowProtectedMode]
@@ -249,7 +249,8 @@ namespace Alpha.Main.Site.Controllers
                 userSession.IsPasswordExpired,
                 userSession.NickName,
                 Session["ONEbook.UM.ByPassUM"],
-                userSession.AutoFollowBetIsDummyAgent
+                userSession.AutoFollowBetIsDummyAgent,
+                Session.SessionID
             };
 
             foreach (var item in sessions)

@@ -74,7 +74,7 @@ var verifySecurityCode = {
                     if (reportDomain != '') {
                         verifySecurityCode.topWindow.menuBar.loadAuthFrame();
                         setTimeout(() => {
-                            (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + '/Auth/SecurityCode';
+                            (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + verifySecurityCode.topWindow.menuBar.domElements.cookieless + '/Auth/SecurityCode';
                         }, 2000);
                     }
 

@@ -168,5 +168,7 @@
         public int CDNReCheckinIntervalInSeconds { get; } = AppSettings.CDNReCheckinIntervalInSeconds;
 
         public int RecheckinIntervalMiliseconds => AppSettings.RecheckinIntervalMiliseconds;
+
+        public string SessionID => HttpContext.Current.Session.SessionID;
     }
 }

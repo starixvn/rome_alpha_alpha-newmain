@@ -14,14 +14,14 @@
     </div>
 }
 
-@helper NumericRow(string label, decimal value, bool canViewReports = false, string url = "")
+@helper NumericRow(string label, decimal value, bool canViewReports = false, string url = "", string id = "")
 {
     <div class="row">
         <div class="col-xs-7">@label</div>
         <div class="col-xs-5 value @(value < 0 ? "text-red" : string.Empty)">
             @if (canViewReports)
             {
-                <a href="@url" class="btn-link">@value.ToString("#,##0.00")</a>
+                <a id="@id" href="@url" class="btn-link">@value.ToString("#,##0.00")</a>
             }
             else
             {
@@ -47,12 +47,14 @@
             $"{Resources.todayWinLoss} ({DateTime.Today.ToString("MM/dd/yyyy")})",
             balanceInfo.TodayWinLoss,
             Model.CanViewReports,
-            MicroSites.OldMainUrl(Model.MemberTodayWinLossReportPath))
+            MicroSites.OldMainUrl(Model.MemberTodayWinLossReportPath),
+            "dashboard-winloss")
         @NumericRow(
             $"{Resources.yesterdayWinLoss} ({DateTime.Today.AddDays(-1).ToString("MM/dd/yyyy")})",
             balanceInfo.YesterdayWinLoss,
             Model.CanViewReports,
-            MicroSites.OldMainUrl(Model.MemberYesterdayWinLossReportPath))
+            MicroSites.OldMainUrl(Model.MemberYesterdayWinLossReportPath),
+            "dashboard-yesterday-winloss")
 
         <div class="group-title">
             @Resources.credit
