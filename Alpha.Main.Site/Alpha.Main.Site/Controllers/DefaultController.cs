@@ -109,8 +109,11 @@ namespace Alpha.Main.Site.Controllers
         [AllowProtectedMode]
         public ActionResult MenuBar()
         {
-            var viewModel = mediator.Send(
-                new MenuBarQuery(userSession.RoleId, Request.UserAgent, darkModeName: DarkModeHelper.GetDarkModeName(userSession)));
+            var viewModel = mediator.Send(new MenuBarQuery(
+                userSession.RoleId,
+                Request.UserAgent,
+                darkModeName: DarkModeHelper.GetDarkModeName(userSession),
+                language: userSession.Language));
 
             return PartialView(viewModel);
         }

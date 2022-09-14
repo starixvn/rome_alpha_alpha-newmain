@@ -14,12 +14,14 @@
             IEnumerable<IMenuItem> menuItems,
             bool isSmallDevice = false,
             Func<bool> accountInfoVisibleFunc = null,
-            bool isDarkMode = false)
+            bool isDarkMode = false,
+            string language = Main.Constants.Language.Default)
         {
             MenuItems = menuItems.Where(menuItem => menuItem.Status.Visible);
             IsSmallDevice = isSmallDevice;
             this.accountInfoVisibleFunc = accountInfoVisibleFunc ?? FunctionRegistry.ShowAccountInfo;
             IsDarkMode = isDarkMode;
+            Language = Main.Constants.Language.MapToMainLanguage(language);
         }
 
         public bool IsAccountInfoVisible
@@ -34,5 +36,9 @@
         public bool IsDarkMode { get; }
 
         public bool IsShowMenuBarBanner { get; } = AppSettings.IsShowMenuBarBanner;
+
+        public string SiteGroup { get; } = AppSettings.SiteGroup;
+
+        public string Language { get; }
     }
 }

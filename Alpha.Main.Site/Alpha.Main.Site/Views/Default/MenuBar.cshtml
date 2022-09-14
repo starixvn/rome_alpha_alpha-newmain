@@ -62,7 +62,7 @@
     </div>
     @if (Model.IsShowMenuBarBanner)
     {
-        Html.RenderPartial("MenuBarBanner");
+        Html.RenderPartial("MenuBarBanner", Model);
     }
 </section>
 @Html.Hidden("AssetCommonCssLink", StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common"))
