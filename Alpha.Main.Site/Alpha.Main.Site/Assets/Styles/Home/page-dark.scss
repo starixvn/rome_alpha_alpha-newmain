@@ -168,7 +168,8 @@ html * {
             }
 
             &.icon-chatbot {
-                background: url(Images/chatbot-intro.svg) no-repeat;
+                background: url(Images/chatbot-intro.svg) no-repeat !important;
+                box-shadow: none !important;
                 height: 18px;
                 width: 18px;
                 float: left;
@@ -336,7 +337,7 @@ html * {
             z-index: 1;
             width: 48px;
             height: 32px;
-            background: url(Images/bage_bg_dark.svg) no-repeat center center / cover; 
+            background: url(Images/bage_bg_dark.svg) no-repeat center center / cover;
             padding: 5px 0 0 3px;
             text-align: center;
         }
