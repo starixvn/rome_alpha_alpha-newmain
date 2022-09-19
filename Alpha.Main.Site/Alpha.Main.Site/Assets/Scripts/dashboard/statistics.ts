@@ -57,21 +57,4 @@
 $(() => {
     const stats = new Statistics($);
     stats.loadInfo('#stats', stats.registerEvents);
-
-    const topWindow: any = window.top;
-    if ($('#dashboard-winloss') && $('#dashboard-winloss').attr('href').indexOf('(S(') !== -1) {
-        $('#dashboard-winloss').attr('href', $('#dashboard-winloss').attr('href').replace(topWindow.menuBar.domElements.sessionId, topWindow.menuBar.domElements.reportSessionId));
-    }
-
-    if ($('#dashboard-yesterday-winloss') && $('#dashboard-yesterday-winloss').attr('href').indexOf('(S(') !== -1) {
-        $('#dashboard-yesterday-winloss').attr('href', $('#dashboard-yesterday-winloss').attr('href').replace(topWindow.menuBar.domElements.sessionId, topWindow.menuBar.domElements.reportSessionId));
-    }
-
-    if ($('#dashboard-outstanding') && $('#dashboard-outstanding').attr('href') && $('#dashboard-outstanding').attr('href').indexOf('(S(') !== -1) {
-        $('#dashboard-outstanding').attr('href', $('#dashboard-outstanding').attr('href').replace(topWindow.menuBar.domElements.sessionId, topWindow.menuBar.domElements.reportSessionId));
-    }
-
-    if ($('#dashboard-total-outstanding') && $('#dashboard-total-outstanding').attr('href') && $('#dashboard-total-outstanding').attr('href').indexOf('(S(') !== -1) {
-        $('#dashboard-total-outstanding').attr('href', $('#dashboard-total-outstanding').attr('href').replace(topWindow.menuBar.domElements.sessionId, topWindow.menuBar.domElements.reportSessionId));
-    }
 })
