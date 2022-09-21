@@ -163,7 +163,7 @@ html * {
             width: 24px;
             height: 24px;
             position: absolute;
-            left: 8px;
+            left: 6px;
             color: $color-slidebar;
             background: #ededed;
             border-radius: 5px;
@@ -251,7 +251,7 @@ html * {
             width: 100%;
             min-height: 3rem;
             background: transparent;
-            padding: 8px 8px 8px 40px;
+            padding: 8px 8px 8px 48px;
             font-weight: bold;
             font-size: 14px;
             border-radius: 5px;
@@ -394,7 +394,7 @@ html * {
 
         .icon-user {
             display: block;
-            padding-left: 12px;
+            padding-left: 19px;
         }
     }
 }
@@ -458,10 +458,10 @@ html * {
     bottom: 0;
 
     &.expanded {
-        left: 40px;
+        left: 56px;
 
         .header {
-            left: 40px;
+            left: 56px;
         }
     }
     /********************************** Content ******************************************/
@@ -769,7 +769,7 @@ html * {
             }
 
             > a {
-                padding: 16px 8px 16px 18px;
+                padding: 8px 8px 8px 48px;
             }
         }
 
