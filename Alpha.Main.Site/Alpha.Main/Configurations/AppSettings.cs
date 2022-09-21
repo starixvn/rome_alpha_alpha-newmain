@@ -322,7 +322,5 @@
         public static int RecheckinIntervalMiliseconds
             => string.IsNullOrWhiteSpace(Settings["Recheckin:IntervalMiliseconds"]) ? 30000 : 
                 int.Parse(Settings["Recheckin:IntervalMiliseconds"]);
-
-        public static bool IsShowMenuBarBanner => "1" == Settings["IsShowMenuBarBanner"];
     }
 }

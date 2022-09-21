@@ -60,9 +60,9 @@
             <span class="icon icon-user" id="user-icon"></span>
         }
     </div>
-    @if (Model.IsShowMenuBarBanner)
+    @if (!Model.IsHideBanner)
     {
-        Html.RenderPartial("MenuBarBanner", Model);
+        <div id="carousel-banner" class="carousel slide carousel-banner" data-ride="carousel"></div>
     }
 </section>
 @Html.Hidden("AssetCommonCssLink", StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common"))

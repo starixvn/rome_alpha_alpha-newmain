@@ -30,7 +30,7 @@
                 menuItems,
                 message.IsSmallDevice,
                 isDarkMode: !string.IsNullOrWhiteSpace(message.DarkModeName),
-                language: message.Language);
+                isHideBanner: message.IsHideBanner);
 
             return viewModel;
         }

@@ -27,13 +27,15 @@ var menuBar = {
     },
 
     urls: {
-        accountInfo: alpha.urls.accountInfoRootPath + 'SearchAccount'
+        accountInfo: alpha.urls.accountInfoRootPath + 'SearchAccount',
+        banner: alpha.urls.mainRootPath + 'Banner/Index?type=',
     },
 
     init: function () {
         menuBar.storeElements();
         menuBar.bindEvents();
         menuBar.initSideBar();
+        menuBar.setMenuBarBanner();
 
         if (menuBar.domElements.reportDomain) {
             menuBar.loadAuthFrame();
@@ -375,9 +377,40 @@ var menuBar = {
                 menuBar.domElements.header.find('iframe#reportFrame')[0].src = returnUrl;
             });
         });
+    },
+
+    setMenuBarBanner: function () {
+        const carouselBanner = $('#carousel-banner');
+
+        if (carouselBanner.length) {
+            const type = menuBar.detectBannerTypeHandler();
+
+            $.get(menuBar.urls.banner + type, function (html) {
+                if (html) {
+                    carouselBanner.html(html);
+                } else {
+                    carouselBanner.remove();
+                }
+            })
+        }
+    },
+
+    detectBannerTypeHandler: function () {
+        alpha.isScreenGreater1024 = false;
+        alpha.isScreenLower768 = false;
+        alpha.isScreenGreater768AndLower1024 = false;
+        alpha.isScreenLower1024 = false;
+        alpha.isMobile = false;
+        alpha.detectResponsiveInformation();
+        // Desktop: 1, Mobile: 2
+        return alpha.isScreenLower768 ? 2 : 1;
     }
 };
 
 $(function () {
     menuBar.init();
+});
+
+$(window).on("orientationchange", function () {
+    menuBar.setMenuBarBanner();
 });

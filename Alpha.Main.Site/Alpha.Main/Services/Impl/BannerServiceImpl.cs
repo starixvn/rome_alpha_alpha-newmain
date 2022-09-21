@@ -15,10 +15,8 @@
             this.dynamicRepository = dynamicRepository;
         }
 
-        public async Task<BannerItem> GetBanner(string languageCode, byte type)
-        => AppSettings.BannerIsHide
-            ? null
-            : await dynamicRepository.GetAsync<BannerItem>(
+        public Task<BannerItem> GetBanner(string languageCode, byte type)
+            => dynamicRepository.GetAsync<BannerItem>(
                 new GetBannerCriteria(languageCode, AppSettings.BannerEnvironment, AppSettings.SiteGroup, type));
     }
 }

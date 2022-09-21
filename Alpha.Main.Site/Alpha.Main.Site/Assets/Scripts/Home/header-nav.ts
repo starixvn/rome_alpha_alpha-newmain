@@ -26,7 +26,6 @@ var headerNav = {
         sideBar: null,
         sideBarContent: null,
         profileImage: null,
-        headerNavElement: null,
         liveChat: null,
         switchMode: null,
         reportDomain: null
@@ -80,44 +79,8 @@ var headerNav = {
         headerNav.clockTimeInterval = setInterval(headerNav.runClock, 1000);
 
         headerNav.cachedDomElements();
-        headerNav.setBannerBackgroundImage();
         headerNav.initLanguage();
         headerNav.registerEvents();
-    },
-
-    setBannerBackgroundImage: function () {
-        const type = headerNav.detectBannerTypeHandler();
-
-        $.ajax({
-            type: "GET",
-            url: headerNav.urls.banner + type,
-            success: function (result) {
-                headerNav.getBannerSuccessullyHandler(result, type === 2);
-            }
-        });
-    },
-
-    detectBannerTypeHandler: function () {
-        alpha.isScreenGreater1024 = false;
-        alpha.isScreenLower768 = false;
-        alpha.isScreenGreater768AndLower1024 = false;
-        alpha.isScreenLower1024 = false;
-        alpha.isMobile = false;
-        alpha.detectResponsiveInformation();
-        // Desktop: 1, Mobile: 2
-        return alpha.isScreenLower768 ? 2 : 1;
-    },
-
-    getBannerSuccessullyHandler: function (result: any, isMobile: boolean) {
-        if (result.ImageContent) {
-            headerNav.domElements.headerNavElement
-                .addClass("m-banner")
-                .css("background-image", "url(" + result.ImageContent + ")");
-
-            if (isMobile && result.MobileBackgroundColor) {
-                headerNav.domElements.headerNavElement.css("background-color", result.MobileBackgroundColor);
-            }
-        }
     },
 
     initClock: function () {
@@ -200,7 +163,6 @@ var headerNav = {
         headerNav.domElements.sideBarContent = $(".content-wrapper");
         headerNav.domElements.profileImage = $("#logoProfileImg");
 
-        headerNav.domElements.headerNavElement = $("#header-nav");
         headerNav.domElements.liveChat = $("#liveChat");
         headerNav.domElements.switchMode = $(".switch-mode");
 
@@ -474,10 +436,6 @@ var headerNav = {
 
 $(function () {
     headerNav.init();
-});
-
-$(window).on("orientationchange", function () {
-    headerNav.setBannerBackgroundImage();
 });
 
 try {

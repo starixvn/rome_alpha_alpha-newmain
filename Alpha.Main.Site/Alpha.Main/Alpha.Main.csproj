@@ -282,6 +282,7 @@
       <DependentUpon>SettingType.resx</DependentUpon>
     </Compile>
     <Compile Include="Configurations\AppSettings.cs" />
+    <Compile Include="Constants\BannerType.cs" />
     <Compile Include="Constants\ChatBotFunctionType.cs" />
     <Compile Include="Constants\Language.cs" />
     <Compile Include="Constants\SelfdestructionPeriod.cs" />

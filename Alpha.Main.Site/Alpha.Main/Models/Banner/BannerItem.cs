@@ -6,14 +6,11 @@
         {
         }
 
-        public BannerItem(byte[] imageContent, string mobileBackgroundColor)
+        public BannerItem(byte[] imageContent)
         {
             ImageContent = imageContent;
-            MobileBackgroundColor = mobileBackgroundColor;
         }
 
         public byte[] ImageContent { get; }
-
-        public string MobileBackgroundColor { get; }
     }
 }

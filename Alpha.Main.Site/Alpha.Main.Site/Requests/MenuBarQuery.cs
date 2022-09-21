@@ -16,13 +16,13 @@
             string userAgent,
             List<string> devicesUseCustomScrollbar = null,
             string darkModeName = null,
-            string language = Main.Constants.Language.Default)
+            bool isHideBanner = false)
         {
             UserLevel = Enumeration.FromValue<UserLevel>(roleId);
             UserAgent = userAgent;
             this.devicesUseCustomScrollbar = devicesUseCustomScrollbar ?? AppSettings.DevicesUseCustomScrollbar;
             DarkModeName = darkModeName;
-            Language = language;
+            IsHideBanner = isHideBanner;
         }
 
         public UserLevel UserLevel { get; }
@@ -42,6 +42,6 @@
 
         public string DarkModeName { get; }
 
-        public string Language { get; }
+        public bool IsHideBanner { get; }
     }
 }

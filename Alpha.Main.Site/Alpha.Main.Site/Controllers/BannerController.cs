@@ -18,13 +18,13 @@
         }
 
         [AllowProtectedMode]
-        public async Task<ActionResult> Get(BannerQuery request)
+        public async Task<ActionResult> Index(BannerQuery request)
         {
-            var viewModel = request.IsProtectedMode
-                ? new BannerViewModel()
+            var viewModel = request.IsHideBanner
+                ? null
                 : await mediator.SendAsync(request);
 
-            return Json(viewModel, JsonRequestBehavior.AllowGet);
+            return PartialView(viewModel);
         }
     }
 }
