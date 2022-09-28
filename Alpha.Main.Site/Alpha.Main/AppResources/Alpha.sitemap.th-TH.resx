@@ -402,4 +402,7 @@
   <data name="BetCreditTracking" xml:space="preserve">
     <value>ติดตามเครดิตเดิมพัน</value>
   </data>
+  <data name="MyWatchlist" xml:space="preserve">
+    <value>รายการเฝ้าดูของฉัน</value>
+  </data>
 </root>

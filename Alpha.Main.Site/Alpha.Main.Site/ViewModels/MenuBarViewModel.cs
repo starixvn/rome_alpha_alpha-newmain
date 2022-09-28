@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Alpha.Main.Configurations;
     using Main.Models.Menus;
 
     public class MenuBarViewModel
@@ -13,12 +14,14 @@
             IEnumerable<IMenuItem> menuItems,
             bool isSmallDevice = false,
             Func<bool> accountInfoVisibleFunc = null,
-            bool isDarkMode = false)
+            bool isDarkMode = false,
+            string language = Main.Constants.Language.Default)
         {
             MenuItems = menuItems.Where(menuItem => menuItem.Status.Visible);
             IsSmallDevice = isSmallDevice;
             this.accountInfoVisibleFunc = accountInfoVisibleFunc ?? FunctionRegistry.ShowAccountInfo;
             IsDarkMode = isDarkMode;
+            Language = Main.Constants.Language.MapToMainLanguage(language);
         }
 
         public bool IsAccountInfoVisible
@@ -31,5 +34,11 @@
         public bool IsSmallDevice { get; }
 
         public bool IsDarkMode { get; }
+
+        public bool IsShowMenuBarBanner { get; } = AppSettings.IsShowMenuBarBanner;
+
+        public string SiteGroup { get; } = AppSettings.SiteGroup;
+
+        public string Language { get; }
     }
 }

@@ -1,10 +1,10 @@
 ﻿namespace Alpha.Main.Site.Models.Requests
 {
+    using System.Collections.Generic;
+    using System.Web;
     using Alpha.Web.Models;
     using Configurations;
     using MediatR;
-    using System.Collections.Generic;
-    using System.Web;
     using ViewModels;
 
     public class MenuBarQuery : IRequest<MenuBarViewModel>
@@ -15,12 +15,14 @@
             byte roleId,
             string userAgent,
             List<string> devicesUseCustomScrollbar = null,
-            string darkModeName = null)
+            string darkModeName = null,
+            string language = Main.Constants.Language.Default)
         {
             UserLevel = Enumeration.FromValue<UserLevel>(roleId);
             UserAgent = userAgent;
             this.devicesUseCustomScrollbar = devicesUseCustomScrollbar ?? AppSettings.DevicesUseCustomScrollbar;
             DarkModeName = darkModeName;
+            Language = language;
         }
 
         public UserLevel UserLevel { get; }
@@ -39,5 +41,7 @@
         public bool IsCookieLess => HttpContext.Current != null ? HttpContext.Current.Session.IsCookieless : false;
 
         public string DarkModeName { get; }
+
+        public string Language { get; }
     }
 }

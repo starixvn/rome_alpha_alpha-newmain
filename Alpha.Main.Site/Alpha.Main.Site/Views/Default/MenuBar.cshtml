@@ -48,6 +48,7 @@
                 <li class="menu-item" id="menu-@(menuItem.ResourceKey.ToUpper())">
                     <a class="withripple menu-opener parent-menu redirect-item" href="@menuItem.Link" target="main">
                         <span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@menuItem.DisplayName</span>
+                        @Html.Raw(menuItem.IsNew ? "<span class=\"new-version\">" + Resources.lblNew + "</span>" : string.Empty)
                     </a>
                 </li>
             }
@@ -59,6 +60,10 @@
             <span class="icon icon-user" id="user-icon"></span>
         }
     </div>
+    @if (Model.IsShowMenuBarBanner)
+    {
+        Html.RenderPartial("MenuBarBanner", Model);
+    }
 </section>
 @Html.Hidden("AssetCommonCssLink", StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common"))
 @if (Model.IsAccountInfoVisible)

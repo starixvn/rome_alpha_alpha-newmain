@@ -59,7 +59,6 @@ namespace Alpha.Main.Site.Controllers
             var loginUsername = AesService.Default.Encrypt($"{userSession.UserName}", SecretKey);
             var sessionKeyValue = AesService.Default.Encrypt($"{GetSessionKeyValue()}", SecretKey);
             var outputValue= AesService.Default.Encrypt($"{GetOutputValuesAfterLogin()}", SecretKey);
-
             Response.Cookies.Add(new HttpCookie("auth_1", loginUsername));
             Response.Cookies.Add(new HttpCookie("auth_2", sessionKeyValue));
             Response.Cookies.Add(new HttpCookie("auth_3", outputValue));
@@ -110,8 +109,11 @@ namespace Alpha.Main.Site.Controllers
         [AllowProtectedMode]
         public ActionResult MenuBar()
         {
-            var viewModel = mediator.Send(
-                new MenuBarQuery(userSession.RoleId, Request.UserAgent, darkModeName: DarkModeHelper.GetDarkModeName(userSession)));
+            var viewModel = mediator.Send(new MenuBarQuery(
+                userSession.RoleId,
+                Request.UserAgent,
+                darkModeName: DarkModeHelper.GetDarkModeName(userSession),
+                language: userSession.Language));
 
             return PartialView(viewModel);
         }

@@ -610,6 +610,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My Watchlist.
+        /// </summary>
+        public static string MyWatchlist {
+            get {
+                return ResourceManager.GetString("MyWatchlist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New Agent.
         /// </summary>
         public static string newAgent {

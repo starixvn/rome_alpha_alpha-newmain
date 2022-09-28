@@ -351,9 +351,6 @@
     <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
     </Reference>
-    <Reference Include="System.Configuration.ConfigurationManager, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Configuration.ConfigurationManager.5.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
-    </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Diagnostics.PerformanceCounter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.PerformanceCounter.4.5.0\lib\net461\System.Diagnostics.PerformanceCounter.dll</HintPath>
@@ -897,6 +894,32 @@
     <Content Include="Assets\Images\icon-chatbot-4.svg" />
     <Content Include="Assets\Images\icon-telegram.png" />
     <Content Include="Assets\Images\letstalk.png" />
+    <Content Include="Assets\Images\MenuBarBanner\789Y\280x140_AppDownloaded_vi-VN.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\789Y\280x140_AppDownloaded_th-TH.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\789Y\280x140_AppDownloaded_en-US.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\789Y\280x140_AppDownloaded_zh-CN.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\789Y\280x140_AppDownloaded_zh-TW.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\789Y\355x140_AppDownloaded_vi-VN.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\789Y\355x140_AppDownloaded_en-US.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\789Y\355x140_AppDownloaded_th-TH.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\789Y\355x140_AppDownloaded_zh-CN.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\789Y\355x140_AppDownloaded_zh-TW.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBCBET\280x140_AppDownloaded_th-TH.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBCBET\280x140_AppDownloaded_en-US.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBCBET\280x140_AppDownloaded_zh-CN.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBCBET\280x140_AppDownloaded_zh-TW.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBCBET\355x140_AppDownloaded_en-US.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBCBET\355x140_AppDownloaded_th-TH.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBCBET\355x140_AppDownloaded_zh-CN.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBCBET\355x140_AppDownloaded_zh-TW.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBCIndo\280x140_AppDownloaded_th-TH.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBCIndo\280x140_AppDownloaded_en-US.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBCIndo\280x140_AppDownloaded_zh-CN.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBCIndo\280x140_AppDownloaded_zh-TW.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBCIndo\355x140_AppDownloaded_en-US.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBCIndo\355x140_AppDownloaded_th-TH.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBCIndo\355x140_AppDownloaded_zh-CN.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBCIndo\355x140_AppDownloaded_zh-TW.jpg" />
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
     <Content Include="Assets\Images\switch.png" />
     <Content Include="Assets\scripts\aes.js" />
@@ -1037,6 +1060,8 @@
     <Content Include="Assets\styles\home\home-mobile-calculate-07-dark.min.css">
       <DependentUpon>home-mobile-calculate-07-dark.css</DependentUpon>
     </Content>
+    <Content Include="Assets\styles\home\images\bage_bg.svg" />
+    <Content Include="Assets\styles\home\images\bage_bg_dark.svg" />
     <Content Include="Assets\styles\home\images\chatbot-intro.svg" />
     <Content Include="Assets\styles\home\page-dark.css">
       <DependentUpon>page-dark.scss</DependentUpon>
@@ -1300,6 +1325,7 @@
     <Content Include="Views\TelegramChatBot\Tab.cshtml" />
     <Content Include="Views\Dashboard\ChatBotBanneri7.cshtml" />
     <Content Include="Views\Dashboard\ChatBotBanneri1.cshtml" />
+    <Content Include="Views\Default\MenuBarBanner.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
@@ -1894,6 +1920,12 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\SonarAnalyzer.CFG.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\SonarAnalyzer.dll" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\Google.Protobuf.dll" />

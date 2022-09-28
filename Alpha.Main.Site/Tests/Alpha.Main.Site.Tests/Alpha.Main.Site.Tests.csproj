@@ -272,6 +272,7 @@
     <Compile Include="Controllers\PasswordControllerTests.cs" />
     <Compile Include="Controllers\SecurityCodeControllerTests.cs" />
     <Compile Include="Controllers\StatisticsControllerTests.cs" />
+    <Compile Include="Controllers\TelegramChatBotControllerTests.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handlers\BalanceInfoHandlerTests.cs" />
     <Compile Include="Handlers\ChatBotHandlerTests.cs" />
@@ -284,6 +285,7 @@
     <Compile Include="Handlers\PasswordHandlerTests.cs" />
     <Compile Include="Handlers\SecurityCodeHandlerTests.cs" />
     <Compile Include="Handlers\StatisticsHandlerTests.cs" />
+    <Compile Include="Handlers\TelegramChatBotHandlerTests.cs" />
     <Compile Include="Handlers\UserMessageHandlerTests.cs" />
     <Compile Include="Helpers\UrlHelperTestSetUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -340,6 +342,12 @@
     <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.7.14.0.8411\analyzers\Google.Protobuf.dll" />
     <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.7.14.0.8411\analyzers\SonarAnalyzer.CSharp.dll" />
     <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.7.14.0.8411\analyzers\SonarAnalyzer.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\SonarAnalyzer.CFG.dll" />
+    <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\SonarAnalyzer.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

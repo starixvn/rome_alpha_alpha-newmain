@@ -120,12 +120,16 @@ html * {
     overflow-y: auto;
     position: absolute;
     left: 0;
-    top: 48px;
+    top: 59px;
     right: 0;
     bottom: 0;
 
+    .list-menu {
+        padding: 0 10px;
+    }
+
     &.disabledViewAccInfo {
-        top: 40px;
+        top: 59px;
     }
 
     .panel {
@@ -147,44 +151,41 @@ html * {
         color: #222;
         font-weight: 600;
         padding: 0;
+        margin: 0 0 9px 0;
 
         &#menu-CHATBOT .txt-item {
             color: #0776c1;
         }
 
         .icon {
-            line-height: 0;
-            margin-right: 14px;
-            width: 16px;
-            position: relative;
-            left: 1px;
-            top: 1px;
-            color: #333;
+            line-height: 24px;
+            text-align: center;
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            left: 6px;
+            color: $color-slidebar;
+            background: #ededed;
+            border-radius: 5px;
+            font-size: 17px;
+            margin: 0;
 
-            &.icon-totalbets {
-                font-size: 14px;
+            &:not(.icon-chatbot) {
+                transform: translate(0, -50%);
+                top: 50%;
             }
 
-            &.icon-betlists {
-                font-size: 17px;
-                top: 3px;
-                margin-right: 13px;
-            }
 
-            &.icon-announcements {
-                top: 4px;
-                margin-right: 10px;
-                line-height: 0;
-                font-size: 20px;
-            }
 
             &.icon-chatbot {
-                background: url(Images/chatbot-intro.svg) no-repeat;
+                background: url(Images/chatbot-intro.svg) no-repeat !important;
+                box-shadow: none !important;
                 height: 18px;
                 width: 18px;
                 float: left;
-                top: -2px;
+                top: 9px;
                 animation: bounce 1s infinite;
+                position: absolute;
 
 
                 &:before, &:after {
@@ -235,13 +236,14 @@ html * {
             @include transform(rotate(0));
             font-size: 16px;
             position: relative;
-            top: 2px;
+            top: 1px;
+            right: -4px;
             @include transition(transform 0.3s ease-out);
         }
 
         > a {
             cursor: pointer;
-            color: #222;
+            color: $color-slidebar;
             display: table;
             white-space: nowrap;
             text-decoration: none;
@@ -249,10 +251,18 @@ html * {
             width: 100%;
             min-height: 3rem;
             background: transparent;
-            padding: 14px 8px 14px 12px;
+            padding: 8px 8px 8px 48px;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 5px;
 
             &.active {
                 background: #e5e5e5;
+
+                .icon {
+                    background: #fafafa;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+                }
 
                 .icon-arrow-right {
                     @include transform(rotate(90deg));
@@ -261,7 +271,73 @@ html * {
 
             &:hover {
                 background: #e5e5e5;
+
+                .icon {
+
+                    &:not(.icon-chatbot) {
+                        background: #fafafa;
+                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+                    }
+                }
             }
+        }
+
+        &#menu-MYWATCHLIST {
+            padding: 16px 0 0;
+            margin-bottom: 10px;
+
+            &:after {
+                content: "";
+                height: 1px;
+                background-color: #bdbdbd;
+                position: absolute;
+                left: -10px;
+                right: -10px;
+                top: 0;
+                z-index: -1;
+            }
+
+            a {
+                background: #F5F5F5;
+                border: 1px solid #E3E3E3;
+                border-radius: 5px;
+                padding-top: 7px;
+                padding-bottom: 7px;
+                color: $menu-color-text;
+
+                .icon {
+                    background-color: transparent;
+
+                    &:before {
+                        color: #333333;
+                    }
+                }
+
+                &:hover, &.active {
+                    background: #ededed;
+
+                    .icon {
+                        background: #fafafa;
+                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+                    }
+                }
+            }
+        }
+
+        .new-version {
+            font-family: 'Roboto Bold';
+            font-size: 13px;
+            position: absolute;
+            top: -6px;
+            right: 2px;
+            display: inline-block;
+            color: #000000;
+            z-index: 1;
+            width: 49px;
+            height: 30px;
+            background: url(Images/bage_bg.svg) no-repeat center center / cover;
+            padding: 4px 0 0 3px;
+            text-align: center;
         }
 
         .beta-version {
@@ -290,7 +366,7 @@ html * {
         padding: 9px 15px 9px 44px;
 
         a {
-            color: #555;
+            color: #575757;
             display: table;
             text-decoration: none;
             font-weight: 600;
@@ -318,7 +394,7 @@ html * {
 
         .icon-user {
             display: block;
-            padding-left: 12px;
+            padding-left: 19px;
         }
     }
 }
@@ -364,6 +440,7 @@ html * {
     #accountinfo-content {
         width: 100%;
         min-height: 500px;
+        max-height: 800px !important;
 
         &.small-device {
             height: 100%;
@@ -381,10 +458,10 @@ html * {
     bottom: 0;
 
     &.expanded {
-        left: 40px;
+        left: 56px;
 
         .header {
-            left: 40px;
+            left: 56px;
         }
     }
     /********************************** Content ******************************************/
@@ -692,7 +769,7 @@ html * {
             }
 
             > a {
-                padding: 16px 8px 16px 18px;
+                padding: 8px 8px 8px 48px;
             }
         }
 
@@ -762,4 +839,39 @@ html * {
 
 .white-space-nowrap {
     white-space: nowrap;
+}
+/********** slider carousel *************/
+.carousel-banner {
+    padding: 0 10px;
+
+    .item {
+        img {
+            border-radius: 5px;
+            width: 100%;
+        }
+    }
+
+    .carousel-indicators {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        z-index: 15;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 5px;
+
+        li {
+            width: 8px;
+            height: 8px;
+            background: #D9D9D9;
+            border: 0;
+            margin: 0 1px;
+            vertical-align: top;
+
+            &.active {
+                width: 16px;
+                background: #838383;
+            }
+        }
+    }
 }

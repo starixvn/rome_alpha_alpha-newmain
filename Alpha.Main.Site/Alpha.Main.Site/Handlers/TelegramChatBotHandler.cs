@@ -99,7 +99,7 @@
             var botAndCustMessenger = await GetTelegramBotAndCustMessengerAsync(
                 message.CustId,
                 message.SubAccId,
-                message.Language);
+                message.UserLanguage);
             var bot = botAndCustMessenger.Item1;
             var custBotMessenger = botAndCustMessenger.Item2;
             if (custBotMessenger == null || !custBotMessenger.Enabled || !custBotMessenger.IsVerifyOTP)

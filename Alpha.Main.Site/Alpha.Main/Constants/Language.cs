@@ -74,5 +74,20 @@
                     return languageCode;
             }
         }
+
+        public static string MapToMainLanguage(string language)
+        {
+            switch (language)
+            {
+                case ChineseTraditional:
+                case ChineseSimplified:
+                case Thai:
+                case Vietnamese:
+                    return language;
+
+                default:
+                    return English;
+            }
+        }
     }
 }

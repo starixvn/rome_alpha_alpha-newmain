@@ -29,7 +29,8 @@
             var viewModel = new MenuBarViewModel(
                 menuItems,
                 message.IsSmallDevice,
-                isDarkMode: !string.IsNullOrWhiteSpace(message.DarkModeName));
+                isDarkMode: !string.IsNullOrWhiteSpace(message.DarkModeName),
+                language: message.Language);
 
             return viewModel;
         }
