@@ -14,9 +14,7 @@
                 }
                 else
                 {
-                    <a href="@banner.RedirectUrl" target="_blank">
-                        <img src="@Url.Content(banner.ImageSource)" />
-                    </a>
+                    <img data-href="@banner.RedirectUrl" src="@Url.Content(banner.ImageSource)" />                
                 }
             </div>
         }
