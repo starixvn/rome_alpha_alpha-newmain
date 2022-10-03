@@ -387,7 +387,7 @@ var menuBar = {
 
             $.get(menuBar.urls.banner + type, function (html) {
                 if (html) {
-                    carouselBanner.html(html);
+                    carouselBanner.html(html).carousel();
                 } else {
                     carouselBanner.remove();
                 }

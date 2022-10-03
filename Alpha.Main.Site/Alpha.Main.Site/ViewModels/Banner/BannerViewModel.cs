@@ -73,7 +73,7 @@
             {
                 case Main.Constants.Language.ChineseTraditional:
                 case Main.Constants.Language.ChineseSimplified:
-                //case Main.Constants.Language.Thai:
+                case Main.Constants.Language.Thai:
                 case Main.Constants.Language.Vietnamese:
                     return Language;
 
@@ -84,7 +84,7 @@
 
         private string GetSabaSportMarketingAppImageSource()
             => string.Format(
-                "~/Assets/Images/MenuBarBanner/789Y/{0}_ssma_{1}.png",
+                "~/Assets/Images/MenuBarBanner/789Y/{0}_ssma_{1}.jpg",
                 Type == BannerType.Mobile ? "300x70" : "280x70",
                 MapSabaSportMarketingAppLanguage());
 
