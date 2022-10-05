@@ -133,7 +133,7 @@
             Assembly assembly = Assembly.GetCallingAssembly();
             FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
 
-            return versionInfo.FileVersion;
+            return $"{versionInfo.FileVersion}.{AppSettings.JsVersion}";
         }
 
         private string RefreshUrlFactory(System.Web.Mvc.UrlHelper urlHelper, KeyValuePair<string, ICaptchaValue> keyValuePair)

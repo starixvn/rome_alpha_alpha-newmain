@@ -1,12 +1,10 @@
 ﻿namespace Alpha.Main.Criteria.Banner
 {
+    using Alpha.Main.Constants;
     using Fanex.Data.Repository;
 
     public class GetBannerCriteria : CriteriaBase
     {
-        private const byte Desktop = 1;
-        private const byte Mobile = 2;
-
         public GetBannerCriteria(
             string languageCode,
             string environments,
@@ -34,6 +32,6 @@
             => !string.IsNullOrWhiteSpace(LanguageCode)
             && !string.IsNullOrWhiteSpace(Environments)
             && !string.IsNullOrWhiteSpace(Systems)
-            && Type == Desktop || Type == Mobile;
+            && Type == BannerType.Desktop || Type == BannerType.Mobile;
     }
 }

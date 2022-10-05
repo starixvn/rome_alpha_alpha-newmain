@@ -147,7 +147,6 @@
             && !Settings["SiteGroup"].Equals("789y", StringComparison.OrdinalIgnoreCase);
 
         public static bool DisabledVietnamese => IsMBCSite;
-     
 
         public static bool ShowHelpLink => IsMBCSite;
 
@@ -323,6 +322,6 @@
             => string.IsNullOrWhiteSpace(Settings["Recheckin:IntervalMiliseconds"]) ? 30000 : 
                 int.Parse(Settings["Recheckin:IntervalMiliseconds"]);
 
-        public static bool IsShowMenuBarBanner => "1" == Settings["IsShowMenuBarBanner"];
+        public static string JsVersion => Settings["JsVersion"];
     }
 }

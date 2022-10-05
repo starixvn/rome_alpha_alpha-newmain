@@ -1,0 +1,29 @@
+﻿@model Alpha.Main.Site.ViewModels.Banner.BannerViewModel
+@if (Model != null)
+{
+    var maxBanners = Model.Banners.Length;
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        @for (int i = 0; i < maxBanners; i++)
+        {
+            var banner = Model.Banners[i];
+            <div class="item @(i == 0 ? "active" : string.Empty)">
+                @if (string.IsNullOrWhiteSpace(banner.RedirectUrl))
+                {
+                    <img src="@Url.Content(banner.ImageSource)" />
+                }
+                else
+                {
+                    <img data-href="@banner.RedirectUrl" src="@Url.Content(banner.ImageSource)" />                
+                }
+            </div>
+        }
+    </div>
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        @for (int i = 0; i < maxBanners; i++)
+        {
+            <li data-target="#carousel-banner" data-slide-to="@i" @(i == 0 ? "class=active" : string.Empty)></li>
+        }
+    </ol>
+}

@@ -113,7 +113,7 @@ namespace Alpha.Main.Site.Controllers
                 userSession.RoleId,
                 Request.UserAgent,
                 darkModeName: DarkModeHelper.GetDarkModeName(userSession),
-                language: userSession.Language));
+                isHideBanner: AppSettings.BannerIsHide || userSession.IsProtectedMode));
 
             return PartialView(viewModel);
         }

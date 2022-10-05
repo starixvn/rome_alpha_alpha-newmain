@@ -848,6 +848,10 @@ html * {
         img {
             border-radius: 5px;
             width: 100%;
+
+            &[data-href] {
+                cursor: pointer;
+            }
         }
     }
 

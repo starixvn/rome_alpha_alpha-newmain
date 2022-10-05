@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Requests.Banner
 {
+    using Alpha.Main.Configurations;
     using Alpha.Main.Site.ViewModels.Banner;
     using MediatR;
     using Sunplus.Agent.Model.Base;
@@ -7,21 +8,21 @@
 
     public class BannerQuery : IAsyncRequest<BannerViewModel>
     {
-        private readonly IUserSession userSession;
-
         public BannerQuery() : this(null)
         {
         }
 
-        public BannerQuery(IUserSession userSession)
+        internal BannerQuery(IUserSession userSession)
         {
-            this.userSession = userSession ?? new UserSessionExt();
+            userSession = userSession ?? new UserSessionExt();
+            Language = userSession.Language;
+            IsHideBanner = AppSettings.BannerIsHide || userSession.IsProtectedMode;
         }
 
-        public string Language => userSession.Language;
+        public string Language { get; }
+
+        public bool IsHideBanner { get; }
 
         public byte Type { get; set; }
-
-        public bool IsProtectedMode => userSession.IsProtectedMode;
     }
 }
