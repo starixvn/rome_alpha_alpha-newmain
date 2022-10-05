@@ -23,6 +23,11 @@
 
         private IEnumerable<ImageRedirectUrlViewModel> GetBanners(string imageContent)
         {
+            if (!string.IsNullOrWhiteSpace(imageContent))
+            {
+                yield return new ImageRedirectUrlViewModel(imageContent);
+            }
+
             yield return new ImageRedirectUrlViewModel(
                 GetMobileSabaAppImageSource(AppSettings.SiteGroup),
                 $"https://www.winwin999.net/?bt={GetMobileSabaAppToken(AppSettings.SiteGroup)}&pd=sports");
@@ -32,11 +37,6 @@
                 yield return new ImageRedirectUrlViewModel(
                     GetSabaSportMarketingAppImageSource(),
                     "https://www.saba.vn/");
-            }
-
-            if (!string.IsNullOrWhiteSpace(imageContent))
-            {
-                yield return new ImageRedirectUrlViewModel(imageContent);
             }
         }
 
@@ -64,7 +64,7 @@
             => string.Format(
                 "~/Assets/Images/MenuBarBanner/{0}/{1}_msa_{2}.jpg",
                 siteGroup,
-                Type == BannerType.Mobile ? "300x70" : "280x70",
+                Type == BannerType.Mobile ? "600x140" : "280x70",
                 MapToMobileSabaAppLanguage());
 
         private string MapToMobileSabaAppLanguage()
@@ -85,7 +85,7 @@
         private string GetSabaSportMarketingAppImageSource()
             => string.Format(
                 "~/Assets/Images/MenuBarBanner/789Y/{0}_ssma_{1}.jpg",
-                Type == BannerType.Mobile ? "300x70" : "280x70",
+                Type == BannerType.Mobile ? "600x140" : "280x70",
                 MapSabaSportMarketingAppLanguage());
 
         private string MapSabaSportMarketingAppLanguage()
