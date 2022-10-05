@@ -147,7 +147,6 @@
             && !Settings["SiteGroup"].Equals("789y", StringComparison.OrdinalIgnoreCase);
 
         public static bool DisabledVietnamese => IsMBCSite;
-     
 
         public static bool ShowHelpLink => IsMBCSite;
 
@@ -322,5 +321,7 @@
         public static int RecheckinIntervalMiliseconds
             => string.IsNullOrWhiteSpace(Settings["Recheckin:IntervalMiliseconds"]) ? 30000 : 
                 int.Parse(Settings["Recheckin:IntervalMiliseconds"]);
+
+        public static string JsVersion => Settings["JsVersion"];
     }
 }
