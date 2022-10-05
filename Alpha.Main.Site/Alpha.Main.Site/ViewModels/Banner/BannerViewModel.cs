@@ -36,7 +36,7 @@
             {
                 yield return new ImageRedirectUrlViewModel(
                     GetSabaSportMarketingAppImageSource(),
-                    "https://www.saba.vn/");
+                    "https://www.saba.vn/lich-thi-dau/bong-da");
             }
         }
 
