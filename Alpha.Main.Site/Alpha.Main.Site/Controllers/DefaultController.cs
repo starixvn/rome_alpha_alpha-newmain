@@ -247,7 +247,8 @@ namespace Alpha.Main.Site.Controllers
                 userSession.IndirectSubAccId,
                 userSession.IndirectUsername,
                 userSession.IsPasswordExpired,
-                userSession.NickName
+                userSession.NickName,
+                Session["ONEbook.UM.ByPassUM"]
             };
 
             foreach (var item in sessions)
