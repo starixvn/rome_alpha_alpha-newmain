@@ -28,9 +28,12 @@
                 yield return new ImageRedirectUrlViewModel(imageContent);
             }
 
-            yield return new ImageRedirectUrlViewModel(
-                GetMobileSabaAppImageSource(AppSettings.SiteGroup),
-                $"https://www.winwin999.net/?bt={GetMobileSabaAppToken(AppSettings.SiteGroup)}&pd=sports");
+            if (!AppSettings.BannerIsHideMobileSabaApp)
+            {
+                yield return new ImageRedirectUrlViewModel(
+                    GetMobileSabaAppImageSource(AppSettings.SiteGroup),
+                    $"https://www.winwin999.net/?bt={GetMobileSabaAppToken(AppSettings.SiteGroup)}&pd=sports");
+            }
 
             if (!AppSettings.IsMBCSite)
             {

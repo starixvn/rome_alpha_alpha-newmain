@@ -192,6 +192,8 @@
 
         public static string BannerEnvironment => Settings["Banner:Environment"];
 
+        public static bool BannerIsHideMobileSabaApp => "1" == Settings["Banner:IsHideMobileSabaApp"];
+
         public static string SiteGroup => Settings["SiteGroup"];
 
         public static IEnumerable<int> IndirectLoginSuperIds
