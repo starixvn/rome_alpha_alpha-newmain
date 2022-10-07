@@ -1,7 +1,7 @@
 ﻿@model Alpha.Main.Site.ViewModels.Banner.BannerViewModel
-@if (Model != null)
+@{ var maxBanners = Model == null ? 0 : Model.Banners.Length; }
+@if (maxBanners > 0)
 {
-    var maxBanners = Model.Banners.Length;
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
         @for (int i = 0; i < maxBanners; i++)
