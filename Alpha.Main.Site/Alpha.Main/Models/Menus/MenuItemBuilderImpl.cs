@@ -40,6 +40,13 @@
         {
             var useDomainConfigValue = ConfigurationManager.AppSettings[string.Empty + node["UseDomainConfig"]] + string.Empty;
             var mainDomain = HttpContext.Current == null ? string.Empty : HttpContext.Current.Request.Headers["Host"];
+
+            if (HttpContext.Current != null && HttpContext.Current.Session.IsCookieless)
+            {
+                var subDomain = mainDomain.Split('.').ElementAt(0);
+                mainDomain = mainDomain.Replace($"{subDomain}.", string.Empty);
+            }
+
             useDomainConfigValue = useDomainConfigValue.IndexOf("{0}", StringComparison.OrdinalIgnoreCase) != -1 ? string.Format(useDomainConfigValue, mainDomain) : useDomainConfigValue;
 
             menuItem.UseDomainConfig = useDomainConfigValue;

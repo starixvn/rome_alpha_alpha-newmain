@@ -288,8 +288,15 @@
             get
             {
                 var reportDomain = string.Empty + Settings["Report:Domain"];
+                var mainDomain = HttpContext.Current?.Request?.Headers?["Host"];
+
+                if (HttpContext.Current?.Session?.IsCookieless == true)
+                {
+                    mainDomain = mainDomain?.Replace($"{mainDomain?.Split('.')?.ElementAt(0)}.", string.Empty);
+                }
+
                 reportDomain = reportDomain.IndexOf("{0}", StringComparison.OrdinalIgnoreCase) != -1 ? 
-                    string.Format(reportDomain, HttpContext.Current?.Request?.Headers?["Host"] ?? string.Empty) : reportDomain;
+                    string.Format(reportDomain, mainDomain) : reportDomain;
 
                 return reportDomain;
             }
@@ -297,7 +304,7 @@
 
         public static string ReportRouting => Settings["Report:Routing"] ?? string.Empty;
 
-        public static bool IsStandaloneReports => !string.IsNullOrWhiteSpace(ReportDomain) && !string.IsNullOrWhiteSpace(Settings["Report:Domain"]);
+        public static bool IsStandaloneReports => !string.IsNullOrWhiteSpace(Settings["Report:Domain"]);
         
         public static string ContactUsSkypeId => Settings["skypeId"];
         
