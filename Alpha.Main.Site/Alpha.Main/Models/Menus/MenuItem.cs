@@ -79,7 +79,7 @@
                 var cookieless = session != null && session.IsCookieless ?
                     $"/(S({session?.SessionID}))" : string.Empty;
 
-                return !string.IsNullOrWhiteSpace(UseDomainConfig) ? $"{UseDomainConfig}{cookieless}/{link}" :
+                return !string.IsNullOrWhiteSpace(UseDomainConfig) ? $"{UseDomainConfig}{cookieless}{link}" :
                     appVirtualPath.Equals("/site-reports") ? reportUrl : 
                     !string.IsNullOrWhiteSpace(link) && !string.IsNullOrWhiteSpace(runtimeAppPath) ? 
                     link.Replace(runtimeAppPath, appVirtualPath) : string.Empty;

@@ -160,13 +160,15 @@ window.age = window.age || {
         }
     },
     updatePopupTitleAfterLoad: function (popUp, iframe) {
-        var title = popUp.find(".popup-title").html() || '';
-        var iframe_doc = iframe.contents();
+        try {
+            var title = popUp.find(".popup-title").html() || '';
+            var iframe_doc = iframe.contents();
 
-        var iframeTitle = iframe_doc.find("title").text();
-        if (title == '' && iframeTitle != 'Home') {
-            popUp.find(".popup-title").html(iframeTitle);
-        }
+            var iframeTitle = iframe_doc.find("title").text();
+            if (title == '' && iframeTitle != 'Home') {
+                popUp.find(".popup-title").html(iframeTitle);
+            }
+        } catch(e) { }
     }
 };
 
@@ -403,13 +405,15 @@ var AgeWnd = function () {
             });
         },
         updatePopupTitleAfterLoad: function (popUp, iframe) {
-            var title = popUp.find(".popup-title").html() || '';
-            var iframe_doc = iframe.contents();
+            try {
+                var title = popUp.find(".popup-title").html() || '';
+                var iframe_doc = iframe.contents();
 
-            var iframeTitle = iframe_doc.find("title").text();
-            if (title == '' && iframeTitle != 'Home') {
-                popUp.find(".popup-title").html(iframeTitle);
-            }
+                var iframeTitle = iframe_doc.find("title").text();
+                if (title == '' && iframeTitle != 'Home') {
+                    popUp.find(".popup-title").html(iframeTitle);
+                }
+            } catch (e) { }
         },
         fixIOSHeight: function (iframe) {
             var isAutoHeight = oldMainUltilities.isiOS();
