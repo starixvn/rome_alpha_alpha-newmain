@@ -274,7 +274,7 @@ var menuBar = {
             }
         } catch (e) { }
 
-        var authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-Auth";
+        var authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-" + menuBar.domElements.sessionId;
         var authCookieValue = $.cookie(authCookie);
         var subMenuURL = subMenu.data("url");
         
@@ -393,7 +393,7 @@ var menuBar = {
     },
 
     loadAuthFrame: function () {
-        var authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-Auth";
+        var authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-" + menuBar.domElements.sessionId;
         var authCookieValue = $.cookie(authCookie);
         if (authCookieValue && authCookieValue.length > 0) {
             menuBar.domElements.cookieless = "/(S(" + authCookieValue + "))";
