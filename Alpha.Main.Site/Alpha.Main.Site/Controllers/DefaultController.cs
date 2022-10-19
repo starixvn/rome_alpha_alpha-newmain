@@ -248,7 +248,8 @@ namespace Alpha.Main.Site.Controllers
                 userSession.IndirectUsername,
                 userSession.IsPasswordExpired,
                 userSession.NickName,
-                Session["ONEbook.UM.ByPassUM"]
+                Session["ONEbook.UM.ByPassUM"],
+                userSession.AutoFollowBetIsDummyAgent
             };
 
             foreach (var item in sessions)
