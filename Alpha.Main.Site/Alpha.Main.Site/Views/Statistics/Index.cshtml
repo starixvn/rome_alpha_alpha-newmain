@@ -34,14 +34,14 @@
     </div>
 }
 
-@helper NumericRow(string label, decimal value, string url, bool canViewReports = true)
+@helper NumericRow(string id, string label, decimal value, string url, bool canViewReports = true)
 {
     <div class="row">
         <div class="col-xs-7">@label</div>
         <div class="col-xs-5 value @(value < 0 ? "text-red" : string.Empty)">
             @if (canViewReports && value != 0)
             {
-                <a href="@url" class="btn-link">@value.ToString("#,##0.00")</a>
+                <a id="@id" href="@url" class="btn-link">@value.ToString("#,##0.00")</a>
             }
             else
             {
@@ -54,8 +54,8 @@
 <div class="container">
     <div class="panel-title"><span class="icon-statistics"></span>@Resources.statistics</div>
     <div class="group-title">@Resources.outstanding</div>
-    @NumericRow(Model.OutstandingLabel, statistics.Outstanding, Model.MemberOutstandingReportPath, Model.CanViewReports)
-    @NumericRow(Resources.totalOutstanding, statistics.TotalOutstanding, Model.MemberOutstandingReportPath, Model.CanViewReports)
+    @NumericRow("dashboard-outstanding", Model.OutstandingLabel, statistics.Outstanding, Model.MemberOutstandingReportPath, Model.CanViewReports)
+    @NumericRow("dashboard-total-outstanding", Resources.totalOutstanding, statistics.TotalOutstanding, Model.MemberOutstandingReportPath, Model.CanViewReports)
 
     <div class="group-title">@Resources.memberInfo</div>
 
@@ -79,3 +79,4 @@
     @RenderDropdownTableMemberInfo(Resources.highestTurnoverOfTheMonth, "listTopTurnoverMembers", Url.Action("TopTurnoverMembers", "Statistics"))
     @RenderDropdownTableMemberInfo($"{Resources.newMemberOfTheMonth}: {statistics.NumberNewMembers}", "listNewMembers", Url.Action("NewMembers", "Statistics"))
 </div>
+@Html.Hidden("SessionID", Model.SessionID)

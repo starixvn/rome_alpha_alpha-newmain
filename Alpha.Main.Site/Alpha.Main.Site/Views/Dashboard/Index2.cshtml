@@ -53,5 +53,40 @@
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/dashboard/dashboard-default")
     @StaticResources.RenderScripts("~/assets/bundles/default-dashboard")
+    <script>
+        $(() => {
+            const topWindow = window.top;
+            if ($('#dashboard-winloss') && $('#dashboard-winloss').attr('href').indexOf('(S(') !== -1) {
+                $('#dashboard-winloss').attr('href', $('#dashboard-winloss').attr('href').replace(topWindow.menuBar.domElements.sessionId, topWindow.menuBar.domElements.reportSessionId));
+            }
+
+            if ($('#dashboard-yesterday-winloss') && $('#dashboard-yesterday-winloss').attr('href').indexOf('(S(') !== -1) {
+                $('#dashboard-yesterday-winloss').attr('href', $('#dashboard-yesterday-winloss').attr('href').replace(topWindow.menuBar.domElements.sessionId, topWindow.menuBar.domElements.reportSessionId));
+            }
+
+            var loadOutstanding = null;
+            var retryTimes = 0;
+            loadOutstanding = setInterval(() => {
+                if (retryTimes >= 10) {
+                    retryTimes = 0;
+                    clearInterval(loadOutstanding);
+                }
+
+                if ($('#dashboard-outstanding') && $('#dashboard-outstanding').attr('href')) {
+                    clearInterval(loadOutstanding);
+
+                    if ($('#dashboard-outstanding').attr('href').indexOf('(S(') !== -1) {
+                        $('#dashboard-outstanding').attr('href', $('#dashboard-outstanding').attr('href').replace(topWindow.menuBar.domElements.sessionId, topWindow.menuBar.domElements.reportSessionId));
+                    }
+
+                    if ($('#dashboard-total-outstanding').attr('href').indexOf('(S(') !== -1) {
+                        $('#dashboard-total-outstanding').attr('href', $('#dashboard-total-outstanding').attr('href').replace(topWindow.menuBar.domElements.sessionId, topWindow.menuBar.domElements.reportSessionId));
+                    }
+                }
+
+                retryTimes++;
+            }, 1000);
+        });
+    </script>
 </body>
 </html>

@@ -128,6 +128,8 @@ var indexManager = {
 
     cacheCurrentUrl: function () {
         try {
+            $('.modal[id^="page-popup-"]').remove();
+
             if ($("#isInternal").val() === "0") {
                 var mainFrame = <HTMLIFrameElement>document.getElementById("main");
                 var mainFrameDocument = mainFrame.contentWindow || mainFrame.contentDocument;
@@ -161,7 +163,6 @@ var indexManager = {
                 .on('load.newmain', function () {
                     var iframeWindow = indexManager.domElements.mainFrame[0].contentWindow || indexManager.domElements.mainFrame[0].contentDocument;
                     indexManager.closeAllOpenDropdowns(iframeWindow);
-                    indexManager.closeAllPopup();
 
                     indexManager.cacheCurrentUrl();
                     try {

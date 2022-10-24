@@ -72,7 +72,7 @@ class VerifyOtp {
             if (reportDomain != '') {
                 this.topWindow.menuBar.loadAuthFrame();
                 setTimeout(() => {
-                    (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + '/Auth/Otp';
+                    (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + verifyOtp.topWindow.menuBar.domElements.cookieless + '/Auth/Otp';
                 }, 2000);
             }
 

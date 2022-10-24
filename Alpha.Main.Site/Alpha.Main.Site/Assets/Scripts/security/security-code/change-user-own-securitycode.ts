@@ -128,7 +128,7 @@ var changeUserOwnSecurityCode = {
                 if (reportDomain != '') {
                     changeUserOwnSecurityCode.topWindow.menuBar.loadAuthFrame();
                     setTimeout(() => {
-                        (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + '/Auth/SecurityCode' + functionName + '?s=' + isOff;
+                        (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + changeUserOwnSecurityCode.topWindow.menuBar.domElements.cookieless + '/Auth/SecurityCode' + functionName + '?s=' + isOff;
                     }, 2000);
                 }
 

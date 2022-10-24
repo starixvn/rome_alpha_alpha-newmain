@@ -69,12 +69,17 @@
         {
             get
             {
+                var context = HttpContext.Current;
+                var session = context?.Session;
                 var appVirtualPath = AppSettings.GetAppPath(AppPath) ?? string.Empty;
                 var runtimeAppPath = HttpRuntime.AppDomainAppVirtualPath ?? string.Empty;
-                var reportUrl = $"{appVirtualPath}{HttpContext.Current?.Response?.ApplyAppPathModifier(runtimeAppPath)}{link}";
+                var reportUrl = $"{appVirtualPath}{context?.Response?.ApplyAppPathModifier(runtimeAppPath)}{link}";
                 reportUrl = !string.IsNullOrWhiteSpace(runtimeAppPath) ? reportUrl.Replace(runtimeAppPath, string.Empty) : reportUrl;
 
-                return !string.IsNullOrWhiteSpace(UseDomainConfig) ? $"{UseDomainConfig}{link}" :
+                var cookieless = session != null && session.IsCookieless ?
+                    $"/(S({session?.SessionID}))" : string.Empty;
+
+                return !string.IsNullOrWhiteSpace(UseDomainConfig) ? $"{UseDomainConfig}{cookieless}{link}" :
                     appVirtualPath.Equals("/site-reports") ? reportUrl : 
                     !string.IsNullOrWhiteSpace(link) && !string.IsNullOrWhiteSpace(runtimeAppPath) ? 
                     link.Replace(runtimeAppPath, appVirtualPath) : string.Empty;

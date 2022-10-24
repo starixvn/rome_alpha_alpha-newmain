@@ -374,14 +374,10 @@ var headerNav = {
     },
 
     syncLang: function (lang: string) {
-        $.get(headerNav.domElements.reportDomain + '/Auth/ChangeLang?langCode=' + lang, (result) => {
-            if (result !== 'OK') {
-                headerNav.syncLang(lang);
-            }
-            else {
-                headerNav.reloadPage();
-            }
-        });
+        menuBar.loadAuthFrame();
+        setTimeout(() => {
+            headerNav.reloadPage();
+        }, 2000);
     },
 
     changeTheme: function () {
@@ -402,13 +398,10 @@ var headerNav = {
     },
 
     syncTheme: function (isDarkMode: boolean) {
-        $.get(headerNav.domElements.reportDomain + '/Auth/ChangeTheme?isDarkMode=' + isDarkMode, (result) => {
-            if (result !== 'OK') {
-                headerNav.syncTheme(isDarkMode);
-            } else {
-                headerNav.reloadPage();
-            }
-        });
+        menuBar.loadAuthFrame();
+        setTimeout(() => {
+            headerNav.reloadPage();
+        }, 2000);
     },
 
     reloadPage: function () {

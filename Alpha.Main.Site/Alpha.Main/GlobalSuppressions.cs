@@ -159,4 +159,5 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S3358:Ternary operators should not be nested", Justification = "<Pending>", Scope = "member", Target = "~M:Alpha.Main.Models.Menus.MenuItemBuilderImpl.SetDataForMenuItem(Alpha.Main.Models.Menus.IMenuItem,System.Web.SiteMapNode)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S3358:Ternary operators should not be nested", Justification = "<Pending>", Scope = "member", Target = "~P:Alpha.Main.Models.Menus.MenuItem.Link")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Critical Code Smell", "S1067:Expressions should not be too complex", Justification = "<Pending>", Scope = "member", Target = "~P:Alpha.Main.Models.Menus.MenuItem.Link")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Major Bug", "S2583:Conditionally executed code should be reachable", Justification = "<Pending>", Scope = "member", Target = "~P:Alpha.Main.Models.Menus.MenuItem.Link")]
 

@@ -4,6 +4,7 @@
     using AppResources;
     using Helpers;
     using Main.Models.Statistics;
+    using System.Web;
 
     public class StatisticsViewModel
     {
@@ -32,6 +33,8 @@
                 return $@"{reportSiteAppPath}outstanding/{GetOutstandingDefaultReportLevel(UserLevel)}";
             }
         }
+
+        public string SessionID => HttpContext.Current.Session.SessionID;
 
         internal string GetOutstandingDefaultReportLevel(UserLevel userLevel)
         {
