@@ -400,17 +400,29 @@ var menuBar = {
         }
 
         $.get(alpha.urls.mainRootPath + 'Default/Auth', (returnUrl) => {
-            $.get(menuBar.domElements.reportDomain + menuBar.domElements.cookieless + returnUrl, (result) => {
-                var sessionId = "";
-                if (result !== "OK" && result.length === 24) {
-                    menuBar.domElements.reportSessionId = result;
-                    sessionId = "/(S(" + result + "))";
-                    menuBar.domElements.cookieless = sessionId;
-                    
-                    $.cookie(authCookie, result, { path: '/' });
-                }
+            $.ajax({
+                method: "GET",
+                dataType: "text/html",
+                url: menuBar.domElements.reportDomain + menuBar.domElements.cookieless + returnUrl,
+                success: (result) => {
+                    var sessionId = "";
+                    if (result !== "OK" && result.length === 24) {
+                        menuBar.domElements.reportSessionId = result;
+                        sessionId = "/(S(" + result + "))";
+                        menuBar.domElements.cookieless = sessionId;
 
-                menuBar.domElements.header.find('iframe#reportFrame')[0].src = menuBar.domElements.reportDomain + sessionId + returnUrl;                
+                        $.cookie(authCookie, result, { path: '/' });
+                    }
+
+                    if (result === "OK" || result.length === 24) {
+                        menuBar.domElements.header.find('iframe#reportFrame')[0].src = menuBar.domElements.reportDomain + sessionId + returnUrl;
+                    }
+                },
+                error: (xhr) => {
+                    if (xhr.status === 400) {
+                        menuBar.loadAuthFrame();
+                    }
+                }
             });
         });
     },
