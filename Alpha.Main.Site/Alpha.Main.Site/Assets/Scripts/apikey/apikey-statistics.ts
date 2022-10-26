@@ -4,26 +4,42 @@ interface JQuery {
     datepicker(options: any): JQuery;
 }
 
+interface DatepickerOptions {
+    allowInputToggle: boolean;
+    minDate: Date;
+    maxDate: Date;
+    format: string;
+}
+
 class ApiKeyStatistics {
-    $: JQueryStatic;
     topWindow: any;
+    $: JQueryStatic;
+    $datePicker: JQuery;
+    $datePickerInput: JQuery;
 
     constructor($: JQueryStatic, topWindow: any) {
         this.$ = $;
         this.topWindow = topWindow;
     }
 
-    $dateContainer: JQuery
-
     init = () => {
-        this.$dateContainer = this.$("#dateContainer");
+        this.cacheElements();
         this.initDateTimePicker();
     }
 
+    cacheElements = () => {
+        this.$datePicker = this.$("#dpkContainer");
+        this.$datePickerInput = this.$("#input-date");
+    };
+
     initDateTimePicker = () => {
-        this.$dateContainer.datepicker({
-            minDate: "20-10-2022",
-        }).data("DateTimePicker").maxDate("30-10-2022");
+        const options: DatepickerOptions = {
+            allowInputToggle: true,
+            minDate: new Date(2022, 1, 1),
+            maxDate: new Date(2023, 1, 1),
+            format: "MM/DD/YYYY"
+        }
+        this.$datePicker.datepicker(options);
     }
 }
 
