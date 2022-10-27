@@ -88,6 +88,51 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;b&gt;Easy&lt;/b&gt; monitor your Members via &lt;b&gt;My Watchlist&lt;/b&gt;.
+        /// </summary>
+        public static string AdvertisementMyWatchlist {
+            get {
+                return ResourceManager.GetString("AdvertisementMyWatchlist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Global Thresholds: thresholds applied to all Members.
+        /// </summary>
+        public static string AdvertisementMyWatchlistGlobalThreshold {
+            get {
+                return ResourceManager.GetString("AdvertisementMyWatchlistGlobalThreshold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Go to &lt;b&gt;My Watchlist&lt;/b&gt; tab -&gt; click Global Thresholds -&gt; set Winning/Losing Thresholds.
+        /// </summary>
+        public static string AdvertisementMyWatchlistGlobalThresholdDetail {
+            get {
+                return ResourceManager.GetString("AdvertisementMyWatchlistGlobalThresholdDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Thresholds: thresholds applied to specific Members.
+        /// </summary>
+        public static string AdvertisementMyWatchlistPersonalThreshold {
+            get {
+                return ResourceManager.GetString("AdvertisementMyWatchlistPersonalThreshold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Go to &lt;b&gt;My Watchlist&lt;/b&gt; tab -&gt; click Add Member -&gt; enter Member username and Winning/Losing Thresholds.
+        /// </summary>
+        public static string AdvertisementMyWatchlistPersonalThresholdDetail {
+            get {
+                return ResourceManager.GetString("AdvertisementMyWatchlistPersonalThresholdDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Agent.
         /// </summary>
         public static string agent {
@@ -580,6 +625,15 @@ namespace Alpha.Main.AppResources {
         public static string lblresetpassword {
             get {
                 return ResourceManager.GetString("lblresetpassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learn More.
+        /// </summary>
+        public static string LearnMore {
+            get {
+                return ResourceManager.GetString("LearnMore", resourceCulture);
             }
         }
         

@@ -16,7 +16,7 @@
 
                     popup.on("shown.bs.modal", () => this.bindMyWatchlistEvents(popup));
                     popup.modal({ show: true, backdrop: false })
-                        .tinyDraggable({ exclude: "button.icon.icon-close.close, h3, p, img, button, a, label, input[type='checkbox']" });
+                        .tinyDraggable({ exclude: "h3, ol, li, p, img, label, input[type='checkbox'], a, button" });
                 }
             });
     }

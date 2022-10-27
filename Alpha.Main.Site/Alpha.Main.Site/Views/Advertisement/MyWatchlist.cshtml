@@ -1,17 +1,17 @@
 ﻿@using Alpha.Main.AppResources
 @model Alpha.Main.Site.ViewModels.Advertisement.MyWatchlistViewModel
-<h3><b>Easy</b> to monitor your member by <b>My Watchlist</b></h3>
+<h3>@Html.Raw(Resources.AdvertisementMyWatchlist)</h3>
 <ol>
-    <li><p>Global threshold: apply the threshold for all members</p></li>
+    <li><p>@Resources.AdvertisementMyWatchlistGlobalThreshold</p></li>
     <li>
         <ol>
-            <li><p>Go to <b>My Watchlist</b> tab -> click on button -> set Winning/Losing threshold</p></li>
+            <li><p>@Html.Raw(Resources.AdvertisementMyWatchlistGlobalThresholdDetail)</p></li>
         </ol>
     </li>
-    <li><p>Personal threshold: apply the threshold for specific members</p></li>
+    <li><p>@Resources.AdvertisementMyWatchlistPersonalThreshold</p></li>
     <li>
         <ol>
-            <li><p>Go to <b>My Watchlist</b> tab -> click on Add New Member button -> enter member username and Winning/Losing threshold</p></li>
+            <li><p>@Html.Raw(Resources.AdvertisementMyWatchlistPersonalThresholdDetail)</p></li>
         </ol>
     </li>
 </ol>
@@ -19,9 +19,8 @@
     <img class="pc" src="~/Assets/Images/MyWatchlist/ui.jpg" alt="my watchlist" />
     <img class="mobile" src="~/Assets/Images/MyWatchlist/ui-mobile.jpg" alt="my watchlist" />
 </div>
-
 <div class="button-advertisement">
     <label><input type="checkbox" id="chb-dontShow" />@Resources.doNotShowAgain</label>
-    <a href="@Model.UserGuideLink" target="_blank" class="btn-default">Learn More</a>
+    <a href="@Model.UserGuideLink" target="_blank" class="btn-default">@Resources.LearnMore</a>
     <button class="btn-submit" id="btn-setup">@ChatBot.SetupNow</button>
 </div>
