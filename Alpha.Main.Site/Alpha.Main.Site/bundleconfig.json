@@ -12,7 +12,8 @@
       "Assets/scripts/home/um-message.js",
       "Assets/scripts/home/menu-bar.js",
       "Assets/scripts/customer-profiles/brief-profile.js",
-      "Assets/scripts/dashboard/popup-announcement.js"
+      "Assets/scripts/dashboard/popup-announcement.js",
+      "Assets/scripts/dashboard/popup-advertisement.js"
     ]
   },
   {

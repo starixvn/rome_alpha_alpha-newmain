@@ -924,6 +924,8 @@
     <Content Include="Assets\Images\MenuBarBanner\IBCIndo\600x140_msa_th-TH.jpg" />
     <Content Include="Assets\Images\MenuBarBanner\IBCIndo\600x140_msa_zh-CN.jpg" />
     <Content Include="Assets\Images\MenuBarBanner\IBCIndo\600x140_msa_zh-TW.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-dark.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui.jpg" />
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
     <Content Include="Assets\Images\switch.png" />
     <Content Include="Assets\scripts\aes.js" />
@@ -1330,12 +1332,15 @@
     <Content Include="Views\Dashboard\ChatBotBanneri7.cshtml" />
     <Content Include="Views\Dashboard\ChatBotBanneri1.cshtml" />
     <Content Include="Views\Banner\Index.cshtml" />
+    <Content Include="Views\Advertisement\MyWatchlist.cshtml" />
+    <Content Include="Views\Default\AdvertisementPopup.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot-guide.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot-setting.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\verify-account.ts" />
+    <TypeScriptCompile Include="Assets\scripts\dashboard\popup-advertisement.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\data-proccessing-notification.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\kick-out.ts" />
@@ -1648,6 +1653,7 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Constants\SessionConstants.cs" />
+    <Compile Include="Controllers\AdvertisementController.cs" />
     <Compile Include="Controllers\BannerController.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -1849,6 +1855,7 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
+    <Compile Include="ViewModels\Advertisement\MyWatchlistViewModel.cs" />
     <Compile Include="ViewModels\Banner\BannerViewModel.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
