@@ -18,9 +18,9 @@
 
         public ActionResult MyWatchlist()
         {
-            if (userSession.IsAgent)
+            if (userSession.IsAgent && userSession.SubPageAccess.ViewMemberInfo)
             {
-                return PartialView(new MyWatchlistViewModel());
+                return PartialView(new MyWatchlistViewModel(userSession.Language));
             }
 
             return new EmptyResult();
