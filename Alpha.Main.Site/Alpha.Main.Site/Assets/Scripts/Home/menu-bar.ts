@@ -399,28 +399,29 @@ var menuBar = {
             menuBar.domElements.cookieless = "/(S(" + authCookieValue + "))";
         }
 
-        $.get(alpha.urls.mainRootPath + 'Default/Auth', (returnUrl) => {
+        $.get(alpha.urls.mainRootPath + 'Default/Auth').done((returnUrl) => {
             $.ajax({
-                method: "GET",
+                type: "GET",
                 dataType: "text/html",
                 url: menuBar.domElements.reportDomain + menuBar.domElements.cookieless + returnUrl,
-                success: (result) => {
-                    var sessionId = "";
-                    if (result !== "OK" && result.length === 24) {
-                        menuBar.domElements.reportSessionId = result;
-                        sessionId = "/(S(" + result + "))";
-                        menuBar.domElements.cookieless = sessionId;
-
-                        $.cookie(authCookie, result, { path: '/' });
-                    }
-
-                    if (result === "OK" || result.length === 24) {
-                        menuBar.domElements.header.find('iframe#reportFrame')[0].src = menuBar.domElements.reportDomain + sessionId + returnUrl;
-                    }
-                },
-                error: (xhr) => {
+                complete: (xhr) => {
                     if (xhr.status === 400) {
                         menuBar.loadAuthFrame();
+                    }
+                    else if (xhr.status === 200) {
+                        var result = xhr.responseText;
+                        var sessionId = "";
+                        if (result !== "OK" && result.length === 24) {
+                            menuBar.domElements.reportSessionId = result;
+                            sessionId = "/(S(" + result + "))";
+                            menuBar.domElements.cookieless = sessionId;
+
+                            $.cookie(authCookie, result, { path: '/' });
+                        }
+
+                        if (result === "OK" || result.length === 24) {
+                            menuBar.domElements.header.find('iframe#reportFrame')[0].src = menuBar.domElements.reportDomain + sessionId + returnUrl;
+                        }
                     }
                 }
             });
