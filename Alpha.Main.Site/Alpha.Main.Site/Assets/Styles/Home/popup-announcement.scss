@@ -132,6 +132,9 @@
         }
 
         .picture {
+            img{
+                width: 100%;
+            }
             .mobile {
                 display: none;
             }
@@ -175,6 +178,9 @@
         }
     }
 }
+#modal-draggable-mask{
+    border: 0!important;
+}
 @media only screen and (max-device-width : $screen-device-lower768) {
     .announcement-modal {
         &.visible-mobile {
@@ -202,6 +208,7 @@
             overflow: hidden;
         }
     }
+
     .advertisement-modal {
         .modal-dialog {
             height: 100%;
