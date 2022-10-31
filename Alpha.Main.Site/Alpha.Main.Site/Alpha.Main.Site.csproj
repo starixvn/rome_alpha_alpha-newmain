@@ -945,6 +945,19 @@
     <Content Include="Assets\scripts\aes.js" />
     <Content Include="Assets\scripts\home\assetsCDNHealthcheck.js" />
     <Content Include="Assets\scripts\home\le-mtagconfig.js" />
+    <Content Include="Assets\styles\advertisement\popup-advertisement-dark.css">
+      <DependentUpon>popup-advertisement-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\advertisement\popup-advertisement-dark.min.css">
+      <DependentUpon>popup-advertisement-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\advertisement\popup-advertisement-dark.scss" />
+    <Content Include="Assets\styles\advertisement\popup-advertisement.css">
+      <DependentUpon>popup-advertisement.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\advertisement\popup-advertisement.min.css">
+      <DependentUpon>popup-advertisement.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\captcha\captcha.css">
       <DependentUpon>captcha.scss</DependentUpon>
     </Content>
@@ -1505,8 +1518,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Assets\Styles\customer-profiles\customer-profile.scss" />
-	<Content Include="Assets\Styles\advertisement\popup-advertisement.scss" />
-	<Content Include="Assets\Styles\advertisement\popup-advertisement-dark.scss" />
     <Content Include="Assets\styles\home\popup-message.scss" />
     <Content Include="bundleconfig.json" />
     <Content Include="compilerconfig.json" />
@@ -1564,6 +1575,7 @@
     <Content Include="Assets\styles\home\ChatBotBanneri7-dark.scss" />
     <Content Include="Assets\styles\home\ChatBotBanneri1.scss" />
     <Content Include="Assets\styles\home\ChatBotBanneri1-dark.scss" />
+    <Content Include="Assets\styles\advertisement\popup-advertisement.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
