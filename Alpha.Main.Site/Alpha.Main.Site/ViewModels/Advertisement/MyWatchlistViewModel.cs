@@ -5,12 +5,16 @@
 
     public class MyWatchlistViewModel
     {
-        public MyWatchlistViewModel(string language)
+        public MyWatchlistViewModel(string language, string darkModeName)
         {
-            Language = Main.Constants.Language.MapToMainLanguageCode(language);
+            string mainLanguage = Main.Constants.Language.MapToMainLanguageCode(language);
+            DesktopImageName = $"Desktop{darkModeName}_{mainLanguage}.jpg";
+            MobileImageName = $"Mobile{darkModeName}_{mainLanguage}.jpg";
         }
 
-        public string Language { get; }
+        public string DesktopImageName { get; }
+
+        public string MobileImageName { get; }
 
         public string UserGuideLink => AppSettings.IsMBCSite
             ? MicroSites.HowToUseUrl("~/Index.aspx?linktomessagesite=170467")

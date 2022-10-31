@@ -202,5 +202,13 @@
   {
     "outputFile": "Assets/styles/home/home-dark.css",
     "inputFile": "Assets/styles/home/home-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/advertisement/popup-advertisement.css",
+    "inputFile": "Assets/styles/advertisement/popup-advertisement.scss"
+  },
+  {
+    "outputFile": "Assets/styles/advertisement/popup-advertisement-dark.css",
+    "inputFile": "Assets/styles/advertisement/popup-advertisement-dark.scss"
   }
 ]
