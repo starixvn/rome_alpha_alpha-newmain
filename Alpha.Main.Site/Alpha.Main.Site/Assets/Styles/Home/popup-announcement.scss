@@ -61,16 +61,6 @@
 }
 // pop-up advertisement for My-Monitor Accounts
 .advertisement-modal {
-    &:before {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: #000000;
-        opacity: 0.5;
-        content: "";
-    }
 
     .modal-dialog {
         width: 100%;
@@ -212,12 +202,14 @@
     }
     .advertisement-modal {
         .modal-dialog {
-            padding: 0 calculateScale(10px);
-            top: 10%;
+            height: 100%;
+            top: 0;
         }
 
         .modal-content {
             .modal-body {
+                padding: 0 calculateScale(11px);
+
                 h3 {
                     font-size: calculateScale(16px);
                     line-height: calculateScale(20px);
