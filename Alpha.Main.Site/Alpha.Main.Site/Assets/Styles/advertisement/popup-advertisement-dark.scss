@@ -126,6 +126,11 @@
                 background-color: transparent;
                 line-height: 28px;
 
+                &:focus {
+                    color: $popup-button-color-text;
+                    text-decoration: none;
+                }
+
                 &:hover {
                     opacity: 0.75;
                 }

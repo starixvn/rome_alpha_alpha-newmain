@@ -1505,6 +1505,8 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Assets\Styles\customer-profiles\customer-profile.scss" />
+	<Content Include="Assets\Styles\advertisement\popup-advertisement.scss" />
+	<Content Include="Assets\Styles\advertisement\popup-advertisement-dark.scss" />
     <Content Include="Assets\styles\home\popup-message.scss" />
     <Content Include="bundleconfig.json" />
     <Content Include="compilerconfig.json" />
