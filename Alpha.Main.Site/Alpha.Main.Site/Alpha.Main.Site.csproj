@@ -28,7 +28,7 @@
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
     <TargetFrameworkProfile />
     <Use64BitIISExpress />
-    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
     <SonarQubeTestProject>False</SonarQubeTestProject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -924,7 +924,31 @@
     <Content Include="Assets\Images\MenuBarBanner\IBCIndo\600x140_msa_th-TH.jpg" />
     <Content Include="Assets\Images\MenuBarBanner\IBCIndo\600x140_msa_zh-CN.jpg" />
     <Content Include="Assets\Images\MenuBarBanner\IBCIndo\600x140_msa_zh-TW.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-cn-dark-mobile.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-cn-dark.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-cn-mobile.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-cn.jpg" />
     <Content Include="Assets\Images\MyWatchlist\ui-dark.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-en-dark-mobile.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-en-dark.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-en-mobile.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-en.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-jp-dark-mobile.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-jp-dark.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-jp-mobile.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-jp.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-kr-dark-mobile.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-kr-dark.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-kr-mobile.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-kr.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-th-dark-mobile.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-th-dark.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-th-mobile.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-th.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-tw-dark-mobile.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-tw-dark.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-tw-mobile.jpg" />
+    <Content Include="Assets\Images\MyWatchlist\ui-tw.jpg" />
     <Content Include="Assets\Images\MyWatchlist\ui.jpg" />
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
     <Content Include="Assets\Images\switch.png" />

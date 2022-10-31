@@ -66,6 +66,9 @@
 }
 // pop-up advertisement for My-Monitor Accounts
 .advertisement-modal {
+    &.modal {
+        box-shadow: none;
+    }
 
     .modal-dialog {
         width: 100%;
@@ -135,7 +138,7 @@
         }
 
         .picture {
-            .mobile{
+            .mobile {
                 display: none;
             }
         }
@@ -210,7 +213,7 @@
 
         .modal-content {
             .modal-body {
-                padding: 0 calculateScale(11px);
+                padding: 0 calculateScale(10px);
 
                 h3 {
                     font-size: calculateScale(16px);
@@ -254,7 +257,6 @@
             }
 
             .picture {
-
                 .pc {
                     display: none;
                 }
@@ -268,7 +270,7 @@
                 padding: calculateScale(15px) 0 calculateScale(15px);
 
                 > * {
-                    margin-left: calculateScale(18px);
+                    margin-left: calculateScale(10px);
                     height: calculateScale(28px);
                     line-height: calculateScale(28px) !important;
                     font-size: calculateScale(13px) !important;
