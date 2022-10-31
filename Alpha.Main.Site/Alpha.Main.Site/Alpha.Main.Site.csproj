@@ -928,7 +928,6 @@
     <Content Include="Assets\Images\MyWatchlist\ui-cn-dark.jpg" />
     <Content Include="Assets\Images\MyWatchlist\ui-cn-mobile.jpg" />
     <Content Include="Assets\Images\MyWatchlist\ui-cn.jpg" />
-    <Content Include="Assets\Images\MyWatchlist\ui-dark.jpg" />
     <Content Include="Assets\Images\MyWatchlist\ui-en-dark-mobile.jpg" />
     <Content Include="Assets\Images\MyWatchlist\ui-en-dark.jpg" />
     <Content Include="Assets\Images\MyWatchlist\ui-en-mobile.jpg" />
@@ -949,7 +948,6 @@
     <Content Include="Assets\Images\MyWatchlist\ui-tw-dark.jpg" />
     <Content Include="Assets\Images\MyWatchlist\ui-tw-mobile.jpg" />
     <Content Include="Assets\Images\MyWatchlist\ui-tw.jpg" />
-    <Content Include="Assets\Images\MyWatchlist\ui.jpg" />
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
     <Content Include="Assets\Images\switch.png" />
     <Content Include="Assets\scripts\aes.js" />

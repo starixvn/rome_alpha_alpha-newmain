@@ -61,9 +61,18 @@
 }
 // pop-up advertisement for My-Monitor Accounts
 .advertisement-modal {
-    &.modal{
+    width: 100%;
+    max-width: 1033px;
+    top: 145px;
+    left: 303px;
+    overflow: hidden;
+    right: auto;
+    bottom: auto;
+
+    &.modal {
         box-shadow: none;
     }
+
     .modal-dialog {
         width: 100%;
         max-width: 1033px;
@@ -71,6 +80,22 @@
     }
 
     .modal-content {
+        .modal-header {
+            padding: 0 11px;
+
+            .modal-title {
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 20px;
+                border-bottom: 0;
+                padding: 43px 0 12px;
+
+                b {
+                    font-family: 'Roboto Bold';
+                }
+            }
+        }
+
         .modal-body {
             padding: 0 11px;
             color: $popup-text-color;
@@ -81,14 +106,6 @@
 
             b {
                 font-family: 'Roboto Bold';
-            }
-
-            h3 {
-                font-weight: bold;
-                font-size: 16px;
-                line-height: 20px;
-                margin-top: 15px;
-                margin-bottom: 12px;
             }
 
             > ol {
@@ -132,9 +149,10 @@
         }
 
         .picture {
-            img{
+            img {
                 width: 100%;
             }
+
             .mobile {
                 display: none;
             }
@@ -183,16 +201,14 @@
 }
 @media only screen and (max-device-width : $screen-device-lower768) {
     .announcement-modal {
-        &.visible-mobile {
-            left: 0;
-            right: 0;
-            width: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
 
-            &.in {
-                bottom: 0;
-                top: 0;
-            }
-        }
+        &.in {
+            bottom: 0;
+            top: 0;
+        }       
 
         .modal-dialog.ex-modal {
             height: 100%;
@@ -210,12 +226,32 @@
     }
 
     .advertisement-modal {
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100%;
+
+        &.in {
+            bottom: 0;
+            top: 0;
+        }
+
         .modal-dialog {
             height: 100%;
             top: 0;
         }
 
         .modal-content {
+            .modal-header {
+                padding: 0 calculateScale(10px);
+
+                .modal-title {
+                    font-size: calculateScale(16px);
+                    line-height: calculateScale(20px);
+                    padding: calculateScale(30px) 0 calculateScale(10px);
+                }
+            }
+
             .modal-body {
                 padding: 0 calculateScale(10px);
 

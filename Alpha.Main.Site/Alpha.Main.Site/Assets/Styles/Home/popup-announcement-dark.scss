@@ -66,6 +66,14 @@
 }
 // pop-up advertisement for My-Monitor Accounts
 .advertisement-modal {
+    width: 100%;
+    max-width: 1033px;
+    top: 145px;
+    left: 303px;
+    overflow: hidden;
+    right: auto;
+    bottom: auto;
+
     &.modal {
         box-shadow: none;
     }
@@ -77,6 +85,22 @@
     }
 
     .modal-content {
+        .modal-header {
+            padding: 0 11px;
+
+            .modal-title {
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 20px;
+                border-bottom: 0;
+                padding: 43px 0 12px;
+
+                b {
+                    font-family: 'Roboto Bold';
+                }
+            }
+        }
+
         .modal-body {
             padding: 0 11px;
             color: $popup-text-color;
@@ -87,14 +111,6 @@
 
             b {
                 font-family: 'Roboto Bold';
-            }
-
-            h3 {
-                font-weight: bold;
-                font-size: 16px;
-                line-height: 20px;
-                margin-top: 15px;
-                margin-bottom: 12px;
             }
 
             > ol {
@@ -141,6 +157,7 @@
             img {
                 width: 100%;
             }
+
             .mobile {
                 display: none;
             }
@@ -212,21 +229,34 @@
         }
     }
     .advertisement-modal {
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100%;
+
+        &.in {
+            bottom: 0;
+            top: 0;
+        }
+
         .modal-dialog {
             height: 100%;
             top: 0;
         }
 
         .modal-content {
-            .modal-body {
+            .modal-header {
                 padding: 0 calculateScale(10px);
 
-                h3 {
+                .modal-title {
                     font-size: calculateScale(16px);
                     line-height: calculateScale(20px);
-                    margin-top: calculateScale(15px);
-                    margin-bottom: calculateScale(12px);
+                    padding: calculateScale(30px) 0 calculateScale(10px);
                 }
+            }
+
+            .modal-body {
+                padding: 0 calculateScale(10px);
 
                 > ol {
                     margin-bottom: calculateScale(23px);
