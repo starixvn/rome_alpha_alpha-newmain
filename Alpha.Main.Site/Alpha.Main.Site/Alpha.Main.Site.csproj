@@ -1354,6 +1354,7 @@
     <Content Include="Views\Dashboard\ChatBotBanneri7.cshtml" />
     <Content Include="Views\Dashboard\ChatBotBanneri1.cshtml" />
     <Content Include="Views\Banner\Index.cshtml" />
+    <Content Include="Views\Otp\SetUpOtpTelegram.cshtml" />
     <Content Include="Views\Advertisement\MyWatchlist.cshtml" />
     <Content Include="Views\Advertisement\AdvertisementPopup.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
