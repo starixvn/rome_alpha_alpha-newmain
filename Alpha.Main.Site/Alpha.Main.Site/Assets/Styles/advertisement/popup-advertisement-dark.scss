@@ -25,6 +25,7 @@
                 line-height: 20px;
                 border-bottom: 0;
                 padding: 43px 0 12px;
+                color: $popup-title-color;
 
                 b {
                     font-family: 'Roboto Bold';
@@ -87,6 +88,7 @@
         .picture {
             img {
                 width: 100%;
+                border: 1px solid #515151;
             }
 
             .mobile {
