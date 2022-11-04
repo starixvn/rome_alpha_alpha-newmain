@@ -27,14 +27,14 @@
                     || AppSettings.OfferChatbotSites.Contains(userSession.Site, StringComparer.OrdinalIgnoreCase));
         }
 
-        public int CustId { get; }
+        public int CustId { get; set; }
 
-        public UserLevel CustLevel { get; }
+        public UserLevel CustLevel { get; set; }
 
-        public int SubAccId { get; }
+        public int SubAccId { get; set; }
 
-        public string Language { get; }
+        public string Language { get; set; }
 
-        public bool IsShowLetstalkChatBot { get; }
+        public bool IsShowLetstalkChatBot { get; set; }
     }
 }

@@ -1,6 +1,10 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
     using System;
+    using System.Threading.Tasks;
+    using Alpha.Main.Constants;
+    using Alpha.Main.Site.Requests.TelegramChatBot;
+    using Alpha.Main.Site.ViewModels.TelegramChatBot;
     using Alpha.SecurityCode.Web;
     using AppResources;
     using Main.Models;
@@ -10,12 +14,13 @@
     using Requests.Otp;
     using Services;
     using Sunplus.Agent.Model.Entities;
+    using TelegramBot.Client.Services;
     using ViewModels.Security;
     using Web.Configurations;
     using Web.Helpers;
 
     public class CustomerOtpHandler :
-        IRequestHandler<SetUpOtpQuery, OtpViewModel>,
+        IAsyncRequestHandler<SetUpOtpQuery, OtpViewModel>,
         IRequestHandler<ResetOtpQuery, ResetOtpViewModel>,
         IRequestHandler<ChangeOtpStatusCommand, Result>,
         IRequestHandler<RemoveOtpCommand, Result>,
@@ -34,6 +39,7 @@
         private readonly BrowserHelper browserHelper;
         private readonly IUser user;
         private readonly NicknameChecker nicknameChecker;
+        private readonly ISettingService settingService;
 
         public CustomerOtpHandler(
             CustomerOtpService customerOtpService,
@@ -41,7 +47,8 @@
             SessionManager sessionManager,
             BrowserHelper browserHelper,
             IUser user,
-            NicknameChecker nicknameChecker)
+            NicknameChecker nicknameChecker,
+            ISettingService settingService)
         {
             this.customerOtpService = customerOtpService;
             this.userSession = userSession;
@@ -49,6 +56,7 @@
             this.browserHelper = browserHelper;
             this.user = user;
             this.nicknameChecker = nicknameChecker;
+            this.settingService = settingService;
         }
 
         public Result Handle(ChangeOtpStatusCommand message)
@@ -242,20 +250,38 @@
             };
         }
 
-        public OtpViewModel Handle(SetUpOtpQuery message)
+        public async Task<OtpViewModel> Handle(SetUpOtpQuery message)
         {
             if (message == null)
             {
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
+            var customerOtp = customerOtpService.GetCustomerOtp(message.CustId, message.SubAccountId);
+
             var viewModel = new OtpViewModel
             {
-                CustomerOtp = customerOtpService.GetCustomerOtp(message.CustId, message.SubAccountId),
+                CustomerOtp = customerOtp,
                 IsAlreadySetup = true,
                 IsShowNicknameLink = !nicknameChecker.IsOfferForceLoginAndOverDueDate,
                 IsOfferProtectedMode = message.IsOfferProtectedMode
             };
+
+            var custBotMessenger = await settingService.GetCustBotMessengerAsync(
+                message.CustId,
+                message.SubAccountId,
+                Language.MapNewChineseLanguageCode(message.Language));
+
+            viewModel.RegisterAccountViewModel = new RegisterAccountViewModel(
+                new ChatBotViewModel(custBotMessenger),
+                new SetUpChatBotQuery
+                {
+                    CustId = message.CustId,
+                    CustLevel = message.CustLevel,
+                    SubAccId = message.SubAccountId,
+                    Language = Language.MapNewChineseLanguageCode(message.Language),
+                    IsShowLetstalkChatBot = message.IsShowLetstalkChatBot
+                });
 
             if (!viewModel.CustomerOtp.Enabled
                 && string.IsNullOrWhiteSpace(viewModel.CustomerOtp.SecretKey))
@@ -270,7 +296,7 @@
                 sessionManager.Add(SecretKeySessionKey, viewModel.CustomerOtp.SecretKey);
             }
 
-            return viewModel;
+            return await Task.FromResult(viewModel);
         }
 
         private bool HasUpdatePermission(

@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
+    using System.Threading.Tasks;
     using System.Web.Mvc;
     using AppResources;
     using Main.Models;
@@ -19,9 +20,9 @@
             this.mediator = mediator;
         }
 
-        public ActionResult SetUpOtp(SetUpOtpQuery query)
+        public async Task<ActionResult> SetUpOtp(SetUpOtpQuery query)
         {
-            var customerOtp = mediator.Send(query);
+            var customerOtp = await mediator.SendAsync(query);
 
             return View(customerOtp);
         }
