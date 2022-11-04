@@ -847,6 +847,10 @@
     <Content Include="Assets\bundles\security\verify-security-code.min.css">
       <DependentUpon>verify-security-code.css</DependentUpon>
     </Content>
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop-dark_vi-VN.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop_vi-VN.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile-dark_vi-VN.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile_vi-VN.jpg" />
     <Content Include="Assets\Images\chatbot-i1.svg" />
     <Content Include="Assets\Images\chatbot-i7.svg" />
     <Content Include="Assets\Images\icon-chatbot-1.svg" />
