@@ -41,14 +41,14 @@
         }
 
         [HttpPost, AntiXsrfFilter]
-        public JsonResult VerifyOtp(VerifyOtpCommand command)
+        public async Task<JsonResult> VerifyOtp(VerifyOtpCommand command)
         {
             if (!SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp)
             {
                 return Json(Result.CreateErrorResult(Security.NotAuthorized));
             }
 
-            var result = mediator.Send(command);
+            var result = await mediator.SendAsync(command);
 
             return Json(result);
         }
@@ -109,6 +109,19 @@
             var result = mediator.Send(command);
 
             return Json(result);
+        }
+
+        [HttpPost, AntiXsrfFilter]
+        public async Task<ActionResult> GenerateOTP()
+        {
+            if (userSession.IsInternal)
+            {
+                return Json(UnauthorizedResult.CreateUnauthorizedResult());
+            }
+
+            var countDownTime = await mediator.SendAsync(new GenerateOTPCommand(userSession));
+
+            return Json(new { countDownTime });
         }
     }
 }

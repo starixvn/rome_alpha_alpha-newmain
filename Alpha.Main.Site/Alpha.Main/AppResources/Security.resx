@@ -475,4 +475,7 @@ Notes: your password is cAsE sEnSiTiVe.</value>
   <data name="NewSecurityCode" xml:space="preserve">
     <value>New Security Code</value>
   </data>
+  <data name="GenerateOTP" xml:space="preserve">
+    <value>Generate OTP</value>
+  </data>
 </root>

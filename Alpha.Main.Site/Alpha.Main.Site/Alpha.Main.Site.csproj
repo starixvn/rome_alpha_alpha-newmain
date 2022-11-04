@@ -1790,6 +1790,7 @@
     <Compile Include="Requests\Otp\CheckDifferenceDeviceCommand.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
+    <Compile Include="Requests\Otp\GenerateOTPCommand.cs" />
     <Compile Include="Requests\Otp\RemoveOtpCommand.cs" />
     <Compile Include="Requests\Otp\ResetOtpCommand.cs">
       <SonarQubeExclude>true</SonarQubeExclude>

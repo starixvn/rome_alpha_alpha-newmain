@@ -16,7 +16,6 @@
     using Sunplus.Agent.Model.Entities;
     using TelegramBot.Client.Services;
     using ViewModels.Security;
-    using Web.Configurations;
     using Web.Helpers;
 
     public class CustomerOtpHandler :
@@ -26,10 +25,11 @@
         IRequestHandler<RemoveOtpCommand, Result>,
         IRequestHandler<ResetOtpCommand, ResetOtpViewModel>,
         IRequestHandler<SetUpOtpCommand, Result>,
-        IRequestHandler<VerifyOtpCommand, Result>,
+        IAsyncRequestHandler<VerifyOtpCommand, Result>,
         IRequestHandler<VerifyOtpDifferentDeviceQuery, VerifyOtpDifferenceDeviceViewModel>,
         IAsyncRequestHandler<CheckDifferenceDeviceCommand, bool>,
-        IRequestHandler<VerifyOtpQuery, VerifyOTPViewModel>
+        IRequestHandler<VerifyOtpQuery, VerifyOTPViewModel>,
+        IAsyncRequestHandler<GenerateOTPCommand, long>
     {
         private const string SecretKeySessionKey = "CustomerOtpHandler.SecretKeySessionKey";
 
@@ -172,7 +172,7 @@
             };
         }
 
-        public Result Handle(VerifyOtpCommand message)
+        public async Task<Result> Handle(VerifyOtpCommand message)
         {
             if (message == null)
             {
@@ -180,13 +180,14 @@
             }
 
             var deviceInfo = browserHelper.GetDevice();
-            var result = customerOtpService.VerifyOtp(new CustomerOtp
+            var result = await customerOtpService.VerifyOtp(new CustomerOtp
             {
                 CustId = message.CustId,
                 SubAccId = message.SubAccountId,
                 Otp = message.Otp,
                 Device = deviceInfo,
-                Language = message.Language
+                Language = message.Language,
+                IsEnabledTelegramOTP = user.IsEnabledTelegramOTP
             });
 
             if (result.IsSuccessful)
@@ -246,7 +247,9 @@
 
             return new VerifyOTPViewModel
             {
-                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName)
+                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName),
+                IsShowGenerateOTPButton = user.IsEnabledTelegramOTP,
+                OTPExpirationTime = user.TelegramOTPExpirationTime
             };
         }
 
@@ -378,6 +381,13 @@
         private void SetVerifiedOtp()
         {
             SecurityCodeSessionManager.SecurityCodeSession.IsAlreadyInputSecurityCode = true;
+        }
+
+        public async Task<long> Handle(GenerateOTPCommand message)
+        {
+            await customerOtpService.GenerateTelegramOTP(message.CustId, message.SubAccId);
+            user.TelegramOTPExpirationTime = DateTimeOffset.UtcNow.AddMinutes(3).ToUnixTimeMilliseconds();
+            return user.TelegramOTPExpirationTime;
         }
     }
 }

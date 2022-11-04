@@ -129,7 +129,8 @@
                 container.GetInstance<IDynamicRepository>(),
                 container.GetInstance<OtpService>(),
                 container.GetInstance<JsonHelper>(),
-                container.GetInstance<INetThrottlingService>()));
+                container.GetInstance<INetThrottlingService>(),
+                container.GetInstance<IOTPService>()));
 
             container.RegisterPerWebRequest<Chatbot.Client.Services.SettingService, SettingServiceImpl>();
             container.RegisterPerWebRequest<ISettingService>(() => new TelegramBot.Client.Services.SettingService(CreateTelegramBotHttpClient()));
