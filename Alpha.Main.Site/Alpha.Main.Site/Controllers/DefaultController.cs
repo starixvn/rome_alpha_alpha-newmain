@@ -244,7 +244,8 @@ namespace Alpha.Main.Site.Controllers
                 userSession.NickName,
                 Session["ONEbook.UM.ByPassUM"],
                 userSession.AutoFollowBetIsDummyAgent,
-                Session.SessionID
+                Session.SessionID,
+                AppSettings.BetlistDomain
             };
 
             foreach (var item in sessions)
