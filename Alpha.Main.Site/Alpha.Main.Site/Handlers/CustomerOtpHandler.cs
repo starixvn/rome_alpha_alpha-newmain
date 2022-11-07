@@ -368,9 +368,11 @@
                 return false;
             }
 
-            var deviceId = browserHelper.GetDeviceId();
+            return true;
 
-            return customerOtpService.IsDifferenceDevice(message.CustId, deviceId, message.SubAccountId);
+            //var deviceId = browserHelper.GetDeviceId();
+
+            //return customerOtpService.IsDifferenceDevice(message.CustId, deviceId, message.SubAccountId);
         }
 
         private void SetOtpStatusToSession(bool isEnabledOtp)

@@ -7,5 +7,7 @@
         public string AlternateUsername { get; set; }
 
         public string UsernameShower { get; set; }
+
+        public bool IsShowGenerateOTPButton { get; set; }
     }
 }
