@@ -1,0 +1,24 @@
+﻿@model Alpha.Main.Site.ViewModels.TelegramChatBot.RegisterAccountViewModel
+
+<div class="tab-content">
+    <div class="panel">
+        <div class="panel-heading" role="tab" id="headingRegister">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" href="#registerTelegram" aria-expanded="false" aria-controls="registerTelegram">
+                    Set up OTP via Telegram Chatbot
+                </a>
+            </h4>
+        </div>
+        <div id="registerTelegram" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingRegister">
+            <div class="panel-body has-padding">
+                @Html.Partial("../TelegramChatBot/RegisterTelegramAccount", Model)
+                <label class="input-disable ml-18">
+                    <input id="cbkEnableOtp"
+                           type="checkbox"
+                           disabled />
+                    Enable Otp Via Telegram Chatbot
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

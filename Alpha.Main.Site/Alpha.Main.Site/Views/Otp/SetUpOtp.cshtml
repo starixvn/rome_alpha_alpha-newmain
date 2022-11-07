@@ -10,6 +10,10 @@
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
     @StaticResources.AssetStyles.RenderWithDarkMode("/bundles/site-main/otp/otp-super")
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/otp/otp")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/chatbot/chatbot-default")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode($"/bundles/site-main/chatbot/tab-{Model.RegisterAccountViewModel.CustLevel}")
+    @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/telegramchatbot/register-account")
+    @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/telegramchatbot/chatbot")
     @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagScript()
 </head>
 <body>
@@ -51,7 +55,7 @@
             <div class="panel-group panel-table" id="accordion" role="tablist" aria-multiselectable="true">
                 @if (!Model.RegisterAccountViewModel.ChatBotViewModel.IsLinked)
                 {
-                    @Html.Partial("../TelegramChatBot/RegisterAccount", Model.RegisterAccountViewModel)
+                    @Html.Partial("SetUpTelegramOtp", Model.RegisterAccountViewModel)
                 }
                 else
                 {
@@ -67,6 +71,13 @@
         </div>
     </div>
     @Html.AntiForgeryToken()
+    @Html.Hidden("UnsubscribeWarning", ChatBot.UnsubscribeWarning)
+    @Html.Hidden("InvalidOTP", ChatBot.InvalidOTP)
+    @Html.Hidden("OTPIsRequired", ChatBot.OTPIsRequired)
+    @Html.Hidden("ResendOTPSuccessfully", ChatBot.ResendOTPSuccessfully)
+    @Html.Hidden("CaptchaIsRequired", ChatBot.captchaIsRequired)
+    @Html.Hidden("StartBeforeInputOTP", ChatBot.StartBeforeInputOTP)
+    @Html.Hidden("Language", Model.RegisterAccountViewModel.Language)
     @Html.Hidden("RemoveOtpWarning", Security.RemoveOtpWarning)
     @Html.Hidden("RemoveOtpSuccessMessage", Security.RemoveOtpSuccessMessage)
     @Html.Hidden("OtpIsInvalidOrExpired", Security.OtpIsInvalidOrExpired)
@@ -79,5 +90,7 @@
     @StaticResources.AssetScripts.Render("/bundles/site-main/otp/otp-default")
     @StaticResources.RenderScripts("~/assets/bundles/security/otp/setup-otp")
     @StaticResources.RenderScripts("~/assets/bundles/security/otp/change-otp-telegram-status")
+    @StaticResources.RenderScripts("~/assets/bundles/telegramchatbot/register-account")
+    @StaticResources.AssetScripts.Render("/bundles/site-main/chatbot/chatbot-default")
 </body>
 </html>

@@ -1,0 +1,35 @@
+﻿@model Alpha.Main.Site.ViewModels.TelegramChatBot.RegisterAccountViewModel
+
+<ul id="registerTelegramPanel" class="list-requirements">
+    <li>
+        <p class="bold">@Html.Raw(ChatBot.InstallTelegram)</p>
+        <div class="download-content">
+            <div class="logo-telegram">
+                <img id="logoTelegram" src="~/Assets/Styles/telegramchatbot/images/telegram.png" />
+                <img class="qr-code hide ml-3" id="imgQRCode" src="~/Assets/styles/telegramchatbot/images/telegram-qr-code.jpg" />
+                <a href="#" class="link qr-code-link" id="showQRCode">@ChatBot.showQRCode</a>
+                <a href="#" class="link qr-code-link hide" id="hideQRCode">@ChatBot.hideQRCode</a>
+            </div>
+            <div class="list-download">
+                <h2>@ChatBot.Telegram</h2>
+                <p><strong>@ChatBot.TelegramMessengerInc</strong></p>
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://apps.apple.com/app/telegram-messenger/id686449807" class="btn-download-ios" target="_blank">
+                            <img src="~/Assets/Styles/telegramchatbot/images/apple.png" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://play.google.com/store/apps/details?id=org.telegram.messenger" target="_blank" class="btn-download-android">
+                            <img src="~/Assets/Styles/telegramchatbot/images/google.png" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </li>
+    <li>
+        <p class="bold">@Html.Raw(ChatBot.StartSettingUp)</p>
+        <button class="btn-chatbot btn-gen-qr-code" id="btnGenQRCode">@ChatBot.GeneratePrivateQRCode</button>
+    </li>
+</ul>
