@@ -5,6 +5,9 @@ class VerifyOtpDefferenceDevice {
     $btnBack: any;
     $otpForm: any;
     $txtOtp: any;
+    $btnGenerateOTP: any;
+    $countDown: any;
+    $otpExpirationTime: any;
     lockedAccountCode: number = 200;
 
     resources = {
@@ -22,17 +25,58 @@ class VerifyOtpDefferenceDevice {
 
         const actorProfilePicture = JSON.parse(localStorage.getItem('actorProfilePicture'));
         this.$('.profile-avatar').attr("src", actorProfilePicture.Image);
+
+        var otpExpirationTime = parseInt(this.$otpExpirationTime.val());
+        this.countDown(otpExpirationTime);
     }
 
     cachedElements = () => {
         this.$btnBack = this.$("#btn-back");
         this.$otpForm = this.$("#otp-form");
         this.$txtOtp = this.$("#txtOTP");
+        this.$btnGenerateOTP = this.$("#btnGenerateOTP");
+        this.$countDown = this.$("#countdown");
+        this.$otpExpirationTime = this.$("#otpExpirationTime");
     }
 
     registerEvents = () => {
         this.$btnBack.click(alpha.core.signOut);
         this.$otpForm.submit(this.verifyOtpEvent);
+        this.$btnGenerateOTP.click(this.generateOTP);
+    }
+
+    generateOTP = (e: any) => {
+        e.preventDefault();
+        this.$.blockUI();
+        this.$.ajax({
+            type: "POST",
+            url: alpha.urls.mainRootPath + "Otp/GenerateOTP",
+            success: this.onGenerateOTPSuccess,
+            complete: this.onComplete
+        });
+    }
+
+    onGenerateOTPSuccess = (data) => {
+        if (data.countDownTime) {
+            this.countDown(data.countDownTime);
+        }
+    }
+
+    countDown = (countDownTime) => {
+        this.$btnGenerateOTP.attr("disabled", "disabled");
+        var x = setInterval(() => {
+            var now = new Date().getTime();
+            var distance = countDownTime - now;
+            if (distance < 0) {
+                clearInterval(x);
+                this.$countDown.text("");
+                this.$btnGenerateOTP.removeAttr("disabled", "disabled");
+            } else {
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                this.$countDown.text(`(${minutes}:${seconds})`);
+            }
+        }, 1000);
     }
 
     verifyOtpEvent = (e: any) => {

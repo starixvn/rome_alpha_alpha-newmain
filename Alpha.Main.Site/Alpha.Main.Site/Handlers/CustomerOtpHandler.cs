@@ -168,7 +168,9 @@
             {
                 Username = message.UserName,
                 AlternateUsername = BuildAlternateUsername(message.IsSubAcc, message.SubUserName, message.NickName),
-                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName)
+                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName),
+                IsShowGenerateOTPButton = user.IsEnabledTelegramOTP,
+                OTPExpirationTime = user.TelegramOTPExpirationTime
             };
         }
 
@@ -368,11 +370,9 @@
                 return false;
             }
 
-            return true;
+            var deviceId = browserHelper.GetDeviceId();
 
-            //var deviceId = browserHelper.GetDeviceId();
-
-            //return customerOtpService.IsDifferenceDevice(message.CustId, deviceId, message.SubAccountId);
+            return customerOtpService.IsDifferenceDevice(message.CustId, deviceId, message.SubAccountId);
         }
 
         private void SetOtpStatusToSession(bool isEnabledOtp)

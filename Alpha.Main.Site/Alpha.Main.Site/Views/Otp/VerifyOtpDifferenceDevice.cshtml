@@ -18,7 +18,10 @@
         <div class="rowlg">
             <i class="icon-lock"></i>
             <input maxlength="6" type="password" autocomplete="off" class="txt" name="otp" id="txtOTP" placeholder="OTP" />
-            <input type="button" class="btn-submit" id="btnGenerateOTP" value="@Security.GenerateOTP" />
+            @if (Model.IsShowGenerateOTPButton)
+            {
+                <button class="btn-submit" id="btnGenerateOTP">@Security.GenerateOTP <span id="countdown"></span></button>
+            }
             <label class="error"></label>
             <i class="validation"></i>
         </div>
@@ -31,6 +34,7 @@
         </div>
     </form>
 </div>
+@Html.Hidden("otpExpirationTime", Model.OTPExpirationTime)
 @Html.Hidden("requiredFieldMessage", Security.alertSecCodeEmpty)
 @Html.Hidden("oldMainRootPath", MicroSites.OldMainUrl("~/"))
 @Html.Hidden("mainRootPath", MicroSites.MainUrl())
