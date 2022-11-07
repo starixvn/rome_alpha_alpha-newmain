@@ -33,7 +33,7 @@
 
             return model.IsLinked
                 ? View("ChatBotSetting", new ChatBotSettingViewModel(model, query))
-                : View("RegisterAccount", new RegisterAccountViewModel(model, query));
+                : View("RegisterAccount", new RegisterAccountViewModel(model, query) { IsOtpPage = false });
         }
 
         [HttpPost, AntiXsrfFilter]
@@ -59,7 +59,7 @@
 
             return PartialView("VerifyAccount", viewModel);
         }
-        
+
         [HttpPost, AntiXsrfFilter]
         public async Task<ActionResult> VerifyOTP(VerifyOTPCommand command)
         {

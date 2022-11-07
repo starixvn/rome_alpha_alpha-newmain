@@ -28,7 +28,7 @@
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
     <TargetFrameworkProfile />
     <Use64BitIISExpress />
-    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
     <SonarQubeTestProject>False</SonarQubeTestProject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -779,6 +779,10 @@
     <Content Include="Assets\bundles\protection-code\protection.min.js">
       <DependentUpon>protection.js</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\security\otp\change-otp-telegram-status.js" />
+    <Content Include="Assets\bundles\security\otp\change-otp-telegram-status.min.js">
+      <DependentUpon>change-otp-telegram-status.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\security\otp\reset-otp.js" />
     <Content Include="Assets\bundles\security\otp\reset-otp.min.js">
       <DependentUpon>reset-otp.js</DependentUpon>
@@ -1329,7 +1333,7 @@
     <Content Include="Views\Dashboard\ChatBotBanneri7.cshtml" />
     <Content Include="Views\Dashboard\ChatBotBanneri1.cshtml" />
     <Content Include="Views\Banner\Index.cshtml" />
-    <Content Include="Views\Otp\SetUpOtpTelegram.cshtml" />
+    <Content Include="Views\Otp\ChangeOtpTelegramStatus.cshtml" />
     <Content Include="Views\Advertisement\MyWatchlist.cshtml" />
     <Content Include="Views\Advertisement\AdvertisementPopup.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
@@ -1346,6 +1350,7 @@
     <TypeScriptCompile Include="Assets\scripts\newcustomer-captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\nickname\create-nickname.ts" />
     <TypeScriptCompile Include="Assets\scripts\protection-code\protection.ts" />
+    <TypeScriptCompile Include="Assets\scripts\security\otp\change-otp-telegram-status.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\reset-otp.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\setup-otp.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp-difference-device.ts" />

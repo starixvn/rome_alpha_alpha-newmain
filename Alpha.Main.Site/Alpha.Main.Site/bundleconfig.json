@@ -159,6 +159,13 @@
     ]
   },
   {
+    "outputFileName": "Assets/bundles/security/otp/change-otp-telegram-status.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/security/otp/change-otp-telegram-status.js"
+    ]
+  },
+  {
     "outputFileName": "Assets/bundles/security/otp/verify-otp-difference-device.js",
     "inputFiles": [
       "Assets/scripts/core.js",

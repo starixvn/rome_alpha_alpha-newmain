@@ -277,16 +277,9 @@
                 message.SubAccountId,
                 Language.MapNewChineseLanguageCode(message.Language));
 
-            viewModel.RegisterAccountViewModel = new RegisterAccountViewModel(
-                new ChatBotViewModel(custBotMessenger),
-                new SetUpChatBotQuery
-                {
-                    CustId = message.CustId,
-                    CustLevel = message.CustLevel,
-                    SubAccId = message.SubAccountId,
-                    Language = Language.MapNewChineseLanguageCode(message.Language),
-                    IsShowLetstalkChatBot = message.IsShowLetstalkChatBot
-                });
+            viewModel.RegisterAccountViewModel =
+                new RegisterAccountViewModel(new ChatBotViewModel(custBotMessenger), new SetUpChatBotQuery())
+                { IsOtpPage = true };
 
             if (!viewModel.CustomerOtp.Enabled
                 && string.IsNullOrWhiteSpace(viewModel.CustomerOtp.SecretKey))
