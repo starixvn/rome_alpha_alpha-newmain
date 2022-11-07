@@ -69,7 +69,6 @@
 .list-qr-code {
     display: flex;
     align-items: flex-end;
-    
     margin-bottom: 10px;
 
     .private-qr-code-link {
@@ -168,4 +167,9 @@
     text-decoration: underline;
     font-weight: bold;
     cursor: pointer;
+}
+
+.input-disable {
+    margin-left: 18px;
+    margin-top: 15px;
 }

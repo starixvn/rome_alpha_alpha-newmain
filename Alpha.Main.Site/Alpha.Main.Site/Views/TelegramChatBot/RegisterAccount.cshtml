@@ -60,6 +60,15 @@
                         <button class="btn-chatbot btn-gen-qr-code" id="btnGenQRCode">@ChatBot.GeneratePrivateQRCode</button>
                     </li>
                 </ul>
+                @if (Model.IsOtpPage)
+                {
+                    <label class="input-disable">
+                        <input id="cbkEnableOtp"
+                               type="checkbox"
+                               disabled />
+                        Enable Otp Via Telegram ChatBot
+                    </label>
+                }
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@
 
 // To remove the 300-350ms tap delay
 html {
-  touch-action: manipulation;
+    touch-action: manipulation;
 }
 
 body {
@@ -25,7 +25,7 @@ label {
 }
 
 // Messages
-.msg-content {      
+.msg-content {
     padding-top: 12px;
 
     .msg {
@@ -251,7 +251,6 @@ label {
                 padding-top: 0;
             }
         }
-
         /*#setup-otp-message .msg {
             margin-bottom: 0;
         }*/
@@ -269,7 +268,6 @@ label {
             margin-top: 4px;
         }
     }
-
     /*#change-status-message {
         float: left;
         margin-left: 20px;
@@ -314,7 +312,7 @@ label {
 
             label {
                 font-weight: normal;
-                display:  block;
+                display: block;
 
                 &.otp-title {
                     padding-top: 10px;
@@ -506,3 +504,22 @@ label {
     }
 }
 
+.btn-unlink-telegram {
+    display: block;
+}
+
+.ml-25 {
+    margin-left: 25px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.ml-8 {
+    margin-left: 8px;
+}
+
+.ml-16 {
+    margin-left: 16px;
+}

@@ -1,7 +1,7 @@
 ﻿@Model RegisterAccountViewModel
 
 <div class="tab-content">
-    <div class="panel">
+    <div class="panel success">
         <div class="panel-heading" role="tab" id="headingAccount">
             <h4 class="panel-title">
                 <a role="button" data-toggle="collapse" href="#account" aria-expanded="false" aria-controls="account">
@@ -11,16 +11,15 @@
         </div>
         <div id="account" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAccount">
             <div class="panel-body account-info">
-                <p style="margin-left: 25px">Click this button to unlink Telegram Chatbot from your account</p>
-                <button class="btn-remove" id="btnUnsubscribe" style="margin-left: 25px; display: block">@ChatBot.unLink</button>
-                <label>
+                <p class="ml-25">Click this button to unlink Telegram Chatbot from your account</p>
+                <button class="btn-remove btn-unlink-telegram ml-25" id="btnUnsubscribe">@ChatBot.unLink</button>
+                <label class="ml-25 mt-15">
                     <input class="cbkEnableOtp"
                            type="checkbox"
-                           @(Model.IsEnableOTP ? "checked" : string.Empty)
+                           @(Model.OtpFunction.Enabled ? "checked" : string.Empty)
                            data-functionId="@Model.OtpFunction.FunctionId"
                            data-functionName="@Model.OtpFunction.FunctionName"
-                           data-type="@Model.OtpFunction.Type"
-                           style="margin-left: 25px; margin-top: 15px" />
+                           data-type="@Model.OtpFunction.Type" />
                     Enable Otp Via Telegram Chatbot
                 </label>
             </div>

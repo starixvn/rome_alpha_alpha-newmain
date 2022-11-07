@@ -25,7 +25,5 @@
         public bool IsOtpPage { get; set; }
 
         public Function OtpFunction => ChatBotViewModel.CustBotMessenger.Functions.FirstOrDefault(func => func.FunctionId == 15);
-
-        public bool IsEnableOTP => ChatBotViewModel.CustBotMessenger.Functions.Any(func => func.FunctionId == 15 && func.Enabled == true);
     }
 }

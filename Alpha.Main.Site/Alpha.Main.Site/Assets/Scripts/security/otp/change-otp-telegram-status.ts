@@ -63,20 +63,13 @@ class ChangeOtpTelegramStatus {
             data: { functionId, functionName, type, enabled },
             dataType: "json",
             success: (result) => {
-                //parent.window.location.href = parent.window.location.href;
-                //if (result && result.IsNotOk) {
-                //    if (result.IsNotAuthorized) {
-                //        self.topWindow.bootboxAlert(result.Message);
-                //        return;
-                //    }
 
-                //    if (result.Code == this.HAS_UNLINKED_ERR_CODE) {
-                //        this.showHasUnlinkedMessage();
-                //        return;
-                //    }
-
-                checkbox.prop("checked", !enabled);
-                //}
+                if (enabled) {
+                    checkbox.prop('checked', true).attr('checked', 'checked');
+                }
+                else {
+                    checkbox.prop('checked', false).removeAttr('checked');
+                }
             },
             complete: function (jqXHR, textStatus) {
                 self.$.unblockUI();
