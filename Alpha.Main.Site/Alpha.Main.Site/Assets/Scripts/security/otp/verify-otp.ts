@@ -90,6 +90,7 @@ class VerifyOtp {
             setTimeout(() => {
                 securityHelper.afterVerifed();
                 this.$txtOtp.attr("disabled", "disabled");
+                this.$btnGenerateOTP.attr("disabled", "disabled").remove();
                 this.$btnSubmit.attr("disabled", "disabled").remove();
             }, 3000);
         }
@@ -128,8 +129,8 @@ class VerifyOtp {
 
     countDown = (countDownTime) => {
         this.$btnGenerateOTP.attr("disabled", "disabled");
-        var x = setInterval( ()=> {
-            var now = new Date().getUTCMilliseconds();
+        var x = setInterval(() => {
+            var now = new Date().getTime();
             var distance = countDownTime - now;
             if (distance < 0) {
                 clearInterval(x);
@@ -138,8 +139,7 @@ class VerifyOtp {
             } else {
                 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                this.$countDown.text(minutes + ":" + seconds);
-                countDownTime--;
+                this.$countDown.text(`(${minutes}:${seconds})`);
             }
         }, 1000);
     }
