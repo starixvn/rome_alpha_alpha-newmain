@@ -192,8 +192,10 @@
             if (!isCorrect)
             {
                 var customerOtp = GetCustomerOtp(param.CustId, param.SubAccId);
-
-                isCorrect = otpService.VerifyOtp(customerOtp.SecretKey, param.Otp, TimePeriod, OtpSize);
+                if (customerOtp.Enabled)
+                {
+                    isCorrect = otpService.VerifyOtp(customerOtp.SecretKey, param.Otp, TimePeriod, OtpSize);
+                }
             }
            
             if (isCorrect)
