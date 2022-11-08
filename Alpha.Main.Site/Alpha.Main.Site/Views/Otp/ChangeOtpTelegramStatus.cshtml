@@ -1,30 +1,30 @@
-﻿@Model RegisterAccountViewModel
+﻿@model Alpha.Main.Site.ViewModels.TelegramChatBot.RegisterAccountViewModel
 
-<div class="tab-content">
-    <div class="panel success">
-        <div class="panel-heading" role="tab" id="headingAccount">
-            <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" href="#account" aria-expanded="false" aria-controls="account">
-                    Set up OTP via Telegram Chatbot
-                </a>
-            </h4>
-        </div>
-        <div id="account" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAccount">
-            <div class="panel-body account-info">
-                <p class="ml-25">Click this button to unlink Telegram Chatbot from your account</p>
-                <button class="btn-remove btn-unlink-telegram ml-25" id="btnUnsubscribe">@ChatBot.unLink</button>
-                <label class="ml-25 mt-15">
-                    <input class="cbkEnableOtp"
-                           type="checkbox"
-                           @(Model.OtpFunction.Enabled ? "checked" : string.Empty)
-                           data-functionId="@Model.OtpFunction.FunctionId"
-                           data-functionName="@Model.OtpFunction.FunctionName"
-                           data-type="@Model.OtpFunction.Type" />
-                    Enable Otp Via Telegram Chatbot
-                </label>
-            </div>
+
+<div class="panel success">
+    <div class="panel-heading" role="tab" id="headingAccount">
+        <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" href="#account" aria-expanded="false" aria-controls="account">
+                Set up OTP via Telegram Chatbot
+            </a>
+        </h4>
+    </div>
+    <div id="account" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAccount">
+        <div class="panel-body account-info">
+            <p class="ml-25">Click this button to unlink Telegram Chatbot from your account</p>
+            <button class="btn-remove btn-unlink-telegram ml-25" id="btnUnsubscribe">@ChatBot.unLink</button>
+            <label class="ml-25 mt-15">
+                <input class="cbkEnableOtp"
+                        type="checkbox"
+                        @(Model.OtpFunction.Enabled ? "checked" : string.Empty)
+                        data-functionId="@Model.OtpFunction.FunctionId"
+                        data-functionName="@Model.OtpFunction.FunctionName"
+                        data-type="@Model.OtpFunction.Type" />
+                Enable Otp Via Telegram Chatbot
+            </label>
         </div>
     </div>
 </div>
+
 
 @Html.Hidden("UnsubscribeWarning", ChatBot.UnsubscribeTelegramBotWarning)

@@ -33,3 +33,10 @@
         <button class="btn-chatbot btn-gen-qr-code" id="btnGenQRCode">@ChatBot.GeneratePrivateQRCode</button>
     </li>
 </ul>
+@Html.Hidden("UnsubscribeWarning", ChatBot.UnsubscribeWarning)
+@Html.Hidden("InvalidOTP", ChatBot.InvalidOTP)
+@Html.Hidden("OTPIsRequired", ChatBot.OTPIsRequired)
+@Html.Hidden("ResendOTPSuccessfully", ChatBot.ResendOTPSuccessfully)
+@Html.Hidden("CaptchaIsRequired", ChatBot.captchaIsRequired)
+@Html.Hidden("StartBeforeInputOTP", ChatBot.StartBeforeInputOTP)
+@Html.Hidden("Language", Model.Language)

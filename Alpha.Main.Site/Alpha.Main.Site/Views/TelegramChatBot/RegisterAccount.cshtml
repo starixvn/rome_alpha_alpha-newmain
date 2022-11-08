@@ -27,19 +27,12 @@
                 <p>
                     @Html.Raw(ChatBot.IntroTelegramChatbot)
                 </p>
-                @Html.Partial("./RegisterTelegramAccount", Model)
+                @Html.Partial("RegisterTelegramAccount", Model)
             </div>
         </div>
     </div>
 </div>
 
-@Html.Hidden("UnsubscribeWarning", ChatBot.UnsubscribeWarning)
-@Html.Hidden("InvalidOTP", ChatBot.InvalidOTP)
-@Html.Hidden("OTPIsRequired", ChatBot.OTPIsRequired)
-@Html.Hidden("ResendOTPSuccessfully", ChatBot.ResendOTPSuccessfully)
-@Html.Hidden("CaptchaIsRequired", ChatBot.captchaIsRequired)
-@Html.Hidden("StartBeforeInputOTP", ChatBot.StartBeforeInputOTP)
-@Html.Hidden("Language", Model.Language)
 @section Scripts{
     @StaticResources.RenderScripts("~/assets/bundles/telegramchatbot/register-account")
 }
