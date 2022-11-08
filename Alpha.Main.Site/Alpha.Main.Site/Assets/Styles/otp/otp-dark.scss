@@ -3,7 +3,7 @@
 
 // To remove the 300-350ms tap delay
 html {
-  touch-action: manipulation;
+    touch-action: manipulation;
 }
 
 body {
@@ -25,7 +25,7 @@ label {
 }
 
 // Messages
-.msg-content {      
+.msg-content {
     padding-top: 12px;
 
     .msg {
@@ -216,6 +216,10 @@ label {
         }
 
         .qr-code {
+            /*margin: 12px -12px;*/
+        }
+
+        .sophos-qr {
             margin: 12px -12px;
         }
 
@@ -309,7 +313,7 @@ label {
 
             label {
                 font-weight: normal;
-                display:  block;
+                display: block;
 
                 &.otp-title {
                     padding-top: 10px;
@@ -447,7 +451,7 @@ label {
                 }
 
                 .panel-heading .panel-title a {
-                    border: 1px solid #dcdcdc;                    
+                    border: 1px solid #dcdcdc;
                 }
 
                 .panel-heading + .panel-collapse > .panel-body {
@@ -500,7 +504,26 @@ label {
     }
 }
 
-.tab-content  {
+.tab-content {
     padding-top: 10px;
 }
 
+.btn-unlink-telegram {
+    display: block;
+}
+
+.ml-25 {
+    margin-left: 25px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.ml-8 {
+    margin-left: 8px;
+}
+
+.ml-16 {
+    margin-left: 16px;
+}
