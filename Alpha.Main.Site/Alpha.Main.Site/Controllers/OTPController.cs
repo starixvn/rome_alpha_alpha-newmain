@@ -2,6 +2,7 @@
 {
     using System.Threading.Tasks;
     using System.Web.Mvc;
+    using Alpha.Main.Site.Requests.TelegramChatBot;
     using AppResources;
     using Main.Models;
     using MediatR;
@@ -122,6 +123,17 @@
             var countDownTime = await mediator.SendAsync(new GenerateOTPCommand(userSession));
 
             return Json(new { countDownTime });
+        }
+
+        [HttpPost, AntiXsrfFilter]
+        public async Task<ActionResult> UpdateOtpFunction(UpdateOtpTelegramCommand command)
+        {
+            if (userSession.IsInternal)
+            {
+                return Json(UnauthorizedResult.CreateUnauthorizedResult());
+            }
+
+            return Json(await mediator.SendAsync(command));
         }
     }
 }

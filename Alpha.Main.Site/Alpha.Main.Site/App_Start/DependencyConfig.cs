@@ -12,6 +12,7 @@
     using Alpha.Captcha.Services;
     using Alpha.Main.Configurations;
     using Alpha.Main.ProfilePicture.Services;
+    using Alpha.Main.Site.Helpers;
     using Alpha.NetThrottling;
     using Alpha.NetThrottling.Models;
     using Alpha.NetThrottling.Resolvers;
@@ -138,6 +139,7 @@
             container.RegisterPerWebRequest<INotificationService>(() => new NotificationService(CreateTelegramBotHttpClient()));
             container.RegisterPerWebRequest<IOTPService>(() => new OTPService(CreateTelegramBotHttpClient()));
             container.RegisterPerWebRequest<TelegramBotService, TelegramBotServiceImpl>();
+            container.RegisterPerWebRequest<ITelegramBotHelper, TelegramBotHelper>();
 
             container.RegisterPerWebRequest<IUser, User>();
             container.RegisterSingleton(() => AesService.Default);

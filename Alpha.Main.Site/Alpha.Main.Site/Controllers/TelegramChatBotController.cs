@@ -33,7 +33,7 @@
 
             return model.IsLinked
                 ? View("ChatBotSetting", new ChatBotSettingViewModel(model, query))
-                : View("RegisterAccount", new RegisterAccountViewModel(model, query) { IsOtpPage = false });
+                : View("RegisterAccount", new RegisterAccountViewModel(model, query));
         }
 
         [HttpPost, AntiXsrfFilter]

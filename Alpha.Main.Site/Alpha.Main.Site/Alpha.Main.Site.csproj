@@ -1757,6 +1757,7 @@
     <Compile Include="Helpers\RestClientHelper.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
+    <Compile Include="Helpers\TelegramBotHelper.cs" />
     <Compile Include="Helpers\UrlHelper.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -1804,6 +1805,7 @@
     </Compile>
     <Compile Include="Requests\Otp\ResetOtpQuery.cs" />
     <Compile Include="Requests\Otp\SetUpOtpCommand.cs" />
+    <Compile Include="Requests\Otp\UpdateOtpTelegramCommand.cs" />
     <Compile Include="Requests\Otp\VerifyOtpQuery.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>

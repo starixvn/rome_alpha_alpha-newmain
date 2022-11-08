@@ -174,6 +174,10 @@ class SetupOtp {
                 else {
                     checkbox.prop('checked', false).removeAttr('checked');
                 }
+
+                setTimeout(() => {
+                    parent.window.location.href = parent.window.location.href;
+                }, 2000);
             },
             complete: function (jqXHR, textStatus) {
                 self.$.unblockUI();

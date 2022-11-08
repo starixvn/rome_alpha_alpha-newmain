@@ -8,10 +8,7 @@
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/telegramchatbot/register-account")
 }
 
-@if (!Model.IsOtpPage)
-{
-    Html.RenderPartial("Tab", Model.IsShowLetstalkChatBot);
-}
+Html.RenderPartial("Tab", Model.IsShowLetstalkChatBot);
 
 <div class="tab-content">
     <div class="panel" id="register-panel">

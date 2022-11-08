@@ -59,17 +59,20 @@ class ChangeOtpTelegramStatus {
         var self = this;
         this.$.ajax({
             type: "POST",
-            url: alpha.urls.mainRootPath + "TelegramChatBot/UpdateFunction",
+            url: alpha.urls.mainRootPath + "Otp/UpdateOtpFunction",
             data: { functionId, functionName, type, enabled },
             dataType: "json",
             success: (result) => {
-
                 if (enabled) {
                     checkbox.prop('checked', true).attr('checked', 'checked');
                 }
                 else {
                     checkbox.prop('checked', false).removeAttr('checked');
                 }
+
+                setTimeout(() => {
+                    parent.window.location.href = parent.window.location.href;
+                }, 2000);
             },
             complete: function (jqXHR, textStatus) {
                 self.$.unblockUI();

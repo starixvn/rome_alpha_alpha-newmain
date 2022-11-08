@@ -17,6 +17,9 @@
     using TelegramBot.Client.Services;
     using ViewModels.Security;
     using Web.Helpers;
+    using TelegramResult = TelegramBot.Client.Models.Result;
+    using Function = TelegramBot.Client.Models.Function;
+    using Alpha.Main.Site.Helpers;
 
     public class CustomerOtpHandler :
         IAsyncRequestHandler<SetUpOtpQuery, OtpViewModel>,
@@ -29,9 +32,11 @@
         IRequestHandler<VerifyOtpDifferentDeviceQuery, VerifyOtpDifferenceDeviceViewModel>,
         IAsyncRequestHandler<CheckDifferenceDeviceCommand, bool>,
         IRequestHandler<VerifyOtpQuery, VerifyOTPViewModel>,
-        IAsyncRequestHandler<GenerateOTPCommand, long>
+        IAsyncRequestHandler<GenerateOTPCommand, long>,
+        IAsyncRequestHandler<UpdateOtpTelegramCommand, TelegramResult>
     {
         private const string SecretKeySessionKey = "CustomerOtpHandler.SecretKeySessionKey";
+        private const int UnlinkedErrorCode = 102;
 
         private readonly CustomerOtpService customerOtpService;
         private readonly IUserSession userSession;
@@ -40,6 +45,7 @@
         private readonly IUser user;
         private readonly NicknameChecker nicknameChecker;
         private readonly ISettingService telegramSettingService;
+        private readonly ITelegramBotHelper telegramBotHelper;
 
         public CustomerOtpHandler(
             CustomerOtpService customerOtpService,
@@ -48,7 +54,8 @@
             BrowserHelper browserHelper,
             IUser user,
             NicknameChecker nicknameChecker,
-            ISettingService telegramSettingService)
+            ISettingService telegramSettingService,
+            ITelegramBotHelper telegramBotHelper)
         {
             this.customerOtpService = customerOtpService;
             this.userSession = userSession;
@@ -57,6 +64,7 @@
             this.user = user;
             this.nicknameChecker = nicknameChecker;
             this.telegramSettingService = telegramSettingService;
+            this.telegramBotHelper = telegramBotHelper;
         }
 
         public Result Handle(ChangeOtpStatusCommand message)
@@ -278,8 +286,7 @@
                 Language.MapNewChineseLanguageCode(message.Language));
 
             viewModel.RegisterAccountViewModel =
-                new RegisterAccountViewModel(new ChatBotViewModel(custBotMessenger), new SetUpChatBotQuery())
-                { IsOtpPage = true };
+                new RegisterAccountViewModel(new ChatBotViewModel(custBotMessenger), new SetUpChatBotQuery());
 
             if (!viewModel.CustomerOtp.Enabled
                 && string.IsNullOrWhiteSpace(viewModel.CustomerOtp.SecretKey))
@@ -366,6 +373,36 @@
             var deviceId = browserHelper.GetDeviceId();
 
             return customerOtpService.IsDifferenceDevice(message.CustId, deviceId, message.SubAccountId);
+        }
+        public async Task<TelegramResult> Handle(UpdateOtpTelegramCommand message)
+        {
+            var botAndCustMessenger = await telegramBotHelper.GetTelegramBotAndCustMessengerAsync(
+                message.CustId,
+                message.SubAccId,
+                message.Language);
+            var bot = botAndCustMessenger.Item1;
+            var custBotMessenger = botAndCustMessenger.Item2;
+            if (custBotMessenger == null || !custBotMessenger.Enabled || !custBotMessenger.IsVerifyOTP)
+            {
+                return new TelegramResult(UnlinkedErrorCode);
+            }
+
+            var function = new Function
+            {
+                FunctionId = message.FunctionId,
+                FunctionName = message.FunctionName,
+                Enabled = message.Enabled,
+                Type = message.Type
+            };
+            var result = await telegramSettingService.UpdateUserFunction(custBotMessenger.UserId, bot.BotId, function, message.CustId, message.IP);
+            if (result.IsOk)
+            {
+                user.IsEnabledTelegramOTP = message.Enabled;
+                var enabled = customerOtpService.IsEnabledOtp(message.CustId, message.SubAccId) || user.IsEnabledTelegramOTP;
+                SetOtpStatusToSession(enabled);
+            }
+
+            return result;
         }
 
         private void SetOtpStatusToSession(bool isEnabledOtp)
