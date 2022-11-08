@@ -1,0 +1,25 @@
+﻿@using Alpha.Main.AppResources
+@model Alpha.Main.Site.ViewModels.Advertisement.MyWatchlistViewModel
+<ol>
+    <li><p>@Resources.AdvertisementMyWatchlistGlobalThreshold</p></li>
+    <li>
+        <ol>
+            <li><p>@Html.Raw(Resources.AdvertisementMyWatchlistGlobalThresholdDetail)</p></li>
+        </ol>
+    </li>
+    <li><p>@Resources.AdvertisementMyWatchlistPersonalThreshold</p></li>
+    <li>
+        <ol>
+            <li><p>@Html.Raw(Resources.AdvertisementMyWatchlistPersonalThresholdDetail)</p></li>
+        </ol>
+    </li>
+</ol>
+<div class="picture">
+    <img class="pc" src="~/Assets/Images/Advertisement/MyWatchlist/@Model.DesktopImageName" alt="my watchlist" />
+    <img class="mobile" src="~/Assets/Images/Advertisement/MyWatchlist/@Model.MobileImageName" alt="my watchlist" />
+</div>
+<div class="button-advertisement">
+    <label><input type="checkbox" id="chb-dontShow" />@Resources.doNotShowAgain</label>
+    <a href="@Model.UserGuideLink" target="_blank" class="btn-default">@Resources.LearnMore</a>
+    <button class="btn-submit" id="btn-setup">@ChatBot.SetupNow</button>
+</div>

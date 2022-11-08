@@ -68,22 +68,7 @@
                 "~/Assets/Images/MenuBarBanner/{0}/{1}_msa_{2}.jpg",
                 siteGroup,
                 Type == BannerType.Mobile ? "600x140" : "280x70",
-                MapToMobileSabaAppLanguage());
-
-        private string MapToMobileSabaAppLanguage()
-        {
-            switch (Language)
-            {
-                case Main.Constants.Language.ChineseTraditional:
-                case Main.Constants.Language.ChineseSimplified:
-                case Main.Constants.Language.Thai:
-                case Main.Constants.Language.Vietnamese:
-                    return Language;
-
-                default:
-                    return Main.Constants.Language.English;
-            }
-        }
+                Main.Constants.Language.MapToMainLanguageCode(Language));
 
         private string GetSabaSportMarketingAppImageSource()
             => string.Format(

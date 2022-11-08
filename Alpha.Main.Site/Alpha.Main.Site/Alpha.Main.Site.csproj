@@ -28,7 +28,7 @@
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
     <TargetFrameworkProfile />
     <Use64BitIISExpress />
-    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
     <SonarQubeTestProject>False</SonarQubeTestProject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -847,6 +847,10 @@
     <Content Include="Assets\bundles\security\verify-security-code.min.css">
       <DependentUpon>verify-security-code.css</DependentUpon>
     </Content>
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop-dark_vi-VN.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop_vi-VN.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile-dark_vi-VN.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile_vi-VN.jpg" />
     <Content Include="Assets\Images\chatbot-i1.svg" />
     <Content Include="Assets\Images\chatbot-i7.svg" />
     <Content Include="Assets\Images\icon-chatbot-1.svg" />
@@ -924,11 +928,40 @@
     <Content Include="Assets\Images\MenuBarBanner\IBCIndo\600x140_msa_th-TH.jpg" />
     <Content Include="Assets\Images\MenuBarBanner\IBCIndo\600x140_msa_zh-CN.jpg" />
     <Content Include="Assets\Images\MenuBarBanner\IBCIndo\600x140_msa_zh-TW.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile-dark_zh-CN.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop-dark_zh-CN.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile_zh-CN.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop_zh-CN.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile-dark_en-US.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop-dark_en-US.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile_en-US.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop_en-US.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile-dark_th-TH.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop-dark_th-TH.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile_th-TH.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop_th-TH.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile-dark_zh-TW.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop-dark_zh-TW.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile_zh-TW.jpg" />
+    <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop_zh-TW.jpg" />
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
     <Content Include="Assets\Images\switch.png" />
     <Content Include="Assets\scripts\aes.js" />
     <Content Include="Assets\scripts\home\assetsCDNHealthcheck.js" />
     <Content Include="Assets\scripts\home\le-mtagconfig.js" />
+    <Content Include="Assets\styles\advertisement\popup-advertisement-dark.css">
+      <DependentUpon>popup-advertisement-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\advertisement\popup-advertisement-dark.min.css">
+      <DependentUpon>popup-advertisement-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\advertisement\popup-advertisement-dark.scss" />
+    <Content Include="Assets\styles\advertisement\popup-advertisement.css">
+      <DependentUpon>popup-advertisement.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\advertisement\popup-advertisement.min.css">
+      <DependentUpon>popup-advertisement.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\captcha\captcha.css">
       <DependentUpon>captcha.scss</DependentUpon>
     </Content>
@@ -1330,12 +1363,15 @@
     <Content Include="Views\Dashboard\ChatBotBanneri7.cshtml" />
     <Content Include="Views\Dashboard\ChatBotBanneri1.cshtml" />
     <Content Include="Views\Banner\Index.cshtml" />
+    <Content Include="Views\Advertisement\MyWatchlist.cshtml" />
+    <Content Include="Views\Advertisement\AdvertisementPopup.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot-guide.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot-setting.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\verify-account.ts" />
+    <TypeScriptCompile Include="Assets\scripts\advertisement\popup-advertisement.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\data-proccessing-notification.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\kick-out.ts" />
@@ -1543,6 +1579,7 @@
     <Content Include="Assets\styles\home\ChatBotBanneri7-dark.scss" />
     <Content Include="Assets\styles\home\ChatBotBanneri1.scss" />
     <Content Include="Assets\styles\home\ChatBotBanneri1-dark.scss" />
+    <Content Include="Assets\styles\advertisement\popup-advertisement.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -1648,6 +1685,7 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Constants\SessionConstants.cs" />
+    <Compile Include="Controllers\AdvertisementController.cs" />
     <Compile Include="Controllers\BannerController.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -1849,6 +1887,7 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
+    <Compile Include="ViewModels\Advertisement\MyWatchlistViewModel.cs" />
     <Compile Include="ViewModels\Banner\BannerViewModel.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>

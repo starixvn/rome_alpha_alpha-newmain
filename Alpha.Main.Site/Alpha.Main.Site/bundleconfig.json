@@ -12,7 +12,8 @@
       "Assets/scripts/home/um-message.js",
       "Assets/scripts/home/menu-bar.js",
       "Assets/scripts/customer-profiles/brief-profile.js",
-      "Assets/scripts/dashboard/popup-announcement.js"
+      "Assets/scripts/dashboard/popup-announcement.js",
+      "Assets/scripts/advertisement/popup-advertisement.js"
     ]
   },
   {
@@ -34,7 +35,8 @@
       "Assets/Styles/home/tooltip.css",
       "Assets/Styles/home/popup-message.css",
       "Assets/Styles/home/old-main.css",
-      "Assets/Styles/home/customizedLiveChat.css"
+      "Assets/Styles/home/customizedLiveChat.css",
+      "Assets/Styles/advertisement/popup-advertisement.css"
     ]
   },
   {
@@ -362,7 +364,8 @@
       "Assets/Styles/home/tooltip.css",
       "Assets/Styles/home/popup-message.css",
       "Assets/Styles/home/old-main.css",
-      "Assets/Styles/home/customizedLiveChat-dark.css"
+      "Assets/Styles/home/customizedLiveChat-dark.css",
+      "Assets/Styles/advertisement/popup-advertisement-dark.css"
     ]
   },
   {
