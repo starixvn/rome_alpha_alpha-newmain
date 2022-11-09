@@ -23,15 +23,15 @@
     {
         private const int UnlinkedErrorCode = 102;
         private readonly ISettingService settingService;
-        private readonly ITelegramBotHelper telegramBotHelper;
+        private readonly IBotService botService;
 
         public TelegramChatBotHandler(
             ISettingService settingService,
-            ITelegramBotHelper telegramBotHelper)
+            IBotService botService)
         {
 
             this.settingService = settingService;
-            this.telegramBotHelper = telegramBotHelper;
+            this.botService = botService;
         }
 
         public async Task<ChatBotViewModel> Handle(SetUpChatBotQuery message)
@@ -60,7 +60,7 @@
 
         public async Task<Result> Handle(VerifyOTPCommand message)
         {
-            var bot = await telegramBotHelper.GetTelegramBotAsync();
+            var bot = await GetTelegramBotAsync();
             var username = message.IsSubAcc ? message.SubUserName : message.Username;
             return await settingService.LinkAsync(bot.BotId, message.CustId, message.SubAccId, message.OTP, username, message.IP);
         }
@@ -75,7 +75,7 @@
 
         public async Task<Result> Handle(UpdateFunctionCommand message)
         {
-            var botAndCustMessenger = await telegramBotHelper.GetTelegramBotAndCustMessengerAsync(
+            var botAndCustMessenger = await GetTelegramBotAndCustMessengerAsync(
                 message.CustId,
                 message.SubAccId,
                 message.Language);
@@ -98,7 +98,7 @@
 
         public async Task<Result> Handle(UpdateLanguageCommand message)
         {
-            var botAndCustMessenger = await telegramBotHelper.GetTelegramBotAndCustMessengerAsync(
+            var botAndCustMessenger = await GetTelegramBotAndCustMessengerAsync(
                 message.CustId,
                 message.SubAccId,
                 message.UserLanguage);
@@ -115,6 +115,24 @@
                 Language.MapNewChineseLanguageCode(message.Language),
                 message.CustId,
                 message.IP);
+        }
+
+        private async Task<Tuple<BotEntity, CustBotMessenger>> GetTelegramBotAndCustMessengerAsync(int custId, int subAccId, string language)
+        {
+            var botTask = GetTelegramBotAsync();
+            var custBotMessengerTask = settingService.GetCustBotMessengerAsync(
+                custId,
+                subAccId,
+                Language.MapNewChineseLanguageCode(language));
+
+            await Task.WhenAll(botTask, custBotMessengerTask);
+
+            return new Tuple<BotEntity, CustBotMessenger>(await botTask, await custBotMessengerTask);
+        }
+
+        private async Task<BotEntity> GetTelegramBotAsync()
+        {
+            return await botService.GetBySystem(AppSettings.SiteGroup);
         }
     }
 }

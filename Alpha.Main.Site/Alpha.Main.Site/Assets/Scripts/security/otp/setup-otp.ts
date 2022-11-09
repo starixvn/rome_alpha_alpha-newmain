@@ -167,12 +167,6 @@ class SetupOtp {
             data: { isEnable: enabled },
             dataType: "json",
             success: (result) => {
-                if (enabled) {
-                    checkbox.prop('checked', true).attr('checked', 'checked');
-                }
-                else {
-                    checkbox.prop('checked', false).removeAttr('checked');
-                }
 
                 setTimeout(() => {
                     parent.window.location.href = parent.window.location.href;

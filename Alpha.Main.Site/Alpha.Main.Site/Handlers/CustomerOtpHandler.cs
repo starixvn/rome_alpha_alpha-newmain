@@ -45,7 +45,6 @@
         private readonly IUser user;
         private readonly NicknameChecker nicknameChecker;
         private readonly ISettingService telegramSettingService;
-        private readonly ITelegramBotHelper telegramBotHelper;
 
         public CustomerOtpHandler(
             CustomerOtpService customerOtpService,
@@ -54,8 +53,7 @@
             BrowserHelper browserHelper,
             IUser user,
             NicknameChecker nicknameChecker,
-            ISettingService telegramSettingService,
-            ITelegramBotHelper telegramBotHelper)
+            ISettingService telegramSettingService)
         {
             this.customerOtpService = customerOtpService;
             this.userSession = userSession;
@@ -64,7 +62,6 @@
             this.user = user;
             this.nicknameChecker = nicknameChecker;
             this.telegramSettingService = telegramSettingService;
-            this.telegramBotHelper = telegramBotHelper;
         }
 
         public Result Handle(ChangeOtpStatusCommand message)
@@ -396,13 +393,8 @@
         }
         public async Task<TelegramResult> Handle(UpdateOtpTelegramCommand message)
         {
-            var botAndCustMessenger = await telegramBotHelper.GetTelegramBotAndCustMessengerAsync(
-                message.CustId,
-                message.SubAccId,
-                message.Language);
-            var bot = botAndCustMessenger.Item1;
-            var custBotMessenger = botAndCustMessenger.Item2;
-            if (custBotMessenger == null || !custBotMessenger.Enabled || !custBotMessenger.IsVerifyOTP)
+            var custMessenger = await telegramSettingService.GetCustBotMessengerAsync(message.CustId, message.SubAccId, message.Language);
+            if (custMessenger == null || !custMessenger.Enabled || !custMessenger.IsVerifyOTP)
             {
                 return new TelegramResult(UnlinkedErrorCode);
             }
@@ -414,7 +406,7 @@
                 Enabled = message.Enabled,
                 Type = message.Type
             };
-            var result = await telegramSettingService.UpdateUserFunction(custBotMessenger.UserId, bot.BotId, function, message.CustId, message.IP);
+            var result = await telegramSettingService.UpdateUserFunction(custMessenger.UserId, custMessenger.BotId, function, message.CustId, message.IP);
             if (result.IsOk)
             {
                 user.IsEnabledTelegramOTP = message.Enabled;

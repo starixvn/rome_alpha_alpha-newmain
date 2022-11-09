@@ -1757,7 +1757,6 @@
     <Compile Include="Helpers\RestClientHelper.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
-    <Compile Include="Helpers\TelegramBotHelper.cs" />
     <Compile Include="Helpers\UrlHelper.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>

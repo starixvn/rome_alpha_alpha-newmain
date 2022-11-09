@@ -139,7 +139,6 @@
             container.RegisterPerWebRequest<INotificationService>(() => new NotificationService(CreateTelegramBotHttpClient()));
             container.RegisterPerWebRequest<IOTPService>(() => new OTPService(CreateTelegramBotHttpClient()));
             container.RegisterPerWebRequest<TelegramBotService, TelegramBotServiceImpl>();
-            container.RegisterPerWebRequest<ITelegramBotHelper, TelegramBotHelper>();
 
             container.RegisterPerWebRequest<IUser, User>();
             container.RegisterSingleton(() => AesService.Default);

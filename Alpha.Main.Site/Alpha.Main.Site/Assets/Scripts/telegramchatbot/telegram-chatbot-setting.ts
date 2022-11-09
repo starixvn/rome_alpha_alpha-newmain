@@ -17,6 +17,7 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
     $userId: JQuery;
 
     HAS_UNLINKED_ERR_CODE = 102;
+    TELEGRAM_OTP_FUNCTION_ID = 15;
 
     constructor($: JQueryStatic, topWindow: any, clipboard: any) {
         super($, topWindow);
@@ -107,6 +108,12 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
                     }
 
                     checkbox.prop("checked", !enabled);
+                }
+
+                if (functionId == this.TELEGRAM_OTP_FUNCTION_ID.toString()) {
+                    setTimeout(() => {
+                        parent.window.location.href = parent.window.location.href;
+                    }, 2000);
                 }
             },
             complete: this.onComplete,
