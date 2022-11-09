@@ -84,22 +84,22 @@
         }
 
         [HttpPost, ValidateAntiForgeryToken, AllowProtectedMode]
-        public ActionResult ResetOtp(ResetOtpCommand command)
+        public async Task<ActionResult> ResetOtp(ResetOtpCommand command)
         {
             if (IsNotProtectedModeInternal())
             {
                 return UnauthorizedAction(HttpContext);
             }
 
-            var result = mediator.Send(command);
+            var result = await mediator.SendAsync(command);
 
             return View(result);
         }
 
         [HttpPost, AntiXsrfFilter]
-        public async Task<JsonResult> RemoveOtp()
+        public JsonResult RemoveOtp()
         {
-            var result = await mediator.SendAsync(new RemoveOtpCommand(userSession));
+            var result = mediator.Send(new RemoveOtpCommand(userSession));
 
             return Json(result);
         }

@@ -5,7 +5,7 @@
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
 
-    public class RemoveOtpCommand : IAsyncRequest<Result>
+    public class RemoveOtpCommand : IRequest<Result>
     {
         private readonly IUserSession userSession;
 

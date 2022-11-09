@@ -5,7 +5,7 @@
     using Sunplus.Agent.Model.Entities;
     using ViewModels.Security;
 
-    public class ResetOtpCommand : IRequest<ResetOtpViewModel>
+    public class ResetOtpCommand : IAsyncRequest<ResetOtpViewModel>
     {
         private readonly IUserSession userSession;
 
