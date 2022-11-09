@@ -116,7 +116,7 @@
             else
             {
                 var deviceInfo = browserHelper.GetDevice().Info;
-                viewModel.Result = customerOtpService.RemoveSecretKey(new RemoveSecretKeyParam
+                var result = customerOtpService.RemoveSecretKey(new RemoveSecretKeyParam
                 {
                     CustId = message.CustId,
                     ActorId = message.ActorId,
@@ -127,10 +127,12 @@
                     IsResetDownlineOrSubAccount = true
                 });
 
-                if (await telegramSettingService.IsEnableOTP(message.CustId, message.SubAccountId))
+                if (result.IsSuccessful && await telegramSettingService.IsEnableOTP(message.CustId, message.SubAccountId))
                 {
-                    await UpdateTelegramOTPStatus(message.CustId, message.SubAccountId, false);
+                    result = await UpdateTelegramOTPStatus(message.CustId, message.SubAccountId, false);
                 }
+
+                viewModel.Result = result;
             }
 
             return viewModel;
@@ -243,11 +245,11 @@
             var updateResult= await telegramSettingService.UpdateUserFunction(
                 messenger.UserId, 
                 messenger.BotId, 
-                new Function { FunctionId = 15, Enabled = isEnabled }, 
+                new Function { FunctionId = TelegramBot.Constants.FunctionIds.OTP, Enabled = isEnabled }, 
                 userSession.UserId, 
                 userSession.UserLoginIp);
 
-            return new Result { Code = updateResult.Code, Message = updateResult.Message };
+            return new Result { Code = updateResult.Code, Message = updateResult.IsOk ? Security.RemoveOtpSuccessMessage : Security.FailedToRemoveOtp };
         }
 
         public ResetOtpViewModel Handle(ResetOtpQuery message)
