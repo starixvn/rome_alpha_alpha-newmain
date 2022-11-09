@@ -73,7 +73,6 @@ class SetupOtp {
         this.$usernameForm.submit(this.changeUsernameEvent);
         this.$btnRemoveOtp.click(this.removeOtpEvent);
         this.$cbkEnableSophosOtp.click(this.changeStatusEvent);
-        //this.$cbkEnableSophosOtp.change(this.onChangedOtpStatusEvent);
         this.$btnChangeUsername.click(this.changeUsernameButtonEvent);
 
         var that = this;

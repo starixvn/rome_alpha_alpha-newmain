@@ -4,8 +4,9 @@
 <div class="panel success">
     <div class="panel-heading" role="tab" id="headingAccount">
         <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" href="#account" aria-expanded="false" aria-controls="account">
+            <a role="button" class="color-success" data-toggle="collapse" href="#account" aria-expanded="false" aria-controls="account">
                 Set up OTP via Telegram Chatbot
+                <span class="icon-check-circle"></span>
             </a>
         </h4>
     </div>
@@ -15,11 +16,11 @@
             <button class="btn-remove btn-unlink-telegram ml-25" id="btnUnsubscribe">@ChatBot.unLink</button>
             <label class="ml-25 mt-15">
                 <input class="cbkEnableOtp"
-                        type="checkbox"
-                        @(Model.OtpFunction.Enabled ? "checked" : string.Empty)
-                        data-functionId="@Model.OtpFunction.FunctionId"
-                        data-functionName="@Model.OtpFunction.FunctionName"
-                        data-type="@Model.OtpFunction.Type" />
+                       type="checkbox"
+                       @(Model.OtpFunction.Enabled ? "checked" : string.Empty)
+                       data-functionId="@Model.OtpFunction.FunctionId"
+                       data-functionName="@Model.OtpFunction.FunctionName"
+                       data-type="@Model.OtpFunction.Type" />
                 Enable Otp Via Telegram Chatbot
             </label>
         </div>

@@ -91,7 +91,8 @@
 
             if (result.IsSuccessful)
             {
-                SetOtpStatusToSession(message.IsEnable);
+                var enabled = user.IsEnabledTelegramOTP || message.IsEnable;
+                SetOtpStatusToSession(enabled);
             }
 
             return result;
