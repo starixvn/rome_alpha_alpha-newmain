@@ -97,9 +97,9 @@
         }
 
         [HttpPost, AntiXsrfFilter]
-        public JsonResult RemoveOtp()
+        public async Task<JsonResult> RemoveOtp()
         {
-            var result = mediator.Send(new RemoveOtpCommand(userSession));
+            var result = await mediator.SendAsync(new RemoveOtpCommand(userSession));
 
             return Json(result);
         }

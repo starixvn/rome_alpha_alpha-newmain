@@ -25,7 +25,7 @@
         IAsyncRequestHandler<SetUpOtpQuery, OtpViewModel>,
         IRequestHandler<ResetOtpQuery, ResetOtpViewModel>,
         IRequestHandler<ChangeOtpStatusCommand, Result>,
-        IRequestHandler<RemoveOtpCommand, Result>,
+        IAsyncRequestHandler<RemoveOtpCommand, Result>,
         IRequestHandler<ResetOtpCommand, ResetOtpViewModel>,
         IRequestHandler<SetUpOtpCommand, Result>,
         IAsyncRequestHandler<VerifyOtpCommand, Result>,
@@ -209,7 +209,7 @@
             return result;
         }
 
-        public Result Handle(RemoveOtpCommand message)
+        public async Task<Result> Handle(RemoveOtpCommand message)
         {
             if (message == null)
             {
@@ -231,7 +231,20 @@
                 DeviceInfo = browserHelper.GetDevice().Info
             });
 
+            if (user.IsEnabledTelegramOTP)
+            {
+                return await UpdateTelegramOTPStatus(message.CustId, message.SubAccountId, false);
+            }
+
             return result;
+        }
+
+        private async Task<Result> UpdateTelegramOTPStatus(int custId, int subAccId, bool isEnabled)
+        {
+            var messenger = await telegramSettingService.GetCustBotMessengerAsync(custId, subAccId, "en-US");
+
+            var updateResult= await telegramSettingService.UpdateUserFunction(messenger.UserId, messenger.BotId, new Function { FunctionId = 15, Enabled = isEnabled }, userSession.UserId, userSession.UserLoginIp);
+            return new Result() { Code = updateResult.Code, Message = updateResult.Message };
         }
 
         public ResetOtpViewModel Handle(ResetOtpQuery message)
