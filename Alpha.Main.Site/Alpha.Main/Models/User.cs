@@ -73,7 +73,7 @@
         {
             var value = GetSessionValue(sessionKey);
 
-            return value == null ? default : (T)value;
+            return value == null ? default(T) : (T)value;
         }
 
         private static object GetSessionValue(string sessionKey)
