@@ -27,7 +27,10 @@ var menuBar = {
         reportDomain: null,
         cookieless: "/",
         sessionId: "",
-        reportSessionId: ""
+        reportSessionId: "",
+        betlistDomain: null,
+        betlistCookieless: "/",
+        betlistSessionId: ""
     },
 
     urls: {
@@ -46,6 +49,12 @@ var menuBar = {
             menuBar.loadAuthFrame();
 
             setInterval(function () { menuBar.loadAuthFrame() }, 60 * 1000);
+        }
+
+        if (menuBar.domElements.betlistDomain) {
+            menuBar.loadBetlistAuthFrame();
+
+            setInterval(function () { menuBar.loadBetlistAuthFrame() }, 60 * 1000);
         }
     },
 
@@ -72,6 +81,7 @@ var menuBar = {
         menuBar.domElements.closeIconOnMobile = $('#closeIconOnMobile');
         menuBar.domElements.reportDomain = $('#reportDomain').val();
         menuBar.domElements.sessionId = $('#SessionId').val();
+        menuBar.domElements.betlistDomain = $('#betlistDomain').val();
     },
 
     initSideBar: function () {
@@ -274,19 +284,39 @@ var menuBar = {
             }
         } catch (e) { }
 
-        var authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-" + menuBar.domElements.sessionId;
-        var authCookieValue = $.cookie(authCookie);
+        var authCookie = null;
+        var authCookieValue = null;
         var subMenuURL = subMenu.data("url");
-        
-        if (subMenu.data("domain") && location.href.indexOf("(S(") !== -1 && authCookieValue && authCookieValue.length > 0) {
-            menuBar.domElements.cookieless = "/(S(" + authCookieValue + "))";
-            menuBar.domElements.reportSessionId = authCookieValue;
 
-            var indexSessionId = subMenu.data("url").indexOf("(S(");
-            var oldsessionId = subMenu.data("url").substr(indexSessionId + 3, 24);
+        if (subMenuURL.indexOf('/site-reports/') !== -1) {
+            authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-" + menuBar.domElements.sessionId;
+            authCookieValue = $.cookie(authCookie);
 
-            subMenuURL = subMenuURL.replace(menuBar.domElements.sessionId, authCookieValue)
-                .replace(oldsessionId, authCookieValue);
+            if (subMenu.data("domain") && location.href.indexOf("(S(") !== -1 && authCookieValue && authCookieValue.length > 0) {
+                menuBar.domElements.cookieless = "/(S(" + authCookieValue + "))";
+                menuBar.domElements.reportSessionId = authCookieValue;
+
+                var indexSessionId = subMenu.data("url").indexOf("(S(");
+                var oldsessionId = subMenu.data("url").substr(indexSessionId + 3, 24);
+
+                subMenuURL = subMenuURL.replace(menuBar.domElements.sessionId, authCookieValue)
+                    .replace(oldsessionId, authCookieValue);
+            }
+        }
+        else if (subMenuURL.indexOf('/site-betlists/') !== -1) {
+            authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-betlist-" + menuBar.domElements.sessionId;
+            authCookieValue = $.cookie(authCookie);
+
+            if (subMenu.data("domain") && location.href.indexOf("(S(") !== -1 && authCookieValue && authCookieValue.length > 0) {
+                menuBar.domElements.betlistCookieless = "/(S(" + authCookieValue + "))";
+                menuBar.domElements.betlistSessionId = authCookieValue;
+
+                var indexSessionId = subMenu.data("url").indexOf("(S(");
+                var oldsessionId = subMenu.data("url").substr(indexSessionId + 3, 24);
+
+                subMenuURL = subMenuURL.replace(menuBar.domElements.sessionId, authCookieValue)
+                    .replace(oldsessionId, authCookieValue);
+            }
         }
 
         $('#main').attr('src', subMenuURL).attr("target", "main");
@@ -421,6 +451,42 @@ var menuBar = {
 
                         if (result === "OK" || result.length === 24) {
                             menuBar.domElements.header.find('iframe#reportFrame')[0].src = menuBar.domElements.reportDomain + sessionId + returnUrl;
+                        }
+                    }
+                }
+            });
+        });
+    },
+
+    loadBetlistAuthFrame: function () {
+        var authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-betlist-" + menuBar.domElements.sessionId;
+        var authCookieValue = $.cookie(authCookie);
+        if (authCookieValue && authCookieValue.length > 0) {
+            menuBar.domElements.betlistCookieless = "/(S(" + authCookieValue + "))";
+        }
+
+        $.get(alpha.urls.mainRootPath + 'Default/Auth').done((returnUrl) => {
+            $.ajax({
+                type: "GET",
+                dataType: "text/html",
+                url: menuBar.domElements.betlistDomain + menuBar.domElements.betlistCookieless + returnUrl,
+                complete: (xhr) => {
+                    if (xhr.status === 400) {
+                        menuBar.loadBetlistAuthFrame();
+                    }
+                    else if (xhr.status === 200) {
+                        var result = xhr.responseText;
+                        var sessionId = "";
+                        if (result !== "OK" && result.length === 24) {
+                            menuBar.domElements.betlistSessionId = result;
+                            sessionId = "/(S(" + result + "))";
+                            menuBar.domElements.betlistCookieless = sessionId;
+
+                            $.cookie(authCookie, result, { path: '/' });
+                        }
+
+                        if (result === "OK" || result.length === 24) {
+                            menuBar.domElements.header.find('iframe#betlistFrame')[0].src = menuBar.domElements.betlistDomain + sessionId + returnUrl;
                         }
                     }
                 }
