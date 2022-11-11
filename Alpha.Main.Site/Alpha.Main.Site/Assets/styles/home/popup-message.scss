@@ -136,8 +136,12 @@ div.messageBlock {
     }
 }
 
-.w-500 {
+.suggest-otp-popup {
     width: 500px !important;
+
+    .modal-header {
+        cursor: all-scroll;
+    }
 }
 
 @media only screen and (max-device-width : $screen-device-lower768) {
