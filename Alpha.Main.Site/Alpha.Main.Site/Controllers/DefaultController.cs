@@ -56,7 +56,7 @@ namespace Alpha.Main.Site.Controllers
         public string Auth()
         {
             var param = AesService.Default.Encrypt($"{userSession.UserName}&{GetSessionKeyValue()}&{GetOutputValuesAfterLogin()}&{DateTime.Now}", SecretKey);
-            
+
             return $"/Auth?param={param}";
         }
 
@@ -82,7 +82,7 @@ namespace Alpha.Main.Site.Controllers
 
             var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode(), null, nicknameChecker);
 
-            var viewModel = mediator.Send(query);
+            var viewModel = await mediator.SendAsync(query);
 
             // FPS Scritp ==================
 

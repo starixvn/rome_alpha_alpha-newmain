@@ -1,0 +1,22 @@
+﻿@using Alpha.Main.AppResources
+
+<div id="telegramotp-modal" class="modal fade advertisement-modal in w-500" tabindex="1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="icon icon-close close" data-dismiss="modal" aria-label="@Resources.close"></button>
+            </div>
+            <div id="suggest-otp-message"></div>
+            <div class="modal-body" id="telegramotp-modal-body">
+                We have supported for getting OTP via Telegram. Do you want to try it now?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-submit" id="enableTelegramOtp">Yes</button>
+                <button type="button" class="btn-default" id="closeTelegramOtpPopup">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.AntiForgeryToken()
+

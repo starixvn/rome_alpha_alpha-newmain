@@ -10,7 +10,7 @@ namespace Alpha.Main.Site.Models.Requests
     using ViewModels;
     using Web.Helpers;
 
-    public class IndexQuery : IRequest<IndexViewModel>
+    public class IndexQuery : IAsyncRequest<IndexViewModel>
     {
         private readonly bool isEnableSecurityCode;
         private readonly IUserSession userSession;
@@ -74,14 +74,14 @@ namespace Alpha.Main.Site.Models.Requests
             => !nicknameChecker.IsOfferForceLoginAndOverDueDate;
 
         public bool ShowCreateMemberByQRCode =>
-            userSession.SubPageAccess.CreateAccount 
+            userSession.SubPageAccess.CreateAccount
             && Enumeration.FromValue<UserLevel>(userSession.RoleId).IsAgentLevel()
             && !IsProtectedMode;
 
         public bool IsIndirectLoggedIn => userSession.IsIndirectLoggedIn;
 
         public string DarkModeName => DarkModeHelper.GetDarkModeName(userSession);
-        
+
         public bool IsProtectedMode { get; }
 
         public bool IsOfferProtectedMode { get; }

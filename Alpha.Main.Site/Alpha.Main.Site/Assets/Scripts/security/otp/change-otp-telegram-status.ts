@@ -51,16 +51,13 @@ class ChangeOtpTelegramStatus {
 
     updateFunction = (e: JQueryEventObject) => {
         var checkbox = this.$(e.target);
-        var functionId = checkbox.attr("data-functionId");
-        var functionName = checkbox.attr("data-functionName");
-        var type = checkbox.attr("data-type");
         var enabled = checkbox.is(":checked");
         this.$.blockUI();
         var self = this;
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "Otp/UpdateOtpFunction",
-            data: { functionId, functionName, type, enabled },
+            data: { enabled },
             dataType: "json",
             success: (result) => {
 

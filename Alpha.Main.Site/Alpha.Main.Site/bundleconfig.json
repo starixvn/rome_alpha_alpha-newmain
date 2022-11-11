@@ -17,6 +17,13 @@
     ]
   },
   {
+    "outputFileName": "Assets/bundles/suggest-telegram-otp.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/home/suggest-telegram-otp.js"
+    ]
+  },
+  {
     "outputFileName": "Assets/bundles/default-dashboard.js",
     "inputFiles": [
       "Assets/scripts/core.js",

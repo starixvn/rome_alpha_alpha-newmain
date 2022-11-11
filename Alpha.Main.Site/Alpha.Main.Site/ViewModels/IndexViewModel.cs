@@ -156,7 +156,7 @@
         public int UMAnnouncementPopupClientIntervalInMinutes { get; } = AppSettings.UMAnnouncementPopupClientIntervalInMinutes;
 
         public string ReportDomain { get; } = AppSettings.ReportDomain;
-        
+
         public bool IsDarkMode => !string.IsNullOrWhiteSpace(message.DarkModeName);
 
         public string AssetAppPath { get; }
@@ -172,5 +172,6 @@
         public string SessionID => HttpContext.Current.Session.SessionID;
 
         public string Username => message.IsSubAcc ? message.SubUserName : message.UserName;
+        public bool IsShowSuggestEnableTelegramOtp { get; set; }
     }
 }

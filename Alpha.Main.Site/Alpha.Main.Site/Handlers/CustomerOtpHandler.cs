@@ -19,7 +19,6 @@
     using Web.Helpers;
     using TelegramResult = TelegramBot.Client.Models.Result;
     using Function = TelegramBot.Client.Models.Function;
-    using Alpha.Main.Site.Helpers;
 
     public class CustomerOtpHandler :
         IAsyncRequestHandler<SetUpOtpQuery, OtpViewModel>,
@@ -242,11 +241,11 @@
         {
             var messenger = await telegramSettingService.GetCustBotMessengerAsync(custId, subAccId, "en-US");
 
-            var updateResult= await telegramSettingService.UpdateUserFunction(
-                messenger.UserId, 
-                messenger.BotId, 
-                new Function { FunctionId = TelegramBot.Constants.FunctionIds.OTP, Enabled = isEnabled }, 
-                userSession.UserId, 
+            var updateResult = await telegramSettingService.UpdateUserFunction(
+                messenger.UserId,
+                messenger.BotId,
+                new Function { FunctionId = TelegramBot.Constants.FunctionIds.OTP, Enabled = isEnabled },
+                userSession.UserId,
                 userSession.UserLoginIp);
 
             return new Result { Code = updateResult.Code, Message = updateResult.IsOk ? Security.RemoveOtpSuccessMessage : Security.FailedToRemoveOtp };
@@ -403,10 +402,8 @@
 
             var function = new Function
             {
-                FunctionId = message.FunctionId,
-                FunctionName = message.FunctionName,
+                FunctionId = TelegramBot.Constants.FunctionIds.OTP,
                 Enabled = message.Enabled,
-                Type = message.Type
             };
             var result = await telegramSettingService.UpdateUserFunction(custMessenger.UserId, custMessenger.BotId, function, message.CustId, message.IP);
             if (result.IsOk)
