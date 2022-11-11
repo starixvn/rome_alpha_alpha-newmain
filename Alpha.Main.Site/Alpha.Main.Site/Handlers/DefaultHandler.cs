@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
     using Alpha.Main.ProfilePicture.Services;
+    using Alpha.SecurityCode.Web;
     using Alpha.Web.Models;
     using Fanex.Logging.Extensions.Web;
     using MediatR;
@@ -93,9 +94,8 @@
             }
             else
             {
-                var isLinkTelegram = custBotMessenger.IsVerifyOTP && custBotMessenger.Enabled;
                 var otpFuntion = custBotMessenger.Functions.FirstOrDefault(func => func.FunctionId == 15);
-                if (isLinkTelegram && !otpFuntion.Enabled)
+                if (!otpFuntion.Enabled && SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp)
                 {
                     viewModel.IsShowSuggestEnableTelegramOtp = true;
                 }
@@ -103,7 +103,7 @@
 
             sessionManager.Add(PasswordHashSessionKey, viewModel.PasswordHash);
 
-            return await Task.FromResult(viewModel);
+            return viewModel;
         }
 
         public bool Handle(KickoutQuery message)

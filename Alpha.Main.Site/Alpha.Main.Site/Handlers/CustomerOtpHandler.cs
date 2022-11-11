@@ -319,7 +319,7 @@
                 sessionManager.Add(SecretKeySessionKey, viewModel.CustomerOtp.SecretKey);
             }
 
-            return await Task.FromResult(viewModel);
+            return viewModel;
         }
 
         private bool HasUpdatePermission(
