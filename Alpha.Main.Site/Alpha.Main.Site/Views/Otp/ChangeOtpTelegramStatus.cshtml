@@ -10,19 +10,21 @@
             </a>
         </h4>
     </div>
-    <div id="account" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAccount">
-        <div class="panel-body account-info">
-            <p class="ml-25">Click this button to unlink Telegram Chatbot from your account</p>
-            <button class="btn-remove btn-unlink-telegram ml-25" id="btnUnsubscribe">@ChatBot.unLink</button>
-            <label class="ml-25 mt-15">
-                <input class="cbkEnableOtp"
-                       type="checkbox"
-                       @(Model.OtpFunction.Enabled ? "checked" : string.Empty)
-                       data-functionId="@Model.OtpFunction.FunctionId"
-                       data-functionName="@Model.OtpFunction.FunctionName"
-                       data-type="@Model.OtpFunction.Type" />
-                Enable Otp Via Telegram Chatbot
-            </label>
+    <div id="account" class="panel-collapse" role="tabpanel" aria-labelledby="headingAccount">
+        <div class="panel-body">
+            <div class="ml-16">
+                <p>Click this button to unlink Telegram Chatbot from your account</p>
+                <button class="btn-remove btn-unlink-telegram" id="btnUnsubscribe">@ChatBot.unLink</button>
+                <label class="mt-15">
+                    <input class="cbkEnableOtp"
+                           type="checkbox"
+                           @(Model.OtpFunction.Enabled ? "checked" : string.Empty)
+                           data-functionId="@Model.OtpFunction.FunctionId"
+                           data-functionName="@Model.OtpFunction.FunctionName"
+                           data-type="@Model.OtpFunction.Type" />
+                    Enable OTP Via Telegram Chatbot
+                </label>
+            </div>
         </div>
     </div>
 </div>
