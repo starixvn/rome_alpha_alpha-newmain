@@ -1798,11 +1798,11 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Requests\AllLanguagesQuery.cs" />
-    <Compile Include="Requests\ApiKey\CreateApiKeyQuery.cs" />
+    <Compile Include="Requests\ApiKey\CreateApiKeyCommand.cs" />
     <Compile Include="Requests\ApiKey\GetApiKeyQuery.cs" />
     <Compile Include="Requests\ApiKey\GetCustomerApiKeyQuery.cs" />
-    <Compile Include="Requests\ApiKey\RevokeApiKeyQuery.cs" />
-    <Compile Include="Requests\ApiKey\UpdateApiKeyQuery.cs" />
+    <Compile Include="Requests\ApiKey\RevokeApiKeyCommand.cs" />
+    <Compile Include="Requests\ApiKey\UpdateApiKeyCommand.cs" />
     <Compile Include="Requests\Banner\BannerQuery.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>

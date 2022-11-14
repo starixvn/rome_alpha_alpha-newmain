@@ -7,18 +7,15 @@ namespace Alpha.Main.Site.Handlers
     using Alpha.Main.Site.Requests.ApiKey;
     using Alpha.Main.Site.ViewModels.ApiKey;
     using MediatR;
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
-    using System.Web;
 
     public class ApiKeyHandler :
-        IAsyncRequestHandler<CreateApiKeyQuery, ApiKeyResult>,
+        IAsyncRequestHandler<CreateApiKeyCommand, ApiKeyResult>,
         IAsyncRequestHandler<GetApiKeyQuery, EditApiKeyViewModel>,
         IAsyncRequestHandler<GetCustomerApiKeyQuery, ApiKeyManagementViewModel>,
-        IAsyncRequestHandler<RevokeApiKeyQuery, Result>,
-        IAsyncRequestHandler<UpdateApiKeyQuery, Result>
+        IAsyncRequestHandler<RevokeApiKeyCommand, Result>,
+        IAsyncRequestHandler<UpdateApiKeyCommand, Result>
     {
         private readonly ApiKeyService apiKeyService;
 
@@ -27,7 +24,7 @@ namespace Alpha.Main.Site.Handlers
             this.apiKeyService = apiKeyService;
         }
 
-        public async Task<ApiKeyResult> Handle(CreateApiKeyQuery message)
+        public async Task<ApiKeyResult> Handle(CreateApiKeyCommand message)
         {
             var result = await apiKeyService.CreateApiKey(message.CustId, message.ApiName, message.PassPhrase, message.Scopes, message.ExpirationDate);
             return result;
@@ -46,13 +43,13 @@ namespace Alpha.Main.Site.Handlers
             return new ApiKeyManagementViewModel { ApiKeyInfos = result };
         }
 
-        public async Task<Result> Handle(RevokeApiKeyQuery message)
+        public async Task<Result> Handle(RevokeApiKeyCommand message)
         {
             await apiKeyService.RevokeApiKey(message.Key);
             return new Result(0, "Success");
         }
 
-        public async Task<Result> Handle(UpdateApiKeyQuery message)
+        public async Task<Result> Handle(UpdateApiKeyCommand message)
         {
             await apiKeyService.UpdateApiKey(message.Key, message.CustId, message.ApiName, message.Scopes, message.ExpirationDate);
             return new Result(0, "Success");

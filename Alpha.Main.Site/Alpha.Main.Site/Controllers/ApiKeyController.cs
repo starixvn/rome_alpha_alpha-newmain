@@ -5,13 +5,9 @@
     using Alpha.Main.Site.Requests.ApiKey;
     using Alpha.Main.Site.ViewModels.ApiKey;
     using Alpha.Web;
-    using Fanex.ActivityTracking.Models;
     using MediatR;
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
-    using System.Web;
     using System.Web.Mvc;
 
     public class ApiKeyController : BaseController
@@ -22,13 +18,6 @@
         {
             this.mediator = mediator;
         }
-
-        //public async Task<ActionResult> CreateApiKey()
-        //{
-        //    var query = new CreateApiKeyQuery() { ApiName = "name", PassPhrase = "pass", Scopes = "winloss", ExpirationDate = DateTime.Now };
-        //    var viewModel = await mediator.SendAsync(query);
-        //    return View(viewModel);
-        //}
 
         public ActionResult CreateApiKey()
         {
@@ -56,13 +45,13 @@
         }
 
         [HttpPost]
-        public async Task<ActionResult> CreateApiKey(CreateApiKeyQuery query)
+        public async Task<ActionResult> CreateApiKey(CreateApiKeyCommand query)
         {
             return Json(await mediator.SendAsync(query));
         }
 
         [HttpPost]
-        public async Task<ActionResult> RevokeApiKey(RevokeApiKeyQuery query)
+        public async Task<ActionResult> RevokeApiKey(RevokeApiKeyCommand query)
         {
             return Json(await mediator.SendAsync(query));
         }

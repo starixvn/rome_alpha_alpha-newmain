@@ -11,13 +11,13 @@ namespace Alpha.Main.Site.Requests.ApiKey
     using System.Linq;
     using System.Web;
 
-    public class RevokeApiKeyQuery : IAsyncRequest<Result>
+    public class RevokeApiKeyCommand : IAsyncRequest<Result>
     {
-        public RevokeApiKeyQuery() : this(null)
+        public RevokeApiKeyCommand() : this(null)
         {
         }
 
-        public RevokeApiKeyQuery(IUserSession userSession)
+        public RevokeApiKeyCommand(IUserSession userSession)
         {
             userSession = userSession ?? new UserSessionExt();
         }
