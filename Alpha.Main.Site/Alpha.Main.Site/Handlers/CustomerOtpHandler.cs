@@ -31,7 +31,7 @@
         IRequestHandler<VerifyOtpDifferentDeviceQuery, VerifyOtpDifferenceDeviceViewModel>,
         IAsyncRequestHandler<CheckDifferenceDeviceCommand, bool>,
         IRequestHandler<VerifyOtpQuery, VerifyOTPViewModel>,
-        IAsyncRequestHandler<GenerateOTPCommand, long>,
+        IAsyncRequestHandler<GenerateOTPCommand, Result>,
         IAsyncRequestHandler<UpdateOtpTelegramCommand, TelegramResult>
     {
         private const string SecretKeySessionKey = "CustomerOtpHandler.SecretKeySessionKey";
@@ -181,8 +181,7 @@
                 Username = message.UserName,
                 AlternateUsername = BuildAlternateUsername(message.IsSubAcc, message.SubUserName, message.NickName),
                 UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName),
-                IsShowGenerateOTPButton = user.IsEnabledTelegramOTP,
-                OTPExpirationTime = user.TelegramOTPExpirationTime
+                IsShowGenerateOTPButton = user.IsEnabledTelegramOTP
             };
         }
 
@@ -201,7 +200,7 @@
                 Otp = message.Otp,
                 Device = deviceInfo,
                 Language = message.Language,
-                IsEnabledTelegramOTP = user.IsEnabledTelegramOTP
+                IsEnabledTelegramOTP = await  telegramSettingService.IsEnableOTP(message.CustId, message.SubAccountId)
             });
 
             if (result.IsSuccessful)
@@ -276,8 +275,7 @@
             return new VerifyOTPViewModel
             {
                 UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName),
-                IsShowGenerateOTPButton = user.IsEnabledTelegramOTP,
-                OTPExpirationTime = user.TelegramOTPExpirationTime
+                IsShowGenerateOTPButton = user.IsEnabledTelegramOTP
             };
         }
 
@@ -426,11 +424,17 @@
             SecurityCodeSessionManager.SecurityCodeSession.IsAlreadyInputSecurityCode = true;
         }
 
-        public async Task<long> Handle(GenerateOTPCommand message)
+        public async Task<Result> Handle(GenerateOTPCommand message)
         {
-            await customerOtpService.GenerateTelegramOTP(message.CustId, message.SubAccId);
-            user.TelegramOTPExpirationTime = DateTimeOffset.UtcNow.AddMinutes(3).ToUnixTimeMilliseconds();
-            return user.TelegramOTPExpirationTime;
+            if (await telegramSettingService.IsEnableOTP(message.CustId, message.SubAccId))
+            {
+                await customerOtpService.GenerateTelegramOTP(message.CustId, message.SubAccId);
+                return Result.CreateSuccessfulResult();
+            }
+            else
+            {
+                return Result.CreateErrorResult(Security.OTPViaTelegramDisabled);
+            }
         }
     }
 }

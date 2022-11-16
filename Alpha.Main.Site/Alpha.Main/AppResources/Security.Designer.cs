@@ -675,6 +675,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The OTP via Telegram was disabled..
+        /// </summary>
+        public static string OTPViaTelegramDisabled {
+            get {
+                return ResourceManager.GetString("OTPViaTelegramDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Password {
@@ -788,7 +797,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Removed the registered device successfully. .
+        ///   Looks up a localized string similar to Removed the registered device and turn off receiving OTP successfully..
         /// </summary>
         public static string RemoveOtpSuccessMessage {
             get {
@@ -833,7 +842,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click the button below to remove the user&apos;s registered device and set his/her OTP status to Disabled..
+        ///   Looks up a localized string similar to Click the button below to remove the user&apos;s registered Mobile Authenticator App, set his/her OTP status to Disable and turn off receiving OTP via Telegram Chatbot..
         /// </summary>
         public static string ResetOtpWarning {
             get {

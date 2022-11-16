@@ -7,7 +7,5 @@ namespace Alpha.Main.Site.ViewModels.Security
         public string UsernameShower { get; set; }
 
         public bool IsShowGenerateOTPButton { get; set; }
-
-        public long OTPExpirationTime { get; set; }
     }
 }

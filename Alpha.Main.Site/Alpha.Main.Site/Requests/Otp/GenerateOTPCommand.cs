@@ -1,9 +1,10 @@
-﻿using MediatR;
+﻿using Alpha.Main.Models;
+using MediatR;
 using Sunplus.Agent.Model.Entities;
 
 namespace Alpha.Main.Site.Requests.Otp
 {
-    public class GenerateOTPCommand : IAsyncRequest<long>
+    public class GenerateOTPCommand : IAsyncRequest<Result>
     {
         public GenerateOTPCommand(IUserSession userSession)
         {

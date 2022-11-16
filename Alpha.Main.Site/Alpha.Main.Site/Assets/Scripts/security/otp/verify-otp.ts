@@ -9,7 +9,6 @@ class VerifyOtp {
     $otpMessage: any;
     $btnGenerateOTP: any;
     $countDown: any;
-    $otpExpirationTime: any;
     lockedAccountCode: number = 200;
 
     resources = {
@@ -26,9 +25,6 @@ class VerifyOtp {
 
         const actorProfilePicture = JSON.parse(localStorage.getItem('actorProfilePicture'));
         this.$('.profile-avatar').attr("src", actorProfilePicture.Image);
-
-        var otpExpirationTime = parseInt(this.$otpExpirationTime.val());
-        this.countDown(otpExpirationTime);
     }
 
     cachedElements = () => {
@@ -38,7 +34,6 @@ class VerifyOtp {
         this.$otpMessage = this.$("#otp-message");
         this.$btnGenerateOTP = this.$("#btnGenerateOTP");
         this.$countDown = this.$("#countdown");
-        this.$otpExpirationTime = this.$("#otpExpirationTime");
     }
 
     registerEvents = () => {
@@ -122,8 +117,19 @@ class VerifyOtp {
     }
 
     onGenerateOTPSuccess = (data) => {
-        if (data.countDownTime) {
-            this.countDown(data.countDownTime);
+        var result = new Result(data);
+        if (result.isSuccessful) {
+            this.$txtOtp.focus();
+            var countDownTime = new Date().getTime() + 180000;
+            this.countDown(countDownTime);
+        } else {
+            this.$(this.$otpMessage).removeClass('hidden');
+            alpha.showMessage(this.$otpMessage, result);
+
+            if (result.code === this.lockedAccountCode) {
+                alert(result.message);
+                alpha.core.signOut();
+            }
         }
     }
 

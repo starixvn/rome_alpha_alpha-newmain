@@ -120,9 +120,7 @@
                 return Json(UnauthorizedResult.CreateUnauthorizedResult());
             }
 
-            var countDownTime = await mediator.SendAsync(new GenerateOTPCommand(userSession));
-
-            return Json(new { countDownTime });
+            return Json(await mediator.SendAsync(new GenerateOTPCommand(userSession)));
         }
 
         [HttpPost, AntiXsrfFilter]

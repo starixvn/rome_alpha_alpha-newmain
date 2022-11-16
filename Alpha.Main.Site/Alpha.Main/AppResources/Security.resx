@@ -359,7 +359,7 @@ Notes: your password is cAsE sEnSiTiVe.</value>
     <value>The system will no longer accept the OTP generated on the registered device. Do you want to proceed?</value>
   </data>
   <data name="RemoveOtpSuccessMessage" xml:space="preserve">
-    <value>Removed the registered device successfully. </value>
+    <value>Removed the registered device and turn off receiving OTP successfully.</value>
   </data>
   <data name="UpdateOtpStatusSuccess" xml:space="preserve">
     <value>Update OTP status successfully</value>
@@ -368,7 +368,7 @@ Notes: your password is cAsE sEnSiTiVe.</value>
     <value>Remove OTP - {0}</value>
   </data>
   <data name="ResetOtpWarning" xml:space="preserve">
-    <value>Click the button below to remove the user's registered device and set his/her OTP status to Disabled.</value>
+    <value>Click the button below to remove the user's registered Mobile Authenticator App, set his/her OTP status to Disable and turn off receiving OTP via Telegram Chatbot.</value>
   </data>
   <data name="OtpValidation" xml:space="preserve">
     <value>OTP Validation</value>
@@ -477,5 +477,8 @@ Notes: your password is cAsE sEnSiTiVe.</value>
   </data>
   <data name="GenerateOTP" xml:space="preserve">
     <value>Generate OTP</value>
+  </data>
+  <data name="OTPViaTelegramDisabled" xml:space="preserve">
+    <value>The OTP via Telegram was disabled.</value>
   </data>
 </root>

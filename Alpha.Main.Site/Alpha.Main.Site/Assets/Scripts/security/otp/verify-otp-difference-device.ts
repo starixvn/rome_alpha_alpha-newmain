@@ -7,7 +7,6 @@ class VerifyOtpDefferenceDevice {
     $txtOtp: any;
     $btnGenerateOTP: any;
     $countDown: any;
-    $otpExpirationTime: any;
     lockedAccountCode: number = 200;
 
     resources = {
@@ -25,9 +24,6 @@ class VerifyOtpDefferenceDevice {
 
         const actorProfilePicture = JSON.parse(localStorage.getItem('actorProfilePicture'));
         this.$('.profile-avatar').attr("src", actorProfilePicture.Image);
-
-        var otpExpirationTime = parseInt(this.$otpExpirationTime.val());
-        this.countDown(otpExpirationTime);
     }
 
     cachedElements = () => {
@@ -36,7 +32,6 @@ class VerifyOtpDefferenceDevice {
         this.$txtOtp = this.$("#txtOTP");
         this.$btnGenerateOTP = this.$("#btnGenerateOTP");
         this.$countDown = this.$("#countdown");
-        this.$otpExpirationTime = this.$("#otpExpirationTime");
     }
 
     registerEvents = () => {
@@ -57,8 +52,19 @@ class VerifyOtpDefferenceDevice {
     }
 
     onGenerateOTPSuccess = (data) => {
-        if (data.countDownTime) {
-            this.countDown(data.countDownTime);
+        var result = new Result(data);
+
+        if (result.isSuccessful) {
+            this.$txtOtp.focus();
+            var countDownTime = new Date().getTime() + 180000;
+            this.countDown(countDownTime);
+        }
+        else {
+            this.$txtOtp.addClass("error").next().text(result.message);
+            if (result.code === this.lockedAccountCode) {
+                alert(result.message);
+                alpha.core.signOut();
+            }
         }
     }
 

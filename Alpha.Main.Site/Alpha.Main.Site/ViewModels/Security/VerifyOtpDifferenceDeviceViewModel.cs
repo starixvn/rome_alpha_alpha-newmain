@@ -9,7 +9,5 @@
         public string UsernameShower { get; set; }
 
         public bool IsShowGenerateOTPButton { get; set; }
-
-        public long OTPExpirationTime { get; set; }
     }
 }

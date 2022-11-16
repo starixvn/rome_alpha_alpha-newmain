@@ -18,8 +18,6 @@
         void RemoveNewCaptchaByCurrency();
 
         bool IsEnabledTelegramOTP { get; set; }
-        
-        long TelegramOTPExpirationTime { get; set; }
     }
 
     public class User : IUser
@@ -28,7 +26,6 @@
         private const string GameEnableSessionKey = "_GameEnable_";
         private const string IsAdminCanUpdateSubAccountSessionKey = "IsAdminCanUpdateSubAccount";
         private const string IsEnabledTelegramOTPSessionKey = "IsEnabledTelegramOTP";
-        private const string TelegramOTPExpirationTimeSessionKey = " TelegramOTPExpirationTime";
 
         public bool ShowProgressiveJackpotGames => GetEnableProductsByGameName(Jackpot).Any(i => i != ProductId.Pragmatic);
 
@@ -49,18 +46,6 @@
             set
             {
                 SetSessionValue(IsEnabledTelegramOTPSessionKey, value);
-            }
-        }
-
-        public long TelegramOTPExpirationTime
-        {
-            get
-            {
-                return GetSessionValue<long>(TelegramOTPExpirationTimeSessionKey);
-            }
-            set
-            {
-                SetSessionValue(TelegramOTPExpirationTimeSessionKey, value);
             }
         }
 
