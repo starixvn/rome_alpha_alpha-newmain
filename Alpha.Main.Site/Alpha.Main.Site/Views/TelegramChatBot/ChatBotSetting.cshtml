@@ -6,11 +6,18 @@
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/chatbot/chatbot-default")
     @StaticResources.AssetStyles.RenderCommonWithDarkMode($"/bundles/site-main/chatbot/tab-{Model.CustLevel}")
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/telegramchatbot/chatbot-setting")
+<style>
+.chatbot-linked-telegram .chatbot-notification-setting .tbl-notifications tbody tr:last-child td:last-child:after 
+    { 
+        background: url("/site-main/assets/Images/TelegramChatbot/tryitnow_en-US.png");
+    }
+</style>
 }
 
 @{ Html.RenderPartial("Tab", Model.IsShowLetstalkChatBot); }
 
-<div class="tab-content">
+<div class="tab-content chatbot-linked-telegram">
+    <div class="overlay" id="overlay"></div>
     <div class="panel">
         <div class="panel-heading" role="tab" id="headingAccount">
             <h4 class="panel-title">

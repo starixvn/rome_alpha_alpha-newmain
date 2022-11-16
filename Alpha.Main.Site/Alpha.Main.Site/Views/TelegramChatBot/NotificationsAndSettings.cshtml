@@ -1,6 +1,6 @@
 ﻿@model Alpha.Main.Site.ViewModels.TelegramChatBot.ChatBotSettingViewModel
 
-<div class="panel chatbot-setting">
+<div class="panel chatbot-setting chatbot-notification-setting">
     <div class="panel-heading" role="tab" id="headingNotification">
         <h4 class="panel-title">
             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#notification" aria-expanded="false" aria-controls="notification">
@@ -41,7 +41,7 @@
                     }
                 </tbody>
             </table>
-            <div>@ChatBot.YouCanTurnOnOff</div>
+            <div class="noti">@ChatBot.YouCanTurnOnOff</div>
         </div>
     </div>
 </div>

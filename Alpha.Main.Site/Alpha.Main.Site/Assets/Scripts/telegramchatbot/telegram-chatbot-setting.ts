@@ -35,6 +35,7 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         this.cachedDOMElements();
         this.initLanguage();
         this.registerEvents();
+        this.closeHighlight();
     }
 
     cachedDOMElements = () => {
@@ -195,6 +196,13 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
 
     showHasUnlinkedMessage = () => {
         this.topWindow.bootboxAlert(this.resources.hasUnlinkedMessage, undefined, () => this.reloadPage());
+    }
+
+
+    closeHighlight = () => {
+        this.$("#overlay").click(function () {
+            this.parentElement.classList.remove("chatbot-linked-telegram");            
+        });         
     }
 }
 

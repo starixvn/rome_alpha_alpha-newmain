@@ -219,3 +219,105 @@
         color: $link-hover-color;
     }
 }
+
+// style link telegam dark
+.chatbot-linked-telegram {
+    position: relative;
+
+    .overlay {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .panel {
+        opacity: 0.1;
+    }
+
+    .chatbot-notification-setting {
+        opacity: 1;
+        background-color: #1a1a1a;
+
+        .panel-heading {
+            .panel-title {
+                a {
+                    background-color: transparent;
+                }
+            }
+
+            + .panel-collapse > .panel-body {
+                border-color: #1D1D1D;
+            }
+        }
+
+
+        .panel-heading, p, .noti {
+            opacity: 0.1;
+        }
+
+        .tbl-notifications {
+            border-color: #1E1E1F;
+            color: #2C2C2C;
+
+            thead {
+                th {
+                    background-color: #1A1A1A;
+                    border-color: #1E1E1F;
+                    color: #2c2c2c;
+                }
+            }
+
+            tbody {
+                tr {
+                    td, th {
+                        background-color: #171717;
+                        border-color: #1B1B1B;
+
+                        .switch {
+                            opacity: 0.1;
+                        }
+                    }
+
+                    &:last-child {
+                        position: relative;
+
+                        &:after {
+                            position: absolute;
+                            content: "";
+                            width: 100%;
+                            height: 100%;
+                            border: 1px solid #4E4F52;
+                            top: 0;
+                            left: 0; 
+                        }
+
+                        td {
+                            border-right: 1px solid #4E4F52;
+                            color: #EDEDED;
+
+                            .switch {
+                                opacity: 1;
+                            }
+
+                            &:last-child {
+                                &:after {
+                                    content: "";
+                                    position: absolute;
+                                    width: 198px;
+                                    height: 61px;
+                                    right: -7px;
+                                    top: -69px; 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
