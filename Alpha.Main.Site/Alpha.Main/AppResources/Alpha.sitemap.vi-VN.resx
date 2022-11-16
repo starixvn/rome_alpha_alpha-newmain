@@ -414,4 +414,7 @@
   <data name="SercurityCode" xml:space="preserve">
     <value>Bảo mật</value>
   </data>
+  <data name="MyThresholds" xml:space="preserve">
+    <value>My Thresholds</value>
+  </data>
 </root>

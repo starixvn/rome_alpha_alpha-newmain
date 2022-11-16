@@ -282,7 +282,7 @@ html * {
             }
         }
 
-        &#menu-MYWATCHLIST, &#menu-SERCURITYCODE {
+        &#menu-MYWATCHLIST, &#menu-SERCURITYCODE, &#menu-MYTHRESHOLDS {
             padding: 16px 0 0;
             margin-bottom: 0;
 
@@ -874,5 +874,11 @@ html * {
                 background: #838383;
             }
         }
+    }
+}
+
+.modal-mobile-friendly {
+    .modal-dialog .modal-header .modal-title {
+        padding: 12px 0 6px;
     }
 }

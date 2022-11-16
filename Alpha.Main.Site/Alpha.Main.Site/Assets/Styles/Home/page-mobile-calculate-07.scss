@@ -77,7 +77,7 @@ body {
 }
 
 
-/*************************  Float section ******************************/  
+/*************************  Float section ******************************/
 .float-section {
     left: 16px;
     right: unset;
@@ -109,8 +109,7 @@ body {
     .content {
         background-color: #fff;
         top: calculateScale(48px);
-
-		padding:0px !important;
+        padding: 0px !important;
     }
 
     .header {
@@ -244,7 +243,7 @@ body {
             padding: calculateScale(7px) 0 0 calculateScale(3px);
         }
 
-        &#menu-MYWATCHLIST, &#menu-SERCURITYCODE {
+        &#menu-MYWATCHLIST, &#menu-SERCURITYCODE, &#menu-MYTHRESHOLDS {
             padding: calculateScale(16px) 0 0;
             margin-bottom: 0;
 
@@ -309,7 +308,7 @@ body {
         margin-left: calculateScale(3px);
     }
 }
-.mainmenu-container .menu-item#menu-MYWATCHLIST {
+.mainmenu-container .menu-item#menu-MYWATCHLIST, .menu-item#menu-MYTHRESHOLDS {
     margin-bottom: calculateScale(10px);
 }
 // Account search tool typeahead
@@ -640,6 +639,42 @@ body {
             &.active {
                 width: calculateScale(16px);
             }
+        }
+    }
+}
+
+.modal-mobile-friendly {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+
+    &.in {
+        top: calculateScale(48px) !important;
+    }
+
+    .modal-dialog {
+        height: 100% !important;
+
+        .modal-header {
+            border-bottom: 1px solid $border-color;
+            padding: 0 8px;
+
+            .icon-close {
+                left: 6px;
+                top: 10px;
+                margin: 0;
+            }
+
+            .modal-title {
+                border-bottom: none;
+                padding: 12px 0 10px;
+            }
+        }
+
+        .modal-body {
+            padding: 0 8px;
         }
     }
 }

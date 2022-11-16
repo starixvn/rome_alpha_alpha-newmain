@@ -408,4 +408,7 @@
   <data name="SercurityCode" xml:space="preserve">
     <value>ความปลอดภัย</value>
   </data>
+  <data name="MyThresholds" xml:space="preserve">
+    <value>ขีดจำกัดของฉัน</value>
+  </data>
 </root>
