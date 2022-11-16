@@ -42,31 +42,6 @@ namespace Alpha.Main.Extensions
             return JsonConvert.DeserializeObject<T>(content);
         }
 
-        //public static async Task<T> PutAsStringAsync<T>(this HttpClient httpClient, string requestUri, object value = null)
-        //{
-        //    var json = value != null ? JsonConvert.SerializeObject(value) : string.Empty;
-        //    var contentString = new StringContent(json, Encoding.UTF8, "application/json");
-        //    var request = new HttpRequestMessage
-        //    {
-        //        Method = HttpMethod.Put,
-        //        RequestUri = new Uri(httpClient.BaseAddress, requestUri),
-        //        Content = contentString
-        //    };
-        //    var response = await httpClient.SendAsync(request);
-        //    response.EnsureSuccessStatusCode();
-        //    var content = await response.Content.ReadAsStringAsync();
-        //    return JsonConvert.DeserializeObject<T>(content);
-        //}
-
-        //public static async Task<T> DeleteAsStringAsync<T>(this HttpClient httpClient, string requestUri)
-        //{
-        //    var uri = new Uri(httpClient.BaseAddress, requestUri);
-        //    var response = await httpClient.DeleteAsync(uri);
-        //    response.EnsureSuccessStatusCode();
-        //    var content = await response.Content.ReadAsStringAsync();
-        //    return JsonConvert.DeserializeObject<T>(content);
-        //}
-
         public static async Task PutAsStringAsync(this HttpClient httpClient, string requestUri, object value = null)
         {
             var json = value != null ? JsonConvert.SerializeObject(value) : string.Empty;

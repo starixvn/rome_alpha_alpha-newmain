@@ -1359,7 +1359,9 @@
     <Content Include="Views\ApiKey\CreateApiKey.cshtml" />
     <Content Include="Views\ApiKey\EditApiKey.cshtml" />
     <Content Include="Views\ApiKey\Shared\_Layout.cshtml" />
+    <Content Include="Views\ApiKey\CreateApiKeyResult.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\apikey\apikey-management.ts" />
+    <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey-result.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\edit-apikey.ts" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
@@ -1587,6 +1589,7 @@
     <Content Include="Assets\styles\home\ChatBotBanneri1-dark.scss" />
     <Content Include="Assets\styles\advertisement\popup-advertisement.scss" />
     <Content Include="Assets\styles\apikey\apikey.scss" />
+    <Content Include="Assets\styles\apikey\apikey-dark.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -1905,6 +1908,7 @@
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
     <Compile Include="ViewModels\Advertisement\MyWatchlistViewModel.cs" />
     <Compile Include="ViewModels\ApiKey\ApiKeyManagementViewModel.cs" />
+    <Compile Include="ViewModels\ApiKey\CreateApiKeyResultViewModel.cs" />
     <Compile Include="ViewModels\ApiKey\CreateApiKeyViewModel.cs" />
     <Compile Include="ViewModels\ApiKey\EditApiKeyViewModel.cs" />
     <Compile Include="ViewModels\Banner\BannerViewModel.cs">

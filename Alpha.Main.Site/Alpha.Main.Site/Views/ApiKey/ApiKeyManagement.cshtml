@@ -16,6 +16,7 @@
     </li>
 </ul>
 <div class="tab-content apikey-form">
+    <span class="icon icon-help icon-question"></span>
     <table class="tblRpt tblRpt-bordered tblRpt-striped tblRpt-hover">
         <thead>
             <tr>
@@ -31,22 +32,13 @@
                 <tr>
                     <td class="text-center">@apikey.Name</td>
                     <td class="text-center">@apikey.CreatedDate</td>
-                    <td class="text-center">@apikey.IsExpired</td>
+                    <td class="text-center">@apikey.ExpirationDate</td>
                     <td class="text-center">
                         <a class="btn btn-edit" apikey=@apikey.Key>Edit</a>
                         <a class="btn btn-revoke" apikey=@apikey.Key>Revoke</a>
                     </td>
                 </tr>
             }
-            @*<tr>
-                    <td class="text-center">test1</td>
-                    <td class="text-center">07-28-2022 10:02:00 PM</td>
-                    <td class="text-center">Expired</td>
-                    <td class="text-center">
-                        <a class="btn btn-edit" apikey=e23b163b3bfdc272f1e6db9f>Edit</a>
-                        <a class="btn btn-revoke" apikey=1>Revoke</a>
-                    </td>
-                </tr>*@
         </tbody>
     </table>
 </div>

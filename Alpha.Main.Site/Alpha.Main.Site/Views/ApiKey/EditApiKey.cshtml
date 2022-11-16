@@ -7,46 +7,51 @@
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/apikey")
     @StaticResources.RenderStylesWithDarkMode("~/Assets/bundles/apikey/apikey")
 }
-<form class="block edit-form">
+
+<form class="block" id="apikey-form" autocomplete="off">
+    <div id="status-message" class="form-group hidden">
+        <div id="status-message-content" class="msg msg-warning"></div>
+    </div>
     <div class="form-group">
         <label>API Key Name</label>
-        <input class="form-control" value="@Model.ApiKeyInfo.Name" />
+        <input type="text" class="form-control" id="apiname" autocomplete="off" value="@Model.ApiKeyInfo.Name" />
     </div>
     <div class="form-group">
         <label>API Key</label>
-        <input class="form-control" value="@Model.ApiKeyInfo.Key" />
+        <input type="text" class="form-control" id="key" autocomplete="off" value="@Model.ApiKeyInfo.Key" readonly />
+        <span class="icon-content-copy icon" data-clipboard-action="copy" data-clipboard-target="#key" title="@Security.Copied"></span>
     </div>
     <div class="form-group">
         <label>Expiration Date</label>
-        <div class="control date">
-            <div class="input-group date" id="dpkContainer">
-                <input class="form-control" readonly="readonly" id="expirationdate" />
+        <div class="control date w-460">
+            <div class="input-group date w-310" id="dpkContainer">
+                <input type="text" class="form-control" readonly="readonly" id="expirationdate" autocomplete="off" value="@Model.ApiKeyInfo.ExpirationDate" placeholder="MM/DD/YYYY" />
                 <span class="input-group-addon">
                     <span class="icon-calendar"></span>
                 </span>
             </div>
         </div>
     </div>
-    <div class="form-group">
-        <label></label>
-        <input type="checkbox" value="never" style="margin-bottom: 11px" />
-        <label>Never Expires</label>
-    </div>
-    <div class="form-group">
-        <label>Select Scopes</label>
-        <select id="multiSelectionDropdownId" multiple="multiple" class="select-multiple">
+    <label class="scope-label">Select Scopes <span class="font-normal">(Scopes set the permisson granted to the API Key)</span></label>
+    <div class="ml-25">
+        <label class="scope-input mt-10"><input type="checkbox" value="All" id="ckbAll" /> All</label><br>
+        <div class="ml-25" id="apiKeyScopes">
             @foreach (var scope in Model.Scopes)
             {
-                <option value="@scope" selected="selected">@scope</option>
+                var isChecked = Model.ApiKeyInfo.ScopeIdList.Contains(scope);
+                <label class="scope-input"><input type="checkbox" value="@scope" name="scope" @(isChecked ? "checked" : "") />@scope</label><br>
             }
-        </select>
+        </div>
     </div>
-    <div class="form-group">
-        <input type="submit" class="btn-submit" value="Submit" />
+    <div class="form-group mt-10">
+        <button class="btn-submit" id="btnSubmit">Save</button>
+        <button class="btn-submit btn-revoke" id="btnCancel">Cancel</button>
     </div>
 </form>
+
 @section js {
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.RenderCommon("/bundles/site-main/apikey")
+    @StaticResources.AssetScripts.RenderCommon("/bundles/site-main/apikey/clipboard")
     @StaticResources.RenderScripts("~/Assets/bundles/apikey/edit-apikey")
 }

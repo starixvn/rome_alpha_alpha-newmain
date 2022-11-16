@@ -1,5 +1,4 @@
-﻿
-namespace Alpha.Main.Models.ApiKey
+﻿namespace Alpha.Main.Models.ApiKey
 {
     public class ApiKeyResult
     {

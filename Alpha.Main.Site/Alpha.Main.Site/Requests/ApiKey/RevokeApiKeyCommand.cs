@@ -1,5 +1,4 @@
-﻿
-namespace Alpha.Main.Site.Requests.ApiKey
+﻿namespace Alpha.Main.Site.Requests.ApiKey
 {
     using Alpha.Main.Models.ApiKey;
     using Alpha.Main.Site.ViewModels.ApiKey;

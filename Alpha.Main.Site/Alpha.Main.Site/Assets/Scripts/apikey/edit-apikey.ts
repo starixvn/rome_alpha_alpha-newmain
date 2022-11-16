@@ -1,5 +1,5 @@
 ﻿/// <reference path="../core.ts" />
-/// <reference path="../components/multiselection-dropdown-default.ts" />
+'use strict';
 
 interface JQuery {
     datepicker(options: any): JQuery;
@@ -11,29 +11,126 @@ interface DatepickerOptions {
     defaultDate: any;
 }
 
+declare var Clipboard: any;
+
 class EditApiKey {
     $: JQueryStatic;
     topWindow: any;
-    multiSelectionDropdownDefault: MultiSelectionDropdownDefaultComponent;
+    clipboard: any;
     $form: JQuery;
     $datePicker: JQuery;
     $datePickerInput: JQuery;
+    $ckbAll: JQuery;
+    $btnSubmit: JQuery;
+    $btnCancel: JQuery;
 
-    constructor($: JQueryStatic, topWindow: any, multiSelectionDropdownDefault: MultiSelectionDropdownDefaultComponent) {
+    constructor($: JQueryStatic, topWindow: any, clipboard: any) {
         this.$ = $;
         this.topWindow = topWindow;
-        this.multiSelectionDropdownDefault = multiSelectionDropdownDefault;
+        this.clipboard = clipboard;
     }
 
     init = () => {
         this.cachedDOMElements();
         this.renderDatetimePicker();
-        this.renderDropdown();
+        this.handleSelectScopes();
+        this.registerEvents();
     }
 
     cachedDOMElements = () => {
         this.$datePicker = this.$("#dpkContainer");
         this.$datePickerInput = this.$("#expirationdate");
+        this.$ckbAll = this.$("#ckbAll");
+        this.$btnCancel = this.$("#btnCancel");
+        this.$btnSubmit = this.$("#btnSubmit");
+    }
+
+    registerEvents = () => {
+        this.$ckbAll.click(this.handleSelectAllScopes);
+        this.$("input[name='scope']").click(this.handleSelectScopes);
+        this.$btnCancel.click(this.handleCancelForm);
+        this.$btnSubmit.click(this.handleUpdateApiKey);
+
+        const self = this;
+        if (window.document.queryCommandSupported
+            && window.document.queryCommandSupported("copy")) {
+            this.clipboard
+                .on("success", function (e) {
+                    self.$(e.trigger).tooltip("show");
+                })
+                .on("error", function (e) {
+                    self.$(e.trigger).remove();
+                    window.console.error("Action:", e.action);
+                    window.console.error("Trigger:", e.trigger);
+                });
+        }
+    }
+
+    handleCancelForm = () => {
+        this.topWindow.popupManager.close();
+    }
+
+    handleUpdateApiKey = () => {
+        const apiName = this.$("#apiname").val();
+        const apikey = this.$("#key").val();
+        const expirationDate = this.$("#expirationdate").val();
+        const scopes = this.getScopeValue();
+        const self = this;
+        this.$.ajax({
+            type: 'POST',
+            url: alpha.urls.mainRootPath + `ApiKey/UpdateApiKey`,
+            data: { apikey, apiName, expirationDate, scopes },
+            dataType: 'json',
+            success: function (data, textStatus, jqXHR) {
+                self.topWindow.popupManager.close();
+            },
+            complete: function (jqXHR, textStatus) {
+
+            }
+        })
+    }
+
+    getScopeValue = () => {
+        const self = this;
+        const scopes = [];
+        this.$.each(this.$("input[name='scope']:checked"), function (index, checkbox) {
+            scopes.push(self.$(checkbox).val());
+        });
+
+        return scopes.join(",");
+    }
+
+    handleSelectAllScopes = () => {
+        const self = this;
+        var isChecked = this.$ckbAll.is(":checked");
+        this.$.each(this.$("input[name='scope']"), function (index, checkbox) {
+            if (isChecked) {
+                self.$(checkbox).prop('checked', true).attr('checked', 'checked');
+            }
+            else {
+                self.$(checkbox).prop('checked', false).removeAttr('checked');
+            }
+        });
+    }
+
+    handleSelectScopes = () => {
+        if (this.isSelectAllScopes()) {
+            this.$ckbAll.prop('checked', true).attr('checked', 'checked');
+            return;
+        }
+        this.$ckbAll.prop('checked', false).removeAttr('checked');
+    }
+
+    isSelectAllScopes = () => {
+        const self = this;
+        let isCheckAll = true;
+        this.$.each(this.$("input[name='scope']"), function (index, checkbox) {
+            if (!self.$(checkbox).is(":checked")) {
+                isCheckAll = false;
+            }
+        });
+
+        return isCheckAll;
     }
 
     renderDatetimePicker = () => {
@@ -44,13 +141,9 @@ class EditApiKey {
         }
         this.$datePicker.datepicker(options);
     }
-
-    renderDropdown = () => {
-        this.multiSelectionDropdownDefault.render();
-    }
 }
 
 $(function () {
-    const editApiKey = new EditApiKey($, window.top, new MultiSelectionDropdownDefaultComponent($));
+    const editApiKey = new EditApiKey($, window.top, new Clipboard('.icon-content-copy'));
     editApiKey.init();
 });

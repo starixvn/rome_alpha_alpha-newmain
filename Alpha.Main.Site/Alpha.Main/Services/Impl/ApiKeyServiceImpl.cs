@@ -1,5 +1,4 @@
-﻿
-namespace Alpha.Main.Services.Impl
+﻿namespace Alpha.Main.Services.Impl
 {
     using Alpha.Main.Extensions;
     using Alpha.Main.Models.ApiKey;
@@ -19,7 +18,7 @@ namespace Alpha.Main.Services.Impl
             this.httpClient = httpClient;
         }
 
-        public async Task<ApiKeyResult> CreateApiKey(int custId, string apiName, string passPhrase, string scopes, DateTime expirationDate)
+        public async Task<ApiKeyResult> CreateApiKey(int custId, string apiName, string passPhrase, string scopes, DateTime? expirationDate)
         {
             var parameter = new { custId, apiName, passPhrase, scopes, expirationDate };
             return await httpClient.PostAsJsonAsync<ApiKeyResult>(string.Empty, parameter);
@@ -40,7 +39,7 @@ namespace Alpha.Main.Services.Impl
             await httpClient.DeleteAsStringAsync(apiKey);
         }
 
-        public async Task UpdateApiKey(string apiKey, int custId, string apiName, string scopes, DateTime expirationDate)
+        public async Task UpdateApiKey(string apiKey, int custId, string apiName, string scopes, DateTime? expirationDate)
         {
             var parameter = new { apiKey, custId, apiName, scopes, expirationDate };
             await httpClient.PutAsStringAsync(string.Empty, parameter);

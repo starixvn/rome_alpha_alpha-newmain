@@ -1,0 +1,37 @@
+﻿@model CreateApiKeyResultViewModel
+@{
+    Layout = "~/Views/ApiKey/Shared/_Layout.cshtml";
+}
+@section css {
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/apikey")
+    @StaticResources.RenderStylesWithDarkMode("~/Assets/bundles/apikey/apikey")
+}
+
+<form class="block" id="apikey-form" autocomplete="off">
+    <div class="form-group">
+        <label>API Key Name</label>
+        <input type="text" class="form-control" id="apiname" autocomplete="off" value="@Model.ApiName" readonly />
+    </div>
+    <div class="form-group">
+        <label>API Key</label>
+        <input type="text" class="form-control" id="key" autocomplete="off" value="@Model.Key" readonly />
+        <span class="icon-content-copy icon" data-clipboard-action="copy" data-clipboard-target="#key" title="@Security.Copied"></span>
+    </div>
+    <div class="form-group">
+        <label>API Secret</label>
+        <input type="text" class="form-control" id="secret" autocomplete="off" readonly value="@Model.Secret" />
+        <span class="icon-content-copy icon icon-copy-secret" data-clipboard-action="copy" data-clipboard-target="#secret" title="@Security.Copied"></span>
+    </div>
+    <p>API Passphrase is important information for you to use later. Please remember it and keep it safe.</p>
+    <div class="form-group mt-10">
+        <button class="btn-submit" id="btnOk">OK</button>
+    </div>
+</form>
+
+@section js {
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetScripts.RenderCommon("/bundles/site-main/apikey")
+    @StaticResources.AssetScripts.RenderCommon("/bundles/site-main/apikey/clipboard")
+    @StaticResources.RenderScripts("~/Assets/bundles/apikey/create-apikey-result")
+}

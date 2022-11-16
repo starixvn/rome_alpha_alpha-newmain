@@ -44,6 +44,12 @@
             return View(viewModel);
         }
 
+        public async Task<ActionResult> CreateApiKeyResult(string apiName, string key, string secret)
+        {
+            var viewModel = new CreateApiKeyResultViewModel { ApiName = apiName, Key = key, Secret = secret };
+            return View(viewModel);
+        }
+
         [HttpPost]
         public async Task<ActionResult> CreateApiKey(CreateApiKeyCommand query)
         {
@@ -52,6 +58,12 @@
 
         [HttpPost]
         public async Task<ActionResult> RevokeApiKey(RevokeApiKeyCommand query)
+        {
+            return Json(await mediator.SendAsync(query));
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> UpdateApiKey(UpdateApiKeyCommand query)
         {
             return Json(await mediator.SendAsync(query));
         }

@@ -51,7 +51,7 @@ namespace Alpha.Main.Site.Handlers
 
         public async Task<Result> Handle(UpdateApiKeyCommand message)
         {
-            await apiKeyService.UpdateApiKey(message.Key, message.CustId, message.ApiName, message.Scopes, message.ExpirationDate);
+            await apiKeyService.UpdateApiKey(message.ApiKey, message.CustId, message.ApiName, message.Scopes, message.ExpirationDate);
             return new Result(0, "Success");
         }
     }

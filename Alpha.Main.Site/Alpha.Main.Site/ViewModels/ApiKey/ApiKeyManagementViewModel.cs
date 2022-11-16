@@ -1,5 +1,4 @@
-﻿
-namespace Alpha.Main.Site.ViewModels.ApiKey
+﻿namespace Alpha.Main.Site.ViewModels.ApiKey
 {
     using Alpha.Main.Models.ApiKey;
     using System;

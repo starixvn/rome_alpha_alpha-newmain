@@ -48,6 +48,10 @@
     "inputFile": "Assets/styles/apikey/apikey.scss"
   },
   {
+    "outputFile": "Assets/styles/apikey/apikey-dark.css",
+    "inputFile": "Assets/styles/apikey/apikey-dark.scss"
+  },
+  {
     "outputFile": "Assets/styles/error/error.css",
     "inputFile": "Assets/styles/error/error.scss"
   },

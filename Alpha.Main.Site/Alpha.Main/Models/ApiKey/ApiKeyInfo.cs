@@ -1,5 +1,4 @@
-﻿
-namespace Alpha.Main.Models.ApiKey
+﻿namespace Alpha.Main.Models.ApiKey
 {
     using System;
     using System.Collections.Generic;
@@ -9,11 +8,6 @@ namespace Alpha.Main.Models.ApiKey
 
     public class ApiKeyInfo
     {
-        public ApiKeyInfo()
-        {
-
-        }
-
         public string Key { get; set; }
 
         public string Name { get; set; }

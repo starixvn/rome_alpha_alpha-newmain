@@ -225,6 +225,13 @@
     ]
   },
   {
+    "outputFileName": "Assets/bundles/apikey/create-apikey-result.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/apikey/create-apikey-result.js"
+    ]
+  },
+  {
     "outputFileName": "Assets/bundles/kick-out.js",
     "inputFiles": [
       "Assets/scripts/core.js",
@@ -528,6 +535,12 @@
     "outputFileName": "Assets/bundles/ChatBotBanneri1.css",
     "inputFiles": [
       "Assets/Styles/home/ChatBotBanneri1.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/apikey/apikey-dark.css",
+    "inputFiles": [
+      "Assets/styles/apikey/apikey-dark.css"
     ]
   }
 ]

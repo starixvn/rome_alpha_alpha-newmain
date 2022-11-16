@@ -1,5 +1,4 @@
-﻿
-namespace Alpha.Main.Site.Requests.ApiKey
+﻿namespace Alpha.Main.Site.Requests.ApiKey
 {
     using Alpha.Main.Models.ApiKey;
     using MediatR;
@@ -22,7 +21,7 @@ namespace Alpha.Main.Site.Requests.ApiKey
             CustId = 1176086;
         }
 
-        public string Key { get; set; }
+        public string ApiKey { get; set; }
 
         public int CustId { get; set; }
 
@@ -30,6 +29,6 @@ namespace Alpha.Main.Site.Requests.ApiKey
 
         public string Scopes { get; set; }
 
-        public DateTime ExpirationDate { get; set; }
+        public DateTime? ExpirationDate { get; set; }
     }
 }

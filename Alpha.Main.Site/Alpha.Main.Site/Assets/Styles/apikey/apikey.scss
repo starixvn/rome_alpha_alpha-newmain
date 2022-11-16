@@ -1,8 +1,11 @@
-﻿.block {
+﻿html, body {
+    height: fit-content !important;
+    /*width: fit-content !important;*/
+}
+
+.block {
     margin-left: 20px;
     margin-top: 20px;
-    width: 800px;
-    max-width: 800px;
 
     .form-group {
         display: flex;
@@ -20,6 +23,8 @@
         color: red;
     }
 }
+
+
 
 .multiselect .multiselect-selected-text {
     width: 215px;
@@ -93,4 +98,63 @@ input[type='password'] {
     border-radius: 4px;
     width: inherit;
     height: inherit;
+}
+
+input[type='text'] {
+    border: 1px solid #ccc;
+    width: 450px;
+}
+
+.scope-input {
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.scope-label {
+    width: fit-content !important;
+}
+
+.font-normal {
+    font-weight: normal;
+}
+
+.ml-25 {
+    margin-left: 25px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.w-460 {
+    width: 460px !important;
+}
+
+.w-310 {
+    width: 310px !important;
+}
+
+.btn-edit {
+    color: white;
+    background-color: #77bcf7 !important;
+}
+
+.btn-revoke {
+    color: white;
+    background-color: #e76868 !important;
+}
+
+.input-pass {
+    font-family: 'password';
+}
+
+.input-pass::placeholder {
+    font-family: 'Roboto';
+}
+
+.icon-question {
+    color: #3b85c5;
+    position: absolute;
+    font-size: 20px;
+    top: 11px;
 }
