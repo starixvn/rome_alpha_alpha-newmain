@@ -954,6 +954,7 @@
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop_zh-TW.jpg" />
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
     <Content Include="Assets\Images\switch.png" />
+    <Content Include="Assets\Images\TelegramChatbot\tryitnow_en-US.png" />
     <Content Include="Assets\scripts\aes.js" />
     <Content Include="Assets\scripts\home\assetsCDNHealthcheck.js" />
     <Content Include="Assets\scripts\home\le-mtagconfig.js" />

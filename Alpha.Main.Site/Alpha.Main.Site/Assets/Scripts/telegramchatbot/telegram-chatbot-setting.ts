@@ -15,10 +15,13 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
     $copyIcon: JQuery;
 
     $userId: JQuery;
+    $container: JQuery;
+    $overlay: JQuery;
 
     HAS_UNLINKED_ERR_CODE = 102;
     TELEGRAM_OTP_FUNCTION_ID = 15;
     isShowSupportTelegramOtp;
+    isFirstLoad = true;
 
     constructor($: JQueryStatic, topWindow: any, clipboard: any) {
         super($, topWindow);
@@ -37,7 +40,7 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         this.cachedDOMElements();
         this.initLanguage();
         this.registerEvents();
-        this.closeHighlight();
+        
     }
 
     cachedDOMElements = () => {
@@ -48,6 +51,13 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         this.$btnUnsubscribe = this.$("#btnUnsubscribe");
         this.$copyIcon = this.$("#copy-icon");
         this.$userId = this.$("#UserId");
+        this.$overlay = this.$("#overlay");
+        this.$container = this.$("#container");
+    }
+
+    showHighlight = () => {
+        this.$container.addClass("chatbot-linked-telegram");
+        this.setLocalStorageValue("IsShowedTryItNow", true);
     }
 
     registerEvents = () => {
@@ -75,8 +85,16 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
             this.$copyIcon.remove();
         }
 
-        if (!this.getLocalStorageValue(this.isShowSupportTelegramOtp)) {
-            this.showSupportOtpTelegram();
+        this.isFirstLoad = !this.getLocalStorageValue("IsShowedTryItNow");
+        if (this.isFirstLoad) {
+            this.showHighlight();
+            this.$overlay.click(() => {
+                this.$container.removeClass("chatbot-linked-telegram");
+            });
+        } else {
+            if (!this.getLocalStorageValue(this.isShowSupportTelegramOtp)) {
+                this.showSupportOtpTelegram();
+            }
         }
     }
 
@@ -202,12 +220,6 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
 
     showHasUnlinkedMessage = () => {
         this.topWindow.bootboxAlert(this.resources.hasUnlinkedMessage, undefined, () => this.reloadPage());
-    }
-
-    closeHighlight = () => {
-        this.$("#overlay").click(function () {
-            this.parentElement.classList.remove("chatbot-linked-telegram");
-        });
     }
 
     showSupportOtpTelegram = () => {
