@@ -40,7 +40,7 @@
     @include box-shadow(0px, 1px, 1px, rgba(0, 0, 0, 0.3));
     height: 28px;
     padding: 4px;
-    border: 1px solid $border-color;
+    border: 1px solid #474747;
 
     &:hover {
         cursor: pointer;
@@ -49,10 +49,12 @@
 
 .language {
     @include dropdown-style;
+    border: 1px solid #474747;
+    background-color: #2b2b2b;
     width: 160px;
 
     .dropdown-toggle {
-        padding-left: 12px;
+        padding-left: 22px;
     }
 
     .icon-flag {
@@ -232,7 +234,23 @@
         top: 0;
         left: 0;
         opacity: 1;
-        z-index: 1;
+        z-index: 500;
+    }
+
+    .scroll-tabs {
+        position: relative;
+        margin-bottom: 0 !important;
+
+        &:after {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            content: "";
+            top: 0;
+            left: 0;
+            background: rgba(23, 23, 23, 0.9);
+            z-index: 1;
+        }
     }
 
     .panel {
@@ -293,7 +311,7 @@
                             height: 100%;
                             border: 1px solid #4E4F52;
                             top: 0;
-                            left: 0; 
+                            left: 0;
                         }
 
                         td {
@@ -311,7 +329,7 @@
                                     width: 198px;
                                     height: 61px;
                                     right: -7px;
-                                    top: -69px; 
+                                    top: -69px;
                                 }
                             }
                         }
