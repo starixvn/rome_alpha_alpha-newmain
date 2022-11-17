@@ -18,6 +18,7 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
 
     HAS_UNLINKED_ERR_CODE = 102;
     TELEGRAM_OTP_FUNCTION_ID = 15;
+    isShowSupportTelegramOtp;
 
     constructor($: JQueryStatic, topWindow: any, clipboard: any) {
         super($, topWindow);
@@ -32,6 +33,7 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
 
     init = () => {
         alpha.detectResponsiveInformation();
+        this.isShowSupportTelegramOtp = "IsShowSupportTelegramOtp";
         this.cachedDOMElements();
         this.initLanguage();
         this.registerEvents();
@@ -71,6 +73,10 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         }
         else {
             this.$copyIcon.remove();
+        }
+
+        if (!this.getLocalStorageValue(this.isShowSupportTelegramOtp)) {
+            this.showSupportOtpTelegram();
         }
     }
 
@@ -198,11 +204,24 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         this.topWindow.bootboxAlert(this.resources.hasUnlinkedMessage, undefined, () => this.reloadPage());
     }
 
-
     closeHighlight = () => {
         this.$("#overlay").click(function () {
-            this.parentElement.classList.remove("chatbot-linked-telegram");            
-        });         
+            this.parentElement.classList.remove("chatbot-linked-telegram");
+        });
+    }
+
+    showSupportOtpTelegram = () => {
+        const message = "We have supported for getting OTP via Telegram (turn on the OTP setting). You can try it now.";
+        this.topWindow.bootboxAlert(message);
+        this.setLocalStorageValue(this.isShowSupportTelegramOtp, true);
+    }
+
+    setLocalStorageValue(key: string, value: boolean) {
+        alpha.localStorage.set(key, value ? "1" : "0");
+    }
+
+    getLocalStorageValue(key: string) {
+        return alpha.localStorage.get(key) === "1";
     }
 }
 
