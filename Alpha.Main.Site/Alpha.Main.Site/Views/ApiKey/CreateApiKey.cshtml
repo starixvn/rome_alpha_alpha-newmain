@@ -4,6 +4,7 @@
 }
 @section css {
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode($"/bundles/site-main/tab-{Model.CustLevel.ToLowerInvariant()}")
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/apikey")
     @StaticResources.RenderStylesWithDarkMode("~/Assets/bundles/apikey/apikey")
 }

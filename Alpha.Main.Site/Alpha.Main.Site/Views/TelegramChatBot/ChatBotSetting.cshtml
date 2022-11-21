@@ -4,7 +4,7 @@
 }
 @section Styles {
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/chatbot/chatbot-default")
-    @StaticResources.AssetStyles.RenderCommonWithDarkMode($"/bundles/site-main/chatbot/tab-{Model.CustLevel}")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode($"/bundles/site-main/tab-{Model.CustLevel.ToLowerInvariant()}")
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/telegramchatbot/chatbot-setting")
 <style>
 .chatbot-linked-telegram .chatbot-notification-setting .tbl-notifications tbody tr:last-child td:last-child:after 

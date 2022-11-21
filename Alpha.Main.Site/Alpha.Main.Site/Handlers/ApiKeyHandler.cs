@@ -40,7 +40,7 @@ namespace Alpha.Main.Site.Handlers
         public async Task<ApiKeyManagementViewModel> Handle(GetCustomerApiKeyQuery message)
         {
             var result = await apiKeyService.GetApiKeyByCustId(message.CustId);
-            return new ApiKeyManagementViewModel { ApiKeyInfos = result };
+            return new ApiKeyManagementViewModel(message.CustLevel.DisplayName, result);
         }
 
         public async Task<Result> Handle(RevokeApiKeyCommand message)
