@@ -20,7 +20,6 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
 
     HAS_UNLINKED_ERR_CODE = 102;
     TELEGRAM_OTP_FUNCTION_ID = 15;
-    isShowSupportTelegramOtp;
     isFirstLoad = true;
 
     constructor($: JQueryStatic, topWindow: any, clipboard: any) {
@@ -36,11 +35,9 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
 
     init = () => {
         alpha.detectResponsiveInformation();
-        this.isShowSupportTelegramOtp = "IsShowSupportTelegramOtp";
         this.cachedDOMElements();
         this.initLanguage();
         this.registerEvents();
-        
     }
 
     cachedDOMElements = () => {
@@ -91,10 +88,6 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
             this.$overlay.click(() => {
                 this.$container.removeClass("chatbot-linked-telegram");
             });
-        } else {
-            if (!this.getLocalStorageValue(this.isShowSupportTelegramOtp)) {
-                this.showSupportOtpTelegram();
-            }
         }
     }
 
@@ -220,12 +213,6 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
 
     showHasUnlinkedMessage = () => {
         this.topWindow.bootboxAlert(this.resources.hasUnlinkedMessage, undefined, () => this.reloadPage());
-    }
-
-    showSupportOtpTelegram = () => {
-        const message = "We have supported for getting OTP via Telegram (turn on the OTP setting). You can try it now.";
-        this.topWindow.bootboxAlert(message);
-        this.setLocalStorageValue(this.isShowSupportTelegramOtp, true);
     }
 
     setLocalStorageValue(key: string, value: boolean) {

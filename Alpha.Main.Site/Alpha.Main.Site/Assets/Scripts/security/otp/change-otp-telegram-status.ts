@@ -79,8 +79,8 @@ class ChangeOtpTelegramStatus {
             data: { enabled },
             dataType: "json",
             success: (result) => {
-                if (enabled && !self.getLocalStorageValue(self.isShowRedirectToTelegramPage)) {
-                    self.setLocalStorageValue(self.isEnableTelegramOtp, true);
+                if (!self.getLocalStorageValue(self.isShowRedirectToTelegramPage)) {
+                    self.setLocalStorageValue(self.isEnableTelegramOtp, enabled);
                 }
 
                 setTimeout(() => {
