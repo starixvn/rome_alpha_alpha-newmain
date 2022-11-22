@@ -7,7 +7,7 @@
     using Sunplus.Agent.Model.Entities;
     using Alpha.Main.Models.ApiKey;
 
-    public class CreateApiKeyCommand : IAsyncRequest<ApiKeyResult>
+    public class CreateApiKeyCommand : IAsyncRequest<CreateApiKeyResult>
     {
         public CreateApiKeyCommand() : this(null)
         {

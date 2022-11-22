@@ -18,10 +18,10 @@
             this.httpClient = httpClient;
         }
 
-        public async Task<ApiKeyResult> CreateApiKey(int custId, string apiName, string passPhrase, string scopes, DateTime? expirationDate)
+        public async Task<CreateApiKeyResult> CreateApiKey(int custId, string apiName, string passPhrase, string scopes, DateTime? expirationDate)
         {
             var parameter = new { custId, apiName, passPhrase, scopes, expirationDate };
-            return await httpClient.PostAsJsonAsync<ApiKeyResult>(string.Empty, parameter);
+            return await httpClient.PostAsJsonAsync<CreateApiKeyResult>(string.Empty, parameter);
         }
 
         public async Task<IEnumerable<ApiKeyInfo>> GetApiKeyByCustId(int custId)
@@ -39,10 +39,10 @@
             await httpClient.DeleteAsStringAsync(apiKey);
         }
 
-        public async Task UpdateApiKey(string apiKey, int custId, string apiName, string scopes, DateTime? expirationDate)
+        public async Task<Result> UpdateApiKey(string apiKey, int custId, string apiName, string scopes, DateTime? expirationDate)
         {
             var parameter = new { apiKey, custId, apiName, scopes, expirationDate };
-            await httpClient.PutAsStringAsync(string.Empty, parameter);
+            return await httpClient.PutAsJsonAsync<Result>(string.Empty, parameter);
         }
     }
 }

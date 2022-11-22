@@ -42,7 +42,7 @@ namespace Alpha.Main.Extensions
             return JsonConvert.DeserializeObject<T>(content);
         }
 
-        public static async Task PutAsStringAsync(this HttpClient httpClient, string requestUri, object value = null)
+        public static async Task<string> PutAsStringAsync(this HttpClient httpClient, string requestUri, object value = null)
         {
             var json = value != null ? JsonConvert.SerializeObject(value) : string.Empty;
             var contentString = new StringContent(json, Encoding.UTF8, "application/json");
@@ -53,7 +53,13 @@ namespace Alpha.Main.Extensions
                 Content = contentString
             };
             var response = await httpClient.SendAsync(request);
-            response.EnsureSuccessStatusCode();
+            return await response.Content.ReadAsStringAsync();
+        }
+
+        public static async Task<T> PutAsJsonAsync<T>(this HttpClient httpClient, string requestUri, object value = null)
+        {
+            var content = await PutAsStringAsync(httpClient, requestUri, value);
+            return JsonConvert.DeserializeObject<T>(content);
         }
 
         public static async Task DeleteAsStringAsync(this HttpClient httpClient, string requestUri)

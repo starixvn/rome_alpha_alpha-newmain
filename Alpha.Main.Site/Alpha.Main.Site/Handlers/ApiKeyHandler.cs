@@ -1,5 +1,4 @@
-﻿
-namespace Alpha.Main.Site.Handlers
+﻿namespace Alpha.Main.Site.Handlers
 {
     using Alpha.Main.Constants;
     using Alpha.Main.Models.ApiKey;
@@ -11,7 +10,7 @@ namespace Alpha.Main.Site.Handlers
     using System.Threading.Tasks;
 
     public class ApiKeyHandler :
-        IAsyncRequestHandler<CreateApiKeyCommand, ApiKeyResult>,
+        IAsyncRequestHandler<CreateApiKeyCommand, CreateApiKeyResult>,
         IAsyncRequestHandler<GetApiKeyQuery, EditApiKeyViewModel>,
         IAsyncRequestHandler<GetCustomerApiKeyQuery, ApiKeyManagementViewModel>,
         IAsyncRequestHandler<RevokeApiKeyCommand, Result>,
@@ -24,7 +23,7 @@ namespace Alpha.Main.Site.Handlers
             this.apiKeyService = apiKeyService;
         }
 
-        public async Task<ApiKeyResult> Handle(CreateApiKeyCommand message)
+        public async Task<CreateApiKeyResult> Handle(CreateApiKeyCommand message)
         {
             var result = await apiKeyService.CreateApiKey(message.CustId, message.ApiName, message.PassPhrase, message.Scopes, message.ExpirationDate);
             return result;
@@ -51,8 +50,7 @@ namespace Alpha.Main.Site.Handlers
 
         public async Task<Result> Handle(UpdateApiKeyCommand message)
         {
-            await apiKeyService.UpdateApiKey(message.ApiKey, message.CustId, message.ApiName, message.Scopes, message.ExpirationDate);
-            return new Result(0, "Success");
+            return await apiKeyService.UpdateApiKey(message.ApiKey, message.CustId, message.ApiName, message.Scopes, message.ExpirationDate);
         }
     }
 }

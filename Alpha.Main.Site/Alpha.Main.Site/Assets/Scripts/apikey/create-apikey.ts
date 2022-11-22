@@ -18,6 +18,7 @@ class CreateApiKey {
     $datePicker: JQuery;
     $ckbAll: JQuery;
     $iconEye: JQuery;
+    $errorMessage: JQuery;
 
     constructor($: JQueryStatic, topWindow: any) {
         this.$ = $;
@@ -35,6 +36,7 @@ class CreateApiKey {
         this.$datePicker = this.$("#dpkContainer");
         this.$ckbAll = this.$("#ckbAll");
         this.$iconEye = this.$(".icon-eye");
+        this.$errorMessage = this.$("#error-message");
     }
 
     registerEvents = () => {
@@ -86,8 +88,12 @@ class CreateApiKey {
             data: { apiName, passPhrase, expirationDate, scopes },
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
-                const url = alpha.urls.mainRootPath + `ApiKey/CreateApiKeyResult?apiname=${data.ApiName}&key=${data.Key}&secret=${data.ApiSecret}`;
-                self.topWindow.popupManager.open(url, "API Key", 800, 300, null, null, null, 335, 150);
+                if (!data.Result.IsFailed) {
+                    const url = alpha.urls.mainRootPath + `ApiKey/CreateApiKeyResult?apiname=${data.ApiName}&key=${data.Key}&secret=${data.ApiSecret}`;
+                    self.topWindow.popupManager.open(url, "API Key", 800, 300, null, null, null, 335, 150);
+                } else {
+                    alpha.showMessage(self.$errorMessage, new Result(data.Result));
+                }
             },
             complete: function (jqXHR, textStatus) {
 

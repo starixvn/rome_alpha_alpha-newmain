@@ -23,6 +23,7 @@ class EditApiKey {
     $ckbAll: JQuery;
     $btnSubmit: JQuery;
     $btnCancel: JQuery;
+    $errorMessage: JQuery;
 
     constructor($: JQueryStatic, topWindow: any, clipboard: any) {
         this.$ = $;
@@ -43,6 +44,7 @@ class EditApiKey {
         this.$ckbAll = this.$("#ckbAll");
         this.$btnCancel = this.$("#btnCancel");
         this.$btnSubmit = this.$("#btnSubmit");
+        this.$errorMessage = this.$("#error-message");
     }
 
     registerEvents = () => {
@@ -70,7 +72,8 @@ class EditApiKey {
         this.topWindow.popupManager.close();
     }
 
-    handleUpdateApiKey = () => {
+    handleUpdateApiKey = (e: any) => {
+        e.preventDefault();
         const apiName = this.$("#apiname").val();
         const apikey = this.$("#key").val();
         const expirationDate = this.$("#expirationdate").val();
@@ -82,7 +85,11 @@ class EditApiKey {
             data: { apikey, apiName, expirationDate, scopes },
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
-                self.topWindow.popupManager.close();
+                if (data.IsFailed) {
+                    alpha.showMessage(self.$errorMessage, new Result(data));
+                } else {
+                    parent.window.location.href = parent.window.location.href;
+                }
             },
             complete: function (jqXHR, textStatus) {
 

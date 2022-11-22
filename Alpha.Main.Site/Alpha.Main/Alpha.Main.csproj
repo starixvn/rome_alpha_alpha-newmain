@@ -365,6 +365,7 @@
     <Compile Include="Helpers\XMLDocumentHelper.cs" />
     <Compile Include="Models\ApiKey\ApiKeyInfo.cs" />
     <Compile Include="Models\ApiKey\ApiKeyResult.cs" />
+    <Compile Include="Models\ApiKey\CreateApiKeyResult.cs" />
     <Compile Include="Models\ApiKey\Result.cs" />
     <Compile Include="Models\Banner\BannerItem.cs" />
     <Compile Include="Models\BalanceInfo\BalanceInfo.cs" />
