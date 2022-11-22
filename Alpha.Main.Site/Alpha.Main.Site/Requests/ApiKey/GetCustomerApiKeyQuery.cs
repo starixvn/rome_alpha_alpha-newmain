@@ -5,10 +5,6 @@
     using MediatR;
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
 
     public class GetCustomerApiKeyQuery : IAsyncRequest<ApiKeyManagementViewModel>
     {
@@ -21,10 +17,13 @@
             userSession = userSession ?? new UserSessionExt();
             CustId = userSession.CustId;
             CustLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
+            Language = userSession.Language;
         }
 
         public int CustId { get; }
 
         public UserLevel CustLevel { get; }
+
+        public string Language { get; }
     }
 }

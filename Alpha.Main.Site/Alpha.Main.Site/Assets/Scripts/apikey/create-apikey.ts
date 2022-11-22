@@ -81,24 +81,58 @@ class CreateApiKey {
         const passPhrase = this.$("#passphrase").val();
         const expirationDate = this.$("#expirationdate").val();
         const scopes = this.getScopeValue();
-        const self = this;
-        this.$.ajax({
-            type: 'POST',
-            url: 'CreateApiKey',
-            data: { apiName, passPhrase, expirationDate, scopes },
-            dataType: 'json',
-            success: function (data, textStatus, jqXHR) {
-                if (!data.Result.IsFailed) {
-                    const url = alpha.urls.mainRootPath + `ApiKey/CreateApiKeyResult?apiname=${data.ApiName}&key=${data.Key}&secret=${data.ApiSecret}`;
-                    self.topWindow.popupManager.open(url, "API Key", 800, 300, null, null, null, 335, 150);
-                } else {
-                    alpha.showMessage(self.$errorMessage, new Result(data.Result));
-                }
-            },
-            complete: function (jqXHR, textStatus) {
+        const error = this.validateFormInput(apiName, passPhrase, expirationDate, scopes);
+        if (error) {
+            alpha.showMessage(this.$errorMessage, new Result({ Code: 1, Message: error }));
+        }
+        else {
+            const self = this;
+            this.$.ajax({
+                type: 'POST',
+                url: 'CreateApiKey',
+                data: { apiName, passPhrase, expirationDate, scopes },
+                dataType: 'json',
+                success: function (data, textStatus, jqXHR) {
+                    if (data.ApiKeyResult) {
+                        self.resetForm();
+                        const url = alpha.urls.mainRootPath + `ApiKey/CreateApiKeyResult?apiname=${data.ApiKeyResult.ApiName}&key=${data.ApiKeyResult.Key}&secret=${data.ApiKeyResult.ApiSecret}`;
+                        self.topWindow.popupManager.open(url, "API Key", 800, 300, null, null, null, 335, 150);
+                    } else {
+                        alpha.showMessage(self.$errorMessage, new Result(data.Result));
+                    }
+                },
+                complete: function (jqXHR, textStatus) {
 
-            }
-        })
+                }
+            })
+        }
+    }
+
+    resetForm = () => {
+        this.$("#apiname").val("");
+        this.$("#passphrase").val("");
+        this.$("#expirationdate").val("");
+        this.$("#error-message").empty();
+    }
+
+    validateFormInput = (apiName: string, passPhrase: string, expirationDate: Date, scopes: string) => {
+        if (apiName == '') {
+            return "Please input API Name";
+        }
+        if (apiName.length > 50) {
+            return "No more than 50 characters!";
+        }
+        if (passPhrase == '') {
+            return "Please input PassPhrase";
+        }
+        if (passPhrase.length < 7 || passPhrase.length > 32) {
+            return "Input need in range [7-32] characters"
+        }
+        if (scopes == "") {
+            return "Scopes is required."
+        }
+
+        return null;
     }
 
     getScopeValue = () => {

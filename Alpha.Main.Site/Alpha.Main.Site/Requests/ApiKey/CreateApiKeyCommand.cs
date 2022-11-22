@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Site.Requests.ApiKey
 {
-    using Alpha.Main.Site.ViewModels.ApiKey;
     using MediatR;
     using System;
     using Sunplus.Agent.Model.Base;
@@ -16,10 +15,10 @@
         public CreateApiKeyCommand(IUserSession userSession)
         {
             userSession = userSession ?? new UserSessionExt();
-            CustId = 1176086;
+            CustId = userSession.CustId;
         }
 
-        public int CustId { get; set; }
+        public int CustId { get; }
 
         public string ApiName { get; set; }
 

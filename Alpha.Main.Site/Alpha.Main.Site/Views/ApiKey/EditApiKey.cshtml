@@ -12,7 +12,7 @@
     <div id="error-message" class="container-msg w-450"></div>
     <div class="form-group">
         <label>API Key Name</label>
-        <input type="text" class="form-control" id="apiname" autocomplete="off" value="@Model.ApiKeyInfo.Name" />
+        <input type="text" class="form-control" id="apiname" autocomplete="off" value="@Model.ApiKeyInfo.Name" maxlength="50" />
     </div>
     <div class="form-group">
         <label>API Key</label>
@@ -36,8 +36,9 @@
         <div class="ml-25" id="apiKeyScopes">
             @foreach (var scope in Model.Scopes)
             {
+
                 var isChecked = Model.ApiKeyInfo.ScopeIdList.Contains(scope);
-                <label class="scope-input"><input type="checkbox" value="@scope" name="scope" @(isChecked ? "checked" : "") />@scope</label><br>
+                <label class="scope-input"><input type="checkbox" value="@scope" name="scope" @(isChecked ? "checked" : "") />@ResourceHelper.GetApiKeyResource($"Scope_{scope}", Model.Language)</label><br>
             }
         </div>
     </div>

@@ -5,9 +5,6 @@
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
 
     public class UpdateApiKeyCommand : IAsyncRequest<Result>
     {
@@ -18,12 +15,12 @@
         public UpdateApiKeyCommand(IUserSession userSession)
         {
             userSession = userSession ?? new UserSessionExt();
-            CustId = 1176086;
+            CustId = userSession.CustId;
         }
 
         public string ApiKey { get; set; }
 
-        public int CustId { get; set; }
+        public int CustId { get; }
 
         public string ApiName { get; set; }
 

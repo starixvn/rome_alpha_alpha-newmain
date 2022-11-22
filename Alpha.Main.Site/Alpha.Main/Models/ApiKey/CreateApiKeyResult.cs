@@ -2,8 +2,8 @@
 {
     public class CreateApiKeyResult
     {
-        public ApiKeyResult ApiKeyResult { get; set; } = default;
+        public ApiKeyResult ApiKeyResult { get; set; }
 
-        public Result Result { get; set; } = default;
+        public Result Result { get; set; }
     }
 }

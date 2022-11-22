@@ -27,7 +27,9 @@ class ApiKeyManagement {
     registerApiKeyRevokeEvent = () => {
         const self = this;
         self.$(".btn-revoke").click(function () {
-            self.topWindow.bootboxConfirm("Revoke API Key", undefined, () => {
+            const apiName = self.$(this).attr("apiname");
+            const title = `Are you sure you want to revoke this API Key <b>${apiName}</b> ?  This action cannot be undone.`;
+            self.topWindow.bootboxConfirm(title, undefined, () => {
                 const key = self.$(this).attr("apikey");
                 self.$.ajax({
                     type: 'POST',

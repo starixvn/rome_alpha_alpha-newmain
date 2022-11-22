@@ -9,13 +9,17 @@
 
     public class EditApiKeyViewModel
     {
-        public EditApiKeyViewModel(ApiKeyInfo apiKeyInfo)
+        public EditApiKeyViewModel(ApiKeyInfo apiKeyInfo, List<string> scopes, string language)
         {
             ApiKeyInfo = apiKeyInfo;
+            Scopes = scopes;
+            Language = language;
         }
 
         public ApiKeyInfo ApiKeyInfo { get; set; }
 
         public List<string> Scopes { get; set; }
+
+        public string Language { get; }
     }
 }

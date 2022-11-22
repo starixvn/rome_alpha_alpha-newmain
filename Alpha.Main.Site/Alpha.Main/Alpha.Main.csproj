@@ -261,6 +261,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppResources\ApiKey.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApiKey.resx</DependentUpon>
+    </Compile>
     <Compile Include="AppResources\ChatBot.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -492,6 +497,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources\Alpha.sitemap.zh-TW.resx">
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\ApiKey.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ApiKey.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources\ChatBot.zh-TW.resx">
       <LastGenOutput>ChatBot.zh-TW.Designer.cs</LastGenOutput>

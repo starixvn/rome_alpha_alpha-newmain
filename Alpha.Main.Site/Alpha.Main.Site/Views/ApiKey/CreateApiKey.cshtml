@@ -22,11 +22,11 @@
         <div id="error-message" class="container-msg w-450"></div>
         <div class="form-group">
             <label>API Key Name<span class="require"> *</span></label>
-            <input type="text" class="form-control" id="apiname" autocomplete="off" />
+            <input type="text" class="form-control" id="apiname" autocomplete="off" maxlength="50" />
         </div>
         <div class="form-group">
             <label>API Passphrase<span class="require"> *</span></label>
-            <input type="text" class="form-control input-pass" placeholder="7 - 32 characters" id="passphrase" autocomplete="off" />
+            <input type="text" class="form-control input-pass" placeholder="7 - 32 characters" id="passphrase" autocomplete="off" maxlength="32" />
             <span class="icon-eye icon"></span>
         </div>
         <p>API Passphrase is important information for you to use later. Please remember it and keep it safe.</p>
@@ -43,11 +43,11 @@
         </div>
         <label class="scope-label">Select Scopes <span class="font-normal">(Scopes set the permisson granted to the API Key)</span></label>
         <div class="ml-25">
-            <label class="scope-input mt-10"><input type="checkbox" value="All" id="ckbAll" /> All</label><br>
+            <label class="scope-input mt-10"><input type="checkbox" value="All" id="ckbAll" checked /> All</label><br>
             <div class="ml-25" id="apiKeyScopes">
                 @foreach (var scope in Model.Scopes)
                 {
-                    <label class="scope-input"><input type="checkbox" value="@scope" name="scope" />@scope</label><br>
+                    <label class="scope-input"><input type="checkbox" value="@scope" name="scope" checked />@ResourceHelper.GetApiKeyResource($"Scope_{scope}", Model.Language)</label><br>
                 }
             </div>
         </div>
@@ -56,6 +56,7 @@
         </div>
     </form>
 </div>
+@Html.Hidden("Language", Model.Language)
 @section js {
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.RenderCommon("/bundles/site-main/apikey")

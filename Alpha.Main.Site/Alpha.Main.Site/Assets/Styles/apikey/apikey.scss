@@ -1,6 +1,6 @@
 ﻿html, body {
     height: fit-content !important;
-    /*width: fit-content !important;*/
+    background: #f4f4f4 !important;
 }
 
 .block {
@@ -24,8 +24,6 @@
     }
 }
 
-
-
 .multiselect .multiselect-selected-text {
     width: 215px;
 }
@@ -39,7 +37,6 @@
 .icon-calendar {
     margin-top: 3px;
 }
-
 
 .tblRpt {
     margin-left: 20px;
@@ -161,4 +158,8 @@ input[type='text'] {
     position: absolute;
     font-size: 20px;
     top: 11px;
+}
+
+.expired-date {
+    color: red !important;
 }

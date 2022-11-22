@@ -78,23 +78,43 @@ class EditApiKey {
         const apikey = this.$("#key").val();
         const expirationDate = this.$("#expirationdate").val();
         const scopes = this.getScopeValue();
-        const self = this;
-        this.$.ajax({
-            type: 'POST',
-            url: alpha.urls.mainRootPath + `ApiKey/UpdateApiKey`,
-            data: { apikey, apiName, expirationDate, scopes },
-            dataType: 'json',
-            success: function (data, textStatus, jqXHR) {
-                if (data.IsFailed) {
-                    alpha.showMessage(self.$errorMessage, new Result(data));
-                } else {
-                    parent.window.location.href = parent.window.location.href;
-                }
-            },
-            complete: function (jqXHR, textStatus) {
+        const error = this.validateFormInput(apiName, expirationDate, scopes);
+        if (error) {
+            alpha.showMessage(this.$errorMessage, new Result({ Code: 1, Message: error }));
+        }
+        else {
+            const self = this;
+            this.$.ajax({
+                type: 'POST',
+                url: alpha.urls.mainRootPath + `ApiKey/UpdateApiKey`,
+                data: { apikey, apiName, expirationDate, scopes },
+                dataType: 'json',
+                success: function (data, textStatus, jqXHR) {
+                    if (data.IsFailed) {
+                        alpha.showMessage(self.$errorMessage, new Result(data));
+                    } else {
+                        parent.window.location.href = parent.window.location.href;
+                    }
+                },
+                complete: function (jqXHR, textStatus) {
 
-            }
-        })
+                }
+            })
+        }
+    }
+
+    validateFormInput = (apiName: string, expirationDate: Date, scopes: string) => {
+        if (apiName == '') {
+            return "Please input API Name";
+        }
+        if (apiName.length > 50) {
+            return "No more than 50 characters!";
+        }
+        if (scopes == "") {
+            return "Scopes is required."
+        }
+
+        return null;
     }
 
     getScopeValue = () => {

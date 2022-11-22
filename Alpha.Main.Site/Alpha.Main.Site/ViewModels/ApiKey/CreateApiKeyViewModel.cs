@@ -5,12 +5,15 @@
 
     public class CreateApiKeyViewModel
     {
-        public CreateApiKeyViewModel(string custLevel)
+        public CreateApiKeyViewModel(string custLevel, string language)
         {
             CustLevel = custLevel;
+            Language = language;
         }
 
         public string CustLevel { get; }
+
+        public string Language { get; }
 
         public List<string> Scopes = new List<string>
         {

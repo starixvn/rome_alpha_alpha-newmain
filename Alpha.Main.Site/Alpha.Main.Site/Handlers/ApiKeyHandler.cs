@@ -33,13 +33,13 @@
         {
             var result = await apiKeyService.GetApiKeyByKey(message.Key);
             var scopes = new List<string> { ApiKeyScope.WinLossDetail, ApiKeyScope.Outstanding };
-            return new EditApiKeyViewModel(result) { Scopes = scopes };
+            return new EditApiKeyViewModel(result, scopes, message.Language);
         }
 
         public async Task<ApiKeyManagementViewModel> Handle(GetCustomerApiKeyQuery message)
         {
             var result = await apiKeyService.GetApiKeyByCustId(message.CustId);
-            return new ApiKeyManagementViewModel(message.CustLevel.DisplayName, result);
+            return new ApiKeyManagementViewModel(message.CustLevel.DisplayName, result, message.Language);
         }
 
         public async Task<Result> Handle(RevokeApiKeyCommand message)

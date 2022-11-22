@@ -1,14 +1,11 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
-    using Alpha.Main.Constants;
-    using Alpha.Main.Services;
     using Alpha.Main.Site.Requests.ApiKey;
     using Alpha.Main.Site.ViewModels.ApiKey;
     using Alpha.Web;
     using Alpha.Web.Models;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
-    using System.Collections.Generic;
     using System.Threading.Tasks;
     using System.Web.Mvc;
 
@@ -17,7 +14,7 @@
         private readonly IMediator mediator;
         private readonly IUserSession userSession;
 
-        public ApiKeyController(IMediator mediator, IUserSession userSession )
+        public ApiKeyController(IMediator mediator, IUserSession userSession)
         {
             this.mediator = mediator;
             this.userSession = userSession;
@@ -25,7 +22,7 @@
 
         public ActionResult CreateApiKey()
         {
-            var viewModel = new CreateApiKeyViewModel(Enumeration.FromValue<UserLevel>(userSession.RoleId).DisplayName);
+            var viewModel = new CreateApiKeyViewModel(Enumeration.FromValue<UserLevel>(userSession.RoleId).DisplayName, userSession.Language);
             return View(viewModel);
         }
 
