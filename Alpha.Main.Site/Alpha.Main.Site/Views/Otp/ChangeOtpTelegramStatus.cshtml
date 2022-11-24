@@ -5,8 +5,11 @@
     <div class="panel-heading" role="tab" id="headingAccount">
         <h4 class="panel-title">
             <a role="button" class="color-success" data-toggle="collapse" href="#account" aria-expanded="false" aria-controls="account">
-                Set up OTP via Telegram Chatbot
-                <span class="icon-check-circle"></span>
+                OTP via Telegram Chatbot
+                @if (Model.OtpFunction.Enabled)
+                {
+                    <span class="icon-check-circle"></span>
+                }
             </a>
         </h4>
     </div>

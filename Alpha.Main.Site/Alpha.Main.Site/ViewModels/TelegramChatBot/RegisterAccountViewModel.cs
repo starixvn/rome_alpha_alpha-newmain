@@ -22,8 +22,6 @@
 
         public bool IsShowLetstalkChatBot { get; }
 
-        public bool IsOtpPage { get; set; }
-
         public Function OtpFunction => ChatBotViewModel.CustBotMessenger.Functions.FirstOrDefault(func => func.FunctionId == 15);
     }
 }
