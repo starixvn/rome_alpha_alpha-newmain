@@ -333,7 +333,7 @@
 
         public static string JsVersion => Settings["JsVersion"];
 
-        public static int[] LogInvalidSessionCustIds { get; } = GetIntArray(Settings["LogInvalidSession:CustIds"]);
+        public static int[] LogInvalidSessionSuperIds { get; } = GetIntArray(Settings["LogInvalidSession:SuperIds"]);
 
         public static int[] GetIntArray(string value)
         {
