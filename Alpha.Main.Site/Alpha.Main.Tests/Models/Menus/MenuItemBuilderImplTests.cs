@@ -17,6 +17,7 @@
         private IDictionary<string, Func<string>> menuItemDisplayName;
         private Func<bool> isProtectedModeFunc;
         private Func<bool> isInternalFunc;
+        private Func<string, string> buildInvalidSessionUniqueKeyFunc;
 
         [SetUp]
         public void SetUp()
@@ -32,8 +33,9 @@
             };
             isProtectedModeFunc = () => false;
             isInternalFunc = () => false;
+            buildInvalidSessionUniqueKeyFunc = (string url) => string.Empty;
 
-            menuItemBuilderImpl = new MenuItemBuilderImpl(authorizationService, menuItemTypeConfiguration, menuItemDisplayName, isProtectedModeFunc, isInternalFunc);
+            menuItemBuilderImpl = new MenuItemBuilderImpl(authorizationService, menuItemTypeConfiguration, menuItemDisplayName, isProtectedModeFunc, isInternalFunc, buildInvalidSessionUniqueKeyFunc);
         }
 
         [Test]

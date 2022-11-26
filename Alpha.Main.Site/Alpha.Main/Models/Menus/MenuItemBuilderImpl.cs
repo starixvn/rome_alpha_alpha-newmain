@@ -17,8 +17,9 @@
         private readonly IDictionary<string, Func<string>> menuItemDisplayName;
         private readonly Func<bool> isProtectedModeFunc;
         private readonly Func<bool> isInternalFunc;
+        private readonly Func<string, string> buildInvalidSessionUniqueKeyFunc;
 
-        public MenuItemBuilderImpl() : this(null, null, null, null, null)
+        public MenuItemBuilderImpl() : this(null, null, null, null, null, null)
         {
         }
 
@@ -27,13 +28,15 @@
             IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration,
             IDictionary<string, Func<string>> menuItemDisplayName,
             Func<bool> isProtectedModeFunc,
-            Func<bool> isInternalFunc)
+            Func<bool> isInternalFunc,
+            Func<string, string> buildInvalidSessionUniqueKeyFunc)
         {
             this.authorizationService = authorizationService ?? new AuthorizationService();
             this.menuItemTypeConfiguration = menuItemTypeConfiguration ?? FunctionRegistry.MenuItemTypeStatusRules;
             this.menuItemDisplayName = menuItemDisplayName ?? FunctionRegistry.MenuItemDisplayNameRules;
             this.isProtectedModeFunc = isProtectedModeFunc ?? FunctionRegistry.IsProtectedModeFunc;
             this.isInternalFunc = isInternalFunc ?? FunctionRegistry.IsInternalFunc;
+            this.buildInvalidSessionUniqueKeyFunc = buildInvalidSessionUniqueKeyFunc ?? FunctionRegistry.BuildInvalidSessionUniqueKey;
         }
 
         private static void SetDataForMenuItem(IMenuItem menuItem, SiteMapNode node)
@@ -75,7 +78,8 @@
                 menuItemDisplayName.ContainsKey(node.ResourceKey) ? menuItemDisplayName[node.ResourceKey] : null,
                 isProtectedModeFunc,
                 isInternalFunc,
-                isHideForSite);
+                isHideForSite,
+                buildInvalidSessionUniqueKeyFunc);
 
             SetDataForMenuItem(menuItem, node);
 

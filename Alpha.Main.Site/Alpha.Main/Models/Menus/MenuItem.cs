@@ -16,14 +16,15 @@
         private readonly Func<bool> isProtectedModeFunc;
         private readonly Func<bool> isInternalFunc;
         private readonly Func<bool> isHideForSite;
+        private readonly Func<string, string> buildInvalidSessionUniqueKeyFunc;
 
         public MenuItem(Func<MenuStatus> getMenuStatusFunc = null)
-            : this(getMenuStatusFunc, null, null, null, null, null)
+            : this(getMenuStatusFunc, null, null, null, null, null, null)
         {
         }
 
         public MenuItem(Func<MenuStatus> getMenuStatusFunc, Predicate<string> authorizeUrlFunc)
-            : this(getMenuStatusFunc, authorizeUrlFunc, null, null, null, null)
+            : this(getMenuStatusFunc, authorizeUrlFunc, null, null, null, null, null)
         {
         }
 
@@ -33,7 +34,8 @@
             Func<string> getDisplayName,
             Func<bool> isProtectedModeFunc,
             Func<bool> isInternalFunc,
-            Func<bool> isHideForSite)
+            Func<bool> isHideForSite,
+            Func<string, string> buildInvalidSessionUniqueKeyFunc)
         {
             this.getMenuStatusFunc = getMenuStatusFunc ?? (() => new MenuStatus(true, false));
             this.authorizeUrlFunc = authorizeUrlFunc;
@@ -41,6 +43,7 @@
             this.isProtectedModeFunc = isProtectedModeFunc;
             this.isInternalFunc = isInternalFunc;
             this.isHideForSite = isHideForSite;
+            this.buildInvalidSessionUniqueKeyFunc = buildInvalidSessionUniqueKeyFunc;
         }
 
         public string Key { get; set; }
@@ -79,10 +82,16 @@
                 var cookieless = session != null && session.IsCookieless ?
                     $"/(S({session?.SessionID}))" : string.Empty;
 
-                return !string.IsNullOrWhiteSpace(UseDomainConfig) ? $"{UseDomainConfig}{cookieless}{link}" :
+                var menuLink = !string.IsNullOrWhiteSpace(UseDomainConfig) ? $"{UseDomainConfig}{cookieless}{link}" :
                     appVirtualPath.Equals("/site-reports") ? reportUrl : 
                     !string.IsNullOrWhiteSpace(link) && !string.IsNullOrWhiteSpace(runtimeAppPath) ? 
                     link.Replace(runtimeAppPath, appVirtualPath) : string.Empty;
+
+                var invalidSessionUniqueKey = buildInvalidSessionUniqueKeyFunc(menuLink);
+
+                return string.IsNullOrWhiteSpace(invalidSessionUniqueKey)
+                    ? menuLink
+                    : $"{menuLink}?ssguid={invalidSessionUniqueKey}";
             }
 
             set
