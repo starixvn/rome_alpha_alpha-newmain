@@ -67,8 +67,10 @@ var alpha = {
             var signOutUrl = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx';
 
             var topWindow: any = window.top;
-            $.ajax(topWindow.menuBar.domElements.reportDomain + topWindow.menuBar.domElements.cookieless + '/Auth/SignOut');
-
+            if (topWindow.menuBar.domElements.reportDomain) {
+                $.ajax(topWindow.menuBar.domElements.reportDomain + topWindow.menuBar.domElements.cookieless + '/Auth/SignOut');
+            }
+            
             if (isInternal && isInternal.toString() !== "0") {
                 $.ajax(signOutUrl, {
                     success: function () {
