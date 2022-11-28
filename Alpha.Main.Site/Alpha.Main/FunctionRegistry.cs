@@ -194,7 +194,7 @@ namespace Alpha.Main
             if (url.IndexOf("/winlossdetail/", StringComparison.OrdinalIgnoreCase) > -1
             && AppSettings.LogInvalidSessionSuperIds.Any(superId => superId == Current.SRecommendId))
             {
-                return $"{Current.CustId}-{Current.SubAccId}-{Current.OnUserId}";
+                return $"{Current.CustId}-{Current.SubAccId}";
             }
 
             return string.Empty;
