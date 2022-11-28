@@ -19,6 +19,7 @@
     using Web.Helpers;
     using TelegramResult = TelegramBot.Client.Models.Result;
     using Function = TelegramBot.Client.Models.Function;
+    using Alpha.SecurityCode.Services;
 
     public class CustomerOtpHandler :
         IAsyncRequestHandler<SetUpOtpQuery, OtpViewModel>,
@@ -44,6 +45,7 @@
         private readonly IUser user;
         private readonly NicknameChecker nicknameChecker;
         private readonly ISettingService telegramSettingService;
+        private readonly SecurityCodeChecker securityCodeChecker;
 
         public CustomerOtpHandler(
             CustomerOtpService customerOtpService,
@@ -52,7 +54,8 @@
             BrowserHelper browserHelper,
             IUser user,
             NicknameChecker nicknameChecker,
-            ISettingService telegramSettingService)
+            ISettingService telegramSettingService,
+            SecurityCodeChecker securityCodeChecker)
         {
             this.customerOtpService = customerOtpService;
             this.userSession = userSession;
@@ -61,6 +64,7 @@
             this.user = user;
             this.nicknameChecker = nicknameChecker;
             this.telegramSettingService = telegramSettingService;
+            this.securityCodeChecker = securityCodeChecker;
         }
 
         public Result Handle(ChangeOtpStatusCommand message)
@@ -200,7 +204,7 @@
                 Otp = message.Otp,
                 Device = deviceInfo,
                 Language = message.Language,
-                IsEnabledTelegramOTP = await  telegramSettingService.IsEnableOTP(message.CustId, message.SubAccountId)
+                IsEnabledTelegramOTP = await telegramSettingService.IsEnableOTP(message.CustId, message.SubAccountId)
             });
 
             if (result.IsSuccessful)
@@ -293,7 +297,8 @@
                 CustomerOtp = customerOtp,
                 IsAlreadySetup = true,
                 IsShowNicknameLink = !nicknameChecker.IsOfferForceLoginAndOverDueDate,
-                IsOfferProtectedMode = message.IsOfferProtectedMode
+                IsOfferProtectedMode = message.IsOfferProtectedMode,
+                EnableSecurityCode = securityCodeChecker.IsEnableSecurityCode()
             };
 
             var custBotMessenger = await telegramSettingService.GetCustBotMessengerAsync(

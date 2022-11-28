@@ -18,6 +18,10 @@ var changeUserOwnSecurityCode = {
             changeUserOwnSecurityCode.gotoPasswordPage()
         });
 
+        //$('#optNav').click(function () {
+        //    changeUserOwnSecurityCode.gotoOtpPage()
+        //})
+
         $('#txtOldSecCode').val("").focus();
 
         $("#txtSecCode").val("").keyup(function () {
@@ -110,6 +114,9 @@ var changeUserOwnSecurityCode = {
         securityHelper.hideHintSC();
         securityHelper.removeValidationIcon($("#txtSecCode"));
         securityHelper.removeValidationIcon($("#txtConfirmSecCode"));
+    },
+    gotoOtpPage: function () {
+        window.location.href = $("#mainRootPath").val() + 'Otp/SetupOtp';
     },
     gotoPasswordPage: function () {
         window.location.href = $("#mainRootPath").val() + 'Password/ChangePassword';

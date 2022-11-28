@@ -92,6 +92,17 @@ class SetupOtp {
         else {
             this.$copyIcon.remove();
         }
+
+        //this.$(".passwordNav").click(this.gotoChangePassword);
+        //this.$(".securityCodeNav").click(this.gotoChangeUserSecurityCode);
+    }
+
+    gotoChangePassword = () => {
+        window.location.href = alpha.urls.mainRootPath + 'Password/ChangePassword';
+    }
+
+    gotoChangeUserSecurityCode = () => {
+        window.location.href = alpha.urls.mainRootPath + 'SecurityCode/ChangeUserOwnSecurityCode';
     }
 
     changeUsernameButtonEvent = () => {

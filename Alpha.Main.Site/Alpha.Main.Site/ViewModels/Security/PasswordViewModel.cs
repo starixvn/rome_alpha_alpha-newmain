@@ -23,6 +23,10 @@
 
         public bool EnableSecurityCode { get; set; }
 
+        public bool IsShowNicknameLink { get; set; }
+
+        public bool IsOfferProtectedMode { get; set; }
+
         public string OldMainRootPath => UrlHelper.MapOldMainPath("~/");
 
         public string MainRootPath => UrlHelper.MapMainPath("~/");

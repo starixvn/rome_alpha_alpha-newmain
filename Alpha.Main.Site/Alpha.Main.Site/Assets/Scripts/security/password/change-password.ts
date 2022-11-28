@@ -1,7 +1,7 @@
 ﻿/// <reference path="../../core.ts" />
 /// <reference path="../security-helper.ts" />
 
-'use strict'; 
+'use strict';
 
 var changePassword = {
     domElements: {
@@ -15,11 +15,13 @@ var changePassword = {
         hashKey: null,
         statusMessage: null,
         statusConatiner: null,
+        otpNav: null,
     },
 
     cachedDomElements: function () {
         changePassword.domElements.form = $(".form-SC");
         changePassword.domElements.securityCodeNav = $("#securityCodeNav");
+        changePassword.domElements.otpNav = $("#otpNav");
         changePassword.domElements.txtOldPwd = $("#txtOldPwd");
         changePassword.domElements.txtNewPwd = $("#txtNewPwd");
         changePassword.domElements.txtConfirmPwd = $("#txtConfirmPwd");
@@ -51,6 +53,10 @@ var changePassword = {
         changePassword.domElements.securityCodeNav.click(function () {
             changePassword.gotoSecurityCodePage();
         });
+
+        //changePassword.domElements.otpNav.click(function () {
+        //    changePassword.gotoOtpPage();
+        //})
 
         changePassword.domElements.txtOldPwd
             .val("")
@@ -97,7 +103,7 @@ var changePassword = {
         $.blockUI();
         $.ajax({
             type: "POST",
-            url: alpha.urls.mainRootPath +  "Password/ChangePassword",
+            url: alpha.urls.mainRootPath + "Password/ChangePassword",
             data: { currentPassword: oldPassword, newPassword: password },
             dataType: "json",
             success: function (data, textStatus, jqXHR) {
@@ -160,6 +166,10 @@ var changePassword = {
         securityHelper.hideHint();
         securityHelper.removeValidationIcon(changePassword.domElements.txtNewPwd);
         securityHelper.removeValidationIcon(changePassword.domElements.txtConfirmPwd);
+    },
+
+    gotoOtpPage: function () {
+        window.location.href = alpha.urls.mainRootPath + "Otp/SetupOtp";
     },
 
     gotoSecurityCodePage: function () {

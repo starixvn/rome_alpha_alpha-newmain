@@ -37,6 +37,7 @@
         private readonly ProfilePictureServices customerProfileService;
         private readonly SecurityCodeChecker securityCodeChecker;
         private readonly IUser user;
+        private readonly NicknameChecker nicknameChecker;
         private readonly Func<int> getInsertProfilePictureSiteMode;
 
         public PasswordHandler(
@@ -46,8 +47,9 @@
             SessionManager sessionManager,
             Encryptor encryptor,
             SecurityCodeChecker securityCodeChecker,
-            IUser user)
-           : this(passwordService, userSession, customerProfileService, sessionManager, encryptor, securityCodeChecker, user, null)
+            IUser user,
+            NicknameChecker nicknameChecker)
+           : this(passwordService, userSession, customerProfileService, sessionManager, encryptor, securityCodeChecker, user, nicknameChecker, null)
         {
         }
 
@@ -59,6 +61,7 @@
             Encryptor encryptor,
             SecurityCodeChecker securityCodeChecker,
             IUser user,
+            NicknameChecker nicknameChecker,
             Func<int> getInsertProfilePictureSiteMode)
         {
             this.passwordService = passwordService;
@@ -68,6 +71,7 @@
             this.customerProfileService = customerProfileService;
             this.securityCodeChecker = securityCodeChecker;
             this.user = user;
+            this.nicknameChecker = nicknameChecker;
             this.getInsertProfilePictureSiteMode = getInsertProfilePictureSiteMode ??
              SimpleServiceLocator.GetService<Func<int>>();
         }
@@ -115,7 +119,9 @@
             {
                 CustRoleId = message.CustRoleId,
                 HashKey = GetHasKey(),
-                EnableSecurityCode = securityCodeChecker.IsEnableSecurityCode()
+                EnableSecurityCode = securityCodeChecker.IsEnableSecurityCode(),
+                IsOfferProtectedMode = message.IsOfferProtectedMode,
+                IsShowNicknameLink = !nicknameChecker.IsOfferForceLoginAndOverDueDate
             };
         }
 
@@ -227,7 +233,7 @@
                 CustId = message.CustId,
                 CustLevel = Enumeration.FromValue<UserLevel>(message.RoleId),
                 HashKey = this.sessionManager.Get<string>(HashKeySessionKey),
-                IP = message.IP,              
+                IP = message.IP,
                 LanguageKey = message.LanguageKey,
                 NewPassword = message.NewPassword,
                 NickName = message.NickName,
