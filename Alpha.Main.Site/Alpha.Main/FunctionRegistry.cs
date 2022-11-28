@@ -188,5 +188,16 @@ namespace Alpha.Main
         public static Func<bool> IsProtectedModeFunc => () => Current.IsProtectedMode;
 
         public static Func<bool> IsInternalFunc => () => Current.IsInternal;
+
+        public static Func<string, string> BuildInvalidSessionUniqueKey => (string url) =>
+        {
+            if (url.IndexOf("/winlossdetail/", StringComparison.OrdinalIgnoreCase) > -1
+            && AppSettings.LogInvalidSessionSuperIds.Any(superId => superId == Current.SRecommendId))
+            {
+                return $"{Current.CustId}-{Current.SubAccId}-{Current.OnUserId}";
+            }
+
+            return string.Empty;
+        };
     }
 }

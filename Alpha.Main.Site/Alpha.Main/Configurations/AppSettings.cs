@@ -332,5 +332,20 @@
                 int.Parse(Settings["Recheckin:IntervalMiliseconds"]);
 
         public static string JsVersion => Settings["JsVersion"];
+
+        public static int[] LogInvalidSessionSuperIds { get; } = GetIntArray(Settings["LogInvalidSession:SuperIds"]);
+
+        public static int[] GetIntArray(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return Array.Empty<int>();
+            }
+
+            return value
+                .Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(item => int.Parse(item.Trim()))
+                .ToArray();
+        }
     }
 }
