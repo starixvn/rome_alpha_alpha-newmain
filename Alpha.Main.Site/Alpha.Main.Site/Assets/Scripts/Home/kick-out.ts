@@ -8,8 +8,8 @@ class Kickout {
             ? (<HTMLInputElement>document.getElementById('message')).value
             : "Sorry, there was an unexpected issue on the server. Please seek help from our customer support. [5003]";
 
-        alpha.core.signOut();
         alert(this.message);
+        alpha.core.signOut();
     }
 }
 
