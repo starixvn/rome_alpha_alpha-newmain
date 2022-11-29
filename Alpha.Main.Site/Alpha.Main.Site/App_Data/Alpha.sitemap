@@ -156,5 +156,6 @@
     </siteMapNode>
     <siteMapNode resourceKey="chatbot" appPath="MainAppPath" url="TelegramChatBot/Setup"></siteMapNode>
     <siteMapNode resourceKey="MyWatchlist" menuItemType="MyWatchlistMenuItem" appPath="MemberInfoAppPath" url="ReachedThreshold/Index" roles="Agent" isNew="true" functionType="[H]"></siteMapNode>
+    <siteMapNode resourceKey="Security" appPath="MainAppPath" url="Otp/SetupOtp" roles="Agent" isNew="true" functionType="[H]"></siteMapNode>
   </siteMapNode>
 </siteMap>
