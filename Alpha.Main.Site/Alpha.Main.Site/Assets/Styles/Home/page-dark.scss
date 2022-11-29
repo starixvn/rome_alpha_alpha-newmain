@@ -280,20 +280,11 @@ html * {
             }
         }
 
-        &#menu-MYWATCHLIST {
+        &#menu-MYWATCHLIST, &#menu-SECURITY {
             padding: 16px 0 0;
             margin-bottom: 10px;
 
-            &:after {
-                content: "";
-                height: 1px;
-                background-color: #393939;
-                position: absolute;
-                left: -10px;
-                right: -10px;
-                top: 0;
-                z-index: -1;
-            }
+            
 
             a {
                 background: #2C2C2C;
@@ -412,7 +403,16 @@ html * {
         }
     }
 }
-
+.mainmenu-container .menu-item#menu-MYWATCHLIST:after {
+    content: "";
+    height: 1px;
+    background-color: #393939;
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    top: 0;
+    z-index: -1;
+}
 .sidebar {
     &.focusout .mainmenu-container,
     &.collapsed .mainmenu-container,
@@ -437,7 +437,7 @@ html * {
         li {
             &.active {
                 a {
-                    color: $menu-color-text; 
+                    color: $menu-color-text;
                 }
             }
 
