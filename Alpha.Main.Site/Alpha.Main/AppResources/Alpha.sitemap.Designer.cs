@@ -774,9 +774,9 @@ namespace Alpha.Main.AppResources {
         /// <summary>
         ///   Looks up a localized string similar to Security.
         /// </summary>
-        public static string Security {
+        public static string SercurityCode {
             get {
-                return ResourceManager.GetString("Security", resourceCulture);
+                return ResourceManager.GetString("SercurityCode", resourceCulture);
             }
         }
         

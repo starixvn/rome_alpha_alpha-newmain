@@ -411,7 +411,7 @@
   <data name="MyWatchlist" xml:space="preserve">
     <value>Danh Sách Theo Dõi</value>
   </data>
-  <data name="Security" xml:space="preserve">
+  <data name="SercurityCode" xml:space="preserve">
     <value>Security</value>
   </data>
 </root>
