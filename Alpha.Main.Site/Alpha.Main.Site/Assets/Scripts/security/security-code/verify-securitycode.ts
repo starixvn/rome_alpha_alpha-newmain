@@ -70,11 +70,15 @@ var verifySecurityCode = {
                         top.revertSecurityCodePopupTitle();
                     }
 
-                    var reportDomain = (<HTMLInputElement>top.document.getElementById('reportDomain')).value;
-                    if (reportDomain != '') {
-                        verifySecurityCode.topWindow.menuBar.loadAuthFrame();
+                    if (verifySecurityCode.topWindow.menuBar.domElements.reportDomain) {
                         setTimeout(() => {
-                            (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + verifySecurityCode.topWindow.menuBar.domElements.cookieless + '/Auth/SecurityCode';
+                            (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = verifySecurityCode.topWindow.menuBar.domElements.reportDomain + verifySecurityCode.topWindow.menuBar.domElements.cookieless + '/Auth/SecurityCode';
+                        }, 2000);
+                    }
+
+                    if (verifySecurityCode.topWindow.menuBar.domElements.betlistDomain) {
+                        setTimeout(() => {
+                            (<HTMLIFrameElement>top.document.getElementById('betlistFrame')).src = verifySecurityCode.topWindow.menuBar.domElements.betlistDomain + verifySecurityCode.topWindow.menuBar.domElements.cookieless + '/Auth/SecurityCode';
                         }, 2000);
                     }
 

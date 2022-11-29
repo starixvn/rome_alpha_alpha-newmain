@@ -124,11 +124,15 @@ var changeUserOwnSecurityCode = {
         const functionName = $element.data("function");
         $.post("UpdateSecurityCodeFunction", { function: functionName, isOn: isOff }, function (data) {
             if (data.IsOk) {
-                var reportDomain = (<HTMLInputElement>top.document.getElementById('reportDomain')).value;
-                if (reportDomain != '') {
-                    changeUserOwnSecurityCode.topWindow.menuBar.loadAuthFrame();
+                if (changeUserOwnSecurityCode.topWindow.menuBar.domElements.reportDomain) {
                     setTimeout(() => {
-                        (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + changeUserOwnSecurityCode.topWindow.menuBar.domElements.cookieless + '/Auth/SecurityCode' + functionName + '?s=' + isOff;
+                        (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = changeUserOwnSecurityCode.topWindow.menuBar.domElements.reportDomain + changeUserOwnSecurityCode.topWindow.menuBar.domElements.cookieless + '/Auth/SecurityCode' + functionName + '?s=' + isOff;
+                    }, 2000);
+                }
+
+                if (changeUserOwnSecurityCode.topWindow.menuBar.domElements.betlistDomain) {
+                    setTimeout(() => {
+                        (<HTMLIFrameElement>top.document.getElementById('betlistFrame')).src = changeUserOwnSecurityCode.topWindow.menuBar.domElements.betlistDomain + changeUserOwnSecurityCode.topWindow.menuBar.domElements.cookieless + '/Auth/SecurityCode' + functionName + '?s=' + isOff;
                     }, 2000);
                 }
 

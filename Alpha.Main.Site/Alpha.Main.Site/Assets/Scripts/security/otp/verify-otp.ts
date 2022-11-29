@@ -74,11 +74,15 @@ class VerifyOtp {
         var result = new Result(data);
 
         if (result.isSuccessful) {
-            var reportDomain = (<HTMLInputElement>top.document.getElementById('reportDomain')).value;
-            if (reportDomain != '') {
-                this.topWindow.menuBar.loadAuthFrame();
+            if (this.topWindow.menuBar.domElements.reportDomain) {
                 setTimeout(() => {
-                    (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + verifyOtp.topWindow.menuBar.domElements.cookieless + '/Auth/Otp';
+                    (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = verifyOtp.topWindow.menuBar.domElements.reportDomain + verifyOtp.topWindow.menuBar.domElements.cookieless + '/Auth/Otp';
+                }, 2000);
+            }
+
+            if (this.topWindow.menuBar.domElements.betlistDomain) {
+                setTimeout(() => {
+                    (<HTMLIFrameElement>top.document.getElementById('betlistFrame')).src = verifyOtp.topWindow.menuBar.domElements.betlistDomain + verifyOtp.topWindow.menuBar.domElements.cookieless + '/Auth/Otp';
                 }, 2000);
             }
 
