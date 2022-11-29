@@ -14,14 +14,12 @@ var changePassword = {
         container: null,
         hashKey: null,
         statusMessage: null,
-        statusConatiner: null,
-        otpNav: null,
+        statusConatiner: null
     },
 
     cachedDomElements: function () {
         changePassword.domElements.form = $(".form-SC");
         changePassword.domElements.securityCodeNav = $("#securityCodeNav");
-        changePassword.domElements.otpNav = $("#otpNav");
         changePassword.domElements.txtOldPwd = $("#txtOldPwd");
         changePassword.domElements.txtNewPwd = $("#txtNewPwd");
         changePassword.domElements.txtConfirmPwd = $("#txtConfirmPwd");
@@ -53,10 +51,6 @@ var changePassword = {
         changePassword.domElements.securityCodeNav.click(function () {
             changePassword.gotoSecurityCodePage();
         });
-
-        //changePassword.domElements.otpNav.click(function () {
-        //    changePassword.gotoOtpPage();
-        //})
 
         changePassword.domElements.txtOldPwd
             .val("")
@@ -166,10 +160,6 @@ var changePassword = {
         securityHelper.hideHint();
         securityHelper.removeValidationIcon(changePassword.domElements.txtNewPwd);
         securityHelper.removeValidationIcon(changePassword.domElements.txtConfirmPwd);
-    },
-
-    gotoOtpPage: function () {
-        window.location.href = alpha.urls.mainRootPath + "Otp/SetupOtp";
     },
 
     gotoSecurityCodePage: function () {
