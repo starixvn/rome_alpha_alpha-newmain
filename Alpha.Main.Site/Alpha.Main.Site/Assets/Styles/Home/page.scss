@@ -282,9 +282,9 @@ html * {
             }
         }
 
-        &#menu-MYWATCHLIST, &#menu-SECURITY {
+        &#menu-MYWATCHLIST, &#menu-SERCURITYCODE {
             padding: 16px 0 0;
-            margin-bottom: 10px;
+            margin-bottom: 0;
 
             a {
                 background: #F5F5F5;
@@ -396,6 +396,9 @@ html * {
     right: -10px;
     top: 0;
     z-index: -1;
+}
+.mainmenu-container .menu-item#menu-SERCURITYCODE{
+    margin-bottom: 10px;
 }
 .sidebar {
     &.focusout .mainmenu-container,

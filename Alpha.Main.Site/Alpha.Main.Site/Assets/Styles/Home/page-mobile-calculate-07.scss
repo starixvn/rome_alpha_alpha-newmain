@@ -244,9 +244,9 @@ body {
             padding: calculateScale(7px) 0 0 calculateScale(3px);
         }
 
-        &#menu-MYWATCHLIST, &#menu-SECURITY {
+        &#menu-MYWATCHLIST, &#menu-SERCURITYCODE {
             padding: calculateScale(16px) 0 0;
-            margin-bottom: calculateScale(10px);
+            margin-bottom: 0;
 
             &:after {
                 left: calculateScale(-10px);
@@ -309,7 +309,9 @@ body {
         margin-left: calculateScale(3px);
     }
 }
-
+.mainmenu-container .menu-item#menu-SERCURITYCODE {
+    margin-bottom: calculateScale(10px);
+}
 // Account search tool typeahead
 
 .typeahead {
