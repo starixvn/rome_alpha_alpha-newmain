@@ -288,7 +288,7 @@ var menuBar = {
         var authCookieValue = null;
         var subMenuURL = subMenu.data("url");
 
-        if (subMenuURL.indexOf('/site-reports/') !== -1) {
+        if (subMenuURL.indexOf('reports') !== -1) {
             authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-" + menuBar.domElements.sessionId;
             authCookieValue = $.cookie(authCookie);
 
@@ -303,7 +303,7 @@ var menuBar = {
                     .replace(oldsessionId, authCookieValue);
             }
         }
-        else if (subMenuURL.indexOf('/site-betlists/') !== -1) {
+        else if (subMenuURL.indexOf('betlists') !== -1) {
             authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-betlist-" + menuBar.domElements.sessionId;
             authCookieValue = $.cookie(authCookie);
 

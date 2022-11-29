@@ -399,9 +399,7 @@ var headerNav = {
             menuBar.loadBetlistAuthFrame();
         }
 
-        setTimeout(() => {
-            headerNav.reloadPage();
-        }, 2000);
+        headerNav.reloadPage();
     },
 
     changeTheme: function () {
@@ -430,9 +428,7 @@ var headerNav = {
             menuBar.loadBetlistAuthFrame();
         }
         
-        setTimeout(() => {
-            headerNav.reloadPage();
-        }, 2000);
+        headerNav.reloadPage();
     },
 
     reloadPage: function () {
