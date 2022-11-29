@@ -6,6 +6,7 @@ class SuggestTelegramOtp {
     $suggestOtpMessage: JQuery;
 
     isShowSuggestEnableOtpPopup;
+    isShowedTryItNow;
 
     constructor($: JQueryStatic) {
         this.$ = $;
@@ -18,13 +19,14 @@ class SuggestTelegramOtp {
             this.$("#subUserId").val()
         ].join("_");
 
+        this.isShowedTryItNow = "IsShowedTryItNow";
 
         this.cachedDOMElements();
 
-        if (!this.getLocalStorageValue()) {
+        if (!this.getLocalStorageValue(this.isShowSuggestEnableOtpPopup) && this.getLocalStorageValue(this.isShowedTryItNow)) {
             this.showSuggestEnableTelegramOtp();
+            this.setLocalStorageValue(true);
         }
-        this.setLocalStorageValue(true);
 
         this.registerEvents();
     }
@@ -73,8 +75,8 @@ class SuggestTelegramOtp {
         alpha.localStorage.set(this.isShowSuggestEnableOtpPopup, value ? "1" : "0");
     }
 
-    getLocalStorageValue() {
-        return alpha.localStorage.get(this.isShowSuggestEnableOtpPopup) === "1";
+    getLocalStorageValue(key: string) {
+        return alpha.localStorage.get(key) === "1";
     }
 }
 
