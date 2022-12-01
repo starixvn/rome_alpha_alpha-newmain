@@ -28,28 +28,36 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var apikey in Model.ApiKeyInfos)
+            @if (Model.ApiKeyInfos.Any())
             {
-
+                foreach (var apikey in Model.ApiKeyInfos)
+                {
+                    <tr>
+                        <td class="text-center">@apikey.Name</td>
+                        <td class="text-center">@apikey.CreatedDate</td>
+                        @if (apikey.IsExpired)
+                        {
+                            <td class='text-center expired-date'>Expired</td>
+                        }
+                        else if (apikey.ExpirationDate.HasValue)
+                        {
+                            <td class='text-center'>@apikey.ExpirationDate</td>
+                        }
+                        else
+                        {
+                            <td class='text-center'>Never</td>
+                        }
+                        <td class="text-center">
+                            <a class="btn btn-edit" apikey=@apikey.Key>Edit</a>
+                            <a class="btn btn-revoke" apikey=@apikey.Key apiname=@apikey.Name>Revoke</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
                 <tr>
-                    <td class="text-center">@apikey.Name</td>
-                    <td class="text-center">@apikey.CreatedDate</td>
-                    @if (apikey.IsExpired)
-                    {
-                        <td class='text-center expired-date'>Expired</td>
-                    }
-                    else if (apikey.ExpirationDate.HasValue)
-                    {
-                        <td class='text-center'>@apikey.ExpirationDate</td>
-                    }
-                    else
-                    {
-                        <td class='text-center'>Never</td>
-                    }
-                    <td class="text-center">
-                        <a class="btn btn-edit" apikey=@apikey.Key>Edit</a>
-                        <a class="btn btn-revoke" apikey=@apikey.Key apiname=@apikey.Name>Revoke</a>
-                    </td>
+                    <td colspan="4" align="center">@Resources.NoInformationIsAvailable</td>
                 </tr>
             }
         </tbody>

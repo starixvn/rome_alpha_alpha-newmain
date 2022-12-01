@@ -6,6 +6,7 @@ interface JQuery {
 }
 
 interface DatepickerOptions {
+    useCurrent: false;
     allowInputToggle: boolean;
     format: string;
     defaultDate: any;
@@ -61,6 +62,7 @@ class CreateApiKey {
 
     renderDatetimePicker = () => {
         const options: DatepickerOptions = {
+            useCurrent: false,
             allowInputToggle: true,
             format: "MM/DD/YYYY",
             defaultDate: null
@@ -127,6 +129,10 @@ class CreateApiKey {
         }
         if (passPhrase.length < 7 || passPhrase.length > 32) {
             return "Input need in range [7-32] characters"
+        }
+        const isPastDate = new Date(expirationDate.toString()) < new Date();
+        if (isPastDate) {
+            return "Cant select time from past";
         }
         if (scopes == "") {
             return "Scopes is required."

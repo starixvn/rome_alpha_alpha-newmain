@@ -9,6 +9,7 @@ interface DatepickerOptions {
     allowInputToggle: boolean;
     format: string;
     defaultDate: any;
+    useCurrent: false;
 }
 
 declare var Clipboard: any;
@@ -110,6 +111,10 @@ class EditApiKey {
         if (apiName.length > 50) {
             return "No more than 50 characters!";
         }
+        const isPastDate = new Date(expirationDate.toString()) < new Date();
+        if (isPastDate) {
+            return "Cant select time from past";
+        }
         if (scopes == "") {
             return "Scopes is required."
         }
@@ -162,6 +167,7 @@ class EditApiKey {
 
     renderDatetimePicker = () => {
         const options: DatepickerOptions = {
+            useCurrent: false,
             allowInputToggle: true,
             format: "MM/DD/YYYY",
             defaultDate: null

@@ -66,7 +66,6 @@ namespace Alpha.Main.Extensions
         {
             var uri = new Uri(httpClient.BaseAddress, requestUri);
             var response = await httpClient.DeleteAsync(uri);
-            response.EnsureSuccessStatusCode();
         }
     }
 }

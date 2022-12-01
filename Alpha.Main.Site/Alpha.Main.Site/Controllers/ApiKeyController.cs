@@ -4,6 +4,7 @@
     using Alpha.Main.Site.ViewModels.ApiKey;
     using Alpha.Web;
     using Alpha.Web.Models;
+    using Alpha.Web.Filters;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
     using System.Threading.Tasks;
@@ -44,19 +45,19 @@
             return View(viewModel);
         }
 
-        [HttpPost]
+        [HttpPost, AntiXsrfFilter]
         public async Task<ActionResult> CreateApiKey(CreateApiKeyCommand query)
         {
             return Json(await mediator.SendAsync(query));
         }
 
-        [HttpPost]
+        [HttpPost, AntiXsrfFilter]
         public async Task<ActionResult> RevokeApiKey(RevokeApiKeyCommand query)
         {
             return Json(await mediator.SendAsync(query));
         }
 
-        [HttpPost]
+        [HttpPost, AntiXsrfFilter]
         public async Task<ActionResult> UpdateApiKey(UpdateApiKeyCommand query)
         {
             return Json(await mediator.SendAsync(query));
