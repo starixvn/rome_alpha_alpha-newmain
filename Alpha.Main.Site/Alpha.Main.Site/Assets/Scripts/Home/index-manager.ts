@@ -96,11 +96,10 @@ var indexManager = {
                     var errCode = result.errCode;
                     var errMsg = result.errMsg;
                     if (errCode !== 0) {
+                        alpha.core.signOut();
                         if (errMsg) {
                             alert(errMsg);
                         }
-
-                        alpha.core.signOut();
                     }
                 }
                 catch (e) {
