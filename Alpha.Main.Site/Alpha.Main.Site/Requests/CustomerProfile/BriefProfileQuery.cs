@@ -80,5 +80,7 @@ namespace Alpha.Main.Site.Models.Requests.CustomerProfile
         }
 
         public bool IsProtectedMode => userSession.IsProtectedMode;
+
+        public int SubAccId => userSession.SubAccId;
     }
 }

@@ -4,7 +4,7 @@
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
 
-    public class CheckDifferenceDeviceCommand : IRequest<bool>
+    public class CheckDifferenceDeviceCommand : IAsyncRequest<bool>
     {
         private readonly IUserSession userSession;
 

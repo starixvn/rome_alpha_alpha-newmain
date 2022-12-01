@@ -2,7 +2,6 @@
 {
     using Alpha.Main.Configurations;
     using Constants;
-    using Sunplus.Agent.Model.Entities;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -17,6 +16,8 @@
         bool IsAdminCanUpdateSubAccount { get; }
 
         void RemoveNewCaptchaByCurrency();
+
+        bool IsEnabledTelegramOTP { get; set; }
     }
 
     public class User : IUser
@@ -24,6 +25,7 @@
         private const string Jackpot = "Jackpot";
         private const string GameEnableSessionKey = "_GameEnable_";
         private const string IsAdminCanUpdateSubAccountSessionKey = "IsAdminCanUpdateSubAccount";
+        private const string IsEnabledTelegramOTPSessionKey = "IsEnabledTelegramOTP";
 
         public bool ShowProgressiveJackpotGames => GetEnableProductsByGameName(Jackpot).Any(i => i != ProductId.Pragmatic);
 
@@ -34,6 +36,18 @@
 
         public bool IsAdminCanUpdateSubAccount
             => GetSessionValue<bool>(IsAdminCanUpdateSubAccountSessionKey);
+
+        public bool IsEnabledTelegramOTP
+        {
+            get
+            {
+                return GetSessionValue<bool>(IsEnabledTelegramOTPSessionKey);
+            }
+            set
+            {
+                SetSessionValue(IsEnabledTelegramOTPSessionKey, value);
+            }
+        }
 
         public void RemoveNewCaptchaByCurrency()
         {
@@ -52,6 +66,13 @@
             var session = HttpContext.Current.Session;
 
             return session[$"{session.SessionID}_{sessionKey}"];
+        }
+
+        private static void SetSessionValue(string sessionKey, object value)
+        {
+            var session = HttpContext.Current.Session;
+
+            session[$"{session.SessionID}_{sessionKey}"] =value;
         }
     }
 }

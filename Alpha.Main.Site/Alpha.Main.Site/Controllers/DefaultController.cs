@@ -6,6 +6,7 @@ namespace Alpha.Main.Site.Controllers
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading.Tasks;
     using System.Web.Mvc;
     using System.Web.Routing;
     using System.Web.Security;
@@ -60,14 +61,14 @@ namespace Alpha.Main.Site.Controllers
         }
 
         [AllowProtectedMode]
-        public ActionResult Index(string action = null)
+        public async Task<ActionResult> Index(string action = null)
         {
             if (IsRedirectToNicknamePage(action))
             {
                 return RedirectToAction("Index", "Nickname");
             }
 
-            if (mediator.Send(new CheckDifferenceDeviceCommand(this.userSession)))
+            if (await mediator.SendAsync(new CheckDifferenceDeviceCommand(this.userSession)))
             {
                 return Redirect(OtpVerifyDifferenceDevicePath);
             }

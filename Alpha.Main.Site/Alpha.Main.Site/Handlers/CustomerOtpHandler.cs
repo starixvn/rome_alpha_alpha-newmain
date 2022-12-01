@@ -28,7 +28,7 @@
         IRequestHandler<SetUpOtpCommand, Result>,
         IRequestHandler<VerifyOtpCommand, Result>,
         IRequestHandler<VerifyOtpDifferentDeviceQuery, VerifyOtpDifferenceDeviceViewModel>,
-        IRequestHandler<CheckDifferenceDeviceCommand, bool>,
+        IAsyncRequestHandler<CheckDifferenceDeviceCommand, bool>,
         IRequestHandler<VerifyOtpQuery, VerifyOTPViewModel>
     {
         private const string SecretKeySessionKey = "CustomerOtpHandler.SecretKeySessionKey";
@@ -39,7 +39,7 @@
         private readonly BrowserHelper browserHelper;
         private readonly IUser user;
         private readonly NicknameChecker nicknameChecker;
-        private readonly ISettingService settingService;
+        private readonly ISettingService telegramSettingService;
 
         public CustomerOtpHandler(
             CustomerOtpService customerOtpService,
@@ -48,7 +48,7 @@
             BrowserHelper browserHelper,
             IUser user,
             NicknameChecker nicknameChecker,
-            ISettingService settingService)
+            ISettingService telegramSettingService)
         {
             this.customerOtpService = customerOtpService;
             this.userSession = userSession;
@@ -56,7 +56,7 @@
             this.browserHelper = browserHelper;
             this.user = user;
             this.nicknameChecker = nicknameChecker;
-            this.settingService = settingService;
+            this.telegramSettingService = telegramSettingService;
         }
 
         public Result Handle(ChangeOtpStatusCommand message)
@@ -267,7 +267,7 @@
                 IsOfferProtectedMode = message.IsOfferProtectedMode
             };
 
-            var custBotMessenger = await settingService.GetCustBotMessengerAsync(
+            var custBotMessenger = await telegramSettingService.GetCustBotMessengerAsync(
                 message.CustId,
                 message.SubAccountId,
                 Language.MapNewChineseLanguageCode(message.Language));
@@ -347,14 +347,16 @@
             return string.IsNullOrWhiteSpace(nickName) ? string.Empty : $"({nickName})";
         }
 
-        public bool Handle(CheckDifferenceDeviceCommand message)
+        public async Task<bool> Handle(CheckDifferenceDeviceCommand message)
         {
             if (message == null)
             {
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
-            var enabled = customerOtpService.IsEnabledOtp(message.CustId, message.SubAccountId);
+            user.IsEnabledTelegramOTP = await telegramSettingService.IsEnableOTP(message.CustId, message.SubAccountId);
+
+            var enabled = customerOtpService.IsEnabledOtp(message.CustId, message.SubAccountId) || user.IsEnabledTelegramOTP;
 
             SetOtpStatusToSession(enabled);
 

@@ -456,8 +456,8 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="TelegramBot.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\TelegramBot.Client.1.0.0\lib\netstandard2.0\TelegramBot.Client.dll</HintPath>
+    <Reference Include="TelegramBot.Client, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TelegramBot.Client.1.0.2-beta0\lib\netstandard2.0\TelegramBot.Client.dll</HintPath>
     </Reference>
     <Reference Include="TplCore, Version=1.0.4854.17253, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\TplCore.1.0.4854.17254\lib\net40\TplCore.dll</HintPath>
@@ -1245,23 +1245,8 @@
     <Content Include="Alpha.Main.Site.Debug.ruleset" />
     <Content Include="Alpha.Main.Site.ruleset" />
     <Content Include="Views\Default\HeaderHotMsg.cshtml" />
-    <Content Include="Web.backupMNL.config">
-      <DependentUpon>Web.uati1.config</DependentUpon>
-    </Content>
-    <Content Include="Web.AppSettings.backupMNL.config">
-      <DependentUpon>Web.AppSettings.config</DependentUpon>
-    </Content>
     <Content Include="Web.napinternal.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
-    </Content>
-    <Content Include="Web.backupMNL2.config">
-      <DependentUpon>Web.uati1.config</DependentUpon>
-    </Content>
-    <Content Include="Web.AppSettings.backupMNL2.config">
-      <DependentUpon>Web.AppSettings.config</DependentUpon>
-    </Content>
-    <Content Include="Web.AppSettings.backupMNLNap2.config">
-      <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
     <Content Include="Web.AppSettings.napinternal2.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
@@ -1275,13 +1260,6 @@
     <Content Include="Web.AppSettings.uat2.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
       <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Web.backupMNLNap.config">
-      <SubType>Designer</SubType>
-      <DependentUpon>Web.uati1.config</DependentUpon>
-    </Content>
-    <Content Include="Web.backupMNLNap2.config">
-      <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
     <Content Include="Web.napinternal2.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
@@ -1302,9 +1280,6 @@
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
     <Content Include="Web.uati1.config" />
-    <Content Include="Web.AppSettings.backupMNLNap.config">
-      <DependentUpon>Web.AppSettings.config</DependentUpon>
-    </Content>
     <Content Include="Views\Default\Kickout.cshtml" />
     <Content Include="typings.json" />
     <Content Include="Views\Error\Index.cshtml" />
