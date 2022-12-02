@@ -192,7 +192,7 @@ namespace Alpha.Main
         public static Func<string, string> BuildInvalidSessionUniqueKey => (string url) =>
         {
             if (url.IndexOf("/winlossdetail/", StringComparison.OrdinalIgnoreCase) > -1
-            && AppSettings.LogInvalidSessionSuperIds.Any(superId => superId == Current.SRecommendId))
+            && AppSettings.EnableLogDifferentSessionBetweenMainAndReports)
             {
                 return $"{Current.CustId}-{Current.SubAccId}";
             }
