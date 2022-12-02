@@ -66,11 +66,6 @@ var alpha = {
                 isInternal = isInternal || "0";
                 var signOutUrl = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx?r=' + errMsg;
 
-                var topWindow: any = window.top;
-                if (topWindow.menuBar.domElements.reportDomain) {
-                    $.ajax(topWindow.menuBar.domElements.reportDomain + topWindow.menuBar.domElements.cookieless + '/Auth/SignOut');
-                }
-
                 if (isInternal && isInternal.toString() !== "0") {
                     $.ajax(signOutUrl, {
                         success: function () {
@@ -96,11 +91,6 @@ var alpha = {
                 var isInternal = index.$("#isInternal").val();
                 isInternal = isInternal || "0";
                 var signOutUrl = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut2.ashx?r=';
-
-                var topWindow: any = window.top;
-                if (topWindow.menuBar.domElements.reportDomain) {
-                    $.ajax(topWindow.menuBar.domElements.reportDomain + topWindow.menuBar.domElements.cookieless + '/Auth/SignOut');
-                }
 
                 if (isInternal && isInternal.toString() !== "0") {
                     $.ajax(signOutUrl, {

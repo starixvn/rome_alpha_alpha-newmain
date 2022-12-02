@@ -438,11 +438,15 @@ $(function () {
     window.onfocus = function () {
         headerNav.getServerTime(alpha.user.onUserId || "-1");
     };
-});
 
-try {
-    document.addEventListener("visibilitychange", function () {
-        !document.hidden && headerNav.getServerTime(alpha.user.onUserId || "-1");
+    indexManager.domElements.mainFrame.on('load.newmain', function () {
+        headerNav.getServerTime(alpha.user.onUserId || "-1");
     });
-} catch (e) {
-}
+
+    try {
+        document.addEventListener("visibilitychange", function () {
+            !document.hidden && headerNav.getServerTime(alpha.user.onUserId || "-1");
+        });
+    } catch (e) {
+    }
+});

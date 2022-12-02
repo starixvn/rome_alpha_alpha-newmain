@@ -89,8 +89,11 @@ namespace Alpha.Main.Site.Controllers
         [AllowProtectedMode]
         public ActionResult GetServerTime(int onUserId = -1)
         {
-            if (onUserId != -1 && onUserId != UserSession.Current.OnUserId)
+            if ((onUserId != -1 && onUserId != userSession.OnUserId) || userSession.OnUserId == 0)
             {
+                userSession.IsForcedSecurityCode = true;
+                userSession.SecurityCode = null;
+
                 return Json(new
                 {
                     signOut = true
