@@ -107,8 +107,14 @@ var headerNav = {
         var strTime = headerNav.formatClockTime(headerNav.clockTime);
         headerNav.domElements.clock.html(strTime);
     },
-    getServerTime: function () {
-        $.get(headerNav.urls.serverTime, function (data) {
+    getServerTime: function (onUserId = "-1") {
+        $.get(headerNav.urls.serverTime + "?onUserId=" + onUserId, function (data) {
+            if (data && data.signOut) {
+                alpha.core.signOut();
+
+                return;
+            }
+
             headerNav.clockTimeInterval && clearInterval(headerNav.clockTimeInterval);
             headerNav.clockTime = new Date(
                 data.Year,
@@ -429,11 +435,14 @@ var headerNav = {
 
 $(function () {
     headerNav.init();
+    window.onfocus = function () {
+        headerNav.getServerTime(alpha.user.onUserId || "-1");
+    };
 });
 
 try {
     document.addEventListener("visibilitychange", function () {
-        !document.hidden && headerNav.getServerTime();
+        !document.hidden && headerNav.getServerTime(alpha.user.onUserId || "-1");
     });
 } catch (e) {
 }
