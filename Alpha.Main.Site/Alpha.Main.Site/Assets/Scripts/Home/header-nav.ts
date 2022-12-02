@@ -261,7 +261,7 @@ var headerNav = {
     },
 
     registerEvents: function () {
-        headerNav.domElements.iconLogOut.on("click", alpha.core.signOut);
+        headerNav.domElements.iconLogOut.on("click", alpha.core.signOut2);
 
         headerNav.domElements.iconHome.on("click", () => {
             indexManager.changeMenu(headerNav.urls.home);
@@ -278,7 +278,7 @@ var headerNav = {
         });
 
         // Logout link for mobile
-        headerNav.domElements.linkLogout.on("click", alpha.core.signOut);
+        headerNav.domElements.linkLogout.on("click", alpha.core.signOut2);
 
         // Quick search component for mobile
         headerNav.domElements.iconSearch.on('click', () => {
