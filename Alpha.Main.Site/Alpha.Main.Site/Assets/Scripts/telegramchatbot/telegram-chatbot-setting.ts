@@ -54,6 +54,7 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
 
     showHighlight = () => {
         this.$container.addClass("chatbot-linked-telegram");
+        this.$(window).scrollTop(900);
         this.setLocalStorageValue("IsShowedTryItNow", true);
     }
 
