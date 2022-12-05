@@ -91,9 +91,6 @@ namespace Alpha.Main.Site.Controllers
         {
             if ((onUserId != -1 && onUserId != userSession.OnUserId) || userSession.OnUserId == 0)
             {
-                userSession.IsForcedSecurityCode = true;
-                userSession.SecurityCode = null;
-
                 return Json(new
                 {
                     signOut = true

@@ -90,7 +90,7 @@ var alpha = {
 
                 var isInternal = index.$("#isInternal").val();
                 isInternal = isInternal || "0";
-                var signOutUrl = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut2.ashx?r=';
+                var signOutUrl = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut2.ashx';
 
                 if (isInternal && isInternal.toString() !== "0") {
                     $.ajax(signOutUrl, {

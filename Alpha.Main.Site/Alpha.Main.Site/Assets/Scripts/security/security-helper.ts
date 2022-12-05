@@ -71,7 +71,7 @@ var securityHelper = {
     redirectToHomePage: function (timeout) {
         setTimeout(securityHelper.gotoHomePage, timeout);
     },
-    signOut: alpha.core.signOut,
+    signOut: alpha.core.signOut2,
     gotoHomePage: function () {
         window.location.href = alpha.urls.mainRootPath;
     },
