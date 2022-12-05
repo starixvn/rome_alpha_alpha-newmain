@@ -1076,15 +1076,6 @@
     <Content Include="Assets\styles\home\ChatBotBanneri1.min.css">
       <DependentUpon>ChatBotBanneri1.css</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\home\customizedLiveChat-dark.css">
-      <DependentUpon>customizedLiveChat-dark.scss</DependentUpon>
-    </Content>
-    <Content Include="Assets\styles\home\customizedLiveChat-dark.min.css">
-      <DependentUpon>customizedLiveChat-dark.css</DependentUpon>
-    </Content>
-    <Content Include="Assets\styles\home\customizedLiveChat.css">
-      <DependentUpon>customizedLiveChat.scss</DependentUpon>
-    </Content>
     <Content Include="Assets\styles\home\home-dark.css">
       <DependentUpon>home-dark.scss</DependentUpon>
     </Content>
@@ -1545,9 +1536,7 @@
     <Content Include="Assets\styles\newcustomer-captcha\captcha.scss" />
     <Content Include="App_Data\activitytracking.json" />
     <Content Include="Assets\styles\partial-um\partial-um.scss" />
-    <Content Include="Assets\styles\home\customizedLiveChat.scss" />
     <Content Include="Assets\styles\protection-code\protection.scss" />
-    <Content Include="Assets\styles\home\customizedLiveChat-dark.scss" />
     <Content Include="Assets\styles\home\_variables-dark.scss" />
     <Content Include="Assets\styles\home\page-dark.scss" />
     <Content Include="Assets\styles\home\popup-announcement-dark.scss" />
