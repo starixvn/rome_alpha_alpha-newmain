@@ -107,8 +107,14 @@ var headerNav = {
         var strTime = headerNav.formatClockTime(headerNav.clockTime);
         headerNav.domElements.clock.html(strTime);
     },
-    getServerTime: function () {
-        $.get(headerNav.urls.serverTime, function (data) {
+    getServerTime: function (onUserId = "-1") {
+        $.get(headerNav.urls.serverTime + "?onUserId=" + onUserId, function (data) {
+            if (data && data.signOut) {
+                alpha.core.signOut();
+
+                return;
+            }
+
             headerNav.clockTimeInterval && clearInterval(headerNav.clockTimeInterval);
             headerNav.clockTime = new Date(
                 data.Year,
@@ -261,7 +267,7 @@ var headerNav = {
     },
 
     registerEvents: function () {
-        headerNav.domElements.iconLogOut.on("click", alpha.core.signOut);
+        headerNav.domElements.iconLogOut.on("click", alpha.core.signOut2);
 
         headerNav.domElements.iconHome.on("click", () => {
             indexManager.changeMenu(headerNav.urls.home);
@@ -278,7 +284,7 @@ var headerNav = {
         });
 
         // Logout link for mobile
-        headerNav.domElements.linkLogout.on("click", alpha.core.signOut);
+        headerNav.domElements.linkLogout.on("click", alpha.core.signOut2);
 
         // Quick search component for mobile
         headerNav.domElements.iconSearch.on('click', () => {
@@ -429,11 +435,18 @@ var headerNav = {
 
 $(function () {
     headerNav.init();
-});
+    window.onfocus = function () {
+        headerNav.getServerTime(alpha.user.onUserId || "-1");
+    };
 
-try {
-    document.addEventListener("visibilitychange", function () {
-        !document.hidden && headerNav.getServerTime();
+    indexManager.domElements.mainFrame.on('load.newmain', function () {
+        headerNav.getServerTime(alpha.user.onUserId || "-1");
     });
-} catch (e) {
-}
+
+    try {
+        document.addEventListener("visibilitychange", function () {
+            !document.hidden && headerNav.getServerTime(alpha.user.onUserId || "-1");
+        });
+    } catch (e) {
+    }
+});

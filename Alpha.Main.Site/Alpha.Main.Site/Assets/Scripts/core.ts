@@ -3,99 +3,125 @@ declare var bootbox: any;
 
 var alpha = {
     urls:
-    {
-        oldMainRootPath: top.document.getElementById('oldMainRootPath') != null
-            ? (<HTMLInputElement>top.document.getElementById('oldMainRootPath')).value
-            : "/ex-main/",
-        mainRootPath: top.document.getElementById('mainRootPath') != null
-            ? (<HTMLInputElement>top.document.getElementById('mainRootPath')).value
+        {
+            oldMainRootPath: top.document.getElementById('oldMainRootPath') != null
+                ? (<HTMLInputElement>top.document.getElementById('oldMainRootPath')).value
+                : "/ex-main/",
+            mainRootPath: top.document.getElementById('mainRootPath') != null
+                ? (<HTMLInputElement>top.document.getElementById('mainRootPath')).value
                 : "not found",
-        accountInfoRootPath: top.document.getElementById('accountInfoRootPath') != null
-            ? (<HTMLInputElement>top.document.getElementById('accountInfoRootPath')).value
-            : "not found",
-        memberInfoRootPath: top.document.getElementById('memberInfoRootPath') != null
-            ? (<HTMLInputElement>top.document.getElementById('memberInfoRootPath')).value
-            : "not found",
-        howToUseRootPath: top.document.getElementById('howToUseRootPath') != null
-            ? (<HTMLInputElement>top.document.getElementById('howToUseRootPath')).value
-            : "not found",
-        exTotalBetsForecastRootPath: top.document.getElementById('exTotalBetsForecastRootPath') != null
-            ? (<HTMLInputElement>top.document.getElementById('exTotalBetsForecastRootPath')).value
-            : "not found",
-        messageRootPath: top.document.getElementById('messageRootPath') != null
-            ? (<HTMLInputElement>top.document.getElementById('messageRootPath')).value
-            : "not found"
-    },
+            accountInfoRootPath: top.document.getElementById('accountInfoRootPath') != null
+                ? (<HTMLInputElement>top.document.getElementById('accountInfoRootPath')).value
+                : "not found",
+            memberInfoRootPath: top.document.getElementById('memberInfoRootPath') != null
+                ? (<HTMLInputElement>top.document.getElementById('memberInfoRootPath')).value
+                : "not found",
+            howToUseRootPath: top.document.getElementById('howToUseRootPath') != null
+                ? (<HTMLInputElement>top.document.getElementById('howToUseRootPath')).value
+                : "not found",
+            exTotalBetsForecastRootPath: top.document.getElementById('exTotalBetsForecastRootPath') != null
+                ? (<HTMLInputElement>top.document.getElementById('exTotalBetsForecastRootPath')).value
+                : "not found",
+            messageRootPath: top.document.getElementById('messageRootPath') != null
+                ? (<HTMLInputElement>top.document.getElementById('messageRootPath')).value
+                : "not found"
+        },
     user:
-    {
-        onUserId: document.getElementById('onUserId') != null
-            ? (<HTMLInputElement>document.getElementById('onUserId')).value
-            : "not found",
-        passwordHash: document.getElementById('passwordHash') != null
-            ? (<HTMLInputElement>document.getElementById('passwordHash')).value
-            : "not found",
-        subPageAccess: document.getElementById('subPageAccess') != null
-            ? (<HTMLInputElement>document.getElementById('subPageAccess')).value
-            : "not found",
-        level: document.getElementById('userLevel') != null
-            ? (<HTMLInputElement>document.getElementById('userLevel')).value
-            : "not found",
-        isSubAccount: document.getElementById('isSubAccount') != null
-            ? ((<HTMLInputElement>document.getElementById('isSubAccount')).value.toLowerCase() === "true")
-            : "not found",
-        isShowIntroduction: document.getElementById('isShowIntroduction') != null
-            ? ((<HTMLInputElement>document.getElementById('isShowIntroduction')).value.toLowerCase() === "true")
-            : "not found",
-        isEnableOtp: document.getElementById('isEnabledOtp') != null
-            ? ((<HTMLInputElement>document.getElementById('isEnabledOtp')).value.toLowerCase() === "true")
-            : false
-    },
+        {
+            onUserId: document.getElementById('onUserId') != null
+                ? (<HTMLInputElement>document.getElementById('onUserId')).value
+                : "not found",
+            passwordHash: document.getElementById('passwordHash') != null
+                ? (<HTMLInputElement>document.getElementById('passwordHash')).value
+                : "not found",
+            subPageAccess: document.getElementById('subPageAccess') != null
+                ? (<HTMLInputElement>document.getElementById('subPageAccess')).value
+                : "not found",
+            level: document.getElementById('userLevel') != null
+                ? (<HTMLInputElement>document.getElementById('userLevel')).value
+                : "not found",
+            isSubAccount: document.getElementById('isSubAccount') != null
+                ? ((<HTMLInputElement>document.getElementById('isSubAccount')).value.toLowerCase() === "true")
+                : "not found",
+            isShowIntroduction: document.getElementById('isShowIntroduction') != null
+                ? ((<HTMLInputElement>document.getElementById('isShowIntroduction')).value.toLowerCase() === "true")
+                : "not found",
+            isEnableOtp: document.getElementById('isEnabledOtp') != null
+                ? ((<HTMLInputElement>document.getElementById('isEnabledOtp')).value.toLowerCase() === "true")
+                : false
+        },
     core:
-    {
-        convertReponseToJson: function (reponse) {
-            return eval("(" + reponse + ")");
-        },
+        {
+            convertReponseToJson: function (reponse) {
+                return eval("(" + reponse + ")");
+            },
 
-        signOut: function () {
-            var index: any = window;
-            while (index != index.parent) {
-                index = index.parent;
-			}
+            signOut: function (errMsg = 'Your login session was expired.') {
+                var index: any = window;
+                while (index != index.parent) {
+                    index = index.parent;
+                }
 
-            var isInternal = index.$("#isInternal").val();
-            isInternal = isInternal || "0";
-            var signOutUrl = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx';
+                var isInternal = index.$("#isInternal").val();
+                isInternal = isInternal || "0";
+                var signOutUrl = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx?r=' + errMsg;
 
-            if (isInternal && isInternal.toString() !== "0") {
-                $.ajax(signOutUrl, {
-                    success: function () {
-                        index.close();
+                if (isInternal && isInternal.toString() !== "0") {
+                    $.ajax(signOutUrl, {
+                        success: function () {
+                            index.close();
+                        }
+                    });
+                }
+                else {
+                    try {
+                        localStorage.removeItem(indexManager.currentUrlCookieName);
                     }
-                });
-            }
-            else {
-                try {
-                    localStorage.removeItem(indexManager.currentUrlCookieName);
+                    finally {
+                        index.location = signOutUrl;
+                    }
                 }
-                finally {
-                    index.location = signOutUrl;
+            },
+            signOut2: function () {
+                var index: any = window;
+                while (index != index.parent) {
+                    index = index.parent;
                 }
-            }
-        },
-        isIe: function () {
-            return /(MSIE|Trident\/|Edge\/)/i.test(navigator.userAgent);
-        },
-        IsIe8OrLower: function () {
-            var userAgent = window.navigator.userAgent.toLowerCase();
-            return (userAgent.indexOf('msie') != -1)
-                ? (parseInt(userAgent.split('msie')[1]) < 9)
-                : false;
-        },
 
-        IsAndroid: () => {
-            return /Android/i.test(navigator.userAgent);
-        }
-    },
+                var isInternal = index.$("#isInternal").val();
+                isInternal = isInternal || "0";
+                var signOutUrl = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut2.ashx';
+
+                if (isInternal && isInternal.toString() !== "0") {
+                    $.ajax(signOutUrl, {
+                        success: function () {
+                            index.close();
+                        }
+                    });
+                }
+                else {
+                    try {
+                        localStorage.removeItem(indexManager.currentUrlCookieName);
+                    }
+                    finally {
+                        index.location = signOutUrl;
+                    }
+                }
+            },
+            isIe: function () {
+                return /(MSIE|Trident\/|Edge\/)/i.test(navigator.userAgent);
+            },
+            IsIe8OrLower: function () {
+                var userAgent = window.navigator.userAgent.toLowerCase();
+                return (userAgent.indexOf('msie') != -1)
+                    ? (parseInt(userAgent.split('msie')[1]) < 9)
+                    : false;
+            },
+
+            IsAndroid: () => {
+                return /Android/i.test(navigator.userAgent);
+            }
+        },
     isScreenGreater1024: false,
     isScreenLower768: false,
     isScreenGreater768AndLower1024: false,

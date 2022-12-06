@@ -87,8 +87,16 @@ namespace Alpha.Main.Site.Controllers
 
         [HttpGet]
         [AllowProtectedMode]
-        public ActionResult GetServerTime()
+        public ActionResult GetServerTime(int onUserId = -1)
         {
+            if ((onUserId != -1 && onUserId != userSession.OnUserId) || userSession.OnUserId == 0)
+            {
+                return Json(new
+                {
+                    signOut = true
+                }, JsonRequestBehavior.AllowGet);
+            }
+
             var currentTime = DateTime.Now;
 
             return Json(new
