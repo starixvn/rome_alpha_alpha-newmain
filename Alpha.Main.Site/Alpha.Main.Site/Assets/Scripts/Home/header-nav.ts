@@ -83,10 +83,6 @@ var headerNav = {
         headerNav.cachedDomElements();
         headerNav.initLanguage();
         headerNav.registerEvents();
-
-        LiveChatWidget.on("visibility_changed", function (data) {
-            data.visibility === "minimized" && LiveChatWidget.call("hide");
-        });
     },
 
     initClock: function () {
@@ -365,6 +361,10 @@ var headerNav = {
             LiveChatWidget.init();
             LiveChatWidget.call("set_customer_name", $("#UsernameShowOnLiveChat").val());
             LiveChatWidget.call("maximize");
+
+            LiveChatWidget.on("visibility_changed", function (data) {
+                data.visibility === "minimized" && LiveChatWidget.call("hide");
+            });
 
             headerNav.domElements.liveChat.on("click", function () {
                 LiveChatWidget.call("maximize");
