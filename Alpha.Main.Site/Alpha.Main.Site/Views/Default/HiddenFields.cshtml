@@ -26,6 +26,10 @@
 @Html.Hidden("isDarkMode", Model.IsDarkMode.ToString().ToLowerInvariant())
 @Html.Hidden("RecheckinIntervalMiliseconds", Model.RecheckinIntervalMiliseconds)
 @Html.Hidden("SessionId", Model.SessionID)
+@if (Model.IsOfferLiveChat)
+{
+    @Html.Hidden("UsernameShowOnLiveChat", Model.Username)
+}
 @if (Model.IsEnabledCDNReCheckin)
 {
     @Html.Hidden("assetAppPath", Model.AssetAppPath)

@@ -3,6 +3,8 @@
 
 'use strict';
 
+declare var LiveChatWidget: any;
+
 var headerNav = {
     domElements: {
         isDisableToCheckNewMessage: false,
@@ -81,6 +83,10 @@ var headerNav = {
         headerNav.cachedDomElements();
         headerNav.initLanguage();
         headerNav.registerEvents();
+
+        LiveChatWidget.on("visibility_changed", function (data) {
+            data.visibility === "minimized" && LiveChatWidget.call("hide");
+        });
     },
 
     initClock: function () {
@@ -355,7 +361,15 @@ var headerNav = {
 
         headerNav.checkNewMessage();
 
-        headerNav.domElements.liveChat.on("click", window["onLiveChatClick"]);
+        headerNav.domElements.liveChat.one("click", function () {
+            LiveChatWidget.init();
+            LiveChatWidget.call("set_customer_name", $("#UsernameShowOnLiveChat").val());
+            LiveChatWidget.call("maximize");
+
+            headerNav.domElements.liveChat.on("click", function () {
+                LiveChatWidget.call("maximize");
+            });
+        });
     },
 
     changeLanguage: function (lang) {

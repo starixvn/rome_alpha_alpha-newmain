@@ -88,10 +88,6 @@
     "inputFile": "Assets/styles/newcustomer-captcha/captcha.scss"
   },
   {
-    "outputFile": "Assets/styles/home/customizedLiveChat.css",
-    "inputFile": "Assets/styles/home/customizedLiveChat.scss"
-  },
-  {
     "outputFile": "Assets/styles/protection-code/protection.css",
     "inputFile": "Assets/styles/protection-code/protection.scss"
   },
@@ -142,10 +138,6 @@
   {
     "outputFile": "Assets/styles/otp/otp-dark.css",
     "inputFile": "Assets/styles/otp/otp-dark.scss"
-  },
-  {
-    "outputFile": "Assets/styles/home/customizedLiveChat-dark.css",
-    "inputFile": "Assets/styles/home/customizedLiveChat-dark.scss"
   },
   {
     "outputFile": "Assets/styles/protection-code/protection-dark.css",
