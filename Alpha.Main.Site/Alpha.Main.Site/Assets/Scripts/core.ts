@@ -209,7 +209,7 @@ $(() => {
         },
         error: function (xhr) {
             if (xhr.status === 401) {
-                alpha.core.signOut();
+                alpha.core.signOut2();
             }
         }
     });
