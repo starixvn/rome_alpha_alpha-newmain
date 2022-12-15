@@ -16,7 +16,7 @@
     <div id="changeOtpTelegram" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingChangeOtpTelegram">
         <div class="panel-body">
             <div class="ml-16">
-                <p>Click this button to unlink Telegram Chatbot from your account</p>
+                <p>@Security.UnlinkTelegramChatbot</p>
                 <button class="btn-remove btn-unlink-telegram" id="btnUnsubscribe">@ChatBot.unLink</button>
                 <label class="mt-15">
                     <input class="cbkEnableOtp"
@@ -25,7 +25,7 @@
                            data-functionId="@Model.OtpFunction.FunctionId"
                            data-functionName="@Model.OtpFunction.FunctionName"
                            data-type="@Model.OtpFunction.Type" />
-                    Enable OTP Via Telegram Chatbot
+                    @Security.EnableOtpViaTelegramChatbot
                 </label>
             </div>
         </div>

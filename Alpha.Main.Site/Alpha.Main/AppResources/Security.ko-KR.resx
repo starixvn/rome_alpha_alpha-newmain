@@ -155,9 +155,6 @@ Please use the form below to change your Security Code now.</value>
   <data name="oldSecCode" xml:space="preserve">
     <value>Old Security Code</value>
   </data>
-  <data name="SecurityCode" xml:space="preserve">
-    <value>Security Code</value>
-  </data>
   <data name="titleResetSecCode" xml:space="preserve">
     <value>Reset Security Code</value>
   </data>
@@ -181,9 +178,6 @@ Please use the form below to change your Security Code now.</value>
   </data>
   <data name="NotAuthorized" xml:space="preserve">
     <value>해당 기능에 대한 권한이 없습니다.</value>
-  </data>
-  <data name="SecurityCodeRules" xml:space="preserve">
-    <value>Security code rules</value>
   </data>
   <data name="SecurityCodeShower" xml:space="preserve">
     <value>Hi {0}, please input the security code provided by your upline and create your own one.</value>
@@ -274,12 +268,6 @@ Please use the form below to change your password now.</value>
   <data name="lblresetpassword" xml:space="preserve">
     <value>비밀번호 재설정</value>
   </data>
-  <data name="ShowPassword" xml:space="preserve">
-    <value>Show password</value>
-  </data>
-  <data name="ShowSecurityCode" xml:space="preserve">
-    <value>Show security code</value>
-  </data>
   <data name="lblPasswordRequire" xml:space="preserve">
     <value>비밀번호 공백없이 8 자 이상이어야하며 다음 중 적어도 3를 포함해야합니다.
 
@@ -294,9 +282,6 @@ Please use the form below to change your password now.</value>
   <data name="createSecurityCode" xml:space="preserve">
     <value>Please create a Security Code which will be asked for any setting updates to make sure it is you.</value>
   </data>
-  <data name="SecurityCodeRules01" xml:space="preserve">
-    <value>Security Code must be a 6-digit number, contains at least 2 different digits and must not be consecutive numbers.</value>
-  </data>
   <data name="SecurityCodeRules02" xml:space="preserve">
     <value>For example: 123456, 765432, 456789, etc. are NOT allowed.</value>
   </data>
@@ -309,9 +294,6 @@ Please use the form below to change your password now.</value>
   </data>
   <data name="VerifySecurityCodeShower" xml:space="preserve">
     <value>Hi {0}</value>
-  </data>
-  <data name="Skip" xml:space="preserve">
-    <value>Skip</value>
   </data>
   <data name="SkipForceChangePasswordPlaceHolder" xml:space="preserve">
     <value>Type "OK" to skip and accept the risk</value>

@@ -708,4 +708,10 @@
   <data name="LearnMore" xml:space="preserve">
     <value>Tìm Hiểu Thêm</value>
   </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Có</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Không</value>
+  </data>
 </root>

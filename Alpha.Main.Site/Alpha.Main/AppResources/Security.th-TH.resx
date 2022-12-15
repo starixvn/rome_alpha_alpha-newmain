@@ -309,7 +309,7 @@
     <value>โปรดใส่ OTP ก่อนดำเนินการ</value>
   </data>
   <data name="OtpNotes" xml:space="preserve">
-    <value>จะต้องใช้ OTP ต่อเมื่อคุณมีการดำเนินการเปลี่ยนแปลงการตั้งค่าที่สำคัญหรือเข้าสู่ระบบด้วยบราวเซอร์ที่แตกต่างกัน สำหรับมือถือคุณจะต้องลงทะเบียน Authenticator App ก่อนเปิดใช้งานตัวเลือก OTP</value>
+    <value>จำเป็นต้องใช้รหัส OTP เมื่อคุณต้องการดำเนินการใดๆที่สำคัญกับบัญชีหรือเข้าสู่ระบบด้วยอุปกรณ์หรือเบราว์เซอร์แตกต่างกัน โดยก่อนเปิดใช้งานการแจ้งเตือนรหัส OTP คุณจำเป็นต้องเชื่อมต่อบัญชีของคุณกับ Mobile Authenticator หรือเชื่อมต่อบัญชีของคุณกับเทเลแกรมแชทบอท</value>
   </data>
   <data name="DownloadSophos" xml:space="preserve">
     <value>ดาวน์โหลด Sophos Authenticator Mobile App สู่เครื่องของคุณ</value>
@@ -354,7 +354,7 @@
     <value>ระบบจะไม่ยอมรับรหัส OTP ที่สร้างบนอุปกรณ์ที่ลงทะเบียนคุณต้องการที่จะดำเนินการต่อหรือไม่</value>
   </data>
   <data name="RemoveOtpSuccessMessage" xml:space="preserve">
-    <value>ถอดอุปกรณ์ที่ลงทะเบียนเรียบร้อยแล้ว</value>
+    <value>ลบบัญชี Mobile Authenticator และ ปิดการใช้งานการแจ้งเตือนรหัส OTP ผ่านเทเลแกรม</value>
   </data>
   <data name="UpdateOtpStatusSuccess" xml:space="preserve">
     <value>อัพเดทสถานะ OPT ประสบความสำเร็จ</value>
@@ -363,7 +363,7 @@
     <value>ลบ OTP - {0}</value>
   </data>
   <data name="ResetOtpWarning" xml:space="preserve">
-    <value>คลิกที่ปุ่มด้านล่างนี้เพื่อลบอุปกรณ์ที่ลงทะเบียนจากบัญชีของคุณออก</value>
+    <value>คลิก ลบ เพื่อลบชื่อผู้ใช้งานที่เชื่อมต่อบัญชีกับ Mobile Authenticator และปิดการใช้งานการแจ้งเตือนรหัส OTP ผ่านเทเลแกรมสำหรับบัญชีผู้ใช้งาน</value>
   </data>
   <data name="OtpValidation" xml:space="preserve">
     <value>การตรวจสอบ OTP</value>
@@ -399,7 +399,7 @@
     <value>ชื่อบัญชี</value>
   </data>
   <data name="RegisterMobileApplication" xml:space="preserve">
-    <value>ลงทะเบียน Authenticator Mobile App</value>
+    <value>ตั้งค่ารหัส OTP ผ่าน Mobile Authenticator</value>
   </data>
   <data name="Verify" xml:space="preserve">
     <value>ยืนยัน</value>
@@ -473,5 +473,23 @@
   </data>
   <data name="NewSecurityCode" xml:space="preserve">
     <value>รหัสรักษาความปลอดภัย</value>
+  </data>
+  <data name="OTPViaTelegramDisabled" xml:space="preserve">
+    <value>ปิดการใช้งานการแจ้งเตือนรหัส OTP ผ่านเทเลแกรม</value>
+  </data>
+  <data name="SetupOTPViaTelegramChatbot" xml:space="preserve">
+    <value>ตั้งค่ารหัส OTP ผ่านเทเลแกรมแชทบอท</value>
+  </data>
+  <data name="OTPViaChatbotIntroduction" xml:space="preserve">
+    <value>เทเลแกรมแชทบอท ช่วยให้คุณรับข้อมูลทางธุรกิจที่สำคัญได้อย่างสะดวกและปลอดภัยโดยไม่ต้องเข้าถึงเว็บไซต์ตัวแทน ซึ่งปัจจุบันคุณสามารถรับรหัส OTP ผ่านเทเลแกรมแชทบอทโดยเปิดใช้งานการแจ้งเตือนผ่าน Telegram OTP</value>
+  </data>
+  <data name="EnableOtpViaTelegramChatbot" xml:space="preserve">
+    <value>เปิดการใช้งานรหัส OTP ผ่านเทเลแกรมแชทบอท</value>
+  </data>
+  <data name="UnlinkTelegramChatbot" xml:space="preserve">
+    <value>คลิกไม่เลือกเพื่อยกเลิกการเชื่อมต่อเทเลแกรมแชทบอทกับบัญชีของคุณ</value>
+  </data>
+  <data name="OtpViaTelegramSuggestion" xml:space="preserve">
+    <value>ขณะนี้คุณสามารถรับหรัส OTP ผ่านเทเลแกรม โปรดลองใช้งาน</value>
   </data>
 </root>

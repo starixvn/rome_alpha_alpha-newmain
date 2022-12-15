@@ -303,7 +303,7 @@
     <value>请输入您的一次性密码以便继续。</value>
   </data>
   <data name="OtpNotes" xml:space="preserve">
-    <value>OTP 將需要当您执行敏感操作或使用其他设备/浏览器登录时， 在启用OTP选项之前，您需要注册移动身份验证器应用程序。</value>
+    <value>将需要输入OTP当您执行敏感操作或使用不同设备/浏览器登录。在启用OTP通知之前，您需要将您账号添加到手机验证器或将您账号链接到Telegram Chatbot。</value>
   </data>
   <data name="DownloadSophos" xml:space="preserve">
     <value>在您的设备上下载Sophos Authenticator。</value>
@@ -348,7 +348,7 @@
     <value>OTP在注册设备将不被系统接受。 您要进行吗？</value>
   </data>
   <data name="RemoveOtpSuccessMessage" xml:space="preserve">
-    <value>成功删除注册的设备。</value>
+    <value>移除手机验证器账号并禁用Telegram OTP 通知。</value>
   </data>
   <data name="UpdateOtpStatusSuccess" xml:space="preserve">
     <value>更新OTP状态成功。</value>
@@ -357,7 +357,7 @@
     <value>刪除OTP - {0}</value>
   </data>
   <data name="ResetOtpWarning" xml:space="preserve">
-    <value>点击下面的按钮从您的帐户中删除已注册的设备。</value>
+    <value>点击移除以删除下线的手机验证器账号并停用下线的Telegram OTP 通知。</value>
   </data>
   <data name="OtpValidation" xml:space="preserve">
     <value>OTP验证</value>
@@ -393,7 +393,7 @@
     <value>用戶名</value>
   </data>
   <data name="RegisterMobileApplication" xml:space="preserve">
-    <value>注册Authenticator Mobile App</value>
+    <value>通过手机验证器设置OTP</value>
   </data>
   <data name="Verify" xml:space="preserve">
     <value>验证</value>
@@ -469,5 +469,23 @@
   </data>
   <data name="NewSecurityCode" xml:space="preserve">
     <value>新保安码</value>
+  </data>
+  <data name="OTPViaTelegramDisabled" xml:space="preserve">
+    <value>禁用Telegram Chatbot通知</value>
+  </data>
+  <data name="SetupOTPViaTelegramChatbot" xml:space="preserve">
+    <value>通过Telegram Chatbot设置OTP</value>
+  </data>
+  <data name="OTPViaChatbotIntroduction" xml:space="preserve">
+    <value>Telegram Chatbot 允许您在不访问代理网的情况下方便和安全的接收重要的业务报告。 现在您也可以通过启用 Telegram OTP通知以便从Telegram Chatbot 轻松获取 OTP。</value>
+  </data>
+  <data name="EnableOtpViaTelegramChatbot" xml:space="preserve">
+    <value>通过Telegram Chatbot启用 OTP</value>
+  </data>
+  <data name="UnlinkTelegramChatbot" xml:space="preserve">
+    <value>点击取消链接以取消您账号的Telegram Chatbot 配对</value>
+  </data>
+  <data name="OtpViaTelegramSuggestion" xml:space="preserve">
+    <value>请试看！您现在可以通过 Telegram 接收 OTP。</value>
   </data>
 </root>

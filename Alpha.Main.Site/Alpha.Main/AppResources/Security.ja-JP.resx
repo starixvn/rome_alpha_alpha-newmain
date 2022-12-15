@@ -155,9 +155,6 @@ Please use the form below to set your Security Code now.</value>
   <data name="oldSecCode" xml:space="preserve">
     <value>Old Security Code</value>
   </data>
-  <data name="SecurityCode" xml:space="preserve">
-    <value>Security Code</value>
-  </data>
   <data name="titleResetSecCode" xml:space="preserve">
     <value>Reset Security Code</value>
   </data>
@@ -181,9 +178,6 @@ Please use the form below to set your Security Code now.</value>
   </data>
   <data name="NotAuthorized" xml:space="preserve">
     <value>You are not authorized on this function</value>
-  </data>
-  <data name="SecurityCodeRules" xml:space="preserve">
-    <value>Security code rules</value>
   </data>
   <data name="SecurityCodeShower" xml:space="preserve">
     <value>Hi {0}, please input the security code provided by your upline and create your own one.</value>
@@ -274,12 +268,6 @@ Please use the form below to change your password now.</value>
   <data name="lblresetpassword" xml:space="preserve">
     <value>Reset Password</value>
   </data>
-  <data name="ShowPassword" xml:space="preserve">
-    <value>Show password</value>
-  </data>
-  <data name="ShowSecurityCode" xml:space="preserve">
-    <value>Show security code</value>
-  </data>
   <data name="lblPasswordRequire" xml:space="preserve">
     <value>Password must be at least 8 characters without white-space and contain at least 3 of the following:
 
@@ -294,9 +282,6 @@ Notes: your password is cAsE sEnSiTiVe</value>
   <data name="createSecurityCode" xml:space="preserve">
     <value>Please create a Security Code which will be asked for any setting updates to make sure it is you.</value>
   </data>
-  <data name="SecurityCodeRules01" xml:space="preserve">
-    <value>Security Code must be a 6-digit number, contains at least 2 different digits and must not be consecutive numbers.</value>
-  </data>
   <data name="SecurityCodeRules02" xml:space="preserve">
     <value>For example: 123456, 765432, 456789, etc. are NOT allowed.</value>
   </data>
@@ -305,9 +290,6 @@ Notes: your password is cAsE sEnSiTiVe</value>
   </data>
   <data name="VerifySecurityCodeShower" xml:space="preserve">
     <value>Hi {0}</value>
-  </data>
-  <data name="Skip" xml:space="preserve">
-    <value>Skip</value>
   </data>
   <data name="SkipForceChangePasswordPlaceHolder" xml:space="preserve">
     <value>Type "OK" to skip and accept the risk</value>
