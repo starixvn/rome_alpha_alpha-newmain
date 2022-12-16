@@ -5,8 +5,8 @@ class SuggestTelegramOtp {
     $: JQueryStatic;
     $suggestOtpMessage: JQuery;
 
-    isShowSuggestEnableOtpPopup;
-    isShowedTryItNow;
+    isShowedSuggestEnableOtpPopup;
+    isShowingSuggestEnableOtpPopup;
     enableOTPSuccessfullMessage;
 
     constructor($: JQueryStatic) {
@@ -14,19 +14,14 @@ class SuggestTelegramOtp {
     }
 
     init = () => {
-        this.isShowSuggestEnableOtpPopup = [
-            "SuggestEnableTelegramOtp",
-            this.$("#userId").val(),
-            this.$("#subUserId").val()
-        ].join("_");
-
-        this.isShowedTryItNow = "IsShowedTryItNow";
+        this.isShowedSuggestEnableOtpPopup = "IsShowedSuggestEnableOtpPopup";
+        this.isShowingSuggestEnableOtpPopup = "IsShowingSuggestEnableOtpPopup";
 
         this.cachedDOMElements();
 
-        if (!this.getLocalStorageValue(this.isShowSuggestEnableOtpPopup) && this.getLocalStorageValue(this.isShowedTryItNow)) {
+        if (!this.getLocalStorageValue(this.isShowedSuggestEnableOtpPopup)) {
             this.showSuggestEnableTelegramOtp();
-            this.setLocalStorageValue(true);
+            this.setLocalStorageValue(this.isShowedSuggestEnableOtpPopup, true);
         }
 
         this.registerEvents();
@@ -40,6 +35,7 @@ class SuggestTelegramOtp {
     registerEvents = () => {
         this.$("#enableTelegramOtp").click(this.enableTelegramOtp);
         this.$("#closeTelegramOtpPopup").click(this.closeTelegramOtpPopup);
+        this.$("#telegramotp-modal").find(".icon-close").click(this.handleCloseSuggestPopup);
     }
 
     enableTelegramOtp = () => {
@@ -54,6 +50,7 @@ class SuggestTelegramOtp {
                 alpha.showMessage(this.$suggestOtpMessage, new Result({ Code: 0, Message: this.enableOTPSuccessfullMessage }))
                 setTimeout(() => {
                     parent.window.location.href = parent.window.location.href;
+                    this.setLocalStorageValue(this.isShowingSuggestEnableOtpPopup, false);
                 }, 2000);
             },
             complete: function (jqXHR, textStatus) {
@@ -66,15 +63,21 @@ class SuggestTelegramOtp {
         const popup = this.$("#telegramotp-modal");
         popup.modal({ show: true, backdrop: false })
             .tinyDraggable({ exclude: "h3, ol, li, p, img, label, input[type='checkbox'], a, button" });
+        this.setLocalStorageValue(this.isShowingSuggestEnableOtpPopup, true);
+    }
+
+    handleCloseSuggestPopup = () => {
+        this.setLocalStorageValue(this.isShowingSuggestEnableOtpPopup, false);
     }
 
     closeTelegramOtpPopup = () => {
         const popup = this.$("#telegramotp-modal");
         popup.modal("hide");
+        this.handleCloseSuggestPopup();
     }
 
-    setLocalStorageValue(value: boolean) {
-        alpha.localStorage.set(this.isShowSuggestEnableOtpPopup, value ? "1" : "0");
+    setLocalStorageValue(key: string, value: boolean) {
+        alpha.localStorage.set(key, value ? "1" : "0");
     }
 
     getLocalStorageValue(key: string) {

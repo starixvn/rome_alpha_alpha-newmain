@@ -495,4 +495,10 @@
   <data name="OtpViaTelegramChatbot" xml:space="preserve">
     <value>รหัส OTP ผ่านเทแลแกรมแชทบอท</value>
   </data>
+  <data name="ToSetupChatbot" xml:space="preserve">
+    <value>ในการตั้งค่าChatbot โปรดปฏิบัติตามคำแนะนำด้านล่าง:</value>
+  </data>
+  <data name="RegisteredMobileApplication" xml:space="preserve">
+    <value>รหัส OTP ผ่าน Mobile Authenticator</value>
+  </data>
 </root>

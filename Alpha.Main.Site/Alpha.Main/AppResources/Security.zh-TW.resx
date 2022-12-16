@@ -493,4 +493,10 @@
   <data name="OtpViaTelegramChatbot" xml:space="preserve">
     <value>通過Telegram Chatbot獲取的OTP</value>
   </data>
+  <data name="ToSetupChatbot" xml:space="preserve">
+    <value>要設置Chatbot, 請根據以下說明操作：</value>
+  </data>
+  <data name="RegisteredMobileApplication" xml:space="preserve">
+    <value>通過手機驗證器獲取的OTP</value>
+  </data>
 </root>

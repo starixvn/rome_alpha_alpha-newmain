@@ -84,7 +84,8 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         }
 
         this.isFirstLoad = !this.getLocalStorageValue("IsShowedTryItNow");
-        if (this.isFirstLoad) {
+        const isShowingSuggestOtpTelegram = this.getLocalStorageValue("IsShowingSuggestEnableOtpPopup");
+        if (this.isFirstLoad && !isShowingSuggestOtpTelegram) {
             this.showHighlight();
             this.$overlay.click(() => {
                 this.$container.removeClass("chatbot-linked-telegram");

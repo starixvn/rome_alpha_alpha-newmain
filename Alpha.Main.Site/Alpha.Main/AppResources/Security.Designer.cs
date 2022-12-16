@@ -797,6 +797,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to OTP via Mobile Authenticator.
+        /// </summary>
+        public static string RegisteredMobileApplication {
+            get {
+                return ResourceManager.GetString("RegisteredMobileApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Set up OTP via Mobile Authenticator.
         /// </summary>
         public static string RegisterMobileApplication {

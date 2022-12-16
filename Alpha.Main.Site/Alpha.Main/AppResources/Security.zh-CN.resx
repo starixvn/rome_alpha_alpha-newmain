@@ -491,4 +491,10 @@
   <data name="OtpViaTelegramChatbot" xml:space="preserve">
     <value>通过Telegram Chatbot获取的OTP</value>
   </data>
+  <data name="ToSetupChatbot" xml:space="preserve">
+    <value>要设置Chatbot, 请根据以说明操作下：</value>
+  </data>
+  <data name="RegisteredMobileApplication" xml:space="preserve">
+    <value>通过手机验证器获取的OTP</value>
+  </data>
 </root>

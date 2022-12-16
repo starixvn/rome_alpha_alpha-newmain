@@ -502,4 +502,7 @@ Notes: your password is cAsE sEnSiTiVe.</value>
   <data name="OtpViaTelegramChatbot" xml:space="preserve">
     <value>OTP via Telegram Chatbot</value>
   </data>
+  <data name="RegisteredMobileApplication" xml:space="preserve">
+    <value>OTP via Mobile Authenticator</value>
+  </data>
 </root>
