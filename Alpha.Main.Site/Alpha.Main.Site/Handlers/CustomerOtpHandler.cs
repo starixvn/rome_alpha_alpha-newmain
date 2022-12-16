@@ -130,7 +130,7 @@
                     IsResetDownlineOrSubAccount = true
                 });
 
-                if (result.IsSuccessful && await telegramSettingService.IsEnableOTP(message.CustId, message.SubAccountId))
+                if (await telegramSettingService.IsEnableOTP(message.CustId, message.SubAccountId))
                 {
                     result = await UpdateTelegramOTPStatus(message.CustId, message.SubAccountId, false);
                 }

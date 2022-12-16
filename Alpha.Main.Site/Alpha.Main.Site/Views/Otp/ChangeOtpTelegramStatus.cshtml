@@ -1,11 +1,10 @@
 ﻿@model Alpha.Main.Site.ViewModels.TelegramChatBot.RegisterAccountViewModel
 
-
 <div class="panel success">
     <div class="panel-heading" role="tab" id="headingChangeOtpTelegram">
         <h4 class="panel-title">
             <a role="button" class="color-success" data-toggle="collapse" href="#changeOtpTelegram" aria-expanded="false" aria-controls="changeOtpTelegram">
-                OTP via Telegram Chatbot
+                @Security.OtpViaTelegramChatbot
                 @if (Model.OtpFunction.Enabled)
                 {
                     <span class="icon-check-circle"></span>

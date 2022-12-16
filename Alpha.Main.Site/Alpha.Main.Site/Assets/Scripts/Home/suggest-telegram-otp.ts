@@ -7,6 +7,7 @@ class SuggestTelegramOtp {
 
     isShowSuggestEnableOtpPopup;
     isShowedTryItNow;
+    enableOTPSuccessfullMessage;
 
     constructor($: JQueryStatic) {
         this.$ = $;
@@ -33,6 +34,7 @@ class SuggestTelegramOtp {
 
     cachedDOMElements = () => {
         this.$suggestOtpMessage = this.$("#suggest-otp-message");
+        this.enableOTPSuccessfullMessage = this.$("#EnabledOTPSuccessMessage").val();
     }
 
     registerEvents = () => {
@@ -49,7 +51,7 @@ class SuggestTelegramOtp {
             data: { enabled: true },
             dataType: "json",
             success: (result) => {
-                alpha.showMessage(this.$suggestOtpMessage, new Result({ Code: 0, Message: "Enable Telegram OTP successfully." }))
+                alpha.showMessage(this.$suggestOtpMessage, new Result({ Code: 0, Message: this.enableOTPSuccessfullMessage }))
                 setTimeout(() => {
                     parent.window.location.href = parent.window.location.href;
                 }, 2000);

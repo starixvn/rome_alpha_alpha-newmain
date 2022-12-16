@@ -499,4 +499,7 @@ Notes: your password is cAsE sEnSiTiVe.</value>
   <data name="OtpViaTelegramSuggestion" xml:space="preserve">
     <value>You can now receive OTP via Telegram. Give it a try!</value>
   </data>
+  <data name="OtpViaTelegramChatbot" xml:space="preserve">
+    <value>OTP via Telegram Chatbot</value>
+  </data>
 </root>

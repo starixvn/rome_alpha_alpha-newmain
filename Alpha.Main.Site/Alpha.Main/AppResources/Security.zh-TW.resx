@@ -490,4 +490,7 @@
   <data name="OtpViaTelegramSuggestion" xml:space="preserve">
     <value>請試看！您現在可以通過 Telegram 接收 OTP。</value>
   </data>
+  <data name="OtpViaTelegramChatbot" xml:space="preserve">
+    <value>通過Telegram Chatbot獲取的OTP</value>
+  </data>
 </root>

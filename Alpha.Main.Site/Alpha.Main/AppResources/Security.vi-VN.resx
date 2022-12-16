@@ -492,4 +492,7 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   <data name="OtpViaTelegramSuggestion" xml:space="preserve">
     <value>Từ giờ bạn đã có thể nhận OTP qua Telegram. Hãy thử ngay!</value>
   </data>
+  <data name="OtpViaTelegramChatbot" xml:space="preserve">
+    <value>Thông báo OTP qua Telegram Chatbot</value>
+  </data>
 </root>

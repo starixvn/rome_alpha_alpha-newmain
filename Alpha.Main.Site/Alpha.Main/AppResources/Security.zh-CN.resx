@@ -488,4 +488,7 @@
   <data name="OtpViaTelegramSuggestion" xml:space="preserve">
     <value>请试看！您现在可以通过 Telegram 接收 OTP。</value>
   </data>
+  <data name="OtpViaTelegramChatbot" xml:space="preserve">
+    <value>通过Telegram Chatbot获取的OTP</value>
+  </data>
 </root>

@@ -498,4 +498,7 @@
   <data name="WinLossReport" xml:space="preserve">
     <value>Báo Cáo Thắng Thua</value>
   </data>
+  <data name="EnabledTelegramOtpNotification" xml:space="preserve">
+    <value>Đã bật thông báo OTP qua Telegram</value>
+  </data>
 </root>

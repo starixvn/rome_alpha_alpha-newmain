@@ -60,6 +60,7 @@
     @StaticResources.RenderScripts("~/assets/bundles/default-index")
     @if (Model.IsShowSuggestEnableTelegramOtp)
     {
+        @Html.Hidden("EnabledOTPSuccessMessage",ChatBot.EnabledTelegramOtpNotification)
         @StaticResources.RenderScripts("~/assets/bundles/suggest-telegram-otp")
     }
     @if (Model.IsOfferLiveChat)

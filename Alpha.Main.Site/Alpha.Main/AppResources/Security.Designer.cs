@@ -693,6 +693,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to OTP via Telegram Chatbot.
+        /// </summary>
+        public static string OtpViaTelegramChatbot {
+            get {
+                return ResourceManager.GetString("OtpViaTelegramChatbot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disabled Telegram OTP notification.
         /// </summary>
         public static string OTPViaTelegramDisabled {

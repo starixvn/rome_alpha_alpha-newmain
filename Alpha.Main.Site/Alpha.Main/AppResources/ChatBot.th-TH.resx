@@ -489,4 +489,7 @@
   <data name="WinLossReport" xml:space="preserve">
     <value>รายงานยอดได้เสีย</value>
   </data>
+  <data name="EnabledTelegramOtpNotification" xml:space="preserve">
+    <value>เปิดการแจ้งเตือนรหัส OTP ผ่านเทเลแกรม</value>
+  </data>
 </root>

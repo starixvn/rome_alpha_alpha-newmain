@@ -492,4 +492,7 @@
   <data name="OtpViaTelegramSuggestion" xml:space="preserve">
     <value>ขณะนี้คุณสามารถรับหรัส OTP ผ่านเทเลแกรม โปรดลองใช้งาน</value>
   </data>
+  <data name="OtpViaTelegramChatbot" xml:space="preserve">
+    <value>รหัส OTP ผ่านเทแลแกรมแชทบอท</value>
+  </data>
 </root>
