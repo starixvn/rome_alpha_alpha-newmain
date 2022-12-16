@@ -387,18 +387,15 @@ html * {
         }
     }
 }
-.mainmenu-container .menu-item#menu-MYWATCHLIST:after {
+.mainmenu-container .menu-item#menu-SERCURITYCODE:after {
     content: "";
     height: 1px;
-    background-color: #393939;
+    background-color: #BDBDBD;
     position: absolute;
     left: -10px;
     right: -10px;
     top: 0;
     z-index: -1;
-}
-.mainmenu-container .menu-item#menu-SERCURITYCODE{
-    margin-bottom: 10px;
 }
 .sidebar {
     &.focusout .mainmenu-container,
@@ -843,8 +840,7 @@ html * {
 }
 /********** slider carousel *************/
 .carousel-banner {
-    padding: 0 10px;
-
+    padding: 10px 10px 0;
     .item {
         img {
             border-radius: 5px;
