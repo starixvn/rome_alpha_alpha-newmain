@@ -363,7 +363,7 @@
     <value>ลบ OTP - {0}</value>
   </data>
   <data name="ResetOtpWarning" xml:space="preserve">
-    <value>คลิก ลบ เพื่อลบชื่อผู้ใช้งานที่เชื่อมต่อบัญชีกับ Mobile Authenticator และปิดการใช้งานการแจ้งเตือนรหัส OTP ผ่านเทเลแกรมสำหรับบัญชีผู้ใช้งาน</value>
+    <value>คลิก ลบ เพื่อลบบัญชีที่เชื่อมโยง Mobile Authenticator ของดาวน์ไลน์ และปิดใช้งานการแจ้งเตือนเทเลแกรม OTP สำหรับดาวน์ไลน์</value>
   </data>
   <data name="OtpValidation" xml:space="preserve">
     <value>การตรวจสอบ OTP</value>
@@ -496,9 +496,12 @@
     <value>รหัส OTP ผ่านเทแลแกรมแชทบอท</value>
   </data>
   <data name="ToSetupChatbot" xml:space="preserve">
-    <value>ในการตั้งค่าChatbot โปรดปฏิบัติตามคำแนะนำด้านล่าง:</value>
+    <value>สำหรับการตั้งค่าแชทบอท กรุณาดำเนินการตามคำแนะนำด้านล่าง</value>
   </data>
   <data name="RegisteredMobileApplication" xml:space="preserve">
     <value>รหัส OTP ผ่าน Mobile Authenticator</value>
+  </data>
+  <data name="GenerateOTP" xml:space="preserve">
+    <value>สร้างรหัสผ่านครั้งเดียว (OTP)</value>
   </data>
 </root>

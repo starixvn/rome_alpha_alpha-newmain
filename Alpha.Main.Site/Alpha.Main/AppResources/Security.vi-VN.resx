@@ -498,4 +498,10 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   <data name="RegisteredMobileApplication" xml:space="preserve">
     <value>Thông báo OTP qua Ứng dụng xác thực</value>
   </data>
+  <data name="GenerateOTP" xml:space="preserve">
+    <value>Tạo OTP</value>
+  </data>
+  <data name="ToSetupChatbot" xml:space="preserve">
+    <value>Để cài đặt Chatbot, vui lòng làm theo hướng dẫn sau:</value>
+  </data>
 </root>

@@ -357,7 +357,7 @@
     <value>刪除OTP - {0}</value>
   </data>
   <data name="ResetOtpWarning" xml:space="preserve">
-    <value>点击移除以删除下线的手机验证器账号并停用下线的Telegram OTP 通知。</value>
+    <value>点击移除以删除下线用户手机验证器账号并使Telegram OTP的通知无效 于下线。</value>
   </data>
   <data name="OtpValidation" xml:space="preserve">
     <value>OTP验证</value>
@@ -492,9 +492,12 @@
     <value>通过Telegram Chatbot获取的OTP</value>
   </data>
   <data name="ToSetupChatbot" xml:space="preserve">
-    <value>要设置Chatbot, 请根据以说明操作下：</value>
+    <value>请按照以下说明进行设置Chatbot操作：</value>
   </data>
   <data name="RegisteredMobileApplication" xml:space="preserve">
     <value>通过手机验证器获取的OTP</value>
+  </data>
+  <data name="GenerateOTP" xml:space="preserve">
+    <value>产生一次性密码</value>
   </data>
 </root>
