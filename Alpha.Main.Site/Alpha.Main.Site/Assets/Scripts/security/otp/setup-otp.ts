@@ -14,7 +14,6 @@ class SetupOtp {
     $cbkEnableSophosOtp: any;
     $btnChangeStatus: any;
     $changeStatusMessage: any;
-    $removeOtpMessage: any;
     $setupOtpMessage: any;
     $btnSubmitOtp: any;
     $usernameForm: any;
@@ -58,7 +57,6 @@ class SetupOtp {
         this.$cbkEnableSophosOtp = this.$(".cbkEnableSophosOtp");
         this.$btnChangeStatus = this.$("#btn-change-status");
         this.$changeStatusMessage = this.$("#change-status-message");
-        this.$removeOtpMessage = this.$("#remove-otp-message");
         this.$setupOtpMessage = this.$("#setup-otp-message");
         this.$btnSubmitOtp = this.$("#btnSubmitOtp");
         this.$usernameForm = this.$("#username-form");
@@ -206,8 +204,6 @@ class SetupOtp {
     }
 
     onRemoveOtpSuccess = (data: any) => {
-        var result = new Result(data);
-        alpha.showMessage(this.$removeOtpMessage, result);
         setTimeout(() => {
             parent.window.location.href = parent.window.location.href;
         }, 2000);
