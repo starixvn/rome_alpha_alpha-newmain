@@ -14,6 +14,7 @@
     using Site.Requests.Otp;
     using Sunplus.Agent.Model.Entities;
     using System.Net;
+    using System.Threading.Tasks;
     using System.Web;
     using System.Web.Mvc;
     using Web.Helpers;
@@ -42,21 +43,21 @@
         }
 
         [Test]
-        public void Index_Always_CallsMediatorSendBrowserQuery()
+        public async Task Index_Always_CallsMediatorSendBrowserQuery()
         {
             // Arrange
             var query = new BrowserQuery(userSession);
             mediator.Send(Arg.Any<BrowserQuery>()).Returns(new BrowserViewModel());
 
             // Act
-            defaultController.Index();
+            await defaultController.Index();
 
             // Assert
             mediator.Received().Send(Arg.Is<BrowserQuery>(q => q.UserLevelId == query.UserLevelId));
         }
 
         [Test]
-        public void Index_UnsupportedBrowser_ReturnsUnSupportedBrowsersView()
+        public async Task Index_UnsupportedBrowser_ReturnsUnSupportedBrowsersView()
         {
             // Arrange
             var expectedViewName = "UnsupportedBrowsers";
@@ -68,14 +69,14 @@
                 });
 
             // Act
-            var result = defaultController.Index() as ViewResult;
+            var result = (await defaultController.Index()) as ViewResult;
 
             // Assert
             Assert.AreEqual(expectedViewName, result.ViewName);
         }
 
         [Test]
-        public void Index_VerifyDifferenceDevideCommand_CallsMediatorSendCheckDifferenceDeviceCommand()
+        public async Task Index_VerifyDifferenceDevideCommand_CallsMediatorSendCheckDifferenceDeviceCommand()
         {
             // Arrange
             userSession.IsLogged.Returns(true);
@@ -88,16 +89,16 @@
                 });
 
             // Act
-            defaultController.Index();
+            await defaultController.Index();
 
             // Assert
-            mediator.Received().Send(Arg.Is<CheckDifferenceDeviceCommand>(
+            await mediator.Received().SendAsync(Arg.Is<CheckDifferenceDeviceCommand>(
                 p => p.CustId == userSession.CustId
                 && p.SubAccountId == userSession.SubAccId));
         }
 
         [Test]
-        public void Index_VerifyDifferenceDevideCommand_RedirectToOtpVerifyDifferenceDevicePath()
+        public async Task Index_VerifyDifferenceDevideCommand_RedirectToOtpVerifyDifferenceDevicePath()
         {
             // Arrange
             userSession.IsLogged.Returns(true);
@@ -111,17 +112,17 @@
                     IsUnsupportedBrowser = false
                 });
 
-            mediator.Send(Arg.Any<CheckDifferenceDeviceCommand>()).Returns(true);
+            mediator.SendAsync(Arg.Any<CheckDifferenceDeviceCommand>()).Returns(Task.FromResult(true));
 
             // Act
-            var result = defaultController.Index() as RedirectResult;
+            var result = await (defaultController.Index()) as RedirectResult;
 
             // Assert
             Assert.AreEqual(otpVerifyDifferenceDevicePath, result.Url);
         }
 
         [Test]
-        public void Index_IsNotForcedChangeSecurityCode_CallsMediatorSendIndexQuery()
+        public async Task Index_IsNotForcedChangeSecurityCode_CallsMediatorSendIndexQuery()
         {
             // Arrange
             var compareLogic = new CompareLogic();
@@ -136,7 +137,7 @@
                     IsUnsupportedBrowser = false
                 });
 
-            mediator.Send(Arg.Any<CheckDifferenceDeviceCommand>()).Returns(false);
+            mediator.SendAsync(Arg.Any<CheckDifferenceDeviceCommand>()).Returns(Task.FromResult(false));
 
             securityCodeChecker.IsForcedChangeSecurityCode().Returns(false);
             securityCodeChecker.IsEnableSecurityCode().Returns(true);
@@ -144,10 +145,10 @@
             var query = new IndexQuery(userSession, securityCodeChecker.IsEnableSecurityCode(), false, nicknameChecker);
 
             // Act
-            defaultController.Index();
+             await defaultController.Index();
 
             // Assert
-            mediator.Received().Send(
+            mediator.Received().SendAsync(
                 Arg.Is<IndexQuery>(message => compareLogic.Compare(message, query).AreEqual));
         }
 

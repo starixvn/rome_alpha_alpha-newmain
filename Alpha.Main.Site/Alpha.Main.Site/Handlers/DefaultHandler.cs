@@ -13,7 +13,9 @@
     using System;
     using System.Linq;
     using System.Threading.Tasks;
+    using TelegramBot.Client.Models;
     using TelegramBot.Client.Services;
+    using TelegramBot.Constants;
     using ViewModels;
     using Web.Helpers;
 
@@ -87,14 +89,14 @@
 
             var viewModel = new IndexViewModel(message, getDefaultUrl, encodeDataFunction, browserHelper, profile);
 
-            var custBotMessenger = await telegramSettingService.GetCustBotMessengerAsync(message.CustId, message.SubAccId, message.Language);
+            var custBotMessenger = await GetCustBotMessenger(message.CustId, message.SubAccId, message.Language);
             if (custBotMessenger == null)
             {
                 viewModel.IsShowSuggestEnableTelegramOtp = false;
             }
             else
             {
-                var otpFuntion = custBotMessenger.Functions.FirstOrDefault(func => func.FunctionId == 15);
+                var otpFuntion = custBotMessenger.Functions.FirstOrDefault(func => func.FunctionId == FunctionIds.OTP);
                 if (!otpFuntion.Enabled && SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp)
                 {
                     viewModel.IsShowSuggestEnableTelegramOtp = true;
@@ -104,6 +106,19 @@
             sessionManager.Add(PasswordHashSessionKey, viewModel.PasswordHash);
 
             return viewModel;
+        }
+
+        private async Task<CustBotMessenger> GetCustBotMessenger(int custId, int subAccId, string language)
+        {
+            try {
+                return await telegramSettingService.GetCustBotMessengerAsync(custId, subAccId, language);
+            }
+            catch(Exception ex)
+            {
+                await Fanex.Logging.Logger.Log.ErrorAsync(ex.Message, ex);
+                return null;
+            }
+            
         }
 
         public bool Handle(KickoutQuery message)

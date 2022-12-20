@@ -14,6 +14,7 @@
     using Params.Otp;
     using System;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
     using CustomResult = Alpha.Main.Models.Result;
 
     [TestFixture]
@@ -655,7 +656,7 @@
         }
 
         [Test]
-        public void VerifyOtp_OtpIsInCorrect_ReturnInvalidOtpMessage()
+        public async Task VerifyOtp_OtpIsInCorrect_ReturnInvalidOtpMessage()
         {
             // Arrange
             var actualCustomerOtp = new CustomerOtp
@@ -676,14 +677,14 @@
             otpService.VerifyOtp(Arg.Any<string>(), Arg.Any<string>()).Returns(false);
 
             // Act
-            var actualResult = customerOtpService.VerifyOtp(actualCustomerOtp);
+            var actualResult = await customerOtpService.VerifyOtp(actualCustomerOtp);
 
             // Assert
             Assert.AreEqual(actualResult.Message, Security.OtpInvalidOrExpiredAndContactUpline);
         }
 
         [Test]
-        public void VerifyOtp_OtpIsCorrect_ReturnOKResult()
+        public async Task VerifyOtp_OtpIsCorrect_ReturnOKResult()
         {
             // Arrange
             var actualCustomerOtp = new CustomerOtp
@@ -711,7 +712,7 @@
                });
 
             // Act
-            var actualResult = customerOtpService.VerifyOtp(actualCustomerOtp);
+            var actualResult = await customerOtpService.VerifyOtp(actualCustomerOtp);
 
             // Assert
             Assert.IsTrue(actualResult.IsOk);

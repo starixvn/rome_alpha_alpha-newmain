@@ -20,6 +20,7 @@
     using TelegramResult = TelegramBot.Client.Models.Result;
     using Function = TelegramBot.Client.Models.Function;
     using Alpha.SecurityCode.Services;
+    using Fanex.Logging;
 
     public class CustomerOtpHandler :
         IAsyncRequestHandler<SetUpOtpQuery, OtpViewModel>,
@@ -46,6 +47,7 @@
         private readonly NicknameChecker nicknameChecker;
         private readonly ISettingService telegramSettingService;
         private readonly SecurityCodeChecker securityCodeChecker;
+        private readonly ILogger logger;
 
         public CustomerOtpHandler(
             CustomerOtpService customerOtpService,
@@ -55,7 +57,8 @@
             IUser user,
             NicknameChecker nicknameChecker,
             ISettingService telegramSettingService,
-            SecurityCodeChecker securityCodeChecker)
+            SecurityCodeChecker securityCodeChecker,
+            ILogger logger)
         {
             this.customerOtpService = customerOtpService;
             this.userSession = userSession;
@@ -65,6 +68,7 @@
             this.nicknameChecker = nicknameChecker;
             this.telegramSettingService = telegramSettingService;
             this.securityCodeChecker = securityCodeChecker;
+            this.logger = logger;
         }
 
         public Result Handle(ChangeOtpStatusCommand message)
@@ -130,7 +134,7 @@
                     IsResetDownlineOrSubAccount = true
                 });
 
-                if (await telegramSettingService.IsEnableOTP(message.CustId, message.SubAccountId))
+                if (await IsEnabledTelegramOTP(message.CustId, message.SubAccountId))
                 {
                     result = await UpdateTelegramOTPStatus(message.CustId, message.SubAccountId, false);
                 }
@@ -204,7 +208,7 @@
                 Otp = message.Otp,
                 Device = deviceInfo,
                 Language = message.Language,
-                IsEnabledTelegramOTP = await telegramSettingService.IsEnableOTP(message.CustId, message.SubAccountId)
+                IsEnabledTelegramOTP = await IsEnabledTelegramOTP(message.CustId, message.SubAccountId)
             });
 
             if (result.IsSuccessful)
@@ -380,7 +384,7 @@
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
-            user.IsEnabledTelegramOTP = await telegramSettingService.IsEnableOTP(message.CustId, message.SubAccountId);
+            user.IsEnabledTelegramOTP = await IsEnabledTelegramOTP(message.CustId, message.SubAccountId);
 
             var enabled = customerOtpService.IsEnabledOtp(message.CustId, message.SubAccountId) || user.IsEnabledTelegramOTP;
 
@@ -431,7 +435,7 @@
 
         public async Task<Result> Handle(GenerateOTPCommand message)
         {
-            if (await telegramSettingService.IsEnableOTP(message.CustId, message.SubAccId))
+            if (await IsEnabledTelegramOTP(message.CustId, message.SubAccId))
             {
                 await customerOtpService.GenerateTelegramOTP(message.CustId, message.SubAccId);
                 return Result.CreateSuccessfulResult();
@@ -439,6 +443,19 @@
             else
             {
                 return Result.CreateErrorResult(Security.OTPViaTelegramDisabled);
+            }
+        }
+
+        private async Task<bool> IsEnabledTelegramOTP(int custId, int subAccId)
+        {
+            try
+            {
+                return await telegramSettingService.IsEnableOTP(custId, subAccId);
+            }
+            catch(Exception ex)
+            {
+                await logger.ErrorAsync(ex.Message, ex);
+                return false;
             }
         }
     }

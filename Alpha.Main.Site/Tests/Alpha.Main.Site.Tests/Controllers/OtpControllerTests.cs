@@ -1,7 +1,10 @@
 ﻿namespace Alpha.Main.Site.Tests.Controllers
 {
+    using System.Collections.Specialized;
+    using System.Threading.Tasks;
     using System.Web.Mvc;
     using Alpha.Main.AppResources;
+    using Alpha.Main.Configurations;
     using Alpha.Main.Models;
     using Alpha.Main.Site.Controllers;
     using Alpha.Main.Site.Requests.Otp;
@@ -22,24 +25,29 @@
         [SetUp]
         public void SetUp()
         {
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["OfferChatbotSites"] = "BEST-ODDS,733333"
+            };
             mediator = Substitute.For<IMediator>();
             userSession = Substitute.For<IUserSession>();
+            userSession.RoleId.Returns((byte)4);
             SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
 
             otpController = new OtpController(mediator, userSession);
         }
 
         [Test]
-        public void SetUpOtp_Always_CallsMeditorSendSetUpOtpQuery()
+        public async Task SetUpOtp_Always_CallsMeditorSendSetUpOtpQuery()
         {
             // Arrange
             var query = new SetUpOtpQuery(userSession);
 
             // Act
-            otpController.SetUpOtp(query);
+           await otpController.SetUpOtp(query);
 
             // Assert
-            mediator.Received().Send(query);
+            await mediator.Received().SendAsync(query);
         }
 
         //[Test]
@@ -70,31 +78,31 @@
         //}
 
         [Test]
-        public void VerifyOtp_IsEnabledOtpIsFalse_ReturnsNotAuthorizedResult()
+        public async Task VerifyOtp_IsEnabledOtpIsFalse_ReturnsNotAuthorizedResult()
         {
             // Arrange
             SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp.Returns(false);
             var command = new VerifyOtpCommand(userSession);
 
             // Act
-            var result = otpController.VerifyOtp(command).Data as Result;
+            var result = (await otpController.VerifyOtp(command)).Data as Result;
 
             // Assert
             Assert.IsTrue(result.Code == 1 && result.Message == Security.NotAuthorized);
         }
 
         [Test]
-        public void VerifyOtp_IsEnabledOtpIsTrue_CallsMediatorSendVerifyOtpCommand()
+        public async Task VerifyOtp_IsEnabledOtpIsTrue_CallsMediatorSendVerifyOtpCommand()
         {
             // Arrange
             SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp.Returns(true);
             var command = new VerifyOtpCommand(userSession);
 
             // Act
-            otpController.VerifyOtp(command);
+            await otpController.VerifyOtp(command);
 
             // Assert
-            mediator.Received().Send(command);
+            await mediator.Received().SendAsync(command);
         }
 
         [Test]
@@ -124,16 +132,16 @@
         }
 
         [Test]
-        public void ResetOtp_Always_CallsMediatorSendResetOtpCommand()
+        public async Task ResetOtp_Always_CallsMediatorSendResetOtpCommand()
         {
             // Arrange
             var command = new ResetOtpCommand(userSession);
 
             // Act
-            otpController.ResetOtp(command);
+            await otpController.ResetOtp(command);
 
             // Assert
-            mediator.Received().Send(command);
+            await mediator.Received().SendAsync(command);
         }
 
         [Test]
