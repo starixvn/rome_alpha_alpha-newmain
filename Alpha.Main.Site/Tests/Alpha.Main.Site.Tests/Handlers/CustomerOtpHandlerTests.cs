@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using Alpha.Main.Configurations;
     using Alpha.Main.ProfilePicture.Models;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.SecurityCode.Services;
@@ -18,6 +19,7 @@
     using Site.Requests.Otp;
     using Sunplus.Agent.Model.Entities;
     using System;
+    using System.Collections.Specialized;
     using System.Threading.Tasks;
     using TelegramBot.Client.Services;
     using Web.Helpers;
@@ -41,6 +43,10 @@
         [SetUp]
         public void SetUp()
         {
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["OfferChatbotSites"] = "BEST-ODDS,733333"
+            };
             customerOtpService = Substitute.For<CustomerOtpService>();
             userSession = Substitute.For<IUserSession>();
             userSession.RoleId.Returns((byte)4);
@@ -538,9 +544,10 @@
         public async Task HandleSetupOtpQuery_CheckWhetherCustomerHasOtp_CallGetCustomerOtp()
         {
             // Arrange
-            var setUpOtpQuery = new SetUpOtpQuery(userSession);
             userSession.CustId.Returns(1);
             userSession.SubAccId.Returns(2);
+            var setUpOtpQuery = new SetUpOtpQuery(userSession);
+            
             customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>())
                 .Returns(new CustomerOtp { Enabled = true });
 
@@ -555,11 +562,12 @@
         public async Task HandleSetUpOtpQuery_CustomerHasNotSetUpYet_CallGenerateCustomerOtp()
         {
             // Arrange
-            var setUpOtpQuery = new SetUpOtpQuery(userSession);
             userSession.CustId.Returns(1);
             userSession.SubAccId.Returns(2);
             userSession.IsSubAcc.Returns(true);
             userSession.SubUserName.Returns("a");
+            var setUpOtpQuery = new SetUpOtpQuery(userSession);
+            
             customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(new CustomerOtp { Enabled = false });
             customerOtpService.GenerateCustomerOtp(Arg.Any<int>(), Arg.Any<string>(), Arg.Any<int>())
                 .Returns(new CustomerOtp());
@@ -575,9 +583,10 @@
         public async Task HandleSetUpOtpQuery_CustomerDidSetUpOtp_ReturnCustomerOtp()
         {
             // Arrange
-            var setUpOtpQuery = new SetUpOtpQuery(userSession);
             userSession.CustId.Returns(1);
             userSession.SubAccId.Returns(2);
+            var setUpOtpQuery = new SetUpOtpQuery(userSession);
+            
             var expectedCustomerOtp = new CustomerOtp
             {
                 CustId = 1,
