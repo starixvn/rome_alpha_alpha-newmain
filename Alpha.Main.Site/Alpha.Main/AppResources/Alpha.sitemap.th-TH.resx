@@ -405,4 +405,7 @@
   <data name="MyWatchlist" xml:space="preserve">
     <value>รายการเฝ้าดูของฉัน</value>
   </data>
+  <data name="SercurityCode" xml:space="preserve">
+    <value>ความปลอดภัย</value>
+  </data>
 </root>

@@ -307,7 +307,7 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
     <value>Xin nhập mã OTP để tiến hành.</value>
   </data>
   <data name="OtpNotes" xml:space="preserve">
-    <value>Mã OTP sẽ được yêu cầu khi quý khách thực hiện các tác động nhạy cảm, hoặc đăng nhập bằng thiết bị/trình duyệt khác so với lần sử dụng trước. Quý khách cần phải đăng ký ứng dụng Authenticator trên di động trước khi kích hoạt tính năng này.</value>
+    <value>OTP sẽ được yêu cầu khi bạn thực hiện những tác vụ quan trọng hoặc đăng nhập bằng một thiết bị/trình duyệt khác. Trước khi bật thông báo OTP, bạn cần thêm tài khoản của bạn vào Ứng dụng xác thực hoặc liên kết tài khoản với Telegram Chatbot.</value>
   </data>
   <data name="DownloadSophos" xml:space="preserve">
     <value>Tải Sophos Authenticator về thiết bị.</value>
@@ -352,7 +352,7 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
     <value>Hệ thống sẽ không chấp nhận mã OTP được tạo ra bởi thiết bị này nữa. Bạn có muốn tiếp tục?</value>
   </data>
   <data name="RemoveOtpSuccessMessage" xml:space="preserve">
-    <value>Xoá thiết bị thành công.</value>
+    <value>Đã xóa tài khoản khỏi Ứng dụng xác thực và tắt thông báo OTP qua Telegram.</value>
   </data>
   <data name="UpdateOtpStatusSuccess" xml:space="preserve">
     <value>Cập nhật trạng thái OTP thành công.</value>
@@ -361,7 +361,7 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
     <value>Xoá OTP - {0}</value>
   </data>
   <data name="ResetOtpWarning" xml:space="preserve">
-    <value>Nhấn nút bên dưới để xoá thiết bị này khỏi tài khoản của bạn.</value>
+    <value>Nhấn Xóa để xóa tài khoản của cấp dưới khỏi Ứng dụng xác thực và tắt thông báo OTP qua Telegram cho cấp dưới.</value>
   </data>
   <data name="OtpValidation" xml:space="preserve">
     <value>Xác minh mã OTP</value>
@@ -397,7 +397,7 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
     <value>Tên tài khoản</value>
   </data>
   <data name="RegisterMobileApplication" xml:space="preserve">
-    <value>Đăng ký ứng dụng Authenticator trên di động</value>
+    <value>Cài đặt thông báo OTP qua Ứng dụng xác thực</value>
   </data>
   <data name="OtpHiMessage" xml:space="preserve">
     <value>Xin chào {0}, quý khách đã đăng nhập với thiết bị/trình duyệt khác với lần sử dụng trước. Xin vui lòng nhập mã OTP để tiếp tục.</value>
@@ -473,5 +473,35 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   </data>
   <data name="NewSecurityCode" xml:space="preserve">
     <value>Mã bảo mật mới</value>
+  </data>
+  <data name="OTPViaTelegramDisabled" xml:space="preserve">
+    <value>Đã tắt thông báo OTP qua Telegram</value>
+  </data>
+  <data name="SetupOTPViaTelegramChatbot" xml:space="preserve">
+    <value>Cài đặt thông báo OTP qua Telegram Chatbot</value>
+  </data>
+  <data name="OTPViaChatbotIntroduction" xml:space="preserve">
+    <value>Telegram Chatbot giúp bạn nhận các báo cáo quan trọng một cách thuận tiện và an toàn mà không cần truy cập trang Đại lý. Từ giờ, bạn có thể dễ dàng nhận OTP thông qua Telegram Chatbot bằng cách bật thông báo OTP qua Telegram.</value>
+  </data>
+  <data name="EnableOtpViaTelegramChatbot" xml:space="preserve">
+    <value>Bật thông báo OTP qua Telegram Chatbot</value>
+  </data>
+  <data name="UnlinkTelegramChatbot" xml:space="preserve">
+    <value>Nhấn Hủy liên kết để ngắt kết nối giữa Telegram Chatbot với tài khoản của bạn.</value>
+  </data>
+  <data name="OtpViaTelegramSuggestion" xml:space="preserve">
+    <value>Từ giờ bạn đã có thể nhận OTP qua Telegram. Hãy thử ngay!</value>
+  </data>
+  <data name="OtpViaTelegramChatbot" xml:space="preserve">
+    <value>Thông báo OTP qua Telegram Chatbot</value>
+  </data>
+  <data name="RegisteredMobileApplication" xml:space="preserve">
+    <value>Thông báo OTP qua Ứng dụng xác thực</value>
+  </data>
+  <data name="GenerateOTP" xml:space="preserve">
+    <value>Tạo OTP</value>
+  </data>
+  <data name="ToSetupChatbot" xml:space="preserve">
+    <value>Để cài đặt Chatbot, vui lòng làm theo hướng dẫn sau:</value>
   </data>
 </root>

@@ -1,8 +1,10 @@
 ﻿namespace Alpha.Main.Site.ViewModels.TelegramChatBot
 {
     using Alpha.Main.Site.Requests.TelegramChatBot;
+    using System.Linq;
+    using TelegramBot.Client.Models;
 
-    public class RegisterAccountViewModel 
+    public class RegisterAccountViewModel
     {
         public RegisterAccountViewModel(ChatBotViewModel chatBotViewModel, SetUpChatBotQuery query)
         {
@@ -19,5 +21,7 @@
         public string CustLevel { get; }
 
         public bool IsShowLetstalkChatBot { get; }
+
+        public Function OtpFunction => ChatBotViewModel.CustBotMessenger.Functions.FirstOrDefault(func => func.FunctionId == 15);
     }
 }

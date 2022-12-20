@@ -219,3 +219,217 @@
         color: $link-hover-color;
     }
 }
+
+// style link telegam light
+.chatbot-linked-telegram {
+    position: relative;
+    .overlay {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        z-index: 1; 
+    }
+
+    .scroll-tabs {
+        position: relative;
+        margin-bottom: 0!important;
+        &:after {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            content: "";
+            top: 0;
+            left: 0;
+            background: rgba(23, 23, 23, 0.9);
+            z-index: 1;
+        }
+    }
+
+    .tab-content {
+        background: #2d2d2d;
+        padding-top: 8px;
+    }
+
+    .panel-account {
+        position: relative;
+        border-color: #2b2b2b;
+        background-color: #2b2b2b;
+
+        .panel-heading {
+            .panel-title {
+                a {
+                    background-color: #2e2e2e;
+                    color: #1f1f1f;                    
+                }
+            }
+        }
+
+        .panel-body {
+            border-color: #2b2b2b;
+            background-color: #2e2e2e;
+        }
+
+        .filter {
+            .form-group {
+                label {
+                    color: #1a1a1a;
+                }
+
+                .chatbot-name {
+                    color: #1D271C;
+                }
+
+                .icon-content-copy {
+                    color: #1B252E;
+                }
+
+                .btn-remove {
+                    background: #231617;
+                    color: #2c2c2c;
+                }
+
+                .language {
+                    border: 0;
+                    color: #1f1f1f;
+                }
+
+                .icon-flag {
+                    opacity: 0.1;
+                }
+            }
+        }
+    }
+
+    .chatbot-notification-setting, .chatbot-setting {
+        opacity: 1;
+        background-color: #2b2b2b;
+        border-color: #2d2d2d;
+
+
+        .panel-heading {
+            .panel-title {
+                a {
+                    background-color: #2e2e2e;
+                    color: #1f1f1f;
+                }
+            }
+
+            + .panel-collapse > .panel-body {
+                border-color: #2b2b2b;
+                background-color: #2e2e2e;
+            }
+        }
+
+        p, .noti {
+            color: #1a1a1a;
+        }
+
+
+        .tblRpt {
+            border-color: #2a2a2a;
+            color: #1a1a1a;
+            background-color: transparent;
+
+            thead {
+                th {
+                    background-color: #1f1f1f;
+                    border-color: #2a2a2a;
+                    color: #2c2c2c;
+                }
+            }
+
+            tbody {
+                tr {
+                    td, th {
+                        background-color: #2e2e2e;
+                        border-color: #2a2a2a;
+
+                        .switch {
+                            opacity: 0.1;
+                        }
+                    }
+                }
+            }
+
+            .btn-how-it-works {
+                background: #1B272B;
+                color: #2c2c2c;
+            }
+        }
+
+        .tbl-notifications {
+
+
+            tbody {
+                tr {
+                    td, th {
+                        background-color: #2e2e2e;
+                        border-color: #2a2a2a;
+
+                        .switch {
+                            opacity: 0.1;
+                        }
+                    }
+
+                    &:last-child {
+                        position: relative;
+
+                        &:after {
+                            position: absolute;
+                            content: "";
+                            width: 100%;
+                            height: 100%;
+                            border: 1px solid #d1d1d1;
+                            top: 0;
+                            left: 0;
+                            pointer-events: none;
+                        }
+
+                        td {
+                            border-right: 1px solid #d1d1d1;
+                            background-color: #ffffff;
+                            color: #333333;
+
+                            .switch {
+                                opacity: 1;
+                            }
+
+                            &:last-child {
+                                border-right: 0;
+
+                                &:after {
+                                    content: "";
+                                    position: absolute;
+                                    width: 198px;
+                                    height: 61px;
+                                    right: -7px;
+                                    top: -69px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-device-width: 767px) {
+    .chatbot-linked-telegram {
+        .scroll-tabs {
+            
+            height: 40px;
+
+            &:after {
+               
+                height: 41px;
+                
+            }
+        }
+    }
+     
+}

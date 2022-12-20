@@ -280,20 +280,11 @@ html * {
             }
         }
 
-        &#menu-MYWATCHLIST {
+        &#menu-MYWATCHLIST, &#menu-SERCURITYCODE {
             padding: 16px 0 0;
-            margin-bottom: 10px;
+            margin-bottom: 0;
 
-            &:after {
-                content: "";
-                height: 1px;
-                background-color: #393939;
-                position: absolute;
-                left: -10px;
-                right: -10px;
-                top: 0;
-                z-index: -1;
-            }
+
 
             a {
                 background: #2C2C2C;
@@ -412,6 +403,16 @@ html * {
         }
     }
 }
+.mainmenu-container .menu-item#menu-SERCURITYCODE:after {
+    content: "";
+    height: 1px;
+    background-color: #393939;
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    top: 0;
+    z-index: -1;
+}
 
 .sidebar {
     &.focusout .mainmenu-container,
@@ -437,7 +438,7 @@ html * {
         li {
             &.active {
                 a {
-                    color: $menu-color-text; 
+                    color: $menu-color-text;
                 }
             }
 
@@ -866,8 +867,7 @@ html * {
 }
 /********** slider carousel *************/
 .carousel-banner {
-    padding: 0 10px;
-
+    padding: 10px 10px 0;
     .item {
         img {
             border-radius: 5px;

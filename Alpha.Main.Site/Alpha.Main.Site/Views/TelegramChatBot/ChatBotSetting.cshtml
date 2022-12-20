@@ -6,45 +6,50 @@
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/chatbot/chatbot-default")
     @StaticResources.AssetStyles.RenderCommonWithDarkMode($"/bundles/site-main/chatbot/tab-{Model.CustLevel}")
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/telegramchatbot/chatbot-setting")
+<style>
+.chatbot-linked-telegram .chatbot-notification-setting .tbl-notifications tbody tr:last-child td:last-child:after 
+    { 
+        background: url("/site-main/assets/Images/TelegramChatbot/tryitnow_en-US.png");
+    }
+</style>
 }
-
-@{ Html.RenderPartial("Tab", Model.IsShowLetstalkChatBot); }
-
-<div class="tab-content">
-    <div class="panel">
-        <div class="panel-heading" role="tab" id="headingAccount">
-            <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" href="#account" aria-expanded="false" aria-controls="account">
-                    @ChatBot.Account
-                </a>
-            </h4>
-        </div>
-        <div id="account" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAccount">
-            <div class="panel-body account-info">
-                <div id="account-message" class="container-msg"></div>
-                <form class="filter">
-                    <div class="form-group">
-                        <label>@ChatBot.ChatID: <span class="chatbot-name" id="telegram-id">@Model.ChatId</span></label>
-                        <span id="copy-icon" class="icon-content-copy" data-clipboard-action="copy" data-clipboard-target="#telegram-id" title="@Security.Copied"></span>
-                        <button class="btn-remove" id="btnUnsubscribe">@ChatBot.unLink</button>
-                    </div>
-                    <div class="form-group only-text">
-                        <label>@ChatBot.ChatbotName: <span class="chatbot-name">@Model.ChatBotName</span></label>
-                    </div>
-                    <div class="form-group">
-                        <label>@ChatBot.ChatBotLanguage:</label>
-                        <div class="dropdown language">
-                            @Html.Action("Language", new { langCode = Model.Language })
+<div id="container">
+    <div class="overlay" id="overlay"></div>
+    @Html.Partial("Tab", Model.IsShowLetstalkChatBot)
+    <div class="tab-content ">
+        <div class="panel panel-account">
+            <div class="panel-heading" role="tab" id="headingAccount">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" href="#account" aria-expanded="false" aria-controls="account">
+                        @ChatBot.Account
+                    </a>
+                </h4>
+            </div>
+            <div id="account" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAccount">
+                <div class="panel-body account-info">
+                    <div id="account-message" class="container-msg"></div>
+                    <form class="filter">
+                        <div class="form-group">
+                            <label>@ChatBot.ChatID: <span class="chatbot-name" id="telegram-id">@Model.ChatId</span></label>
+                            <span id="copy-icon" class="icon-content-copy" data-clipboard-action="copy" data-clipboard-target="#telegram-id" title="@Security.Copied"></span>
+                            <button class="btn-remove" id="btnUnsubscribe">@ChatBot.unLink</button>
                         </div>
-                    </div>
-                </form>
+                        <div class="form-group only-text">
+                            <label>@ChatBot.ChatbotName: <span class="chatbot-name">@Model.ChatBotName</span></label>
+                        </div>
+                        <div class="form-group">
+                            <label>@ChatBot.ChatBotLanguage:</label>
+                            <div class="dropdown language">
+                                @Html.Action("Language", new { langCode = Model.Language })
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
+        @Html.Partial("Reports", Model)
+        @Html.Partial("NotificationsAndSettings", Model)
     </div>
-    @{
-        Html.RenderPartial("Reports", Model);
-        Html.RenderPartial("NotificationsAndSettings", Model);
-     }
 </div>
 @Html.Hidden("UnsubscribeWarning", ChatBot.UnsubscribeTelegramBotWarning)
 @Html.Hidden("UpdateLanguageFailed", ChatBot.updateLanguageFailed)

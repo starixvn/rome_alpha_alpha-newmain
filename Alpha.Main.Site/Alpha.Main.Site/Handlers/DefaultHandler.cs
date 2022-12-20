@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
     using Alpha.Main.ProfilePicture.Services;
+    using Alpha.SecurityCode.Web;
     using Alpha.Web.Models;
     using Fanex.Logging.Extensions.Web;
     using MediatR;
@@ -10,11 +11,14 @@
     using Services;
     using Sunplus.Agent.Utilities;
     using System;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using TelegramBot.Client.Services;
     using ViewModels;
     using Web.Helpers;
 
     public class DefaultHandler :
-        IRequestHandler<IndexQuery, IndexViewModel>,
+        IAsyncRequestHandler<IndexQuery, IndexViewModel>,
         IRequestHandler<BrowserQuery, BrowserViewModel>,
         IRequestHandler<KickoutQuery, bool>
     {
@@ -31,13 +35,15 @@
         private readonly Func<string, string> encodeDataFunction;
         private readonly ProfilePictureServices customerProfileService;
         private readonly LogoutService logoutService;
+        private readonly ISettingService telegramSettingService;
 
         public DefaultHandler(
             SessionManager sessionManager,
             BrowserHelper browserHelper,
             ProfilePictureServices customerProfileService,
-            LogoutService logoutService)
-            : this(sessionManager, browserHelper, logoutService, null, null, customerProfileService)
+            LogoutService logoutService,
+            ISettingService telegramSettingService)
+            : this(sessionManager, browserHelper, logoutService, null, null, customerProfileService, telegramSettingService)
         {
         }
 
@@ -47,7 +53,8 @@
             LogoutService logoutService,
             Func<string> getDefaultUrl,
             Func<string, string> encodeDataFunction,
-            ProfilePictureServices customerProfileService)
+            ProfilePictureServices customerProfileService,
+            ISettingService telegramSettingService)
         {
             this.sessionManager = sessionManager;
             this.browserHelper = browserHelper;
@@ -56,6 +63,7 @@
             this.getDefaultUrl = getDefaultUrl ?? FunctionRegistry.GetDefaultUrl;
             this.encodeDataFunction = encodeDataFunction ?? Encryption.PearsonEncode;
             this.customerProfileService = customerProfileService;
+            this.telegramSettingService = telegramSettingService;
         }
 
         public BrowserViewModel Handle(BrowserQuery message)
@@ -73,11 +81,25 @@
             return browser;
         }
 
-        public IndexViewModel Handle(IndexQuery message)
+        public async Task<IndexViewModel> Handle(IndexQuery message)
         {
             var profile = customerProfileService.GetActorProfilePicture(message.CustId);
 
             var viewModel = new IndexViewModel(message, getDefaultUrl, encodeDataFunction, browserHelper, profile);
+
+            var custBotMessenger = await telegramSettingService.GetCustBotMessengerAsync(message.CustId, message.SubAccId, message.Language);
+            if (custBotMessenger == null)
+            {
+                viewModel.IsShowSuggestEnableTelegramOtp = false;
+            }
+            else
+            {
+                var otpFuntion = custBotMessenger.Functions.FirstOrDefault(func => func.FunctionId == 15);
+                if (!otpFuntion.Enabled && SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp)
+                {
+                    viewModel.IsShowSuggestEnableTelegramOtp = true;
+                }
+            }
 
             sessionManager.Add(PasswordHashSessionKey, viewModel.PasswordHash);
 

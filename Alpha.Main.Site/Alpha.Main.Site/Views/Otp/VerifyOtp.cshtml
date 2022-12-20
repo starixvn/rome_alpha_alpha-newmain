@@ -28,6 +28,10 @@
                     <input maxlength="6" type="password" class="txt form-control" name="otp" id="txtOTP" />
                 </div>
                 <div class="form-group">
+                    @if (Model.IsShowGenerateOTPButton)
+                    {
+                        <button type="button" class="btn-submit" id="btnGenerateOTP">@Security.GenerateOTP <span id="countdown"></span></button>
+                    }
                     <input type="submit" class="btn-submit" id="btnSubmit" value="@Security.Submit" />
                 </div>
             </form>

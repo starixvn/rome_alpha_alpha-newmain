@@ -25,7 +25,9 @@
         private readonly ISettingService settingService;
         private readonly IBotService botService;
 
-        public TelegramChatBotHandler(ISettingService settingService, IBotService botService)
+        public TelegramChatBotHandler(
+            ISettingService settingService,
+            IBotService botService)
         {
 
             this.settingService = settingService;
@@ -39,7 +41,7 @@
                 message.SubAccId,
                 Language.MapNewChineseLanguageCode(message.Language));
 
-            return new ChatBotViewModel(custBotMessenger); 
+            return new ChatBotViewModel(custBotMessenger);
         }
 
         public async Task<VerifyAccountViewModel> Handle(GenerateQRCodeCommand message)

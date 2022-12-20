@@ -247,9 +247,9 @@ body {
             padding: calculateScale(7px) 0 0 calculateScale(3px);
         }
 
-        &#menu-MYWATCHLIST {
+        &#menu-MYWATCHLIST, &#menu-SERCURITYCODE {
             padding: calculateScale(16px) 0 0;
-            margin-bottom: calculateScale(10px);
+            margin-bottom: 0;
 
             &:after {
                 left: calculateScale(-10px);
@@ -312,7 +312,7 @@ body {
         margin-left: calculateScale(3px);
     }
 }
-
+ 
 // Account search tool typeahead
 
 .typeahead {
@@ -628,13 +628,16 @@ body {
 
 /********** slider carousel *************/
 .carousel-banner {
-    padding: 0 calculateScale(10px);
+    padding: calculateScale(10px) calculateScale(10px) 0;
+
     .carousel-indicators {
         margin-top: calculateScale(5px);
+
         li {
             width: calculateScale(8px);
             height: calculateScale(8px);
             margin: 0 calculateScale(1px);
+
             &.active {
                 width: calculateScale(16px);
             }

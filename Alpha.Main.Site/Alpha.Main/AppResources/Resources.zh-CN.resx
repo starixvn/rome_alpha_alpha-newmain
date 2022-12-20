@@ -646,4 +646,10 @@
   <data name="LearnMore" xml:space="preserve">
     <value>了解更多</value>
   </data>
+  <data name="No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
 </root>

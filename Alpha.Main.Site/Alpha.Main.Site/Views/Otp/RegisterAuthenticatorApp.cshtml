@@ -3,15 +3,15 @@
     Layout = null;
 }
 <div class="panel" id="register-panel" style="@(Model.IsAlreadySetup ? "display:none;" : "")">
-    <div class="panel-heading" role="tab" id="headingRegister">
+    <div class="panel-heading" role="tab" id="headingRegisterSophos">
         <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#registerSophos" aria-expanded="false" aria-controls="collapseTwo">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#registerSophos" aria-expanded="false" aria-controls="registerSophos">
                 @Security.RegisterMobileApplication
             </a>
         </h4>
     </div>
 
-    <div id="registerSophos" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingRegister">
+    <div id="registerSophos" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingRegisterSophos">
         <div class="panel-body">
             <ul class="list-requirements">
                 <li>
@@ -36,7 +36,7 @@
                 </li>
                 <li>
                     <strong>@Security.ScanQRCode</strong>
-                    <div class="qr-code">
+                    <div class="qr-code sophos-qr">
                         <img src="@Html.Raw(Model.CustomerOtp.QRCode)" />
                     </div>
                     <div class="username-customize">
@@ -92,6 +92,12 @@
                     </form>
                 </li>
             </ul>
+            <label class="input-disable ml-16">
+                <input id="cbkEnableOtp"
+                       type="checkbox"
+                       disabled />
+                @Security.EnableOtpViaSophos
+            </label>
         </div>
     </div>
 </div>

@@ -19,7 +19,7 @@ namespace Alpha.Main.AppResources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class ChatBot {
@@ -214,15 +214,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Coming Soon on Jul 19th, 2022.
-        /// </summary>
-        public static string ComingSoon {
-            get {
-                return ResourceManager.GetString("ComingSoon", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Command.
         /// </summary>
         public static string Command {
@@ -246,6 +237,15 @@ namespace Alpha.Main.AppResources {
         public static string EnableDisable {
             get {
                 return ResourceManager.GetString("EnableDisable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enabled Telegram OTP notification.
+        /// </summary>
+        public static string EnabledTelegramOtpNotification {
+            get {
+                return ResourceManager.GetString("EnabledTelegramOtpNotification", resourceCulture);
             }
         }
         

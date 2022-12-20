@@ -282,20 +282,9 @@ html * {
             }
         }
 
-        &#menu-MYWATCHLIST {
+        &#menu-MYWATCHLIST, &#menu-SERCURITYCODE {
             padding: 16px 0 0;
-            margin-bottom: 10px;
-
-            &:after {
-                content: "";
-                height: 1px;
-                background-color: #bdbdbd;
-                position: absolute;
-                left: -10px;
-                right: -10px;
-                top: 0;
-                z-index: -1;
-            }
+            margin-bottom: 0;
 
             a {
                 background: #F5F5F5;
@@ -398,7 +387,16 @@ html * {
         }
     }
 }
-
+.mainmenu-container .menu-item#menu-SERCURITYCODE:after {
+    content: "";
+    height: 1px;
+    background-color: #BDBDBD;
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    top: 0;
+    z-index: -1;
+}
 .sidebar {
     &.focusout .mainmenu-container,
     &.collapsed .mainmenu-container,
@@ -842,8 +840,7 @@ html * {
 }
 /********** slider carousel *************/
 .carousel-banner {
-    padding: 0 10px;
-
+    padding: 10px 10px 0;
     .item {
         img {
             border-radius: 5px;

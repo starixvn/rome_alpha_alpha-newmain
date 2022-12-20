@@ -496,4 +496,7 @@
   <data name="WinLossReport" xml:space="preserve">
     <value>輸贏報告</value>
   </data>
+  <data name="EnabledTelegramOtpNotification" xml:space="preserve">
+    <value>啟用Telegram Chatbot通知</value>
+  </data>
 </root>

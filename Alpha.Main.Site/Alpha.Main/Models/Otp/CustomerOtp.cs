@@ -21,5 +21,7 @@
         public Device Device { get; set; }
 
         public string Language { get; set; }
+
+        public bool IsEnabledTelegramOTP { get; set; }
     }
 }

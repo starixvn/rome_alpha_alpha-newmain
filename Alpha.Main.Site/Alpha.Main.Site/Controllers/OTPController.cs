@@ -1,6 +1,8 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
+    using System.Threading.Tasks;
     using System.Web.Mvc;
+    using Alpha.Main.Site.Requests.TelegramChatBot;
     using AppResources;
     using Main.Models;
     using MediatR;
@@ -19,9 +21,9 @@
             this.mediator = mediator;
         }
 
-        public ActionResult SetUpOtp(SetUpOtpQuery query)
+        public async Task<ActionResult> SetUpOtp(SetUpOtpQuery query)
         {
-            var customerOtp = mediator.Send(query);
+            var customerOtp = await mediator.SendAsync(query);
 
             return View(customerOtp);
         }
@@ -40,14 +42,14 @@
         }
 
         [HttpPost, AntiXsrfFilter]
-        public JsonResult VerifyOtp(VerifyOtpCommand command)
+        public async Task<JsonResult> VerifyOtp(VerifyOtpCommand command)
         {
             if (!SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp)
             {
                 return Json(Result.CreateErrorResult(Security.NotAuthorized));
             }
 
-            var result = mediator.Send(command);
+            var result = await mediator.SendAsync(command);
 
             return Json(result);
         }
@@ -82,14 +84,14 @@
         }
 
         [HttpPost, ValidateAntiForgeryToken, AllowProtectedMode]
-        public ActionResult ResetOtp(ResetOtpCommand command)
+        public async Task<ActionResult> ResetOtp(ResetOtpCommand command)
         {
             if (IsNotProtectedModeInternal())
             {
                 return UnauthorizedAction(HttpContext);
             }
 
-            var result = mediator.Send(command);
+            var result = await mediator.SendAsync(command);
 
             return View(result);
         }
@@ -108,6 +110,28 @@
             var result = mediator.Send(command);
 
             return Json(result);
+        }
+
+        [HttpPost, AntiXsrfFilter]
+        public async Task<ActionResult> GenerateOTP()
+        {
+            if (userSession.IsInternal)
+            {
+                return Json(UnauthorizedResult.CreateUnauthorizedResult());
+            }
+
+            return Json(await mediator.SendAsync(new GenerateOTPCommand(userSession)));
+        }
+
+        [HttpPost, AntiXsrfFilter]
+        public async Task<ActionResult> UpdateOtpFunction(UpdateOtpTelegramCommand command)
+        {
+            if (userSession.IsInternal)
+            {
+                return Json(UnauthorizedResult.CreateUnauthorizedResult());
+            }
+
+            return Json(await mediator.SendAsync(command));
         }
     }
 }

@@ -1,6 +1,10 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
     using System;
+    using System.Threading.Tasks;
+    using Alpha.Main.Constants;
+    using Alpha.Main.Site.Requests.TelegramChatBot;
+    using Alpha.Main.Site.ViewModels.TelegramChatBot;
     using Alpha.SecurityCode.Web;
     using AppResources;
     using Main.Models;
@@ -10,23 +14,29 @@
     using Requests.Otp;
     using Services;
     using Sunplus.Agent.Model.Entities;
+    using TelegramBot.Client.Services;
     using ViewModels.Security;
-    using Web.Configurations;
     using Web.Helpers;
+    using TelegramResult = TelegramBot.Client.Models.Result;
+    using Function = TelegramBot.Client.Models.Function;
+    using Alpha.SecurityCode.Services;
 
     public class CustomerOtpHandler :
-        IRequestHandler<SetUpOtpQuery, OtpViewModel>,
+        IAsyncRequestHandler<SetUpOtpQuery, OtpViewModel>,
         IRequestHandler<ResetOtpQuery, ResetOtpViewModel>,
         IRequestHandler<ChangeOtpStatusCommand, Result>,
         IRequestHandler<RemoveOtpCommand, Result>,
-        IRequestHandler<ResetOtpCommand, ResetOtpViewModel>,
+        IAsyncRequestHandler<ResetOtpCommand, ResetOtpViewModel>,
         IRequestHandler<SetUpOtpCommand, Result>,
-        IRequestHandler<VerifyOtpCommand, Result>,
+        IAsyncRequestHandler<VerifyOtpCommand, Result>,
         IRequestHandler<VerifyOtpDifferentDeviceQuery, VerifyOtpDifferenceDeviceViewModel>,
-        IRequestHandler<CheckDifferenceDeviceCommand, bool>,
-        IRequestHandler<VerifyOtpQuery, VerifyOTPViewModel>
+        IAsyncRequestHandler<CheckDifferenceDeviceCommand, bool>,
+        IRequestHandler<VerifyOtpQuery, VerifyOTPViewModel>,
+        IAsyncRequestHandler<GenerateOTPCommand, Result>,
+        IAsyncRequestHandler<UpdateOtpTelegramCommand, TelegramResult>
     {
         private const string SecretKeySessionKey = "CustomerOtpHandler.SecretKeySessionKey";
+        private const int UnlinkedErrorCode = 102;
 
         private readonly CustomerOtpService customerOtpService;
         private readonly IUserSession userSession;
@@ -34,6 +44,8 @@
         private readonly BrowserHelper browserHelper;
         private readonly IUser user;
         private readonly NicknameChecker nicknameChecker;
+        private readonly ISettingService telegramSettingService;
+        private readonly SecurityCodeChecker securityCodeChecker;
 
         public CustomerOtpHandler(
             CustomerOtpService customerOtpService,
@@ -41,7 +53,9 @@
             SessionManager sessionManager,
             BrowserHelper browserHelper,
             IUser user,
-            NicknameChecker nicknameChecker)
+            NicknameChecker nicknameChecker,
+            ISettingService telegramSettingService,
+            SecurityCodeChecker securityCodeChecker)
         {
             this.customerOtpService = customerOtpService;
             this.userSession = userSession;
@@ -49,6 +63,8 @@
             this.browserHelper = browserHelper;
             this.user = user;
             this.nicknameChecker = nicknameChecker;
+            this.telegramSettingService = telegramSettingService;
+            this.securityCodeChecker = securityCodeChecker;
         }
 
         public Result Handle(ChangeOtpStatusCommand message)
@@ -75,13 +91,14 @@
 
             if (result.IsSuccessful)
             {
-                SetOtpStatusToSession(message.IsEnable);
+                var enabled = user.IsEnabledTelegramOTP || message.IsEnable;
+                SetOtpStatusToSession(enabled);
             }
 
             return result;
         }
 
-        public ResetOtpViewModel Handle(ResetOtpCommand message)
+        public async Task<ResetOtpViewModel> Handle(ResetOtpCommand message)
         {
             if (message == null)
             {
@@ -102,7 +119,7 @@
             else
             {
                 var deviceInfo = browserHelper.GetDevice().Info;
-                viewModel.Result = customerOtpService.RemoveSecretKey(new RemoveSecretKeyParam
+                var result = customerOtpService.RemoveSecretKey(new RemoveSecretKeyParam
                 {
                     CustId = message.CustId,
                     ActorId = message.ActorId,
@@ -112,6 +129,13 @@
                     DeviceInfo = deviceInfo,
                     IsResetDownlineOrSubAccount = true
                 });
+
+                if (await telegramSettingService.IsEnableOTP(message.CustId, message.SubAccountId))
+                {
+                    result = await UpdateTelegramOTPStatus(message.CustId, message.SubAccountId, false);
+                }
+
+                viewModel.Result = result;
             }
 
             return viewModel;
@@ -160,11 +184,12 @@
             {
                 Username = message.UserName,
                 AlternateUsername = BuildAlternateUsername(message.IsSubAcc, message.SubUserName, message.NickName),
-                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName)
+                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName),
+                IsShowGenerateOTPButton = user.IsEnabledTelegramOTP
             };
         }
 
-        public Result Handle(VerifyOtpCommand message)
+        public async Task<Result> Handle(VerifyOtpCommand message)
         {
             if (message == null)
             {
@@ -172,13 +197,14 @@
             }
 
             var deviceInfo = browserHelper.GetDevice();
-            var result = customerOtpService.VerifyOtp(new CustomerOtp
+            var result = await customerOtpService.VerifyOtp(new CustomerOtp
             {
                 CustId = message.CustId,
                 SubAccId = message.SubAccountId,
                 Otp = message.Otp,
                 Device = deviceInfo,
-                Language = message.Language
+                Language = message.Language,
+                IsEnabledTelegramOTP = await telegramSettingService.IsEnableOTP(message.CustId, message.SubAccountId)
             });
 
             if (result.IsSuccessful)
@@ -214,6 +240,20 @@
             return result;
         }
 
+        private async Task<Result> UpdateTelegramOTPStatus(int custId, int subAccId, bool isEnabled)
+        {
+            var messenger = await telegramSettingService.GetCustBotMessengerAsync(custId, subAccId, "en-US");
+
+            var updateResult = await telegramSettingService.UpdateUserFunction(
+                messenger.UserId,
+                messenger.BotId,
+                new Function { FunctionId = TelegramBot.Constants.FunctionIds.OTP, Enabled = isEnabled },
+                userSession.UserId,
+                userSession.UserLoginIp);
+
+            return new Result { Code = updateResult.Code, Message = updateResult.IsOk ? Security.RemoveOtpSuccessMessage : Security.FailedToRemoveOtp };
+        }
+
         public ResetOtpViewModel Handle(ResetOtpQuery message)
         {
             if (message == null)
@@ -238,24 +278,36 @@
 
             return new VerifyOTPViewModel
             {
-                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName)
+                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName),
+                IsShowGenerateOTPButton = user.IsEnabledTelegramOTP
             };
         }
 
-        public OtpViewModel Handle(SetUpOtpQuery message)
+        public async Task<OtpViewModel> Handle(SetUpOtpQuery message)
         {
             if (message == null)
             {
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
+            var customerOtp = customerOtpService.GetCustomerOtp(message.CustId, message.SubAccountId);
+
             var viewModel = new OtpViewModel
             {
-                CustomerOtp = customerOtpService.GetCustomerOtp(message.CustId, message.SubAccountId),
+                CustomerOtp = customerOtp,
                 IsAlreadySetup = true,
                 IsShowNicknameLink = !nicknameChecker.IsOfferForceLoginAndOverDueDate,
-                IsOfferProtectedMode = message.IsOfferProtectedMode
+                IsOfferProtectedMode = message.IsOfferProtectedMode,
+                EnableSecurityCode = securityCodeChecker.IsEnableSecurityCode()
             };
+
+            var custBotMessenger = await telegramSettingService.GetCustBotMessengerAsync(
+                message.CustId,
+                message.SubAccountId,
+                Language.MapNewChineseLanguageCode(message.Language));
+
+            viewModel.RegisterAccountViewModel =
+                new RegisterAccountViewModel(new ChatBotViewModel(custBotMessenger), new SetUpChatBotQuery());
 
             if (!viewModel.CustomerOtp.Enabled
                 && string.IsNullOrWhiteSpace(viewModel.CustomerOtp.SecretKey))
@@ -321,14 +373,16 @@
             return string.IsNullOrWhiteSpace(nickName) ? string.Empty : $"({nickName})";
         }
 
-        public bool Handle(CheckDifferenceDeviceCommand message)
+        public async Task<bool> Handle(CheckDifferenceDeviceCommand message)
         {
             if (message == null)
             {
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
-            var enabled = customerOtpService.IsEnabledOtp(message.CustId, message.SubAccountId);
+            user.IsEnabledTelegramOTP = await telegramSettingService.IsEnableOTP(message.CustId, message.SubAccountId);
+
+            var enabled = customerOtpService.IsEnabledOtp(message.CustId, message.SubAccountId) || user.IsEnabledTelegramOTP;
 
             SetOtpStatusToSession(enabled);
 
@@ -341,6 +395,29 @@
 
             return customerOtpService.IsDifferenceDevice(message.CustId, deviceId, message.SubAccountId);
         }
+        public async Task<TelegramResult> Handle(UpdateOtpTelegramCommand message)
+        {
+            var custMessenger = await telegramSettingService.GetCustBotMessengerAsync(message.CustId, message.SubAccId, message.Language);
+            if (custMessenger == null || !custMessenger.Enabled || !custMessenger.IsVerifyOTP)
+            {
+                return new TelegramResult(UnlinkedErrorCode);
+            }
+
+            var function = new Function
+            {
+                FunctionId = TelegramBot.Constants.FunctionIds.OTP,
+                Enabled = message.Enabled,
+            };
+            var result = await telegramSettingService.UpdateUserFunction(custMessenger.UserId, custMessenger.BotId, function, message.CustId, message.IP);
+            if (result.IsOk)
+            {
+                user.IsEnabledTelegramOTP = message.Enabled;
+                var enabled = customerOtpService.IsEnabledOtp(message.CustId, message.SubAccId) || user.IsEnabledTelegramOTP;
+                SetOtpStatusToSession(enabled);
+            }
+
+            return result;
+        }
 
         private void SetOtpStatusToSession(bool isEnabledOtp)
         {
@@ -350,6 +427,19 @@
         private void SetVerifiedOtp()
         {
             SecurityCodeSessionManager.SecurityCodeSession.IsAlreadyInputSecurityCode = true;
+        }
+
+        public async Task<Result> Handle(GenerateOTPCommand message)
+        {
+            if (await telegramSettingService.IsEnableOTP(message.CustId, message.SubAccId))
+            {
+                await customerOtpService.GenerateTelegramOTP(message.CustId, message.SubAccId);
+                return Result.CreateSuccessfulResult();
+            }
+            else
+            {
+                return Result.CreateErrorResult(Security.OTPViaTelegramDisabled);
+            }
         }
     }
 }

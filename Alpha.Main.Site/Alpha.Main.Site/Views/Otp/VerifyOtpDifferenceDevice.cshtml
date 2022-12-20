@@ -18,6 +18,10 @@
         <div class="rowlg">
             <i class="icon-lock"></i>
             <input maxlength="6" type="password" autocomplete="off" class="txt" name="otp" id="txtOTP" placeholder="OTP" />
+            @if (Model.IsShowGenerateOTPButton)
+            {
+                <button class="btn-submit" id="btnGenerateOTP">@Security.GenerateOTP <span id="countdown"></span></button>
+            }
             <label class="error"></label>
             <i class="validation"></i>
         </div>

@@ -5,7 +5,7 @@
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
 
-    public class VerifyOtpCommand : IRequest<Result>
+    public class VerifyOtpCommand : IAsyncRequest<Result>
     {
         private readonly IUserSession userSession;
 

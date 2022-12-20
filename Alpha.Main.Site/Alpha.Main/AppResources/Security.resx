@@ -311,10 +311,10 @@ Notes: your password is cAsE sEnSiTiVe.</value>
     <value>Please enter your OTP before proceeding!</value>
   </data>
   <data name="OtpNotes" xml:space="preserve">
-    <value>The OTP will be required when you make sensitive actions or log in with a different Device/Browser. You will need to register for the Mobile Authenticator App before enabling the OTP option.</value>
+    <value>The OTP will be required when you perform sensitive actions or log in with a different device/browser. Before enabling OTP notification, you need to add your account to Mobile Authenticator or link your account to Telegram Chatbot.</value>
   </data>
   <data name="RegisterMobileApplication" xml:space="preserve">
-    <value>Register Mobile Authenticator App</value>
+    <value>Set up OTP via Mobile Authenticator</value>
   </data>
   <data name="DownloadSophos" xml:space="preserve">
     <value>Download Sophos Authenticator on your device.</value>
@@ -359,7 +359,7 @@ Notes: your password is cAsE sEnSiTiVe.</value>
     <value>The system will no longer accept the OTP generated on the registered device. Do you want to proceed?</value>
   </data>
   <data name="RemoveOtpSuccessMessage" xml:space="preserve">
-    <value>Removed the registered device successfully. </value>
+    <value>Removed Mobile Authenticator account and disabled Telegram OTP notification.</value>
   </data>
   <data name="UpdateOtpStatusSuccess" xml:space="preserve">
     <value>Update OTP status successfully</value>
@@ -368,7 +368,7 @@ Notes: your password is cAsE sEnSiTiVe.</value>
     <value>Remove OTP - {0}</value>
   </data>
   <data name="ResetOtpWarning" xml:space="preserve">
-    <value>Click the button below to remove the user's registered device and set his/her OTP status to Disabled.</value>
+    <value>Click Remove to remove downline’s Mobile Authenticator account and disable Telegram OTP notification for the downline.</value>
   </data>
   <data name="OtpValidation" xml:space="preserve">
     <value>OTP Validation</value>
@@ -474,5 +474,35 @@ Notes: your password is cAsE sEnSiTiVe.</value>
   </data>
   <data name="NewSecurityCode" xml:space="preserve">
     <value>New Security Code</value>
+  </data>
+  <data name="GenerateOTP" xml:space="preserve">
+    <value>Generate OTP</value>
+  </data>
+  <data name="OTPViaTelegramDisabled" xml:space="preserve">
+    <value>Disabled Telegram OTP notification</value>
+  </data>
+  <data name="SetupOTPViaTelegramChatbot" xml:space="preserve">
+    <value>Set up OTP via Telegram Chatbot</value>
+  </data>
+  <data name="OTPViaChatbotIntroduction" xml:space="preserve">
+    <value>Telegram Chatbot allows you to receive important business reports conveniently and securely without accessing the Agency site. Now you can also get OTP easily via Telegram Chatbot by enabling Telegram OTP notification.</value>
+  </data>
+  <data name="ToSetupChatbot" xml:space="preserve">
+    <value>To setup the chatbot, please follow the instructions below:</value>
+  </data>
+  <data name="EnableOtpViaTelegramChatbot" xml:space="preserve">
+    <value>Enable OTP via Telegram Chatbot</value>
+  </data>
+  <data name="UnlinkTelegramChatbot" xml:space="preserve">
+    <value>Click Unlink to unpair Telegram Chatbot from your account</value>
+  </data>
+  <data name="OtpViaTelegramSuggestion" xml:space="preserve">
+    <value>You can now receive OTP via Telegram. Give it a try!</value>
+  </data>
+  <data name="OtpViaTelegramChatbot" xml:space="preserve">
+    <value>OTP via Telegram Chatbot</value>
+  </data>
+  <data name="RegisteredMobileApplication" xml:space="preserve">
+    <value>OTP via Mobile Authenticator</value>
   </data>
 </root>

@@ -1,0 +1,35 @@
+﻿@model Alpha.Main.Site.ViewModels.TelegramChatBot.RegisterAccountViewModel
+
+<div class="panel success">
+    <div class="panel-heading" role="tab" id="headingChangeOtpTelegram">
+        <h4 class="panel-title">
+            <a role="button" class="color-success" data-toggle="collapse" href="#changeOtpTelegram" aria-expanded="false" aria-controls="changeOtpTelegram">
+                @Security.OtpViaTelegramChatbot
+                @if (Model.OtpFunction.Enabled)
+                {
+                    <span class="icon-check-circle"></span>
+                }
+            </a>
+        </h4>
+    </div>
+    <div id="changeOtpTelegram" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingChangeOtpTelegram">
+        <div class="panel-body">
+            <div class="ml-16">
+                <p>@Security.UnlinkTelegramChatbot</p>
+                <button class="btn-remove btn-unlink-telegram" id="btnUnsubscribe">@ChatBot.unLink</button>
+                <label class="mt-15">
+                    <input class="cbkEnableOtp"
+                           type="checkbox"
+                           @(Model.OtpFunction.Enabled ? "checked" : string.Empty)
+                           data-functionId="@Model.OtpFunction.FunctionId"
+                           data-functionName="@Model.OtpFunction.FunctionName"
+                           data-type="@Model.OtpFunction.Type" />
+                    @Security.EnableOtpViaTelegramChatbot
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@Html.Hidden("UnsubscribeWarning", ChatBot.UnsubscribeTelegramBotWarning)

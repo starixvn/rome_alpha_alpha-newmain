@@ -3,6 +3,7 @@
     using System;
     using System.Diagnostics;
     using System.Linq;
+    using System.Threading.Tasks;
     using Alpha.Web.Models;
     using AppResources;
     using Criteria.Otp;
@@ -12,7 +13,8 @@
     using Models.Otp;
     using ONEbook.OTP.Services;
     using Params.Otp;
-    using CustomResult = Alpha.Main.Models.Result;
+    using TelegramBot.Client.Services;
+    using CustomResult = Models.Result;
 
     public class CustomerOtpServiceImpl : CustomerOtpService
     {
@@ -33,17 +35,20 @@
         private readonly OtpService otpService;
         private readonly JsonHelper jsonHelper;
         private readonly INetThrottlingService netThrottlingService;
+        private readonly IOTPService telegramOTPService;
 
         public CustomerOtpServiceImpl(
             IDynamicRepository dynamicRepository,
             OtpService otpService,
             JsonHelper jsonHelper,
-            INetThrottlingService netThrottlingService)
+            INetThrottlingService netThrottlingService,
+            IOTPService telegramOTPService)
         {
             this.dynamicRepository = dynamicRepository;
             this.otpService = otpService;
             this.jsonHelper = jsonHelper;
             this.netThrottlingService = netThrottlingService;
+            this.telegramOTPService = telegramOTPService;
         }
 
         public virtual CustomResult ChangeOtpStatus(ChangeOtpStatusParam param)
@@ -169,17 +174,30 @@
             };
         }
 
-        public CustomResult VerifyOtp(CustomerOtp param)
+        public async Task<CustomResult> VerifyOtp(CustomerOtp param)
         {
             if (param == null)
             {
                 throw new ArgumentNullException(nameof(param), "Verify Otp Param Parameters cannot be null");
             }
 
-            var customerOtp = GetCustomerOtp(param.CustId, param.SubAccId);
+            var isCorrect = false;
 
-            var isCorrect = otpService.VerifyOtp(customerOtp.SecretKey, param.Otp, TimePeriod, OtpSize);
+            if (param.IsEnabledTelegramOTP)
+            {
+                var verifyResult = await telegramOTPService.VerifyOTP(param.CustId, param.SubAccId, param.Otp);
+                isCorrect = verifyResult.IsOk;
+            }
 
+            if (!isCorrect)
+            {
+                var customerOtp = GetCustomerOtp(param.CustId, param.SubAccId);
+                if (customerOtp.Enabled)
+                {
+                    isCorrect = otpService.VerifyOtp(customerOtp.SecretKey, param.Otp, TimePeriod, OtpSize);
+                }
+            }
+           
             if (isCorrect)
             {
                 UpdateDevice(param);
@@ -346,6 +364,11 @@
             var currentDevice = devices.FirstOrDefault(device => device.Id == deviceId);
 
             return currentDevice == null;
+        }
+
+        public async Task GenerateTelegramOTP(int custId, int subAccId)
+        {
+            await telegramOTPService.SendOTP(custId, subAccId);
         }
     }
 }

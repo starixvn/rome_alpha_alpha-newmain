@@ -7,7 +7,7 @@
 
     public class TelegramBotLanguageQuery : IRequest<LanguageViewModel>
     {
-        private string languageCode;
+        private readonly string languageCode;
 
         public TelegramBotLanguageQuery(string languageCode, bool? disabledVietnamese)
         {

@@ -25,5 +25,7 @@
                 return this.userSession.RoleId;
             }
         }
+
+        public bool IsOfferProtectedMode => userSession.IsOfferProtectedMode;
     }
 }

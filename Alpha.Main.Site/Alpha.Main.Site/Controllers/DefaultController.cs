@@ -6,6 +6,7 @@ namespace Alpha.Main.Site.Controllers
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading.Tasks;
     using System.Web.Mvc;
     using System.Web.Routing;
     using System.Web.Security;
@@ -55,19 +56,19 @@ namespace Alpha.Main.Site.Controllers
         public string Auth()
         {
             var param = AesService.Default.Encrypt($"{userSession.UserName}&{GetSessionKeyValue()}&{GetOutputValuesAfterLogin()}&{DateTime.Now}", SecretKey);
-            
+
             return $"/Auth?param={param}";
         }
 
         [AllowProtectedMode]
-        public ActionResult Index(string action = null)
+        public async Task<ActionResult> Index(string action = null)
         {
             if (IsRedirectToNicknamePage(action))
             {
                 return RedirectToAction("Index", "Nickname");
             }
 
-            if (mediator.Send(new CheckDifferenceDeviceCommand(this.userSession)))
+            if (await mediator.SendAsync(new CheckDifferenceDeviceCommand(this.userSession)))
             {
                 return Redirect(OtpVerifyDifferenceDevicePath);
             }
@@ -81,7 +82,7 @@ namespace Alpha.Main.Site.Controllers
 
             var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode(), null, nicknameChecker);
 
-            var viewModel = mediator.Send(query);
+            var viewModel = await mediator.SendAsync(query);
 
             // FPS Scritp ==================
 

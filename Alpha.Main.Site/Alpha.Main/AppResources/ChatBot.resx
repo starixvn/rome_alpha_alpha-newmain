@@ -510,4 +510,7 @@
   <data name="WinLossReport" xml:space="preserve">
     <value>Win Loss Report</value>
   </data>
+  <data name="EnabledTelegramOtpNotification" xml:space="preserve">
+    <value>Enabled Telegram OTP notification</value>
+  </data>
 </root>

@@ -59,7 +59,7 @@
 
             return PartialView("VerifyAccount", viewModel);
         }
-        
+
         [HttpPost, AntiXsrfFilter]
         public async Task<ActionResult> VerifyOTP(VerifyOTPCommand command)
         {

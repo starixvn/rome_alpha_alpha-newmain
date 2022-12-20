@@ -3,10 +3,11 @@
     using Models;
     using Models.Otp;
     using Params.Otp;
+    using System.Threading.Tasks;
 
     public interface CustomerOtpService
     {
-        Result VerifyOtp(CustomerOtp param);
+        Task<Result> VerifyOtp(CustomerOtp param);
 
         Result SetUpOtp(CustomerOtp param);
 
@@ -21,5 +22,7 @@
         bool IsEnabledOtp(int custId, int subAccId = 0);
 
         bool IsDifferenceDevice(int custId, string deviceId, int subAccId = 0);
+
+        Task GenerateTelegramOTP(int custId, int subAccId);
     }
 }

@@ -15,8 +15,12 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
     $copyIcon: JQuery;
 
     $userId: JQuery;
+    $container: JQuery;
+    $overlay: JQuery;
 
     HAS_UNLINKED_ERR_CODE = 102;
+    TELEGRAM_OTP_FUNCTION_ID = 15;
+    isFirstLoad = true;
 
     constructor($: JQueryStatic, topWindow: any, clipboard: any) {
         super($, topWindow);
@@ -44,6 +48,14 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         this.$btnUnsubscribe = this.$("#btnUnsubscribe");
         this.$copyIcon = this.$("#copy-icon");
         this.$userId = this.$("#UserId");
+        this.$overlay = this.$("#overlay");
+        this.$container = this.$("#container");
+    }
+
+    showHighlight = () => {
+        this.$container.addClass("chatbot-linked-telegram");
+        this.$(window).scrollTop(900);
+        this.setLocalStorageValue("IsShowedTryItNow", true);
     }
 
     registerEvents = () => {
@@ -69,6 +81,15 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         }
         else {
             this.$copyIcon.remove();
+        }
+
+        this.isFirstLoad = !this.getLocalStorageValue("IsShowedTryItNow");
+        const isShowingSuggestOtpTelegram = this.getLocalStorageValue("IsShowingSuggestEnableOtpPopup");
+        if (this.isFirstLoad && !isShowingSuggestOtpTelegram) {
+            this.showHighlight();
+            this.$overlay.click(() => {
+                this.$container.removeClass("chatbot-linked-telegram");
+            });
         }
     }
 
@@ -107,6 +128,12 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
                     }
 
                     checkbox.prop("checked", !enabled);
+                }
+
+                if (functionId == this.TELEGRAM_OTP_FUNCTION_ID.toString()) {
+                    setTimeout(() => {
+                        parent.window.location.href = parent.window.location.href;
+                    }, 2000);
                 }
             },
             complete: this.onComplete,
@@ -188,6 +215,14 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
 
     showHasUnlinkedMessage = () => {
         this.topWindow.bootboxAlert(this.resources.hasUnlinkedMessage, undefined, () => this.reloadPage());
+    }
+
+    setLocalStorageValue(key: string, value: boolean) {
+        alpha.localStorage.set(key, value ? "1" : "0");
+    }
+
+    getLocalStorageValue(key: string) {
+        return alpha.localStorage.get(key) === "1";
     }
 }
 

@@ -1,7 +1,7 @@
 ﻿/// <reference path="../../core.ts" />
 /// <reference path="../security-helper.ts" />
 
-'use strict'; 
+'use strict';
 
 var changePassword = {
     domElements: {
@@ -14,7 +14,7 @@ var changePassword = {
         container: null,
         hashKey: null,
         statusMessage: null,
-        statusConatiner: null,
+        statusConatiner: null
     },
 
     cachedDomElements: function () {
@@ -97,7 +97,7 @@ var changePassword = {
         $.blockUI();
         $.ajax({
             type: "POST",
-            url: alpha.urls.mainRootPath +  "Password/ChangePassword",
+            url: alpha.urls.mainRootPath + "Password/ChangePassword",
             data: { currentPassword: oldPassword, newPassword: password },
             dataType: "json",
             success: function (data, textStatus, jqXHR) {
