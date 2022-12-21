@@ -14,6 +14,8 @@
     using Params.Otp;
     using System;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using TelegramBot.Client.Services;
     using CustomResult = Alpha.Main.Models.Result;
 
     [TestFixture]
@@ -25,6 +27,7 @@
         private OtpService otpService;
         private JsonHelper jsonHelper;
         private INetThrottlingService netThrottlingService;
+        private IOTPService telegramOTPService;
 
         [SetUp]
         public void SetUp()
@@ -33,8 +36,9 @@
             otpService = Substitute.For<OtpService>();
             jsonHelper = Substitute.For<JsonHelper>();
             netThrottlingService = Substitute.For<INetThrottlingService>();
+            telegramOTPService = Substitute.For<IOTPService>();
 
-            customerOtpService = Substitute.ForPartsOf<CustomerOtpServiceImpl>(dynamicRepository, otpService, jsonHelper, netThrottlingService);
+            customerOtpService = Substitute.ForPartsOf<CustomerOtpServiceImpl>(dynamicRepository, otpService, jsonHelper, netThrottlingService, telegramOTPService);
             compareLogic = new CompareLogic();
         }
 
@@ -504,7 +508,7 @@
         [Test]
         public void VerifyOtp_VerifyOtpParamIsNull_ThrowArgumentNullException()
         {
-            Assert.Throws<ArgumentNullException>(() => customerOtpService.VerifyOtp(null));
+            Assert.ThrowsAsync<ArgumentNullException>(async() => await customerOtpService.VerifyOtp(null));
         }
 
         [Test]
@@ -536,12 +540,13 @@
         }
 
         [Test]
-        public void VerifyOtp_CallHelperForVerifyingOtp()
+        public async Task VerifyOtp_CallHelperForVerifyingOtp()
         {
             // Arrange
             var returnCustomerOtp = new CustomerOtp
             {
-                SecretKey = "SecretKey"
+                SecretKey = "SecretKey",
+                Enabled=true
             };
             customerOtpService
                 .GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>())
@@ -561,14 +566,14 @@
             };
 
             // Act
-            customerOtpService.VerifyOtp(needVerifiedCustomerOtp);
+            await customerOtpService.VerifyOtp(needVerifiedCustomerOtp);
 
             // Assert
             otpService.Received().VerifyOtp(returnCustomerOtp.SecretKey, needVerifiedCustomerOtp.Otp);
         }
 
         [Test]
-        public void VerifyOtp_OtpIsCorrect_ExecuteInsertCustomerDeviceInfoCommand()
+        public async Task VerifyOtp_OtpIsCorrect_ExecuteInsertCustomerDeviceInfoCommand()
         {
             // Arrange
             var param = new CustomerOtp
@@ -583,12 +588,14 @@
                         IP = "IP"
                     }
                 },
-                Language = "E"
+                Language = "E",
+                Enabled=true,
+                IsEnabledTelegramOTP=false
             };
 
             customerOtpService
                 .GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>())
-                .Returns(new CustomerOtp());
+                .Returns(new CustomerOtp() { Enabled =true});
             otpService.VerifyOtp(Arg.Any<string>(), Arg.Any<string>()).Returns(true);
             var deviceInfoSerialized = "deviceInfoSerialized";
             jsonHelper.Serialize(Arg.Any<object>()).Returns(deviceInfoSerialized);
@@ -604,7 +611,7 @@
             };
 
             // Act
-            customerOtpService.VerifyOtp(param);
+            await customerOtpService.VerifyOtp(param);
 
             // Assert
             dynamicRepository.Received().Execute(Arg.Is<InsertCustomerDeviceInfoCommand>(
@@ -613,7 +620,7 @@
 
         [TestCase(true)]
         [TestCase(false)]
-        public void VerifyOtp_ExecuteUpdateCustomerStatusAfterVerifyOTPCommand(bool isCorrectOtp)
+        public async Task VerifyOtp_ExecuteUpdateCustomerStatusAfterVerifyOTPCommand(bool isCorrectOtp)
         {
             // Arrange
             var param = new CustomerOtp
@@ -643,11 +650,11 @@
             };
             customerOtpService
                 .GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>())
-                .Returns(new CustomerOtp());
+                .Returns(new CustomerOtp() { Enabled = true });
             otpService.VerifyOtp(Arg.Any<string>(), Arg.Any<string>()).Returns(isCorrectOtp);
 
             // Act
-            customerOtpService.VerifyOtp(param);
+            await customerOtpService.VerifyOtp(param);
 
             // Assert
             dynamicRepository.Received().Execute(Arg.Is<UpdateCustomerStatusAfterVerifyOtpCommand>(
@@ -655,7 +662,7 @@
         }
 
         [Test]
-        public void VerifyOtp_OtpIsInCorrect_ReturnInvalidOtpMessage()
+        public async Task VerifyOtp_OtpIsInCorrect_ReturnInvalidOtpMessage()
         {
             // Arrange
             var actualCustomerOtp = new CustomerOtp
@@ -676,14 +683,14 @@
             otpService.VerifyOtp(Arg.Any<string>(), Arg.Any<string>()).Returns(false);
 
             // Act
-            var actualResult = customerOtpService.VerifyOtp(actualCustomerOtp);
+            var actualResult = await customerOtpService.VerifyOtp(actualCustomerOtp);
 
             // Assert
             Assert.AreEqual(actualResult.Message, Security.OtpInvalidOrExpiredAndContactUpline);
         }
 
         [Test]
-        public void VerifyOtp_OtpIsCorrect_ReturnOKResult()
+        public async Task VerifyOtp_OtpIsCorrect_ReturnOKResult()
         {
             // Arrange
             var actualCustomerOtp = new CustomerOtp
@@ -711,7 +718,7 @@
                });
 
             // Act
-            var actualResult = customerOtpService.VerifyOtp(actualCustomerOtp);
+            var actualResult = await customerOtpService.VerifyOtp(actualCustomerOtp);
 
             // Assert
             Assert.IsTrue(actualResult.IsOk);

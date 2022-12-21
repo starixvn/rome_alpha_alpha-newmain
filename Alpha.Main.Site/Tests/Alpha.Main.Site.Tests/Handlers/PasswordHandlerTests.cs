@@ -34,6 +34,7 @@
         private ProfilePictureServices customerProfileService;
         private SecurityCodeChecker securityCodeChecker;
         private IUser user;
+        private NicknameChecker nicknameChecker;
 
         [SetUp]
         public void Setup()
@@ -51,6 +52,7 @@
 
             user = Substitute.For<IUser>();
             user.IsAdminCanUpdateSubAccount.Returns(true);
+            nicknameChecker = Substitute.For<NicknameChecker>();
 
             SimpleServiceLocator
               .Instance
@@ -63,7 +65,8 @@
                 sessionManager,
                 encryptor,
                 securityCodeChecker,
-                user);
+                user,
+                nicknameChecker);
         }
 
         #region Handle Reset SubAccount Password Command
@@ -151,16 +154,20 @@
             UrlHelperTestSetUp.SetUp();
 
             var hashKey = "HashKey";
+            userSession.IsOfferProtectedMode.Returns(true);
             var message = new ChangePasswordQuery(userSession);
 
             encryptor.RandomString(Arg.Any<int>()).Returns(hashKey);
             securityCodeChecker.IsEnableSecurityCode().Returns(true);
+            nicknameChecker.IsOfferForceLoginAndOverDueDate.Returns(false);
 
             var expectedViewModel = new PasswordViewModel
             {
                 CustRoleId = message.CustRoleId,
                 HashKey = hashKey,
-                EnableSecurityCode = true
+                EnableSecurityCode = true,
+                IsOfferProtectedMode = true,
+                IsShowNicknameLink = true
             };
 
             // Act

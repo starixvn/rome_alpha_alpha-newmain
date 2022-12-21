@@ -1,9 +1,12 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using Alpha.Main.Configurations;
     using Alpha.Main.ProfilePicture.Models;
     using Alpha.Main.ProfilePicture.Services;
+    using Alpha.SecurityCode.Services;
     using Alpha.Web.Models;
     using AppResources;
+    using Fanex.Logging;
     using Main.Models;
     using Main.Models.Otp;
     using NSubstitute;
@@ -16,6 +19,9 @@
     using Site.Requests.Otp;
     using Sunplus.Agent.Model.Entities;
     using System;
+    using System.Collections.Specialized;
+    using System.Threading.Tasks;
+    using TelegramBot.Client.Services;
     using Web.Helpers;
     using CustomResult = Alpha.Main.Models.Result;
 
@@ -30,12 +36,20 @@
         private BrowserHelper browserHelper;
         private IUser user;
         private NicknameChecker nicknameChecker;
+        private ISettingService telegramSettingService;
+        private SecurityCodeChecker securityCodeChecker;
+        private ILogger logger;
 
         [SetUp]
         public void SetUp()
         {
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["OfferChatbotSites"] = "BEST-ODDS,733333"
+            };
             customerOtpService = Substitute.For<CustomerOtpService>();
             userSession = Substitute.For<IUserSession>();
+            userSession.RoleId.Returns((byte)4);
             sessionManager = Substitute.For<SessionManager>();
             customerProfileService = Substitute.For<ProfilePictureServices>();
             browserHelper = Substitute.For<BrowserHelper>();
@@ -45,8 +59,11 @@
             user.IsAdminCanUpdateSubAccount.Returns(true);
 
             nicknameChecker = Substitute.For<NicknameChecker>();
+            telegramSettingService = Substitute.For<ISettingService>();
+            securityCodeChecker = Substitute.For<SecurityCodeChecker>();
+            logger = Substitute.For<ILogger>();
 
-            customerOtpHandler = new CustomerOtpHandler(customerOtpService, userSession, sessionManager, browserHelper, user, nicknameChecker);
+            customerOtpHandler = new CustomerOtpHandler(customerOtpService, userSession, sessionManager, browserHelper, user, nicknameChecker,telegramSettingService,securityCodeChecker, logger);
         }
 
         #region Handle Change Otp Status Command
@@ -150,18 +167,18 @@
         {
             ResetOtpCommand message = null;
 
-            Assert.Throws<ArgumentNullException>(() => customerOtpHandler.Handle(message));
+            Assert.ThrowsAsync<ArgumentNullException>(async() => await customerOtpHandler.Handle(message));
         }
 
         [Test]
-        public void HandleResetOtpCommand_AdminResetsMainAccountOtp_ReturnUnAuthorizedResult()
+        public async Task HandleResetOtpCommand_AdminResetsMainAccountOtp_ReturnUnAuthorizedResult()
         {
             // Arrange
             userSession.IsInternal.Returns(true);
             var command = new ResetOtpCommand(userSession);
 
             // Act
-            var viewModel = customerOtpHandler.Handle(command);
+            var viewModel = await customerOtpHandler.Handle(command);
 
             // Assert
             Assert.IsTrue(viewModel.Result.IsNotOk
@@ -169,14 +186,14 @@
         }
 
         [Test]
-        public void HandleResetOtpCommand_SubAccountHasLimitedHostPermision_ReturnUnAuthorizedResult()
+        public async Task HandleResetOtpCommand_SubAccountHasLimitedHostPermision_ReturnUnAuthorizedResult()
         {
             // Arrange
             userSession.IsLimitedHostPermisionOnSubAccountFunction.Returns(true);
             var command = new ResetOtpCommand(userSession);
 
             // Act
-            var viewModel = customerOtpHandler.Handle(command);
+            var viewModel = await customerOtpHandler.Handle(command);
 
             // Assert
             Assert.IsTrue(viewModel.Result.IsNotOk
@@ -184,7 +201,7 @@
         }
 
         [Test]
-        public void HandleResetOtpCommand_SubAccountDoesHasHostPermissionOnUpdate_ReturnUnAuthorizedResult()
+        public async Task HandleResetOtpCommand_SubAccountDoesHasHostPermissionOnUpdate_ReturnUnAuthorizedResult()
         {
             // Arrange
             userSession.IsSubAcc.Returns(true);
@@ -195,7 +212,7 @@
             var command = new ResetOtpCommand(userSession);
 
             // Act
-            var viewModel = customerOtpHandler.Handle(command);
+            var viewModel = await customerOtpHandler.Handle(command);
 
             // Assert
             Assert.IsTrue(viewModel.Result.IsNotOk
@@ -203,17 +220,19 @@
         }
 
         [Test]
-        public void HandleResetOtpCommand_UserHasPermission_CallGetDeviceInfo()
+        public async Task HandleResetOtpCommand_UserHasPermission_CallGetDeviceInfo()
         {
             // Arrange
             userSession.IsInternal.Returns(true);
-            var command = new ResetOtpCommand(userSession);
-            command.SubAccountId = 3;
-            command.CustId = 3;
+            var command = new ResetOtpCommand(userSession)
+            {
+                SubAccountId = 3,
+                CustId = 3
+            };
             browserHelper.GetDevice().Returns(new Device { Info = new DeviceInfo() });
 
             // Act
-            customerOtpHandler.Handle(command);
+            await customerOtpHandler.Handle(command);
 
             // Assert
             browserHelper.Received().GetDevice();
@@ -224,9 +243,11 @@
         {
             // Arrange
             userSession.IsInternal.Returns(true);
-            var command = new ResetOtpCommand(userSession);
-            command.SubAccountId = 3;
-            command.CustId = 3;
+            var command = new ResetOtpCommand(userSession)
+            {
+                SubAccountId = 3,
+                CustId = 3
+            };
             browserHelper.GetDevice().Returns(new Device { Info = new DeviceInfo() });
 
             // Act
@@ -240,7 +261,7 @@
         }
 
         [Test]
-        public void HandleResetOtpCommand_CallRemoveSecretKey()
+        public async Task HandleResetOtpCommand_CallRemoveSecretKey()
         {
             // Arrange
             var command = new ResetOtpCommand(userSession);
@@ -251,7 +272,7 @@
             browserHelper.GetDevice().Returns(new Device { Info = new DeviceInfo { IP = "10" } });
 
             // Act
-            customerOtpHandler.Handle(command);
+            await customerOtpHandler.Handle(command);
 
             // Assert
             customerOtpService.Received().RemoveSecretKey(
@@ -264,7 +285,7 @@
         }
 
         [Test]
-        public void HandleResetOtpCommand_OtpStatusChanged_ReturnResult()
+        public async Task HandleResetOtpCommand_OtpStatusChanged_ReturnResult()
         {
             // Arrange
             var command = new ResetOtpCommand(userSession);
@@ -277,7 +298,7 @@
                 });
 
             // Act
-            var viewModel = customerOtpHandler.Handle(command);
+            var viewModel = await customerOtpHandler.Handle(command);
 
             // Assert
             Assert.IsTrue(viewModel.Result.Code == 1 && viewModel.Result.Message == "Changed");
@@ -516,53 +537,56 @@
         {
             SetUpOtpQuery message = null;
 
-            Assert.Throws<ArgumentNullException>(() => customerOtpHandler.Handle(message));
+            Assert.ThrowsAsync<ArgumentNullException>(async() => await customerOtpHandler.Handle(message));
         }
 
         [Test]
-        public void HandleSetupOtpQuery_CheckWhetherCustomerHasOtp_CallGetCustomerOtp()
+        public async Task HandleSetupOtpQuery_CheckWhetherCustomerHasOtp_CallGetCustomerOtp()
         {
             // Arrange
-            var setUpOtpQuery = new SetUpOtpQuery(userSession);
             userSession.CustId.Returns(1);
             userSession.SubAccId.Returns(2);
+            var setUpOtpQuery = new SetUpOtpQuery(userSession);
+            
             customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>())
                 .Returns(new CustomerOtp { Enabled = true });
 
             // Act
-            customerOtpHandler.Handle(setUpOtpQuery);
+            await customerOtpHandler.Handle(setUpOtpQuery);
 
             // Assert
             customerOtpService.Received().GetCustomerOtp(1, 2);
         }
 
         [Test]
-        public void HandleSetUpOtpQuery_CustomerHasNotSetUpYet_CallGenerateCustomerOtp()
+        public async Task HandleSetUpOtpQuery_CustomerHasNotSetUpYet_CallGenerateCustomerOtp()
         {
             // Arrange
-            var setUpOtpQuery = new SetUpOtpQuery(userSession);
             userSession.CustId.Returns(1);
             userSession.SubAccId.Returns(2);
             userSession.IsSubAcc.Returns(true);
             userSession.SubUserName.Returns("a");
+            var setUpOtpQuery = new SetUpOtpQuery(userSession);
+            
             customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(new CustomerOtp { Enabled = false });
             customerOtpService.GenerateCustomerOtp(Arg.Any<int>(), Arg.Any<string>(), Arg.Any<int>())
                 .Returns(new CustomerOtp());
 
             // Act
-            customerOtpHandler.Handle(setUpOtpQuery);
+            await customerOtpHandler.Handle(setUpOtpQuery);
 
             // Assert
             customerOtpService.Received().GenerateCustomerOtp(1, "a", 2);
         }
 
         [Test]
-        public void HandleSetUpOtpQuery_CustomerDidSetUpOtp_ReturnCustomerOtp()
+        public async Task HandleSetUpOtpQuery_CustomerDidSetUpOtp_ReturnCustomerOtp()
         {
             // Arrange
-            var setUpOtpQuery = new SetUpOtpQuery(userSession);
             userSession.CustId.Returns(1);
             userSession.SubAccId.Returns(2);
+            var setUpOtpQuery = new SetUpOtpQuery(userSession);
+            
             var expectedCustomerOtp = new CustomerOtp
             {
                 CustId = 1,
@@ -581,7 +605,7 @@
             customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(expectedCustomerOtp);
 
             // Act
-            var actualCustomerOtp = customerOtpHandler.Handle(setUpOtpQuery);
+            var actualCustomerOtp = await customerOtpHandler.Handle(setUpOtpQuery);
 
             // Assert
             Assert.IsTrue(expectedCustomerOtp.CustId == actualCustomerOtp.CustomerOtp.CustId
@@ -601,31 +625,31 @@
         {
             VerifyOtpCommand message = null;
 
-            Assert.Throws<ArgumentNullException>(() => customerOtpHandler.Handle(message));
+            Assert.ThrowsAsync<ArgumentNullException>(async() => await customerOtpHandler.Handle(message));
         }
 
         [Test]
-        public void HandleVerifyOtpCommand_CallVerifyOtp()
+        public async Task HandleVerifyOtpCommand_CallVerifyOtp()
         {
             // Arrange
             var command = new VerifyOtpCommand(userSession);
             userSession.CustId.Returns(1);
             userSession.SubAccId.Returns(2);
             command.Otp = "Otp";
-            customerOtpService.VerifyOtp(Arg.Any<CustomerOtp>()).Returns(new CustomResult());
+            customerOtpService.VerifyOtp(Arg.Any<CustomerOtp>()).Returns(Task.FromResult(new CustomResult()));
 
             // Act
-            customerOtpHandler.Handle(command);
+            await customerOtpHandler.Handle(command);
 
             // Assert
-            customerOtpService.Received().VerifyOtp(Arg.Is<CustomerOtp>(customerOtp
+            await customerOtpService.Received().VerifyOtp(Arg.Is<CustomerOtp>(customerOtp
                 => customerOtp.CustId == command.CustId
                     && customerOtp.SubAccId == command.SubAccountId
                     && customerOtp.Otp == command.Otp));
         }
 
         [Test]
-        public void HandleVerifyOtpCommand_DidVerifyOtp_SetVerifiedOtpToSession()
+        public async Task HandleVerifyOtpCommand_DidVerifyOtp_SetVerifiedOtpToSession()
         {
             // Arrange
             var command = new VerifyOtpCommand(userSession);
@@ -635,14 +659,14 @@
             customerOtpService.VerifyOtp(Arg.Any<CustomerOtp>()).Returns(new CustomResult());
 
             // Act
-            customerOtpHandler.Handle(command);
+            await customerOtpHandler.Handle(command);
 
             // Assert
             SecurityCodeSessionManager.SecurityCodeSession.Received().IsAlreadyInputSecurityCode = true;
         }
 
         [Test]
-        public void HandleVerifyOtpCommand_DidVerifyOtp_ReturnResult()
+        public async Task HandleVerifyOtpCommand_DidVerifyOtp_ReturnResult()
         {
             // Arrange
             var command = new VerifyOtpCommand(userSession);
@@ -651,10 +675,10 @@
                 Code = 3,
                 Message = "Message"
             };
-            customerOtpService.VerifyOtp(Arg.Any<CustomerOtp>()).Returns(expectedResult);
+            customerOtpService.VerifyOtp(Arg.Any<CustomerOtp>()).Returns(Task.FromResult(expectedResult));
 
             // Act
-            var verifyResult = customerOtpHandler.Handle(command);
+            var verifyResult = await customerOtpHandler.Handle(command);
 
             // Assert
             Assert.IsTrue(verifyResult.Code == expectedResult.Code
@@ -728,11 +752,11 @@
         {
             CheckDifferenceDeviceCommand message = null;
 
-            Assert.Throws<ArgumentNullException>(() => customerOtpHandler.Handle(message));
+            Assert.ThrowsAsync<ArgumentNullException>(async() => await customerOtpHandler.Handle(message));
         }
 
         [Test]
-        public void HandleCheckDifferenceDeviceCommand_CallGetCustomerOtp()
+        public async Task HandleCheckDifferenceDeviceCommand_CallGetCustomerOtp()
         {
             // Arrange
             var command = new CheckDifferenceDeviceCommand(this.userSession);
@@ -740,7 +764,7 @@
             userSession.SubAccId.Returns(20);
 
             // Act
-            customerOtpHandler.Handle(command);
+            await customerOtpHandler.Handle(command);
 
             // Assert
             customerOtpService.Received().IsEnabledOtp(10, 20);
@@ -748,7 +772,7 @@
 
         [TestCase(true)]
         [TestCase(false)]
-        public void HandleCheckDifferenceDeviceCommand_GotCustomerOtp_SetOtpStatusToSession(bool otpStatus)
+        public async Task HandleCheckDifferenceDeviceCommand_GotCustomerOtp_SetOtpStatusToSession(bool otpStatus)
         {
             // Arrange
             var command = new CheckDifferenceDeviceCommand(this.userSession);
@@ -757,14 +781,14 @@
             browserHelper.GetDevice().Returns(new Device());
 
             // Act
-            customerOtpHandler.Handle(command);
+            await customerOtpHandler.Handle(command);
 
             // Assert
             SecurityCodeSessionManager.SecurityCodeSession.Received().IsEnabledOtp = otpStatus;
         }
 
         [Test]
-        public void HandleCheckDifferenceDeviceCommand_UserDoesNotEnableOtp_ReturnFalse()
+        public async Task HandleCheckDifferenceDeviceCommand_UserDoesNotEnableOtp_ReturnFalse()
         {
             // Arrange
             var command = new CheckDifferenceDeviceCommand(this.userSession);
@@ -773,7 +797,7 @@
             browserHelper.GetDevice().Returns(new Device());
 
             // Act
-            var isDifferenceDevice = customerOtpHandler.Handle(command);
+            var isDifferenceDevice = await customerOtpHandler.Handle(command);
 
             // Assert
             Assert.IsFalse(isDifferenceDevice);

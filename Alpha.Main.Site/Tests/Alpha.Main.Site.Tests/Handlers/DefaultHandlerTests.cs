@@ -13,11 +13,12 @@
     using NUnit.Framework;
     using SecurityCode.Web;
     using Site.Handlers;
-    using Site.Helpers;
     using Site.Requests;
     using Site.ViewModels;
     using Sunplus.Agent.Model.Entities;
     using System;
+    using System.Threading.Tasks;
+    using TelegramBot.Client.Services;
     using Web.Helpers;
 
     [TestFixture]
@@ -35,6 +36,7 @@
         private ProfilePictureServices customerProfileService;
         private ActorProfilePictureModel profilePicture;
         private NicknameChecker nicknameChecker;
+        private ISettingService telegramSettingService;
 
         [SetUp]
         public void SetUp()
@@ -46,7 +48,8 @@
             getDefaultUrl = Substitute.For<Func<string>>();
             encodeDataFunction = Substitute.For<Func<string, string>>();
             logoutService = Substitute.For<LogoutService>();
-            defaultHandler = new DefaultHandler(sessionManager, browserHelper, logoutService, getDefaultUrl, encodeDataFunction, customerProfileService);
+            telegramSettingService = Substitute.For<ISettingService>();
+            defaultHandler = new DefaultHandler(sessionManager, browserHelper, logoutService, getDefaultUrl, encodeDataFunction, customerProfileService, telegramSettingService);
             userSession = Substitute.For<IUserSession>();
 
             profilePicture = new ActorProfilePictureModel();
@@ -84,7 +87,7 @@
         }
 
         [Test]
-        public void HandleIndexQuery_NotNullCommand_ReturnPasswordHashStoredInSession()
+        public async Task HandleIndexQuery_NotNullCommand_ReturnPasswordHashStoredInSession()
         {
             // Arrange
             userSession.IsLogged.Returns(false);
@@ -97,7 +100,7 @@
             sessionManager.Add(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
 
             // Act
-            var viewModel = defaultHandler.Handle(query);
+            var viewModel = await defaultHandler.Handle(query);
 
             // Assert
             Assert.AreEqual(argumentUsed, viewModel.PasswordHash);
