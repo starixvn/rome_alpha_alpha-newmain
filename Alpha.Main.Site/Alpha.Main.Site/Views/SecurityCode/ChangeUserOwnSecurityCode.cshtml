@@ -21,6 +21,12 @@
     <li role="presentation" id="otpNav">
         <a href="@($"{Model.MainRootPath}Otp/SetupOtp")" role="tab" data-toggle="tab">OTP</a>
     </li>
+    @if (Model.IsOfferProtectedMode)
+    {
+        <li role="presentation">
+            @Html.ActionLink(Resources.ProtectionCode, "Setup", "ProtectionCode")
+        </li>
+    }
 </ul>
 <div class="tab-content">
     <div role="tabpanel" class="tab-pane active">

@@ -100,7 +100,8 @@
                 Title = BuildSecurityCodeTitle(message.Username),
                 UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.Username),
                 IsEnabledBetLists = message.IsEnabledSecurityCodeInBetLists,
-                IsEnabledStatement = message.IsEnabledSecurityCodeInStatement
+                IsEnabledStatement = message.IsEnabledSecurityCodeInStatement,
+                IsOfferProtectedMode=message.IsOfferProtectedMode
             };
         }
 

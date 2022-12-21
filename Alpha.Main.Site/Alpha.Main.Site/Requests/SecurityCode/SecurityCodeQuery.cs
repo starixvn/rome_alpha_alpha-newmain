@@ -71,5 +71,7 @@
         public bool IsEnabledSecurityCodeInBetLists => userSession.IsEnabledSecurityCodeInBetLists;
 
         public bool IsEnabledSecurityCodeInStatement => userSession.IsEnabledSecurityCodeInStatement;
+
+        public bool IsOfferProtectedMode => userSession.IsOfferProtectedMode;
     }
 }

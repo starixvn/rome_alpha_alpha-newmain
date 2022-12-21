@@ -30,5 +30,7 @@
         public bool IsEnabledBetLists { get; set; }
 
         public bool IsEnabledStatement { get; set; }
+
+        public bool IsOfferProtectedMode { get; set; }
     }
 }

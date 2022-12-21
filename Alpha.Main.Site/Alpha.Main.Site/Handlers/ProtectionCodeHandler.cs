@@ -5,6 +5,7 @@
     using Alpha.Main.Services;
     using Alpha.Main.Site.Requests.ProtectionCode;
     using Alpha.Main.Site.ViewModels.ProtectionCode;
+    using Alpha.SecurityCode.Services;
     using Alpha.Web.Helpers;
     using Alpha.Web.Models;
     using MediatR;
@@ -19,15 +20,18 @@
         private readonly SessionManager sessionManager;
         private readonly NicknameChecker nicknameChecker;
         private readonly ProtectionCodeService protectionCodeService;
+        private readonly SecurityCodeChecker securityCodeChecker;
 
         public ProtectionCodeHandler(
             SessionManager sessionManager,
             NicknameChecker nicknameChecker,
-            ProtectionCodeService protectionCodeService)
+            ProtectionCodeService protectionCodeService,
+            SecurityCodeChecker securityCodeChecker)
         {
             this.sessionManager = sessionManager;
             this.nicknameChecker = nicknameChecker;
             this.protectionCodeService = protectionCodeService;
+            this.securityCodeChecker = securityCodeChecker;
         }
 
         public async Task<ProtectionCodeViewModel> Handle(ProtectionCodeQuery message)
@@ -41,7 +45,8 @@
                 message.Language,
                 HashKey,
                 isShowNicknameLink,
-                !string.IsNullOrWhiteSpace(protectionCode));
+                !string.IsNullOrWhiteSpace(protectionCode),
+                securityCodeChecker.IsEnableSecurityCode());
         }
         
         public async Task<ResultModel> Handle(UpdateProtectionCodeCommand message)
