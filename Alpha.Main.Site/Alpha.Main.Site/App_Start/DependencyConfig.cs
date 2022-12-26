@@ -117,6 +117,7 @@
             container.RegisterPerWebRequest<BalanceInfoService, BalanceInfoServiceImpl>();
             container.RegisterPerWebRequest<StatisticsService, StatisticsServiceImpl>();
             container.RegisterPerWebRequest<SecurityCodeChecker, SecurityCodeCheckerImpl>();
+            container.RegisterPerWebRequest<ApiKeyService>(() => new ApiKeyServiceImpl(CreateApiKeyHttpClient()));
 
             container.RegisterPerWebRequest<OtpService, OtpServiceImpl>();
             container.RegisterPerWebRequest<OtpAdapter, OtpAdapterImpl>();
@@ -138,6 +139,7 @@
             container.RegisterPerWebRequest<INotificationService>(() => new NotificationService(CreateTelegramBotHttpClient()));
             container.RegisterPerWebRequest<IOTPService>(() => new OTPService(CreateTelegramBotHttpClient()));
             container.RegisterPerWebRequest<TelegramBotService, TelegramBotServiceImpl>();
+
 
             container.RegisterPerWebRequest<IUser, User>();
             container.RegisterSingleton(() => AesService.Default);
@@ -209,6 +211,17 @@
             telegramClient.DefaultRequestHeaders.Add("Accept-Language", Thread.CurrentThread.CurrentCulture.Name);
 
             return telegramClient;
+        }
+
+        private static HttpClient CreateApiKeyHttpClient()
+        {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+            var apiKeyClient = HttpClientFactory.Create();
+            apiKeyClient.BaseAddress = AppSettings.ApiKeyServiceUri;
+            apiKeyClient.DefaultRequestHeaders.Add("Accept-Language", Thread.CurrentThread.CurrentCulture.Name);
+
+            return apiKeyClient;
         }
     }
 }

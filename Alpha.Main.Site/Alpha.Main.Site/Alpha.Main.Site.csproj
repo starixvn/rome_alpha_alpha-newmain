@@ -1356,12 +1356,10 @@
     <Content Include="Views\Default\SuggestEnableTelegramOtpPopup.cshtml" />
     <Content Include="Views\Default\NewFeatureHighlightPopup.cshtml" />
     <Content Include="Views\ApiKey\ApiKeyManagement.cshtml" />
-    <Content Include="Views\ApiKey\ApiKeyStatistics.cshtml" />
     <Content Include="Views\ApiKey\CreateApiKey.cshtml" />
     <Content Include="Views\ApiKey\EditApiKey.cshtml" />
     <Content Include="Views\ApiKey\Shared\_Layout.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\apikey\apikey-management.ts" />
-    <TypeScriptCompile Include="Assets\scripts\apikey\apikey-statistics.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\edit-apikey.ts" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
@@ -1372,6 +1370,7 @@
     <TypeScriptCompile Include="Assets\scripts\chatbot\verify-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\advertisement\popup-advertisement.ts" />
     <TypeScriptCompile Include="Assets\scripts\components\daterangepicker.ts" />
+    <TypeScriptCompile Include="Assets\scripts\components\multiselection-dropdown-default.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\data-proccessing-notification.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\kick-out.ts" />
@@ -1749,6 +1748,7 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Handlers\ApiKeyHandler.cs" />
     <Compile Include="Handlers\BannerHandler.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -1798,6 +1798,11 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Requests\AllLanguagesQuery.cs" />
+    <Compile Include="Requests\ApiKey\CreateApiKeyQuery.cs" />
+    <Compile Include="Requests\ApiKey\GetApiKeyQuery.cs" />
+    <Compile Include="Requests\ApiKey\GetCustomerApiKeyQuery.cs" />
+    <Compile Include="Requests\ApiKey\RevokeApiKeyQuery.cs" />
+    <Compile Include="Requests\ApiKey\UpdateApiKeyQuery.cs" />
     <Compile Include="Requests\Banner\BannerQuery.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -1899,6 +1904,9 @@
     </Compile>
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
     <Compile Include="ViewModels\Advertisement\MyWatchlistViewModel.cs" />
+    <Compile Include="ViewModels\ApiKey\ApiKeyManagementViewModel.cs" />
+    <Compile Include="ViewModels\ApiKey\CreateApiKeyViewModel.cs" />
+    <Compile Include="ViewModels\ApiKey\EditApiKeyViewModel.cs" />
     <Compile Include="ViewModels\Banner\BannerViewModel.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>

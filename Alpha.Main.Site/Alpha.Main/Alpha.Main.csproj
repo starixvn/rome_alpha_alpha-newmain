@@ -282,6 +282,7 @@
       <DependentUpon>SettingType.resx</DependentUpon>
     </Compile>
     <Compile Include="Configurations\AppSettings.cs" />
+    <Compile Include="Constants\ApiKeyScope.cs" />
     <Compile Include="Constants\BannerType.cs" />
     <Compile Include="Constants\ChatBotFunctionType.cs" />
     <Compile Include="Constants\Language.cs" />
@@ -348,6 +349,7 @@
     <Compile Include="Extensions\DateTimeExtensions.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
+    <Compile Include="Extensions\HttpClientExtensions.cs" />
     <Compile Include="FunctionRegistry.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -361,6 +363,9 @@
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Helpers\SiteMapReader.cs" />
     <Compile Include="Helpers\XMLDocumentHelper.cs" />
+    <Compile Include="Models\ApiKey\ApiKeyInfo.cs" />
+    <Compile Include="Models\ApiKey\ApiKeyResult.cs" />
+    <Compile Include="Models\ApiKey\Result.cs" />
     <Compile Include="Models\Banner\BannerItem.cs" />
     <Compile Include="Models\BalanceInfo\BalanceInfo.cs" />
     <Compile Include="Models\BalanceInfo\BalanceUpDayInfo.cs" />
@@ -413,8 +418,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Services\ApiKeyService.cs" />
     <Compile Include="Services\BannerService.cs" />
     <Compile Include="Services\CacheRefService.cs" />
+    <Compile Include="Services\Impl\ApiKeyServiceImpl.cs" />
     <Compile Include="Services\Impl\BannerServiceImpl.cs" />
     <Compile Include="Services\Impl\CacheRefServiceImpl.cs" />
     <Compile Include="Services\Impl\KickoutCustomerServiceImpl.cs" />

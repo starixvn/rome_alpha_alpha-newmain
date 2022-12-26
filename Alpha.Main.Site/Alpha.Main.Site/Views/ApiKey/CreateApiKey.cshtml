@@ -1,8 +1,10 @@
-﻿@{
+﻿@model CreateApiKeyViewModel
+@{
     Layout = "~/Views/ApiKey/Shared/_Layout.cshtml";
 }
 @section css {
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/apikey")
     @StaticResources.RenderStylesWithDarkMode("~/Assets/bundles/apikey/apikey")
 }
 <ul class="nav nav-tabs" role="tablist">
@@ -13,49 +15,53 @@
         <a href="~/Apikey/ApiKeyManagement" role="tab" data-toggle="tab">API Key Management</a>
     </li>
 </ul>
-<div class="tab-content apikey-form">
-    <form class="block last" id="">
-        <div class="form-group">
-            <label>API Key Name</label>
-            <input maxlength="6" type="password" class="txt form-control" name="" id="" />
+<div class="tab-content">
+    <form class="block" id="apikey-form" autocomplete="off">
+        <div id="status-message" class="form-group hidden">
+            <div id="status-message-content" class="msg msg-warning"></div>
         </div>
         <div class="form-group">
-            <label>API Passphrase</label>
-            <input maxlength="6" type="password" class="txt form-control" name="" id="" />
+            <label>API Key Name<span class="require"> *</span></label>
+            <input class="form-control" id="apiname" autocomplete="off" />
         </div>
+        <div class="form-group">
+            <label>API Passphrase<span class="require"> *</span></label>
+            <input class="form-control" placeholder="7 - 32 characters" id="passphrase" autocomplete="off" />
+            <span class="icon-eye icon"></span>
+        </div>
+        <p>API Passphrase is important information for you to use later. Please remember it and keep it safe.</p>
         <div class="form-group">
             <label>Expiration Date</label>
-            <input maxlength="6" type="password" class="txt form-control" name="" id="" />
-        </div>
-        <div>
-            <p>Select Scopes</p>
-            <div style="margin-left: 25px;">
-                <input type="checkbox" value="All" />
-                <label for="">All</label><br>
-                <div style="margin-left: 25px;">
-                    <input type="checkbox" value="Winlossdetail" />
-                    <label for="">Win Loss Detail</label><br>
-                    <input type="checkbox" value="Outstanding" />
-                    <label for="">Outstanding</label><br>
+            <div class="control date">
+                <div class="input-group date" id="dpkContainer">
+                    <input class="form-control" readonly="readonly" id="expirationdate" autocomplete="off" />
+                    <span class="input-group-addon">
+                        <span class="icon-calendar"></span>
+                    </span>
                 </div>
             </div>
         </div>
-        <div>
-            <p>IP Restriction</p>
-            <div style="margin-left: 25px;">
-                <input type="radio" value="No" name="Ip" />
-                <label for="">No</label><br>
-                <input type="radio" value="Yes" name="Ip" />
-                <label for="">Yes</label><br>
-                <textarea id="" name="" rows="4" cols="50" style="margin-top: 5px;">127.0.0.1, 127.1.1.2</textarea>
-            </div>
+        <div class="form-group">
+            <label></label>
+            <input type="checkbox" value="never" style="margin-bottom: 11px" />
+            <label>Never Expires</label>
         </div>
-        <div class="form-group" style="margin-top: 10px;">
-            <input type="submit" class="btn-submit" value="@Security.Submit" />
+        <div class="form-group">
+            <label>Select Scopes</label>
+            <select id="multiSelectionDropdownId" multiple="multiple" class="select-multiple">
+                @foreach (var scope in Model.Scopes)
+                {
+                    <option value="@scope" selected="selected">@scope</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn-submit" value="Submit" />
         </div>
     </form>
 </div>
 @section js {
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetScripts.RenderCommon("/bundles/site-main/apikey")
     @StaticResources.RenderScripts("~/Assets/bundles/apikey/create-apikey")
 }

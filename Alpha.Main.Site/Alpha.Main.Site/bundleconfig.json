@@ -205,7 +205,8 @@
     "outputFileName": "Assets/bundles/apikey/create-apikey.js",
     "inputFiles": [
       "Assets/scripts/core.js",
-      "Assets/scripts/apikey/create-apikey.js"
+      "Assets/scripts/apikey/create-apikey.js",
+      "Assets/scripts/components/multiselection-dropdown-default.js"
     ]
   },
   {
@@ -216,18 +217,11 @@
     ]
   },
   {
-    "outputFileName": "Assets/bundles/apikey/apikey-statistics.js",
-    "inputFiles": [
-      "Assets/scripts/core.js",
-      "Assets/scripts/apikey/apikey-statistics.js",
-      "Assets/scripts/components/daterangepicker.js"
-    ]
-  },
-  {
     "outputFileName": "Assets/bundles/apikey/edit-apikey.js",
     "inputFiles": [
       "Assets/scripts/core.js",
-      "Assets/scripts/apikey/edit-apikey.js"
+      "Assets/scripts/apikey/edit-apikey.js",
+      "Assets/scripts/components/multiselection-dropdown-default.js"
     ]
   },
   {

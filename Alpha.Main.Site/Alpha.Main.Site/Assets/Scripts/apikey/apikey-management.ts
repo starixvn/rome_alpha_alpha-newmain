@@ -10,34 +10,39 @@ class ApiKeyManagement {
     }
 
     init = () => {
-        this.registerApiKeyStatisticsEvent();
         this.registerApiKeyEditEvent();
         this.registerApiKeyRevokeEvent();
-    }
-
-    registerApiKeyStatisticsEvent = () => {
-        const self = this;
-        self.$(".btn-stats").click(function () {
-            const apikey = self.$(this).attr("apikey");
-            const url = alpha.urls.mainRootPath + "ApiKey/ApiKeyStatistics";
-            self.topWindow.popupManager.open(url, "API key Statistics", 800, 500);
-        })
     }
 
     registerApiKeyEditEvent = () => {
         const self = this;
         self.$(".btn-edit").click(function () {
             const apikey = self.$(this).attr("apikey");
-            const url = alpha.urls.mainRootPath + "ApiKey/EditApiKey";
-            self.topWindow.popupManager.open(url, "Edit API Key", 500, 500);
+            const url = alpha.urls.mainRootPath + `ApiKey/EditApiKey?key=${apikey}`;
+            self.topWindow.popupManager.open(url, "Edit API Key", 800, 500);
         })
     }
 
     registerApiKeyRevokeEvent = () => {
         const self = this;
         self.$(".btn-revoke").click(function () {
-            const apikey = self.$(this).attr("apikey");
-            self.topWindow.bootboxConfirm(apikey, undefined);
+            const key = self.$(this).attr("apikey");
+            self.$.ajax({
+                type: 'POST',
+                url: alpha.urls.mainRootPath + `ApiKey/RevokeApiKey`,
+                data: { key },
+                dataType: 'json',
+                success: function (data, textStatus, jqXHR) {
+                    //self.topWindow.bootboxConfirm(apikey, undefined);
+                    window.location.reload();
+                },
+                complete: function (jqXHR, textStatus) {
+
+                },
+                error: function (jqXHR) {
+
+                }
+            })
         })
     }
 }

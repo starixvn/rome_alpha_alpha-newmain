@@ -1,115 +1,96 @@
-﻿@import '../Home/_variables.scss';
-@import '../Home/_mixins.scss';
-
-// To remove the 300-350ms tap delay
-html {
-    touch-action: manipulation;
-}
-
-body {
-    background-color: transparent;
-}
-
-label {
-    width: 200px;
-    font-weight: normal;
-}
-
-[class^='btn'] {
-    height: auto;
-    min-height: $height-normal;
-}
-
-.block {
-    clear: both;
-    max-width: 450px;
-    padding-top: 22px;
-    width: 450px;
+﻿.block {
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 800px;
+    max-width: 800px;
 
     .form-group {
         display: flex;
-        align-items: center;
-    }
-
-    .txt {
-        padding-top: 0;
-        padding-bottom: 0;
-        width: 100%;
-        border: 1px solid $border-color;
-    }
-}
-
-.tab-content {
-    margin-left: 25px;
-}
-
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-
-table {
-    margin-top: 10px;
-}
-
-th {
-    background: #555252;
-    color: white;
-}
-
-th, td {
-    padding: 5px 5px 5px 5px;
-    text-align: center;
-
-    a:hover {
-        cursor: pointer;
-    }
-}
-
-.btn {
-    color: white;
-}
-
-.btn:hover {
-    color: white;
-}
-
-.btn-stats {
-    background-color: #4d7519;
-}
-
-.btn-edit {
-    background-color: #2e74d4;
-}
-
-.btn-revoke {
-    background-color: #cf2727;
-}
-
-.input-group.date {
-    .icon-calendar {
-        font-size: 24px;
-        color: #7f7f7f;
-    }
-
-    .input-group-addon {
-        background: transparent;
-        border: none;
-        padding: 0px 8px;
         position: relative;
-        top: 3px;
+        align-items: center;
+        width: 450px;
+        height: 34px;
     }
 
-    .form-control {
-        @include border-radius(2px);
-        @include box-shadow(0, 2px, 2px, rgba(0, 0, 0, 0.2));
-        border: none;
-        font-size: 12px;
-        height: 28px;
-        background: #fff;
+    label {
+        width: 200px;
+    }
+
+    .require {
+        color: red;
     }
 }
 
-.form-control[readonly], fieldset[disabled] .form-control {
-    background: inherit;
+.multiselect .multiselect-selected-text {
+    width: 215px;
+}
+
+.icon {
+    position: absolute;
+    font-size: 20px;
+    right: 0;
+}
+
+.icon-calendar {
+    margin-top: 3px;
+}
+
+
+.tblRpt {
+    margin-left: 20px;
+    margin-top: 20px;
+    table-layout: fixed;
+    width: 70%;
+
+    .col-order {
+        text-align: center;
+        width: 44px;
+    }
+
+    .row-first {
+        color: #666;
+
+        font: {
+            style: italic;
+            size: 12px;
+        }
+
+        tbody td {
+            white-space: normal;
+            word-wrap: break-word;
+        }
+    }
+}
+
+.control {
+    margin: 0;
+
+    .date {
+        width: 248px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+}
+
+.input-group.date .input-group-addon {
+    right: 30px;
+    position: absolute;
+    z-index: 100;
+}
+
+.btn-group {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+p {
+    margin-left: 138px;
+    font-style: italic;
+}
+
+input[type='password'] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: inherit;
+    height: inherit;
 }
