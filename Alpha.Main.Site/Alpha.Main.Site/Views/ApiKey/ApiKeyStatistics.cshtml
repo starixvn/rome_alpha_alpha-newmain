@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Views/ApiKey/Shared/_Layout.cshtml";
+}
+@section css {
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.RenderStylesWithDarkMode("~/Assets/bundles/apikey/apikey")
+}
+<div class="tab-content apikey-form">
+    <form class="block last" id="report-form">
+        <div class="form-group">
+            <div class="control date">
+                <div class="input-group date" id="dateContainer">
+                    <input class="form-control" readonly="readonly" />
+                    <span class="input-group-addon">
+                        <span class="icon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group group-button">
+            <input type="submit" class="btn-submit" value="Submit" />
+        </div>
+    </form>
+</div>
+@section js {
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.RenderScripts("~/Assets/bundles/apikey/apikey-statistics")
+}

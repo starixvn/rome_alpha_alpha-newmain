@@ -44,6 +44,10 @@
     "inputFile": "Assets/styles/otp/otp.scss"
   },
   {
+    "outputFile": "Assets/styles/apikey/apikey.css",
+    "inputFile": "Assets/styles/apikey/apikey.scss"
+  },
+  {
     "outputFile": "Assets/styles/error/error.css",
     "inputFile": "Assets/styles/error/error.scss"
   },

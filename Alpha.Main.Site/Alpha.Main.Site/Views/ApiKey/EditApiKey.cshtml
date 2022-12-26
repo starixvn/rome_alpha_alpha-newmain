@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "~/Views/ApiKey/Shared/_Layout.cshtml";
+}
+@section css {
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.RenderStylesWithDarkMode("~/Assets/bundles/apikey/apikey")
+}
+<div class="tab-content apikey-form">
+    <form class="block last" id="">
+        <div class="form-group">
+            <label>API Key Name</label>
+            <input maxlength="6" type="password" class="txt form-control" name="" id="" />
+        </div>
+        <div class="form-group">
+            <label>API Passphrase</label>
+            <input maxlength="6" type="password" class="txt form-control" name="" id="" />
+        </div>
+        <div class="form-group">
+            <label>Expiration Date</label>
+            <input maxlength="6" type="password" class="txt form-control" name="" id="" />
+        </div>
+        <div>
+            <p>Select Scopes</p>
+            <div style="margin-left: 25px;">
+                <input type="checkbox" value="All" />
+                <label for="">All</label><br>
+                <div style="margin-left: 25px;">
+                    <input type="checkbox" value="Winlossdetail" />
+                    <label for="">Win Loss Detail</label><br>
+                    <input type="checkbox" value="Outstanding" />
+                    <label for="">Outstanding</label><br>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p>IP Restriction</p>
+            <div style="margin-left: 25px;">
+                <input type="radio" value="No" name="Ip" />
+                <label for="">No</label><br>
+                <input type="radio" value="Yes" name="Ip" />
+                <label for="">Yes</label><br>
+                <textarea id="" name="" rows="4" cols="50" style="margin-top: 5px;">127.0.0.1, 127.1.1.2</textarea>
+            </div>
+        </div>
+        <div class="form-group" style="margin-top: 10px;">
+            <input type="submit" class="btn-submit" value="@Security.Submit" />
+        </div>
+    </form>
+</div>
+@section js {
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.RenderScripts("~/Assets/bundles/apikey/edit-apikey")
+}

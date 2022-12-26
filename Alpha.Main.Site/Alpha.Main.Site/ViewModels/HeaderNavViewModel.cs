@@ -6,10 +6,10 @@
     public class HeaderNavViewModel
     {
         public HeaderNavViewModel(
-            int custId, 
+            int custId,
             string username,
             string nickname,
-            bool enableSecurityCode, 
+            bool enableSecurityCode,
             bool showSearchAccount,
             bool isEnabledOtp,
             bool isDefaultAvatar,
@@ -18,7 +18,8 @@
             bool showCreateMemberByQRCode,
             bool isDarkMode,
             bool isProtectedMode,
-            bool isOfferProtectedMode)
+            bool isOfferProtectedMode,
+            bool isSubAccount)
         {
             CustId = custId;
             EnableSecurityCode = enableSecurityCode;
@@ -33,6 +34,7 @@
             IsDarkMode = isDarkMode;
             IsProtectedMode = isProtectedMode;
             IsOfferProtectedMode = isOfferProtectedMode;
+            IsSubAccount = isSubAccount;
         }
 
         public int CustId { get; }
@@ -55,7 +57,7 @@
 
         public string AccountInfoRootPath { get; } = UrlHelper.MapAccountInfoPath("~/");
 
-        public bool IsDisabledContactUsLink { get; } = 
+        public bool IsDisabledContactUsLink { get; } =
             AppSettings.IsDisabledContactUsLink
             && !AppSettings.IsViva88Domain;
 
@@ -63,7 +65,7 @@
 
         public bool IsDefaultAvatar { get; }
 
-        public string EmbedImage { get;}
+        public string EmbedImage { get; }
 
         public bool ShowNicknameMenu { get; }
 
@@ -74,9 +76,11 @@
         public bool IsOfferDarkMode { get; } = Web.Configurations.AppSettings.IsOfferDarkMode;
 
         public bool IsDarkMode { get; }
-        
+
         public bool IsProtectedMode { get; }
 
         public bool IsOfferProtectedMode { get; }
+
+        public bool IsSubAccount { get; }
     }
 }

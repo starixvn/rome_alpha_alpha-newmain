@@ -1355,6 +1355,15 @@
     <Content Include="Views\Advertisement\AdvertisementPopup.cshtml" />
     <Content Include="Views\Default\SuggestEnableTelegramOtpPopup.cshtml" />
     <Content Include="Views\Default\NewFeatureHighlightPopup.cshtml" />
+    <Content Include="Views\ApiKey\ApiKeyManagement.cshtml" />
+    <Content Include="Views\ApiKey\ApiKeyStatistics.cshtml" />
+    <Content Include="Views\ApiKey\CreateApiKey.cshtml" />
+    <Content Include="Views\ApiKey\EditApiKey.cshtml" />
+    <Content Include="Views\ApiKey\Shared\_Layout.cshtml" />
+    <TypeScriptCompile Include="Assets\scripts\apikey\apikey-management.ts" />
+    <TypeScriptCompile Include="Assets\scripts\apikey\apikey-statistics.ts" />
+    <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey.ts" />
+    <TypeScriptCompile Include="Assets\scripts\apikey\edit-apikey.ts" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
@@ -1362,6 +1371,7 @@
     <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot-setting.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\verify-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\advertisement\popup-advertisement.ts" />
+    <TypeScriptCompile Include="Assets\scripts\components\daterangepicker.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\data-proccessing-notification.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\kick-out.ts" />
@@ -1577,6 +1587,7 @@
     <Content Include="Assets\styles\home\ChatBotBanneri1.scss" />
     <Content Include="Assets\styles\home\ChatBotBanneri1-dark.scss" />
     <Content Include="Assets\styles\advertisement\popup-advertisement.scss" />
+    <Content Include="Assets\styles\apikey\apikey.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -1683,6 +1694,7 @@
     </Compile>
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Controllers\AdvertisementController.cs" />
+    <Compile Include="Controllers\ApiKeyController.cs" />
     <Compile Include="Controllers\BannerController.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
