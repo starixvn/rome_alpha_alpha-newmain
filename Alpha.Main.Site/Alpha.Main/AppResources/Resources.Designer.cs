@@ -19,7 +19,7 @@ namespace Alpha.Main.AppResources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -88,7 +88,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;b&gt;Easy&lt;/b&gt; monitor your Members via &lt;b&gt;My Watchlist&lt;/b&gt;.
+        ///   Looks up a localized string similar to &lt;b&gt;Easily&lt;/b&gt; monitor your win loss using &lt;b&gt;My Thresholds&lt;/b&gt;.
         /// </summary>
         public static string AdvertisementMyWatchlist {
             get {
@@ -97,7 +97,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Global Thresholds: thresholds applied to all Members.
+        ///   Looks up a localized string similar to My Thresholds: set winning / losing threshold based on your position taking.
         /// </summary>
         public static string AdvertisementMyWatchlistGlobalThreshold {
             get {
@@ -106,29 +106,11 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Go to &lt;b&gt;My Watchlist&lt;/b&gt; tab -&gt; click Global Thresholds -&gt; set Winning/Losing Thresholds.
+        ///   Looks up a localized string similar to Go to &lt;b&gt;My Thresholds&lt;/b&gt; --&gt; set Winning / Losing threshold.
         /// </summary>
         public static string AdvertisementMyWatchlistGlobalThresholdDetail {
             get {
                 return ResourceManager.GetString("AdvertisementMyWatchlistGlobalThresholdDetail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Personal Thresholds: thresholds applied to specific Members.
-        /// </summary>
-        public static string AdvertisementMyWatchlistPersonalThreshold {
-            get {
-                return ResourceManager.GetString("AdvertisementMyWatchlistPersonalThreshold", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Go to &lt;b&gt;My Watchlist&lt;/b&gt; tab -&gt; click Add Member -&gt; enter Member username and Winning/Losing Thresholds.
-        /// </summary>
-        public static string AdvertisementMyWatchlistPersonalThresholdDetail {
-            get {
-                return ResourceManager.GetString("AdvertisementMyWatchlistPersonalThresholdDetail", resourceCulture);
             }
         }
         

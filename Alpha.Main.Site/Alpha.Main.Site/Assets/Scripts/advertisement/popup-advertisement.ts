@@ -58,6 +58,7 @@
     init() {
         this.dontShowAgainKey = [
             "AdvertisementDontShowAgainKey",
+            "179067",
             this.$("#userId").val(),
             this.$("#subUserId").val()
         ].join("_");

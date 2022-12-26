@@ -691,19 +691,13 @@
     <value>For Better Security</value>
   </data>
   <data name="AdvertisementMyWatchlist" xml:space="preserve">
-    <value>&lt;b&gt;Dễ dàng&lt;/b&gt; theo dõi Member của bạn qua &lt;b&gt;Danh Sách Theo Dõi&lt;/b&gt;</value>
+    <value>&lt;b&gt;Easily&lt;/b&gt; monitor your win loss using &lt;b&gt;My Thresholds&lt;/b&gt;</value>
   </data>
   <data name="AdvertisementMyWatchlistGlobalThreshold" xml:space="preserve">
-    <value>Giới Hạn Chung: giới hạn áp dụng cho tất cả Member</value>
+    <value>My Thresholds: set winning / losing threshold based on your position taking</value>
   </data>
   <data name="AdvertisementMyWatchlistGlobalThresholdDetail" xml:space="preserve">
-    <value>Đi đến thẻ &lt;b&gt;Danh Sách Theo Dõi&lt;/b&gt; -&gt; nhấn Giới Hạn Chung -&gt; đặt Giới Hạn Thắng/Thua</value>
-  </data>
-  <data name="AdvertisementMyWatchlistPersonalThreshold" xml:space="preserve">
-    <value>Giới Hạn Riêng: giới hạn áp dụng riêng cho từng Member</value>
-  </data>
-  <data name="AdvertisementMyWatchlistPersonalThresholdDetail" xml:space="preserve">
-    <value>Đi đến thẻ &lt;b&gt;Danh Sách Theo Dõi&lt;/b&gt; -&gt; nhấn Thêm Member -&gt; nhập tên người dùng Member và Giới Hạn Thắng/Thua</value>
+    <value>Go to &lt;b&gt;My Thresholds&lt;/b&gt; --&gt; set Winning / Losing threshold</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
     <value>Tìm Hiểu Thêm</value>

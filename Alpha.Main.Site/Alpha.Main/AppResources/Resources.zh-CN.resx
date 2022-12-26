@@ -629,19 +629,13 @@
     <value>For Better Security</value>
   </data>
   <data name="AdvertisementMyWatchlist" xml:space="preserve">
-    <value>&lt;b&gt;简易 &lt;/b&gt; 监控您的会员通过以下方式 &lt;b&gt; 我的监控列表 &lt;/b&gt;</value>
+    <value>&lt;b&gt;Easily&lt;/b&gt; monitor your win loss using &lt;b&gt;My Thresholds&lt;/b&gt;</value>
   </data>
   <data name="AdvertisementMyWatchlistGlobalThreshold" xml:space="preserve">
-    <value>总体限额: 限额适用于所有会员</value>
+    <value>My Thresholds: set winning / losing threshold based on your position taking</value>
   </data>
   <data name="AdvertisementMyWatchlistGlobalThresholdDetail" xml:space="preserve">
-    <value>请到 &lt;b&gt; 我的监控列表 &lt;/b&gt; 选项 -&gt; 点击总体限额 -&gt; 设置赢/输限额</value>
-  </data>
-  <data name="AdvertisementMyWatchlistPersonalThreshold" xml:space="preserve">
-    <value>个人限额：限额用于特定的会员</value>
-  </data>
-  <data name="AdvertisementMyWatchlistPersonalThresholdDetail" xml:space="preserve">
-    <value>请到 &lt;b&gt; 我的监控列表 &lt;/b&gt; 选项 -&gt; 点击添加会员 -&gt; 输入会员用户名和赢/输限额</value>
+    <value>Go to &lt;b&gt;My Thresholds&lt;/b&gt; --&gt; set Winning / Losing threshold</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
     <value>了解更多</value>
