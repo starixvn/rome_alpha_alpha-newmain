@@ -89,7 +89,7 @@ namespace Alpha.Main.Site.Controllers
         [AllowProtectedMode]
         public ActionResult GetServerTime(int onUserId = -1)
         {
-            if (AppSettings.IsEnabledRechekin && ((onUserId != -1 && onUserId != userSession.OnUserId) || userSession.OnUserId == 0))
+            if (AppSettings.IsEnabledRechekin && ((onUserId > 0 && onUserId != userSession.OnUserId) || userSession.OnUserId == 0))
             {
                 return Json(new
                 {
