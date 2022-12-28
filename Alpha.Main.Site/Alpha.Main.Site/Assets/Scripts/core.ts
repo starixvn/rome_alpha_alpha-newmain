@@ -208,8 +208,10 @@ $(() => {
             }
         },
         error: function (xhr) {
-            if (xhr.status === 401) {
-                alpha.core.signOut2();
+            if (xhr.status === 401
+                || xhr.status === 403)
+            {
+                alpha.core.signOut();
             }
         }
     });
