@@ -71,8 +71,6 @@
       <siteMapNode resourceKey="positionTaking" appPath="OldMainAppPath" url="_MemberInfo/PositionTakingList/Sportbook/SportbookPositionTakingList.aspx"></siteMapNode>
 
       <siteMapNode resourceKey="memberCommission" appPath="OldMainAppPath" url="_MemberInfo/Commission/MemberCommissionSportbook.aspx"></siteMapNode>
-      <!--<siteMapNode resourceKey="MemberWinLimit" appPath="OldMainAppPath" url="MemberInformation/WinLimit/Index"></siteMapNode>-->
-      <siteMapNode resourceKey="MemberWinLimit" appPath="MemberInfoAppPath" url="WinLossLimit/Index"></siteMapNode>
       <siteMapNode resourceKey="BetChoiceLimit" menuItemType="BetChoiceLimitMenuItem" appPath="OldMainAppPath" url="MemberInformation/BetChoiceLimit/Index"></siteMapNode>      
       <siteMapNode resourceKey="IndirectLoginAccount" menuItemType="IndirectLoginAccountMenuItem" appPath="MemberInfoAppPath" url="IndirectLoginAccount/Index"></siteMapNode>
       <siteMapNode resourceKey="DormantAccountList" menuItemType="DormantAccountListMenuItem" appPath="MemberInfoAppPath" url="DormantAccount/Index"></siteMapNode>
@@ -154,9 +152,11 @@
       <siteMapNode resourceKey="systemUpdate"  appPath="MessageAppPath" url="Announcement/Index" byPassAuthorization="true" byPassProtectedMode="true"></siteMapNode>
       <siteMapNode resourceKey="personalMessage" appPath="MessageAppPath"  url="MessageHistory/Index?messagetype=1" byPassAuthorization="true"></siteMapNode>
     </siteMapNode>
+	<siteMapNode resourceKey="riskManagement" menuItemType="MemberInfoMenuItem" functionType="[H]" byPassProtectedModeInternal="true">
+		<siteMapNode resourceKey="MemberWinLimit" appPath="MemberInfoAppPath" url="WinLossLimit/Index"></siteMapNode>
+		<siteMapNode resourceKey="MyWatchlist" appPath="MemberInfoAppPath" url="ReachedThreshold/Index" roles="Agent"></siteMapNode>
+	</siteMapNode>
     <siteMapNode resourceKey="chatbot" appPath="MainAppPath" url="TelegramChatBot/Setup"></siteMapNode>
     <siteMapNode resourceKey="SercurityCode" appPath="MainAppPath" url="Otp/SetupOtp" isNew="true"></siteMapNode>
-    <siteMapNode resourceKey="MyWatchlist" menuItemType="MyWatchlistMenuItem" appPath="MemberInfoAppPath" url="ReachedThreshold/Index" roles="Agent" isNew="true" functionType="[H]"></siteMapNode>
-    
   </siteMapNode>
 </siteMap>

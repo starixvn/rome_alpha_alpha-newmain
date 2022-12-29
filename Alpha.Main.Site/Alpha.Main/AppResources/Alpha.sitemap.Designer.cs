@@ -754,6 +754,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Risk Management.
+        /// </summary>
+        public static string riskManagement {
+            get {
+                return ResourceManager.GetString("riskManagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Schedule.
         /// </summary>
         public static string schedule {
