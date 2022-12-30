@@ -31,8 +31,8 @@
             if (!AppSettings.BannerIsHideMobileSabaApp)
             {
                 yield return new ImageRedirectUrlViewModel(
-                    GetMobileSabaAppImageSource(AppSettings.SiteGroup),
-                    $"https://www.winwin999.net/?bt={GetMobileSabaAppToken(AppSettings.SiteGroup)}&pd=sports");
+                    GetMobileSabaAppImageSource(AppSettings.SiteLabel),
+                    $"https://www.winwin999.net/?bt={GetMobileSabaAppToken(AppSettings.SiteLabel)}&pd=sports");
             }
 
             if (!AppSettings.IsMBCSite)
@@ -43,19 +43,19 @@
             }
         }
 
-        private static string GetMobileSabaAppToken(string siteGroup)
+        private static string GetMobileSabaAppToken(string siteLabel)
         {
-            if (siteGroup.Equals("IBCBET", StringComparison.OrdinalIgnoreCase))
+            if (siteLabel.Equals("IBCBET", StringComparison.OrdinalIgnoreCase))
             {
                 return "GueGhmPRxEWbbp3FIbpqPA";
             }
 
-            if (siteGroup.Equals("IBCIndo", StringComparison.OrdinalIgnoreCase))
+            if (siteLabel.Equals("IBCIndo", StringComparison.OrdinalIgnoreCase))
             {
                 return "QTQanXruEEur8ihzdYoF3A";
             }
 
-            if (siteGroup.Equals("789Y", StringComparison.OrdinalIgnoreCase))
+            if (siteLabel.Equals(AppSettings.SiteLabel789y, StringComparison.OrdinalIgnoreCase))
             {
                 return "Rl89LflI4EaoNIdu2zzeVw";
             }

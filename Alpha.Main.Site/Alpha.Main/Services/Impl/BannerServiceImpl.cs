@@ -17,6 +17,6 @@
 
         public Task<BannerItem> GetBanner(string languageCode, byte type)
             => dynamicRepository.GetAsync<BannerItem>(
-                new GetBannerCriteria(languageCode, AppSettings.BannerEnvironment, AppSettings.SiteGroup, type));
+                new GetBannerCriteria(languageCode, AppSettings.BannerEnvironment, AppSettings.SiteLabel, type));
     }
 }

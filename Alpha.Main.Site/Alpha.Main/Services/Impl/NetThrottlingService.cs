@@ -58,7 +58,7 @@
         {
             return CacheIdentity.From(
                 ThrottlePolicy.Name,
-                AppSettings.SiteGroup,
+                AppSettings.SiteLabel,
                 new[] { HttpContext.Current.Request.Path, UserSession.Current.UserName, UserSession.Current.SubUserName });
         }
     }

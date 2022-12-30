@@ -16,7 +16,7 @@
 
         public ContactUsViewModel(string domain)
         {
-            IsShowSkypeId = AppSettings.SiteGroup.Equals("IBCBET", StringComparison.OrdinalIgnoreCase);
+            IsShowSkypeId = AppSettings.SiteLabel.Equals("IBCBET", StringComparison.OrdinalIgnoreCase);
             _skypeId = AppSettings.ContactUsSkypeId;
 
             var newDomains = AppSettings.ContactUsNewDomains ?? string.Empty;

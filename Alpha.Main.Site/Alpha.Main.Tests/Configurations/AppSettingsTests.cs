@@ -279,7 +279,7 @@
             // Arrange
             AppSettings.Settings = new NameValueCollection
             {
-                ["SiteGroup"] = "IBCBET"
+                ["SiteLabel"] = "IBCBET"
             };
 
             // Act
@@ -295,7 +295,7 @@
             // Arrange
             AppSettings.Settings = new NameValueCollection
             {
-                ["SiteGroup"] = "ABC"
+                ["SiteLabel"] = "ABC"
             };
 
             // Act
@@ -361,7 +361,7 @@
             // Arrange
             AppSettings.Settings = new NameValueCollection
             {
-                ["SiteGroup"] = "IBCBET"
+                ["SiteLabel"] = "IBCBET"
             };
 
             // Act

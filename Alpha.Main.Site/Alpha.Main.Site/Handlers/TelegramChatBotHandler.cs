@@ -49,7 +49,7 @@
             var url = await settingService.GenerateStartUriAsync(
                 message.CustId,
                 message.SubAccId,
-                AppSettings.SiteGroup,
+                AppSettings.SiteLabel,
                 Language.MapNewChineseLanguageCode(message.Language));
 
             var logoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Assets/styles/telegramchatbot/images/telegram-logo.png");
@@ -132,7 +132,7 @@
 
         private async Task<BotEntity> GetTelegramBotAsync()
         {
-            return await botService.GetBySystem(AppSettings.SiteGroup);
+            return await botService.GetBySystem(AppSettings.SiteLabel);
         }
     }
 }
