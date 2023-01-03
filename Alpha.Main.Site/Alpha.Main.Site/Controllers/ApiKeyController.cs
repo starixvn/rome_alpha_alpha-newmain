@@ -41,7 +41,7 @@
 
         public ActionResult CreateApiKeyResult(string apiName, string key, string secret)
         {
-            var viewModel = new CreateApiKeyResultViewModel { ApiName = apiName, Key = key, Secret = secret };
+            var viewModel = new CreateApiKeyResultViewModel(apiName, key, secret);
             return View(viewModel);
         }
 

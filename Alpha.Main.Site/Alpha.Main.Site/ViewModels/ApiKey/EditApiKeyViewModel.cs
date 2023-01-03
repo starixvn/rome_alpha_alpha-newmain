@@ -16,9 +16,9 @@
             Language = language;
         }
 
-        public ApiKeyInfo ApiKeyInfo { get; set; }
+        public ApiKeyInfo ApiKeyInfo { get; }
 
-        public List<string> Scopes { get; set; }
+        public List<string> Scopes { get; }
 
         public string Language { get; }
     }

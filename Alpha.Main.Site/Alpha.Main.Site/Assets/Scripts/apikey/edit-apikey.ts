@@ -105,8 +105,12 @@ class EditApiKey {
     }
 
     validateFormInput = (apiName: string, expirationDate: Date, scopes: string) => {
+        const regexName = /^[\w]+$/m;
         if (apiName == '') {
-            return "Please input API Name";
+            return "Please input API Key Name";
+        }
+        if (!regexName.test(apiName)) {
+            return "API Key Name can not have special characters";
         }
         if (apiName.length > 50) {
             return "No more than 50 characters!";
@@ -116,7 +120,7 @@ class EditApiKey {
             return "Cant select time from past";
         }
         if (scopes == "") {
-            return "Scopes is required."
+            return "Scopes is required"
         }
 
         return null;

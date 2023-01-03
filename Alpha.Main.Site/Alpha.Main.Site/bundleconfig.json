@@ -205,8 +205,7 @@
     "outputFileName": "Assets/bundles/apikey/create-apikey.js",
     "inputFiles": [
       "Assets/scripts/core.js",
-      "Assets/scripts/apikey/create-apikey.js",
-      "Assets/scripts/components/multiselection-dropdown-default.js"
+      "Assets/scripts/apikey/create-apikey.js"
     ]
   },
   {
@@ -220,8 +219,7 @@
     "outputFileName": "Assets/bundles/apikey/edit-apikey.js",
     "inputFiles": [
       "Assets/scripts/core.js",
-      "Assets/scripts/apikey/edit-apikey.js",
-      "Assets/scripts/components/multiselection-dropdown-default.js"
+      "Assets/scripts/apikey/edit-apikey.js"
     ]
   },
   {

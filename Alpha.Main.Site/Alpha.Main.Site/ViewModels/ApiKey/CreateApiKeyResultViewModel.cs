@@ -2,10 +2,17 @@
 {
     public class CreateApiKeyResultViewModel
     {
-        public string ApiName { get; set; }
+        public CreateApiKeyResultViewModel(string apiName, string key, string secret)
+        {
+            ApiName = apiName;
+            Key = key;
+            Secret = secret;
+        }
 
-        public string Key { get; set; }
+        public string ApiName { get; }
 
-        public string Secret { get; set; }
+        public string Key { get; }
+
+        public string Secret { get; }
     }
 }

@@ -97,8 +97,10 @@ class CreateApiKey {
                 success: function (data, textStatus, jqXHR) {
                     if (data.ApiKeyResult) {
                         self.resetForm();
-                        const url = alpha.urls.mainRootPath + `ApiKey/CreateApiKeyResult?apiname=${data.ApiKeyResult.ApiName}&key=${data.ApiKeyResult.Key}&secret=${data.ApiKeyResult.ApiSecret}`;
-                        self.topWindow.popupManager.open(url, "API Key", 800, 300, null, null, null, 335, 150);
+                        const url = alpha.urls.mainRootPath + `ApiKey/CreateApiKeyResult?apiname=` + encodeURIComponent(data.ApiKeyResult.ApiName)
+                            + `&key=` + encodeURIComponent(data.ApiKeyResult.Key)
+                            + `&secret=` + encodeURIComponent(data.ApiKeyResult.ApiSecret)
+                        self.topWindow.popupManager.open(url, "API Key", 800, 300, null, null, null, 335, 150, null);
                     } else {
                         alpha.showMessage(self.$errorMessage, new Result(data.Result));
                     }
@@ -118,8 +120,12 @@ class CreateApiKey {
     }
 
     validateFormInput = (apiName: string, passPhrase: string, expirationDate: Date, scopes: string) => {
+        const regexName = /^[\w]+$/m;
         if (apiName == '') {
-            return "Please input API Name";
+            return "Please input API Key Name";
+        }
+        if (!regexName.test(apiName)) {
+            return "API Key Name can not have special characters";
         }
         if (apiName.length > 50) {
             return "No more than 50 characters!";
@@ -127,15 +133,19 @@ class CreateApiKey {
         if (passPhrase == '') {
             return "Please input PassPhrase";
         }
+        const regexPassPhrase = /^[\w!"#$%&'()*+,-./:;<=>?@[\]^_\`{|}~]+$/m;
+        if (!regexPassPhrase.test(passPhrase)) {
+            return "API PassPharse can not allow have space, symbol and punctuation";
+        }
         if (passPhrase.length < 7 || passPhrase.length > 32) {
-            return "Input need in range [7-32] characters"
+            return "Input need in range [7-32] characters";
         }
         const isPastDate = new Date(expirationDate.toString()) < new Date();
         if (isPastDate) {
             return "Cant select time from past";
         }
         if (scopes == "") {
-            return "Scopes is required."
+            return "Scopes is required";
         }
 
         return null;
