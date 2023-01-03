@@ -30,7 +30,9 @@ var menuBar = {
         reportSessionId: "",
         betlistDomain: null,
         betlistCookieless: "/",
-        betlistSessionId: ""
+        betlistSessionId: "",
+        authReportCount: 0,
+        authBetlistCount: 0
     },
 
     urls: {
@@ -447,6 +449,11 @@ var menuBar = {
                             menuBar.domElements.cookieless = sessionId;
 
                             $.cookie(authCookie, result, { path: '/' });
+
+                            menuBar.domElements.authReportCount++;
+                            if (menuBar.domElements.authReportCount < 2) {
+                                menuBar.loadAuthFrame();
+                            }
                         }
 
                         if (result === "OK" || result.length === 24) {
@@ -483,6 +490,11 @@ var menuBar = {
                             menuBar.domElements.betlistCookieless = sessionId;
 
                             $.cookie(authCookie, result, { path: '/' });
+
+                            menuBar.domElements.authBetlistCount++;
+                            if (menuBar.domElements.authBetlistCount < 2) {
+                                menuBar.loadBetlistAuthFrame();
+                            }
                         }
 
                         if (result === "OK" || result.length === 24) {
