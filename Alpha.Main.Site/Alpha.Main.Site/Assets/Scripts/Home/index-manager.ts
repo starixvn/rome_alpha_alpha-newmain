@@ -65,7 +65,7 @@ var indexManager = {
             }
 
             if (e.data.event_id === "betlist-result") {
-                popupManager.openMultiple(e.data.url, e.data.title, 900);
+                popupManager.openMultiple(e.data.url, e.data.title, e.data.width, e.data.height, undefined, undefined, undefined, undefined, undefined, undefined, e.data.options);
             }
         }, false);
     },

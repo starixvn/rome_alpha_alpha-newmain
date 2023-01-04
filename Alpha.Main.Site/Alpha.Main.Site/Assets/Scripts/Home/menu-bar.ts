@@ -452,7 +452,9 @@ var menuBar = {
 
                             menuBar.domElements.authReportCount++;
                             if (menuBar.domElements.authReportCount < 2) {
-                                menuBar.loadAuthFrame();
+                                setTimeout(() => {
+                                    menuBar.loadAuthFrame();
+                                }, 1000);
                             }
                         }
 
@@ -493,7 +495,9 @@ var menuBar = {
 
                             menuBar.domElements.authBetlistCount++;
                             if (menuBar.domElements.authBetlistCount < 2) {
-                                menuBar.loadBetlistAuthFrame();
+                                setTimeout(() => {
+                                    menuBar.loadBetlistAuthFrame();
+                                }, 1000);
                             }
                         }
 
