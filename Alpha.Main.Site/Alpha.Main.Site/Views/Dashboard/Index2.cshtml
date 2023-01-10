@@ -72,14 +72,15 @@
                     clearInterval(loadOutstanding);
                 }
 
-                if ($('#dashboard-outstanding') && $('#dashboard-outstanding').attr('href')) {
+                if (($('#dashboard-outstanding') && $('#dashboard-outstanding').attr('href'))
+                    || $('#dashboard-total-outstanding') && $('#dashboard-total-outstanding').attr('href')) {
                     clearInterval(loadOutstanding);
 
-                    if ($('#dashboard-outstanding').attr('href').indexOf('(S(') !== -1) {
+                    if ($('#dashboard-outstanding').attr('href') && $('#dashboard-outstanding').attr('href').indexOf('(S(') !== -1) {
                         $('#dashboard-outstanding').attr('href', $('#dashboard-outstanding').attr('href').replace(topWindow.menuBar.domElements.sessionId, topWindow.menuBar.domElements.reportSessionId));
                     }
 
-                    if ($('#dashboard-total-outstanding').attr('href').indexOf('(S(') !== -1) {
+                    if ($('#dashboard-total-outstanding').attr('href') && $('#dashboard-total-outstanding').attr('href').indexOf('(S(') !== -1) {
                         $('#dashboard-total-outstanding').attr('href', $('#dashboard-total-outstanding').attr('href').replace(topWindow.menuBar.domElements.sessionId, topWindow.menuBar.domElements.reportSessionId));
                     }
                 }
