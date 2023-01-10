@@ -1334,7 +1334,6 @@
     <Content Include="Views\TelegramChatBot\Language.cshtml" />
     <Content Include="Views\TelegramChatBot\Reports.cshtml" />
     <Content Include="Views\TelegramChatBot\NotificationsAndSettings.cshtml" />
-    <Content Include="Views\TelegramChatBot\Tab.cshtml" />
     <Content Include="Views\Dashboard\ChatBotBanneri7.cshtml" />
     <Content Include="Views\Dashboard\ChatBotBanneri1.cshtml" />
     <Content Include="Views\Banner\Index.cshtml" />
