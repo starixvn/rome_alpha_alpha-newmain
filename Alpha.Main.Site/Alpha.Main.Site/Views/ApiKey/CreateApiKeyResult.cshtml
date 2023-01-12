@@ -10,20 +10,20 @@
 
 <form class="block" id="apikey-form" autocomplete="off">
     <div class="form-group">
-        <label>API Key Name</label>
+        <label>@ApiKey.APIKeyName</label>
         <input type="text" class="form-control" id="apiname" autocomplete="off" value="@Model.ApiName" readonly />
     </div>
     <div class="form-group">
-        <label>API Key</label>
+        <label>@ApiKey.APIKey</label>
         <input type="text" class="form-control" id="key" autocomplete="off" value="@Model.Key" readonly />
         <span class="icon-content-copy icon" data-clipboard-action="copy" data-clipboard-target="#key" title="@Security.Copied"></span>
     </div>
     <div class="form-group">
-        <label>API Secret</label>
+        <label>@ApiKey.APISecret</label>
         <input type="text" class="form-control" id="secret" autocomplete="off" readonly value="@Model.Secret" />
         <span class="icon-content-copy icon icon-copy-secret" data-clipboard-action="copy" data-clipboard-target="#secret" title="@Security.Copied"></span>
     </div>
-    <p>API Secret cannot be retrieved and will ONLY be displayed for ONE time. Please note it down and keep it safe</p>
+    <p>@ApiKey.APISecretCanNotBeRetrieved</p>
     <div class="form-group mt-10">
         <button class="btn-submit" id="btnOk">OK</button>
     </div>

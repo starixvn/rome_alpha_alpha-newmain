@@ -10,10 +10,10 @@
 }
 <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active">
-        <a href="~/Apikey/CreateApiKey" role="tab" data-toggle="tab">Create API Key</a>
+        <a href="~/Apikey/CreateApiKey" role="tab" data-toggle="tab">@ApiKey.CreateAPIKey</a>
     </li>
     <li role="presentation" id="">
-        <a href="~/Apikey/ApiKeyManagement" role="tab" data-toggle="tab">API Key Management</a>
+        <a href="~/Apikey/ApiKeyManagement" role="tab" data-toggle="tab">@ApiKey.APIKeyManagement</a>
     </li>
 </ul>
 <div class="tab-content">
@@ -21,17 +21,17 @@
     <form class="block" id="apikey-form" autocomplete="off">
         <div id="error-message" class="container-msg w-450"></div>
         <div class="form-group">
-            <label>API Key Name<span class="require"> *</span></label>
+            <label>@ApiKey.APIKeyName<span class="require"> *</span></label>
             <input type="text" class="form-control" id="apiname" autocomplete="off" maxlength="50" />
         </div>
         <div class="form-group">
-            <label>API Passphrase<span class="require"> *</span></label>
+            <label>@ApiKey.APIPassphrase<span class="require"> *</span></label>
             <input type="text" class="form-control input-pass" placeholder="7 - 32 characters" id="passphrase" autocomplete="off" maxlength="32" />
-            <span class="icon-eye icon"></span>
+            <span class="icon-eye-close icon"></span>
         </div>
-        <p>API Passphrase is important information for you to use later. Please remember it and keep it safe.</p>
+        <p>@ApiKey.APIPassPhraseIsImportantForYouToUseLater</p>
         <div class="form-group">
-            <label>Expiration Date</label>
+            <label>@ApiKey.ExpirationDate</label>
             <div class="control date w-460">
                 <div class="input-group date w-310" id="dpkContainer">
                     <input type="text" class="form-control" id="expirationdate" autocomplete="off" placeholder="MM/DD/YYYY" />
@@ -41,9 +41,9 @@
                 </div>
             </div>
         </div>
-        <label class="scope-label">Select Scopes <span class="font-normal">(Scopes set the permisson granted to the API Key)</span></label>
+        <label class="scope-label">@ApiKey.SelectScopes <span class="font-normal">@ApiKey.ScopesSetThePermisson</span></label>
         <div class="ml-25">
-            <label class="scope-input mt-10"><input type="checkbox" value="All" id="ckbAll" checked /> All</label><br>
+            <label class="scope-input mt-10"><input type="checkbox" value="All" id="ckbAll" checked /> @ApiKey.All</label><br>
             <div class="ml-25" id="apiKeyScopes">
                 @foreach (var scope in Model.Scopes)
                 {
@@ -57,6 +57,15 @@
     </form>
 </div>
 @Html.Hidden("Language", Model.Language)
+@Html.Hidden("APIKey", ApiKey.APIKey)
+@Html.Hidden("PleaseInputAPIKeyName", ApiKey.PleaseInputAPIKeyName)
+@Html.Hidden("APIKeyNameCanNotContainSpecialCharacters", ApiKey.APIKeyNameCanNotContainSpecialCharacters)
+@Html.Hidden("NoMoreThan50Characters", ApiKey.NoMoreThan50Characters)
+@Html.Hidden("PleaseInputPassPhrase", ApiKey.PleaseInputPassPhrase)
+@Html.Hidden("APIPassPhraseCanNotContainSpaceSymbolAndPunctuaion", ApiKey.APIPassPhraseCanNotContainSpaceSymbolAndPunctuaion)
+@Html.Hidden("APIPassPhraseMustBeBetweenCharacters", ApiKey.APIPassPhraseMustBeBetweenCharacters)
+@Html.Hidden("CantSelectTimeFromPast", ApiKey.CantSelectTimeFromPast)
+@Html.Hidden("ScopesIsRequired", ApiKey.ScopesIsRequired)
 @section js {
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.RenderCommon("/bundles/site-main/apikey")

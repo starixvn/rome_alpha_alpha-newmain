@@ -61,6 +61,231 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Action.
+        /// </summary>
+        public static string Action {
+            get {
+                return ResourceManager.GetString("Action", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All.
+        /// </summary>
+        public static string All {
+            get {
+                return ResourceManager.GetString("All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API.
+        /// </summary>
+        public static string API {
+            get {
+                return ResourceManager.GetString("API", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API Key.
+        /// </summary>
+        public static string APIKey {
+            get {
+                return ResourceManager.GetString("APIKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API Key Management.
+        /// </summary>
+        public static string APIKeyManagement {
+            get {
+                return ResourceManager.GetString("APIKeyManagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API Key Name.
+        /// </summary>
+        public static string APIKeyName {
+            get {
+                return ResourceManager.GetString("APIKeyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API Key Name can not contain special characters..
+        /// </summary>
+        public static string APIKeyNameCanNotContainSpecialCharacters {
+            get {
+                return ResourceManager.GetString("APIKeyNameCanNotContainSpecialCharacters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API Passphrase.
+        /// </summary>
+        public static string APIPassphrase {
+            get {
+                return ResourceManager.GetString("APIPassphrase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API Passphrase can not contain space, symbol and punctuation..
+        /// </summary>
+        public static string APIPassPhraseCanNotContainSpaceSymbolAndPunctuaion {
+            get {
+                return ResourceManager.GetString("APIPassPhraseCanNotContainSpaceSymbolAndPunctuaion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API Passphrase is important information for you to use later. Please remember it and keep it safe..
+        /// </summary>
+        public static string APIPassPhraseIsImportantForYouToUseLater {
+            get {
+                return ResourceManager.GetString("APIPassPhraseIsImportantForYouToUseLater", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API Passphrase must be between [7-32] characters..
+        /// </summary>
+        public static string APIPassPhraseMustBeBetweenCharacters {
+            get {
+                return ResourceManager.GetString("APIPassPhraseMustBeBetweenCharacters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API Secret.
+        /// </summary>
+        public static string APISecret {
+            get {
+                return ResourceManager.GetString("APISecret", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API Secret cannot be retrieved and will ONLY be displayed for ONE time. Please note it down and keep it safe.
+        /// </summary>
+        public static string APISecretCanNotBeRetrieved {
+            get {
+                return ResourceManager.GetString("APISecretCanNotBeRetrieved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to revoke this API Key.
+        /// </summary>
+        public static string AreYouSureRevokeAPIKey {
+            get {
+                return ResourceManager.GetString("AreYouSureRevokeAPIKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cant select time from past..
+        /// </summary>
+        public static string CantSelectTimeFromPast {
+            get {
+                return ResourceManager.GetString("CantSelectTimeFromPast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create API Key.
+        /// </summary>
+        public static string CreateAPIKey {
+            get {
+                return ResourceManager.GetString("CreateAPIKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Created Date.
+        /// </summary>
+        public static string CreatedDate {
+            get {
+                return ResourceManager.GetString("CreatedDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit API Key.
+        /// </summary>
+        public static string EditAPIKey {
+            get {
+                return ResourceManager.GetString("EditAPIKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expiration Date.
+        /// </summary>
+        public static string ExpirationDate {
+            get {
+                return ResourceManager.GetString("ExpirationDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Never.
+        /// </summary>
+        public static string Never {
+            get {
+                return ResourceManager.GetString("Never", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No more than 50 characters!.
+        /// </summary>
+        public static string NoMoreThan50Characters {
+            get {
+                return ResourceManager.GetString("NoMoreThan50Characters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please input API Key Name..
+        /// </summary>
+        public static string PleaseInputAPIKeyName {
+            get {
+                return ResourceManager.GetString("PleaseInputAPIKeyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please input Passphrase..
+        /// </summary>
+        public static string PleaseInputPassPhrase {
+            get {
+                return ResourceManager.GetString("PleaseInputPassPhrase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Revoke.
+        /// </summary>
+        public static string Revoke {
+            get {
+                return ResourceManager.GetString("Revoke", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Win Loss Detail Report.
         /// </summary>
         public static string Scope_1 {
@@ -75,6 +300,42 @@ namespace Alpha.Main.AppResources {
         public static string Scope_2 {
             get {
                 return ResourceManager.GetString("Scope_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scopes is required..
+        /// </summary>
+        public static string ScopesIsRequired {
+            get {
+                return ResourceManager.GetString("ScopesIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Scopes set the permisson granted to the API Key).
+        /// </summary>
+        public static string ScopesSetThePermisson {
+            get {
+                return ResourceManager.GetString("ScopesSetThePermisson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Scopes.
+        /// </summary>
+        public static string SelectScopes {
+            get {
+                return ResourceManager.GetString("SelectScopes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This action cannot be undone..
+        /// </summary>
+        public static string ThisActionCannotBeUndone {
+            get {
+                return ResourceManager.GetString("ThisActionCannotBeUndone", resourceCulture);
             }
         }
     }

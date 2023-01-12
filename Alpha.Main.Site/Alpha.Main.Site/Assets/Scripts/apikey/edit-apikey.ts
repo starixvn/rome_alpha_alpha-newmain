@@ -39,6 +39,14 @@ class EditApiKey {
         this.registerEvents();
     }
 
+    resources = {
+        pleaseInputAPIKeyName: (<HTMLInputElement>document.getElementById('PleaseInputAPIKeyName')).value,
+        apiKeyNameCanNotContainSpecialCharacters: (<HTMLInputElement>document.getElementById('APIKeyNameCanNotContainSpecialCharacters')).value,
+        noMoreThan50Characters: (<HTMLInputElement>document.getElementById('NoMoreThan50Characters')).value,
+        cantSelectTimeFromPast: (<HTMLInputElement>document.getElementById('CantSelectTimeFromPast')).value,
+        scopesIsRequired: (<HTMLInputElement>document.getElementById('ScopesIsRequired')).value,
+    }
+
     cachedDOMElements = () => {
         this.$datePicker = this.$("#dpkContainer");
         this.$datePickerInput = this.$("#expirationdate");
@@ -105,22 +113,22 @@ class EditApiKey {
     }
 
     validateFormInput = (apiName: string, expirationDate: Date, scopes: string) => {
-        const regexName = /^[\w]+$/m;
+        const regexName = /^[a-zA-Z0-9\s]+$/m;
         if (apiName == '') {
-            return "Please input API Key Name";
+            return this.resources.pleaseInputAPIKeyName;
         }
         if (!regexName.test(apiName)) {
-            return "API Key Name can not have special characters";
+            return this.resources.apiKeyNameCanNotContainSpecialCharacters;
         }
         if (apiName.length > 50) {
-            return "No more than 50 characters!";
+            return this.resources.noMoreThan50Characters;
         }
         const isPastDate = new Date(expirationDate.toString()) < new Date();
         if (isPastDate) {
-            return "Cant select time from past";
+            return this.resources.cantSelectTimeFromPast;
         }
         if (scopes == "") {
-            return "Scopes is required"
+            return this.resources.scopesIsRequired;
         }
 
         return null;

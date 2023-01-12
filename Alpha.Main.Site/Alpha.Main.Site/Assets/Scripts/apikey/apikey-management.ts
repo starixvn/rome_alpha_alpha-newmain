@@ -15,12 +15,18 @@ class ApiKeyManagement {
         this.registerApiKeyRevokeEvent();
     }
 
+    resources = {
+        editAPIKey: (<HTMLInputElement>document.getElementById('EditAPIKey')).value,
+        areYouSureRevokeAPIKey: (<HTMLInputElement>document.getElementById('AreYouSureRevokeAPIKey')).value,
+        thisActionCannotBeUndone: (<HTMLInputElement>document.getElementById('ThisActionCannotBeUndone')).value,
+    }
+
     registerApiKeyEditEvent = () => {
         const self = this;
         self.$(".btn-edit").click(function () {
             const apikey = self.$(this).attr("apikey");
             const url = alpha.urls.mainRootPath + `ApiKey/EditApiKey?key=${apikey}`;
-            self.topWindow.popupManager.open(url, "Edit API Key", 800, 500, null, null, null, 335, 150);
+            self.topWindow.popupManager.open(url, self.resources.editAPIKey, 800, 500, null, null, null, 335, 150);
         })
     }
 
@@ -28,7 +34,7 @@ class ApiKeyManagement {
         const self = this;
         self.$(".btn-revoke").click(function () {
             const apiName = self.$(this).attr("apiname");
-            const title = `Are you sure you want to revoke this API Key <b>${apiName}</b> ?  This action cannot be undone.`;
+            const title = `${self.resources.areYouSureRevokeAPIKey} <b>${apiName}</b>?  ${self.resources.thisActionCannotBeUndone}`;
             self.topWindow.bootboxConfirm(title, undefined, () => {
                 const key = self.$(this).attr("apikey");
                 self.$.ajax({

@@ -117,10 +117,97 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="API" xml:space="preserve">
+    <value>API</value>
+  </data>
+  <data name="APIKey" xml:space="preserve">
+    <value>API Key</value>
+  </data>
+  <data name="APIKeyManagement" xml:space="preserve">
+    <value>API Key Management</value>
+  </data>
+  <data name="APIKeyName" xml:space="preserve">
+    <value>API Key Name</value>
+  </data>
+  <data name="APIKeyNameCanNotContainSpecialCharacters" xml:space="preserve">
+    <value>API Key Name can not contain special characters.</value>
+  </data>
+  <data name="APIPassphrase" xml:space="preserve">
+    <value>API Passphrase</value>
+  </data>
+  <data name="APIPassPhraseCanNotContainSpaceSymbolAndPunctuaion" xml:space="preserve">
+    <value>API Passphrase can not contain space, symbol and punctuation.</value>
+  </data>
+  <data name="APIPassPhraseIsImportantForYouToUseLater" xml:space="preserve">
+    <value>API Passphrase is important information for you to use later. Please remember it and keep it safe.</value>
+  </data>
+  <data name="APIPassPhraseMustBeBetweenCharacters" xml:space="preserve">
+    <value>API Passphrase must be between [7-32] characters.</value>
+  </data>
+  <data name="APISecret" xml:space="preserve">
+    <value>API Secret</value>
+  </data>
+  <data name="APISecretCanNotBeRetrieved" xml:space="preserve">
+    <value>API Secret cannot be retrieved and will ONLY be displayed for ONE time. Please note it down and keep it safe</value>
+  </data>
+  <data name="AreYouSureRevokeAPIKey" xml:space="preserve">
+    <value>Are you sure you want to revoke this API Key</value>
+  </data>
+  <data name="CantSelectTimeFromPast" xml:space="preserve">
+    <value>Cant select time from past.</value>
+  </data>
+  <data name="CreateAPIKey" xml:space="preserve">
+    <value>Create API Key</value>
+  </data>
+  <data name="CreatedDate" xml:space="preserve">
+    <value>Created Date</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EditAPIKey" xml:space="preserve">
+    <value>Edit API Key</value>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>Expiration Date</value>
+  </data>
+  <data name="Never" xml:space="preserve">
+    <value>Never</value>
+  </data>
+  <data name="NoMoreThan50Characters" xml:space="preserve">
+    <value>No more than 50 characters!</value>
+  </data>
+  <data name="PleaseInputAPIKeyName" xml:space="preserve">
+    <value>Please input API Key Name.</value>
+  </data>
+  <data name="PleaseInputPassPhrase" xml:space="preserve">
+    <value>Please input Passphrase.</value>
+  </data>
+  <data name="Revoke" xml:space="preserve">
+    <value>Revoke</value>
+  </data>
+  <data name="ScopesIsRequired" xml:space="preserve">
+    <value>Scopes is required.</value>
+  </data>
+  <data name="ScopesSetThePermisson" xml:space="preserve">
+    <value>(Scopes set the permisson granted to the API Key)</value>
+  </data>
   <data name="Scope_1" xml:space="preserve">
     <value>Win Loss Detail Report</value>
   </data>
   <data name="Scope_2" xml:space="preserve">
     <value>Outstanding Report</value>
+  </data>
+  <data name="SelectScopes" xml:space="preserve">
+    <value>Select Scopes</value>
+  </data>
+  <data name="ThisActionCannotBeUndone" xml:space="preserve">
+    <value>This action cannot be undone.</value>
   </data>
 </root>

@@ -10,10 +10,10 @@
 }
 <ul class="nav nav-tabs" role="tablist">
     <li role="presentation">
-        <a href="~/Apikey/CreateApiKey" role="tab" data-toggle="tab">Create API Key</a>
+        <a href="~/Apikey/CreateApiKey" role="tab" data-toggle="tab">@ApiKey.CreateAPIKey</a>
     </li>
     <li role="presentation" id="" class="active">
-        <a href="~/Apikey/ApiKeyManagement" role="tab" data-toggle="tab">API Key Management</a>
+        <a href="~/Apikey/ApiKeyManagement" role="tab" data-toggle="tab">@ApiKey.APIKeyManagement</a>
     </li>
 </ul>
 <div class="tab-content apikey-form">
@@ -21,10 +21,10 @@
     <table class="tblRpt tblRpt-bordered tblRpt-striped tblRpt-hover">
         <thead>
             <tr>
-                <th class="sorting" data-colindex="0">API Key Name</th>
-                <th class="sorting" data-colindex="1">Created Date</th>
-                <th class="hidden-stack-mode sorting" data-colindex="2">Expiration Date</th>
-                <th class="hidden-stack-mode col-netturnover-header sorting" data-colindex="3">Action</th>
+                <th class="sorting" data-colindex="0">@ApiKey.APIKeyName</th>
+                <th class="sorting" data-colindex="1">@ApiKey.CreatedDate</th>
+                <th class="hidden-stack-mode sorting" data-colindex="2">@ApiKey.ExpirationDate</th>
+                <th class="hidden-stack-mode col-netturnover-header sorting" data-colindex="3">@ApiKey.Action</th>
             </tr>
         </thead>
         <tbody>
@@ -45,11 +45,11 @@
                         }
                         else
                         {
-                            <td class='text-center'>Never</td>
+                            <td class='text-center'>@ApiKey.Never</td>
                         }
                         <td class="text-center">
-                            <button class="btn-submit btn-edit" apikey=@apikey.Key>Edit</button>
-                            <button class="btn-remove btn-revoke" apikey=@apikey.Key apiname=@apikey.Name>Revoke</button>
+                            <button class="btn-submit btn-edit" apikey=@apikey.Key>@ApiKey.Edit</button>
+                            <button class="btn-remove btn-revoke" apikey=@apikey.Key apiname=@apikey.Name>@ApiKey.Revoke</button>
                         </td>
                     </tr>
                 }
@@ -64,6 +64,9 @@
     </table>
 </div>
 @Html.Hidden("Language", Model.Language)
+@Html.Hidden("EditAPIKey", ApiKey.EditAPIKey)
+@Html.Hidden("AreYouSureRevokeAPIKey", ApiKey.AreYouSureRevokeAPIKey)
+@Html.Hidden("ThisActionCannotBeUndone", ApiKey.ThisActionCannotBeUndone)
 @section js {
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.RenderCommon("/bundles/site-main/apikey")
