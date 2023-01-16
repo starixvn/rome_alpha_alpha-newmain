@@ -417,4 +417,7 @@
   <data name="MyThresholds" xml:space="preserve">
     <value>Giới Hạn Của Tôi</value>
   </data>
+  <data name="riskManagement" xml:space="preserve">
+    <value>Quản Lý Rủi Ro</value>
+  </data>
 </root>
