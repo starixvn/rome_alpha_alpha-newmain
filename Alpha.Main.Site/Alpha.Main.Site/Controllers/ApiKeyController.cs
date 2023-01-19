@@ -62,5 +62,15 @@
         {
             return Json(await mediator.SendAsync(query));
         }
+
+        protected override void OnAuthorization(AuthorizationContext filterContext)
+        {
+            base.OnAuthorization(filterContext);
+
+            if (userSession.IsSubAcc || userSession.IsProtectedMode)
+            {
+                UnAuthentication(filterContext);
+            }
+        }
     }
 }
