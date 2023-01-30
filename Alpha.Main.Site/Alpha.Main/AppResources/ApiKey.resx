@@ -154,7 +154,7 @@
     <value>API Secret</value>
   </data>
   <data name="APISecretCanNotBeRetrieved" xml:space="preserve">
-    <value>API Secret cannot be retrieved and will ONLY be displayed for ONE time. Please note it down and keep it safe</value>
+    <value>API Secret will only be displayed ONCE and cannot be retrieved. Please note it down and keep it safe.</value>
   </data>
   <data name="AreYouSureRevokeAPIKey" xml:space="preserve">
     <value>Are you sure you want to revoke this API Key</value>
@@ -163,7 +163,7 @@
     <value>Cant select time from past.</value>
   </data>
   <data name="CreateAPIKey" xml:space="preserve">
-    <value>Create API Key</value>
+    <value>Create New API Key</value>
   </data>
   <data name="CreatedDate" xml:space="preserve">
     <value>Created Date</value>
@@ -209,5 +209,8 @@
   </data>
   <data name="ThisActionCannotBeUndone" xml:space="preserve">
     <value>This action cannot be undone.</value>
+  </data>
+  <data name="UpdateSuccessful" xml:space="preserve">
+    <value>Update successful</value>
   </data>
 </root>

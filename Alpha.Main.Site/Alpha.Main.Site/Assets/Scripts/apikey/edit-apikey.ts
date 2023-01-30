@@ -45,6 +45,7 @@ class EditApiKey {
         noMoreThan50Characters: (<HTMLInputElement>document.getElementById('NoMoreThan50Characters')).value,
         cantSelectTimeFromPast: (<HTMLInputElement>document.getElementById('CantSelectTimeFromPast')).value,
         scopesIsRequired: (<HTMLInputElement>document.getElementById('ScopesIsRequired')).value,
+        updateSuccessful: (<HTMLInputElement>document.getElementById('UpdateSuccessful')).value,
     }
 
     cachedDOMElements = () => {
@@ -102,6 +103,7 @@ class EditApiKey {
                     if (data.IsFailed) {
                         alpha.showMessage(self.$errorMessage, new Result(data));
                     } else {
+                        alpha.showMessage(self.$errorMessage, new Result({ Code: 0, Message: self.resources.updateSuccessful }))
                         parent.window.location.href = parent.window.location.href;
                     }
                 },

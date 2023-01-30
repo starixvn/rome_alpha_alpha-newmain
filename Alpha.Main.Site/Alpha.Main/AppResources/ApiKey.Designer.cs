@@ -169,7 +169,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to API Secret cannot be retrieved and will ONLY be displayed for ONE time. Please note it down and keep it safe.
+        ///   Looks up a localized string similar to API Secret will only be displayed ONCE and cannot be retrieved. Please note it down and keep it safe..
         /// </summary>
         public static string APISecretCanNotBeRetrieved {
             get {
@@ -196,7 +196,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create API Key.
+        ///   Looks up a localized string similar to Create New API Key.
         /// </summary>
         public static string CreateAPIKey {
             get {
@@ -336,6 +336,15 @@ namespace Alpha.Main.AppResources {
         public static string ThisActionCannotBeUndone {
             get {
                 return ResourceManager.GetString("ThisActionCannotBeUndone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update successful.
+        /// </summary>
+        public static string UpdateSuccessful {
+            get {
+                return ResourceManager.GetString("UpdateSuccessful", resourceCulture);
             }
         }
     }
