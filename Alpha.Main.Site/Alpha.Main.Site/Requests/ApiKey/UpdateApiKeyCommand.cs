@@ -16,6 +16,7 @@
         {
             userSession = userSession ?? new UserSessionExt();
             CustId = userSession.CustId;
+            IP = userSession.UserLoginIp;
         }
 
         public string ApiKey { get; set; }
@@ -25,6 +26,8 @@
         public string ApiName { get; set; }
 
         public string Scopes { get; set; }
+
+        public string IP { get; }
 
         public DateTime? ExpirationDate { get; set; }
     }

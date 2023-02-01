@@ -16,6 +16,7 @@
         {
             userSession = userSession ?? new UserSessionExt();
             CustId = userSession.CustId;
+            IP = userSession.UserLoginIp;
         }
 
         public int CustId { get; }
@@ -25,6 +26,8 @@
         public string PassPhrase { get; set; }
 
         public string Scopes { get; set; }
+
+        public string IP { get; set; }
 
         public DateTime? ExpirationDate { get; set; }
     }

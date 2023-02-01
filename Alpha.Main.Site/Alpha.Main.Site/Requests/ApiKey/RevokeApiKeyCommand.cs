@@ -14,8 +14,11 @@
         public RevokeApiKeyCommand(IUserSession userSession)
         {
             userSession = userSession ?? new UserSessionExt();
+            IP = userSession.UserLoginIp;
         }
 
         public string Key { get; set; }
+
+        public string IP { get; }
     }
 }
