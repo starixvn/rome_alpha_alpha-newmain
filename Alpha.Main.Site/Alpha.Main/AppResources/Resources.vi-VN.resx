@@ -691,13 +691,13 @@
     <value>For Better Security</value>
   </data>
   <data name="AdvertisementMyWatchlist" xml:space="preserve">
-    <value>&lt;b&gt;Easily&lt;/b&gt; monitor your win loss using &lt;b&gt;My Thresholds&lt;/b&gt;</value>
+    <value>&lt;b&gt;Dễ dàng&lt;/b&gt; theo dõi thắng thua của bạn qua &lt;b&gt;Mức Thắng Thua&lt;/b&gt;</value>
   </data>
   <data name="AdvertisementMyWatchlistGlobalThreshold" xml:space="preserve">
-    <value>My Thresholds: set winning / losing threshold based on your position taking</value>
+    <value>Mức Thắng Thua: đặt giới hạn thắng thua trên Position Taking của bạn</value>
   </data>
   <data name="AdvertisementMyWatchlistGlobalThresholdDetail" xml:space="preserve">
-    <value>Go to &lt;b&gt;My Thresholds&lt;/b&gt; --&gt; set Winning / Losing threshold</value>
+    <value>Đi đến &lt;b&gt;Mức Thắng Thua&lt;/b&gt; -&gt; đặt Giới Hạn Thắng/Thua</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
     <value>Tìm Hiểu Thêm</value>

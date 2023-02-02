@@ -629,13 +629,13 @@
     <value>For Better Security</value>
   </data>
   <data name="AdvertisementMyWatchlist" xml:space="preserve">
-    <value>&lt;b&gt;Easily&lt;/b&gt; monitor your win loss using &lt;b&gt;My Thresholds&lt;/b&gt;</value>
+    <value>&lt;b&gt;轻松&lt;/b&gt;使用&lt;b&gt;我的限额&lt;/b&gt;监控您的输赢</value>
   </data>
   <data name="AdvertisementMyWatchlistGlobalThreshold" xml:space="preserve">
-    <value>My Thresholds: set winning / losing threshold based on your position taking</value>
+    <value>我的限额: 根据您的占成数设置赢/输限额</value>
   </data>
   <data name="AdvertisementMyWatchlistGlobalThresholdDetail" xml:space="preserve">
-    <value>Go to &lt;b&gt;My Thresholds&lt;/b&gt; --&gt; set Winning / Losing threshold</value>
+    <value>请到&lt;b&gt;我的限额&lt;/b&gt; --&gt; 设置赢/输限额</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
     <value>了解更多</value>

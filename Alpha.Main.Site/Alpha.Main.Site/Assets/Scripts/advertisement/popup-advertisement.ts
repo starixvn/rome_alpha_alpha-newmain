@@ -27,7 +27,9 @@
 
         popup.find("#btn-setup").click(() => {
             popup.modal("hide");
-            this.activateSidebarMenu(this.$("#menu-MYWATCHLIST").find(".menu-opener"));
+            this.$("#userLevel").val() === "agent"
+                ? this.activateSidebarMenu(this.$("#sub-menu-MYWATCHLIST"))
+                : this.activateSidebarMenu(this.$("#sub-menu-MYTHRESHOLDS"));
         });
     }
 
@@ -63,8 +65,7 @@
             this.$("#subUserId").val()
         ].join("_");
 
-        this.$("#userLevel").val() === "agent"
-            && this.$("#subPageAccess").val().includes("[H]")
+        this.$("#subPageAccess").val().includes("[H]")
             && !this.getDontShowAgainLocalStorage()
             && this.getMyWatchlist();
     }
