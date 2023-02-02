@@ -26,6 +26,10 @@ class EditApiKey {
     $btnCancel: JQuery;
     $errorMessage: JQuery;
 
+    apiKeyName: any;
+    apiKeyExpirationDate: any;
+    apiKeyScopes: any;
+
     constructor($: JQueryStatic, topWindow: any, clipboard: any) {
         this.$ = $;
         this.topWindow = topWindow;
@@ -35,6 +39,7 @@ class EditApiKey {
     init = () => {
         this.cachedDOMElements();
         this.renderDatetimePicker();
+        this.cacheOldApiKeyValue();
         this.handleSelectScopes();
         this.registerEvents();
     }
@@ -55,6 +60,12 @@ class EditApiKey {
         this.$btnCancel = this.$("#btnCancel");
         this.$btnSubmit = this.$("#btnSubmit");
         this.$errorMessage = this.$("#error-message");
+    }
+
+    cacheOldApiKeyValue = () => {
+        this.apiKeyName = this.$("#apiname").val();
+        this.apiKeyExpirationDate = this.$("#expirationdate").val();
+        this.apiKeyScopes = this.getScopeValue();
     }
 
     registerEvents = () => {
@@ -88,6 +99,10 @@ class EditApiKey {
         const apikey = this.$("#key").val();
         const expirationDate = this.$("#expirationdate").val();
         const scopes = this.getScopeValue();
+        if (apiName == this.apiKeyName && expirationDate == this.apiKeyExpirationDate && scopes == this.apiKeyScopes) {
+            parent.window.location.href = this.removeBookmarksInUrl(parent.window.location.href);
+            return;
+        }
         const error = this.validateFormInput(apiName, expirationDate, scopes);
         if (error) {
             alpha.showMessage(this.$errorMessage, new Result({ Code: 1, Message: error }));
@@ -104,7 +119,7 @@ class EditApiKey {
                         alpha.showMessage(self.$errorMessage, new Result(data));
                     } else {
                         alpha.showMessage(self.$errorMessage, new Result({ Code: 0, Message: self.resources.updateSuccessful }))
-                        parent.window.location.href = parent.window.location.href;
+                        parent.window.location.href = this.removeBookmarksInUrl(parent.window.location.href);
                     }
                 },
                 complete: function (jqXHR, textStatus) {
@@ -188,6 +203,20 @@ class EditApiKey {
         }
         this.$datePicker.datepicker(options);
     }
+
+    removeBookmarksInUrl = (url: string) => {
+        if (typeof url !== 'string') {
+            return null;
+        }
+
+        var i = url.indexOf("#");
+        if (i === -1) {
+            return url;
+        }
+
+        return url.substr(0, i);
+    }
+
 }
 
 $(function () {
