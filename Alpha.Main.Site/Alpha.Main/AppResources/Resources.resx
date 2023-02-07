@@ -698,7 +698,7 @@
     <value>My Thresholds: set winning / losing threshold based on your position taking</value>
   </data>
   <data name="AdvertisementMyWatchlistGlobalThresholdDetail" xml:space="preserve">
-    <value>Go to &lt;b&gt;My Thresholds&lt;/b&gt; --&gt; set Winning / Losing threshold</value>
+    <value>Go to &lt;b&gt;Risk Management&lt;/b&gt; --&gt; My Thresholds --&gt; set Winning / Losing threshold</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
     <value>Learn More</value>

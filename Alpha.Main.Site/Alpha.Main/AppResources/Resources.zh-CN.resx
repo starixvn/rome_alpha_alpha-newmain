@@ -635,7 +635,7 @@
     <value>我的限额: 根据您的占成数设置赢/输限额</value>
   </data>
   <data name="AdvertisementMyWatchlistGlobalThresholdDetail" xml:space="preserve">
-    <value>请到&lt;b&gt;我的限额&lt;/b&gt; --&gt; 设置赢/输限额</value>
+    <value>请到 &lt;b&gt;风险管理&lt;/b&gt; --&gt; 我的限额 --&gt; 设置赢/输限额</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
     <value>了解更多</value>

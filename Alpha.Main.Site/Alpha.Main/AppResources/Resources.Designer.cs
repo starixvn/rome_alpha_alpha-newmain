@@ -106,7 +106,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Go to &lt;b&gt;My Thresholds&lt;/b&gt; --&gt; set Winning / Losing threshold.
+        ///   Looks up a localized string similar to Go to &lt;b&gt;Risk Management&lt;/b&gt; --&gt; My Thresholds --&gt; set Winning / Losing threshold.
         /// </summary>
         public static string AdvertisementMyWatchlistGlobalThresholdDetail {
             get {

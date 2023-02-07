@@ -47,7 +47,7 @@
       <siteMapNode menuItemType="NG2MenuItem" resourceKey="schedule" appPath="NG2SiteVirtualPath" url="~/Schedule"></siteMapNode>
       <siteMapNode menuItemType="ProgressiveContributionMenuItem" resourceKey="ProgressiveGamesContribution" appPath="ReportsAppPath" url="/progressivecontribution/index" useDomainConfig="Report:Domain"></siteMapNode>
       <siteMapNode menuItemType="BonusDetailMenuItem" resourceKey="BonusDetail" appPath="ReportsAppPath" url="/bonusdetail/index" useDomainConfig="Report:Domain"></siteMapNode>
-      <siteMapNode resourceKey="BetCreditTracking" appPath="ReportsAppPath" url="/betcredithistory/index" isHiddenInMobile="true" isNew="true" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="BetCreditTracking" appPath="ReportsAppPath" url="/betcredithistory/index" isHiddenInMobile="true" useDomainConfig="Report:Domain"></siteMapNode>
     </siteMapNode>
     <!--/Report-->
     <!--MemberInfo-->
@@ -154,8 +154,8 @@
     </siteMapNode>
 	<siteMapNode resourceKey="riskManagement" menuItemType="MemberInfoMenuItem" functionType="[H]" byPassProtectedModeInternal="true">
 		<siteMapNode resourceKey="MemberWinLimit" appPath="MemberInfoAppPath" url="WinLossLimit/Index"></siteMapNode>
-		<siteMapNode resourceKey="MyWatchlist" appPath="MemberInfoAppPath" url="ReachedThreshold/Index" roles="Agent"></siteMapNode>
-		<siteMapNode resourceKey="MyThresholds" appPath="MemberInfoAppPath" url="MyThresholds/Index" roles="Super,Master"></siteMapNode>
+		<siteMapNode resourceKey="MyWatchlist" appPath="MemberInfoAppPath" url="ReachedThreshold/Index" roles="Agent" isNew="true"></siteMapNode>
+		<siteMapNode resourceKey="MyThresholds" appPath="MemberInfoAppPath" url="MyThresholds/Index" roles="Super,Master" isNew="true"></siteMapNode>
 	</siteMapNode>
     <siteMapNode resourceKey="chatbot" appPath="MainAppPath" url="TelegramChatBot/Setup"></siteMapNode>
     <siteMapNode resourceKey="SercurityCode" appPath="MainAppPath" url="Otp/SetupOtp" isNew="true"></siteMapNode>
