@@ -18,7 +18,7 @@
 
         public ActionResult MyWatchlist()
         {
-            if (userSession.IsAgent && userSession.SubPageAccess.ViewMemberInfo)
+            if (userSession.SubPageAccess.ViewMemberInfo)
             {
                 return PartialView(new MyWatchlistViewModel(userSession.Language, userSession.DarkModeName));
             }

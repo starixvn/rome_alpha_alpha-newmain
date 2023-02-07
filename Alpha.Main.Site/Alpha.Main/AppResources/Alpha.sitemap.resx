@@ -414,4 +414,10 @@
   <data name="SercurityCode" xml:space="preserve">
     <value>Security</value>
   </data>
+  <data name="riskManagement" xml:space="preserve">
+    <value>Risk Management</value>
+  </data>
+  <data name="MyThresholds" xml:space="preserve">
+    <value>My Thresholds</value>
+  </data>
 </root>

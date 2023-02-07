@@ -19,7 +19,7 @@ namespace Alpha.Main.AppResources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Alpha_sitemap {
@@ -610,6 +610,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My Thresholds.
+        /// </summary>
+        public static string MyThresholds {
+            get {
+                return ResourceManager.GetString("MyThresholds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to My Watchlist.
         /// </summary>
         public static string MyWatchlist {
@@ -750,6 +759,15 @@ namespace Alpha.Main.AppResources {
         public static string result {
             get {
                 return ResourceManager.GetString("result", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Risk Management.
+        /// </summary>
+        public static string riskManagement {
+            get {
+                return ResourceManager.GetString("riskManagement", resourceCulture);
             }
         }
         

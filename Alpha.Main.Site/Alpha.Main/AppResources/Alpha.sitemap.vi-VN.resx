@@ -414,4 +414,10 @@
   <data name="SercurityCode" xml:space="preserve">
     <value>Bảo mật</value>
   </data>
+  <data name="MyThresholds" xml:space="preserve">
+    <value>Mức Thắng Thua</value>
+  </data>
+  <data name="riskManagement" xml:space="preserve">
+    <value>Quản Lý Rủi Ro</value>
+  </data>
 </root>

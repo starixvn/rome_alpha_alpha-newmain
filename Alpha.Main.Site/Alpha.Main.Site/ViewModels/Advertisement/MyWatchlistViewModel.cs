@@ -17,7 +17,7 @@
         public string MobileImageName { get; }
 
         public string UserGuideLink => AppSettings.IsMBCSite
-            ? MicroSites.HowToUseUrl("~/Index.aspx?linktomessagesite=170467")
-            : MicroSites.MessageUrl("~/StaticMessage/Guide?id=170467");
+            ? MicroSites.HowToUseUrl("~/Index.aspx?linktomessagesite=179067")
+            : MicroSites.MessageUrl("~/StaticMessage/Guide?id=179067");
     }
 }

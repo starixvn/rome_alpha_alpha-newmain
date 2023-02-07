@@ -629,19 +629,13 @@
     <value>For Better Security</value>
   </data>
   <data name="AdvertisementMyWatchlist" xml:space="preserve">
-    <value>&lt;b&gt; 簡易 &lt;/b&gt; 監控您的會員通過以下方式 &lt;b&gt; 我的監控列表 &lt;/b&gt;</value>
+    <value>&lt;b&gt;輕鬆&lt;/b&gt;使用&lt;b&gt;我的限額&lt;/b&gt;監控您的輸贏</value>
   </data>
   <data name="AdvertisementMyWatchlistGlobalThreshold" xml:space="preserve">
-    <value>總體限額: 限額適用於所有會員</value>
+    <value>我的限額: 根據您的佔成數設置贏/輸限額</value>
   </data>
   <data name="AdvertisementMyWatchlistGlobalThresholdDetail" xml:space="preserve">
-    <value>請到 &lt;b&gt; 我的監控列表 &lt;/b&gt; 選項 -&gt; 點擊總體限額 -&gt; 設置贏/輸限額</value>
-  </data>
-  <data name="AdvertisementMyWatchlistPersonalThreshold" xml:space="preserve">
-    <value>個人限額：限額用於特定的會員</value>
-  </data>
-  <data name="AdvertisementMyWatchlistPersonalThresholdDetail" xml:space="preserve">
-    <value>請到 &lt;b&gt; 我的監控列表 &lt;/b&gt; 選項 -&gt; 點擊添加會員 -&gt; 輸入會員用戶名和贏/輸限額</value>
+    <value>請到&lt;b&gt;我的限額&lt;/b&gt; --&gt; 設置贏/輸限額</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
     <value>了解更多</value>
