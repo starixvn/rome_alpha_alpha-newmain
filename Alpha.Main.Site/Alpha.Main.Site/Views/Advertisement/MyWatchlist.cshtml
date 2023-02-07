@@ -2,15 +2,16 @@
 @model Alpha.Main.Site.ViewModels.Advertisement.MyWatchlistViewModel
 <ol>
     <li><p>@Resources.AdvertisementMyWatchlistGlobalThreshold</p></li>
-    <li>
+     <li><p>@Html.Raw(Resources.AdvertisementMyWatchlistGlobalThresholdDetail)</p></li>
+    @*<li>
         <ol>
             <li><p>@Html.Raw(Resources.AdvertisementMyWatchlistGlobalThresholdDetail)</p></li>
         </ol>
-    </li>
+    </li>*@
 </ol>
 <div class="picture">
-    <img class="pc" src="~/Assets/Images/Advertisement/MyWatchlist/@Model.DesktopImageName" alt="my watchlist" />
-    <img class="mobile" src="~/Assets/Images/Advertisement/MyWatchlist/@Model.MobileImageName" alt="my watchlist" />
+    <img class="pc" src="~/Assets/Images/Advertisement/MyWatchlist/@Model.DesktopImageName?v=@Model.Version" alt="my thresholds" />
+    <img class="mobile" src="~/Assets/Images/Advertisement/MyWatchlist/@Model.MobileImageName?v=@Model.Version" alt="my thresholds" />
 </div>
 <div class="button-advertisement">
     <label><input type="checkbox" id="chb-dontShow" />@Resources.doNotShowAgain</label>

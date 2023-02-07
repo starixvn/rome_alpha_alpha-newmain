@@ -632,7 +632,7 @@
     <value>ขีดจำกัดของฉัน: ตั้งค่าขีดจำกัดการชนะ /แพ้ตามค่าความเสี่ยงของคุณ</value>
   </data>
   <data name="AdvertisementMyWatchlistGlobalThresholdDetail" xml:space="preserve">
-    <value>ไปที่ &lt;b&gt; ขีดจำกัดของฉัน &lt;/b&gt; --&gt; ตั้งค่าขีดจำกัดการชนะ/แพ้</value>
+    <value>ไปที่ &lt;b&gt; การจัดการความเสี่ยง &lt;/b&gt; --&gt; ขีดจำกัดของฉัน --&gt; ตั้งค่าขีดจำกัดการชนะ/แพ้</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
     <value>ศึกษาเพิ่มเติม</value>

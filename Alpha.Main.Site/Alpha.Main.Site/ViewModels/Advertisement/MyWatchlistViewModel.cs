@@ -19,5 +19,7 @@
         public string UserGuideLink => AppSettings.IsMBCSite
             ? MicroSites.HowToUseUrl("~/Index.aspx?linktomessagesite=179067")
             : MicroSites.MessageUrl("~/StaticMessage/Guide?id=179067");
+
+        public string Version => AppSettings.JsVersion;
     }
 }
