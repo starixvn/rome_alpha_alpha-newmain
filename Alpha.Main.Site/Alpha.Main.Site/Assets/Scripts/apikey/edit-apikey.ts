@@ -119,7 +119,7 @@ class EditApiKey {
                         alpha.showMessage(self.$errorMessage, new Result(data));
                     } else {
                         alpha.showMessage(self.$errorMessage, new Result({ Code: 0, Message: self.resources.updateSuccessful }))
-                        parent.window.location.href = this.removeBookmarksInUrl(parent.window.location.href);
+                        parent.window.location.href = self.removeBookmarksInUrl(parent.window.location.href);
                     }
                 },
                 complete: function (jqXHR, textStatus) {
