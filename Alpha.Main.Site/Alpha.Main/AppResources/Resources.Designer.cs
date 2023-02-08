@@ -115,6 +115,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Go to &lt;b&gt;Risk Management&lt;/b&gt; --&gt; My Watchlist - My Thresholds --&gt; set Winning / Losing threshold.
+        /// </summary>
+        public static string AdvertisementMyWatchlistGlobalThresholdDetailAgent {
+            get {
+                return ResourceManager.GetString("AdvertisementMyWatchlistGlobalThresholdDetailAgent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Agent.
         /// </summary>
         public static string agent {

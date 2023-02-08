@@ -709,4 +709,7 @@
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="AdvertisementMyWatchlistGlobalThresholdDetailAgent" xml:space="preserve">
+    <value>Go to &lt;b&gt;Risk Management&lt;/b&gt; --&gt; My Watchlist - My Thresholds --&gt; set Winning / Losing threshold</value>
+  </data>
 </root>

@@ -20,7 +20,7 @@
         {
             if (userSession.SubPageAccess.ViewMemberInfo)
             {
-                return PartialView(new MyWatchlistViewModel(userSession.Language, userSession.DarkModeName));
+                return PartialView(new MyWatchlistViewModel(userSession.Language, userSession.DarkModeName, userSession.RoleId));
             }
 
             return new EmptyResult();
