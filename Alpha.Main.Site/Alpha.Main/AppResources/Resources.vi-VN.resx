@@ -708,4 +708,7 @@
   <data name="No" xml:space="preserve">
     <value>Không</value>
   </data>
+  <data name="AdvertisementMyWatchlistGlobalThresholdDetailAgent" xml:space="preserve">
+    <value>Đi đến &lt;b&gt;Quản Lý Rủi Ro&lt;/b&gt; --&gt; Danh Sách Theo Dõi - Mức Thắng Thua --&gt; đặt Giới Hạn Thắng/Thua</value>
+  </data>
 </root>

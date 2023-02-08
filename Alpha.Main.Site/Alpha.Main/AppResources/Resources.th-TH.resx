@@ -643,4 +643,7 @@
   <data name="Yes" xml:space="preserve">
     <value>มี</value>
   </data>
+  <data name="AdvertisementMyWatchlistGlobalThresholdDetailAgent" xml:space="preserve">
+    <value>ไปที่ &lt;b&gt; การจัดการความเสี่ยง &lt;/b&gt; --&gt; รายการเฝ้าดูของฉัน - ขีดจำกัดของฉัน --&gt; ตั้งค่าขีดจำกัดการชนะ/แพ้</value>
+  </data>
 </root>

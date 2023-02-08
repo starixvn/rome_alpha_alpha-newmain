@@ -646,4 +646,7 @@
   <data name="Yes" xml:space="preserve">
     <value>是</value>
   </data>
+  <data name="AdvertisementMyWatchlistGlobalThresholdDetailAgent" xml:space="preserve">
+    <value>请到 &lt;b&gt;风险管理&lt;/b&gt; --&gt; 我的监控列表 - 我的限额 --&gt; 设置赢/输限额</value>
+  </data>
 </root>

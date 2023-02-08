@@ -2,14 +2,17 @@
 {
     using Alpha.Main.Configurations;
     using Alpha.Web.Helpers;
+    using Alpha.Web.Models;
 
     public class MyWatchlistViewModel
     {
-        public MyWatchlistViewModel(string language, string darkModeName)
+        public MyWatchlistViewModel(string language, string darkModeName, byte roleId)
         {
-            string mainLanguage = Main.Constants.Language.MapToMainLanguageCode(language);
-            DesktopImageName = $"Desktop{darkModeName}_{mainLanguage}.jpg";
-            MobileImageName = $"Mobile{darkModeName}_{mainLanguage}.jpg";
+            var mainLanguage = Main.Constants.Language.MapToMainLanguageCode(language);
+            var version = AppSettings.JsVersion;
+            DesktopImageName = $"Desktop{darkModeName}_{mainLanguage}.jpg?v={version}";
+            MobileImageName = $"Mobile{darkModeName}_{mainLanguage}.jpg?v={version}";
+            CustLevel = Enumeration.FromValue<UserLevel>(roleId);
         }
 
         public string DesktopImageName { get; }
@@ -20,6 +23,6 @@
             ? MicroSites.HowToUseUrl("~/Index.aspx?linktomessagesite=179067")
             : MicroSites.MessageUrl("~/StaticMessage/Guide?id=179067");
 
-        public string Version => AppSettings.JsVersion;
+        public UserLevel CustLevel { get; }
     }
 }
