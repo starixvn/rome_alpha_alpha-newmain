@@ -175,5 +175,7 @@
 
         public string Username => message.IsSubAcc ? message.SubUserName : message.UserName;
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
+
+        public bool ShowFloatingFeedback { get; set; }
     }
 }

@@ -16,6 +16,7 @@ if (typeof String.prototype.startsWith != 'function') {
 var indexManager = {
     currentTab: null,
     currentUrlCookieName: 'DFFKDHFJKLDHFJDH',
+    hideFeedbackCookies: 'HideFeedback',
     requiredNetworkSpeedCalculation: false,
     showOldCustomerList: false,
     reportDomain: "",
@@ -31,7 +32,8 @@ var indexManager = {
     },
 
     urls: {
-        reCheckinUrl: alpha.urls.oldMainRootPath + '_Authorization/Handlers/ReCheckin.ashx'
+        reCheckinUrl: alpha.urls.oldMainRootPath + '_Authorization/Handlers/ReCheckin.ashx',
+        feedback: alpha.urls.messageRootPath + 'Feedback/Index',
     },
 
     init: function () {
@@ -44,6 +46,7 @@ var indexManager = {
         indexManager.loadPartialViews();
         indexManager.registerEvents();
         indexManager.setCurrentUrl();
+        indexManager.initFeedback();
 
         if (indexManager.requiredNetworkSpeedCalculation) {
             setTimeout(indexManager.calculateUserConnectionSpeed, 8000);
@@ -59,8 +62,7 @@ var indexManager = {
         const messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
         eventer(messageEvent, function (e) {
             if (e.data.event_id === "daily-statement"
-                || e.data.event_id === "detail-statement")
-            {
+                || e.data.event_id === "detail-statement") {
                 popupManager.open(e.data.url, e.data.title, 900);
             }
 
@@ -292,6 +294,38 @@ var indexManager = {
 
     isDCSUrl: function (url: string) {
         return url.indexOf('dcs/viewcustomersetting') > -1;
+    },
+
+    initFeedback: function () {
+        var hideFeedback = localStorage.getItem(indexManager.hideFeedbackCookies);
+
+        if (hideFeedback === '1') {
+            $(".div-feedback").remove();
+            return;
+        }
+
+        $("#main").load(function () {
+            var iframe = $("#main").contents();
+            $(iframe).scroll(function () {
+                $(".div-feedback").css({ top: $(window).height() - 100 - $(iframe).scrollTop() });
+            });
+        });
+
+        $(".div-feedback").css({ top: $(window).height() - 100 });
+        $(".div-feedback").removeClass('hide');
+        $(".icon-close-feedback").click(function () {
+            localStorage.setItem(indexManager.hideFeedbackCookies, "1");
+            $(".div-feedback").addClass('hide');
+        });
+
+        $(".txt-feedback, .feedback-box").click(function () { indexManager.openFeedback(); });
+    },
+    openFeedback: function () {
+        popupManager.open(indexManager.urls.feedback, $("#FeedbackTitle").val(), 680, 550);
+    },
+
+    hideFloatingFeedbackIcon: function () {
+        $(".div-feedback").remove();
     }
 };
 

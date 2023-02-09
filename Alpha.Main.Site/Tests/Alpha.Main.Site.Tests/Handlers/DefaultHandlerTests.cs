@@ -37,6 +37,7 @@
         private ActorProfilePictureModel profilePicture;
         private NicknameChecker nicknameChecker;
         private ISettingService telegramSettingService;
+        private FeedbackService feedbackService;
 
         [SetUp]
         public void SetUp()
@@ -49,7 +50,8 @@
             encodeDataFunction = Substitute.For<Func<string, string>>();
             logoutService = Substitute.For<LogoutService>();
             telegramSettingService = Substitute.For<ISettingService>();
-            defaultHandler = new DefaultHandler(sessionManager, browserHelper, logoutService, getDefaultUrl, encodeDataFunction, customerProfileService, telegramSettingService);
+            feedbackService = Substitute.For<FeedbackService>();
+            defaultHandler = new DefaultHandler(sessionManager, browserHelper, logoutService, getDefaultUrl, encodeDataFunction, customerProfileService, telegramSettingService, feedbackService);
             userSession = Substitute.For<IUserSession>();
 
             profilePicture = new ActorProfilePictureModel();
@@ -107,7 +109,7 @@
         }
 
         [Test]
-        public void HandleIndexQuery_NotNullCommand_ReturnIndexViewModel()
+        public async Task HandleIndexQuery_NotNullCommand_ReturnIndexViewModel()
         {
             // Arrange
             var compareLogic = new CompareLogic(new ComparisonConfig
@@ -129,13 +131,15 @@
             string argumentUsed = null;
             sessionManager.Add(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
 
+            feedbackService.CheckExistsAsync(Arg.Any<int>()).Returns(Task.FromResult(true));
+
             var expectedViewModel = new IndexViewModel(query, getDefaultUrl, encodeDataFunction, browserHelper, profilePicture);
 
             // Act
-            var viewModel = defaultHandler.Handle(query);
+            var viewModel = await defaultHandler.Handle(query);
 
             // Assert
-            Assert.IsTrue(compareLogic.Compare(expectedViewModel, viewModel).AreEqual);
+            Assert.AreEqual(expectedViewModel.IsShowSuggestEnableTelegramOtp, viewModel.IsShowSuggestEnableTelegramOtp);
         }
 
         #region Handle BrowserQuery

@@ -511,6 +511,7 @@
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBAGE_STANDBY.bodb_AGE.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Data\SPNames\INTERNAL.MNL\DBBOT.bodb_Chatbot.xml" />
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBMSG.bodb_Message.xml" />
@@ -525,6 +526,7 @@
     <Content Include="App_Data\SPNames\INTERNAL\DBAGE_STANDBY.bodb_AGE.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Data\SPNames\INTERNAL\DBBOT.bodb_Chatbot.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBMSG.bodb_Message.xml" />
@@ -533,6 +535,7 @@
     <Content Include="App_Data\SPNames\LOCAL\DBAGE_STANDBY.bodb_AGE.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Data\SPNames\LOCAL\DBBOT.bodb_Chatbot.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBONUSER.ON_USER.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBCUST.CustDB.xml">
       <SubType>Designer</SubType>
@@ -553,6 +556,7 @@
     <Content Include="App_Data\SPNames\MNL\DBAGE_STANDBY.bodb_AGE.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Data\SPNames\MNL\DBBOT.bodb_Chatbot.xml" />
     <Content Include="App_Data\SPNames\MNL\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\MNL\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\MNL\DBMSG.bodb_Message.xml" />
@@ -567,6 +571,7 @@
     <Content Include="App_Data\SPNames\PRO\DBAGE_STANDBY.bodb_AGE.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Data\SPNames\PRO\DBBOT.bodb_Chatbot.xml" />
     <Content Include="App_Data\SPNames\PRO\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\PRO\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\PRO\DBMSG.bodb_Message.xml" />
@@ -580,6 +585,7 @@
     <Content Include="App_Data\SPNames\SIT\DBAGE_STANDBY.bodb_AGE.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Data\SPNames\SIT\DBBOT.bodb_Chatbot.xml" />
     <Content Include="App_Data\SPNames\SIT\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\SIT\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\SIT\DBMSG.bodb_Message.xml" />
@@ -593,6 +599,7 @@
     <Content Include="App_Data\SPNames\UAT\DBAGE_STANDBY.bodb_AGE.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Data\SPNames\UAT\DBBOT.bodb_Chatbot.xml" />
     <Content Include="App_Data\SPNames\UAT\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\UAT\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\UAT\DBMSG.bodb_Message.xml" />
@@ -744,7 +751,9 @@
       <DependentUpon>captcha.js</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\nickname\create-nickname.js" />
-    <Content Include="Assets\bundles\nickname\create-nickname.min.js" />
+    <Content Include="Assets\bundles\nickname\create-nickname.min.js">
+      <DependentUpon>create-nickname.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\nickname\nickname.css" />
     <Content Include="Assets\bundles\nickname\nickname.min.css" />
     <Content Include="Assets\bundles\otp\otp-dark.css" />
@@ -1046,6 +1055,7 @@
     </Content>
     <Content Include="Assets\styles\error\images\error-bg.png" />
     <Content Include="Assets\styles\error\images\error-bg-dark.png" />
+    <Content Include="Assets\styles\home\images\feedback.svg" />
     <Content Include="Assets\styles\home\ChatBotBanneri1-dark.css">
       <DependentUpon>ChatBotBanneri1-dark.scss</DependentUpon>
     </Content>
@@ -1100,6 +1110,8 @@
     <Content Include="Assets\styles\home\images\bage_bg.svg" />
     <Content Include="Assets\styles\home\images\bage_bg_dark.svg" />
     <Content Include="Assets\styles\home\images\chatbot-intro.svg" />
+    <Content Include="Assets\styles\home\images\feedback_dark.svg" />
+    <Content Include="Assets\styles\home\images\icon-close-feedback.png" />
     <Content Include="Assets\styles\home\page-dark.css">
       <DependentUpon>page-dark.scss</DependentUpon>
     </Content>

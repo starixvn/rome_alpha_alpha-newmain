@@ -290,6 +290,7 @@
     <Compile Include="Constants\ProductId.cs" />
     <Compile Include="Constants\UMFunctionType.cs" />
     <Compile Include="Criteria\Banner\GetBannerCriteria.cs" />
+    <Compile Include="Criteria\Feedback\CheckExistsCriteria.cs" />
     <Compile Include="Criteria\KickoutCustomerCriteria.cs" />
     <Compile Include="Criteria\LogoutCommand.cs" />
     <Compile Include="Criteria\Nickname\CreateNicknameCommand.cs" />
@@ -413,6 +414,7 @@
     <Compile Include="Services\CacheRefService.cs" />
     <Compile Include="Services\Impl\BannerServiceImpl.cs" />
     <Compile Include="Services\Impl\CacheRefServiceImpl.cs" />
+    <Compile Include="Services\Impl\FeedbackServiceImpl.cs" />
     <Compile Include="Services\Impl\KickoutCustomerServiceImpl.cs" />
     <Compile Include="Services\Impl\LogoutServiceImpl.cs" />
     <Compile Include="Services\BalanceUpDayInfoService.cs" />
@@ -446,6 +448,7 @@
     <Compile Include="Services\SecurityCodeService.cs" />
     <Compile Include="Services\SiteMenuService.cs" />
     <Compile Include="Services\TelegramBotService.cs" />
+    <Compile Include="Services\FeedbackService.cs" />
     <Compile Include="Services\UMMessageService.cs" />
     <Compile Include="Services\ThemeService.cs" />
   </ItemGroup>

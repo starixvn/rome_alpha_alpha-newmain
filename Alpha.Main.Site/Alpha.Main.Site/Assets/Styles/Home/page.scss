@@ -387,6 +387,7 @@ html * {
         }
     }
 }
+
 .mainmenu-container .menu-item#menu-SERCURITYCODE:after {
     content: "";
     height: 1px;
@@ -397,6 +398,7 @@ html * {
     top: 0;
     z-index: -1;
 }
+
 .sidebar {
     &.focusout .mainmenu-container,
     &.collapsed .mainmenu-container,
@@ -841,6 +843,7 @@ html * {
 /********** slider carousel *************/
 .carousel-banner {
     padding: 10px 10px 0;
+
     .item {
         img {
             border-radius: 5px;
@@ -881,4 +884,88 @@ html * {
     .modal-dialog .modal-header .modal-title {
         padding: 12px 0 6px;
     }
+}
+
+/********** feedback *************/
+.feedback-box {
+    .icon-feedback {
+        position: relative;
+        top: -4px;
+        mask: url('Images/feedback.svg');
+        background-color: #fff;
+        height: 25px;
+        width: 24px;
+        display: inline-block;
+        background-size: 100% 100%;
+        cursor: pointer;
+        fill: #fff;
+
+        &:hover {
+            background-color: #FFE65F;
+            fill: #FFE65F;
+        }
+    }
+}
+
+.div-feedback {
+    width: 150px;
+    height: 36px;
+    position: absolute;
+    z-index: 89;
+    transform: rotate(-90deg);
+    font-size: 18px;
+    top: 200px;
+    right: 0px;
+    color: #000;
+
+    .feedback-box {
+        background-color: #38B038;
+        border-radius: 16px;
+        width: 120px;
+        display: inline-block;
+
+        &:hover {
+            .txt-feedback {
+                color: #FFE65F;
+            }
+
+            .icon-feedback {
+                background-color: #FFE65F;
+                fill: #FFE65F;
+            }
+        }
+    }
+
+    .icon-feedback {
+        position: relative;
+        mask: url('Images/feedback.svg');
+        background-color: #fff;
+        height: 25px;
+        width: 24px;
+        display: inline-block;
+        background-size: 100% 100%;
+        cursor: pointer;
+        fill: #fff;
+        top: 6px;
+        left: 6px;
+    }
+}
+
+.icon-close-feedback {
+    background: url(Images/icon-close-feedback.png) no-repeat;
+    height: 26px;
+    width: 22px;
+    display: inline-block;
+    background-size: 100% 100%;
+    cursor: pointer;
+    position: relative;
+    top: 5px;
+    left: -5px;
+}
+
+.txt-feedback {
+    display: inline-block;
+    cursor: pointer;
+    padding: 2px 6px;
+    color: #fff;
 }

@@ -38,14 +38,16 @@
         private readonly ProfilePictureServices customerProfileService;
         private readonly LogoutService logoutService;
         private readonly ISettingService telegramSettingService;
+        private readonly FeedbackService feedbackService;
 
         public DefaultHandler(
             SessionManager sessionManager,
             BrowserHelper browserHelper,
             ProfilePictureServices customerProfileService,
             LogoutService logoutService,
-            ISettingService telegramSettingService)
-            : this(sessionManager, browserHelper, logoutService, null, null, customerProfileService, telegramSettingService)
+            ISettingService telegramSettingService,
+            FeedbackService feedbackService)
+            : this(sessionManager, browserHelper, logoutService, null, null, customerProfileService, telegramSettingService, feedbackService)
         {
         }
 
@@ -56,7 +58,8 @@
             Func<string> getDefaultUrl,
             Func<string, string> encodeDataFunction,
             ProfilePictureServices customerProfileService,
-            ISettingService telegramSettingService)
+            ISettingService telegramSettingService,
+            FeedbackService feedbackService)
         {
             this.sessionManager = sessionManager;
             this.browserHelper = browserHelper;
@@ -66,6 +69,7 @@
             this.encodeDataFunction = encodeDataFunction ?? Encryption.PearsonEncode;
             this.customerProfileService = customerProfileService;
             this.telegramSettingService = telegramSettingService;
+            this.feedbackService = feedbackService;
         }
 
         public BrowserViewModel Handle(BrowserQuery message)
@@ -105,20 +109,23 @@
 
             sessionManager.Add(PasswordHashSessionKey, viewModel.PasswordHash);
 
+            viewModel.ShowFloatingFeedback = !(await feedbackService.CheckExistsAsync(message.CustId));
+
             return viewModel;
         }
 
         private async Task<CustBotMessenger> GetCustBotMessenger(int custId, int subAccId, string language)
         {
-            try {
+            try
+            {
                 return await telegramSettingService.GetCustBotMessengerAsync(custId, subAccId, language);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 await Fanex.Logging.Logger.Log.ErrorAsync(ex.Message, ex);
                 return null;
             }
-            
+
         }
 
         public bool Handle(KickoutQuery message)

@@ -18,6 +18,9 @@
                 <span class="switch-mode @(Model.IsDarkMode ? "dark-mode" : string.Empty)"></span>
             </li>
         }
+        <li class="feedback-box" id="feedback-box" title="@Resources.Feedback">
+            <span class="icon-feedback"></span>
+        </li>
         @if (Model.ShowCreateMemberByQRCode)
         {
             <li class="visible-mobile"><span class="icon icon-qr-code-top" title="@Resources.CreateMemberWithQRCode"></span></li>

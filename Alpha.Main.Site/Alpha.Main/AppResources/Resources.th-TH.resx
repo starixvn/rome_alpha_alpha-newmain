@@ -646,4 +646,10 @@
   <data name="AdvertisementMyWatchlistGlobalThresholdDetailAgent" xml:space="preserve">
     <value>ไปที่ &lt;b&gt; การจัดการความเสี่ยง &lt;/b&gt; --&gt; รายการเฝ้าดูของฉัน - ขีดจำกัดของฉัน --&gt; ตั้งค่าขีดจำกัดการชนะ/แพ้</value>
   </data>
+  <data name="FeedbackTitle" xml:space="preserve">
+    <value>ช่วยเราพัฒนา!</value>
+  </data>
+  <data name="Feedback" xml:space="preserve">
+    <value>ข้อเสนอแนะ</value>
+  </data>
 </root>
