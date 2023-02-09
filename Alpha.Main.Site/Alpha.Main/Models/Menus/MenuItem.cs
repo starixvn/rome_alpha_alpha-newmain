@@ -72,20 +72,7 @@
         {
             get
             {
-                var context = HttpContext.Current;
-                var session = context?.Session;
-                var appVirtualPath = AppSettings.GetAppPath(AppPath) ?? string.Empty;
-                var runtimeAppPath = HttpRuntime.AppDomainAppVirtualPath ?? string.Empty;
-                var reportUrl = $"{appVirtualPath}{context?.Response?.ApplyAppPathModifier(runtimeAppPath)}{link}";
-                reportUrl = !string.IsNullOrWhiteSpace(runtimeAppPath) ? reportUrl.Replace(runtimeAppPath, string.Empty) : reportUrl;
-
-                var cookieless = session != null && session.IsCookieless ?
-                    $"/(S({session?.SessionID}))" : string.Empty;
-
-                var menuLink = !string.IsNullOrWhiteSpace(UseDomainConfig) ? $"{UseDomainConfig}{cookieless}{link}" :
-                    appVirtualPath.Equals("/site-reports") ? reportUrl : 
-                    !string.IsNullOrWhiteSpace(link) && !string.IsNullOrWhiteSpace(runtimeAppPath) ? 
-                    link.Replace(runtimeAppPath, appVirtualPath) : string.Empty;
+                var menuLink = GetMenuLink();
 
                 var invalidSessionUniqueKey = buildInvalidSessionUniqueKeyFunc(menuLink);
 
@@ -98,6 +85,26 @@
             {
                 link = value;
             }
+        }
+
+        private string GetMenuLink()
+        {
+            var context = HttpContext.Current;
+            var session = context?.Session;
+            var appVirtualPath = AppSettings.GetAppPath(AppPath) ?? string.Empty;
+            var runtimeAppPath = HttpRuntime.AppDomainAppVirtualPath ?? string.Empty;
+            var reportUrl = $"{appVirtualPath}{context?.Response?.ApplyAppPathModifier(runtimeAppPath)}{link}";
+            reportUrl = !string.IsNullOrWhiteSpace(runtimeAppPath) ? reportUrl.Replace(runtimeAppPath, string.Empty) : reportUrl;
+
+            var cookieless = session != null && session.IsCookieless ?
+                $"/(S({session?.SessionID}))" : string.Empty;
+
+            var menuLink = !string.IsNullOrWhiteSpace(UseDomainConfig) ? $"{UseDomainConfig}{cookieless}{link}" :
+                appVirtualPath.Equals("/site-reports") ? reportUrl :
+                !string.IsNullOrWhiteSpace(link) && !string.IsNullOrWhiteSpace(runtimeAppPath) ?
+                link.Replace(runtimeAppPath, appVirtualPath) : string.Empty;
+
+            return menuLink;
         }
 
         public virtual MenuStatus Status

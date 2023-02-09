@@ -562,14 +562,21 @@
                 HashKey = hashKey,
                 EnableSecurityCode = true,
                 CustId = message.CustId,
-                Title = "Reset Password"
+                Title = "Reset Password",
+                IsShowNicknameLink = true
             };
 
             // Act
             var actualViewModel = passwordHandler.Handle(message);
 
             // Assert
-            Assert.IsTrue(compareLogic.Compare(expectedViewModel, actualViewModel).AreEqual);
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel.CustRoleId, actualViewModel.CustRoleId).AreEqual);
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel.SubAccountId, actualViewModel.SubAccountId).AreEqual);
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel.HashKey, actualViewModel.HashKey).AreEqual);
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel.EnableSecurityCode, actualViewModel.EnableSecurityCode).AreEqual);
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel.Title, actualViewModel.Title).AreEqual);
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel.IsShowNicknameLink, actualViewModel.IsShowNicknameLink).AreEqual);
+
         }
 
         #endregion Handle Reset MainAccount Password Query
@@ -606,14 +613,20 @@
                 SubAccountId = message.SubAccountId,
                 HashKey = hashKey,
                 EnableSecurityCode = true,
-                Title = "Reset Password - UserName"
+                Title = "Reset Password - UserName",
+                IsShowNicknameLink = true
             };
 
             // Act
             var actualViewModel = passwordHandler.Handle(message);
 
             // Assert
-            Assert.IsTrue(compareLogic.Compare(expectedViewModel, actualViewModel).AreEqual);
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel.CustRoleId, actualViewModel.CustRoleId).AreEqual);
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel.SubAccountId, actualViewModel.SubAccountId).AreEqual);
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel.HashKey, actualViewModel.HashKey).AreEqual);
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel.EnableSecurityCode, actualViewModel.EnableSecurityCode).AreEqual);
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel.Title, actualViewModel.Title).AreEqual);
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel.IsShowNicknameLink, actualViewModel.IsShowNicknameLink).AreEqual);
         }
 
         #endregion Handle Reset SubAccount Password Query

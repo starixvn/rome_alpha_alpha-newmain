@@ -42,7 +42,7 @@
             [Vietnamese] = "Tiếng Việt"
         };
 
-        public static readonly Dictionary<string, string> TelegramChatBotCodeNames = new Dictionary<string, string>
+        public static readonly IReadOnlyDictionary<string, string> TelegramChatBotCodeNames = new Dictionary<string, string>
         {
             [English] = "English",
             [NewChineseTraditional] = "繁體中文",
@@ -51,7 +51,7 @@
             [Vietnamese] = "Tiếng Việt"
         };
 
-        public static readonly Dictionary<string, string> TelegramChatBotCodeNamesWithoutVietNamese = TelegramChatBotCodeNames
+        public static readonly IReadOnlyDictionary<string, string> TelegramChatBotCodeNamesWithoutVietNamese = TelegramChatBotCodeNames
             .Where(langauge => langauge.Key != Vietnamese)
             .ToDictionary(language => language.Key, language => language.Value);
 

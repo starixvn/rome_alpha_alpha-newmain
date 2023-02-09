@@ -14,8 +14,8 @@
             this.notificationService = notificationService;
         }
 
-        public void NotifyChangePassword(int custId, int subAccId)
-            => NotifyChangePasswordAsync(custId, subAccId).GetAwaiter().GetResult();
+        public async Task NotifyChangePassword(int custId, int subAccId)
+            => await NotifyChangePasswordAsync(custId, subAccId);
 
         public async Task NotifyChangePasswordAsync(int custId, int subAccId)
         {
@@ -29,8 +29,8 @@
             }
         }
 
-        public void NotifyChangeSecurityCode(int custId, int subAccId)
-            => NotifyChangeSecurityCodeAsync(custId, subAccId).GetAwaiter().GetResult();
+        public async Task NotifyChangeSecurityCode(int custId, int subAccId)
+            => await NotifyChangeSecurityCodeAsync(custId, subAccId);
 
         public async Task NotifyChangeSecurityCodeAsync(int custId, int subAccId)
         {

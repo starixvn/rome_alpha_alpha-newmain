@@ -135,7 +135,7 @@
             var viewModel = defaultHandler.Handle(query);
 
             // Assert
-            Assert.IsTrue(compareLogic.Compare(expectedViewModel, viewModel).AreEqual);
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel, viewModel.Result).AreEqual);
         }
 
         #region Handle BrowserQuery

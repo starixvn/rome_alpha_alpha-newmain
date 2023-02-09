@@ -18,8 +18,6 @@
 
     public class CustomerOtpServiceImpl : CustomerOtpService
     {
-        private const int TimePeriod = 30;
-        private const int OtpSize = 6;
         private const int SecretKeyLength = 20;
         private const int DisabledAccountErrorCode = 200;
         private const string Issuer = "MyAppName";
@@ -109,7 +107,7 @@
             };
 
             customerOtp.OtpUsername = username;
-            customerOtp.QRCode = otpService.GenerateQrCode(customerOtp.SecretKey, TimePeriod, OtpSize, Issuer, customerOtp.OtpUsername);
+            customerOtp.QRCode = otpService.GenerateQrCode(customerOtp.SecretKey, issuer: Issuer, userName: customerOtp.OtpUsername);
 
             return customerOtp;
         }
@@ -144,7 +142,7 @@
                 throw new ArgumentNullException(nameof(param), "Set Up Otp Parameters cannot be null");
             }
 
-            var isCorrect = otpService.VerifyOtp(param.SecretKey, param.Otp, TimePeriod, OtpSize);
+            var isCorrect = otpService.VerifyOtp(param.SecretKey, param.Otp);
 
             if (!isCorrect)
             {
@@ -194,7 +192,7 @@
                 var customerOtp = GetCustomerOtp(param.CustId, param.SubAccId);
                 if (customerOtp.Enabled)
                 {
-                    isCorrect = otpService.VerifyOtp(customerOtp.SecretKey, param.Otp, TimePeriod, OtpSize);
+                    isCorrect = otpService.VerifyOtp(customerOtp.SecretKey, param.Otp);
                 }
             }
            

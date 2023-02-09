@@ -169,7 +169,7 @@
 
         public int RecheckinIntervalMiliseconds => AppSettings.RecheckinIntervalMiliseconds;
 
-        public string SessionID => HttpContext.Current.Session.SessionID;
+        public string SessionID => HttpContext.Current?.Session?.SessionID;
 
         public string Username => message.IsSubAcc ? message.SubUserName : message.UserName;
         public bool IsShowSuggestEnableTelegramOtp { get; set; }

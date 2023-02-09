@@ -41,6 +41,23 @@
 
         private static void SetDataForMenuItem(IMenuItem menuItem, SiteMapNode node)
         {
+            menuItem.UseDomainConfig = GetMappingDomainConfig(node);
+            menuItem.Key = node.Key;
+            menuItem.ResourceKey = node.ResourceKey;
+            menuItem.Link = node.Url;
+            menuItem.AppPath = node["AppPath"];
+            menuItem.IsBeta = node["isBeta"] != null && bool.Parse(node["isBeta"]);
+            menuItem.IsNew = node["isNew"] != null && bool.Parse(node["isNew"]);
+            menuItem.IsOld = node["isOld"] != null && bool.Parse(node["isOld"]);
+            menuItem.IsHiddenInMobile = node["isHiddenInMobile"] != null && bool.Parse(node["isHiddenInMobile"]);
+            menuItem.ByPassAuthorization = node["byPassAuthorization"] != null && bool.Parse(node["byPassAuthorization"]);
+            menuItem.ByPassProtectedMode = node["byPassProtectedMode"] != null && bool.Parse(node["byPassProtectedMode"]);
+            menuItem.ByPassProtectedModeInternal = node["byPassProtectedModeInternal"] != null && bool.Parse(node["byPassProtectedModeInternal"]);
+            menuItem.SubMenus = new List<IMenuItem>();
+        }
+
+        private static string GetMappingDomainConfig(SiteMapNode node)
+        {
             var useDomainConfigValue = ConfigurationManager.AppSettings[string.Empty + node["UseDomainConfig"]] + string.Empty;
             var mainDomain = HttpContext.Current == null ? string.Empty : HttpContext.Current.Request.Headers["Host"];
 
@@ -52,19 +69,7 @@
 
             useDomainConfigValue = useDomainConfigValue.IndexOf("{0}", StringComparison.OrdinalIgnoreCase) != -1 ? string.Format(useDomainConfigValue, mainDomain) : useDomainConfigValue;
 
-            menuItem.UseDomainConfig = useDomainConfigValue;
-            menuItem.Key = node.Key;
-            menuItem.ResourceKey = node.ResourceKey;
-            menuItem.Link = node.Url;
-            menuItem.AppPath = node["AppPath"];
-            menuItem.IsBeta = node["isBeta"] != null && bool.Parse(node["isBeta"]);
-            menuItem.IsNew = node["isNew"] != null && bool.Parse(node["isNew"]);
-            menuItem.IsOld = node["isOld"] != null && bool.Parse(node["isOld"]);
-            menuItem.IsHiddenInMobile = node["isHiddenInMobile"] != null && bool.Parse(node["isHiddenInMobile"]);
-            menuItem.ByPassAuthorization = node["byPassAuthorization"] == null ? false : bool.Parse(node["byPassAuthorization"]);
-            menuItem.ByPassProtectedMode = node["byPassProtectedMode"] == null ? false : bool.Parse(node["byPassProtectedMode"]);
-            menuItem.ByPassProtectedModeInternal = node["byPassProtectedModeInternal"] == null ? false : bool.Parse(node["byPassProtectedModeInternal"]);
-            menuItem.SubMenus = new List<IMenuItem>();
+            return useDomainConfigValue;
         }
 
         public IMenuItem BuildMenuItem(SiteMapNode node)

@@ -11,6 +11,8 @@
 
     public static class AppSettings
     {
+        private const int DefaultRecheckinIntervalMiliseconds = 30000;
+
         [ThreadStatic]
         private static NameValueCollection settings;
 
@@ -292,7 +294,7 @@
 
                 if (HttpContext.Current?.Session?.IsCookieless == true)
                 {
-                    mainDomain = mainDomain?.Replace($"{mainDomain?.Split('.')?.ElementAt(0)}.", string.Empty);
+                    mainDomain = mainDomain?.Replace($"{mainDomain.Split('.').ElementAt(0)}.", string.Empty);
                 }
 
                 reportDomain = reportDomain.IndexOf("{0}", StringComparison.OrdinalIgnoreCase) != -1 ? 
@@ -328,7 +330,7 @@
             => int.Parse(Settings["CDNReCheckin:IntervalInSeconds"] ?? "60");
 
         public static int RecheckinIntervalMiliseconds
-            => string.IsNullOrWhiteSpace(Settings["Recheckin:IntervalMiliseconds"]) ? 30000 : 
+            => string.IsNullOrWhiteSpace(Settings["Recheckin:IntervalMiliseconds"]) ? DefaultRecheckinIntervalMiliseconds : 
                 int.Parse(Settings["Recheckin:IntervalMiliseconds"]);
 
         public static string JsVersion => Settings["JsVersion"];

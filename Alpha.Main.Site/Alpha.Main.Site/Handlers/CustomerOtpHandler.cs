@@ -311,7 +311,7 @@
                 Language.MapNewChineseLanguageCode(message.Language));
 
             viewModel.RegisterAccountViewModel =
-                new RegisterAccountViewModel(new ChatBotViewModel(custBotMessenger), new SetUpChatBotQuery());
+                new RegisterAccountViewModel(new ChatBotViewModel(custBotMessenger), new SetUpChatBotQuery(userSession));
 
             if (!viewModel.CustomerOtp.Enabled
                 && string.IsNullOrWhiteSpace(viewModel.CustomerOtp.SecretKey))

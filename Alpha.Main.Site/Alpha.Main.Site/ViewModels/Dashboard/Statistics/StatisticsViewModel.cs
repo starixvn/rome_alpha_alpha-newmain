@@ -34,7 +34,7 @@
             }
         }
 
-        public string SessionID => HttpContext.Current.Session.SessionID;
+        public string SessionID => HttpContext.Current?.Session?.SessionID;
 
         internal string GetOutstandingDefaultReportLevel(UserLevel userLevel)
         {
