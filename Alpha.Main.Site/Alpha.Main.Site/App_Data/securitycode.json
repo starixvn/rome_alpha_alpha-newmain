@@ -10,7 +10,11 @@
     "Otp/SetUpOtp",
     "Otp/ResetOtp",
     "ChatBot/Setup",
-    "ProtectionCode/Setup"
+    "ProtectionCode/Setup",
+    "ApiKey/CreateApiKey",
+    "ApiKey/UpdateApiKey",
+    "ApiKey/RevokeApiKey",
+    "ApiKey/ApiKeyManagement"
   ],
   "betListsPaths": [
   ],

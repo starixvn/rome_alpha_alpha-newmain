@@ -133,7 +133,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to API Passphrase can not contain space, symbol and punctuation..
+        ///   Looks up a localized string similar to API Passphrase can not contain spaces and symbols..
         /// </summary>
         public static string APIPassPhraseCanNotContainSpaceSymbolAndPunctuaion {
             get {

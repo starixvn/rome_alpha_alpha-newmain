@@ -14,6 +14,8 @@
 
         public DateTime? ExpirationDate { get; set; }
 
+        public string ExpirationDateStr => ExpirationDate?.ToString("MM/dd/yyyy");
+
         public bool IsExpired { get; set; }
     }
 }

@@ -20,7 +20,7 @@
 
         public async Task<CreateApiKeyResult> CreateApiKey(int custId, string apiName, string passPhrase, string scopes, string ip, DateTime? expirationDate)
         {
-            var parameter = new { custId, apiName, passPhrase, scopes, ip, expirationDate };
+            var parameter = new { custId, apiName, passPhrase, scopes, ip, expirationDate = expirationDate?.AddDays(1).AddSeconds(-1) };
             return await httpClient.PostAsJsonAsync<CreateApiKeyResult>(string.Empty, parameter);
         }
 
@@ -41,7 +41,7 @@
 
         public async Task<Result> UpdateApiKey(string apiKey, int custId, string apiName, string scopes, string ip, DateTime? expirationDate)
         {
-            var parameter = new { apiKey, custId, apiName, scopes, ip, expirationDate };
+            var parameter = new { apiKey, custId, apiName, scopes, ip, expirationDate = expirationDate?.AddDays(1).AddSeconds(-1) };
             return await httpClient.PutAsJsonAsync<Result>(string.Empty, parameter);
         }
     }
