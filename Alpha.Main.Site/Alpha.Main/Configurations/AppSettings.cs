@@ -302,6 +302,25 @@
             }
         }
 
+        public static string BetlistDomain
+        {
+            get
+            {
+                var betlistDomain = string.Empty + Settings["Betlist:Domain"];
+                var mainDomain = HttpContext.Current?.Request?.Headers?["Host"];
+
+                if (HttpContext.Current?.Session?.IsCookieless == true)
+                {
+                    mainDomain = mainDomain?.Replace($"{mainDomain?.Split('.')?.ElementAt(0)}.", string.Empty);
+                }
+
+                betlistDomain = betlistDomain.IndexOf("{0}", StringComparison.OrdinalIgnoreCase) != -1 ?
+                    string.Format(betlistDomain, mainDomain) : betlistDomain;
+
+                return betlistDomain;
+            }
+        }
+
         public static string ReportRouting => Settings["Report:Routing"] ?? string.Empty;
 
         public static bool IsStandaloneReports => !string.IsNullOrWhiteSpace(Settings["Report:Domain"]);

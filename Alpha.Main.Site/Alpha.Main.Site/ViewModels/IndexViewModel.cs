@@ -157,6 +157,8 @@
 
         public string ReportDomain { get; } = AppSettings.ReportDomain;
 
+        public string BetlistDomain => AppSettings.BetlistDomain;
+
         public bool IsDarkMode => !string.IsNullOrWhiteSpace(message.DarkModeName);
 
         public string AssetAppPath { get; }

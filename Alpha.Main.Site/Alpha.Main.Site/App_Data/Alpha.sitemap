@@ -77,16 +77,16 @@
     </siteMapNode>
     <!--/MemberInfo-->
     <siteMapNode resourceKey="BetLists" appPath="OldMainAppPath" menuItemType="BetListsMenuItem" functionType="[L]">
-      <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="LastBets/Index" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="cancelledBets" appPath="BetListsAppPath" url="CancelledBet/Index"></siteMapNode>
+      <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="/LastBets/Index" roles="Agent" useDomainConfig="Betlist:Domain"></siteMapNode>
+      <siteMapNode resourceKey="cancelledBets" appPath="BetListsAppPath" url="/CancelledBet/Index" useDomainConfig="Betlist:Domain"></siteMapNode>
 
-      <siteMapNode resourceKey="correctscore" appPath="BetListsAppPath" url="correctscore/index"></siteMapNode>
-      <siteMapNode resourceKey="parlay" appPath="BetListsAppPath" url="CombinationMixParlay/Index"></siteMapNode>
-      <siteMapNode resourceKey="BetType13" appPath="BetListsAppPath" url="betlistbybettype/CleanSheet?bettype=13"></siteMapNode>
-      <siteMapNode resourceKey="BetType24" appPath="BetListsAppPath" url="betlistbybettype/DoubleChance?bettype=24"></siteMapNode>
-      <siteMapNode resourceKey="BetType26" appPath="BetListsAppPath" url="betlistbybettype/BothNoneNeitherTeamToScore?bettype=26"></siteMapNode>
-      <siteMapNode resourceKey="BetType27" appPath="BetListsAppPath" url="betlistbybettype/ToWinToNil?bettype=27"></siteMapNode>
-      <siteMapNode resourceKey="BetType28" appPath="BetListsAppPath" url="betlistbybettype/ThreeWayHandicap?bettype=28"></siteMapNode>
+      <siteMapNode resourceKey="correctscore" appPath="BetListsAppPath" url="/correctscore/index" useDomainConfig="Betlist:Domain"></siteMapNode>
+      <siteMapNode resourceKey="parlay" appPath="BetListsAppPath" url="/CombinationMixParlay/Index" useDomainConfig="Betlist:Domain"></siteMapNode>
+      <siteMapNode resourceKey="BetType13" appPath="BetListsAppPath" url="/betlistbybettype/CleanSheet?bettype=13" useDomainConfig="Betlist:Domain"></siteMapNode>
+      <siteMapNode resourceKey="BetType24" appPath="BetListsAppPath" url="/betlistbybettype/DoubleChance?bettype=24" useDomainConfig="Betlist:Domain"></siteMapNode>
+      <siteMapNode resourceKey="BetType26" appPath="BetListsAppPath" url="/betlistbybettype/BothNoneNeitherTeamToScore?bettype=26" useDomainConfig="Betlist:Domain"></siteMapNode>
+      <siteMapNode resourceKey="BetType27" appPath="BetListsAppPath" url="/betlistbybettype/ToWinToNil?bettype=27" useDomainConfig="Betlist:Domain"></siteMapNode>
+      <siteMapNode resourceKey="BetType28" appPath="BetListsAppPath" url="/betlistbybettype/ThreeWayHandicap?bettype=28" useDomainConfig="Betlist:Domain"></siteMapNode>
     </siteMapNode>
 
     <siteMapNode resourceKey="BetsAndForecast" menuItemType="TotalBetsMenuItem" functionType="[D]">

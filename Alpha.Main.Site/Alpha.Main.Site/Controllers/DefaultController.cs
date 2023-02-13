@@ -11,6 +11,7 @@ namespace Alpha.Main.Site.Controllers
     using System.Web.Routing;
     using System.Web.Security;
     using Alpha.Main.Constants;
+    using Alpha.Main.Helpers;
     using Alpha.Main.Site.Helpers;
     using Alpha.SecurityCode.Web;
     using Alpha.Web.Filters;
@@ -26,6 +27,7 @@ namespace Alpha.Main.Site.Controllers
     using Requests.Otp;
     using SecurityCode.Services;
     using Sunplus.Agent.Model.Entities;
+    using Sunplus.Agent.Utilities;
     using Web;
     using Web.Helpers;
 
@@ -206,6 +208,7 @@ namespace Alpha.Main.Site.Controllers
             var pageAccess = userSession.SubPageAccess;
             var pageAccessPermissions = $"{pageAccess.CreateAccount}${pageAccess.Transfer}${pageAccess.UpdateAccount}$" +
                 $"{pageAccess.ViewLog}${pageAccess.ViewMemberInfo}${pageAccess.ViewReports}${pageAccess.ViewTotalBets}${pageAccess.GetPermission("[L]")}";
+            var cookieNameCurrentPage = CookieHelper.GetCookieNameOfCurrentPage(userSession.CustId, userSession.SubAccId, Encryption.PearsonEncode);
 
             var sessions = new List<object>
             {
@@ -244,7 +247,11 @@ namespace Alpha.Main.Site.Controllers
                 userSession.NickName,
                 Session["ONEbook.UM.ByPassUM"],
                 userSession.AutoFollowBetIsDummyAgent,
-                Session.SessionID
+                Session.SessionID,
+                AppSettings.BetlistDomain,
+                Request.Cookies[$"{cookieNameCurrentPage}-betlist-{Session.SessionID}"]?.Value,
+                AppSettings.ReportDomain,
+                Request.Cookies[$"{cookieNameCurrentPage}-{Session.SessionID}"]?.Value
             };
 
             foreach (var item in sessions)

@@ -29,8 +29,7 @@ var headerNav = {
         sideBarContent: null,
         profileImage: null,
         liveChat: null,
-        switchMode: null,
-        reportDomain: null
+        switchMode: null
     },
     messageType: {
         Normal: 0,
@@ -173,8 +172,6 @@ var headerNav = {
 
         headerNav.domElements.liveChat = $("#liveChat");
         headerNav.domElements.switchMode = $(".switch-mode");
-
-        headerNav.domElements.reportDomain = $('#reportDomain').val();
     },
 
     initLanguage: function () {
@@ -380,9 +377,9 @@ var headerNav = {
             success: function (result) {
                 if (result !== undefined) {
                     var domain = window.location.hostname.replace(/([a-zA-Z0-9]+.)/, '').replace("www.", '');
-                    $.cookie("LANGUAGE", lang, { expires: 30, path: domain });
+                    $.cookie("LANGUAGE", lang || "en-US", { expires: 30, path: domain });
 
-                    if (headerNav.domElements.reportDomain) {
+                    if (menuBar.domElements.reportDomain || menuBar.domElements.betlistDomain) {
                         headerNav.syncLang(result);
                     }
                     else {
@@ -394,10 +391,15 @@ var headerNav = {
     },
 
     syncLang: function (lang: string) {
-        menuBar.loadAuthFrame();
-        setTimeout(() => {
-            headerNav.reloadPage();
-        }, 2000);
+        if (menuBar.domElements.reportDomain) {
+            menuBar.loadAuthFrame();
+        }
+
+        if (menuBar.domElements.betlistDomain) {
+            menuBar.loadBetlistAuthFrame();
+        }
+
+        headerNav.reloadPage();
     },
 
     changeTheme: function () {
@@ -407,7 +409,7 @@ var headerNav = {
             url: headerNav.urls.changeTheme,
             data: { isDarkMode: !isDarkMode },
             success: function (result) {
-                if (result && headerNav.domElements.reportDomain) {
+                if (result && (menuBar.domElements.reportDomain || menuBar.domElements.betlistDomain)) {
                     headerNav.syncTheme(!isDarkMode);
                 }
                 else {
@@ -418,10 +420,15 @@ var headerNav = {
     },
 
     syncTheme: function (isDarkMode: boolean) {
-        menuBar.loadAuthFrame();
-        setTimeout(() => {
-            headerNav.reloadPage();
-        }, 2000);
+        if (menuBar.domElements.reportDomain) {
+            menuBar.loadAuthFrame();
+        }
+
+        if (menuBar.domElements.betlistDomain) {
+            menuBar.loadBetlistAuthFrame();
+        }
+        
+        headerNav.reloadPage();
     },
 
     reloadPage: function () {
