@@ -10,8 +10,10 @@ namespace Alpha.Main.Site.Controllers
     using System.Web.Mvc;
     using System.Web.Routing;
     using System.Web.Security;
+    using System.Web.SessionState;
     using Alpha.Main.Constants;
     using Alpha.Main.Helpers;
+    using Alpha.Main.Services.Impl;
     using Alpha.Main.Site.Helpers;
     using Alpha.SecurityCode.Web;
     using Alpha.Web.Filters;
@@ -31,8 +33,10 @@ namespace Alpha.Main.Site.Controllers
     using Web;
     using Web.Helpers;
 
+    [SessionState(SessionStateBehavior.Required)]
     public class DefaultController : BaseController
     {
+        private const string UsageLanguageKey = "languageusage";
         private const string OtpVerifyDifferenceDevicePath = "~/otp/VerifyOtpDifferenceDevice";
         private const string UnSupportedBrowsers = "UnsupportedBrowsers";
         private const string fpsScriptKey = "fpsScript";
@@ -41,17 +45,20 @@ namespace Alpha.Main.Site.Controllers
         private readonly IMediator mediator;
         private readonly SecurityCodeChecker securityCodeChecker;
         private readonly NicknameChecker nicknameChecker;
+        private readonly IUpdateUsageLanguageService updateUsageLanguageService;
 
         public DefaultController(
             IUserSession userSession,
             IMediator mediator,
             SecurityCodeChecker securityCodeChecker,
-            NicknameChecker nicknameChecker)
+            NicknameChecker nicknameChecker,
+            IUpdateUsageLanguageService updateUsageLanguageService)
         {
             this.userSession = userSession;
             this.mediator = mediator;
             this.securityCodeChecker = securityCodeChecker;
             this.nicknameChecker = nicknameChecker;
+            this.updateUsageLanguageService = updateUsageLanguageService;
         }
 
         [HttpGet, AllowProtectedMode]
@@ -98,6 +105,14 @@ namespace Alpha.Main.Site.Controllers
             }
 
             //================
+
+            if (!userSession.IsInternal
+                && AppSettings.IsStoreUserLangEnabled
+                && !userSession.LangKey.Equals(userSession.GetProperty<string>(UsageLanguageKey), StringComparison.OrdinalIgnoreCase))
+            {
+                await updateUsageLanguageService.UpdateUsageLanguage(userSession.CustId, userSession.SubAccId, userSession.LangKey);
+                userSession.SetProperty(UsageLanguageKey, userSession.LangKey);
+            }
 
             return View(viewModel);
         }

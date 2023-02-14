@@ -355,5 +355,7 @@
         public static bool EnableLogDifferentSessionBetweenMainAndReports { get; } = "1" == Settings["EnableLogDifferentSessionBetweenMainAndReports"];
 
         public static bool IsEnabledRechekin => Settings["DisabledCheckDuplicationLogin"] == "0";
+
+        public static bool IsStoreUserLangEnabled => Settings["IsStoreUserLangEnabled"] == "1";
     }
 }

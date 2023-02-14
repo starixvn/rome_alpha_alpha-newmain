@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Tests.Controllers
 {
+    using Alpha.Main.Services.Impl;
     using Alpha.Web.Models;
     using KellermanSoftware.CompareNetObjects;
     using Main.Constants;
@@ -27,6 +28,7 @@
         private SecurityCodeChecker securityCodeChecker;
         private NicknameChecker nicknameChecker;
         private DefaultController defaultController;
+        private IUpdateUsageLanguageService updateUsageLanguageService;
 
         [SetUp]
         public void SetUp()
@@ -38,8 +40,9 @@
             mediator = Substitute.For<IMediator>();
             securityCodeChecker = Substitute.For<SecurityCodeChecker>();
             nicknameChecker = Substitute.For<NicknameChecker>();
+            updateUsageLanguageService = Substitute.For<IUpdateUsageLanguageService>();
 
-            defaultController = new DefaultController(userSession, mediator, securityCodeChecker, nicknameChecker);
+            defaultController = new DefaultController(userSession, mediator, securityCodeChecker, nicknameChecker, updateUsageLanguageService);
         }
 
         [Test]

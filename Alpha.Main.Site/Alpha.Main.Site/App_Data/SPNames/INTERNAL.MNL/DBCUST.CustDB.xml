@@ -62,4 +62,8 @@
   <Function Name="Write Log Change Theme Light/Dark">
     <Setting Key="Age_SwitchDarkMode" SpName="Age_SwitchDarkMode" DbName="DBCust.CustDB.BODBDownlineNetView" Plain="0" />
   </Function>
+
+  <Function Name="Change Language">
+    <Setting Key="Age_CustLanguageUsageUpd" SpName="Age_CustLanguageUsageUpd" DbName="DBCust.CustDB.BODBDownlineNetView" Plain="0" />
+  </Function>
 </Functions>

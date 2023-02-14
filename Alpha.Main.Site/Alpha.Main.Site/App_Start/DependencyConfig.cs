@@ -156,6 +156,7 @@
             container.RegisterPerWebRequest<ISessionService, SessionService>();
             container.RegisterPerWebRequest<ProtectionCodeService, ProtectionCodeServiceImpl>();
             container.RegisterPerWebRequest<ThemeService, ThemeServiceImpl>();
+            container.RegisterPerWebRequest<IUpdateUsageLanguageService, UpdateUsageLanguageService>();
         }
 
         private static void RegisterDataAccesses(Container container)
@@ -164,6 +165,7 @@
             container.RegisterPerWebRequest<SecurityCodeDataAccess, SecurityCodeDataAccessImpl>();
             container.RegisterPerWebRequest<PasswordDataAccess, PasswordDataAccessImpl>();
             container.RegisterPerWebRequest<StatisticsDataAccess, StatisticsDataAccessImpl>();
+            container.RegisterPerWebRequest<IUpdateUsageLanguageDataAccess, UpdateUsageLanguageDataAccess>();
         }
 
         private static void RegisterProductConfiguration()
