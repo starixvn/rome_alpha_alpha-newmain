@@ -6,7 +6,8 @@ interface JQuery {
 }
 
 interface DatepickerOptions {
-    useCurrent: false;
+    minDate: any;
+    useCurrent: any;
     allowInputToggle: boolean;
     format: string;
     defaultDate: any;
@@ -42,6 +43,7 @@ class CreateApiKey {
         apiPassPhraseMustBeBetweenCharacters: (<HTMLInputElement>document.getElementById('APIPassPhraseMustBeBetweenCharacters')).value,
         cantSelectTimeFromPast: (<HTMLInputElement>document.getElementById('CantSelectTimeFromPast')).value,
         scopesIsRequired: (<HTMLInputElement>document.getElementById('ScopesIsRequired')).value,
+        currentDate: (<HTMLInputElement>document.getElementById('CurrentDate')).value,
     }
 
     cachedDOMElements = () => {
@@ -82,7 +84,9 @@ class CreateApiKey {
     }
 
     renderDatetimePicker = () => {
+        const minDate = new Date(this.resources.currentDate);
         const options: DatepickerOptions = {
+            minDate: new Date(minDate.getFullYear(), minDate.getMonth(), minDate.getDate()),
             useCurrent: false,
             allowInputToggle: true,
             format: "MM/DD/YYYY",
@@ -161,7 +165,8 @@ class CreateApiKey {
         if (passPhrase.length < 7 || passPhrase.length > 32) {
             return this.resources.apiPassPhraseMustBeBetweenCharacters;
         }
-        const isPastDate = new Date(expirationDate.toString()) < new Date();
+        const currentDate = new Date(this.resources.currentDate);
+        const isPastDate = new Date(expirationDate.toString()) < new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
         if (isPastDate) {
             return this.resources.cantSelectTimeFromPast;
         }

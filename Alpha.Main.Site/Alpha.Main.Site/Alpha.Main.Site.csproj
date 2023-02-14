@@ -599,6 +599,30 @@
     <Content Include="App_Data\SPNames\UAT\DBONUSER.ON_USER.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Assets\bundles\apikey\apikey-dark.css" />
+    <Content Include="Assets\bundles\apikey\apikey-dark.min.css">
+      <DependentUpon>apikey-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\apikey\apikey-management.js" />
+    <Content Include="Assets\bundles\apikey\apikey-management.min.js">
+      <DependentUpon>apikey-management.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\apikey\apikey.css" />
+    <Content Include="Assets\bundles\apikey\apikey.min.css">
+      <DependentUpon>apikey.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\apikey\create-apikey-result.js" />
+    <Content Include="Assets\bundles\apikey\create-apikey-result.min.js">
+      <DependentUpon>create-apikey-result.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\apikey\create-apikey.js" />
+    <Content Include="Assets\bundles\apikey\create-apikey.min.js">
+      <DependentUpon>create-apikey.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\apikey\edit-apikey.js" />
+    <Content Include="Assets\bundles\apikey\edit-apikey.min.js">
+      <DependentUpon>edit-apikey.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\captcha\captcha.css" />
     <Content Include="Assets\bundles\captcha\captcha.js" />
     <Content Include="Assets\bundles\captcha\captcha.min.css">

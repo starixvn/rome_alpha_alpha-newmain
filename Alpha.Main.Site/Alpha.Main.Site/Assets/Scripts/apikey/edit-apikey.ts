@@ -5,11 +5,11 @@ interface JQuery {
     datepicker(options: any): JQuery;
 }
 
-interface DatepickerOptions {
+interface DatepickerEditOptions {
+    useCurrent: any;
     allowInputToggle: boolean;
     format: string;
     defaultDate: any;
-    useCurrent: false;
 }
 
 declare var Clipboard: any;
@@ -51,6 +51,8 @@ class EditApiKey {
         cantSelectTimeFromPast: (<HTMLInputElement>document.getElementById('CantSelectTimeFromPast')).value,
         scopesIsRequired: (<HTMLInputElement>document.getElementById('ScopesIsRequired')).value,
         updateSuccessful: (<HTMLInputElement>document.getElementById('UpdateSuccessful')).value,
+        currentDate: (<HTMLInputElement>document.getElementById('CurrentDate')).value,
+        oldExpirationDate: (<HTMLInputElement>document.getElementById('ExpirationDate')).value,
     }
 
     cachedDOMElements = () => {
@@ -140,15 +142,20 @@ class EditApiKey {
         if (apiName.length > 50) {
             return this.resources.noMoreThan50Characters;
         }
-        const isPastDate = new Date(expirationDate.toString()) < new Date();
-        if (isPastDate) {
+        const isChangeDate = this.getTimeofDate(new Date(expirationDate.toString())) !== this.getTimeofDate(new Date(this.resources.oldExpirationDate))
+        const isPastDate = this.getTimeofDate(new Date(expirationDate.toString())) < this.getTimeofDate(new Date(this.resources.currentDate));
+        if (isPastDate && isChangeDate) {
             return this.resources.cantSelectTimeFromPast;
         }
         if (scopes == "") {
             return this.resources.scopesIsRequired;
         }
 
-        return null;
+        return null; 
+    }
+
+    getTimeofDate = (date: Date) => {
+        return new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime()
     }
 
     getScopeValue = () => {
@@ -195,7 +202,7 @@ class EditApiKey {
     }
 
     renderDatetimePicker = () => {
-        const options: DatepickerOptions = {
+        const options: DatepickerEditOptions = {
             useCurrent: false,
             allowInputToggle: true,
             format: "MM/DD/YYYY",
@@ -216,7 +223,6 @@ class EditApiKey {
 
         return url.substr(0, i);
     }
-
 }
 
 $(function () {

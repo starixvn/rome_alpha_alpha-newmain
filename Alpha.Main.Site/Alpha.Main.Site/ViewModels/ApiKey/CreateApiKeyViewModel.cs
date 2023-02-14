@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.ViewModels.ApiKey
 {
     using Alpha.Main.Constants;
+    using System;
     using System.Collections.Generic;
 
     public class CreateApiKeyViewModel
@@ -20,5 +21,7 @@
             ApiKeyScope.WinLossDetail,
             ApiKeyScope.Outstanding
         };
+
+        public DateTime CurrentDate => DateTime.Now;
     }
 }

@@ -187,7 +187,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cant select time from past..
+        ///   Looks up a localized string similar to Expiration Date must not be in the past..
         /// </summary>
         public static string CantSelectTimeFromPast {
             get {

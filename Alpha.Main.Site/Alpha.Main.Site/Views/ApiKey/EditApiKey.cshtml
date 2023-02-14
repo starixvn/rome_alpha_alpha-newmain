@@ -53,6 +53,8 @@
 @Html.Hidden("CantSelectTimeFromPast", ApiKey.CantSelectTimeFromPast)
 @Html.Hidden("ScopesIsRequired", ApiKey.ScopesIsRequired)
 @Html.Hidden("UpdateSuccessful", ApiKey.UpdateSuccessful)
+@Html.Hidden("CurrentDate", Model.CurrentDate)
+@Html.Hidden("ExpirationDate", Model.ApiKeyInfo.ExpirationDate)
 @section js {
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.RenderCommon("/bundles/site-main/apikey")

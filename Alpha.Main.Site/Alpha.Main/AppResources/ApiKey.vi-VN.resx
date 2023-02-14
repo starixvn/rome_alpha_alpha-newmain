@@ -160,7 +160,7 @@
     <value>Are you sure you want to revoke this API Key</value>
   </data>
   <data name="CantSelectTimeFromPast" xml:space="preserve">
-    <value>Cant select time from past.</value>
+    <value>Expiration Date must not be in the past.</value>
   </data>
   <data name="CreateAPIKey" xml:space="preserve">
     <value>Create New API Key</value>

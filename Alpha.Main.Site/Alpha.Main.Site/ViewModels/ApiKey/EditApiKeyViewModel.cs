@@ -21,5 +21,7 @@
         public List<string> Scopes { get; }
 
         public string Language { get; }
+
+        public DateTime CurrentDate => DateTime.Now;
     }
 }
