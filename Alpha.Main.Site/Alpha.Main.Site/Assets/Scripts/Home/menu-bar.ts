@@ -459,6 +459,10 @@ var menuBar = {
                         }
 
                         if (result === "OK" || result.length === 24) {
+                            menuBar.domElements.header.find('iframe#reportFrame')[0].oncancel = function () {
+                                menuBar.domElements.header.find('iframe#reportFrame')[0].src = menuBar.domElements.reportDomain + sessionId + returnUrl;
+                            }
+
                             menuBar.domElements.header.find('iframe#reportFrame')[0].src = menuBar.domElements.reportDomain + sessionId + returnUrl;
                         }
                     }
@@ -502,6 +506,10 @@ var menuBar = {
                         }
 
                         if (result === "OK" || result.length === 24) {
+                            menuBar.domElements.header.find('iframe#betlistFrame')[0].oncancel = function () {
+                                menuBar.domElements.header.find('iframe#betlistFrame')[0].src = menuBar.domElements.betlistDomain + sessionId + returnUrl;
+                            }
+
                             menuBar.domElements.header.find('iframe#betlistFrame')[0].src = menuBar.domElements.betlistDomain + sessionId + returnUrl;
                         }
                     }
