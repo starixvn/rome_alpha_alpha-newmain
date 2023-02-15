@@ -913,11 +913,14 @@ html * {
 }
 
 /********** feedback *************/
+
 .feedback-box {
     .icon-feedback {
         position: relative;
         top: -4px;
         mask: url('Images/feedback.svg');
+        -webkit-mask-image: url('Images/feedback.svg');
+        mask-image: url('Images/feedback.svg');
         background-color: #fff;
         height: 25px;
         width: 24px;
@@ -934,7 +937,6 @@ html * {
 }
 
 .div-feedback {
-    width: 150px;
     height: 36px;
     position: absolute;
     z-index: 89;
@@ -943,12 +945,17 @@ html * {
     top: 200px;
     right: 0px;
     color: #000;
+    margin: -23px -40px 0 0;
+
+    
 
     .feedback-box {
         background-color: #38B038;
         border-radius: 16px;
-        width: 120px;
         display: inline-block;
+        width: 145px;
+        text-align: center;
+        cursor: pointer;
 
         &:hover {
             .txt-feedback {
@@ -965,6 +972,8 @@ html * {
     .icon-feedback {
         position: relative;
         mask: url('Images/feedback.svg');
+        -webkit-mask-image: url('Images/feedback.svg');
+        mask-image: url('Images/feedback.svg');
         background-color: #fff;
         height: 25px;
         width: 24px;
@@ -980,7 +989,7 @@ html * {
 .icon-close-feedback {
     background: url(Images/icon-close-feedback.png) no-repeat;
     height: 26px;
-    width: 22px;
+    width: 26px;
     display: inline-block;
     background-size: 100% 100%;
     cursor: pointer;
@@ -990,8 +999,46 @@ html * {
 }
 
 .txt-feedback {
-    display: inline-block;
-    cursor: pointer;
+    display: inline-block; 
     padding: 2px 6px;
     color: #fff;
 }
+.feedback-modal {
+    width: 564px !important;
+    height: 400px !important;
+
+    .modal-dialog {
+        height: 400px !important;
+    }
+
+    .modal-content {
+        .modal-header {
+            padding: 22px 11px 0 11px;
+
+            .icon-close {
+                width: 40px;
+                top: -15px;
+
+                &:before {
+                    left: 0;
+                }
+            }
+        }
+
+        .modal-title {
+            border: 0;
+        }
+
+        .modal-body {
+            padding: 0px 11px 8px;
+            height: 320px !important;
+        }
+    }
+
+    .popup-title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 23px;
+    }
+}
+ 

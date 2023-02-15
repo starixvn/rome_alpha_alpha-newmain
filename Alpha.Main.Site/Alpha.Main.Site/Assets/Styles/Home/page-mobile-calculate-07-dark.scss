@@ -565,6 +565,17 @@ body {
         height: calculateScale(40px);
         margin-left: calculateScale(-4px);
     }
+
+    .feedback-box {
+        float: left;
+        height: calculateScale(48px);
+        width: calculateScale(30px);
+        line-height: calculateScale(48px);
+    }
+
+    .switch-mode-box {
+        margin-top: calculateScale(2px);
+    }
 }
 
 .m-banner {
@@ -679,5 +690,29 @@ body {
             padding: 0 8px;
             height: calc(100% - 116px) !important;
         }
+    }
+}
+//popup feedback
+.hidden-mobile {
+    display: none;
+}
+.feedback-modal {
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    .modal-content {
+        .modal-body {
+            height: 80% !important;
+        }
+    }
+
+    .modal-dialog {
+        height: 100% !important;
+    }
+
+    .popup-title {
+        font-size: calculateScale(16px)
     }
 }
