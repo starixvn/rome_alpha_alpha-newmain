@@ -178,6 +178,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Win Loss Limit.
+        /// </summary>
+        internal static string _22 {
+            get {
+                return ResourceManager.GetString("_22", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Commission.
         /// </summary>
         internal static string _3 {
