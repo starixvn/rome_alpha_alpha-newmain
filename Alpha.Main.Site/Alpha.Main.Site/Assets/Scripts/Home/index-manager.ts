@@ -321,7 +321,7 @@ var indexManager = {
         $(".txt-feedback, .feedback-box").click(function () { indexManager.openFeedback(); });
     },
     openFeedback: function () {
-        popupManager.open(indexManager.urls.feedback, $("#FeedbackTitle").val(), 680, 550);
+        popupManager.open(indexManager.urls.feedback, $("#FeedbackTitle").val(), 680, 550, null, null, null, null, null, null, { customClass: 'feedback-modal'});
     },
 
     hideFloatingFeedbackIcon: function () {
