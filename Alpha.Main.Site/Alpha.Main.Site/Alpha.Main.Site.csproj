@@ -863,6 +863,7 @@
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile_vi-VN.jpg" />
     <Content Include="Assets\Images\chatbot-i1.svg" />
     <Content Include="Assets\Images\chatbot-i7.svg" />
+    <Content Include="Assets\Images\feedback.svg" />
     <Content Include="Assets\Images\icon-chatbot-1.svg" />
     <Content Include="Assets\Images\icon-chatbot-2.svg" />
     <Content Include="Assets\Images\icon-chatbot-3.svg" />
