@@ -102,8 +102,7 @@ var alpha = {
                 }
                 else {
                     try {
-                        localStorage.removeItem(indexManager.currentUrlCookieName);
-                        localStorage.removeItem(indexManager.hideFeedbackCookies);
+                        indexManager.removeCookies();
                     }
                     finally {
                         index.location = signOutUrl;
