@@ -298,7 +298,7 @@ var indexManager = {
     },
 
     initFeedback: function () {
-        $(".txt-feedback, .feedback-box").click(function () { indexManager.openFeedback(); });
+        $(".txt-feedback, .feedback-box .icon-feedback").click(function () { indexManager.openFeedback(); });
 
         var hideFeedback = localStorage.getItem(indexManager.hideFeedbackCookies);
 
