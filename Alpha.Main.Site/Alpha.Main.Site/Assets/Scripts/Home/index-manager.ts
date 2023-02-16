@@ -304,13 +304,6 @@ var indexManager = {
             return;
         }
 
-        $("#main").load(function () {
-            var iframe = $("#main").contents();
-            $(iframe).scroll(function () {
-                $(".div-feedback").css({ top: $(window).height() - 100 - $(iframe).scrollTop() });
-            });
-        });
-
         $(".div-feedback").css({ top: $(window).height() - 100 });
         $(".div-feedback").removeClass('hide');
         $(".icon-close-feedback").click(function () {
