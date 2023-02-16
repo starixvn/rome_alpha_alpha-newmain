@@ -890,7 +890,7 @@ html * {
 .feedback-box {
     position: relative;
 
-    &.active {
+    &.show-popup {
         .dropdown-feedback {
             display: block;
         }

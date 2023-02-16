@@ -917,8 +917,8 @@ html * {
 .feedback-box {
     cursor: auto !important;
 
-    &.active {
-        .dropdown-feedback{
+    &.show-popup {
+        .dropdown-feedback {
             display: block;
         }
     }
