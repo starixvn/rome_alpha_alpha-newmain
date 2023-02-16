@@ -156,7 +156,6 @@
             container.RegisterPerWebRequest<ISessionService, SessionService>();
             container.RegisterPerWebRequest<ProtectionCodeService, ProtectionCodeServiceImpl>();
             container.RegisterPerWebRequest<ThemeService, ThemeServiceImpl>();
-            container.RegisterPerWebRequest<FeedbackService, FeedbackServiceImpl>();
         }
 
         private static void RegisterDataAccesses(Container container)

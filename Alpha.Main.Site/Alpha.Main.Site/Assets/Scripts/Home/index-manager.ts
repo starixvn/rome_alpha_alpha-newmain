@@ -34,6 +34,7 @@ var indexManager = {
     urls: {
         reCheckinUrl: alpha.urls.oldMainRootPath + '_Authorization/Handlers/ReCheckin.ashx',
         feedback: alpha.urls.messageRootPath + 'Feedback/Index',
+        checkExistFeedback: alpha.urls.messageRootPath + 'Feedback/CheckExist',
     },
 
     init: function () {
@@ -297,6 +298,8 @@ var indexManager = {
     },
 
     initFeedback: function () {
+        $(".txt-feedback, .feedback-box").click(function () { indexManager.openFeedback(); });
+
         var hideFeedback = localStorage.getItem(indexManager.hideFeedbackCookies);
 
         if (hideFeedback === '1') {
@@ -304,17 +307,27 @@ var indexManager = {
             return;
         }
 
-        $(".div-feedback").css({ top: $(window).height() - 100 });
-        $(".div-feedback").removeClass('hide');
-        $(".icon-close-feedback").click(function () {
-            localStorage.setItem(indexManager.hideFeedbackCookies, "1");
-            $(".div-feedback").addClass('hide');
-        });
+        $.ajax({
+            type: "POST",
+            url: indexManager.urls.checkExistFeedback,
+            data: {},
+            success: (result) => {
+                if (result) {
+                    return;
+                }
 
-        $(".txt-feedback, .feedback-box").click(function () { indexManager.openFeedback(); });
+                $(".div-feedback").css({ top: $(window).height() - 100 });
+                $(".div-feedback").removeClass('hide');
+                $(".icon-close-feedback").click(function () {
+                    localStorage.setItem(indexManager.hideFeedbackCookies, "1");
+                    $(".div-feedback").addClass('hide');
+                });
+            },
+            complete: () => { }
+        });
     },
     openFeedback: function () {
-        popupManager.open(indexManager.urls.feedback, $("#FeedbackTitle").val(), 680, 550, null, null, null, null, null, null, { customClass: 'feedback-modal'});
+        popupManager.open(indexManager.urls.feedback, $("#FeedbackTitle").val(), 680, 550, null, null, null, null, null, null, { customClass: 'feedback-modal' });
     },
 
     hideFloatingFeedbackIcon: function () {

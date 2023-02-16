@@ -45,16 +45,13 @@
                 <span class="txt-progress">@Resources.DataProcessingIsInProgress</span>
             </div>
         </div>
-        @if (Model.ShowFloatingFeedback)
-        {
-            <div class="div-feedback hidden-mobile hide">
-                <div class="feedback-box">
-                    <div class="icon-feedback"></div>
-                    <div class="txt-feedback">@Resources.Feedback</div>
-                </div>
-                <div class="icon-close-feedback" title="@Resources.close"></div>
+        <div class="div-feedback hidden-mobile hide">
+            <div class="feedback-box">
+                <div class="icon-feedback"></div>
+                <div class="txt-feedback">@Resources.Feedback</div>
             </div>
-        }
+            <div class="icon-close-feedback" title="@Resources.close"></div>
+        </div>
     </div>
     @Html.Partial("HiddenFields", Model)
     @Html.Partial("AnnouncementPopup")

@@ -1,5 +1,8 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System;
+    using System.Linq;
+    using System.Threading.Tasks;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.SecurityCode.Web;
     using Alpha.Web.Models;
@@ -10,9 +13,6 @@
     using Requests;
     using Services;
     using Sunplus.Agent.Utilities;
-    using System;
-    using System.Linq;
-    using System.Threading.Tasks;
     using TelegramBot.Client.Models;
     using TelegramBot.Client.Services;
     using TelegramBot.Constants;
@@ -38,16 +38,14 @@
         private readonly ProfilePictureServices customerProfileService;
         private readonly LogoutService logoutService;
         private readonly ISettingService telegramSettingService;
-        private readonly FeedbackService feedbackService;
 
         public DefaultHandler(
             SessionManager sessionManager,
             BrowserHelper browserHelper,
             ProfilePictureServices customerProfileService,
             LogoutService logoutService,
-            ISettingService telegramSettingService,
-            FeedbackService feedbackService)
-            : this(sessionManager, browserHelper, logoutService, null, null, customerProfileService, telegramSettingService, feedbackService)
+            ISettingService telegramSettingService)
+            : this(sessionManager, browserHelper, logoutService, null, null, customerProfileService, telegramSettingService)
         {
         }
 
@@ -58,8 +56,7 @@
             Func<string> getDefaultUrl,
             Func<string, string> encodeDataFunction,
             ProfilePictureServices customerProfileService,
-            ISettingService telegramSettingService,
-            FeedbackService feedbackService)
+            ISettingService telegramSettingService)
         {
             this.sessionManager = sessionManager;
             this.browserHelper = browserHelper;
@@ -69,7 +66,6 @@
             this.encodeDataFunction = encodeDataFunction ?? Encryption.PearsonEncode;
             this.customerProfileService = customerProfileService;
             this.telegramSettingService = telegramSettingService;
-            this.feedbackService = feedbackService;
         }
 
         public BrowserViewModel Handle(BrowserQuery message)
@@ -108,8 +104,6 @@
             }
 
             sessionManager.Add(PasswordHashSessionKey, viewModel.PasswordHash);
-
-            viewModel.ShowFloatingFeedback = !(await feedbackService.CheckExistsAsync(message.CustId));
 
             return viewModel;
         }

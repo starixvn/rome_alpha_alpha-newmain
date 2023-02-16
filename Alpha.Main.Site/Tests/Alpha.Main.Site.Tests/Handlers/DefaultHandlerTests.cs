@@ -37,7 +37,6 @@
         private ActorProfilePictureModel profilePicture;
         private NicknameChecker nicknameChecker;
         private ISettingService telegramSettingService;
-        private FeedbackService feedbackService;
 
         [SetUp]
         public void SetUp()
@@ -50,8 +49,7 @@
             encodeDataFunction = Substitute.For<Func<string, string>>();
             logoutService = Substitute.For<LogoutService>();
             telegramSettingService = Substitute.For<ISettingService>();
-            feedbackService = Substitute.For<FeedbackService>();
-            defaultHandler = new DefaultHandler(sessionManager, browserHelper, logoutService, getDefaultUrl, encodeDataFunction, customerProfileService, telegramSettingService, feedbackService);
+            defaultHandler = new DefaultHandler(sessionManager, browserHelper, logoutService, getDefaultUrl, encodeDataFunction, customerProfileService, telegramSettingService);
             userSession = Substitute.For<IUserSession>();
 
             profilePicture = new ActorProfilePictureModel();
@@ -130,8 +128,6 @@
 
             string argumentUsed = null;
             sessionManager.Add(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
-
-            feedbackService.CheckExistsAsync(Arg.Any<int>()).Returns(Task.FromResult(true));
 
             var expectedViewModel = new IndexViewModel(query, getDefaultUrl, encodeDataFunction, browserHelper, profilePicture);
 

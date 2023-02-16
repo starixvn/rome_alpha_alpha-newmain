@@ -287,7 +287,6 @@
     <Compile Include="Criteria\BalanceInfo\GetBalanceInfoCriteriaTests.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceUpDayInfoCriteriaTests.cs" />
     <Compile Include="Criteria\Banner\GetBannerCriteriaTests.cs" />
-    <Compile Include="Criteria\Feedback\CheckExistsCriteriaTests.cs" />
     <Compile Include="Criteria\KickoutCustomerCriteriaTests.cs" />
     <Compile Include="Criteria\LogoutCommandTests.cs" />
     <Compile Include="Criteria\Nickname\CreateNicknameCommandTests.cs" />
@@ -347,7 +346,6 @@
     <Compile Include="Services\ProtectionCodeServiceImplTests.cs" />
     <Compile Include="Services\SecurityCodeServiceImplTest.cs" />
     <Compile Include="Services\ThemeServiceImplTests.cs" />
-    <Compile Include="Services\FeedbackServiceImplTests.cs" />
     <Compile Include="Services\UMMessageServiceImplTests.cs" />
     <Compile Include="TestData\Helper\ConstructorQuery\ParametersAmountConstructorQuery.cs" />
     <Compile Include="TestData\Helper\FakeDataHelper.cs" />
