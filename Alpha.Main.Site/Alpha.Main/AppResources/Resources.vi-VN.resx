@@ -717,4 +717,7 @@
   <data name="FeedbackTitle" xml:space="preserve">
     <value>Hãy giúp chúng tôi cải thiện!</value>
   </data>
+  <data name="LoveToHear" xml:space="preserve">
+    <value>Chúng tôi rất cần những ý kiến từ bạn.</value>
+  </data>
 </root>

@@ -538,15 +538,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Help us improve!.
-        /// </summary>
-        public static string HelpImprove {
-            get {
-                return ResourceManager.GetString("HelpImprove", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Highest turnover members of the month.
         /// </summary>
         public static string highestTurnoverOfTheMonth {

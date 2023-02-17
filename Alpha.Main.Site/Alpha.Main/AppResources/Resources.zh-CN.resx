@@ -655,4 +655,7 @@
   <data name="Feedback" xml:space="preserve">
     <value>反馈</value>
   </data>
+  <data name="LoveToHear" xml:space="preserve">
+    <value>我们很乐意听取您的意见。</value>
+  </data>
 </root>

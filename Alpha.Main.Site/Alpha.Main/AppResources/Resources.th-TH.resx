@@ -652,4 +652,7 @@
   <data name="Feedback" xml:space="preserve">
     <value>ข้อเสนอแนะ</value>
   </data>
+  <data name="LoveToHear" xml:space="preserve">
+    <value>เรารู้สึกยินดีที่ได้รับคำติชมจากคุณ!</value>
+  </data>
 </root>
