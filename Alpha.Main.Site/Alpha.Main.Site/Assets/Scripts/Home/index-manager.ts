@@ -365,7 +365,6 @@ var indexManager = {
     removeCookies: function () {
         localStorage.removeItem(indexManager.currentUrlCookieName);
         localStorage.removeItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackCookies));
-        localStorage.removeItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackPopupCookies));
     },
     getCustomerCookiesName: function (key) {
         return `${key}_${$("#CustId").val()}_${$("#SubAccId").val()}`;
