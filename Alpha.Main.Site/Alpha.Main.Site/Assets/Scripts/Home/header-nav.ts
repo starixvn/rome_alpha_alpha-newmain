@@ -376,15 +376,6 @@ var headerNav = {
             data: { languageCode: lang },
             success: function (result) {
                 if (result !== undefined) {
-                    var domain = window.location.hostname;
-                    var subDomain = domain.split('.')[0];
-                    var mainDomain = domain.replace(subDomain, '');
-                    $.cookie("LANGUAGE", lang || "en-US", {
-                        expires: 365,
-                        domain: mainDomain,
-                        path: "/"
-                    });
-
                     if (menuBar.domElements.reportDomain || menuBar.domElements.betlistDomain) {
                         headerNav.syncLang(result);
                     }

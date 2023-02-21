@@ -3,6 +3,7 @@
 namespace Alpha.Main.Site.Controllers
 {
     using System;
+    using System.Web;
     using System.Web.Mvc;
     using Alpha.Web.Filters;
     using Configurations;
@@ -42,6 +43,12 @@ namespace Alpha.Main.Site.Controllers
         public JsonResult Change(string languageCode)
         {
             var viewModel = mediator.Send(new ChangeLanguageCommand(userSession, languageCode, AppSettings.DisabledVietnamese));
+            var domain = Request.Headers["Host"];
+            var subDomain = domain.Split('.')[0];
+            var mainDomain = domain.Replace(subDomain, string.Empty);
+
+            Response.AppendCookie(new HttpCookie("LANGUAGE", viewModel) { Expires = DateTime.Now.AddDays(365), Path = "/", Domain = mainDomain, HttpOnly = false });
+            Response.AppendCookie(new HttpCookie("hidLanguage", viewModel) { Expires = DateTime.Now.AddDays(365), Path = "/", Domain = mainDomain, HttpOnly = false });
 
             return Json(viewModel);
         }
