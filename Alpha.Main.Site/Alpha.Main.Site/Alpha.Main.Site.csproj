@@ -744,7 +744,9 @@
       <DependentUpon>captcha.js</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\nickname\create-nickname.js" />
-    <Content Include="Assets\bundles\nickname\create-nickname.min.js" />
+    <Content Include="Assets\bundles\nickname\create-nickname.min.js">
+      <DependentUpon>create-nickname.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\nickname\nickname.css" />
     <Content Include="Assets\bundles\nickname\nickname.min.css" />
     <Content Include="Assets\bundles\otp\otp-dark.css" />
@@ -861,6 +863,7 @@
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile_vi-VN.jpg" />
     <Content Include="Assets\Images\chatbot-i1.svg" />
     <Content Include="Assets\Images\chatbot-i7.svg" />
+    <Content Include="Assets\Images\feedback.svg" />
     <Content Include="Assets\Images\icon-chatbot-1.svg" />
     <Content Include="Assets\Images\icon-chatbot-2.svg" />
     <Content Include="Assets\Images\icon-chatbot-3.svg" />
@@ -1046,6 +1049,7 @@
     </Content>
     <Content Include="Assets\styles\error\images\error-bg.png" />
     <Content Include="Assets\styles\error\images\error-bg-dark.png" />
+    <Content Include="Assets\styles\home\images\feedback.svg" />
     <Content Include="Assets\styles\home\ChatBotBanneri1-dark.css">
       <DependentUpon>ChatBotBanneri1-dark.scss</DependentUpon>
     </Content>
@@ -1100,6 +1104,8 @@
     <Content Include="Assets\styles\home\images\bage_bg.svg" />
     <Content Include="Assets\styles\home\images\bage_bg_dark.svg" />
     <Content Include="Assets\styles\home\images\chatbot-intro.svg" />
+    <Content Include="Assets\styles\home\images\feedback_dark.svg" />
+    <Content Include="Assets\styles\home\images\icon-close-feedback.png" />
     <Content Include="Assets\styles\home\page-dark.css">
       <DependentUpon>page-dark.scss</DependentUpon>
     </Content>

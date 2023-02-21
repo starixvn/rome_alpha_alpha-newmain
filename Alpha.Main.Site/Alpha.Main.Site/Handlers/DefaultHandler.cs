@@ -1,5 +1,8 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System;
+    using System.Linq;
+    using System.Threading.Tasks;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.SecurityCode.Web;
     using Alpha.Web.Models;
@@ -10,9 +13,6 @@
     using Requests;
     using Services;
     using Sunplus.Agent.Utilities;
-    using System;
-    using System.Linq;
-    using System.Threading.Tasks;
     using TelegramBot.Client.Models;
     using TelegramBot.Client.Services;
     using TelegramBot.Constants;
@@ -110,15 +110,16 @@
 
         private async Task<CustBotMessenger> GetCustBotMessenger(int custId, int subAccId, string language)
         {
-            try {
+            try
+            {
                 return await telegramSettingService.GetCustBotMessengerAsync(custId, subAccId, language);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 await Fanex.Logging.Logger.Log.ErrorAsync(ex.Message, ex);
                 return null;
             }
-            
+
         }
 
         public bool Handle(KickoutQuery message)

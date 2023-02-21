@@ -180,4 +180,3 @@
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0016:Use 'throw' expression", Justification = "<Pending>", Scope = "member", Target = "~M:Alpha.Main.Site.ViewModels.IndexViewModel.#ctor(Alpha.Main.Site.Models.Requests.IndexQuery,System.Func{System.String},System.Func{System.String,System.String},Alpha.Web.Helpers.BrowserHelper,Alpha.Main.ProfilePicture.Models.ActorProfilePictureModel)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Code Smell", "S3240:The simplest possible condition syntax should be used", Justification = "<Pending>", Scope = "member", Target = "~P:Alpha.Main.Site.Helpers.UrlHelper.MapReportsPath")]
-

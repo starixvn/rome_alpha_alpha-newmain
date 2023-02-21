@@ -4,6 +4,7 @@
     using System.Web.SessionState;
     using Alpha.Main.Site.ViewModels.Advertisement;
     using Alpha.Web;
+    using Alpha.Web.Filters;
     using Sunplus.Agent.Model.Entities;
 
     [SessionState(SessionStateBehavior.ReadOnly)]
@@ -16,9 +17,10 @@
             this.userSession = userSession;
         }
 
+        [AllowProtectedMode]
         public ActionResult MyWatchlist()
         {
-            if (userSession.SubPageAccess.ViewMemberInfo)
+            if (userSession.SubPageAccess.ViewMemberInfo && !userSession.IsProtectedMode)
             {
                 return PartialView(new MyWatchlistViewModel(userSession.Language, userSession.DarkModeName, userSession.RoleId));
             }

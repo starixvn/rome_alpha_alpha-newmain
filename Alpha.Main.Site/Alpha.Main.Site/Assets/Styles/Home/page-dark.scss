@@ -403,6 +403,7 @@ html * {
         }
     }
 }
+
 .mainmenu-container .menu-item#menu-SERCURITYCODE:after {
     content: "";
     height: 1px;
@@ -469,7 +470,7 @@ html * {
     #accountinfo-content {
         width: 100%;
         min-height: 500px;
-        max-height: 800px!important;
+        max-height: 800px !important;
 
         &.small-device {
             height: 100%;
@@ -591,7 +592,7 @@ html * {
     position: fixed;
     z-index: 100;
     bottom: 15px;
-    right: 16px;    
+    right: 16px;
 }
 
 // Data Processing Notification
@@ -868,11 +869,13 @@ html * {
 /********** slider carousel *************/
 .carousel-banner {
     padding: 10px 10px 0;
+
     .item {
         img {
             border-radius: 5px;
             width: 100%;
-            &[data-href]{
+
+            &[data-href] {
                 cursor: pointer;
             }
         }
@@ -906,5 +909,240 @@ html * {
 .modal-mobile-friendly {
     .modal-dialog .modal-header .modal-title {
         padding: 12px 0 6px;
+    }
+}
+
+/********** feedback *************/
+
+.feedback-box {
+    cursor: auto !important;
+
+    &.show-popup {
+        .dropdown-feedback {
+            display: block;
+        }
+    }
+
+    .dropdown-feedback {
+        display: none;
+        position: absolute;
+        width: 375px;
+        background: #2B2B2B;
+        border: 1px solid #474747;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 3px;
+        top: 55px;
+        left: -153px;
+        z-index: 30;
+        color: $popup-text-color;
+        padding: 20px;
+
+        &:before {
+            position: absolute;
+            content: "";
+            top: -16px;
+            left: 164px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 11px 16px 11px;
+            border-color: transparent transparent #2B2B2B transparent;
+            z-index: 1;
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            top: -18px;
+            left: 163px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 12px 18px 12px;
+            border-color: transparent transparent #474747 transparent;
+            z-index: -1;
+        }
+
+        .text {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 17px;
+
+            img {
+                display: block;
+                margin: 0 21px 0 0;
+            }
+
+            p {
+                span {
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 23px;
+                    display: block;
+                    margin: 0 0 8px 0;
+                }
+
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 20px;
+                margin: 0 0 7px 0;
+            }
+        }
+
+        .action {
+            display: flex;
+            justify-content: space-between;
+
+            .label {
+                color: $popup-text-color;
+                font-weight: 400;
+                font-size: $font-size;
+                background-color: transparent;
+                padding: 2px 0 0;
+                cursor: pointer;
+
+                input {
+                    width: 16px;
+                    height: 16px;
+                    top: 4px;
+                    margin-right: 3px;
+                }
+            }
+
+            .btn-submit {
+                font-weight: 500;
+                font-size: $font-size;
+                margin: 0;
+                line-height: 28px;
+            }
+        }
+    }
+
+    .icon-feedback {
+        position: relative;
+        top: -4px;
+        mask: url('Images/feedback.svg');
+        -webkit-mask-image: url('Images/feedback.svg');
+        mask-image: url('Images/feedback.svg');
+        background-color: #fff;
+        height: 25px;
+        width: 24px;
+        display: inline-block;
+        background-size: 100% 100%;
+        cursor: pointer;
+        fill: #fff;
+
+        &:hover {
+            background-color: #FFE65F;
+            fill: #FFE65F;
+        }
+    }
+}
+
+.div-feedback {
+    height: 36px;
+    position: absolute;
+    z-index: 89;
+    transform: rotate(-90deg);
+    font-size: 18px;
+    top: 200px;
+    right: 0px;
+    color: #000;
+    margin: -23px -40px 0 0;
+
+
+
+    .feedback-box {
+        background-color: #38B038;
+        border-radius: 16px;
+        display: inline-block;
+        width: 145px;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            .txt-feedback {
+                color: #FFE65F;
+            }
+
+            .icon-feedback {
+                background-color: #FFE65F;
+                fill: #FFE65F;
+            }
+        }
+    }
+
+    .icon-feedback {
+        position: relative;
+        mask: url('Images/feedback.svg');
+        -webkit-mask-image: url('Images/feedback.svg');
+        mask-image: url('Images/feedback.svg');
+        background-color: #fff;
+        height: 25px;
+        width: 24px;
+        display: inline-block;
+        background-size: 100% 100%;
+        cursor: pointer;
+        fill: #fff;
+        top: 6px;
+        left: 6px;
+    }
+}
+
+.icon-close-feedback {
+    background: url(Images/icon-close-feedback.png) no-repeat;
+    height: 26px;
+    width: 26px;
+    display: inline-block;
+    background-size: 100% 100%;
+    cursor: pointer;
+    position: relative;
+    top: 5px;
+    left: -5px;
+}
+
+.txt-feedback {
+    display: inline-block;
+    padding: 2px 6px;
+    color: #fff;
+}
+
+.feedback-modal {
+    width: 564px !important;
+    height: 450px !important;
+    padding: 0 !important;
+
+    .modal-dialog {
+        height: 450px !important;
+    }
+
+    .modal-content {
+        .modal-header {
+            padding: 22px 11px 0 11px;
+
+            .icon-close {
+                width: 40px;
+                top: -15px;
+
+                &:before {
+                    left: 0;
+                }
+            }
+        }
+
+        .modal-title {
+            border: 0;
+        }
+
+        .modal-body {
+            padding: 0px 11px 8px;
+            height: 380px !important;
+        }
+    }
+
+    .popup-title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 23px;
     }
 }

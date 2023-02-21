@@ -249,6 +249,10 @@ var AgeWnd = function () {
             var iframe = popUp.find("#popup-iframe");
             iframe.attr("src", "about:blank");
 
+            if (options.customClass) {
+                popUp.addClass(options.customClass);
+            }
+
             popUp.appendTo("body");
             popUp.removeClass("hidden");
             popUp.find(".popup-title").html(title);

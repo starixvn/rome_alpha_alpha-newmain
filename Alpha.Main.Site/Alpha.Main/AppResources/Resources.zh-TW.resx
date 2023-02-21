@@ -649,4 +649,13 @@
   <data name="AdvertisementMyWatchlistGlobalThresholdDetailAgent" xml:space="preserve">
     <value>請到 &lt;b&gt;風險管理&lt;/b&gt; --&gt; 我的監控列表 - 我的限額 --&gt; 設置贏/輸限額</value>
   </data>
+  <data name="FeedbackTitle" xml:space="preserve">
+    <value>協助我們改進！</value>
+  </data>
+  <data name="Feedback" xml:space="preserve">
+    <value>反饋</value>
+  </data>
+  <data name="LoveToHear" xml:space="preserve">
+    <value>我們很樂意聽取您的意見。</value>
+  </data>
 </root>

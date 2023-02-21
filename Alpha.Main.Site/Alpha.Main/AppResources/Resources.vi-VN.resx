@@ -711,4 +711,13 @@
   <data name="AdvertisementMyWatchlistGlobalThresholdDetailAgent" xml:space="preserve">
     <value>Đi đến &lt;b&gt;Quản Lý Rủi Ro&lt;/b&gt; --&gt; Danh Sách Theo Dõi - Mức Thắng Thua --&gt; đặt Giới Hạn Thắng/Thua</value>
   </data>
+  <data name="Feedback" xml:space="preserve">
+    <value>Góp ý</value>
+  </data>
+  <data name="FeedbackTitle" xml:space="preserve">
+    <value>Hãy giúp chúng tôi cải thiện!</value>
+  </data>
+  <data name="LoveToHear" xml:space="preserve">
+    <value>Chúng tôi rất cần những ý kiến từ bạn.</value>
+  </data>
 </root>

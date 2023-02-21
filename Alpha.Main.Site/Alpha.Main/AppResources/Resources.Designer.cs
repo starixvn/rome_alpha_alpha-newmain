@@ -475,6 +475,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Feedback.
+        /// </summary>
+        public static string Feedback {
+            get {
+                return ResourceManager.GetString("Feedback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Help us improve!.
+        /// </summary>
+        public static string FeedbackTitle {
+            get {
+                return ResourceManager.GetString("FeedbackTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to First Name.
         /// </summary>
         public static string firstName {
@@ -679,6 +697,15 @@ namespace Alpha.Main.AppResources {
         public static string LogOut {
             get {
                 return ResourceManager.GetString("LogOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We’d love to hear from you..
+        /// </summary>
+        public static string LoveToHear {
+            get {
+                return ResourceManager.GetString("LoveToHear", resourceCulture);
             }
         }
         

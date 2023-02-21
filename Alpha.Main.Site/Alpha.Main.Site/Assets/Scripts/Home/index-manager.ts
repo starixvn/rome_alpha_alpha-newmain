@@ -16,6 +16,8 @@ if (typeof String.prototype.startsWith != 'function') {
 var indexManager = {
     currentTab: null,
     currentUrlCookieName: 'DFFKDHFJKLDHFJDH',
+    hideFeedbackCookies: 'HideFeedback',
+    hideFeedbackPopupCookies: 'HideFeedbackPopup',
     requiredNetworkSpeedCalculation: false,
     showOldCustomerList: false,
     reportDomain: "",
@@ -31,7 +33,9 @@ var indexManager = {
     },
 
     urls: {
-        reCheckinUrl: alpha.urls.oldMainRootPath + '_Authorization/Handlers/ReCheckin.ashx'
+        reCheckinUrl: alpha.urls.oldMainRootPath + '_Authorization/Handlers/ReCheckin.ashx',
+        feedback: alpha.urls.messageRootPath + 'Feedback/Index',
+        checkExistFeedback: alpha.urls.messageRootPath + 'Feedback/CheckExist',
     },
 
     init: function () {
@@ -44,6 +48,7 @@ var indexManager = {
         indexManager.loadPartialViews();
         indexManager.registerEvents();
         indexManager.setCurrentUrl();
+        indexManager.initFeedback();
 
         if (indexManager.requiredNetworkSpeedCalculation) {
             setTimeout(indexManager.calculateUserConnectionSpeed, 8000);
@@ -59,8 +64,7 @@ var indexManager = {
         const messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
         eventer(messageEvent, function (e) {
             if (e.data.event_id === "daily-statement"
-                || e.data.event_id === "detail-statement")
-            {
+                || e.data.event_id === "detail-statement") {
                 popupManager.open(e.data.url, e.data.title, 900);
             }
 
@@ -292,6 +296,78 @@ var indexManager = {
 
     isDCSUrl: function (url: string) {
         return url.indexOf('dcs/viewcustomersetting') > -1;
+    },
+
+    initFeedback: function () {
+        $(".txt-feedback, .feedback-box .icon-feedback, #btn-feedback").click(function () { indexManager.openFeedback(); });
+
+        var hideFeedbackPopup = localStorage.getItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackPopupCookies));
+        if (hideFeedbackPopup !== '1') {
+            $(".advertisement-modal").remove();
+            $(".um-message-popup").remove();
+
+            popupManager.closeAllPopup();
+
+            $(".feedback-box").addClass('show-popup');
+            $("#btn-hide-feedback-popup").click(function () {
+                localStorage.setItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackPopupCookies), "1");
+                $(".feedback-box").removeClass('show-popup');
+            });
+
+            $(window).click(function () {
+                $(".feedback-box").removeClass('show-popup');
+            });
+        }
+
+        $("#main").load(function () {
+            if ($("#main").height() >= $('#main').contents().height()) {
+                $(".div-feedback").css({ right: -20 });
+            }
+        });
+
+        var hideFeedback = localStorage.getItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackCookies));
+
+        if (hideFeedback === '1') {
+            $(".div-feedback").remove();
+            return;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: indexManager.urls.checkExistFeedback,
+            data: {},
+            success: (result) => {
+                if (result) {
+                    return;
+                }
+
+                $(".div-feedback").css({
+                    top: $(window).height() - 100
+                });
+
+                $(".div-feedback").removeClass('hide');
+                $(".icon-close-feedback").click(function () {
+                    localStorage.setItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackCookies), "1");
+                    $(".div-feedback").addClass('hide');
+                });
+            },
+            complete: () => { }
+        });
+    },
+    openFeedback: function () {
+        popupManager.open(indexManager.urls.feedback, $("#FeedbackTitle").val(), 680, 550, null, null, null, null, null, null, { customClass: 'feedback-modal' });
+    },
+
+    hideFloatingFeedbackIcon: function () {
+        $(".div-feedback").remove();
+    },
+
+    removeCookies: function () {
+        localStorage.removeItem(indexManager.currentUrlCookieName);
+        localStorage.removeItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackCookies));
+    },
+    getCustomerCookiesName: function (key) {
+        return `${key}_${$("#CustId").val()}_${$("#SubAccId").val()}`;
     }
 };
 

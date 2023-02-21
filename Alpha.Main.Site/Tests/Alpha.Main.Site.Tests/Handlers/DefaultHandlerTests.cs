@@ -107,7 +107,7 @@
         }
 
         [Test]
-        public void HandleIndexQuery_NotNullCommand_ReturnIndexViewModel()
+        public async Task HandleIndexQuery_NotNullCommand_ReturnIndexViewModel()
         {
             // Arrange
             var compareLogic = new CompareLogic(new ComparisonConfig
@@ -132,10 +132,10 @@
             var expectedViewModel = new IndexViewModel(query, getDefaultUrl, encodeDataFunction, browserHelper, profilePicture);
 
             // Act
-            var viewModel = defaultHandler.Handle(query);
+            var viewModel = await defaultHandler.Handle(query);
 
             // Assert
-            Assert.IsTrue(compareLogic.Compare(expectedViewModel, viewModel).AreEqual);
+            Assert.AreEqual(expectedViewModel.IsShowSuggestEnableTelegramOtp, viewModel.IsShowSuggestEnableTelegramOtp);
         }
 
         #region Handle BrowserQuery

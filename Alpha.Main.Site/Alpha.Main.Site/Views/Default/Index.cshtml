@@ -45,6 +45,13 @@
                 <span class="txt-progress">@Resources.DataProcessingIsInProgress</span>
             </div>
         </div>
+        <div class="div-feedback hidden-mobile hide">
+            <div class="feedback-box">
+                <div class="icon-feedback"></div>
+                <div class="txt-feedback">@Resources.Feedback</div>
+            </div>
+            <div class="icon-close-feedback" title="@Resources.close"></div>
+        </div>
     </div>
     @Html.Partial("HiddenFields", Model)
     @Html.Partial("AnnouncementPopup")
@@ -60,7 +67,7 @@
     @StaticResources.RenderScripts("~/assets/bundles/default-index")
     @if (Model.IsShowSuggestEnableTelegramOtp)
     {
-        @Html.Hidden("EnabledOTPSuccessMessage",ChatBot.EnabledTelegramOtpNotification)
+        @Html.Hidden("EnabledOTPSuccessMessage", ChatBot.EnabledTelegramOtpNotification)
         @StaticResources.RenderScripts("~/assets/bundles/suggest-telegram-otp")
     }
     @if (Model.IsOfferLiveChat)
@@ -74,6 +81,7 @@
         <!-- End of LiveChat code -->
     }
 
+    @Html.Hidden("FeedbackTitle", Resources.FeedbackTitle)
     <script async defer src="@TempData["fpsScript"]" type="text/javascript"></script>
 </body>
 </html>
