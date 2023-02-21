@@ -17,7 +17,8 @@ var indexManager = {
     currentTab: null,
     currentUrlCookieName: 'DFFKDHFJKLDHFJDH',
     hideFeedbackCookies: 'HideFeedback',
-    hideFeedbackPopupCookies: 'HideFeedbackPopup',
+    hidePopupCookies: 'HidePopup',
+
     requiredNetworkSpeedCalculation: false,
     showOldCustomerList: false,
     reportDomain: "",
@@ -48,6 +49,7 @@ var indexManager = {
         indexManager.loadPartialViews();
         indexManager.registerEvents();
         indexManager.setCurrentUrl();
+        indexManager.highlightPopup('feedback');
         indexManager.initFeedback();
 
         if (indexManager.requiredNetworkSpeedCalculation) {
@@ -301,21 +303,6 @@ var indexManager = {
     initFeedback: function () {
         $(".txt-feedback, .feedback-box .icon-feedback, #btn-feedback").click(function () { indexManager.openFeedback(); });
 
-        var hideFeedbackPopup = localStorage.getItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackPopupCookies));
-        if (hideFeedbackPopup !== '1') {
-            popupManager.closeAllPopup();
-
-            $(".feedback-box").addClass('show-popup');
-            $("#btn-hide-feedback-popup").click(function () {
-                localStorage.setItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackPopupCookies), "1");
-                $(".feedback-box").removeClass('show-popup');
-            });
-
-            $(window).click(function () {
-                $(".feedback-box").removeClass('show-popup');
-            });
-        }
-
         $("#main").load(function () {
             if ($("#main").height() >= $('#main').contents().height()) {
                 $(".div-feedback").css({ right: -20 });
@@ -350,6 +337,29 @@ var indexManager = {
             },
             complete: () => { }
         });
+    },
+    highlightPopup: (funcName) => {
+        var cookiesName = indexManager.hidePopupCookies + funcName;
+        var hidePopup =
+            localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
+        var box = $('.' + funcName + '-box');
+
+        if (hidePopup !== '1') {
+            $(".advertisement-modal").remove();
+            $(".um-message-popup").remove();
+
+            popupManager.closeAllPopup();
+
+            box.addClass('show-popup');
+            $('#btn-hide-' + funcName + '-popup').click(function () {
+                localStorage.setItem(indexManager.getCustomerCookiesName(cookiesName), "1");
+                box.removeClass('show-popup');
+            });
+
+            $(window).click(function () {
+                box.removeClass('show-popup');
+            });
+        }
     },
     openFeedback: function () {
         popupManager.open(indexManager.urls.feedback, $("#FeedbackTitle").val(), 680, 550, null, null, null, null, null, null, { customClass: 'feedback-modal' });
