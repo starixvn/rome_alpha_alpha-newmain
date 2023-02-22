@@ -1,6 +1,8 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
+    using System;
     using System.Diagnostics.CodeAnalysis;
+    using System.Web;
     using System.Web.Mvc;
     using System.Web.SessionState;
     using Alpha.Auth.Filters;
@@ -166,6 +168,12 @@
         public ActionResult Languages()
         {
             var viewModel = mediator.Send(new AllLanguagesQuery(userSession.Language, AppSettings.DisabledVietnamese));
+            var domain = Request.Headers["Host"];
+            var subDomain = domain.Split('.')[0];
+            var mainDomain = domain.Replace(subDomain, string.Empty);
+
+            Response.AppendCookie(new HttpCookie("LANGUAGE", viewModel.CurrentLanguage) { Expires = DateTime.Now.AddDays(365), Path = "/", Domain = mainDomain, HttpOnly = false });
+            Response.AppendCookie(new HttpCookie("hidLanguage", viewModel.CurrentLanguage) { Expires = DateTime.Now.AddDays(365), Path = "/", Domain = mainDomain, HttpOnly = false });
 
             return PartialView(viewModel);
         }
