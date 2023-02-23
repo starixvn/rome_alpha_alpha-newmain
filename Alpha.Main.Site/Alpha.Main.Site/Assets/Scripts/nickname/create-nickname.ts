@@ -71,7 +71,7 @@ class Nickname {
             return validNickname;
         });
 
-        this.$("#buttonBack").click(alpha.core.signOut);
+        this.$("#buttonBack").click(() => alpha.core.signOut2());
 
         this.$(".changelanguage-link").click(function (): void {
             self.changeLanguage(self.$(this).data("value"));

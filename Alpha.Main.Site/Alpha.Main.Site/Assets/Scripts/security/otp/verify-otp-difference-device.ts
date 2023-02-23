@@ -35,7 +35,7 @@ class VerifyOtpDefferenceDevice {
     }
 
     registerEvents = () => {
-        this.$btnBack.click(alpha.core.signOut);
+        this.$btnBack.click(() => alpha.core.signOut2());
         this.$otpForm.submit(this.verifyOtpEvent);
         this.$btnGenerateOTP.click(this.generateOTP);
     }
