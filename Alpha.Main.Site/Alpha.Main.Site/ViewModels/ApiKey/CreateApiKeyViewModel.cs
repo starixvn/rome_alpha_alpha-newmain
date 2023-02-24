@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.ViewModels.ApiKey
 {
     using Alpha.Main.Constants;
+    using Alpha.Main.Site.Helpers;
     using System;
     using System.Collections.Generic;
 
@@ -23,5 +24,9 @@
         };
 
         public DateTime CurrentDate => DateTime.Now;
+
+        public string HelpPage => UrlHelper.MapMessagesPath("~/StaticMessage/Help?id=171247");
+
+        public string MainRootPath => UrlHelper.MapMainPath("~/");
     }
 }

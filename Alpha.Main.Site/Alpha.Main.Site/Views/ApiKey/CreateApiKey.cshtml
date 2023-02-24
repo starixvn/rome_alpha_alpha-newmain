@@ -10,14 +10,14 @@
 }
 <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active">
-        <a href="~/Apikey/CreateApiKey" role="tab" data-toggle="tab">@ApiKey.CreateAPIKey</a>
+        <a href="@($"{Model.MainRootPath}Apikey/CreateApiKey")" role="tab" data-toggle="tab">@ApiKey.CreateAPIKey</a>
     </li>
     <li role="presentation" id="">
-        <a href="~/Apikey/ApiKeyManagement" role="tab" data-toggle="tab">@ApiKey.APIKeyManagement</a>
+        <a href="@($"{Model.MainRootPath}Apikey/ApiKeyManagement")" role="tab" data-toggle="tab">@ApiKey.APIKeyManagement</a>
     </li>
 </ul>
 <div class="tab-content">
-    <span class="icon icon-help icon-question"></span>
+    <a href="@Model.HelpPage" target="_blank"><span class="icon icon-help icon-question"></span></a>
     <form class="block" id="apikey-form" autocomplete="off">
         <div id="error-message" class="container-msg w-450"></div>
         <div class="form-group">
