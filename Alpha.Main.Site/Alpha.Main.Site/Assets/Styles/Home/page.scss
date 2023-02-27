@@ -388,7 +388,80 @@ html * {
         }
     }
 }
+.backupdomain-modal {
+    position: absolute;
+    width: 367px;
+    background: #ffffff;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.35);
+    left: 316px;
+    border-radius: 3px;
+    z-index: 300;
+    color: #333333;
+    padding: 19px;
+    opacity: 0;
 
+    &:after {
+        position: absolute;
+        top: 60px;
+        left: -21px;
+        z-index: -1;
+        content: url(../../Images/arrowbackupdomain.svg);
+    }
+ 
+    .text {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+
+        img {
+            display: block;
+            margin: 0 20px 0 0;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            margin: 0;
+
+            span {
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 23px;
+                display: block;
+                margin: 1px 0 7px 0;
+            }
+        }
+    }
+
+    .action {
+        display: flex;
+        justify-content: space-between;
+
+        .label {
+            color: #333333;
+            font-weight: 400;
+            font-size: 13px;
+            background-color: transparent;
+            padding: 2px 0 0;
+            cursor: pointer;
+
+            input {
+                width: 16px;
+                height: 16px;
+                top: 4px;
+                margin-right: 3px;
+            }
+        }
+
+        .btn-submit {
+            font-weight: 500;
+            font-size: 13px;
+            margin: 0;
+            line-height: 28px;
+        }
+    }
+}
 .mainmenu-container .menu-item#menu-SERCURITYCODE:after {
     content: "";
     height: 1px;

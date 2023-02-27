@@ -31,6 +31,22 @@
             @Html.Action("MenuBar")
         </nav>
     </aside>
+    <div class="cover-backupdomain">
+        <div class="backupdomain-modal">
+            <div class="text">
+                <img src="~/Assets/Images/backupdomain.svg" alt="backup domain" />
+                <p><span>Backup Domains</span>Your backup domains are ready.</p>
+            </div>
+            <div class="action">
+                <label class="label">
+                    <input id="btn-hide-backup-domain-popup" type="checkbox" name="name" value="" />
+                    <span>@Resources.doNotShowAgain</span>
+                </label>
+                <input id="btn-feedback" type="submit" class="btn-submit" value="Check Out">
+            </div>
+        </div>
+    </div>
+
     <div class="content-wrapper" id="content-wrapper">
         @Html.Partial("SearchBar")
         <header class="header" id="header">
