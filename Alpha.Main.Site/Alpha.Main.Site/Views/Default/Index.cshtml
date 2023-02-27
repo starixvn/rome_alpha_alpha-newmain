@@ -31,22 +31,6 @@
             @Html.Action("MenuBar")
         </nav>
     </aside>
-    <div class="cover-backupdomain">
-        <div class="backupdomain-modal">
-            <div class="text">
-                <img src="~/Assets/Images/backupdomain.svg" alt="backup domain" />
-                <p><span>Backup Domains</span>Your backup domains are ready.</p>
-            </div>
-            <div class="action">
-                <label class="label">
-                    <input id="btn-hide-backup-domain-popup" type="checkbox" name="name" value="" />
-                    <span>@Resources.doNotShowAgain</span>
-                </label>
-                <input id="btn-feedback" type="submit" class="btn-submit" value="Check Out">
-            </div>
-        </div>
-    </div>
-
     <div class="content-wrapper" id="content-wrapper">
         @Html.Partial("SearchBar")
         <header class="header" id="header">
@@ -67,6 +51,21 @@
                 <div class="txt-feedback">@Resources.Feedback</div>
             </div>
             <div class="icon-close-feedback" title="@Resources.close"></div>
+        </div>
+        <div class="cover-backupdomain backup-domains-box hide">
+            <div class="backupdomain-modal">
+                <div class="text">
+                    <img src="~/Assets/Images/backupdomain.svg" alt="backup domain" />
+                    <p><span>@Alpha_sitemap.BackupDomains</span>@Resources.BackupDomains_Intro</p>
+                </div>
+                <div class="action">
+                    <label class="label">
+                        <input id="btn-hide-backup-domains-popup" type="checkbox" name="name" value="" />
+                        <span>@Resources.doNotShowAgain</span>
+                    </label>
+                    <input id="btn-backup-domains" type="submit" class="btn-submit" value="@Resources.CheckOut">
+                </div>
+            </div>
         </div>
     </div>
     @Html.Partial("HiddenFields", Model)

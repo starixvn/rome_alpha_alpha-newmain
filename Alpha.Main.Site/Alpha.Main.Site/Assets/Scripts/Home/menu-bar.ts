@@ -549,7 +549,7 @@ var menuBar = {
     setPositionBackupDomain: function () {
         window.onload = function () {
             var positionBackupDomain = $("#menu-BACKUPDOMAINS").offset().top - 45;
-            console.log(positionBackupDomain);
+
             $(".backupdomain-modal").css({
                 'top': positionBackupDomain,
                 'opacity': '1'

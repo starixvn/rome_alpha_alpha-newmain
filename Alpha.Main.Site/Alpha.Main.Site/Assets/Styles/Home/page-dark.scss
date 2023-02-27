@@ -404,13 +404,14 @@ html * {
         }
     }
 }
+
 .backupdomain-modal {
     position: absolute;
     width: 367px;
     background: #2B2B2B;
     border: 1px solid #474747;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    left: 316px;
+    left: 16px;
     border-radius: 3px;
     z-index: 300;
     color: #EDEDED;
@@ -497,6 +498,7 @@ html * {
         }
     }
 }
+
 .mainmenu-container .menu-item#menu-SERCURITYCODE:after {
     content: "";
     height: 1px;
@@ -1237,5 +1239,13 @@ html * {
         font-weight: 700;
         font-size: 20px;
         line-height: 23px;
+    }
+}
+
+/********** backup-domains *************/
+
+.backup-domains-box {
+    &.show-popup {
+        display: block !important;
     }
 }

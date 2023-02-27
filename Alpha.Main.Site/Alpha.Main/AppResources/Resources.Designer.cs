@@ -187,6 +187,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your backup domains are ready..
+        /// </summary>
+        public static string BackupDomains_Intro {
+            get {
+                return ResourceManager.GetString("BackupDomains_Intro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Balance.
         /// </summary>
         public static string balance {
@@ -228,6 +237,15 @@ namespace Alpha.Main.AppResources {
         public static string changeLanguage {
             get {
                 return ResourceManager.GetString("changeLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check Out.
+        /// </summary>
+        public static string CheckOut {
+            get {
+                return ResourceManager.GetString("CheckOut", resourceCulture);
             }
         }
         
