@@ -37,7 +37,7 @@
                         <td class="text-center">@apikey.CreatedDate</td>
                         @if (apikey.IsExpired)
                         {
-                            <td class='text-center expired-date'>Expired</td>
+                            <td class='text-center expired-date'>@ApiKey.Expired</td>
                         }
                         else if (apikey.ExpirationDate.HasValue)
                         {

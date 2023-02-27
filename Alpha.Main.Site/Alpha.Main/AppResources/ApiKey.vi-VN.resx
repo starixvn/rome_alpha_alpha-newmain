@@ -118,99 +118,111 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Action" xml:space="preserve">
-    <value>Action</value>
+    <value>Hành động</value>
   </data>
   <data name="All" xml:space="preserve">
-    <value>All</value>
+    <value>Tất cả</value>
   </data>
   <data name="API" xml:space="preserve">
     <value>API</value>
   </data>
   <data name="APIKey" xml:space="preserve">
-    <value>API Key</value>
+    <value>Khóa API</value>
   </data>
   <data name="APIKeyManagement" xml:space="preserve">
-    <value>API Key Management</value>
+    <value>Quản lý Khóa API</value>
   </data>
   <data name="APIKeyName" xml:space="preserve">
-    <value>API Key Name</value>
+    <value>Tên Khóa API</value>
   </data>
   <data name="APIKeyNameCanNotContainSpecialCharacters" xml:space="preserve">
-    <value>API Key Name can not contain special characters.</value>
+    <value>Tên khóa API không được chứa các ký tự đặc biệt.</value>
   </data>
   <data name="APIPassphrase" xml:space="preserve">
-    <value>API Passphrase</value>
+    <value>Mật khẩu API</value>
   </data>
   <data name="APIPassPhraseCanNotContainSpaceSymbolAndPunctuaion" xml:space="preserve">
-    <value>API Passphrase can not contain spaces and symbols.</value>
+    <value>Tên khóa API không được chứa các ký tự đặc biệt.</value>
   </data>
   <data name="APIPassPhraseIsImportantForYouToUseLater" xml:space="preserve">
-    <value>API Passphrase is important information for you to use later. Please remember it and keep it safe.</value>
+    <value>Mật khẩu API là thông tin cần thiết để sử dụng sau này. Vui lòng lưu trữ thông tin này ở nơi an toàn.</value>
   </data>
   <data name="APIPassPhraseMustBeBetweenCharacters" xml:space="preserve">
-    <value>API Passphrase must be between [7-32] characters.</value>
+    <value>Mật khẩu API phải nằm trong khoảng [7-32] ký tự.</value>
   </data>
   <data name="APISecret" xml:space="preserve">
-    <value>API Secret</value>
+    <value>Khóa bí mật API</value>
   </data>
   <data name="APISecretCanNotBeRetrieved" xml:space="preserve">
-    <value>API Secret will only be displayed ONCE and cannot be retrieved. Please note it down and keep it safe.</value>
+    <value>Khóa bí mật API chỉ được hiển thị MỘT LẦN và không thể truy xuất được. Xin vui lòng ghi lại và giữ nó an toàn.</value>
   </data>
   <data name="AreYouSureRevokeAPIKey" xml:space="preserve">
-    <value>Are you sure you want to revoke this API Key</value>
+    <value>Bạn có chắc muốn thu hồi Khóa API</value>
   </data>
   <data name="CantSelectTimeFromPast" xml:space="preserve">
-    <value>Expiration Date must not be in the past.</value>
+    <value>Ngày hết hạn không được trong quá khứ.</value>
   </data>
   <data name="CreateAPIKey" xml:space="preserve">
-    <value>Create New API Key</value>
+    <value>Tạo Khóa API</value>
   </data>
   <data name="CreatedDate" xml:space="preserve">
-    <value>Created Date</value>
+    <value>Ngày tạo</value>
   </data>
   <data name="Edit" xml:space="preserve">
-    <value>Edit</value>
+    <value>Sửa</value>
   </data>
   <data name="EditAPIKey" xml:space="preserve">
-    <value>Edit API Key</value>
+    <value>Sửa Khóa API</value>
   </data>
   <data name="ExpirationDate" xml:space="preserve">
-    <value>Expiration Date</value>
+    <value>Ngày hết hạn</value>
   </data>
   <data name="Never" xml:space="preserve">
-    <value>Never</value>
+    <value>Không bao giờ</value>
   </data>
   <data name="NoMoreThan50Characters" xml:space="preserve">
-    <value>No more than 50 characters!</value>
+    <value>Tên API không được quá 50 ký tự!</value>
   </data>
   <data name="PleaseInputAPIKeyName" xml:space="preserve">
-    <value>Please input API Key Name.</value>
+    <value>Vui lòng nhập tên API.</value>
   </data>
   <data name="PleaseInputPassPhrase" xml:space="preserve">
-    <value>Please input Passphrase.</value>
+    <value>Vui lòng nhập Mật khẩu API.</value>
   </data>
   <data name="Revoke" xml:space="preserve">
-    <value>Revoke</value>
+    <value>Thu hồi</value>
   </data>
   <data name="ScopesIsRequired" xml:space="preserve">
-    <value>Scopes is required.</value>
+    <value>Phạm vi cấp phép là bắt buộc.</value>
   </data>
   <data name="ScopesSetThePermisson" xml:space="preserve">
-    <value>(Scopes set the permisson granted to the API Key)</value>
+    <value>(Phạm vi cấp phép quyền hạn cho Khóa API)</value>
   </data>
   <data name="Scope_1" xml:space="preserve">
-    <value>Win Loss Detail Report</value>
+    <value>Báo Cáo Chi Tiết Thắng Thua</value>
   </data>
   <data name="Scope_2" xml:space="preserve">
-    <value>Outstanding Report</value>
+    <value>Báo Cáo Tiền Chưa Xử Lý</value>
   </data>
   <data name="SelectScopes" xml:space="preserve">
-    <value>Select Scopes</value>
+    <value>Chọn Phạm vi</value>
   </data>
   <data name="ThisActionCannotBeUndone" xml:space="preserve">
-    <value>This action cannot be undone.</value>
+    <value>Hành động này sẽ không thể hoàn tác.</value>
   </data>
   <data name="UpdateSuccessful" xml:space="preserve">
-    <value>Update successful</value>
+    <value>Câp nhật thành công</value>
+  </data>
+  <data name="Expired" xml:space="preserve">
+    <value>Đã hết hạn</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Lưu</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="LimitedChars" xml:space="preserve">
+    <value>7-32 ký tự</value>
   </data>
 </root>

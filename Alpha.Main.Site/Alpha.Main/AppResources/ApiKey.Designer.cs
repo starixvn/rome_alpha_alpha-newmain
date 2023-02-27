@@ -115,7 +115,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to API Key Name can not contain special characters..
+        ///   Looks up a localized string similar to API Key Name cannot contain special characters..
         /// </summary>
         public static string APIKeyNameCanNotContainSpecialCharacters {
             get {
@@ -142,7 +142,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to API Passphrase is important information for you to use later. Please remember it and keep it safe..
+        ///   Looks up a localized string similar to API Passphrase is essential information for later use. Please store it somewhere safe..
         /// </summary>
         public static string APIPassPhraseIsImportantForYouToUseLater {
             get {
@@ -183,6 +183,15 @@ namespace Alpha.Main.AppResources {
         public static string AreYouSureRevokeAPIKey {
             get {
                 return ResourceManager.GetString("AreYouSureRevokeAPIKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
             }
         }
         
@@ -241,6 +250,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expired.
+        /// </summary>
+        public static string Expired {
+            get {
+                return ResourceManager.GetString("Expired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 7-32 characters.
+        /// </summary>
+        public static string LimitedChars {
+            get {
+                return ResourceManager.GetString("LimitedChars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Never.
         /// </summary>
         public static string Never {
@@ -250,7 +277,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No more than 50 characters!.
+        ///   Looks up a localized string similar to API name cannot be longer than 50 characters!.
         /// </summary>
         public static string NoMoreThan50Characters {
             get {
@@ -268,7 +295,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please input Passphrase..
+        ///   Looks up a localized string similar to Please input API Passphrase..
         /// </summary>
         public static string PleaseInputPassPhrase {
             get {
@@ -282,6 +309,15 @@ namespace Alpha.Main.AppResources {
         public static string Revoke {
             get {
                 return ResourceManager.GetString("Revoke", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
             }
         }
         

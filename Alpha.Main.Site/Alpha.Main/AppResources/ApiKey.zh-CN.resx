@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Action" xml:space="preserve">
-    <value>Action</value>
+    <value>动作</value>
   </data>
   <data name="All" xml:space="preserve">
-    <value>All</value>
+    <value>全部</value>
   </data>
   <data name="API" xml:space="preserve">
     <value>API</value>
@@ -136,7 +136,7 @@
     <value>API Key Name</value>
   </data>
   <data name="APIKeyNameCanNotContainSpecialCharacters" xml:space="preserve">
-    <value>API Key Name can not contain special characters.</value>
+    <value>API Key Name cannot contain special characters.</value>
   </data>
   <data name="APIPassphrase" xml:space="preserve">
     <value>API Passphrase</value>
@@ -145,7 +145,7 @@
     <value>API Passphrase can not contain spaces and symbols.</value>
   </data>
   <data name="APIPassPhraseIsImportantForYouToUseLater" xml:space="preserve">
-    <value>API Passphrase is important information for you to use later. Please remember it and keep it safe.</value>
+    <value>API Passphrase is essential information for later use. Please store it somewhere safe.</value>
   </data>
   <data name="APIPassPhraseMustBeBetweenCharacters" xml:space="preserve">
     <value>API Passphrase must be between [7-32] characters.</value>
@@ -181,13 +181,13 @@
     <value>Never</value>
   </data>
   <data name="NoMoreThan50Characters" xml:space="preserve">
-    <value>No more than 50 characters!</value>
+    <value>API name cannot be longer than 50 characters!</value>
   </data>
   <data name="PleaseInputAPIKeyName" xml:space="preserve">
     <value>Please input API Key Name.</value>
   </data>
   <data name="PleaseInputPassPhrase" xml:space="preserve">
-    <value>Please input Passphrase.</value>
+    <value>Please input API Passphrase.</value>
   </data>
   <data name="Revoke" xml:space="preserve">
     <value>Revoke</value>
@@ -199,10 +199,10 @@
     <value>(Scopes set the permisson granted to the API Key)</value>
   </data>
   <data name="Scope_1" xml:space="preserve">
-    <value>Win Loss Detail Report</value>
+    <value>输赢细节报告</value>
   </data>
   <data name="Scope_2" xml:space="preserve">
-    <value>Outstanding Report</value>
+    <value>未结束交易报告</value>
   </data>
   <data name="SelectScopes" xml:space="preserve">
     <value>Select Scopes</value>
@@ -211,6 +211,18 @@
     <value>This action cannot be undone.</value>
   </data>
   <data name="UpdateSuccessful" xml:space="preserve">
-    <value>Update successful</value>
+    <value>修改成功</value>
+  </data>
+  <data name="Expired" xml:space="preserve">
+    <value>已到期</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="LimitedChars" xml:space="preserve">
+    <value>7-32个字符范围内</value>
   </data>
 </root>
