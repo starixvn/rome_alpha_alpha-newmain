@@ -83,7 +83,7 @@
                     $"/(S({session?.SessionID}))" : string.Empty;
 
                 var menuLink = !string.IsNullOrWhiteSpace(UseDomainConfig) ? $"{UseDomainConfig}{cookieless}{link}" :
-                    appVirtualPath.Equals("/site-reports") ? reportUrl : 
+                    appVirtualPath.Equals("/site-reports") || appVirtualPath.Equals("/site-betlists") ? reportUrl : 
                     !string.IsNullOrWhiteSpace(link) && !string.IsNullOrWhiteSpace(runtimeAppPath) ? 
                     link.Replace(runtimeAppPath, appVirtualPath) : string.Empty;
 
