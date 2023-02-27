@@ -29,7 +29,7 @@
             <input type="text" class="form-control input-pass" placeholder="@ApiKey.LimitedChars" id="passphrase" autocomplete="off" maxlength="32" />
             <span class="icon-eye-close icon"></span>
         </div>
-        <p>@ApiKey.APIPassPhraseIsImportantForYouToUseLater</p>
+        <p>@Html.Raw(ApiKey.APIPassPhraseIsImportantForYouToUseLater)</p>
         <div class="form-group">
             <label>@ApiKey.ExpirationDate</label>
             <div class="control date w-460">

@@ -23,7 +23,7 @@
         <input type="text" class="form-control" id="secret" autocomplete="off" readonly value="@Model.Secret" />
         <span class="icon-content-copy icon icon-copy-secret" data-clipboard-action="copy" data-clipboard-target="#secret" title="@Security.Copied"></span>
     </div>
-    <p>@ApiKey.APISecretCanNotBeRetrieved</p>
+    <p>@Html.Raw(ApiKey.APISecretCanNotBeRetrieved)</p>
     <div class="form-group mt-10">
         <button class="btn-submit" id="btnOk">OK</button>
     </div>

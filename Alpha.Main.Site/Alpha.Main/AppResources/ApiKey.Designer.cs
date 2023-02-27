@@ -142,7 +142,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to API Passphrase is essential information for later use. Please store it somewhere safe..
+        ///   Looks up a localized string similar to API Passphrase is essential information for later use.&lt;br /&gt;Please  store it somewhere safe..
         /// </summary>
         public static string APIPassPhraseIsImportantForYouToUseLater {
             get {
@@ -169,7 +169,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to API Secret will only be displayed ONCE and cannot be retrieved. Please note it down and keep it safe..
+        ///   Looks up a localized string similar to API Secret will only be displayed ONCE and cannot be retrieved.&lt;br /&gt;Please note it down and keep it safe..
         /// </summary>
         public static string APISecretCanNotBeRetrieved {
             get {

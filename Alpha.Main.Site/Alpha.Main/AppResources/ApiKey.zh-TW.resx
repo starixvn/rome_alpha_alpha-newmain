@@ -145,7 +145,7 @@
     <value>API Passphrase can not contain spaces and symbols.</value>
   </data>
   <data name="APIPassPhraseIsImportantForYouToUseLater" xml:space="preserve">
-    <value>API Passphrase is essential information for later use. Please store it somewhere safe.</value>
+    <value>API Passphrase is essential information for later use.&lt;br /&gt;Please store it somewhere safe.</value>
   </data>
   <data name="APIPassPhraseMustBeBetweenCharacters" xml:space="preserve">
     <value>API Passphrase must be between [7-32] characters.</value>
@@ -154,7 +154,7 @@
     <value>API Secret</value>
   </data>
   <data name="APISecretCanNotBeRetrieved" xml:space="preserve">
-    <value>API Secret will only be displayed ONCE and cannot be retrieved. Please note it down and keep it safe.</value>
+    <value>API Secret will only be displayed ONCE and cannot be retrieved.&lt;br /&gt;Please note it down and keep it safe.</value>
   </data>
   <data name="AreYouSureRevokeAPIKey" xml:space="preserve">
     <value>Are you sure you want to revoke this API Key</value>

@@ -145,7 +145,7 @@
     <value>Tên khóa API không được chứa các ký tự đặc biệt.</value>
   </data>
   <data name="APIPassPhraseIsImportantForYouToUseLater" xml:space="preserve">
-    <value>Mật khẩu API là thông tin cần thiết để sử dụng sau này. Vui lòng lưu trữ thông tin này ở nơi an toàn.</value>
+    <value>Mật khẩu API là thông tin cần thiết để sử dụng sau này.&lt;br /&gt;Vui lòng lưu trữ thông tin này ở nơi an toàn.</value>
   </data>
   <data name="APIPassPhraseMustBeBetweenCharacters" xml:space="preserve">
     <value>Mật khẩu API phải nằm trong khoảng [7-32] ký tự.</value>
@@ -154,7 +154,7 @@
     <value>Khóa bí mật API</value>
   </data>
   <data name="APISecretCanNotBeRetrieved" xml:space="preserve">
-    <value>Khóa bí mật API chỉ được hiển thị MỘT LẦN và không thể truy xuất được. Xin vui lòng ghi lại và giữ nó an toàn.</value>
+    <value>Khóa bí mật API chỉ được hiển thị MỘT LẦN và không thể truy xuất được.&lt;br /&gt;Xin vui lòng ghi lại và giữ nó an toàn.</value>
   </data>
   <data name="AreYouSureRevokeAPIKey" xml:space="preserve">
     <value>Bạn có chắc muốn thu hồi Khóa API</value>
