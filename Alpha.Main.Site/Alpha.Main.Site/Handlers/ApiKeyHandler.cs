@@ -25,7 +25,7 @@
 
         public async Task<CreateApiKeyResult> Handle(CreateApiKeyCommand message)
         {
-            var result = await apiKeyService.CreateApiKey(message.CustId, message.ApiName, message.PassPhrase, message.Scopes, message.IP, message.ExpirationDate);
+            var result = await apiKeyService.CreateApiKey(message.CustId, message.ApiName, message.PassPhrase, message.Scopes, message.IP, message.Language, message.ExpirationDate);
             return result;
         }
 
@@ -50,7 +50,7 @@
 
         public async Task<Result> Handle(UpdateApiKeyCommand message)
         {
-            return await apiKeyService.UpdateApiKey(message.ApiKey, message.CustId, message.ApiName, message.Scopes, message.IP, message.ExpirationDate);
+            return await apiKeyService.UpdateApiKey(message.ApiKey, message.CustId, message.ApiName, message.Scopes, message.IP, message.Language, message.ExpirationDate);
         }
     }
 }

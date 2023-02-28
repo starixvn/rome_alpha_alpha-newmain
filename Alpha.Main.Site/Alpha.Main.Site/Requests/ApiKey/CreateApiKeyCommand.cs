@@ -17,6 +17,7 @@
             userSession = userSession ?? new UserSessionExt();
             CustId = userSession.CustId;
             IP = userSession.UserLoginIp;
+            Language = userSession.LangKey;
         }
 
         public int CustId { get; }
@@ -27,7 +28,9 @@
 
         public string Scopes { get; set; }
 
-        public string IP { get; set; }
+        public string IP { get; }
+
+        public string Language { get; }
 
         public DateTime? ExpirationDate { get; set; }
     }
