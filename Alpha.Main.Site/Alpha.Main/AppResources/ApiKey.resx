@@ -142,7 +142,7 @@
     <value>API Passphrase</value>
   </data>
   <data name="APIPassPhraseCanNotContainSpaceSymbolAndPunctuaion" xml:space="preserve">
-    <value>API Passphrase can not contain spaces and symbols.</value>
+    <value>API Passphrase cannot contain space, symbol.</value>
   </data>
   <data name="APIPassPhraseIsImportantForYouToUseLater" xml:space="preserve">
     <value>API Passphrase is essential information for later use.&lt;br /&gt;Please  store it somewhere safe.</value>

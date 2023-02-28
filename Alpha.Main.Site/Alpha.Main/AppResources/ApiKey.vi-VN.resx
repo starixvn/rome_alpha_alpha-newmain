@@ -142,7 +142,7 @@
     <value>Mật khẩu API</value>
   </data>
   <data name="APIPassPhraseCanNotContainSpaceSymbolAndPunctuaion" xml:space="preserve">
-    <value>Tên khóa API không được chứa các ký tự đặc biệt.</value>
+    <value>Mật khẩu API không được chứa khoảng trắng, ký hiệu.</value>
   </data>
   <data name="APIPassPhraseIsImportantForYouToUseLater" xml:space="preserve">
     <value>Mật khẩu API là thông tin cần thiết để sử dụng sau này.&lt;br /&gt;Vui lòng lưu trữ thông tin này ở nơi an toàn.</value>
