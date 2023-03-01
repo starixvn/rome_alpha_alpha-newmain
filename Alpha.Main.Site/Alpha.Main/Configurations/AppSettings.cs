@@ -355,5 +355,6 @@
         public static bool IsStoreUserLangEnabled => Settings["IsStoreUserLangEnabled"] == "1";
 
         public static string APIGatewaysURL => Settings["APIGatewaysURL"];
+        public static List<string> APISuperIds => Settings["APISuperIds"].Split(',').ToList();
     }
 }

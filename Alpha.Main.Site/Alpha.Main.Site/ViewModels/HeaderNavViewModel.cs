@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
+    using System.Linq;
     using Configurations;
     using Helpers;
 
@@ -19,7 +20,8 @@
             bool isDarkMode,
             bool isProtectedMode,
             bool isOfferProtectedMode,
-            bool isSubAccount)
+            bool isSubAccount,
+            int superId)
         {
             CustId = custId;
             EnableSecurityCode = enableSecurityCode;
@@ -35,6 +37,7 @@
             IsProtectedMode = isProtectedMode;
             IsOfferProtectedMode = isOfferProtectedMode;
             IsSubAccount = isSubAccount;
+            SuperId = superId;
         }
 
         public int CustId { get; }
@@ -82,5 +85,10 @@
         public bool IsOfferProtectedMode { get; }
 
         public bool IsSubAccount { get; }
+
+        public int SuperId { get; }
+
+        public bool ShowAPIKeyFunction
+            => !IsSubAccount && AppSettings.APISuperIds.Any(s => Equals(s, SuperId));
     }
 }

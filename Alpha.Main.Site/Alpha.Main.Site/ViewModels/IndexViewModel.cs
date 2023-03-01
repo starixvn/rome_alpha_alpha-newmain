@@ -107,7 +107,8 @@
                 !string.IsNullOrWhiteSpace(message.DarkModeName),
                 IsProtectedMode,
                 message.IsOfferProtectedMode,
-                IsSubAccount);
+                IsSubAccount,
+                message.SuperId);
 
         public bool IsEnabledOtp => SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp;
 

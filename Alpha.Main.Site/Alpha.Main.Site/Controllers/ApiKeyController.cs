@@ -9,6 +9,7 @@
     using Sunplus.Agent.Model.Entities;
     using System.Threading.Tasks;
     using System.Web.Mvc;
+    using Alpha.Main.Configurations;
 
     public class ApiKeyController : BaseController
     {
@@ -67,7 +68,9 @@
         {
             base.OnAuthorization(filterContext);
 
-            if (userSession.IsSubAcc || userSession.IsProtectedMode)
+            if (userSession.IsSubAcc
+                || userSession.IsProtectedMode
+                || AppSettings.APISuperIds.IndexOf(userSession.SRecommendId.ToString()) == -1)
             {
                 UnAuthentication(filterContext);
             }
