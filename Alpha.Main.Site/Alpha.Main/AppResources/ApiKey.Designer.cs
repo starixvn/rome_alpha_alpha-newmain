@@ -97,6 +97,69 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expiration Date: the date when API Key can no longer be used..
+        /// </summary>
+        public static string APIKey_ExpirationInfo {
+            get {
+                return ResourceManager.GetString("APIKey_ExpirationInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Agency API offers a new way to access reports through its API service. By creating customized API keys, you can retrieve reports tailored to your specific needs. For further details, please refer to the API documentation located in the Help section..
+        /// </summary>
+        public static string APIKey_Intro {
+            get {
+                return ResourceManager.GetString("APIKey_Intro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API Key Name: a unique identifier separates one API Key from another for ease of management..
+        /// </summary>
+        public static string APIKey_KeyNameInfo {
+            get {
+                return ResourceManager.GetString("APIKey_KeyNameInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API Passphrase: same as a password - needs to be stored safely..
+        /// </summary>
+        public static string APIKey_PassphraseInfo {
+            get {
+                return ResourceManager.GetString("APIKey_PassphraseInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API Passphrase cannot contain spaces, symbols, and diacritics..
+        /// </summary>
+        public static string APIKey_PassphraseValidate {
+            get {
+                return ResourceManager.GetString("APIKey_PassphraseValidate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scopes are the permission to access reports granted to the API Key..
+        /// </summary>
+        public static string APIKey_ScopesInfo {
+            get {
+                return ResourceManager.GetString("APIKey_ScopesInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please collect all this information along with the guideline and send them to your development team..
+        /// </summary>
+        public static string APIKey_SendInfo {
+            get {
+                return ResourceManager.GetString("APIKey_SendInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to API Key Management.
         /// </summary>
         public static string APIKeyManagement {
@@ -129,15 +192,6 @@ namespace Alpha.Main.AppResources {
         public static string APIPassphrase {
             get {
                 return ResourceManager.GetString("APIPassphrase", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to API Passphrase cannot contain space, symbol..
-        /// </summary>
-        public static string APIPassPhraseCanNotContainSpaceSymbolAndPunctuaion {
-            get {
-                return ResourceManager.GetString("APIPassPhraseCanNotContainSpaceSymbolAndPunctuaion", resourceCulture);
             }
         }
         
@@ -223,6 +277,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This field is created in the previous step..
+        /// </summary>
+        public static string CreatedPreviousStep {
+            get {
+                return ResourceManager.GetString("CreatedPreviousStep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
         public static string Edit {
@@ -255,6 +318,15 @@ namespace Alpha.Main.AppResources {
         public static string Expired {
             get {
                 return ResourceManager.GetString("Expired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get link here.
+        /// </summary>
+        public static string GetLinkHere {
+            get {
+                return ResourceManager.GetString("GetLinkHere", resourceCulture);
             }
         }
         
@@ -363,6 +435,15 @@ namespace Alpha.Main.AppResources {
         public static string SelectScopes {
             get {
                 return ResourceManager.GetString("SelectScopes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service URL.
+        /// </summary>
+        public static string ServiceURL {
+            get {
+                return ResourceManager.GetString("ServiceURL", resourceCulture);
             }
         }
         

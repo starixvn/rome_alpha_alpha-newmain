@@ -8,6 +8,8 @@ class CreateApiKeyResult {
     topWindow: any;
     clipboardKey: any;
     clipboardSecret: any;
+    $showURL: JQuery;
+    $urlMask: JQuery;
 
     constructor($: JQueryStatic, topWindow: any, clipboardKey: any, clipboardSecret: any) {
         this.$ = $;
@@ -17,11 +19,16 @@ class CreateApiKeyResult {
     }
 
     init = () => {
+        this.$showURL = this.$(".dummy-text");
+        this.$urlMask = this.$(".service-url-mask");
+
         this.registerEvents();
     }
 
     registerEvents = () => {
         const self = this;
+        this.$showURL.click(this.showURL);
+
         if (window.document.queryCommandSupported
             && window.document.queryCommandSupported("copy")) {
             this.clipboardKey
@@ -50,6 +57,11 @@ class CreateApiKeyResult {
 
     handleBtnOk = () => {
         this.topWindow.popupManager.close();
+    }
+
+    showURL = () => {
+        this.$urlMask.removeClass('close');
+        this.$urlMask.addClass('open');
     }
 }
 

@@ -17,6 +17,13 @@
     </li>
 </ul>
 <div class="tab-content apikey-form">
+    <div class="box-service-url">
+        <span class="label-service-url">@ApiKey.ServiceURL</span>
+        <div class="service-url-mask close">
+            <div class="dummy-text">@ApiKey.GetLinkHere</div>
+            <input type="text" class="real-text" value="@AppSettings.APIGatewaysURL" readonly />
+        </div>
+    </div>
     <a href="@Model.HelpPage" target="_blank"><span class="icon icon-help icon-question"></span></a>
     <table class="tblRpt tblRpt-bordered tblRpt-striped tblRpt-hover">
         <thead>

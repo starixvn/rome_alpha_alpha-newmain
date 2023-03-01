@@ -4,6 +4,8 @@
 class ApiKeyManagement {
     $: JQueryStatic;
     topWindow: any;
+    $showURL: JQuery;
+    $urlMask: JQuery;
 
     constructor($: JQueryStatic, topWindow: any) {
         this.$ = $;
@@ -11,6 +13,9 @@ class ApiKeyManagement {
     }
 
     init = () => {
+        this.$showURL = this.$(".dummy-text");
+        this.$urlMask = this.$(".service-url-mask");
+
         this.registerApiKeyEditEvent();
         this.registerApiKeyRevokeEvent();
     }
@@ -28,6 +33,8 @@ class ApiKeyManagement {
             const url = alpha.urls.mainRootPath + `ApiKey/EditApiKey?key=${apikey}`;
             self.topWindow.popupManager.open(url, self.resources.editAPIKey, 800, 500, null, null, null, 335, 150);
         })
+
+        this.$showURL.click(this.showURL);
     }
 
     registerApiKeyRevokeEvent = () => {
@@ -51,6 +58,11 @@ class ApiKeyManagement {
                 })
             });
         })
+    }
+
+    showURL = () => {
+        this.$urlMask.removeClass('close');
+        this.$urlMask.addClass('open');
     }
 }
 

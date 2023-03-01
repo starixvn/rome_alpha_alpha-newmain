@@ -1003,6 +1003,18 @@
     <Content Include="Assets\styles\advertisement\popup-advertisement.min.css">
       <DependentUpon>popup-advertisement.css</DependentUpon>
     </Content>
+    <Content Include="Assets\styles\apikey\apikey-dark.css">
+      <DependentUpon>apikey-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\apikey\apikey-dark.min.css">
+      <DependentUpon>apikey-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\apikey\apikey.css">
+      <DependentUpon>apikey.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\apikey\apikey.min.css">
+      <DependentUpon>apikey.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\captcha\captcha.css">
       <DependentUpon>captcha.scss</DependentUpon>
     </Content>

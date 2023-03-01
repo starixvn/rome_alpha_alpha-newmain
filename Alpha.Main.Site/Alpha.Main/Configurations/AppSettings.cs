@@ -353,5 +353,7 @@
         public static bool IsEnabledRechekin => Settings["DisabledCheckDuplicationLogin"] == "0";
         public static Uri ApiKeyServiceUri => new Uri(Settings["ApiKeyServiceUri"]);
         public static bool IsStoreUserLangEnabled => Settings["IsStoreUserLangEnabled"] == "1";
+
+        public static string APIGatewaysURL => Settings["APIGatewaysURL"];
     }
 }

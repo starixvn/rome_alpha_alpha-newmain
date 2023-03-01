@@ -141,9 +141,6 @@
   <data name="APIPassphrase" xml:space="preserve">
     <value>API Passphrase</value>
   </data>
-  <data name="APIPassPhraseCanNotContainSpaceSymbolAndPunctuaion" xml:space="preserve">
-    <value>API Passphrase cannot contain space, symbol.</value>
-  </data>
   <data name="APIPassPhraseIsImportantForYouToUseLater" xml:space="preserve">
     <value>API Passphrase is essential information for later use.&lt;br /&gt;Please  store it somewhere safe.</value>
   </data>
@@ -224,5 +221,35 @@
   </data>
   <data name="LimitedChars" xml:space="preserve">
     <value>7-32 characters</value>
+  </data>
+  <data name="APIKey_Intro" xml:space="preserve">
+    <value>The Agency API offers a new way to access reports through its API service. By creating customized API keys, you can retrieve reports tailored to your specific needs. For further details, please refer to the API documentation located in the Help section.</value>
+  </data>
+  <data name="APIKey_KeyNameInfo" xml:space="preserve">
+    <value>API Key Name: a unique identifier separates one API Key from another for ease of management.</value>
+  </data>
+  <data name="APIKey_PassphraseInfo" xml:space="preserve">
+    <value>API Passphrase: same as a password - needs to be stored safely.</value>
+  </data>
+  <data name="APIKey_ExpirationInfo" xml:space="preserve">
+    <value>Expiration Date: the date when API Key can no longer be used.</value>
+  </data>
+  <data name="APIKey_ScopesInfo" xml:space="preserve">
+    <value>Scopes are the permission to access reports granted to the API Key.</value>
+  </data>
+  <data name="APIKey_SendInfo" xml:space="preserve">
+    <value>Please collect all this information along with the guideline and send them to your development team.</value>
+  </data>
+  <data name="ServiceURL" xml:space="preserve">
+    <value>Service URL</value>
+  </data>
+  <data name="CreatedPreviousStep" xml:space="preserve">
+    <value>This field is created in the previous step.</value>
+  </data>
+  <data name="APIKey_PassphraseValidate" xml:space="preserve">
+    <value>API Passphrase cannot contain spaces, symbols, and diacritics.</value>
+  </data>
+  <data name="GetLinkHere" xml:space="preserve">
+    <value>Get link here</value>
   </data>
 </root>

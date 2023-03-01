@@ -17,17 +17,27 @@
     </li>
 </ul>
 <div class="tab-content">
+    <div class="box-service-url">
+        <span class="label-service-url">@ApiKey.ServiceURL</span>
+        <div class="service-url-mask close">
+            <div class="dummy-text">@ApiKey.GetLinkHere</div>
+            <input type="text" class="real-text" value="@AppSettings.APIGatewaysURL" readonly />
+        </div>
+    </div>
     <a href="@Model.HelpPage" target="_blank"><span class="icon icon-help icon-question"></span></a>
     <form class="block" id="apikey-form" autocomplete="off">
         <div id="error-message" class="container-msg w-450"></div>
+        <div class="form-group div-intro">@ApiKey.APIKey_Intro</div>
         <div class="form-group">
             <label>@ApiKey.APIKeyName<span class="require"> *</span></label>
             <input type="text" class="form-control" id="apiname" autocomplete="off" maxlength="50" />
+            <span class="icon-information-outline" title="@ApiKey.APIKey_KeyNameInfo"></span>
         </div>
         <div class="form-group">
             <label>@ApiKey.APIPassphrase<span class="require"> *</span></label>
             <input type="text" class="form-control input-pass" placeholder="@ApiKey.LimitedChars" id="passphrase" autocomplete="off" maxlength="32" />
-            <span class="icon-eye-close icon"></span>
+            <span class="icon-eye-close icon show-pass"></span>
+            <span class="icon-information-outline" title="@ApiKey.APIKey_PassphraseInfo&#10;@ApiKey.APIKey_PassphraseValidate"></span>
         </div>
         <p>@Html.Raw(ApiKey.APIPassPhraseIsImportantForYouToUseLater)</p>
         <div class="form-group">
@@ -40,8 +50,13 @@
                     </span>
                 </div>
             </div>
+            <span class="icon-information-outline" title="@ApiKey.APIKey_ExpirationInfo"></span>
         </div>
-        <label class="scope-label">@ApiKey.SelectScopes <span class="font-normal">@ApiKey.ScopesSetThePermisson</span></label>
+        <div class="form-group">
+            <label>@ApiKey.SelectScopes</label>
+            <div class="div-padding">&nbsp;</div>
+            <span class="icon-information-outline" title="@ApiKey.APIKey_ScopesInfo"></span>
+        </div>
         <div class="ml-25">
             <label class="scope-input mt-10"><input type="checkbox" value="All" id="ckbAll" checked /> @ApiKey.All</label><br>
             <div class="ml-25" id="apiKeyScopes">
@@ -62,7 +77,7 @@
 @Html.Hidden("APIKeyNameCanNotContainSpecialCharacters", ApiKey.APIKeyNameCanNotContainSpecialCharacters)
 @Html.Hidden("NoMoreThan50Characters", ApiKey.NoMoreThan50Characters)
 @Html.Hidden("PleaseInputPassPhrase", ApiKey.PleaseInputPassPhrase)
-@Html.Hidden("APIPassPhraseCanNotContainSpaceSymbolAndPunctuaion", ApiKey.APIPassPhraseCanNotContainSpaceSymbolAndPunctuaion)
+@Html.Hidden("APIKey_PassphraseValidate", ApiKey.APIKey_PassphraseValidate)
 @Html.Hidden("APIPassPhraseMustBeBetweenCharacters", ApiKey.APIPassPhraseMustBeBetweenCharacters)
 @Html.Hidden("CantSelectTimeFromPast", ApiKey.CantSelectTimeFromPast)
 @Html.Hidden("ScopesIsRequired", ApiKey.ScopesIsRequired)

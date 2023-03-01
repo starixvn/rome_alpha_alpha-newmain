@@ -151,7 +151,7 @@ class EditApiKey {
             return this.resources.scopesIsRequired;
         }
 
-        return null; 
+        return null;
     }
 
     getTimeofDate = (date: Date) => {

@@ -19,8 +19,10 @@ class CreateApiKey {
     $form: JQuery;
     $datePicker: JQuery;
     $ckbAll: JQuery;
-    $iconEye: JQuery;
+    $showPass: JQuery;
     $errorMessage: JQuery;
+    $showURL: JQuery;
+    $urlMask: JQuery;
 
     constructor($: JQueryStatic, topWindow: any) {
         this.$ = $;
@@ -39,7 +41,7 @@ class CreateApiKey {
         apiKeyNameCanNotContainSpecialCharacters: (<HTMLInputElement>document.getElementById('APIKeyNameCanNotContainSpecialCharacters')).value,
         noMoreThan50Characters: (<HTMLInputElement>document.getElementById('NoMoreThan50Characters')).value,
         pleaseInputPassPhrase: (<HTMLInputElement>document.getElementById('PleaseInputPassPhrase')).value,
-        apiPassPhraseCanNotContainSpaceSymbolAndPunctuaion: (<HTMLInputElement>document.getElementById('APIPassPhraseCanNotContainSpaceSymbolAndPunctuaion')).value,
+        APIKey_PassphraseValidate: (<HTMLInputElement>document.getElementById('APIKey_PassphraseValidate')).value,
         apiPassPhraseMustBeBetweenCharacters: (<HTMLInputElement>document.getElementById('APIPassPhraseMustBeBetweenCharacters')).value,
         cantSelectTimeFromPast: (<HTMLInputElement>document.getElementById('CantSelectTimeFromPast')).value,
         scopesIsRequired: (<HTMLInputElement>document.getElementById('ScopesIsRequired')).value,
@@ -50,20 +52,23 @@ class CreateApiKey {
         this.$form = this.$("#apikey-form");
         this.$datePicker = this.$("#dpkContainer");
         this.$ckbAll = this.$("#ckbAll");
-        this.$iconEye = this.$(".icon");
+        this.$showPass = this.$(".show-pass");
         this.$errorMessage = this.$("#error-message");
+        this.$showURL = this.$(".dummy-text");
+        this.$urlMask = this.$(".service-url-mask");
     }
 
     registerEvents = () => {
         this.$ckbAll.click(this.handleSelectAllScopes);
         this.$("input[name='scope']").click(this.handleSelectScopes);
-        this.$iconEye.click(this.showPass);
+        this.$showPass.click(this.showPass);
+        this.$showURL.click(this.showURL);
         this.handleSubmitForm();
     }
 
     showPass = () => {
         var inputPass = this.$("#passphrase");
-        this.changeInputPassIcon();
+        this.changeEyeIcon(this.$showPass);
         if (inputPass.hasClass("input-pass")) {
             inputPass.removeClass("input-pass")
         }
@@ -72,14 +77,19 @@ class CreateApiKey {
         }
     }
 
-    changeInputPassIcon = () => {
-        if (this.$iconEye.hasClass("icon-eye-close")) {
-            this.$iconEye.removeClass("icon-eye-close");
-            this.$iconEye.addClass("icon-eye");
+    showURL = () => {
+        this.$urlMask.removeClass('close');
+        this.$urlMask.addClass('open');
+    }
+
+    changeEyeIcon = (eyeElm) => {
+        if (eyeElm.hasClass("icon-eye-close")) {
+            eyeElm.removeClass("icon-eye-close");
+            eyeElm.addClass("icon-eye");
         }
         else {
-            this.$iconEye.removeClass("icon-eye");
-            this.$iconEye.addClass("icon-eye-close");
+            eyeElm.removeClass("icon-eye");
+            eyeElm.addClass("icon-eye-close");
         }
     }
 
@@ -125,7 +135,7 @@ class CreateApiKey {
                         const url = alpha.urls.mainRootPath + `ApiKey/CreateApiKeyResult?apiname=` + encodeURIComponent(data.ApiKeyResult.ApiName)
                             + `&key=` + encodeURIComponent(data.ApiKeyResult.Key)
                             + `&secret=` + encodeURIComponent(data.ApiKeyResult.ApiSecret)
-                        self.topWindow.popupManager.open(url, self.resources.apiKey, 800, 300, null, null, null, 335, 150, null);
+                        self.topWindow.popupManager.open(url, self.resources.apiKey, 600, 430, null, null, null, 335, 150, null);
                     } else {
                         alpha.showMessage(self.$errorMessage, new Result(data.Result));
                     }
@@ -160,7 +170,7 @@ class CreateApiKey {
         }
         const regexPassPhrase = /^[\w!"#$%&'()*+,-./:;<=>?@[\]^_\`{|}~]+$/m;
         if (!regexPassPhrase.test(passPhrase)) {
-            return this.resources.apiPassPhraseCanNotContainSpaceSymbolAndPunctuaion;
+            return this.resources.APIKey_PassphraseValidate;
         }
         if (passPhrase.length < 7 || passPhrase.length > 32) {
             return this.resources.apiPassPhraseMustBeBetweenCharacters;
