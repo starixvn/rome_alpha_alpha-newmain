@@ -1,14 +1,16 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
+    using System.Linq;
+    using System.Threading.Tasks;
+    using System.Web.Mvc;
+    using Alpha.Main.Configurations;
     using Alpha.Main.Site.Requests.ApiKey;
     using Alpha.Main.Site.ViewModels.ApiKey;
     using Alpha.Web;
-    using Alpha.Web.Models;
     using Alpha.Web.Filters;
+    using Alpha.Web.Models;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
-    using System.Threading.Tasks;
-    using System.Web.Mvc;
     using Alpha.Main.Configurations;
 
     public class ApiKeyController : BaseController
@@ -70,7 +72,7 @@
 
             if (userSession.IsSubAcc
                 || userSession.IsProtectedMode
-                || AppSettings.APISuperIds.IndexOf(userSession.SRecommendId.ToString()) == -1)
+                || (AppSettings.APISuperIds.Any() && !AppSettings.APISuperIds.Any(s => Equals(s, userSession.SRecommendId))))
             {
                 UnAuthentication(filterContext);
             }

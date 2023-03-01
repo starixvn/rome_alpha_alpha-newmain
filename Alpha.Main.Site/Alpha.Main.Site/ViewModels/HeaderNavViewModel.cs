@@ -89,6 +89,7 @@
         public int SuperId { get; }
 
         public bool ShowAPIKeyFunction
-            => !IsSubAccount && AppSettings.APISuperIds.Any(s => Equals(s, SuperId));
+            => !IsSubAccount
+            && (!AppSettings.APISuperIds.Any() || AppSettings.APISuperIds.Any(s => Equals(s, SuperId)));
     }
 }
