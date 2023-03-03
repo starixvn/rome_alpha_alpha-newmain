@@ -23,6 +23,7 @@
             mediator = Substitute.For<IMediator>();
             userSession = Substitute.For<IUserSession>();
             languageController = new LanguageController(mediator, userSession);
+            AppSettings.Settings["SiteLabel"] = "Nova88";
         }
 
         [Test]

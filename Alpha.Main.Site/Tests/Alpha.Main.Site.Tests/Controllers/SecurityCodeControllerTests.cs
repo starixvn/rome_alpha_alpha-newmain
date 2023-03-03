@@ -30,6 +30,7 @@
 
 
             securityCodeController = new SecurityCodeController(mediator, userSession);
+            AppSettings.Settings["SiteLabel"] = "Nova88";
         }
 
         [Test]

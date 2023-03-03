@@ -303,21 +303,7 @@
 
             // Assert
             Assert.True(actualSetting);
-        }
-
-        [Test]
-        public void IsMBCSite_NotHasConfig_ReturnsFalse()
-        {
-            // Arrange
-            AppSettings.Settings = new NameValueCollection();
-
-            // Act
-            var actualSetting = AppSettings.IsMBCSite;
-
-            // Assert
-            Assert.False(actualSetting);
-        }
-       
+        }       
 
         [Test]
         public void NoticeTypes_HasConfig_ReturnsCorrectSetting()

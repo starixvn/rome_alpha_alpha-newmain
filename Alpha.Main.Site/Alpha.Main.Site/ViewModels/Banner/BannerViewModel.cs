@@ -45,12 +45,12 @@
 
         private static string GetMobileSabaAppToken(string siteLabel)
         {
-            if (siteLabel.Equals("IBCBET", StringComparison.OrdinalIgnoreCase))
+            if (siteLabel.Equals("Nova88", StringComparison.OrdinalIgnoreCase))
             {
                 return "GueGhmPRxEWbbp3FIbpqPA";
             }
 
-            if (siteLabel.Equals("IBCIndo", StringComparison.OrdinalIgnoreCase))
+            if (siteLabel.Equals("IBC", StringComparison.OrdinalIgnoreCase))
             {
                 return "QTQanXruEEur8ihzdYoF3A";
             }
