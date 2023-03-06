@@ -60,4 +60,8 @@
   <Function Name="Change Language">
     <Setting Key="Age_CustLanguageUsageUpd" SpName="Age_CustLanguageUsageUpd" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
   </Function>
+
+  <Function Name="Transfer Status">
+    <Setting Key="Age_GetIsAllDayBalTransfer" SpName="Age_GetIsAllDayBalTransfer" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+  </Function>
 </Functions>
