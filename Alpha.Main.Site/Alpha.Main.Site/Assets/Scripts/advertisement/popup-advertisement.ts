@@ -71,6 +71,6 @@
     }
 }
 
-$(function () {
-    new PopupAdvertisement($).init();
-});
+//$(function () {
+//    new PopupAdvertisement($).init();
+//});
