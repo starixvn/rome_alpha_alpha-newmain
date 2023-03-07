@@ -39,32 +39,6 @@ namespace Alpha.Main.Site.Controllers
                 return View("~/Views/Dashboard/IndexProtectedMode.cshtml");
             }
 
-            if (AppSettings.TelegramBotIsShowBanner)
-            {
-                var bot = await botService.GetBySystem(AppSettings.SiteGroup);
-                return View($"~/Views/Dashboard/ChatBotBanner{(AppSettings.IsMBCSite ? "i1" : "i7")}.cshtml", (object)bot?.DisplayName);
-            }
-
-            if (AppSettings.IsShowEmptyDashboard)
-            {
-                string botName;
-
-                if (AppSettings.SiteGroup.Equals("IBCBET", StringComparison.OrdinalIgnoreCase))
-                {
-                    botName = "Eva";
-                }
-                else if (AppSettings.SiteGroup.Equals("IBCIndo", StringComparison.OrdinalIgnoreCase))
-                {
-                    botName = "Eden";
-                }
-                else
-                {
-                    botName = "Elsa";
-                }
-
-                return View($"~/Views/Dashboard/ChatBotBanner{(AppSettings.IsMBCSite ? "i1" : "i7")}.cshtml", (object)botName);
-            }
-
             return Index2();
         }
 

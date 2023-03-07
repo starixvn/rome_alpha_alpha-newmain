@@ -303,9 +303,6 @@ var indexManager = {
 
         var hideFeedbackPopup = localStorage.getItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackPopupCookies));
         if (hideFeedbackPopup !== '1') {
-            $(".advertisement-modal").remove();
-            $(".um-message-popup").remove();
-
             popupManager.closeAllPopup();
 
             $(".feedback-box").addClass('show-popup');

@@ -156,6 +156,9 @@
   <data name="_2" xml:space="preserve">
     <value>배팅 설정</value>
   </data>
+  <data name="_22" xml:space="preserve">
+    <value>Win Loss Limit</value>
+  </data>
   <data name="_3" xml:space="preserve">
     <value>수수료</value>
   </data>
