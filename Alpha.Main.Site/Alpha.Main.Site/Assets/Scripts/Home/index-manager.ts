@@ -303,9 +303,6 @@ var indexManager = {
 
         var hideFeedbackPopup = localStorage.getItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackPopupCookies));
         if (hideFeedbackPopup !== '1') {
-            //$(".advertisement-modal").remove();
-            //$(".um-message-popup").remove();
-
             popupManager.closeAllPopup();
 
             $(".feedback-box").addClass('show-popup');
@@ -355,7 +352,7 @@ var indexManager = {
         });
     },
     openFeedback: function () {
-        popupManager.openMultiple(indexManager.urls.feedback, $("#FeedbackTitle").val(), 680, 550, null, null, null, null, null, null, { customClass: 'feedback-modal' });
+        popupManager.open(indexManager.urls.feedback, $("#FeedbackTitle").val(), 680, 550, null, null, null, null, null, null, { customClass: 'feedback-modal' });
     },
 
     hideFloatingFeedbackIcon: function () {
