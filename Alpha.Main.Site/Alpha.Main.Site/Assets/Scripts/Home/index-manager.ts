@@ -303,8 +303,8 @@ var indexManager = {
 
         var hideFeedbackPopup = localStorage.getItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackPopupCookies));
         if (hideFeedbackPopup !== '1') {
-            $(".advertisement-modal").remove();
-            $(".um-message-popup").remove();
+            //$(".advertisement-modal").remove();
+            //$(".um-message-popup").remove();
 
             popupManager.closeAllPopup();
 
@@ -355,7 +355,7 @@ var indexManager = {
         });
     },
     openFeedback: function () {
-        popupManager.open(indexManager.urls.feedback, $("#FeedbackTitle").val(), 680, 550, null, null, null, null, null, null, { customClass: 'feedback-modal' });
+        popupManager.openMultiple(indexManager.urls.feedback, $("#FeedbackTitle").val(), 680, 550, null, null, null, null, null, null, { customClass: 'feedback-modal' });
     },
 
     hideFloatingFeedbackIcon: function () {
