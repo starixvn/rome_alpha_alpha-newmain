@@ -40,19 +40,19 @@
                 foreach (var apikey in Model.ApiKeyInfos)
                 {
                     <tr>
-                        <td class="text-center">@apikey.Name</td>
+                        <td class="text-center col-nameapi">@apikey.Name</td>
                         <td class="text-center">@apikey.CreatedDate</td>
                         @if (apikey.IsExpired)
                         {
-                            <td class='text-center expired-date'>@ApiKey.Expired</td>
+                            <td class='col-expired text-center expired-date'>@ApiKey.Expired</td>
                         }
                         else if (apikey.ExpirationDate.HasValue)
                         {
-                            <td class='text-center'>@apikey.ExpirationDateStr</td>
+                            <td class='col-expired text-center'>@apikey.ExpirationDateStr</td>
                         }
                         else
                         {
-                            <td class='text-center'>@ApiKey.Never</td>
+                            <td class='col-expired text-center'>@ApiKey.Never</td>
                         }
                         <td class="text-center">
                             <button class="btn-submit btn-edit" apikey=@apikey.Key>@ApiKey.Edit</button>

@@ -66,6 +66,7 @@
 .icon-eye, .icon-eye-close, .icon-calendar {
     color: #727272;
     position: absolute;
+    z-index: 10;
 }
 .icon-eye, .icon-eye-close {
     top: 7px;
@@ -75,6 +76,7 @@
     top: 7px;
     right: 8px;
     font-size: 16px;
+    z-index: 10;
 }
 .icon-content-copy {
     position: absolute;
@@ -83,14 +85,39 @@
     right: 3px;
 }
 .tblRpt {
-    margin-left: 20px;
-    margin-top: 20px;
     table-layout: fixed;
-    width: 70%;
+    width: 700%;
+    max-width: 1000px;
 
     .col-order {
         text-align: center;
         width: 44px;
+    }
+
+    thead {
+        th {
+            height: 32px;
+        }
+    }
+
+    tbody {
+        td {
+            height: 32px;
+            padding: 0px 8px;
+
+            &.col-nameapi {
+                color: #0B599C;
+                text-decoration: underline;
+            }
+
+            &.col-expired {
+                font-weight: 600;
+            }
+
+            &.expired-date {
+                color: #FF0000;
+            }
+        }
     }
 
     .row-first {
@@ -102,6 +129,12 @@
             white-space: normal;
             word-wrap: break-word;
         }
+    }
+
+    .btn-submit, .btn-remove {
+        min-width: 80px;
+        margin: 0 7px;
+        height: 26px;
     }
 }
 .relative{
@@ -121,9 +154,6 @@
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
-
-
 
 .scope-input {
   margin-bottom: 10px;
@@ -192,9 +222,7 @@
 
 
 .box-service-url {
-    position: absolute;
-    top: 12px;
-    right: 35px;
+    
     font-size: 13px;
 
     .label-service-url {
@@ -213,6 +241,7 @@
         opacity: 1;
         border-radius: 0;
         padding: 1px 11px;
+        float: none;
 
         &.close {
             .dummy-text {
@@ -236,7 +265,7 @@
 
             .real-text {
                 text-align: left;
-                color: #444444;
+                color: #444444;                
             }
         }
     }
@@ -305,5 +334,11 @@
         line-height: 22px;
         margin-right: 16px;
         font-weight: 400;
+    }
+}
+// API Key Management
+.apikey-form {
+    .box-service-url {
+        margin: 22px 0 12px;
     }
 }

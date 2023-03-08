@@ -16,29 +16,29 @@
     </div>
     <div class="form-group">
         <label>@ApiKey.APIKey</label>
-        <input type="text" class="form-control" id="key" autocomplete="off" value="@Model.ApiKeyInfo.Key" readonly />
-        <span class="icon-content-copy icon" data-clipboard-action="copy" data-clipboard-target="#key" title="@Security.Copied"></span>
+        <div class="relative">
+            <input type="text" class="form-control" id="key" autocomplete="off" value="@Model.ApiKeyInfo.Key" readonly />
+            <span class="icon-content-copy icon" data-clipboard-action="copy" data-clipboard-target="#key" title="@Security.Copied"></span>
+        </div>
     </div>
     <div class="form-group">
         <label>@ApiKey.ExpirationDate</label>
-        <div class="control date w-460">
-            <div class="input-group date w-310" id="dpkContainer">
+        <div class="control date">
+            <div class="relative input-group" id="dpkContainer">
                 <input type="text" class="form-control" id="expirationdate" autocomplete="off" value="@Model.ApiKeyInfo.ExpirationDate" placeholder="MM/DD/YYYY" />
-                <span class="input-group-addon">
-                    <span class="icon-calendar"></span>
-                </span>
+                 <span class="icon-calendar"></span>            
             </div>
         </div>
     </div>
     <label class="scope-label">@ApiKey.SelectScopes</label>
     <div class="ml-25">
-        <label class="scope-input mt-10"><input type="checkbox" value="All" id="ckbAll" /> @ApiKey.All</label><br>
+        <label class="scope-input mt-10"><input type="checkbox" value="All" id="ckbAll" /> @ApiKey.All</label>
         <div class="ml-25" id="apiKeyScopes">
             @foreach (var scope in Model.Scopes)
             {
 
                 var isChecked = Model.ApiKeyInfo.ScopeIdList.Contains(scope);
-                <label class="scope-input"><input type="checkbox" value="@scope" name="scope" @(isChecked ? "checked" : "") />@ResourceHelper.GetApiKeyResource($"Scope_{scope}", Model.Language)</label><br>
+                <label class="scope-input"><input type="checkbox" value="@scope" name="scope" @(isChecked ? "checked" : "") />@ResourceHelper.GetApiKeyResource($"Scope_{scope}", Model.Language)</label>
             }
         </div>
     </div>
