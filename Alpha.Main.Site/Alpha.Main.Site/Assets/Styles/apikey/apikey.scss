@@ -1,6 +1,6 @@
 ﻿html, body {
-  height: fit-content !important;
-  background: #f4f4f4 !important;
+    height: fit-content !important;
+    background: transparent ;
 }
 .nav.nav-tabs {
     li, li.active {
@@ -36,6 +36,7 @@
         font-size: 14px;
         line-height: 22px;
         margin-bottom: 3px;
+        font-weight: 400;
     }
 
     .require {
@@ -62,11 +63,11 @@
     margin: -1px 0 0 4px;
     font-size: 16px;
 }
-.icon-eye, .icon-calendar {
+.icon-eye, .icon-eye-close, .icon-calendar {
     color: #727272;
     position: absolute;
 }
-.icon-eye {
+.icon-eye, .icon-eye-close {
     top: 7px;
     right: 3px;
 }
@@ -74,6 +75,12 @@
     top: 7px;
     right: 8px;
     font-size: 16px;
+}
+.icon-content-copy {
+    position: absolute;
+    color: #0B599C;
+    top: 7px;
+    right: 3px;
 }
 .tblRpt {
     margin-left: 20px;
@@ -197,13 +204,15 @@
 
     .service-url-mask {
         display: inline-block;
-        border: solid 1px #000;
+        border: 1px solid #0B599C;
         padding: 4px;
-        border-radius: 4px;
-        color: #000;
+        color: #0B599C;
         margin-top: -2px;
         font-size: 13px;
-        opacity: 0.5;
+        line-height: 20px;
+        opacity: 1;
+        border-radius: 0;
+        padding: 1px 11px;
 
         &.close {
             .dummy-text {
@@ -215,8 +224,7 @@
             }
         }
 
-        &.open {
-            margin-top: -4px;
+        &.open {           
             border: none;
             padding: 0;
             color: #ccc;
@@ -227,15 +235,8 @@
             }
 
             .real-text {
-                border: solid 1px #ccc;
-                padding: 0px 6px;
-                border-radius: 4px;
-                display: inline-block;
-                width: 300px;
-                text-align: right;
-                height: 24px;
-                background-color: #eee;
-                color: #000;
+                text-align: left;
+                color: #444444;
             }
         }
     }
@@ -244,13 +245,8 @@
         position: relative;
         top: 0;
         right: 0;
-        margin-left: -64px;
 
         .service-url-mask {
-            border: solid 1px #000;
-            padding: 4px;
-            border-radius: 4px;
-            color: #000;
 
             &.close {
                 .dummy-text {
@@ -262,31 +258,52 @@
                 }
             }
 
-            &.open {
-                margin-top: -4px;
+            &.open {               
                 border: none;
                 padding: 0;
                 color: #ccc;
 
                 .dummy-text {
                     display: none;
-                }
-
-                .real-text {
-                    border: solid 1px #ccc;
-                    padding: 0px 6px;
-                    border-radius: 4px;
-                    display: inline-block;
-                    width: 313px;
-                    text-align: left;
-                    height: 24px;
-                    color: #555555;
-                }
+                } 
             }
         }
     }
 }
+// style result
+.block.block-result {
+    margin-top: 9px;
 
-.div-padding {
-  width: 450px;
+    input:read-only {
+        background: #ECECEC;
+        color: #444444;
+    }
+
+    .form-group {
+        width: 360px;
+
+        .div-intro {
+            margin-top: 0;
+        }
+
+        &-link {
+            label {
+                display: inline-block;
+                width: auto;
+            }
+        }
+    }
+
+    .form-group-button {
+        .btn-submit {
+            min-width: 80px;
+        }
+    }
+
+    .text-result {
+        font-size: 14px;
+        line-height: 22px;
+        margin-right: 16px;
+        font-weight: 400;
+    }
 }

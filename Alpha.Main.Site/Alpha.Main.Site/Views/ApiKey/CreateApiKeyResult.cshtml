@@ -8,7 +8,7 @@
     @StaticResources.RenderStylesWithDarkMode("~/Assets/bundles/apikey/apikey")
 }
 
-<form class="block" id="apikey-form" autocomplete="off">
+<form class="block block-result" id="apikey-form" autocomplete="off">
     <div class="form-group div-intro">@ApiKey.APIKey_SendInfo</div>
     <div class="form-group">
         <label>@ApiKey.APIKeyName</label>
@@ -16,21 +16,25 @@
     </div>
     <div class="form-group">
         <label>@ApiKey.APIKey</label>
-        <input type="text" class="form-control" id="key" autocomplete="off" value="@Model.Key" readonly />
-        <span class="icon-content-copy icon" data-clipboard-action="copy" data-clipboard-target="#key" title="@Security.Copied"></span>
+        <div class="relative">
+            <input type="text" class="form-control" id="key" autocomplete="off" value="@Model.Key" readonly />
+            <span class="icon-content-copy icon" data-clipboard-action="copy" data-clipboard-target="#key" title="@Security.Copied"></span>
+        </div>
     </div>
     <div class="form-group">
         <label>@ApiKey.APISecret</label>
-        <input type="text" class="form-control" id="secret" autocomplete="off" readonly value="@Model.Secret" />
-        <span class="icon-content-copy icon icon-copy-secret" data-clipboard-action="copy" data-clipboard-target="#secret" title="@Security.Copied"></span>
+        <div class="relative">
+            <input type="text" class="form-control" id="secret" autocomplete="off" readonly value="@Model.Secret" />
+            <span class="icon-content-copy icon icon-copy-secret" data-clipboard-action="copy" data-clipboard-target="#secret" title="@Security.Copied"></span>
+        </div>
     </div>
-    <p>@Html.Raw(ApiKey.APISecretCanNotBeRetrieved)</p>
+    <p class="note note-save">@Html.Raw(ApiKey.APISecretCanNotBeRetrieved)</p>
     <div class="form-group">
         <label>@ApiKey.APIPassphrase</label>
         <input type="text" class="form-control" id="key" autocomplete="off" value="@ApiKey.CreatedPreviousStep" readonly />
     </div>
-    <div class="form-group">
-        <label>@ApiKey.ServiceURL</label>
+    <div class="form-group form-group-link">
+        <label class="text-result">@ApiKey.ServiceURL</label>
         <div class="box-service-url result">
             <div class="service-url-mask close">
                 <div class="dummy-text">@ApiKey.GetLinkHere</div>
@@ -38,7 +42,7 @@
             </div>
         </div>
     </div>
-    <div class="form-group mt-10">
+    <div class="form-group form-group-button mt-10">
         <button class="btn-submit" id="btnOk">OK</button>
     </div>
 </form>
