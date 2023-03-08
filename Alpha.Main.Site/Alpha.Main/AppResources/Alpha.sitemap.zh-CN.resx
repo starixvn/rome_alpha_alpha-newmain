@@ -414,4 +414,7 @@
   <data name="riskManagement" xml:space="preserve">
     <value>风险管理</value>
   </data>
+  <data name="BackupDomains" xml:space="preserve">
+    <value>后备域名</value>
+  </data>
 </root>

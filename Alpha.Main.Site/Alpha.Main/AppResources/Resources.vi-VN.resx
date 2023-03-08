@@ -720,4 +720,10 @@
   <data name="LoveToHear" xml:space="preserve">
     <value>Chúng tôi rất cần những ý kiến từ bạn.</value>
   </data>
+  <data name="BackupDomains_Intro" xml:space="preserve">
+    <value>Tên miền dự phòng của bạn đã sẵn sàng.</value>
+  </data>
+  <data name="CheckOut" xml:space="preserve">
+    <value>Xem ngay</value>
+  </data>
 </root>

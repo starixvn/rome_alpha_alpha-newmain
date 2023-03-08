@@ -658,4 +658,10 @@
   <data name="LoveToHear" xml:space="preserve">
     <value>我們很樂意聽取您的意見。</value>
   </data>
+  <data name="BackupDomains_Intro" xml:space="preserve">
+    <value>您的後備域名已準備就緒</value>
+  </data>
+  <data name="CheckOut" xml:space="preserve">
+    <value>查看</value>
+  </data>
 </root>

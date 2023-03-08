@@ -420,4 +420,7 @@
   <data name="riskManagement" xml:space="preserve">
     <value>Quản Lý Rủi Ro</value>
   </data>
+  <data name="BackupDomains" xml:space="preserve">
+    <value>Tên Miền Dự Phòng</value>
+  </data>
 </root>
