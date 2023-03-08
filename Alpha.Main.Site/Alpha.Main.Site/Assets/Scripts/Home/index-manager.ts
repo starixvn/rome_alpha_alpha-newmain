@@ -344,18 +344,21 @@ var indexManager = {
         indexManager.highlightPopup('backup-domains');
 
         $("#btn-backup-domains").click(function () {
+            box.removeClass('show-popup');
             var iframe = <HTMLIFrameElement>document.getElementById('main');
             iframe.src = alpha.urls.messageRootPath + "BackupDomains/Index";
         });
 
+        var box = $('.backup-domains-box');
+
         $(window).scroll(function () {
-            $('.backup-domains-box').removeClass('show-popup');
+            box.removeClass('show-popup');
         });
 
         $("#main-menu-tab")["mCustomScrollbar"]({
             callbacks: {
                 onScrollStart: () => {
-                    $('.backup-domains-box').removeClass('show-popup');
+                    box.removeClass('show-popup');
                 }
             }
         });
@@ -370,20 +373,13 @@ var indexManager = {
             popupManager.closeAllPopup();
 
             box.addClass('show-popup');
+
             $('#btn-hide-' + funcName + '-popup').click(function () {
                 localStorage.setItem(indexManager.getCustomerCookiesName(cookiesName), "1");
                 box.removeClass('show-popup');
             });
 
-            $(window).click(function () {
-                box.removeClass('show-popup');
-            });
-
-            $('#main').on("load", function () { //Make sure it is fully loaded
-                $('#main').contents().click(function (event) {
-                    box.removeClass('show-popup');
-                });
-            });
+            box.find('.icon-close').click(() => { box.removeClass('show-popup'); });
         }
     },
     openFeedback: function () {
