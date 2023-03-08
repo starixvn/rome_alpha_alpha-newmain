@@ -72,7 +72,7 @@
 
             if (userSession.IsSubAcc
                 || userSession.IsProtectedMode
-                || (AppSettings.APISuperIds.Any() && !AppSettings.APISuperIds.Any(s => Equals(s, userSession.SRecommendId))))
+                || (AppSettings.APISuperIds.Any() && !AppSettings.APISuperIds.Any(s => string.Equals(s, userSession.SRecommendId.ToString()))))
             {
                 UnAuthentication(filterContext);
             }

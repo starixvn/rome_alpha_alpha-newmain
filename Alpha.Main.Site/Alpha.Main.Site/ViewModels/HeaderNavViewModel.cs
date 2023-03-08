@@ -90,6 +90,6 @@
 
         public bool ShowAPIKeyFunction
             => !IsSubAccount
-            && (!AppSettings.APISuperIds.Any() || AppSettings.APISuperIds.Any(s => Equals(s, SuperId)));
+            && (!AppSettings.APISuperIds.Any() || AppSettings.APISuperIds.Any(s => string.Equals(s, SuperId.ToString())));
     }
 }
