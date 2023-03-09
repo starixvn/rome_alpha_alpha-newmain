@@ -655,4 +655,10 @@
   <data name="LoveToHear" xml:space="preserve">
     <value>เรารู้สึกยินดีที่ได้รับคำติชมจากคุณ!</value>
   </data>
+  <data name="BackupDomains_Intro" xml:space="preserve">
+    <value>โดเมนสำรองของคุณพร้อมแล้ว</value>
+  </data>
+  <data name="CheckOut" xml:space="preserve">
+    <value>ออก</value>
+  </data>
 </root>

@@ -864,6 +864,9 @@
     <Content Include="Assets\Images\chatbot-i1.svg" />
     <Content Include="Assets\Images\chatbot-i7.svg" />
     <Content Include="Assets\Images\feedback.svg" />
+    <Content Include="Assets\Images\backupdomain.svg" />
+    <Content Include="Assets\Images\arrowbackupdomainmb.svg" />
+    <Content Include="Assets\Images\arrowbackupdomain.svg" />
     <Content Include="Assets\Images\icon-chatbot-1.svg" />
     <Content Include="Assets\Images\icon-chatbot-2.svg" />
     <Content Include="Assets\Images\icon-chatbot-3.svg" />
@@ -1349,6 +1352,7 @@
     <Content Include="Views\Advertisement\MyWatchlist.cshtml" />
     <Content Include="Views\Advertisement\AdvertisementPopup.cshtml" />
     <Content Include="Views\Default\SuggestEnableTelegramOtpPopup.cshtml" />
+    <Content Include="Views\Default\BackupDomainsHightLight.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />

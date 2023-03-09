@@ -221,8 +221,85 @@ body {
 .accountinfo-container {
     width: 100%;
 }
+// Backup domain
+.cover-backupdomain {
+    padding: calculateScale(54px) calculateScale(12px) 0;
+}
+.backupdomain-modal {
+    left: 0;
+    top: 0 !important;
+    position: relative;
+    width: calculateScale(350px);
+
+    &:before {
+        position: absolute;
+        content: "";
+        top: -15px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 11px 16px 11px;
+        border-color: transparent transparent #2B2B2B transparent;
+        z-index: 1;
+    }
+
+    &:after {
+        position: absolute;
+        content: "";
+        top: -18px;
+        left: -1px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 12px 18px 12px;
+        border-color: transparent transparent #474747 transparent;
+        z-index: -1;
+    }
+
+    .text {
+        margin-bottom: calculateScale(15px);
+
+        img {
+            display: block;
+            margin: 0 calculateScale(20px) 0 0;
+        }
+
+        p {
+            font-size: calculateScale(14px);
+            line-height: calculateScale(20px);
+
+            span {
+                font-size: calculateScale(18px);
+                line-height: calculateScale(21px);
+                margin: calculateScale(1px) 0 calculateScale(7px) 0;
+            }
+        }
+    }
+
+    .action {
 
 
+        .label {
+            font-size: calculateScale(13px);
+            padding: calculateScale(2px) 0 0;
+
+
+            input {
+                width: calculateScale(16px);
+                height: calculateScale(16px);
+                top: calculateScale(4px);
+                margin-right: calculateScale(3px);
+            }
+        }
+
+        .btn-submit {
+            font-size: calculateScale(13px);
+            line-height: calculateScale(28px);
+            height: calculateScale(28px);
+        }
+    }
+}
 // sidebar
 
 .mainmenu-container {

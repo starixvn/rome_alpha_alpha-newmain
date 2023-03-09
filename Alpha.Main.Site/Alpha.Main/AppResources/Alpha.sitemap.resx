@@ -420,4 +420,7 @@
   <data name="MyThresholds" xml:space="preserve">
     <value>My Thresholds</value>
   </data>
+  <data name="BackupDomains" xml:space="preserve">
+    <value>Backup Domains</value>
+  </data>
 </root>

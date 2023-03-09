@@ -115,6 +115,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Backup Domains.
+        /// </summary>
+        public static string BackupDomains {
+            get {
+                return ResourceManager.GetString("BackupDomains", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Beta.
         /// </summary>
         public static string Beta {
