@@ -400,7 +400,7 @@
     <value>&lt;strong&gt;Telegram Chatbot&lt;/strong&gt; enables you to get up-to-date business information by communicating with the chatbot without accessing to the Agency Site. The chatbot runs on Telegram – a free, secured, encrypted, and cross-platform instant message application.&lt;br /&gt;To setup the chatbot, please follow the instructions below:</value>
   </data>
   <data name="IntroTelegramReports" xml:space="preserve">
-    <value>Using Telegram Chatbot, you can get the following reports right on Telegram without accessing to the Agency Site: &lt;br /&gt; Type "/help" on the chatbot for the full commands list.</value>
+    <value>Telegram Chatbot offers a wide variety of features to run your business without accessing the Agency site.&lt;br/&gt; Type “/help” on Chatbot for the full list of commands.</value>
   </data>
   <data name="InvalidOTP" xml:space="preserve">
     <value>OTP is incorrect, please try again</value>
@@ -512,5 +512,11 @@
   </data>
   <data name="EnabledTelegramOtpNotification" xml:space="preserve">
     <value>Enabled Telegram OTP notification</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>Features</value>
+  </data>
+  <data name="Feature" xml:space="preserve">
+    <value>Feature</value>
   </data>
 </root>

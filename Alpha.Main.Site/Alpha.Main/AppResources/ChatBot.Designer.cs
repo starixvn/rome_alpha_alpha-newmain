@@ -277,6 +277,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Feature.
+        /// </summary>
+        public static string Feature {
+            get {
+                return ResourceManager.GetString("Feature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Features.
+        /// </summary>
+        public static string Features {
+            get {
+                return ResourceManager.GetString("Features", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 15 days.
         /// </summary>
         public static string FifteenDays {
@@ -493,7 +511,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Using Telegram Chatbot, you can get the following reports right on Telegram without accessing to the Agency Site: &lt;br /&gt; Type &quot;/help&quot; on the chatbot for the full commands list..
+        ///   Looks up a localized string similar to Telegram Chatbot offers a wide variety of features to run your business without accessing the Agency site.&lt;br/&gt; Type “/help” on Chatbot for the full list of commands..
         /// </summary>
         public static string IntroTelegramReports {
             get {
