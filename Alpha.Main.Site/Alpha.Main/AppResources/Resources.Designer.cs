@@ -475,7 +475,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Profile picture.
+        ///   Looks up a localized string similar to Profile Settings.
         /// </summary>
         public static string EditProfilePicture {
             get {
