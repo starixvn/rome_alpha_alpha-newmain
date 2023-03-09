@@ -101,7 +101,7 @@ class CreateApiKey {
             allowInputToggle: true,
             format: "MM/DD/YYYY",
             defaultDate: null
-        }
+        };
         this.$datePicker.datepicker(options);
     }
 

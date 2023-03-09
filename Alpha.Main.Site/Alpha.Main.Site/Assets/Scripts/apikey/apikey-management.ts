@@ -1,20 +1,28 @@
 ﻿/// <reference path="../core.ts" />
 'use strict';
 
+declare var Clipboard: any;
+
 class ApiKeyManagement {
     $: JQueryStatic;
     topWindow: any;
     $showURL: JQuery;
     $urlMask: JQuery;
+    $apiKeyNames: JQuery;
+    $apiKeyPopups: JQuery;
+    clipboard: any;
 
-    constructor($: JQueryStatic, topWindow: any) {
+    constructor($: JQueryStatic, topWindow: any, clipboard: any) {
         this.$ = $;
         this.topWindow = topWindow;
+        this.clipboard = clipboard;
     }
 
     init = () => {
         this.$showURL = this.$(".dummy-text");
         this.$urlMask = this.$(".service-url-mask");
+        this.$apiKeyNames = this.$(".api-key-name");
+        this.$apiKeyPopups = this.$(".api-key-popup");
 
         this.registerApiKeyEditEvent();
         this.registerApiKeyRevokeEvent();
@@ -35,6 +43,22 @@ class ApiKeyManagement {
         })
 
         this.$showURL.click(this.showURL);
+
+        this.$apiKeyNames.click(function () { self.showApiKey(self.$(this)); });
+
+        if (window.document.queryCommandSupported
+            && window.document.queryCommandSupported("copy")) {
+            this.clipboard
+                .on("success", function (e) {
+                    self.$(e.trigger).tooltip("show");
+                    setTimeout(() => { self.$apiKeyPopups.addClass('hide'); }, 3000);
+                })
+                .on("error", function (e) {
+                    self.$(e.trigger).remove();
+                    window.console.error("Action:", e.action);
+                    window.console.error("Trigger:", e.trigger);
+                });
+        }
     }
 
     registerApiKeyRevokeEvent = () => {
@@ -64,9 +88,18 @@ class ApiKeyManagement {
         this.$urlMask.removeClass('close');
         this.$urlMask.addClass('open');
     }
+
+    showApiKey = ($elm) => {
+        this.$apiKeyPopups.addClass('hide');
+
+        var popup = $elm.parent().find('.api-key-popup');
+        popup.removeClass('hide');
+
+        popup.css({ left: $elm.position().left });
+    };
 }
 
 $(function () {
-    const apiKeyManagement = new ApiKeyManagement($, window.top);
+    const apiKeyManagement = new ApiKeyManagement($, window.top, new Clipboard('.icon-content-copy'));
     apiKeyManagement.init();
 });

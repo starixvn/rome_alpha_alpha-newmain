@@ -1,7 +1,8 @@
 ﻿html, body {
     height: fit-content !important;
-    background: transparent ;
+    background: transparent;
 }
+
 .nav.nav-tabs {
     li, li.active {
         &:after {
@@ -13,6 +14,7 @@
         }
     }
 }
+
 .guideline {
     position: absolute;
     right: 0;
@@ -31,11 +33,12 @@
     .icon {
         font-size: 11px;
 
-        &:after{
+        &:after {
             display: none;
         }
     }
 }
+
 .block {
     margin-top: 20px;
 
@@ -67,11 +70,13 @@
         color: #A11515;
     }
 }
+
 .scope-input {
     font-size: 13px;
     line-height: 20px;
     color: #444444;
 }
+
 .list-apiKeyScopes {
     margin: 5px 0 0 16px;
 
@@ -79,35 +84,42 @@
         margin: 0 0 5px 0;
     }
 }
+
 .multiselect .multiselect-selected-text {
     width: 215px;
 }
+
 .icon-information-outline {
     float: none;
     margin: -1px 0 0 4px;
     font-size: 16px;
 }
+
 .icon-eye, .icon-eye-close, .icon-calendar {
     color: #727272;
     position: absolute;
     z-index: 10;
 }
+
 .icon-eye, .icon-eye-close {
     top: 7px;
     right: 3px;
 }
+
 .icon-calendar {
     top: 7px;
     right: 8px;
     font-size: 16px;
     z-index: 10;
 }
+
 .icon-content-copy {
     position: absolute;
     color: #0B599C;
     top: 7px;
     right: 3px;
 }
+
 .tblRpt {
     width: 700%;
     max-width: 1000px;
@@ -128,8 +140,36 @@
             height: 32px;
             padding: 0px 8px;
 
-            &.col-nameapi {
-                color: #0B599C;                
+            .api-key-name {
+                color: #0B599C;
+                text-decoration: underline;
+                cursor: pointer;
+
+                &:hover, &:active {
+                    color: #23527c;
+                }
+            }
+
+            .api-key-popup {
+                position: absolute;
+                background-color: #fff;
+                border: solid 1px #eee;
+                box-shadow: 0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
+                margin: 0;
+                padding: 10px;
+
+
+                label {
+                    float: left;
+                }
+
+                input {
+                    width: 250px;
+                }
+
+                .icon-content-copy {
+                    top: 30px;
+                }
             }
 
             &.col-expired {
@@ -159,78 +199,84 @@
         height: 26px;
     }
 }
-.relative{
+
+.relative {
     position: relative;
 }
+
 .control {
     margin: 0;
 }
 
 .input-group.date .input-group-addon {
-  right: 30px;
-  position: absolute;
-  z-index: 100;
+    right: 30px;
+    position: absolute;
+    z-index: 100;
 }
 
 .btn-group {
-  border: 1px solid #ccc;
-  border-radius: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .scope-input {
-  margin-bottom: 10px;
-  font-weight: normal;
+    margin-bottom: 10px;
+    font-weight: normal;
 }
 
 .scope-label {
-  width: fit-content !important;
+    width: fit-content !important;
 }
 
 .font-normal {
-  font-weight: normal;
+    font-weight: normal;
 }
 
 .ml-25 {
-  margin-left: 25px;
+    margin-left: 25px;
 }
 
 .mt-10 {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .w-460 {
-  width: 460px !important;
+    width: 460px !important;
 }
 
 .w-310 {
-  width: 310px !important;
+    width: 310px !important;
 }
 
 .w-450 {
-  width: 450px !important;
+    width: 450px !important;
 }
 
 .input-pass {
-  font-family: 'password';
+    font-family: 'password';
 }
 
 .input-pass::placeholder {
-  font-family: 'Roboto';
+    font-family: 'Roboto';
 }
 
 .icon-question {
-  color: #3b85c5;
-  position: absolute;
-  font-size: 20px;
-  top: 11px;
+    color: #3b85c5;
+    position: absolute;
+    font-size: 20px;
+    top: 11px;
 }
 
+.expired-date {
+    color: red !important;
+}
 
 
 .block .form-group.div-intro {
     margin-top: 10px;
     line-height: 20px;
 }
+
 .note {
     font-size: 13px;
     line-height: 20px;
@@ -241,7 +287,6 @@
 
 
 .box-service-url {
-    
     font-size: 13px;
 
     .label-service-url {
@@ -272,7 +317,7 @@
             }
         }
 
-        &.open {           
+        &.open {
             border: none;
             padding: 0;
             color: #ccc;
@@ -285,7 +330,6 @@
             .real-text {
                 text-align: left;
                 color: #444444;
-                width: 250px;
             }
         }
     }
@@ -307,14 +351,14 @@
                 }
             }
 
-            &.open {               
+            &.open {
                 border: none;
                 padding: 0;
                 color: #ccc;
 
                 .dummy-text {
                     display: none;
-                } 
+                }
             }
         }
     }
@@ -345,7 +389,7 @@
                 width: auto;
             }
         }
-    }   
+    }
 
     .text-result {
         font-size: 14px;
@@ -354,6 +398,7 @@
         font-weight: 400;
     }
 }
+
 .form-group-button {
     justify-content: flex-end;
 
@@ -365,12 +410,14 @@
         min-width: 80px;
     }
 }
+
 // API Key Management
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    inset: auto !important;
+}
+
 .apikey-form {
     .box-service-url {
         margin: 22px 0 12px;
     }
-}
-.bootstrap-datetimepicker-widget.dropdown-menu {
-    inset: auto !important;
 }

@@ -147,8 +147,38 @@
             height: 32px;
             padding: 0px 8px;
 
-            &.col-nameapi {
+            .api-key-name {
                 color: #22A2FF;
+                text-decoration: underline;
+                cursor: pointer;
+
+                &:hover, &:active {
+                    color: #22A2FF;
+                }
+            }
+
+            .api-key-popup {
+                position: absolute;
+                background-color: #171717;
+                border: solid 1px #515151;
+                box-shadow: 0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
+                margin: 0;
+                padding: 10px;
+
+
+                label {
+                    float: left;
+                }
+
+                input {
+                    background-color: #313131;
+                    width: 250px;
+                    color: #EDEDED;
+                }
+
+                .icon-content-copy {
+                    top: 30px;
+                }
             }
 
             &.col-expired {
@@ -170,7 +200,7 @@
             white-space: normal;
             word-wrap: break-word;
         }
-    } 
+    }
 
     .btn-submit, .btn-remove {
         min-width: 80px;
@@ -304,7 +334,6 @@
 
             .real-text {
                 text-align: left;
-              
                 width: 250px;
             }
         }
@@ -360,7 +389,7 @@
                 width: auto;
             }
         }
-    }   
+    }
 
     .text-result {
         font-size: 14px;
@@ -369,6 +398,7 @@
         font-weight: 400;
     }
 }
+
 .form-group-button {
     justify-content: flex-end;
 

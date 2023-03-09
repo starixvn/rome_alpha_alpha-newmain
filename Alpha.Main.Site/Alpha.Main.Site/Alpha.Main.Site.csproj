@@ -772,7 +772,9 @@
       <DependentUpon>create-nickname.js</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\nickname\nickname.css" />
-    <Content Include="Assets\bundles\nickname\nickname.min.css" />
+    <Content Include="Assets\bundles\nickname\nickname.min.css">
+      <DependentUpon>nickname.css</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\otp\otp-dark.css" />
     <Content Include="Assets\bundles\otp\otp-dark.min.css">
       <DependentUpon>otp-dark.css</DependentUpon>
