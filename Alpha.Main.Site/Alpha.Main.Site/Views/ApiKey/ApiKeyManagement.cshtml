@@ -7,15 +7,18 @@
     @StaticResources.AssetStyles.RenderCommonWithDarkMode($"/bundles/site-main/tab-{Model.CustLevel.ToLowerInvariant()}")
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/apikey")
     @StaticResources.RenderStylesWithDarkMode("~/Assets/bundles/apikey/apikey")
-}
-<ul class="nav nav-tabs" role="tablist">
-    <li role="presentation">
-        <a href="@($"{Model.MainRootPath}Apikey/CreateApiKey")" role="tab" data-toggle="tab">@ApiKey.CreateAPIKey</a>
-    </li>
-    <li role="presentation" id="" class="active">
-        <a href="@($"{Model.MainRootPath}Apikey/ApiKeyManagement")" role="tab" data-toggle="tab">@ApiKey.APIKeyManagement</a>
-    </li>
-</ul>
+}   
+<div class="realtive">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation">
+            <a href="@($"{Model.MainRootPath}Apikey/CreateApiKey")" role="tab" data-toggle="tab">@ApiKey.CreateAPIKey</a>
+        </li>
+        <li role="presentation" id="" class="active">
+            <a href="@($"{Model.MainRootPath}Apikey/ApiKeyManagement")" role="tab" data-toggle="tab">@ApiKey.APIKeyManagement</a>
+        </li>
+    </ul>
+    <a class="guideline" href="@Model.HelpPage" target="_blank"><span class="icon icon-book"></span>Guideline</a>
+</div>
 <div class="tab-content apikey-form">
     <div class="box-service-url">
         <span class="label-service-url">@ApiKey.ServiceURL</span>
@@ -24,7 +27,7 @@
             <input type="text" class="real-text" value="@AppSettings.APIGatewaysURL" readonly />
         </div>
     </div>
-    <a href="@Model.HelpPage" target="_blank"><span class="icon icon-help icon-question"></span></a>
+     
     <table class="tblRpt tblRpt-bordered tblRpt-striped tblRpt-hover">
         <thead>
             <tr>

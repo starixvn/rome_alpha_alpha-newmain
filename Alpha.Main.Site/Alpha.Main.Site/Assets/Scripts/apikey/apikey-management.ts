@@ -31,7 +31,7 @@ class ApiKeyManagement {
         self.$(".btn-edit").click(function () {
             const apikey = self.$(this).attr("apikey");
             const url = alpha.urls.mainRootPath + `ApiKey/EditApiKey?key=${apikey}`;
-            self.topWindow.popupManager.open(url, self.resources.editAPIKey, 800, 500, null, null, null, 335, 150);
+            self.topWindow.popupManager.open(url, self.resources.editAPIKey, 380, 540, null, null, null, 335, 150);
         })
 
         this.$showURL.click(this.showURL);

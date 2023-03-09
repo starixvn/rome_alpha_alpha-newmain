@@ -13,13 +13,37 @@
         }
     }
 }
+.guideline {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    border: 1px solid #0B599C;
+    color: #0B599C;
+    padding: 1px 12px;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 15px;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    .icon {
+        font-size: 11px;
+
+        &:after{
+            display: none;
+        }
+    }
+}
 .block {
     margin-top: 20px;
 
     .form-group {
         display: flex;
-        width: 500px;
+        width: 100%;
         flex-wrap: wrap;
+        max-width: 500px;
 
         input[type='text'], input[type='password'] {
             border: 1px solid #ccc;
@@ -85,7 +109,6 @@
     right: 3px;
 }
 .tblRpt {
-    table-layout: fixed;
     width: 700%;
     max-width: 1000px;
 
@@ -265,7 +288,8 @@
 
             .real-text {
                 text-align: left;
-                color: #444444;                
+                color: #444444;
+                width: 250px;
             }
         }
     }
@@ -341,4 +365,7 @@
     .box-service-url {
         margin: 22px 0 12px;
     }
+}
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    inset: auto !important;
 }
