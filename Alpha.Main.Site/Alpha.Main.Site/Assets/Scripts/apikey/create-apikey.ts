@@ -135,7 +135,7 @@ class CreateApiKey {
                         const url = alpha.urls.mainRootPath + `ApiKey/CreateApiKeyResult?apiname=` + encodeURIComponent(data.ApiKeyResult.ApiName)
                             + `&key=` + encodeURIComponent(data.ApiKeyResult.Key)
                             + `&secret=` + encodeURIComponent(data.ApiKeyResult.ApiSecret)
-                        self.topWindow.popupManager.open(url, self.resources.apiKey, 362, 510, null, null, null, 335, 150, null);
+                        self.topWindow.popupManager.open(url, self.resources.apiKey, 362, 530, null, null, null, 335, 150, null);
                     } else {
                         alpha.showMessage(self.$errorMessage, new Result(data.Result));
                     }

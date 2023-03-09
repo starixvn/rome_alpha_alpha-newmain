@@ -129,8 +129,7 @@
             padding: 0px 8px;
 
             &.col-nameapi {
-                color: #0B599C;
-                text-decoration: underline;
+                color: #0B599C;                
             }
 
             &.col-expired {
@@ -226,9 +225,6 @@
   top: 11px;
 }
 
-.expired-date {
-  color: red !important;
-}
 
 
 .block .form-group.div-intro {
@@ -327,6 +323,10 @@
 .block.block-result {
     margin-top: 9px;
 
+    .box-service-url .service-url-mask.open .real-text {
+        width: 360px;
+    }
+
     input:read-only {
         background: #ECECEC;
         color: #444444;
@@ -345,19 +345,24 @@
                 width: auto;
             }
         }
-    }
-
-    .form-group-button {
-        .btn-submit {
-            min-width: 80px;
-        }
-    }
+    }   
 
     .text-result {
         font-size: 14px;
         line-height: 22px;
         margin-right: 16px;
         font-weight: 400;
+    }
+}
+.form-group-button {
+    justify-content: flex-end;
+
+    button {
+        min-width: 80px;
+    }
+
+    .btn-submit {
+        min-width: 80px;
     }
 }
 // API Key Management

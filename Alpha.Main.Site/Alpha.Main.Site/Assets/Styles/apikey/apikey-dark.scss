@@ -1,276 +1,392 @@
 ﻿html, body {
-  height: fit-content !important;
-  /*width: fit-content !important;*/
+    height: fit-content !important;
+    background: transparent;
+}
+
+.nav.nav-tabs {
+    li.active {
+        &:after {
+            background: #EDEDED !important;
+        }
+
+        a {
+            color: #EDEDED;
+        }
+    }
+
+    li {
+        a {
+            color: #999999;
+        }
+    }
+}
+
+.guideline {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    border: 1px solid #22A2FF;
+    color: #22A2FF;
+    padding: 1px 12px;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 15px;
+
+    &:hover {
+        text-decoration: none;
+        color: #22A2FF;
+    }
+
+    .icon {
+        font-size: 11px;
+
+        &:after {
+            display: none;
+        }
+    }
 }
 
 .block {
-  margin-left: 20px;
-  margin-top: 20px;
+    margin-top: 20px;
 
-  .form-group {
-    display: flex;
-    position: relative;
-    align-items: center;
-    width: 450px;
-    height: 34px;
-  }
+    .form-group {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        max-width: 500px;
 
-  label {
-    width: 200px;
-  }
-
-  .require {
-    color: red;
-  }
-}
-
-.multiselect .multiselect-selected-text {
-  width: 215px;
-}
-
-.icon {
-  position: absolute;
-  font-size: 20px;
-  right: 0;
-}
-
-.icon-calendar {
-  margin-top: 3px;
-}
-
-
-.tblRpt {
-  margin-left: 20px;
-  margin-top: 20px;
-  table-layout: fixed;
-  width: 70%;
-
-  .col-order {
-    text-align: center;
-    width: 44px;
-  }
-
-  .row-first {
-    color: #666;
-
-    font: {
-      style: italic;
-      size: 12px;
+        input[type='text'], input[type='password'] {
+            border: 1px solid #474747;
+            width: 360px;
+            box-shadow: none;
+            height: 30px;
+            border-radius: 0px;
+            background: #313131;
+        }
     }
 
-    tbody td {
-      white-space: normal;
-      word-wrap: break-word;
+    label {
+        display: block;
+        width: 100%;
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 3px;
+        font-weight: 400;
     }
-  }
-}
 
-.control {
-  margin: 0;
-
-  .date {
-    width: 248px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-}
-
-.input-group.date .input-group-addon {
-  right: 30px;
-  position: absolute;
-  z-index: 100;
-}
-
-.btn-group {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-p {
-  margin-left: 138px;
-  font-style: italic;
-}
-
-input[type='password'] {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: inherit;
-  height: inherit;
-}
-
-input[type='text'] {
-  width: 450px;
-}
-
-.form-control[readonly] {
-  background: inherit !important;
+    .require {
+        color: #FF4F50;
+    }
 }
 
 .scope-input {
-  margin-bottom: 10px;
-  font-weight: normal;
+    font-size: 13px;
+    line-height: 20px;
 }
 
-.scope-label {
-  width: fit-content !important;
+.list-apiKeyScopes {
+    margin: 5px 0 0 16px;
+
+    .scope-input {
+        margin: 0 0 5px 0;
+    }
 }
 
-.font-normal {
-  font-weight: normal;
-}
-
-.ml-25 {
-  margin-left: 25px;
-}
-
-.mt-10 {
-  margin-top: 10px;
-}
-
-.w-460 {
-  width: 460px !important;
-}
-
-.w-310 {
-  width: 310px !important;
-}
-
-.w-450 {
-  width: 450px !important;
-}
-
-.input-pass {
-  font-family: 'password';
-}
-
-.input-pass::placeholder {
-  font-family: 'Roboto';
-}
-
-.icon-question {
-  color: #3b85c5;
-  position: absolute;
-  font-size: 20px;
-  top: 11px;
-}
-
-.expired-date {
-  color: red !important;
-}
-
-
-.block .form-group.div-intro {
-  margin-top: 10px;
-  height: auto;
+.multiselect .multiselect-selected-text {
+    width: 215px;
 }
 
 .icon-information-outline {
-  position: absolute;
-  right: -25px;
+    float: none;
+    margin: -1px 0 0 4px;
+    font-size: 16px;
 }
+
+.icon-eye, .icon-eye-close, .icon-calendar {
+    color: #727272;
+    position: absolute;
+    z-index: 10;
+}
+
+.icon-eye, .icon-eye-close {
+    top: 7px;
+    right: 3px;
+}
+
+.icon-calendar {
+    top: 7px;
+    right: 8px;
+    font-size: 16px;
+    z-index: 10;
+}
+
+.icon-content-copy {
+    position: absolute;
+    color: #22A2FF;
+    top: 7px;
+    right: 3px;
+}
+
+.tblRpt {
+    width: 700%;
+    max-width: 1000px;
+
+    .col-order {
+        text-align: center;
+        width: 44px;
+    }
+
+    thead {
+        th {
+            height: 32px;
+        }
+    }
+
+    tbody {
+        td {
+            height: 32px;
+            padding: 0px 8px;
+
+            &.col-nameapi {
+                color: #22A2FF;
+            }
+
+            &.col-expired {
+                font-weight: 600;
+            }
+
+            &.expired-date {
+                color: #CC7070;
+            }
+        }
+    }
+
+    .row-first {
+        color: #666;
+
+
+
+        tbody td {
+            white-space: normal;
+            word-wrap: break-word;
+        }
+    } 
+
+    .btn-submit, .btn-remove {
+        min-width: 80px;
+        margin: 0 7px;
+        height: 26px;
+    }
+}
+
+.relative {
+    position: relative;
+}
+
+.control {
+    margin: 0;
+}
+
+.input-group.date .input-group-addon {
+    right: 30px;
+    position: absolute;
+    z-index: 100;
+}
+
+.btn-group {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.scope-input {
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.scope-label {
+    width: fit-content !important;
+}
+
+.font-normal {
+    font-weight: normal;
+}
+
+.ml-25 {
+    margin-left: 25px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.w-460 {
+    width: 460px !important;
+}
+
+.w-310 {
+    width: 310px !important;
+}
+
+.w-450 {
+    width: 450px !important;
+}
+
+.input-pass {
+    font-family: 'password';
+}
+
+.input-pass::placeholder {
+    font-family: 'Roboto';
+}
+
+.icon-question {
+    color: #3b85c5;
+    position: absolute;
+    font-size: 20px;
+    top: 11px;
+}
+
+.block .form-group.div-intro {
+    margin-top: 10px;
+    line-height: 20px;
+}
+
+.note {
+    font-size: 13px;
+    line-height: 20px;
+    color: #696969;
+    font-style: italic;
+    margin: -12px 0 17px 0;
+}
+
 
 .box-service-url {
-  position: absolute;
-  top: 12px;
-  right: 35px;
-
-  .label-service-url {
-    font-weight: bold;
-    margin-right: 10px;
-  }
-
-  .service-url-mask {
-    display: inline-block;
-    border: solid 1px #fff;
-    padding: 4px;
-    border-radius: 4px;
-    color: #fff;
     font-size: 13px;
-    margin-top: -2px;
-    opacity: 0.5;
 
-    &.close {
-      .dummy-text {
-        display: inline-block;
-        text-shadow: none;
-      }
-
-      .real-text {
-        display: none;
-      }
+    .label-service-url {
+        font-weight: bold;
+        margin-right: 10px;
     }
-
-    &.open {
-      margin-top: -4px;
-      border: none;
-      padding: 0;
-      color: #fff;
-      opacity: 1;
-
-      .dummy-text {
-        display: none;
-      }
-
-      .real-text {
-        border: solid 1px #fff;
-        padding: 0px 6px;
-        border-radius: 4px;
-        display: inline-block;
-        width: 300px;
-        text-align: right;
-        height: 24px;
-      }
-    }
-  }
-
-  &.result {
-    position: relative;
-    top: 0;
-    right: 0;
-    margin-left: -64px;
 
     .service-url-mask {
-      border: solid 1px #fff;
-      padding: 4px;
-      border-radius: 4px;
-      color: #fff;
-      font-size: 16px;
+        display: inline-block;
+        border: 1px solid #22A2FF;
+        padding: 4px;
+        color: #22A2FF;
+        margin-top: -2px;
+        font-size: 13px;
+        line-height: 20px;
+        opacity: 1;
+        border-radius: 0;
+        padding: 1px 11px;
+        float: none;
+        text-shadow: none;
 
-      &.close {
-        .dummy-text {
-          display: inline-block;
+        &.close {
+            .dummy-text {
+                display: inline-block;
+            }
+
+            .real-text {
+                display: none;
+            }
         }
 
-        .real-text {
-          display: none;
-        }
-      }
+        &.open {
+            border: none;
+            padding: 0;
+            color: #ccc;
+            opacity: 1;
 
-      &.open {
-        margin-top: -4px;
-        border: none;
-        padding: 0;
-        color: #fff;
+            .dummy-text {
+                display: none;
+            }
 
-        .dummy-text {
-          display: none;
+            .real-text {
+                text-align: left;
+              
+                width: 250px;
+            }
         }
-
-        .real-text {
-          border: solid 1px #fff;
-          padding: 0px 6px;
-          border-radius: 4px;
-          display: inline-block;
-          width: 313px;
-          text-align: left;
-          height: 24px;
-          color: #fff;
-        }
-      }
     }
-  }
+
+    &.result {
+        position: relative;
+        top: 0;
+        right: 0;
+
+        .service-url-mask {
+
+            &.close {
+                .dummy-text {
+                    display: inline-block;
+                }
+
+                .real-text {
+                    display: none;
+                }
+            }
+
+            &.open {
+                border: none;
+                padding: 0;
+                color: #ccc;
+
+                .dummy-text {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+// style result
+.block.block-result {
+    margin-top: 9px;
+
+    .box-service-url .service-url-mask.open .real-text {
+        width: 360px;
+    }
+
+    .form-group {
+        width: 360px;
+
+        .div-intro {
+            margin-top: 0;
+        }
+
+        &-link {
+            label {
+                display: inline-block;
+                width: auto;
+            }
+        }
+    }   
+
+    .text-result {
+        font-size: 14px;
+        line-height: 22px;
+        margin-right: 16px;
+        font-weight: 400;
+    }
+}
+.form-group-button {
+    justify-content: flex-end;
+
+    button {
+        min-width: 80px;
+    }
+
+    .btn-submit {
+        min-width: 80px;
+    }
+}
+// API Key Management
+.apikey-form {
+    .box-service-url {
+        margin: 22px 0 12px;
+    }
 }
 
-.div-padding {
-  width: 450px;
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    inset: auto !important;
 }
