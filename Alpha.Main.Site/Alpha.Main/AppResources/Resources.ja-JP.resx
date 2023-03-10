@@ -158,7 +158,7 @@
     <value>Contact Us</value>
   </data>
   <data name="EditProfilePicture" xml:space="preserve">
-    <value>Profile picture</value>
+    <value>Profile Settings</value>
   </data>
   <data name="LoginOption" xml:space="preserve">
     <value>Login option</value>

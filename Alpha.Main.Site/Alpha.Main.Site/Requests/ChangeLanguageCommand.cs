@@ -2,7 +2,6 @@
 
 namespace Alpha.Main.Site.Requests
 {
-    using System.Diagnostics.CodeAnalysis;
     using Alpha.Main.Constants;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
@@ -12,35 +11,38 @@ namespace Alpha.Main.Site.Requests
         private readonly IUserSession userSession;
         private readonly bool disabledVietnamese;
 
-        public ChangeLanguageCommand(IUserSession userSession, string languageCode, bool disabledVietnamese)
+        public ChangeLanguageCommand(
+            IUserSession userSession,
+            string languageCode,
+            bool disabledVietnamese,
+            bool isUpdateDisplayLanguage)
         {
             this.userSession = userSession;
             LanguageCode = languageCode;
             this.disabledVietnamese = disabledVietnamese;
+            IsUpdateDisplayLanguage = isUpdateDisplayLanguage;
         }
 
         public string LanguageCode { get; }
 
-        [SuppressMessage(
-            "Microsoft.Maintainability",
-            "CA1500:VariableNamesShouldNotMatchFieldNames",
-            MessageId = "languageCode",
-            Justification = "Reviewed!")]
-        public virtual void ChangeLanguage(string languageCode)
-        {
-            if (string.IsNullOrWhiteSpace(languageCode) ||
-                !Language.CodeKeys.ContainsKey(languageCode))
-            {
-                return;
-            }
+        public bool IsUpdateDisplayLanguage { get; }
 
-            if (this.disabledVietnamese && languageCode == Language.Vietnamese)
+        public int CustId => userSession.CustId;
+
+        public int SubAccId => userSession.SubAccId;
+
+        public virtual string ChangeLanguage(string languageCode)
+        {
+            if (disabledVietnamese && languageCode == Language.Vietnamese)
             {
                 languageCode = Language.English;
             }
 
             userSession.Language = languageCode;
-            userSession.LangKey = Language.CodeKeys[languageCode];
+            var languageKey = Language.CodeKeys[languageCode];
+            userSession.LangKey = languageKey;
+
+            return languageKey;
         }
     }
 }

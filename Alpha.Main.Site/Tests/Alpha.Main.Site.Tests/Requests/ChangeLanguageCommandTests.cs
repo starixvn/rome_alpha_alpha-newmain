@@ -19,11 +19,6 @@ namespace Alpha.Main.Site.Tests.Requests
             userSession = Substitute.For<IUserSession>();
         }
 
-        [TestCase(null, "")]
-        [TestCase("", "")]
-        [TestCase(" ", "")]
-        [TestCase("af-ZA ", "")]
-        [TestCase("wrong-code ", "")]
         [TestCase(Language.Default, Language.Default)]
         [TestCase(Language.English, Language.English)]
         [TestCase(Language.ChineseTraditional, Language.ChineseTraditional)]
@@ -37,7 +32,7 @@ namespace Alpha.Main.Site.Tests.Requests
             string expectedLanguageCode)
         {
             // Arrange
-            var command = new ChangeLanguageCommand(userSession, languageCode, false);
+            var command = new ChangeLanguageCommand(userSession, languageCode, false, false);
 
             // Act
             command.ChangeLanguage(languageCode);

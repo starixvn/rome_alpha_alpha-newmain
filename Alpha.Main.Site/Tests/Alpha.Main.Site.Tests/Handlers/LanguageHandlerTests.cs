@@ -3,6 +3,7 @@
 namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
+    using Alpha.Main.Services.Impl;
     using KellermanSoftware.CompareNetObjects;
     using Main.Constants;
     using Models.Requests;
@@ -16,6 +17,7 @@ namespace Alpha.Main.Site.Tests.Handlers
     [TestFixture]
     public class LanguageHandlerTests
     {
+        private UpdateUsageLanguageService updateUsageLanguageService;
         private LanguageHandler languageHandler;
         private IUserSession userSession;
         private CompareLogic compareLogic;
@@ -23,26 +25,17 @@ namespace Alpha.Main.Site.Tests.Handlers
         [SetUp]
         public void SetUp()
         {
-            languageHandler = new LanguageHandler();
+            updateUsageLanguageService = Substitute.For<UpdateUsageLanguageService>();
+            languageHandler = new LanguageHandler(updateUsageLanguageService);
             userSession = Substitute.For<IUserSession>();
             compareLogic = new CompareLogic();
-        }
-
-        [Test]
-        public void HandleChangeLanguageCommand_NullCommand_ThrowArgumentNullException()
-        {
-            // Arrange
-            ChangeLanguageCommand nullCommand = null;
-
-            // Act & Assert
-            Assert.Throws<ArgumentNullException>(new TestDelegate(() => languageHandler.Handle(nullCommand)));
         }
 
         [Test]
         public void HandleChangeLanguageCommand_NotNullCommand_CallChangeLanguage()
         {
             // Arrange
-            var command = Substitute.For<ChangeLanguageCommand>(userSession, string.Empty, false);
+            var command = Substitute.For<ChangeLanguageCommand>(userSession, string.Empty, false, false);
 
             string argumentUsed = null;
             command.ChangeLanguage(Arg.Do<string>(x => argumentUsed = x));
@@ -73,7 +66,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         {
             // Arrange
             string argumentUsed = null;
-            var command = Substitute.For<ChangeLanguageCommand>(userSession, languageCode, false);
+            var command = Substitute.For<ChangeLanguageCommand>(userSession, languageCode, false, false);
             command.ChangeLanguage(Arg.Do<string>(x => argumentUsed = x));
 
             // Act
@@ -101,7 +94,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             string expectedLanguageCode)
         {
             // Arrange
-            var command = new ChangeLanguageCommand(userSession, languageCode, false);
+            var command = new ChangeLanguageCommand(userSession, languageCode, false, false);
 
             // Act
             var viewModel = languageHandler.Handle(command);
@@ -128,7 +121,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             string expectedLanguageCode)
         {
             // Arrange
-            var command = new ChangeLanguageCommand(userSession, languageCode, true);
+            var command = new ChangeLanguageCommand(userSession, languageCode, true, false);
 
             // Act
             languageHandler.Handle(command);

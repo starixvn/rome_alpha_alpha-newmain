@@ -1,32 +1,21 @@
-﻿using Alpha.Main.Criteria.Language;
-using Alpha.Main.DataAccesses.Impl;
-using System.Threading.Tasks;
-
-namespace Alpha.Main.Services.Impl
+﻿namespace Alpha.Main.Services.Impl
 {
+    using Alpha.Main.Criteria.Language;
+    using Fanex.Data.Repository;
 
-    public interface IUpdateUsageLanguageService
+    public interface UpdateUsageLanguageService
     {
-        Task UpdateUsageLanguage(int custId, int subAccId, string usageLanguage);
+        void UpdateUsageLanguage(int custId, int subAccId, string languageKey);
     }
 
-    public class UpdateUsageLanguageService : IUpdateUsageLanguageService
+    public class UpdateUsageLanguageServiceImpl : UpdateUsageLanguageService
     {
-        private readonly IUpdateUsageLanguageDataAccess updateUsageLanguageDataAccess;
+        private readonly IDynamicRepository dynamicRepository;
 
-        public UpdateUsageLanguageService(IUpdateUsageLanguageDataAccess updateUsageLanguageDataAccess)
-        {
-            this.updateUsageLanguageDataAccess = updateUsageLanguageDataAccess;
-        }
+        public UpdateUsageLanguageServiceImpl(IDynamicRepository dynamicRepository)
+            => this.dynamicRepository = dynamicRepository;
 
-        public async Task UpdateUsageLanguage(int custId, int subAccId, string usageLanguage)
-        {
-            await updateUsageLanguageDataAccess.UpdateUsageLanguage(new UpdateUsageLanguageCriteria
-            {
-                CustId = custId,
-                SubAccId = subAccId,
-                LanguageUsage = usageLanguage
-            });
-        }
+        public void UpdateUsageLanguage(int custId, int subAccId, string languageKey)
+            => dynamicRepository.Execute(new UpdateUsageLanguageCommand(custId, subAccId, languageKey));
     }
 }

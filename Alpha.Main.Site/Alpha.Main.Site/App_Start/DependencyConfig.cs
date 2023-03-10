@@ -12,7 +12,6 @@
     using Alpha.Captcha.Services;
     using Alpha.Main.Configurations;
     using Alpha.Main.ProfilePicture.Services;
-    using Alpha.Main.Site.Helpers;
     using Alpha.NetThrottling;
     using Alpha.NetThrottling.Models;
     using Alpha.NetThrottling.Resolvers;
@@ -156,7 +155,7 @@
             container.RegisterPerWebRequest<ISessionService, SessionService>();
             container.RegisterPerWebRequest<ProtectionCodeService, ProtectionCodeServiceImpl>();
             container.RegisterPerWebRequest<ThemeService, ThemeServiceImpl>();
-            container.RegisterPerWebRequest<IUpdateUsageLanguageService, UpdateUsageLanguageService>();
+            container.RegisterPerWebRequest<UpdateUsageLanguageService, UpdateUsageLanguageServiceImpl>();
         }
 
         private static void RegisterDataAccesses(Container container)
@@ -165,7 +164,6 @@
             container.RegisterPerWebRequest<SecurityCodeDataAccess, SecurityCodeDataAccessImpl>();
             container.RegisterPerWebRequest<PasswordDataAccess, PasswordDataAccessImpl>();
             container.RegisterPerWebRequest<StatisticsDataAccess, StatisticsDataAccessImpl>();
-            container.RegisterPerWebRequest<IUpdateUsageLanguageDataAccess, UpdateUsageLanguageDataAccess>();
         }
 
         private static void RegisterProductConfiguration()

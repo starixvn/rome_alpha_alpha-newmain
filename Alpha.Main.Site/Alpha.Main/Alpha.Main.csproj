@@ -291,7 +291,7 @@
     <Compile Include="Constants\UMFunctionType.cs" />
     <Compile Include="Criteria\Banner\GetBannerCriteria.cs" />
     <Compile Include="Criteria\KickoutCustomerCriteria.cs" />
-    <Compile Include="Criteria\Language\UpdateUsageLanguageCriteria.cs" />
+    <Compile Include="Criteria\Language\UpdateUsageLanguageCommand.cs" />
     <Compile Include="Criteria\LogoutCommand.cs" />
     <Compile Include="Criteria\Nickname\CreateNicknameCommand.cs" />
     <Compile Include="Criteria\Nickname\CreateSubAccountNicknameCommand.cs" />
@@ -339,7 +339,6 @@
     <Compile Include="DataAccesses\Impl\PasswordDataAccessImpl.cs" />
     <Compile Include="DataAccesses\Impl\SecurityCodeDataAccessImpl.cs" />
     <Compile Include="DataAccesses\Impl\StatisticsDataAccessImpl.cs" />
-    <Compile Include="DataAccesses\Impl\UpdateUsageLanguageDataAccess.cs" />
     <Compile Include="DataAccesses\PasswordDataAccess.cs" />
     <Compile Include="DataAccesses\SecurityCodeDataAccess.cs" />
     <Compile Include="DataAccesses\StatisticsDataAccess.cs" />

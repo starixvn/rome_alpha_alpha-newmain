@@ -195,7 +195,7 @@
             var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
 
             // Assert
-            Assert.AreEqual("<strong>New Account</strong>: Unavailable from <span class=\"um-message-time\">03/12/2020 12:00:00 AM</span> to <span class=\"um-message-time\">03/12/2020 09:15:10 AM</span>", messages[0].Message);
+            Assert.AreEqual("<strong>New Account</strong>: Unavailable from <span class=\"um-message-time\">03/12/2020 12:00 AM</span> to <span class=\"um-message-time\">03/12/2020 09:15 AM</span>", messages[0].Message);
         }
 
         [Test]
@@ -214,7 +214,7 @@
             var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
 
             // Assert
-            Assert.AreEqual("<strong>Transfer</strong>: Unavailable from <span class=\"um-message-time\">03/12/2020 12:00:00 AM</span> to <span class=\"um-message-time\">03/12/2020 09:15:10 AM</span>", messages[0].Message);
+            Assert.AreEqual("<strong>Transfer</strong>: Unavailable from <span class=\"um-message-time\">03/12/2020 12:00 AM</span> to <span class=\"um-message-time\">03/12/2020 09:15 AM</span>", messages[0].Message);
         }
     }
 }

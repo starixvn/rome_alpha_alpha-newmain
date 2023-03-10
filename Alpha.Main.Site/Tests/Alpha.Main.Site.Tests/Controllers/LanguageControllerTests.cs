@@ -56,8 +56,8 @@
         public void Change_Always_CallsMediatorSendChangeLanguageCommand(string languageCode)
         {
             // Act
-            var command = new ChangeLanguageCommand(userSession, languageCode, AppSettings.DisabledVietnamese);
-            languageController.Change(languageCode);
+            var command = new ChangeLanguageCommand(userSession, languageCode, AppSettings.DisabledVietnamese, false);
+            languageController.Change(languageCode, false);
 
             // Assert
             mediator.Received().Send(Arg.Is<ChangeLanguageCommand>(
