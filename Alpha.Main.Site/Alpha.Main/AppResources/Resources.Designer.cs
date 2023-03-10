@@ -187,15 +187,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your backup domains are ready..
-        /// </summary>
-        public static string BackupDomains_Intro {
-            get {
-                return ResourceManager.GetString("BackupDomains_Intro", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Balance.
         /// </summary>
         public static string balance {
@@ -561,6 +552,24 @@ namespace Alpha.Main.AppResources {
         public static string highestTurnoverOfTheMonth {
             get {
                 return ResourceManager.GetString("highestTurnoverOfTheMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Go to Profile Settings to choose your preferred language..
+        /// </summary>
+        public static string HighlightPopupNewFeatureIntro {
+            get {
+                return ResourceManager.GetString("HighlightPopupNewFeatureIntro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display Language.
+        /// </summary>
+        public static string HighlightPopupNewFeatureTitle {
+            get {
+                return ResourceManager.GetString("HighlightPopupNewFeatureTitle", resourceCulture);
             }
         }
         

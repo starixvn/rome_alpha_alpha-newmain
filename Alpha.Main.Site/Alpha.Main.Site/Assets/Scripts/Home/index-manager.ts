@@ -341,45 +341,39 @@ var indexManager = {
     },
 
     initBackupDomains: function () {
-        indexManager.highlightPopup('backup-domains');
+        indexManager.highlightPopup("backup-domains");
 
-        $("#btn-backup-domains").click(function () {
-            box.removeClass('show-popup');
-            var iframe = <HTMLIFrameElement>document.getElementById('main');
-            iframe.src = alpha.urls.messageRootPath + "BackupDomains/Index";
-        });
+        $("#linkHighlightPopupCheckOut").click(() => box.removeClass("show-popup"));
 
-        var box = $('.backup-domains-box');
+        var box = $(".backup-domains-box");
 
         $(window).scroll(function () {
-            box.removeClass('show-popup');
+            box.removeClass("show-popup");
         });
 
         $("#main-menu-tab")["mCustomScrollbar"]({
             callbacks: {
-                onScrollStart: () => {
-                    box.removeClass('show-popup');
-                }
+                onScrollStart: () => box.removeClass("show-popup")
             }
         });
     },
-    highlightPopup: (funcName) => {
-        var cookiesName = indexManager.hidePopupCookies + funcName;
-        var hidePopup =
+    highlightPopup: function (feature) {
+        const cookiesName = indexManager.hidePopupCookies + feature;
+        const hidePopup =
             localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
-        var box = $('.' + funcName + '-box');
+        const box = $("." + feature + "-box");
 
-        if (hidePopup !== '1') {
+        if (hidePopup !== "1") {
             popupManager.closeAllPopup();
 
-            box.addClass('show-popup');
+            box.addClass("show-popup");
 
-            $('#btn-hide-' + funcName + '-popup').click(function () {
+            $("#chkHideHighlightPopupNewFeature").click(function () {
                 localStorage.setItem(indexManager.getCustomerCookiesName(cookiesName), "1");
-                box.removeClass('show-popup');
+                box.removeClass("show-popup");
             });
 
-            box.find('.icon-close').click(() => { box.removeClass('show-popup'); });
+            box.find(".icon-close").click(() =>  box.removeClass("show-popup"));
         }
     },
     openFeedback: function () {

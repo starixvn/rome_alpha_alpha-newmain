@@ -658,10 +658,13 @@
   <data name="LoveToHear" xml:space="preserve">
     <value>我们很乐意听取您的意见。</value>
   </data>
-  <data name="BackupDomains_Intro" xml:space="preserve">
-    <value>您的后备域名已准备就绪</value>
-  </data>
   <data name="CheckOut" xml:space="preserve">
     <value>查看</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
+    <value>Go to Profile Settings to choose your preferred language.</value>
+  </data>
+  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
+    <value>Display Language</value>
   </data>
 </root>

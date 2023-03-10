@@ -3,14 +3,14 @@
         <button type="button" class="icon icon-close close" title="@Resources.close"><span aria-hidden="true"></span></button>
         <div class="text">
             <img src="~/Assets/Images/backupdomain.svg" alt="backup domain" />
-            <p><span>@Alpha_sitemap.BackupDomains</span>@Resources.BackupDomains_Intro</p>
+            <p><span>@Resources.HighlightPopupNewFeatureTitle</span>@Resources.HighlightPopupNewFeatureIntro</p>
         </div>
         <div class="action">
             <label class="label">
-                <input id="btn-hide-backup-domains-popup" type="checkbox" name="name" value="" />
+                <input id="chkHideHighlightPopupNewFeature" type="checkbox" />
                 <span>@Resources.doNotShowAgain</span>
             </label>
-            <input id="btn-backup-domains" type="submit" class="btn-submit" value="@Resources.CheckOut">
+            <a class="btn-submit" id="linkHighlightPopupCheckOut" href="@MicroSites.AccountInfoUrl("~/ProfilePicture")" target="main">@Resources.CheckOut</a>
         </div>
     </div>
 </div>
