@@ -7,6 +7,7 @@
     @StaticResources.AssetStyles.RenderCommonWithDarkMode($"/bundles/site-main/tab-{Model.CustLevel.ToLowerInvariant()}")
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/apikey")
     @StaticResources.RenderStylesWithDarkMode("~/Assets/bundles/apikey/apikey")
+    @StaticResources.RenderStylesWithMediaDarkMode(767, "~/assets/bundles/apikey/apikey-mobile-calculate-07")
 }
 <div class="realtive">
     <ul class="nav nav-tabs" role="tablist">
@@ -33,7 +34,7 @@
                 <input type="text" class="form-control input-pass" placeholder="@ApiKey.LimitedChars" id="passphrase" autocomplete="off" maxlength="32" />
                 <span class="icon-eye-close icon show-pass"></span>
             </div>
-            
+
         </div>
         <p class="note note-save">@Html.Raw(ApiKey.APIPassPhraseIsImportantForYouToUseLater)</p>
         <div class="form-group">
@@ -41,12 +42,12 @@
             <div class="relative" id="dpkContainer">
                 <input type="text" class="form-control" id="expirationdate" autocomplete="off" placeholder="MM/DD/YYYY" />
                 <span class="icon-calendar"></span>
-            </div>         
-            
+            </div>
+
         </div>
         <div class="form-group">
-            <label>@ApiKey.SelectScopes<span class="icon-information-outline" title="@ApiKey.APIKey_ScopesInfo"></span></label>            
-     
+            <label>@ApiKey.SelectScopes<span class="icon-information-outline" title="@ApiKey.APIKey_ScopesInfo"></span></label>
+
             <label class="scope-input"><input type="checkbox" value="All" id="ckbAll" checked /> @ApiKey.All</label>
             <div class="list-apiKeyScopes" id="apiKeyScopes">
                 @foreach (var scope in Model.Scopes)
