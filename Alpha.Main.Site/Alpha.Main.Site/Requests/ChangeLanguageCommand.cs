@@ -31,6 +31,8 @@ namespace Alpha.Main.Site.Requests
 
         public int SubAccId => userSession.SubAccId;
 
+        public string IP => userSession.UserLoginIp;
+
         public virtual string ChangeLanguage(string languageCode)
         {
             if (disabledVietnamese && languageCode == Language.Vietnamese)
