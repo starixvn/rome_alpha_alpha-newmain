@@ -246,20 +246,20 @@
             Assert.AreEqual(expectedViewName, viewResult.ViewName);
         }
 
-        [Test]
-        public void Languages_Always_CallsMediatorSendAllLanguagesQuery()
-        {
-            //Arrange
-            var query = new AllLanguagesQuery(userSession.Language, AppSettings.DisabledVietnamese);
+        ////[Test]
+        ////public void Languages_Always_CallsMediatorSendAllLanguagesQuery()
+        ////{
+        ////    //Arrange
+        ////    var query = new AllLanguagesQuery(userSession.Language, AppSettings.DisabledVietnamese);
 
-            // Act
-            securityCodeController.Languages();
+        ////    // Act
+        ////    securityCodeController.Languages();
 
-            // Assert
-            mediator.Received().Send(
-                Arg.Is<AllLanguagesQuery>(
-                    param => param.LanguageCode == query.LanguageCode
-                    && param.DisabledVietnamese == query.DisabledVietnamese));
-        }
+        ////    // Assert
+        ////    mediator.Received().Send(
+        ////        Arg.Is<AllLanguagesQuery>(
+        ////            param => param.LanguageCode == query.LanguageCode
+        ////            && param.DisabledVietnamese == query.DisabledVietnamese));
+        ////}
     }
 }

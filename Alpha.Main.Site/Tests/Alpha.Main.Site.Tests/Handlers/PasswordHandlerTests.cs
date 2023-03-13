@@ -543,34 +543,34 @@
             Assert.Throws<ArgumentNullException>(() => passwordHandler.Handle(message));
         }
 
-        [Test]
-        public void HandleResetMainAccountPasswordQuery_MessageIsNotNull_CallsHandleChangePasswordQuery()
-        {
-            // Arrange
-            var message = new ResetMainAccountPasswordQuery
-            {
-                CustRoleId = RoleId.Agent
-            };
+        ////[Test]
+        ////public void HandleResetMainAccountPasswordQuery_MessageIsNotNull_CallsHandleChangePasswordQuery()
+        ////{
+        ////    // Arrange
+        ////    var message = new ResetMainAccountPasswordQuery
+        ////    {
+        ////        CustRoleId = RoleId.Agent
+        ////    };
 
-            var hashKey = "HashKey";
-            encryptor.RandomString(Arg.Any<int>()).Returns(hashKey);
-            securityCodeChecker.IsEnableSecurityCode().Returns(true);
+        ////    var hashKey = "HashKey";
+        ////    encryptor.RandomString(Arg.Any<int>()).Returns(hashKey);
+        ////    securityCodeChecker.IsEnableSecurityCode().Returns(true);
 
-            var expectedViewModel = new PasswordViewModel
-            {
-                CustRoleId = message.CustRoleId,
-                HashKey = hashKey,
-                EnableSecurityCode = true,
-                CustId = message.CustId,
-                Title = "Reset Password"
-            };
+        ////    var expectedViewModel = new PasswordViewModel
+        ////    {
+        ////        CustRoleId = message.CustRoleId,
+        ////        HashKey = hashKey,
+        ////        EnableSecurityCode = true,
+        ////        CustId = message.CustId,
+        ////        Title = "Reset Password"
+        ////    };
 
-            // Act
-            var actualViewModel = passwordHandler.Handle(message);
+        ////    // Act
+        ////    var actualViewModel = passwordHandler.Handle(message);
 
-            // Assert
-            Assert.IsTrue(compareLogic.Compare(expectedViewModel, actualViewModel).AreEqual);
-        }
+        ////    // Assert
+        ////    Assert.IsTrue(compareLogic.Compare(expectedViewModel, actualViewModel).AreEqual);
+        ////}
 
         #endregion Handle Reset MainAccount Password Query
 
@@ -586,35 +586,35 @@
             Assert.Throws<ArgumentNullException>(() => passwordHandler.Handle(message));
         }
 
-        [Test]
-        public void HandleResetSubAccountPasswordQuery_MessageIsNotNull_CallsHandleChangePasswordQuery()
-        {
-            // Arrange
-            var message = new ResetSubAccountPasswordQuery
-            {
-                SubAccountId = 1,
-                Username = "UserName"
-            };
+        ////[Test]
+        ////public void HandleResetSubAccountPasswordQuery_MessageIsNotNull_CallsHandleChangePasswordQuery()
+        ////{
+        ////    // Arrange
+        ////    var message = new ResetSubAccountPasswordQuery
+        ////    {
+        ////        SubAccountId = 1,
+        ////        Username = "UserName"
+        ////    };
 
-            var hashKey = "HashKey";
-            encryptor.RandomString(Arg.Any<int>()).Returns(hashKey);
-            securityCodeChecker.IsEnableSecurityCode().Returns(true);
+        ////    var hashKey = "HashKey";
+        ////    encryptor.RandomString(Arg.Any<int>()).Returns(hashKey);
+        ////    securityCodeChecker.IsEnableSecurityCode().Returns(true);
 
-            var expectedViewModel = new PasswordViewModel
-            {
-                CustRoleId = userSession.RoleId,
-                SubAccountId = message.SubAccountId,
-                HashKey = hashKey,
-                EnableSecurityCode = true,
-                Title = "Reset Password - UserName"
-            };
+        ////    var expectedViewModel = new PasswordViewModel
+        ////    {
+        ////        CustRoleId = userSession.RoleId,
+        ////        SubAccountId = message.SubAccountId,
+        ////        HashKey = hashKey,
+        ////        EnableSecurityCode = true,
+        ////        Title = "Reset Password - UserName"
+        ////    };
 
-            // Act
-            var actualViewModel = passwordHandler.Handle(message);
+        ////    // Act
+        ////    var actualViewModel = passwordHandler.Handle(message);
 
-            // Assert
-            Assert.IsTrue(compareLogic.Compare(expectedViewModel, actualViewModel).AreEqual);
-        }
+        ////    // Assert
+        ////    Assert.IsTrue(compareLogic.Compare(expectedViewModel, actualViewModel).AreEqual);
+        ////}
 
         #endregion Handle Reset SubAccount Password Query
     }

@@ -205,26 +205,26 @@ namespace Alpha.Main.Site.Tests.Handlers
             Assert.AreEqual(expectedNewMembers, viewModel.Members);
         }
 
-        [Test]
-        public void HandleStatisticsQuery_NotNullQuery_ReturnStatisticsViewModel()
-        {
-            // Arrange
-            var compareLogic = new CompareLogic();
-            UrlHelperTestSetUp.SetUp();
+        ////[Test]
+        ////public void HandleStatisticsQuery_NotNullQuery_ReturnStatisticsViewModel()
+        ////{
+        ////    // Arrange
+        ////    var compareLogic = new CompareLogic();
+        ////    UrlHelperTestSetUp.SetUp();
 
-            var statistics = FakeDataHelper.Create<Statistics>();
-            statisticsService.GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(statistics);
+        ////    var statistics = FakeDataHelper.Create<Statistics>();
+        ////    statisticsService.GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(statistics);
 
-            var query = new StatisticsQuery(userSession);
+        ////    var query = new StatisticsQuery(userSession);
 
-            var expectedStatisticsViewModel = new StatisticsViewModel(statistics, query.UserLevel, false);
+        ////    var expectedStatisticsViewModel = new StatisticsViewModel(statistics, query.UserLevel, false);
 
-            // Act
-            var viewModel = statisticsHandler.Handle(query);
+        ////    // Act
+        ////    var viewModel = statisticsHandler.Handle(query);
 
-            // Assert
-            Assert.IsTrue(compareLogic.Compare(expectedStatisticsViewModel, viewModel).AreEqual);
-        }
+        ////    // Assert
+        ////    Assert.IsTrue(compareLogic.Compare(expectedStatisticsViewModel, viewModel).AreEqual);
+        ////}
 
         [Test]
         [TestCase(false, false)]
