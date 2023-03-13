@@ -51,7 +51,7 @@ var indexManager = {
         indexManager.setCurrentUrl();
 
         indexManager.initFeedback();
-        indexManager.initBackupDomains();
+        indexManager.initHighlightPopupNewFeature();
 
         if (indexManager.requiredNetworkSpeedCalculation) {
             setTimeout(indexManager.calculateUserConnectionSpeed, 8000);
@@ -340,41 +340,33 @@ var indexManager = {
         });
     },
 
-    initBackupDomains: function () {
-        indexManager.highlightPopup("backup-domains");
-
-        $("#linkHighlightPopupCheckOut").click(() => box.removeClass("show-popup"));
-
-        var box = $(".backup-domains-box");
-
-        $(window).scroll(function () {
-            box.removeClass("show-popup");
-        });
-
-        $("#main-menu-tab")["mCustomScrollbar"]({
-            callbacks: {
-                onScrollStart: () => box.removeClass("show-popup")
-            }
-        });
-    },
-    highlightPopup: function (feature) {
-        const cookiesName = indexManager.hidePopupCookies + feature;
-        const hidePopup =
-            localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
-        const box = $("." + feature + "-box");
+    initHighlightPopupNewFeature: function () {
+        const featureName = "backup-domains";
+        const cookiesName = indexManager.hidePopupCookies + featureName;
+        const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
 
         if (hidePopup !== "1") {
             popupManager.closeAllPopup();
+            const box = $("#boxHighlightPopupNewFeature").addClass("show-popup");
 
-            box.addClass("show-popup");
+            box.find(".icon-close").click(() => box.removeClass("show-popup"));
 
-            $("#chkHideHighlightPopupNewFeature").click(function () {
+            box.find("#chkHideHighlightPopupNewFeature").click(function () {
                 localStorage.setItem(indexManager.getCustomerCookiesName(cookiesName), "1");
                 box.removeClass("show-popup");
             });
 
-            box.find(".icon-close").click(() =>  box.removeClass("show-popup"));
+            box.find("#linkHighlightPopupCheckOut").click(() => box.removeClass("show-popup"));
+
+            $(window).scroll(() => box.removeClass("show-popup"));
+
+            $("#main-menu-tab")["mCustomScrollbar"]({
+                callbacks: {
+                    onScrollStart: () => box.removeClass("show-popup")
+                }
+            });
         }
+        
     },
     openFeedback: function () {
         popupManager.open(indexManager.urls.feedback, $("#FeedbackTitle").val(), 680, 550, null, null, null, null, null, null, { customClass: 'feedback-modal' });
