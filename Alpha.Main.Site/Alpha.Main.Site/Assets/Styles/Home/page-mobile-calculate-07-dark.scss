@@ -825,3 +825,19 @@ body {
         font-size: calculateScale(16px)
     }
 }
+/********** popup hightlight *************/
+.popup-highlight {
+    left: auto;
+    right: 10px;
+    top: 63px;
+
+    &:before {
+        right: 10px;
+        left: auto;
+    }
+
+    &:after {
+        right: 9px;
+        left: auto;
+    }
+}

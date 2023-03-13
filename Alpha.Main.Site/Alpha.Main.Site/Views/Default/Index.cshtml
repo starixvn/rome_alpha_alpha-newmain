@@ -52,6 +52,19 @@
             </div>
             <div class="icon-close-feedback" title="@Resources.close"></div>
         </div>
+        <div class="popup-highlight">
+            <div class="text">
+                <img src="/site-main/Assets/Images/feedback.svg" alt="Help us improve!">
+                <p><span>Display Language</span>Go to Profile Setting to choose your preferred language</p>
+            </div>
+            <div class="action">
+                <label class="label">
+                    <input id="btn-hide-feedback-popup" type="checkbox" name="name" value="">
+                    <span>Do not show again</span>
+                </label>
+                <input id="btn-profilesetting" type="submit" class="btn-submit" value="Check Out">
+            </div>
+        </div>
         @Html.Partial("BackupDomainsHightLight")
     </div>
     @Html.Partial("HiddenFields", Model)
