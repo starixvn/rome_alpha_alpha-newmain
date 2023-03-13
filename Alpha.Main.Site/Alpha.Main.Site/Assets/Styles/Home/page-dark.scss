@@ -1267,6 +1267,17 @@ html * {
     color: $text-color;
     padding: 20px;
 
+    .icon-close {
+        position: absolute;
+        top: 5px;
+        margin: 0;
+        right: 5px;
+        color: $text-color;
+        opacity: 1;
+        font-size: 20px;
+        text-shadow: none;
+    }
+
     &:before {
         position: absolute;
         content: "";
