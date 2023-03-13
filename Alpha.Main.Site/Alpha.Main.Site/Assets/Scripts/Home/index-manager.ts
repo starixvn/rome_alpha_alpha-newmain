@@ -51,7 +51,7 @@ var indexManager = {
         indexManager.setCurrentUrl();
 
         indexManager.initFeedback();
-        indexManager.initHighlightPopupNewFeature();
+        indexManager.initNewFeatureHighlightPopup();
 
         if (indexManager.requiredNetworkSpeedCalculation) {
             setTimeout(indexManager.calculateUserConnectionSpeed, 8000);
@@ -340,33 +340,32 @@ var indexManager = {
         });
     },
 
-    initHighlightPopupNewFeature: function () {
-        const featureName = "backup-domains";
+    initNewFeatureHighlightPopup: function () {
+        const featureName = "DisplayLanguage";
         const cookiesName = indexManager.hidePopupCookies + featureName;
         const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
 
         if (hidePopup !== "1") {
             popupManager.closeAllPopup();
-            const box = $("#boxHighlightPopupNewFeature").addClass("show-popup");
+            const box = $("#boxHighlightPopupNewFeature").removeClass("hide");
 
-            box.find(".icon-close").click(() => box.removeClass("show-popup"));
+            box.find(".icon-close").click(() => box.addClass("hide"));
 
             box.find("#chkHideHighlightPopupNewFeature").click(function () {
                 localStorage.setItem(indexManager.getCustomerCookiesName(cookiesName), "1");
-                box.removeClass("show-popup");
+                box.addClass("hide");
             });
 
-            box.find("#linkHighlightPopupCheckOut").click(() => box.removeClass("show-popup"));
+            box.find("#linkHighlightPopupCheckOut").click(() => box.addClass("hide"));
 
-            $(window).scroll(() => box.removeClass("show-popup"));
+            //$(window).scroll(() => box.addClass("hide"));
 
-            $("#main-menu-tab")["mCustomScrollbar"]({
-                callbacks: {
-                    onScrollStart: () => box.removeClass("show-popup")
-                }
-            });
+            //$("#main-menu-tab")["mCustomScrollbar"]({
+            //    callbacks: {
+            //        onScrollStart: () => box.addClass("hide")
+            //    }
+            //});
         }
-        
     },
     openFeedback: function () {
         popupManager.open(indexManager.urls.feedback, $("#FeedbackTitle").val(), 680, 550, null, null, null, null, null, null, { customClass: 'feedback-modal' });
