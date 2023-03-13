@@ -29,6 +29,7 @@
             if (message.IsUpdateDisplayLanguage)
             {
                 updateUsageLanguageService.UpdateUsageLanguage(message.CustId, message.SubAccId, languageKey, message.IP);
+                message.SetDisplayLanguage(languageCode);
             }
 
             return languageCode;

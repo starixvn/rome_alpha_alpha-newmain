@@ -121,7 +121,7 @@
     <value>ปิด</value>
   </data>
   <data name="ProfileClickTootip" xml:space="preserve">
-    <value>คลิ๊กเพื่อทำการแก้ไขรายละเอียดรูปภาพ</value>
+    <value>Click here to edit profile settings.</value>
   </data>
   <data name="subAcc" xml:space="preserve">
     <value>บัญชีย่อย</value>
@@ -140,7 +140,7 @@
 &lt;div&gt;...ปลอดภัยและเป็นส่วนตัวมากขึ้น.&lt;/div&gt;</value>
   </data>
   <data name="ProfileLoginTip" xml:space="preserve">
-    <value>เรียน ลูกค้าที่เคารพ. เพื่อแยกเว็บไซต์ของเราออกจากเว็บไซต์ปลอมเราได้เลือกรูปภาพโปรไฟล์สำหรับคุณแล้ว</value>
+    <value>Dear valued agents, To distinguish our site from fake sites, we have selected a default profile picture for you. You can &lt;a class="change-picture-link" href="{0}" target="main" id="changePictureLink"&gt;click here&lt;/a&gt; to pick up a new one.&lt;br/&gt;In addition, you can set your language preferences &lt;a class="change-picture-link" href="{1}" target="main"&gt;here&lt;/a&gt;. Thank you.</value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>คลิ๊ก</value>
@@ -516,9 +516,6 @@
   </data>
   <data name="DataProcessingNotification" xml:space="preserve">
     <value>แจ้งเตือนการประมวลผลข้อมูล</value>
-  </data>
-  <data name="ProfileLoginTip1" xml:space="preserve">
-    <value>เพื่อเปลี่ยนใหม่. ขอบพระคุณ</value>
   </data>
   <data name="invalidCaptcha" xml:space="preserve">
     <value>คุณใส่รหัสที่หมดอายุแล้วในการเข้าระบบ</value>

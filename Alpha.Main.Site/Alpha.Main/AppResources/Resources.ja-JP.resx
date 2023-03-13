@@ -120,9 +120,6 @@
   <data name="close" xml:space="preserve">
     <value>閉鎖</value>
   </data>
-  <data name="ProfileClickTootip" xml:space="preserve">
-    <value>Click here to edit profile picture.</value>
-  </data>
   <data name="subAcc" xml:space="preserve">
     <value>Sub Acc</value>
   </data>
@@ -138,9 +135,6 @@
   </data>
   <data name="nickname" xml:space="preserve">
     <value>ニックネーム</value>
-  </data>
-  <data name="ProfileLoginTip" xml:space="preserve">
-    <value>Dear valued agents, To distinguish our site from fake sites, we have selected a default profile picture for you. You can</value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>Click here</value>
@@ -384,9 +378,6 @@
   </data>
   <data name="PleaseSelectLoginByNickname" xml:space="preserve">
     <value>Please select Login by nickname only</value>
-  </data>
-  <data name="ProfileLoginTip1" xml:space="preserve">
-    <value>to pick up a new one. Thank you.</value>
   </data>
   <data name="invalidCaptcha" xml:space="preserve">
     <value>You input an invalid code</value>

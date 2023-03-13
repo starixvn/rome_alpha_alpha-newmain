@@ -121,7 +121,7 @@
     <value>Đóng</value>
   </data>
   <data name="ProfileClickTootip" xml:space="preserve">
-    <value>Nhấn vào đây để sửa hình đại diện</value>
+    <value>Click here to edit profile settings.</value>
   </data>
   <data name="subAcc" xml:space="preserve">
     <value>Tài khoản phụ</value>
@@ -139,7 +139,7 @@
     <value>&lt;div&gt;Chào những thành viên thân mến !.Bây giò bạn có thể đăng nhập bằng chính Biệt Danh của mình&lt;/div&gt;</value>
   </data>
   <data name="ProfileLoginTip" xml:space="preserve">
-    <value>Kính gửi quý khách hàng, Để phân biệt trang web của chúng tôi với các trang giả mạo, chúng tôi đã chọn ảnh đại diện mặc định cho bạn. Bạn có thể </value>
+    <value>Dear valued agents, To distinguish our site from fake sites, we have selected a default profile picture for you. You can &lt;a class="change-picture-link" href="{0}" target="main" id="changePictureLink"&gt;click here&lt;/a&gt; to pick up a new one.&lt;br/&gt;In addition, you can set your language preferences &lt;a class="change-picture-link" href="{1}" target="main"&gt;here&lt;/a&gt;. Thank you.</value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>Nhấn vào đây</value>
@@ -521,9 +521,6 @@
   </data>
   <data name="Request" xml:space="preserve">
     <value>Yêu cầu</value>
-  </data>
-  <data name="ProfileLoginTip1" xml:space="preserve">
-    <value>để chọn ảnh khác. Trân trọng.</value>
   </data>
   <data name="firstName" xml:space="preserve">
     <value>Họ</value>

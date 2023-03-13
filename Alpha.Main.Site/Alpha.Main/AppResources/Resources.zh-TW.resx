@@ -121,7 +121,7 @@
     <value>關閉</value>
   </data>
   <data name="ProfileClickTootip" xml:space="preserve">
-    <value>點擊此處編輯個人頭像</value>
+    <value>Click here to edit profile settings.</value>
   </data>
   <data name="subAcc" xml:space="preserve">
     <value>子帐号</value>
@@ -140,7 +140,7 @@
 &lt;div&gt;... 更安全化及個性化.&lt;/div&gt;</value>
   </data>
   <data name="ProfileLoginTip" xml:space="preserve">
-    <value>尊敬的代理們，為了區分我們的網站與假冒網站，我們為您選擇了默認的個人資料圖像。您可以</value>
+    <value>Dear valued agents, To distinguish our site from fake sites, we have selected a default profile picture for you. You can &lt;a class="change-picture-link" href="{0}" target="main" id="changePictureLink"&gt;click here&lt;/a&gt; to pick up a new one.&lt;br/&gt;In addition, you can set your language preferences &lt;a class="change-picture-link" href="{1}" target="main"&gt;here&lt;/a&gt;. Thank you.</value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>點擊此處</value>
@@ -519,9 +519,6 @@
   </data>
   <data name="DataProcessingNotification" xml:space="preserve">
     <value>數據處理通知</value>
-  </data>
-  <data name="ProfileLoginTip1" xml:space="preserve">
-    <value>以挑選新的。謝謝。</value>
   </data>
   <data name="invalidCaptcha" xml:space="preserve">
     <value>識別碼錯誤</value>

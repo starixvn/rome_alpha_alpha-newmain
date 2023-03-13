@@ -120,9 +120,6 @@
   <data name="close" xml:space="preserve">
     <value>닫기</value>
   </data>
-  <data name="ProfileClickTootip" xml:space="preserve">
-    <value>프로필 사진을 수정하려면 여기를 클릭하십시오.</value>
-  </data>
   <data name="subAcc" xml:space="preserve">
     <value>보조계정</value>
   </data>
@@ -138,9 +135,6 @@
   <data name="introNickname" xml:space="preserve">
     <value>&lt;div&gt;Dear customers! Now you can login with your own nickname&lt;/div&gt;
 &lt;div&gt;... more secure and personalized.&lt;/div&gt;</value>
-  </data>
-  <data name="ProfileLoginTip" xml:space="preserve">
-    <value>Dear valued agents, To distinguish our site from fake sites, we have selected a default profile picture for you. You can</value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>여기를 클릭</value>
@@ -423,9 +417,6 @@
   </data>
   <data name="PleaseSelectLoginByNickname" xml:space="preserve">
     <value>Please select Login by nickname only</value>
-  </data>
-  <data name="ProfileLoginTip1" xml:space="preserve">
-    <value>to pick up a new one. Thank you.</value>
   </data>
   <data name="invalidCaptcha" xml:space="preserve">
     <value>잘못된 코드가 입력되었습니다</value>

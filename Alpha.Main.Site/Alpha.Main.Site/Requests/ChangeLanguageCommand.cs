@@ -3,6 +3,7 @@
 namespace Alpha.Main.Site.Requests
 {
     using Alpha.Main.Constants;
+    using Alpha.Main.Site.Constants;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
 
@@ -45,6 +46,11 @@ namespace Alpha.Main.Site.Requests
             userSession.LangKey = languageKey;
 
             return languageKey;
+        }
+
+        public virtual void SetDisplayLanguage(string languageCode)
+        {
+            userSession.SetProperty(SessionConstants.DisplayLanguageSessionKey, languageCode);
         }
     }
 }

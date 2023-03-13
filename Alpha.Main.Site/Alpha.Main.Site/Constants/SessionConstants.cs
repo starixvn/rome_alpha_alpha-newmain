@@ -8,5 +8,6 @@
         public const string GameEnable = "GameEnable_";
         public const string Jackpot = "Jackpot";
         public const string Outputs = "outputs";
+        public const string DisplayLanguageSessionKey = "languageusage";
     }
 }
