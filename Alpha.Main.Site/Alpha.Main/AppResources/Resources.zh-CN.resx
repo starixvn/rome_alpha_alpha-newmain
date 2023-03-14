@@ -121,7 +121,7 @@
     <value>关闭</value>
   </data>
   <data name="ProfileClickTootip" xml:space="preserve">
-    <value>Click here to edit profile settings.</value>
+    <value>点击这里修改个人设置。</value>
   </data>
   <data name="subAcc" xml:space="preserve">
     <value>子账号</value>
@@ -140,7 +140,7 @@
 &lt;div&gt;... 更安全化及个性化.&lt;/div&gt;</value>
   </data>
   <data name="ProfileLoginTip" xml:space="preserve">
-    <value>Dear valued agents, To distinguish our site from fake sites, we have selected a default profile picture for you. You can &lt;a class="change-picture-link" href="{0}" target="main" id="changePictureLink"&gt;click here&lt;/a&gt; to pick up a new one.&lt;br/&gt;In addition, you can set your language preferences &lt;a class="change-picture-link" href="{1}" target="main"&gt;here&lt;/a&gt;. Thank you.</value>
+    <value>尊敬的代理， 我们选择了默认的个人资料图片，以帮助将我们的网站与假网站区分开来。 您可以&lt;a class="change-picture-link" href="{0}" target="main" id="changePictureLink"&gt;点击此处&lt;/a&gt;选择一个新的。&lt;br/&gt;此外，您可以在&lt;a class="change-picture-link" href="{1}" target="main"&gt;此处&lt;/a&gt;设置您的首选语言。 谢谢。</value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>点击此处</value>
@@ -158,7 +158,7 @@
     <value>联络我们</value>
   </data>
   <data name="EditProfilePicture" xml:space="preserve">
-    <value>个人头像</value>
+    <value>个人设置</value>
   </data>
   <data name="LoginOption" xml:space="preserve">
     <value>登录选项</value>
@@ -659,9 +659,9 @@
     <value>查看</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Go to Profile Settings to choose your preferred language.</value>
+    <value>去个人设置选择您的首选语言</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Display Language</value>
+    <value>语言显示</value>
   </data>
 </root>

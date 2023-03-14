@@ -140,7 +140,7 @@
     <value>Nickname</value>
   </data>
   <data name="ProfileLoginTip" xml:space="preserve">
-    <value>Dear valued agents, To distinguish our site from fake sites, we have selected a default profile picture for you. You can &lt;a class="change-picture-link" href="{0}" target="main" id="changePictureLink"&gt;click here&lt;/a&gt; to pick up a new one.&lt;br/&gt;In addition, you can set your language preferences &lt;a class="change-picture-link" href="{1}" target="main"&gt;here&lt;/a&gt;. Thank you.</value>
+    <value>Dear valued Agents, We have selected a default profile picture to help distinguish our site from fake ones. You can &lt;a class="change-picture-link" href="{0}" target="main" id="changePictureLink"&gt;click here&lt;/a&gt; to pick up a new one.&lt;br/&gt;In addition, you can set your language preferences &lt;a class="change-picture-link" href="{1}" target="main"&gt;here&lt;/a&gt;. Thank you.</value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>Click here</value>

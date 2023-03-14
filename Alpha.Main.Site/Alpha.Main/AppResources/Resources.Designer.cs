@@ -1160,7 +1160,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dear valued agents, To distinguish our site from fake sites, we have selected a default profile picture for you. You can &lt;a class=&quot;change-picture-link&quot; href=&quot;{0}&quot; target=&quot;main&quot; id=&quot;changePictureLink&quot;&gt;click here&lt;/a&gt; to pick up a new one.&lt;br/&gt;In addition, you can set your language preferences &lt;a class=&quot;change-picture-link&quot; href=&quot;{1}&quot; target=&quot;main&quot;&gt;here&lt;/a&gt;. Thank you..
+        ///   Looks up a localized string similar to Dear valued Agents, We have selected a default profile picture to help distinguish our site from fake ones. You can &lt;a class=&quot;change-picture-link&quot; href=&quot;{0}&quot; target=&quot;main&quot; id=&quot;changePictureLink&quot;&gt;click here&lt;/a&gt; to pick up a new one.&lt;br/&gt;In addition, you can set your language preferences &lt;a class=&quot;change-picture-link&quot; href=&quot;{1}&quot; target=&quot;main&quot;&gt;here&lt;/a&gt;. Thank you..
         /// </summary>
         public static string ProfileLoginTip {
             get {

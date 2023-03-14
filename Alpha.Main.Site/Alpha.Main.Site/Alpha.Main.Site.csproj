@@ -865,7 +865,8 @@
     <Content Include="Assets\Images\chatbot-i7.svg" />
     <Content Include="Assets\Images\feedback.svg" />
     <Content Include="Assets\Images\backupdomain.svg" />
-	<Content Include="Assets\Images\language.svg" />
+    <Content Include="Assets\Images\language-dark.svg" />
+    <Content Include="Assets\Images\language.svg" />
     <Content Include="Assets\Images\arrowbackupdomainmb.svg" />
     <Content Include="Assets\Images\arrowbackupdomain.svg" />
     <Content Include="Assets\Images\icon-chatbot-1.svg" />
@@ -1426,7 +1427,7 @@
     <Content Include="Assets\styles\customer-profiles\customer-profile.min.css">
       <DependentUpon>customer-profile.css</DependentUpon>
     </Content>
-	<Content Include="Assets\styles\customer-profiles\customer-profile-dark.css">
+    <Content Include="Assets\styles\customer-profiles\customer-profile-dark.css">
       <DependentUpon>customer-profile-dark.scss</DependentUpon>
     </Content>
     <Content Include="Assets\styles\customer-profiles\customer-profile-dark.min.css">
@@ -1519,7 +1520,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Assets\Styles\customer-profiles\customer-profile.scss" />
-	<Content Include="Assets\Styles\customer-profiles\customer-profile-dark.scss" />
+    <Content Include="Assets\Styles\customer-profiles\customer-profile-dark.scss" />
     <Content Include="Assets\styles\home\popup-message.scss" />
     <Content Include="bundleconfig.json" />
     <Content Include="compilerconfig.json" />

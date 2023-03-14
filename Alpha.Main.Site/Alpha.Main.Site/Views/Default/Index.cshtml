@@ -52,7 +52,7 @@
             </div>
             <div class="icon-close-feedback" title="@Resources.close"></div>
         </div>
-        @Html.Partial("NewFeatureHighlightPopup")
+        @Html.Partial("NewFeatureHighlightPopup", Model.DarkModeName)
     </div>
     @Html.Partial("HiddenFields", Model)
     @Html.Partial("AnnouncementPopup")

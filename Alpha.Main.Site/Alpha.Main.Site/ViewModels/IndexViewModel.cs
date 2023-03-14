@@ -159,6 +159,8 @@
 
         public string BetlistDomain => AppSettings.BetlistDomain;
 
+        public string DarkModeName => message.DarkModeName;
+
         public bool IsDarkMode => !string.IsNullOrWhiteSpace(message.DarkModeName);
 
         public string AssetAppPath { get; }
@@ -174,6 +176,7 @@
         public string SessionID => HttpContext.Current.Session.SessionID;
 
         public string Username => message.IsSubAcc ? message.SubUserName : message.UserName;
+
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
     }
 }
