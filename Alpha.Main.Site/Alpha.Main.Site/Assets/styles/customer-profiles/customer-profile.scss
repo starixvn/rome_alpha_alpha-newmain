@@ -62,7 +62,7 @@
 #profileTooltip, #tooltip-box {
     background-color: #f6f6f6;
     font-size: 12px;
-    top: 12px; 
+    top: 12px;
     left: 203px;
     position: fixed;
     z-index: 1000;
@@ -73,7 +73,7 @@
     padding: 5px 16px;
     @include border-radius(1px);
     @include box-shadow(0, 0, 8px, rgba(0, 0, 0, 0.4));
-    
+
     &:before {
         content: '';
         display: block;
@@ -82,10 +82,9 @@
         top: 24%;
         width: 0;
         height: 0;
-        border-top: 0 solid transparent;
-        border-right: 0 solid transparent;
-        border-bottom: 12px solid #f6f6f6;
-        border-left: 12px solid transparent;
+        border-style: solid;
+        border-width: 8px 12px 8px 0;
+        border-color: transparent #f6f6f6 transparent transparent;
     }
 
     a {

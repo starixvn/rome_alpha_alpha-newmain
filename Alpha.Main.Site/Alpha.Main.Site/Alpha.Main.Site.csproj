@@ -1426,6 +1426,12 @@
     <Content Include="Assets\styles\customer-profiles\customer-profile.min.css">
       <DependentUpon>customer-profile.css</DependentUpon>
     </Content>
+	<Content Include="Assets\styles\customer-profiles\customer-profile-dark.css">
+      <DependentUpon>customer-profile-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\customer-profiles\customer-profile-dark.min.css">
+      <DependentUpon>customer-profile-dark.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\home\pageIElower10.css">
       <DependentUpon>pageIElower10.scss</DependentUpon>
     </Content>
@@ -1513,6 +1519,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Assets\Styles\customer-profiles\customer-profile.scss" />
+	<Content Include="Assets\Styles\customer-profiles\customer-profile-dark.scss" />
     <Content Include="Assets\styles\home\popup-message.scss" />
     <Content Include="bundleconfig.json" />
     <Content Include="compilerconfig.json" />
