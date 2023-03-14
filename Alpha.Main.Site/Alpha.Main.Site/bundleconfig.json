@@ -372,7 +372,7 @@
     "outputFileName": "Assets/bundles/default-index-dark.css",
     "inputFiles": [
       "Assets/Styles/home/page-dark.css",
-      "Assets/Styles/customer-profiles/customer-profile.css",
+      "Assets/Styles/customer-profiles/customer-profile-dark.css",
       "Assets/Styles/home/popup-announcement-dark.css",
       "Assets/Styles/home/tooltip.css",
       "Assets/Styles/home/popup-message.css",
