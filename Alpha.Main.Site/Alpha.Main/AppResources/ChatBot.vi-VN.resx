@@ -388,19 +388,19 @@
     <value>&lt;strong&gt;Telegram Chatbot&lt;/strong&gt; giúp bạn cập nhật thông tin bằng cách tương tác với Chatbot mà không cần truy cập vào trang Agency. Chatbot chạy trên Telegram - một ứng dụng nhắn tin miễn phí, an toàn, được mã hóa, và đa nền tảng.&lt;br /&gt; Để cài đặt Chatbot, vui lòng làm theo hướng dẫn sau:</value>
   </data>
   <data name="IntroTelegramReports" xml:space="preserve">
-    <value>Khi dùng Telegram Chatbot, bạn có thể nhận được các thông báo sau ngay trên Telegram mà không cần truy cập trang Agency: &lt;br /&gt; Gõ "/help" trên Chatbot để xem danh sách lệnh đầy đủ.</value>
+    <value>Telegram Chatbot cung cấp nhiều báo cáo và tính năng để bạn có thể vận hành mà không cần truy cập vào trang Đại lý.&lt;br /&gt;Để xem danh sách các lệnh, bạn chỉ cần gõ "/help" trên Chatbot.</value>
   </data>
   <data name="lblOTP" xml:space="preserve">
     <value>OTP</value>
   </data>
   <data name="Notification" xml:space="preserve">
-    <value>Thông báo</value>
+    <value>Thông Báo/Cảnh Báo</value>
   </data>
   <data name="NotificationAndSettings" xml:space="preserve">
-    <value>Thông Báo và Cài Đặt</value>
+    <value>Thông Báo &amp; Cảnh Báo</value>
   </data>
   <data name="NotificationAndSettingsIntro" xml:space="preserve">
-    <value>Chọn báo cáo mà bạn muốn Telegram Chatbot gửi cho bạn:</value>
+    <value>Cài đặt Telegram Chatbot để nhận thông báo và cảnh báo bảo mật.</value>
   </data>
   <data name="OrUseThisLink" xml:space="preserve">
     <value>Hoặc nhấn liên kết này:</value>
@@ -500,5 +500,11 @@
   </data>
   <data name="EnabledTelegramOtpNotification" xml:space="preserve">
     <value>Đã bật thông báo OTP qua Telegram</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>Báo Cáo/Tính Năng</value>
+  </data>
+  <data name="Feature" xml:space="preserve">
+    <value>Báo Cáo/Tính Năng</value>
   </data>
 </root>

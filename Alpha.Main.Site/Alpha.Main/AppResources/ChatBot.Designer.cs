@@ -277,7 +277,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Feature.
+        ///   Looks up a localized string similar to Report/Feature.
         /// </summary>
         public static string Feature {
             get {
@@ -286,7 +286,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Features.
+        ///   Looks up a localized string similar to Reports/Features.
         /// </summary>
         public static string Features {
             get {
@@ -511,7 +511,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Telegram Chatbot offers a wide variety of features to run your business without accessing the Agency site.&lt;br/&gt; Type “/help” on Chatbot for the full list of commands..
+        ///   Looks up a localized string similar to Telegram Chatbot offers a wide variety of reports and features to run your business without accessing the Agency site.&lt;br /&gt;Type “/help” on Chatbot for the full list of commands..
         /// </summary>
         public static string IntroTelegramReports {
             get {
@@ -664,7 +664,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Notification.
+        ///   Looks up a localized string similar to Notification/Alert.
         /// </summary>
         public static string Notification {
             get {
@@ -673,7 +673,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Notifications and Settings.
+        ///   Looks up a localized string similar to Notifications and Alerts.
         /// </summary>
         public static string NotificationAndSettings {
             get {
@@ -682,7 +682,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose which reports you want Telegram Chatbot to notify you:.
+        ///   Looks up a localized string similar to Configure Telegram Chatbot to send you notifications and security alerts..
         /// </summary>
         public static string NotificationAndSettingsIntro {
             get {

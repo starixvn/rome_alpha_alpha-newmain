@@ -400,7 +400,7 @@
     <value>&lt;strong&gt;Telegram Chatbot&lt;/strong&gt; enables you to get up-to-date business information by communicating with the chatbot without accessing to the Agency Site. The chatbot runs on Telegram – a free, secured, encrypted, and cross-platform instant message application.&lt;br /&gt;To setup the chatbot, please follow the instructions below:</value>
   </data>
   <data name="IntroTelegramReports" xml:space="preserve">
-    <value>Telegram Chatbot offers a wide variety of features to run your business without accessing the Agency site.&lt;br/&gt; Type “/help” on Chatbot for the full list of commands.</value>
+    <value>Telegram Chatbot offers a wide variety of reports and features to run your business without accessing the Agency site.&lt;br /&gt;Type “/help” on Chatbot for the full list of commands.</value>
   </data>
   <data name="InvalidOTP" xml:space="preserve">
     <value>OTP is incorrect, please try again</value>
@@ -409,13 +409,13 @@
     <value>OTP</value>
   </data>
   <data name="Notification" xml:space="preserve">
-    <value>Notification</value>
+    <value>Notification/Alert</value>
   </data>
   <data name="NotificationAndSettings" xml:space="preserve">
-    <value>Notifications and Settings</value>
+    <value>Notifications and Alerts</value>
   </data>
   <data name="NotificationAndSettingsIntro" xml:space="preserve">
-    <value>Choose which reports you want Telegram Chatbot to notify you:</value>
+    <value>Configure Telegram Chatbot to send you notifications and security alerts.</value>
   </data>
   <data name="OrUseThisLink" xml:space="preserve">
     <value>Or click this link:</value>
@@ -514,9 +514,9 @@
     <value>Enabled Telegram OTP notification</value>
   </data>
   <data name="Features" xml:space="preserve">
-    <value>Features</value>
+    <value>Reports/Features</value>
   </data>
   <data name="Feature" xml:space="preserve">
-    <value>Feature</value>
+    <value>Report/Feature</value>
   </data>
 </root>

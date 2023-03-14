@@ -379,19 +379,19 @@
     <value>&lt;strong&gt;Telegram Chatbot&lt;/strong&gt; ช่วยให้คุณรับข้อมูลทางธุรกิจปัจจุบันโดยสื่อสารกับChatbotโดยไม่จำเป็นต้องเข้าถึงเว็บไซต์ตัวแทน ChatbotทำงานบนTelegramซึ่งเป็นแอปพลิเคชั่นข้อความโต้ตอบอัตโนมัติได้ฟรี ปลอดภัย สะดวก และใช้งานได้หลากหลายแพลตฟอร์ม&lt;br /&gt;ในการตั้งค่าChatbot โปรดปฏิบัติตามคำแนะนำด้านล่าง:</value>
   </data>
   <data name="IntroTelegramReports" xml:space="preserve">
-    <value>เมื่อใช้Telegram Chatbot คุณจะได้รับรายงานต่อไปนี้ผ่านTelegram โดยไม่ต้องเข้าถึงเว็บไซต์ตัวแทน: &lt;br /&gt; พิมพ์ "/ช่วยเหลือ" บนChatbotเพื่อดูรายการคำสั่งทั้งหมด</value>
+    <value>เทเลแกรมแชทบอท มีระบบช่วยเหลือที่หลากหลายที่ทำให้คุณสามารถดำเนินธุรกรรมได้โดยไม่ต้องเปิดใช้งานเวปไซต์&lt;br /&gt; พิมพ์ "/help" หาแชทบอท เพื่อแสดงรายการคำสั่งที่เปิดให้บริการ</value>
   </data>
   <data name="lblOTP" xml:space="preserve">
     <value>OTP</value>
   </data>
   <data name="Notification" xml:space="preserve">
-    <value>การแจ้งเตือน</value>
+    <value>ข้อความแจ้ง/แจ้งเตือน</value>
   </data>
   <data name="NotificationAndSettings" xml:space="preserve">
-    <value>การแจ้งเตือนและการตั้งค่า</value>
+    <value>ข้อความแจ้ง และการแจ้งเตือน</value>
   </data>
   <data name="NotificationAndSettingsIntro" xml:space="preserve">
-    <value>เลือกรายงานที่คุณต้องการให้เทเลแกรมแชทบ็อตแจ้งเตือน:</value>
+    <value>ปรับค่าเทเลแกรมแชทบอทให้ส่งข้อความแจ้ง และการแจ้งเตือนหาคุณ</value>
   </data>
   <data name="OrUseThisLink" xml:space="preserve">
     <value>หรือคลิกที่ลิงค์นี้</value>
@@ -491,5 +491,11 @@
   </data>
   <data name="EnabledTelegramOtpNotification" xml:space="preserve">
     <value>เปิดการแจ้งเตือนรหัส OTP ผ่านเทเลแกรม</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>รายงาน/คุณสมบัติ</value>
+  </data>
+  <data name="Feature" xml:space="preserve">
+    <value>รายงาน/คุณสมบัติ</value>
   </data>
 </root>

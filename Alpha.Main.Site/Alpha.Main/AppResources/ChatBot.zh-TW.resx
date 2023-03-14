@@ -386,19 +386,19 @@
     <value>&lt;strong&gt;Telegram Chatbot&lt;/strong&gt;讓您無需訪問代理網即可通過Chatbot進行通訊來獲取最新的業務訊息。Chatbot在Telegram上運動 - 免費、安全、加密和跨平台 即時消息應用程序&lt;br /&gt; 要設置Chatbot, 請根據以下說明操作：</value>
   </data>
   <data name="IntroTelegramReports" xml:space="preserve">
-    <value>使用Telegram Chatbot, 您可以直接在Telegram上獲取以下報告，無需訪問代理網：&lt;br /&gt; 在Chatbot上輸入“/help”以獲取完整的指令列表。</value>
+    <value>Telegram Chatbot提供多種報告和功能，無須登入代理網即可運行您的生意。&lt;br /&gt; 在Chatbot輸入 "/help"以獲取完整的指令列表。</value>
   </data>
   <data name="lblOTP" xml:space="preserve">
     <value>一次性密碼</value>
   </data>
   <data name="Notification" xml:space="preserve">
-    <value>通告</value>
+    <value>通知/警惕</value>
   </data>
   <data name="NotificationAndSettings" xml:space="preserve">
-    <value>通告和設定</value>
+    <value>通知和警惕</value>
   </data>
   <data name="NotificationAndSettingsIntro" xml:space="preserve">
-    <value>選擇哪個報告您是需要通過Telegram Chatbot 通知：</value>
+    <value>配置Telegram Chatbot以便向您發送通知和安全警惕。</value>
   </data>
   <data name="OrUseThisLink" xml:space="preserve">
     <value>或者點擊此鏈接：</value>
@@ -498,5 +498,11 @@
   </data>
   <data name="EnabledTelegramOtpNotification" xml:space="preserve">
     <value>啟用Telegram Chatbot通知</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>報告/特點</value>
+  </data>
+  <data name="Feature" xml:space="preserve">
+    <value>報告/特征</value>
   </data>
 </root>
