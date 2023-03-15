@@ -65,6 +65,7 @@ html, body {
             height: 30px;
             border-radius: 0px;
             background: #313131;
+            cursor: pointer;
         }
 
         &.form-calendar {
@@ -136,6 +137,10 @@ html, body {
     right: 8px;
     font-size: 16px;
     z-index: 10;
+
+    &:after {
+        display: none !important;
+    }
 }
 
 .icon-content-copy {
@@ -304,7 +309,9 @@ html, body {
         color: #22A2FF;
     }
 }
-
+.no-click{
+    pointer-events: none;
+}
 .note {
     font-size: 13px;
     line-height: 20px;

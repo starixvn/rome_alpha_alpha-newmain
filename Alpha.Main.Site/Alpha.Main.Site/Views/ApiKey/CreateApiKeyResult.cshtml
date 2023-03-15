@@ -36,9 +36,10 @@
     <div class="form-group form-group-link">
         <label class="text-result">@ApiKey.ServiceURL</label>
         <div class="box-service-url result">
-            <div class="service-url-mask close">
+            <div class="service-url-mask close relative">
                 <div class="dummy-text">@ApiKey.GetLinkHere</div>
-                <input type="text" class="real-text" value="@AppSettings.APIGatewaysURL" readonly />
+                <input type="text" class="real-text" value="@AppSettings.APIGatewaysURL" id="serviceurl" readonly />
+                <span class="icon-content-copy icon icon-copy-secret" data-clipboard-action="copy" data-clipboard-target="#serviceurl" title="@Security.Copied"></span>
             </div>
         </div>
     </div>
