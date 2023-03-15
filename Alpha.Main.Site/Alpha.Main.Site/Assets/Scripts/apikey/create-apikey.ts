@@ -23,6 +23,7 @@ class CreateApiKey {
     $errorMessage: JQuery;
     $showURL: JQuery;
     $urlMask: JQuery;
+    $apiGuides: JQuery;
 
     constructor($: JQueryStatic, topWindow: any) {
         this.$ = $;
@@ -56,6 +57,7 @@ class CreateApiKey {
         this.$errorMessage = this.$("#error-message");
         this.$showURL = this.$(".dummy-text");
         this.$urlMask = this.$(".service-url-mask");
+        this.$apiGuides = this.$("#lnk-api-guides");
     }
 
     registerEvents = () => {
@@ -64,6 +66,7 @@ class CreateApiKey {
         this.$showPass.click(this.showPass);
         this.$showURL.click(this.showURL);
         this.handleSubmitForm();
+        this.$apiGuides.attr('href', alpha.urls.messageRootPath + "staticmessage/help?id=171248");
     }
 
     showPass = () => {

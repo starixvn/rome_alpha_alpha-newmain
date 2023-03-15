@@ -222,4 +222,7 @@
   <data name="LimitedChars" xml:space="preserve">
     <value>7-32個字符範圍內</value>
   </data>
+  <data name="Guideline" xml:space="preserve">
+    <value>指南</value>
+  </data>
 </root>

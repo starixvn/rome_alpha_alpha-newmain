@@ -17,12 +17,12 @@
             <a href="@($"{Model.MainRootPath}Apikey/ApiKeyManagement")" role="tab" data-toggle="tab">@ApiKey.APIKeyManagement</a>
         </li>
     </ul>
-    <a class="guideline" href="@Model.HelpPage" target="_blank"><span class="icon icon-book"></span>Guideline</a>
+    <a class="guideline" href="@Model.HelpPage" target="_blank"><span class="icon icon-book"></span>@ApiKey.Guideline</a>
 </div>
 <div class="tab-content">
     <form class="block" id="apikey-form" autocomplete="off">
         <div id="error-message" class="container-msg w-450"></div>
-        <div class="form-group div-intro">@ApiKey.APIKey_Intro</div>
+        <div class="form-group div-intro">@Html.Raw(ApiKey.APIKey_Intro)</div>
         <div class="form-group">
             <label>@ApiKey.APIKeyName<span class="require"> *</span><span class="icon-information-outline" title="@ApiKey.APIKey_KeyNameInfo"></span></label>
             <input type="text" class="form-control" id="apiname" autocomplete="off" maxlength="50" />

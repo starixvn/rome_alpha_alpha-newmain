@@ -222,4 +222,7 @@
   <data name="LimitedChars" xml:space="preserve">
     <value>7-32 ký tự</value>
   </data>
+  <data name="Guideline" xml:space="preserve">
+    <value>Hướng Dẫn</value>
+  </data>
 </root>

@@ -222,4 +222,7 @@
   <data name="LimitedChars" xml:space="preserve">
     <value>มีตัวอักษรระหว่าง 7-32</value>
   </data>
+  <data name="Guideline" xml:space="preserve">
+    <value>คู่มือ</value>
+  </data>
 </root>
