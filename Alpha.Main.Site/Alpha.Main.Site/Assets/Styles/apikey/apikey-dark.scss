@@ -313,13 +313,15 @@ html, body {
         padding: 1px 11px;
         float: none;
         text-shadow: none;
+        position: relative;
+
 
         &.close {
             .dummy-text {
                 display: inline-block;
             }
 
-            .real-text {
+            .real-text, .icon {
                 display: none;
             }
         }
@@ -336,7 +338,8 @@ html, body {
 
             .real-text {
                 text-align: left;
-                width: 250px;
+                width: 360px;
+                padding-right: 30px;
             }
         }
     }
@@ -373,10 +376,6 @@ html, body {
 // style result
 .block.block-result {
     margin-top: 9px;
-
-    .box-service-url .service-url-mask.open .real-text {
-        width: 360px;
-    }
 
     .form-group {
         width: 360px;
@@ -416,6 +415,8 @@ html, body {
 .apikey-form {
     .box-service-url {
         margin: 22px 0 12px;
+        height: 26px;
+        line-height: 26px;
     }
 }
 

@@ -308,13 +308,14 @@ html, body {
         border-radius: 0;
         padding: 1px 11px;
         float: none;
+        position: relative;
 
         &.close {
             .dummy-text {
                 display: inline-block;
             }
 
-            .real-text {
+            .real-text, .icon {
                 display: none;
             }
         }
@@ -332,6 +333,8 @@ html, body {
             .real-text {
                 text-align: left;
                 color: #444444;
+                width: 360px;
+                padding-right: 30px;
             }
         }
     }
@@ -368,10 +371,6 @@ html, body {
 // style result
 .block.block-result {
     margin-top: 9px;
-
-    .box-service-url .service-url-mask.open .real-text {
-        width: 360px;
-    }
 
     input:read-only {
         background: #ECECEC;
@@ -421,5 +420,7 @@ html, body {
 .apikey-form {
     .box-service-url {
         margin: 22px 0 12px;
+        height: 26px;
+        line-height: 26px;
     }
 }
