@@ -122,7 +122,6 @@ html, body {
 }
 
 .icon-eye, .icon-eye-close, .icon-calendar {
-    color: #727272;
     position: absolute;
     z-index: 10;
 }
@@ -300,6 +299,10 @@ html, body {
 .block .form-group.div-intro {
     margin-top: 10px;
     line-height: 20px;
+
+    a {
+        color: #22A2FF;
+    }
 }
 
 .note {
