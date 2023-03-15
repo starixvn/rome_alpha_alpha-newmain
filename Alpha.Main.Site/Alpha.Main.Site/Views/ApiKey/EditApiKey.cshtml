@@ -9,7 +9,7 @@
 }
 
 <form class="block" id="apikey-form" autocomplete="off">
-    <div id="error-message" class="container-msg w-450"></div>
+    <div id="error-message" class="container-msg"></div>
     <div class="form-group">
         <label>@ApiKey.APIKeyName</label>
         <input type="text" class="form-control" id="apiname" autocomplete="off" value="@Model.ApiKeyInfo.Name" maxlength="50" />
@@ -21,14 +21,14 @@
             <span class="icon-content-copy icon" data-clipboard-action="copy" data-clipboard-target="#key" title="@Security.Copied"></span>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group form-calendar">
         <label>@ApiKey.ExpirationDate</label>
-        <div class="relative control date">
+        
             <div class="relative input-group date" id="dpkContainer">
                 <input type="text" class="form-control" id="expirationdate" autocomplete="off" value="@Model.ApiKeyInfo.ExpirationDate" placeholder="MM/DD/YYYY" />
                 <span class="input-group-addon icon-calendar"></span>
             </div>
-        </div>
+     
     </div>
     <label class="scope-label">@ApiKey.SelectScopes</label>
     <div class="ml-25">

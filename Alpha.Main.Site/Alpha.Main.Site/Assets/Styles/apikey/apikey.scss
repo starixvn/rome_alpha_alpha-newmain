@@ -58,6 +58,22 @@ html, body {
             height: 30px;
             border-radius: 0px;
         }
+
+        &.form-calendar {
+            .bootstrap-datetimepicker-widget.dropdown-menu {
+                inset: 30px auto auto 0px !important;
+
+                &:before {
+                    left: 7px !important;
+                    right: auto !important;
+                }
+
+                &:after {
+                    left: 8px !important;
+                    right: auto !important;
+                }
+            }
+        }
     }
 
     label {
@@ -203,7 +219,7 @@ html, body {
 }
 
 .relative {
-    position: relative;
+    position: relative!important;
 }
 
 .control {
@@ -211,9 +227,12 @@ html, body {
 }
 
 .input-group.date .input-group-addon {
-    right: 30px;
+    right: 20px;
     position: absolute;
     z-index: 100;
+    font-size: 16px;
+    padding: 0;
+    top: 7px;
 }
 
 .btn-group {
