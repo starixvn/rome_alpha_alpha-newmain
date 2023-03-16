@@ -16,31 +16,37 @@ html, body {
             color: #5C1218;
         }
     }
-}
 
-.guideline {
-    position: absolute;
-    right: 0;
-    top: 10px;
-    border: 1px solid #0B599C;
-    color: #0B599C;
-    padding: 1px 12px;
-    font-weight: bold;
-    font-size: 13px;
-    line-height: 15px;
-
-    &:hover {
-        text-decoration: none;
-    }
-
-    .icon {
-        font-size: 11px;
-
+    .guideline {
         &:after {
             display: none;
         }
+
+        .btn-guideline {
+            border-radius: 0;
+            border: 1px solid #0B599C;
+            color: #0B599C;
+            padding: 1px 12px;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 15px;
+            margin: 9px 0 0 0;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            .icon {
+                font-size: 11px;
+
+                &:after {
+                    display: none;
+                }
+            }
+        }
     }
 }
+
 
 .block {
     margin-top: 20px;
@@ -90,7 +96,13 @@ html, body {
         color: #A11515;
     }
 }
-
+.list-scope{
+    label{
+        display: inline-block;
+        width: auto;
+        cursor: pointer;
+    }
+}
 .scope-input {
     font-size: 13px;
     line-height: 20px;
@@ -113,6 +125,10 @@ html, body {
     float: none;
     margin: -1px 0 0 4px;
     font-size: 16px;
+    cursor: default;
+    &:after{
+        visibility: hidden;
+    }
 }
 
 .icon-eye, .icon-eye-close, .icon-calendar {

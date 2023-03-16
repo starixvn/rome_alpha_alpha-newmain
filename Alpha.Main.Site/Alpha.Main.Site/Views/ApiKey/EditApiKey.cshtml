@@ -31,14 +31,13 @@
      
     </div>
     <label class="scope-label">@ApiKey.SelectScopes</label>
-    <div class="ml-25">
-        <label class="scope-input mt-10"><input type="checkbox" value="All" id="ckbAll" /> @ApiKey.All</label>
+    <div class="list-scope">
+        <label class="scope-input"><input type="checkbox" value="All" id="ckbAll" /> @ApiKey.All</label>
         <div class="ml-25" id="apiKeyScopes">
             @foreach (var scope in Model.Scopes)
             {
-
                 var isChecked = Model.ApiKeyInfo.ScopeIdList.Contains(scope);
-                <label class="scope-input"><input type="checkbox" value="@scope" name="scope" @(isChecked ? "checked" : "") />@ResourceHelper.GetApiKeyResource($"Scope_{scope}", Model.Language)</label>
+            <div><label class="scope-input"><input type="checkbox" value="@scope" name="scope" @(isChecked ? "checked" : "") />@ResourceHelper.GetApiKeyResource($"Scope_{scope}", Model.Language)</label></div>
             }
         </div>
     </div>
