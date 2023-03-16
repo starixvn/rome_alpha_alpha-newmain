@@ -27,6 +27,8 @@
 
         public string HelpPage => UrlHelper.MapMessagesPath("~/StaticMessage/Help?id=171247");
 
+        public string APIGuidesURL => UrlHelper.MapMessagesPath("~/StaticMessage/Help?id=171248");
+
         public string MainRootPath => UrlHelper.MapMainPath("~/");
     }
 }

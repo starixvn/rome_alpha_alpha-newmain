@@ -229,7 +229,7 @@
     <value>Ngày hết hạn: ngày Khóa API hết hiệu lực.</value>
   </data>
   <data name="APIKey_Intro" xml:space="preserve">
-    <value>&lt;span&gt;API Trang Đại Lý là cách thức mới để truy cập các báo cáo thông qua dịch vụ API. Bằng cách tạo các API đã tùy chỉnh, bạn có thể truy xuất các báo cáo phù hợp với nhu cầu của mình. Để tìm hiểu thêm, vui lòng tham khảo tài liệu API ở &lt;a id="lnk-api-guides" href="" target="_blank"&gt;đường dẫn này&lt;/a&gt;.&lt;/span&gt;</value>
+    <value>&lt;span&gt;API Trang Đại Lý là cách thức mới để truy cập các báo cáo thông qua dịch vụ API. Bằng cách tạo các API đã tùy chỉnh, bạn có thể truy xuất các báo cáo phù hợp với nhu cầu của mình. Để tìm hiểu thêm, vui lòng tham khảo tài liệu API ở &lt;a id="lnk-api-guides" href="{0}" target="_blank"&gt;đường dẫn này&lt;/a&gt;.&lt;/span&gt;</value>
   </data>
   <data name="APIKey_KeyNameInfo" xml:space="preserve">
     <value>Tên Khóa API: tên định danh duy nhất giúp phân biệt giữa các Khóa API với nhau để dễ quản lý.</value>

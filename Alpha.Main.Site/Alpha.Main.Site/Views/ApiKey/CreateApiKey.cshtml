@@ -20,12 +20,12 @@
             <a class="btn-guideline" href="@Model.HelpPage" target="_blank"><span class="icon icon-book"></span>@ApiKey.Guideline</a>
         </li>
     </ul>
-    
+
 </div>
 <div class="tab-content">
     <form class="block" id="apikey-form" autocomplete="off">
         <div id="error-message" class="container-msg w-450"></div>
-        <div class="form-group div-intro">@Html.Raw(ApiKey.APIKey_Intro)</div>
+        <div class="form-group div-intro">@Html.Raw(string.Format(ApiKey.APIKey_Intro, Model.APIGuidesURL))</div>
         <div class="form-group">
             <label>@ApiKey.APIKeyName<span class="require"> *</span><span class="icon-information-outline" title="@ApiKey.APIKey_KeyNameInfo"></span></label>
             <input type="text" class="form-control" id="apiname" autocomplete="off" maxlength="50" />

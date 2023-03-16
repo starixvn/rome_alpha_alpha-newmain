@@ -223,7 +223,7 @@
     <value>7-32 characters</value>
   </data>
   <data name="APIKey_Intro" xml:space="preserve">
-    <value>&lt;span&gt;The Agency API offers a new way to access reports through its API service. By creating customized API keys, you can retrieve reports tailored to your specific needs. For further details, please refer to the API documentation in this &lt;a id="lnk-api-guides" href="" target="_blank"&gt;link&lt;/a&gt;.&lt;/span&gt;</value>
+    <value>&lt;span&gt;The Agency API offers a new way to access reports through its API service. By creating customized API keys, you can retrieve reports tailored to your specific needs. For further details, please refer to the API documentation in this &lt;a id="lnk-api-guides" href="{0}" target="_blank"&gt;link&lt;/a&gt;.&lt;/span&gt;</value>
   </data>
   <data name="APIKey_KeyNameInfo" xml:space="preserve">
     <value>API Key Name: a unique identifier separates one API Key from another for ease of management.</value>

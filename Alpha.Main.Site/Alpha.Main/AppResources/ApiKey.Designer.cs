@@ -106,7 +106,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;span&gt;The Agency API offers a new way to access reports through its API service. By creating customized API keys, you can retrieve reports tailored to your specific needs. For further details, please refer to the API documentation in this &lt;a id=&quot;lnk-api-guides&quot; href=&quot;&quot; target=&quot;_blank&quot;&gt;link&lt;/a&gt;.&lt;/span&gt;.
+        ///   Looks up a localized string similar to &lt;span&gt;The Agency API offers a new way to access reports through its API service. By creating customized API keys, you can retrieve reports tailored to your specific needs. For further details, please refer to the API documentation in this &lt;a id=&quot;lnk-api-guides&quot; href=&quot;{0}&quot; target=&quot;_blank&quot;&gt;link&lt;/a&gt;.&lt;/span&gt;.
         /// </summary>
         public static string APIKey_Intro {
             get {
