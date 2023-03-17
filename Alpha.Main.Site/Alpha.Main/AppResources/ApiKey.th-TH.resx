@@ -130,70 +130,70 @@
     <value>API Key</value>
   </data>
   <data name="APIKeyManagement" xml:space="preserve">
-    <value>API Key Management</value>
+    <value>จัดการ API Key</value>
   </data>
   <data name="APIKeyName" xml:space="preserve">
-    <value>API Key Name</value>
+    <value>ชื่อ API Key</value>
   </data>
   <data name="APIKeyNameCanNotContainSpecialCharacters" xml:space="preserve">
-    <value>API Key Name cannot contain special characters.</value>
+    <value>ชื่อ API Key ไม่สามารถใช้อักษรพิเศษต่างๆ ได้</value>
   </data>
   <data name="APIPassphrase" xml:space="preserve">
     <value>API Passphrase</value>
   </data>
   <data name="APIPassPhraseIsImportantForYouToUseLater" xml:space="preserve">
-    <value>API Passphrase is essential information for later use.&lt;br /&gt;Please store it somewhere safe.</value>
+    <value>API Passphrase เป็นข้อมูลจำเป็นที่สำคัญสำหรับการใช้งานในภายหลัง กรุณาเก็บรักษาไว้ให้ดี</value>
   </data>
   <data name="APIPassPhraseMustBeBetweenCharacters" xml:space="preserve">
-    <value>API Passphrase must be between [7-32] characters.</value>
+    <value>API Passphrase ต้องมีความยาวระหว่าง [7-32] ตัวอักษร</value>
   </data>
   <data name="APISecret" xml:space="preserve">
     <value>API Secret</value>
   </data>
   <data name="APISecretCanNotBeRetrieved" xml:space="preserve">
-    <value>API Secret will only be displayed ONCE and cannot be retrieved.&lt;br /&gt;Please note it down and keep it safe.</value>
+    <value>API Secret จะแสดงให้ดูเพียงแค่ครั้งเดียวเท่านั้น และไม่สามารถเรียกคืนมาแสดงผลได้อีก กรุณาจำหรือจดไว้ และเก็บรักษาไว้ให้ดี</value>
   </data>
   <data name="AreYouSureRevokeAPIKey" xml:space="preserve">
-    <value>Are you sure you want to revoke this API Key</value>
+    <value>คุณแน่ใจว่าต้องการเพิกถอน API Key</value>
   </data>
   <data name="CantSelectTimeFromPast" xml:space="preserve">
-    <value>Expiration Date must not be in the past.</value>
+    <value>วันหมดอายุต้องมากกว่าวันที่ปัจจุบัน</value>
   </data>
   <data name="CreateAPIKey" xml:space="preserve">
-    <value>Create New API Key</value>
+    <value>สร้าง API Key ใหม่</value>
   </data>
   <data name="CreatedDate" xml:space="preserve">
-    <value>Created Date</value>
+    <value>วันที่สร้าง</value>
   </data>
   <data name="Edit" xml:space="preserve">
-    <value>Edit</value>
+    <value>แก้ไข</value>
   </data>
   <data name="EditAPIKey" xml:space="preserve">
-    <value>Edit API Key</value>
+    <value>แก้ไข API Key</value>
   </data>
   <data name="ExpirationDate" xml:space="preserve">
-    <value>Expiration Date</value>
+    <value>วันที่หมดอายุ</value>
   </data>
   <data name="Never" xml:space="preserve">
-    <value>Never</value>
+    <value>ไม่มีกำหนด</value>
   </data>
   <data name="NoMoreThan50Characters" xml:space="preserve">
-    <value>API name cannot be longer than 50 characters!</value>
+    <value>ชื่อ API มีความยาวได้ไม่เกิน 50 ตัวอักษร</value>
   </data>
   <data name="PleaseInputAPIKeyName" xml:space="preserve">
-    <value>Please input API Key Name.</value>
+    <value>กรุณาใส่ชื่อ API</value>
   </data>
   <data name="PleaseInputPassPhrase" xml:space="preserve">
-    <value>Please input API Passphrase.</value>
+    <value>กรุุณาใส่ API Passphrase</value>
   </data>
   <data name="Revoke" xml:space="preserve">
-    <value>Revoke</value>
+    <value>เพิกถอน</value>
   </data>
   <data name="ScopesIsRequired" xml:space="preserve">
-    <value>Scopes is required.</value>
+    <value>ต้องเลือกระดับการเข้าถึง</value>
   </data>
   <data name="ScopesSetThePermisson" xml:space="preserve">
-    <value>(Scopes set the permisson granted to the API Key)</value>
+    <value>(การใช้งานที่อนุญาตให้กับ API Key)</value>
   </data>
   <data name="Scope_1" xml:space="preserve">
     <value>รายงานรายละเอียด ชนะ แพ้</value>
@@ -202,10 +202,10 @@
     <value>รายงานการเดิมพันที่ยังไม่สิ้นสุด</value>
   </data>
   <data name="SelectScopes" xml:space="preserve">
-    <value>Select Scopes</value>
+    <value>เลือกระดับการเข้าถึง</value>
   </data>
   <data name="ThisActionCannotBeUndone" xml:space="preserve">
-    <value>This action cannot be undone.</value>
+    <value>เมื่อดำเนินการแล้วจะไม่สามารถย้อนกลับได้</value>
   </data>
   <data name="UpdateSuccessful" xml:space="preserve">
     <value>อัพเดทเสร็จสมบูรณ์</value>
@@ -224,5 +224,8 @@
   </data>
   <data name="Guideline" xml:space="preserve">
     <value>คู่มือ</value>
+  </data>
+  <data name="APIKey_PassphraseValidate" xml:space="preserve">
+    <value>API Passphrase ไม่สามารถใส่ช่องว่างหรืออักษรสัญลักษณ์ได้</value>
   </data>
 </root>
