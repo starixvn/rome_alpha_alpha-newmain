@@ -11,6 +11,7 @@ class ApiKeyManagement {
     $apiKeyNames: JQuery;
     $apiKeyPopups: JQuery;
     clipboard: any;
+    apiNameClick = false;
 
     constructor($: JQueryStatic, topWindow: any, clipboard: any) {
         this.$ = $;
@@ -59,6 +60,19 @@ class ApiKeyManagement {
                     window.console.error("Trigger:", e.trigger);
                 });
         }
+
+        this.$(window).click(function (e) {
+            if (self.apiNameClick) {
+                self.apiNameClick = false;
+                return;
+            }
+
+            var $elm = self.$(e.target);
+
+            if ($elm.closest('.api-key-popup').length == 0) {
+                self.$apiKeyPopups.addClass('hide');
+            }
+        });
     }
 
     registerApiKeyRevokeEvent = () => {
@@ -96,6 +110,7 @@ class ApiKeyManagement {
         popup.removeClass('hide');
 
         popup.css({ left: $elm.position().left });
+        this.apiNameClick = true;
     };
 }
 

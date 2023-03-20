@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Action" xml:space="preserve">
-    <value>กระทำ</value>
+    <value>เลือกปฏิบัติการ</value>
   </data>
   <data name="All" xml:space="preserve">
     <value>ทั้งหมด</value>
@@ -211,7 +211,7 @@
     <value>อัพเดทเสร็จสมบูรณ์</value>
   </data>
   <data name="Expired" xml:space="preserve">
-    <value>หมดอายุ</value>
+    <value>หมดอายุแล้ว</value>
   </data>
   <data name="Save" xml:space="preserve">
     <value>บันทึก</value>
@@ -226,6 +226,33 @@
     <value>คู่มือ</value>
   </data>
   <data name="APIKey_PassphraseValidate" xml:space="preserve">
-    <value>API Passphrase ไม่สามารถใส่ช่องว่างหรืออักษรสัญลักษณ์ได้</value>
+    <value>API Passphrase ไม่สามารถใส่ช่องว่าง ตัวอักษรสัญลักษณ์ หรือตัวอักษรกำกับเสียงได้</value>
+  </data>
+  <data name="APIKey_KeyNameInfo" xml:space="preserve">
+    <value>ชื่อ API Key : ชื่อที่บ่งบอกและแบ่งแยกแต่ละ API Key เพื่อให้ง่ายต่อการบริหารจัดการ</value>
+  </data>
+  <data name="APIKey_PassphraseInfo" xml:space="preserve">
+    <value>API Passphrase : เช่นเดียวกับรหัสผ่าน - ต้องเก็บรักษาไว้ให้ดี</value>
+  </data>
+  <data name="APIKey_ExpirationInfo" xml:space="preserve">
+    <value>วันหมดอายุ : วันสุดท้ายที่สามารถใช้งาน API Key ได้</value>
+  </data>
+  <data name="APIKey_ScopesInfo" xml:space="preserve">
+    <value>ระดับการเข้าถึง คือ การอนุญาต API Key ให้เข้าถึงรายงานที่ระบุได้</value>
+  </data>
+  <data name="APIKey_SendInfo" xml:space="preserve">
+    <value>กรุณาเก็บรวบรวมข้อมูลเหล่านี้รวมทั้งคำแนะนำ และส่งมอบไปให้ทีมพัฒนาระบบของคุณ</value>
+  </data>
+  <data name="CreatedPreviousStep" xml:space="preserve">
+    <value>ข้อมูลนี้ถูกสร้างขึ้นจากขั้นตอนก่อนหน้า</value>
+  </data>
+  <data name="ServiceURL" xml:space="preserve">
+    <value>URL ที่บริการ</value>
+  </data>
+  <data name="GetLinkHere" xml:space="preserve">
+    <value>รับลิงค์ที่นี่</value>
+  </data>
+  <data name="APIKey_Intro" xml:space="preserve">
+    <value>&lt;span&gt;API สำหรับเอเย่นท์จะช่วยให้ท่านสามารถเข้าถึงรายงานและบริการผ่านการเรียกใช้งาน API.  ด้วยการสร้าง API Key ท่านสามารถปรับแต่งการเข้าถึงข้อมูลให้เหมาะสมกับการใช้งาน   สำหรับรายละเอียดเพิ่มเติม สามารถศึกษาได้จากคู่มือการใช้งาน API  &lt;a id="lnk-api-guides" href="{0}" target="_blank"&gt;ในลิงค์นี้&lt;/a&gt;.&lt;/span&gt;</value>
   </data>
 </root>
