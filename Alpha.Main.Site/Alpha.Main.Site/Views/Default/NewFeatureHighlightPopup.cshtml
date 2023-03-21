@@ -1,0 +1,15 @@
+﻿@model string
+<div class="popup-highlight hide" id="boxHighlightPopupNewFeature">
+    <button type="button" class="icon icon-close close" title="@Resources.close"><span aria-hidden="true"></span></button>
+    <div class="text">
+        <img src="~/Assets/Images/language@(Model).svg?v=@AppSettings.JsVersion" alt="change display language">
+        <p><span>@Resources.HighlightPopupNewFeatureTitle</span>@Resources.HighlightPopupNewFeatureIntro</p>
+    </div>
+    <div class="action">
+        <label class="label">
+            <input id="chkHideHighlightPopupNewFeature" type="checkbox" />
+            <span>@Resources.doNotShowAgain</span>
+        </label>
+        <a class="btn-submit" id="linkHighlightPopupCheckOut" href="@MicroSites.AccountInfoUrl("~/ProfilePicture")" target="main">@Resources.CheckOut</a>
+    </div>
+</div>

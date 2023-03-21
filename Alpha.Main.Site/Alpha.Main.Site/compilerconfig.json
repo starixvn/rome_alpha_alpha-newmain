@@ -202,5 +202,9 @@
   {
     "outputFile": "Assets/styles/advertisement/popup-advertisement-dark.css",
     "inputFile": "Assets/styles/advertisement/popup-advertisement-dark.scss"
+  },
+  {
+    "outputFile": "Assets/Styles/customer-profiles/customer-profile-dark.css",
+    "inputFile": "Assets/Styles/customer-profiles/customer-profile-dark.scss"
   }
 ]

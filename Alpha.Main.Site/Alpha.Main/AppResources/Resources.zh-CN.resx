@@ -121,7 +121,7 @@
     <value>关闭</value>
   </data>
   <data name="ProfileClickTootip" xml:space="preserve">
-    <value>点击此处编辑个人头像</value>
+    <value>点击这里修改个人设置。</value>
   </data>
   <data name="subAcc" xml:space="preserve">
     <value>子账号</value>
@@ -140,7 +140,7 @@
 &lt;div&gt;... 更安全化及个性化.&lt;/div&gt;</value>
   </data>
   <data name="ProfileLoginTip" xml:space="preserve">
-    <value>尊敬的代理们，为了区分我们的网站与假冒网站，我们为您选择了默认的个人资料图像。您可以</value>
+    <value>尊敬的代理， 我们选择了默认的个人资料图片，以帮助将我们的网站与假网站区分开来。 您可以&lt;a class="change-picture-link" href="{0}" target="main" id="changePictureLink"&gt;点击此处&lt;/a&gt;选择一个新的。&lt;br/&gt;此外，您可以在&lt;a class="change-picture-link" href="{1}" target="main"&gt;此处&lt;/a&gt;设置您的首选语言。 谢谢。</value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>点击此处</value>
@@ -158,7 +158,7 @@
     <value>联络我们</value>
   </data>
   <data name="EditProfilePicture" xml:space="preserve">
-    <value>个人头像</value>
+    <value>个人设置</value>
   </data>
   <data name="LoginOption" xml:space="preserve">
     <value>登录选项</value>
@@ -520,9 +520,6 @@
   <data name="DataProcessingNotification" xml:space="preserve">
     <value>数据处理通知</value>
   </data>
-  <data name="ProfileLoginTip1" xml:space="preserve">
-    <value>以挑选新的。谢谢。</value>
-  </data>
   <data name="invalidCaptcha" xml:space="preserve">
     <value>識別碼錯誤</value>
   </data>
@@ -658,10 +655,13 @@
   <data name="LoveToHear" xml:space="preserve">
     <value>我们很乐意听取您的意见。</value>
   </data>
-  <data name="BackupDomains_Intro" xml:space="preserve">
-    <value>您的后备域名已准备就绪</value>
-  </data>
   <data name="CheckOut" xml:space="preserve">
     <value>查看</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
+    <value>去个人设置选择您的首选语言</value>
+  </data>
+  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
+    <value>语言显示</value>
   </data>
 </root>

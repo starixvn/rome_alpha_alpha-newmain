@@ -51,7 +51,7 @@ var indexManager = {
         indexManager.setCurrentUrl();
 
         indexManager.initFeedback();
-        indexManager.initBackupDomains();
+        indexManager.initNewFeatureHighlightPopup();
 
         if (indexManager.requiredNetworkSpeedCalculation) {
             setTimeout(indexManager.calculateUserConnectionSpeed, 8000);
@@ -340,46 +340,31 @@ var indexManager = {
         });
     },
 
-    initBackupDomains: function () {
-        indexManager.highlightPopup('backup-domains');
+    initNewFeatureHighlightPopup: function () {
+        const featureName = "DisplayLanguage";
+        const cookiesName = indexManager.hidePopupCookies + featureName;
+        const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
 
-        $("#btn-backup-domains").click(function () {
-            box.removeClass('show-popup');
-            var iframe = <HTMLIFrameElement>document.getElementById('main');
-            iframe.src = alpha.urls.messageRootPath + "BackupDomains/Index";
-        });
-
-        var box = $('.backup-domains-box');
-
-        $(window).scroll(function () {
-            box.removeClass('show-popup');
-        });
-
-        $("#main-menu-tab")["mCustomScrollbar"]({
-            callbacks: {
-                onScrollStart: () => {
-                    box.removeClass('show-popup');
-                }
-            }
-        });
-    },
-    highlightPopup: (funcName) => {
-        var cookiesName = indexManager.hidePopupCookies + funcName;
-        var hidePopup =
-            localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
-        var box = $('.' + funcName + '-box');
-
-        if (hidePopup !== '1') {
+        if (hidePopup !== "1") {
             popupManager.closeAllPopup();
+            const box = $("#boxHighlightPopupNewFeature").removeClass("hide");
 
-            box.addClass('show-popup');
+            box.find(".icon-close").click(() => box.addClass("hide"));
 
-            $('#btn-hide-' + funcName + '-popup').click(function () {
+            box.find("#chkHideHighlightPopupNewFeature").click(function () {
                 localStorage.setItem(indexManager.getCustomerCookiesName(cookiesName), "1");
-                box.removeClass('show-popup');
+                box.addClass("hide");
             });
 
-            box.find('.icon-close').click(() => { box.removeClass('show-popup'); });
+            box.find("#linkHighlightPopupCheckOut").click(() => box.addClass("hide"));
+
+            //$(window).scroll(() => box.addClass("hide"));
+
+            //$("#main-menu-tab")["mCustomScrollbar"]({
+            //    callbacks: {
+            //        onScrollStart: () => box.addClass("hide")
+            //    }
+            //});
         }
     },
     openFeedback: function () {

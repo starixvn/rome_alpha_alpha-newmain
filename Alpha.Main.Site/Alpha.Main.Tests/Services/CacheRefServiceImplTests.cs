@@ -27,7 +27,28 @@
             var expectedResult = "Virtual Sports";
             var sportTypeId = 5;
             remotingRefService
-                .GetSportName(sportTypeId.ToString(), DefaultLanguage)
+                .GetSportName(sportTypeId.ToString(), DefaultLanguage, null)
+                .Returns(expectedResult);
+
+            // Act
+            var actualResult = cacheRefService.GetSportName(sportTypeId);
+
+            // Assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void GetSportName_DummySportName_ReturnsCorrectSportName()
+        {
+            // Arrange
+            var expectedResult = "Virtual Sports";
+            var sportTypeId = 5;
+            string expectedSportName = null;
+            remotingRefService
+                .GetSportName(sportTypeId.ToString(), DefaultLanguage, null)
+                .Returns(expectedSportName);
+            remotingRefService
+                .GetResourceDataByRefIdAndResourceId("DummySport", sportTypeId.ToString(), DefaultLanguage, string.Empty)
                 .Returns(expectedResult);
 
             // Act

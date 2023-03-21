@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
     using Alpha.Main.Constants;
+    using Alpha.Main.Services.Impl;
     using MediatR;
     using Models.Requests;
     using Requests;
@@ -13,16 +14,23 @@
         IRequestHandler<TelegramBotLanguageQuery, LanguageViewModel>,
         IRequestHandler<ChangeLanguageCommand, string>
     {
+        private readonly UpdateUsageLanguageService updateUsageLanguageService;
+
+        public LanguageHandler(UpdateUsageLanguageService updateUsageLanguageService)
+        {
+            this.updateUsageLanguageService = updateUsageLanguageService;
+        }
+
         public string Handle(ChangeLanguageCommand message)
         {
-            if (message == null)
-            {
-                throw new ArgumentNullException(nameof(message), "Command cannot be null");
-            }
-
             var languageCode = Standardize(message.LanguageCode);
+            var languageKey = message.ChangeLanguage(languageCode);
 
-            message.ChangeLanguage(languageCode);
+            if (message.IsUpdateDisplayLanguage)
+            {
+                updateUsageLanguageService.UpdateUsageLanguage(message.CustId, message.SubAccId, languageKey, message.IP);
+                message.SetDisplayLanguage(languageCode);
+            }
 
             return languageCode;
         }
@@ -56,25 +64,13 @@
         }
 
         private string Standardize(string languageCode)
-        {
-            if (string.IsNullOrWhiteSpace(languageCode)
-              || !Language.CodeNames.Keys.Contains(languageCode))
-            {
-                languageCode = Language.Default;
-            }
-
-            return languageCode;
-        }
+            => string.IsNullOrWhiteSpace(languageCode) || !Language.CodeNames.Keys.Contains(languageCode)
+            ? Language.Default
+            : languageCode;
 
         private string StandardizeTelegramBotCodeNames(string languageCode)
-        {
-            if (string.IsNullOrWhiteSpace(languageCode)
-             || !Language.TelegramChatBotCodeNames.Keys.Contains(languageCode))
-            {
-                languageCode = Language.Default;
-            }
-
-            return languageCode;
-        }
+            => string.IsNullOrWhiteSpace(languageCode) || !Language.TelegramChatBotCodeNames.Keys.Contains(languageCode)
+            ? Language.Default
+            : languageCode;
     }
 }

@@ -279,7 +279,7 @@ var headerNav = {
         headerNav.domElements.switchMode.on('click', headerNav.changeTheme);
 
         headerNav.domElements.changeLanguageLink.on('click touchend', (event) => {
-            headerNav.changeLanguage($(event.target).data("value"));
+            headerNav.changeLanguage($(event.target).data("value"), false);
         });
 
         // Logout link for mobile
@@ -369,11 +369,11 @@ var headerNav = {
         });
     },
 
-    changeLanguage: function (lang) {
+    changeLanguage: function (lang, isDisplayLanguage) {
         $.ajax({
             type: "POST",
             url: headerNav.urls.changeLanguage,
-            data: { languageCode: lang },
+            data: { languageCode: lang, displayLanguage: isDisplayLanguage },
             success: function (result) {
                 if (result !== undefined) {
                     if (menuBar.domElements.reportDomain || menuBar.domElements.betlistDomain) {

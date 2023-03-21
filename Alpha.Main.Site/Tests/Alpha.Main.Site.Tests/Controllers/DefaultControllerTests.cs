@@ -1,6 +1,9 @@
 ﻿namespace Alpha.Main.Site.Tests.Controllers
 {
-    using Alpha.Main.Services.Impl;
+    using System.Net;
+    using System.Threading.Tasks;
+    using System.Web;
+    using System.Web.Mvc;
     using Alpha.Web.Models;
     using KellermanSoftware.CompareNetObjects;
     using Main.Constants;
@@ -14,10 +17,6 @@
     using Site.Requests;
     using Site.Requests.Otp;
     using Sunplus.Agent.Model.Entities;
-    using System.Net;
-    using System.Threading.Tasks;
-    using System.Web;
-    using System.Web.Mvc;
     using Web.Helpers;
 
     [TestFixture]
@@ -28,7 +27,6 @@
         private SecurityCodeChecker securityCodeChecker;
         private NicknameChecker nicknameChecker;
         private DefaultController defaultController;
-        private IUpdateUsageLanguageService updateUsageLanguageService;
 
         [SetUp]
         public void SetUp()
@@ -40,9 +38,8 @@
             mediator = Substitute.For<IMediator>();
             securityCodeChecker = Substitute.For<SecurityCodeChecker>();
             nicknameChecker = Substitute.For<NicknameChecker>();
-            updateUsageLanguageService = Substitute.For<IUpdateUsageLanguageService>();
 
-            defaultController = new DefaultController(userSession, mediator, securityCodeChecker, nicknameChecker, updateUsageLanguageService);
+            defaultController = new DefaultController(userSession, mediator, securityCodeChecker, nicknameChecker);
         }
 
         [Test]
@@ -151,7 +148,7 @@
              await defaultController.Index();
 
             // Assert
-            mediator.Received().SendAsync(
+            await mediator.Received().SendAsync(
                 Arg.Is<IndexQuery>(message => compareLogic.Compare(message, query).AreEqual));
         }
 

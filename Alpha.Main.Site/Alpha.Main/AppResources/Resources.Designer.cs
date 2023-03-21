@@ -187,15 +187,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your backup domains are ready..
-        /// </summary>
-        public static string BackupDomains_Intro {
-            get {
-                return ResourceManager.GetString("BackupDomains_Intro", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Balance.
         /// </summary>
         public static string balance {
@@ -475,7 +466,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Profile picture.
+        ///   Looks up a localized string similar to Profile Settings.
         /// </summary>
         public static string EditProfilePicture {
             get {
@@ -561,6 +552,24 @@ namespace Alpha.Main.AppResources {
         public static string highestTurnoverOfTheMonth {
             get {
                 return ResourceManager.GetString("highestTurnoverOfTheMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Go to Profile Settings to choose your preferred language..
+        /// </summary>
+        public static string HighlightPopupNewFeatureIntro {
+            get {
+                return ResourceManager.GetString("HighlightPopupNewFeatureIntro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display Language.
+        /// </summary>
+        public static string HighlightPopupNewFeatureTitle {
+            get {
+                return ResourceManager.GetString("HighlightPopupNewFeatureTitle", resourceCulture);
             }
         }
         
@@ -1142,7 +1151,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click here to edit profile picture..
+        ///   Looks up a localized string similar to Click here to edit profile settings..
         /// </summary>
         public static string ProfileClickTootip {
             get {
@@ -1151,20 +1160,11 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dear valued agents, To distinguish our site from fake sites, we have selected a default profile picture for you. You can .
+        ///   Looks up a localized string similar to Dear valued Agents, We have selected a default profile picture to help distinguish our site from fake ones. You can &lt;a class=&quot;change-picture-link&quot; href=&quot;{0}&quot; target=&quot;main&quot; id=&quot;changePictureLink&quot;&gt;click here&lt;/a&gt; to pick up a new one.&lt;br/&gt;In addition, you can set your language preferences &lt;a class=&quot;change-picture-link&quot; href=&quot;{1}&quot; target=&quot;main&quot;&gt;here&lt;/a&gt;. Thank you..
         /// </summary>
         public static string ProfileLoginTip {
             get {
                 return ResourceManager.GetString("ProfileLoginTip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to to pick up a new one. Thank you..
-        /// </summary>
-        public static string ProfileLoginTip1 {
-            get {
-                return ResourceManager.GetString("ProfileLoginTip1", resourceCulture);
             }
         }
         

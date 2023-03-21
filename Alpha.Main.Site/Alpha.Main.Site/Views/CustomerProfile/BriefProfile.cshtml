@@ -81,11 +81,7 @@
     if (!Model.IsProtectedMode)
     {
         <div id="profileTooltip" style="display:none;">
-            @Html.Raw(@Resources.ProfileLoginTip)
-            <a class="change-picture-link" href="@(viewProfileUrl)" target="@mainFrameName" id="changePictureLink">
-                @Resources.clickHere
-            </a>
-            @Resources.ProfileLoginTip1
+            @Html.Raw(string.Format(Resources.ProfileLoginTip, viewProfileUrl, viewProfileUrl))
         </div>
     }
 }

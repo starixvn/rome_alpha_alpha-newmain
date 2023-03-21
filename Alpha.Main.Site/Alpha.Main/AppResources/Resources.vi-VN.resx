@@ -121,7 +121,7 @@
     <value>Đóng</value>
   </data>
   <data name="ProfileClickTootip" xml:space="preserve">
-    <value>Nhấn vào đây để sửa hình đại diện</value>
+    <value>Nhấn vào đây để chỉnh sửa cài đặt hồ sơ</value>
   </data>
   <data name="subAcc" xml:space="preserve">
     <value>Tài khoản phụ</value>
@@ -139,7 +139,7 @@
     <value>&lt;div&gt;Chào những thành viên thân mến !.Bây giò bạn có thể đăng nhập bằng chính Biệt Danh của mình&lt;/div&gt;</value>
   </data>
   <data name="ProfileLoginTip" xml:space="preserve">
-    <value>Kính gửi quý khách hàng, Để phân biệt trang web của chúng tôi với các trang giả mạo, chúng tôi đã chọn ảnh đại diện mặc định cho bạn. Bạn có thể </value>
+    <value>Kính gửi Quý khách hàng, Chúng tôi đã chọn một ảnh đại diện mặc định của bạn để phân biệt trang web của chúng tôi với các trang web giả mạo. Nếu muốn thay đổi ảnh, bạn có thể &lt;a class="change-picture-link" href="{0}" target="main" id="changePictureLink"&gt;nhấn vào đây&lt;/a&gt;.&lt;br&gt;Ngoài ra, bạn có thể đặt tùy chọn ngôn ngữ của mình &lt;a class="change-picture-link" href="{1}" target="main"&gt;tại đây&lt;/a&gt;. Trân trọng.</value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>Nhấn vào đây</value>
@@ -157,7 +157,7 @@
     <value>Liên hệ</value>
   </data>
   <data name="EditProfilePicture" xml:space="preserve">
-    <value>Hình đại diện</value>
+    <value>Cài Đặt Hồ Sơ</value>
   </data>
   <data name="LoginOption" xml:space="preserve">
     <value>Tùy chọn đăng nhập</value>
@@ -522,9 +522,6 @@
   <data name="Request" xml:space="preserve">
     <value>Yêu cầu</value>
   </data>
-  <data name="ProfileLoginTip1" xml:space="preserve">
-    <value>để chọn ảnh khác. Trân trọng.</value>
-  </data>
   <data name="firstName" xml:space="preserve">
     <value>Họ</value>
   </data>
@@ -720,10 +717,13 @@
   <data name="LoveToHear" xml:space="preserve">
     <value>Chúng tôi rất cần những ý kiến từ bạn.</value>
   </data>
-  <data name="BackupDomains_Intro" xml:space="preserve">
-    <value>Tên miền dự phòng của bạn đã sẵn sàng.</value>
-  </data>
   <data name="CheckOut" xml:space="preserve">
     <value>Xem ngay</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
+    <value>Vào mục Cài Đặt Hồ Sơ để chọn ngôn ngữ ưa thích của bạn.</value>
+  </data>
+  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
+    <value>Ngôn Ngữ Hiển Thị</value>
   </data>
 </root>

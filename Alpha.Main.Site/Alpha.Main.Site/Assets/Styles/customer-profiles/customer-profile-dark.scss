@@ -1,0 +1,119 @@
+﻿@import '../Home/_variables-dark.scss';
+@import '../Home/_mixins.scss';
+
+#profileTooltip .tooltip-content {
+    margin: 2px 5px;
+}
+
+
+.sidebar.collapsed .profile-avatar {
+    background: none;
+}
+
+.adminAndSubAcc, .otp {
+    font-size: 12px;
+    margin-top: 4px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.otp, .otp:hover, .otp:focus {
+    display: inline-block;
+    color: #fff;
+}
+
+.otp:focus {
+    text-decoration: none;
+}
+
+.nickname-box {
+    font-size: 12px;
+    padding-top: 8px;
+    color: $text-color2;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.linkConfigNow {
+    color: $text-color2;
+    outline: 0;
+
+    &:hover {
+        color: $text-color2;
+    }
+}
+
+.linkNickName {
+    color: $text-color2;
+    text-decoration: none;
+    outline: 0;
+
+    &:hover {
+        color: $text-color2;
+        text-decoration: none;
+    }
+}
+
+.introNickname {
+    margin: 5px 5px;
+}
+
+
+#profileTooltip, #tooltip-box {
+    background-color: $popup-bg-black;
+    font-size: 12px;
+    top: 12px;
+    left: 203px;
+    position: fixed;
+    z-index: 1000;
+    color: #FF4F50;
+    line-height: 15px;
+    max-width: 330px;
+    text-align: justify;
+    padding: 5px 16px;
+    border: 1px solid $popup-border-black;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: -12px;
+        top: 24%;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 8px 12px 8px 0;
+        border-color: transparent $popup-bg-black transparent transparent;
+    }
+
+    a {
+        color: #41A4FF;
+    }
+}
+
+#profileTooltip #profileTooltip #profileTooltip #logoProfileImg.collapse-image {
+    width: 100%;
+}
+
+@media only screen and (max-device-width: $screen-device-greater1024) {
+    .sidebar {
+        &.collapsed.focusout, &.collapsed.collapsed-smallsize {
+            #profileTooltip, #tooltip-box {
+                left: 56px;
+            }
+        }
+
+        &.collapsed.hovered {
+            #profileTooltip, #tooltip-box {
+                left: 203px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-device-width: $screen-device-lower768) {
+    #profileTooltip, #tooltip-box {
+        left: 48px;
+    }
+}

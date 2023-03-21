@@ -865,6 +865,8 @@
     <Content Include="Assets\Images\chatbot-i7.svg" />
     <Content Include="Assets\Images\feedback.svg" />
     <Content Include="Assets\Images\backupdomain.svg" />
+    <Content Include="Assets\Images\language-dark.svg" />
+    <Content Include="Assets\Images\language.svg" />
     <Content Include="Assets\Images\arrowbackupdomainmb.svg" />
     <Content Include="Assets\Images\arrowbackupdomain.svg" />
     <Content Include="Assets\Images\icon-chatbot-1.svg" />
@@ -1352,7 +1354,7 @@
     <Content Include="Views\Advertisement\MyWatchlist.cshtml" />
     <Content Include="Views\Advertisement\AdvertisementPopup.cshtml" />
     <Content Include="Views\Default\SuggestEnableTelegramOtpPopup.cshtml" />
-    <Content Include="Views\Default\BackupDomainsHightLight.cshtml" />
+    <Content Include="Views\Default\NewFeatureHighlightPopup.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
@@ -1424,6 +1426,12 @@
     </Content>
     <Content Include="Assets\styles\customer-profiles\customer-profile.min.css">
       <DependentUpon>customer-profile.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\customer-profiles\customer-profile-dark.css">
+      <DependentUpon>customer-profile-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\customer-profiles\customer-profile-dark.min.css">
+      <DependentUpon>customer-profile-dark.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\home\pageIElower10.css">
       <DependentUpon>pageIElower10.scss</DependentUpon>
@@ -1512,6 +1520,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Assets\Styles\customer-profiles\customer-profile.scss" />
+    <Content Include="Assets\Styles\customer-profiles\customer-profile-dark.scss" />
     <Content Include="Assets\styles\home\popup-message.scss" />
     <Content Include="bundleconfig.json" />
     <Content Include="compilerconfig.json" />
