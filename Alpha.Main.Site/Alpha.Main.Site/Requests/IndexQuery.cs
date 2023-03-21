@@ -76,7 +76,8 @@ namespace Alpha.Main.Site.Models.Requests
         public bool ShowCreateMemberByQRCode =>
             userSession.SubPageAccess.CreateAccount
             && Enumeration.FromValue<UserLevel>(userSession.RoleId).IsAgentLevel()
-            && !IsProtectedMode;
+            && !IsProtectedMode
+            && !IsQRCodeHidden;
 
         public bool IsIndirectLoggedIn => userSession.IsIndirectLoggedIn;
 
@@ -87,5 +88,7 @@ namespace Alpha.Main.Site.Models.Requests
         public bool IsOfferProtectedMode { get; }
 
         public string AssetAppPath => userSession.AssetAppPath;
+
+        private static bool IsQRCodeHidden => AppSettings.Settings["QRCode:Hide"] == "1";
     }
 }
