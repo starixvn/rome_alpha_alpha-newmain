@@ -303,7 +303,7 @@
 
             // Assert
             Assert.True(actualSetting);
-        }       
+        }
 
         [Test]
         public void NoticeTypes_HasConfig_ReturnsCorrectSetting()
@@ -733,6 +733,30 @@
 
             // Assert
             Assert.AreEqual(expected, actualSetting);
+        }
+
+
+        [TestCase("")]
+        [TestCase("01/05/2023 12:00:00")]
+        public void EnableSupportAutoTransferDate_HasConfig_ReturnsCorrectValues(string configSites)
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["EnableSupportAutoTransferDate"] = configSites,
+            };
+
+            // Act
+            DateTime enableSupportAutoTransferDate;
+
+            var actualSetting = DateTime.TryParse(configSites, out enableSupportAutoTransferDate)
+              ? enableSupportAutoTransferDate
+              : (DateTime?)null;
+
+
+
+            // Assert
+            Assert.AreEqual(AppSettings.EnableSupportAutoTransferDate, actualSetting);
         }
     }
 }

@@ -115,6 +115,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auto Transfer Monitoring.
+        /// </summary>
+        public static string AutoTransferMonitoring {
+            get {
+                return ResourceManager.GetString("AutoTransferMonitoring", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Backup Domains.
         /// </summary>
         public static string BackupDomains {

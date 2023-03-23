@@ -277,6 +277,19 @@
             => TransferToDownlineHistoryOfferSites.Contains("*", StringComparer.CurrentCultureIgnoreCase)
             || TransferToDownlineHistoryOfferSites.Contains(site, StringComparer.CurrentCultureIgnoreCase);
 
+        public static DateTime? EnableSupportAutoTransferDate
+        {
+            get
+            {
+                DateTime enableSupportAutoTransferDate;
+
+                return DateTime.TryParse(Settings["EnableSupportAutoTransferDate"], out enableSupportAutoTransferDate)
+                  ? enableSupportAutoTransferDate
+                  : (DateTime?)null;
+            }
+
+        }
+
         public static bool IsShowEmptyDashboard => "1" == Settings["IsShowEmptyDashboard"];
 
         public static string[] DomainsWithViva88ContactInfo =>
