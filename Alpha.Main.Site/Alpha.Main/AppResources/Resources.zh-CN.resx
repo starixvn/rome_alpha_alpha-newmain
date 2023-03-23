@@ -658,15 +658,6 @@
   <data name="CheckOut" xml:space="preserve">
     <value>查看</value>
   </data>
-  <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>登入异常提示的功能将会自动启用并通过 Telegram 通知，如有可疑登入。</value>
-  </data>
-  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>登入异常提示</value>
-  </data>
-  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>根据您的要求在 &lt;b&gt;“Chatbot” &gt; “登入异常提示”&lt;/b&gt; 中对其进行定制。確保您的戶口安全性是我們首要任务！</value>
-  </data>
   <data name="GetStarted" xml:space="preserve">
     <value>开始吧</value>
   </data>
@@ -684,5 +675,14 @@
   </data>
   <data name="WinLossDetailReport" xml:space="preserve">
     <value>输赢细节报告</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
+    <value>系统现在可以协助您定期自动转账于您的下线。</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
+    <value>前往 &lt;b&gt; 转账 &gt; 转账页面 &lt;/b&gt; 开启/禁用 自动转账于下线。</value>
+  </data>
+  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
+    <value>自动转账的账号</value>
   </data>
 </root>

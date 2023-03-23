@@ -109,35 +109,33 @@
       <siteMapNode resourceKey="BetChoiceMatching" appPath="ReportsAppPath" url="/BetChoiceMatching" roles="Super" useDomainConfig="Report:Domain"></siteMapNode>
     </siteMapNode>
 
-    <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItem" url="_Transfer/Master/AgentList.aspx" functionType="[C]" roles="Master"></siteMapNode>
-    <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItem" url="_Transfer/Super/MasterList.aspx" functionType="[C]" roles="Super"></siteMapNode>
-    <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItem" url="_Transfer/Agent/MemberList.aspx" functionType="[C]" roles="Agent"></siteMapNode>
-
-    <siteMapNode resourceKey="transfer" menuItemType="TransferMenuItemBySite" functionType="[C]" roles="Super,Master">
-      <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Master/AgentList.aspx?v2" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Super/MasterList.aspx?v2" roles="Super"></siteMapNode>
-
-      <siteMapNode resourceKey="TransferAllAndClearCredit" appPath="TransferAppPath" url="TransferAllAndClearCredit/Index?v2"></siteMapNode>
+    <siteMapNode resourceKey="transfer" menuItemType="TransferMenuItem" functionType="[C]" roles="Super">
+      <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Super/MasterList.aspx" functionType="[C]"></siteMapNode>
+      <siteMapNode menuItemType="AutoTransferMonitoringMenuItem" resourceKey="AutoTransferMonitoring" appPath="TransferAppPath" url="AutoTransfer/Monitoring?v4"></siteMapNode>
+      <siteMapNode menuItemType="TransferAllAndClearCreditMenuItem" resourceKey="TransferAllAndClearCredit" appPath="TransferAppPath" url="TransferAllAndClearCredit/Index?v4"></siteMapNode>
+      <siteMapNode menuItemType="TransferDownlineHistoryMenuItem" resourceKey="TransferToDownlineHistory" appPath="TransferAppPath" url="TransferToDownlineHistory/Index?v4"></siteMapNode>
+    </siteMapNode>
+    <siteMapNode resourceKey="transfer" menuItemType="TransferMenuItem" functionType="[C]" roles="Master">
+      <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Master/AgentList.aspx" functionType="[C]"></siteMapNode>
+      <siteMapNode menuItemType="AutoTransferMonitoringMenuItem" resourceKey="AutoTransferMonitoring" appPath="TransferAppPath" url="AutoTransfer/Monitoring?v3"></siteMapNode>
+      <siteMapNode menuItemType="TransferAllAndClearCreditMenuItem" resourceKey="TransferAllAndClearCredit" appPath="TransferAppPath" url="TransferAllAndClearCredit/Index?v3"></siteMapNode>
+      <siteMapNode menuItemType="TransferDownlineHistoryMenuItem" resourceKey="TransferToDownlineHistory" appPath="TransferAppPath" url="TransferToDownlineHistory/Index?v3"></siteMapNode>
+    </siteMapNode>
+    <siteMapNode resourceKey="transfer" menuItemType="TransferMenuItem" functionType="[C]" roles="Agent">
+      <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Agent/MemberList.aspx" functionType="[C]"></siteMapNode>
+      <siteMapNode menuItemType="AutoTransferMonitoringMenuItem" resourceKey="AutoTransferMonitoring" appPath="TransferAppPath" url="AutoTransfer/Monitoring?v2"></siteMapNode>
+      <siteMapNode menuItemType="TransferDownlineHistoryMenuItem" resourceKey="TransferToDownlineHistory" appPath="TransferAppPath" url="TransferToDownlineHistory/Index?v2"></siteMapNode>
     </siteMapNode>
 
-    <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItemBySite" url="_Transfer/Agent/MemberList.aspx?v2" functionType="[C]" roles="Agent"></siteMapNode>
-
-    <siteMapNode resourceKey="transfer" menuItemType="TransferMenuItemWithDownlineHistory" functionType="[C]">
-      <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Master/AgentList.aspx?v3" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Super/MasterList.aspx?v3" roles="Super"></siteMapNode>
-      <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Agent/MemberList.aspx?v3" roles="Agent"></siteMapNode>
-
-      <siteMapNode resourceKey="TransferToDownlineHistory" appPath="TransferAppPath" url="TransferToDownlineHistory/Index?v3"></siteMapNode>
-    </siteMapNode>
-
-    <siteMapNode resourceKey="transfer" menuItemType="TransferMenuItemBySiteWithDownlineHistory" functionType="[C]">
-      <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Master/AgentList.aspx?v4" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Super/MasterList.aspx?v4" roles="Super"></siteMapNode>
-      <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Agent/MemberList.aspx?v4" roles="Agent"></siteMapNode>
-
-      <siteMapNode resourceKey="TransferAllAndClearCredit" appPath="TransferAppPath" url="TransferAllAndClearCredit/Index?v4" roles="Super,Master"></siteMapNode>
-      <siteMapNode resourceKey="TransferToDownlineHistory" appPath="TransferAppPath" url="TransferToDownlineHistory/Index?v4" isNew="true"></siteMapNode>
-    </siteMapNode>
+    <siteMapNode resourceKey="transfer" menuItemType="SingleTransferMenuItem"
+                 appPath="OldMainAppPath" url="_Transfer/Super/MasterList.aspx?v=2"
+                 functionType="[C]" roles="Super"></siteMapNode>
+    <siteMapNode resourceKey="transfer" menuItemType="SingleTransferMenuItem"
+                 appPath="OldMainAppPath" url="_Transfer/Master/AgentList.aspx?v=2"
+                 functionType="[C]" roles="Master"></siteMapNode>
+    <siteMapNode resourceKey="transfer" menuItemType="SingleTransferMenuItem"
+                 appPath="OldMainAppPath" url="_Transfer/Agent/MemberList.aspx?v=2"
+                 functionType="[C]" roles="Agent"></siteMapNode>
 
     <siteMapNode resourceKey="viewLog" menuItemType="ViewLogMenuItem" functionType="[G]">
       <siteMapNode resourceKey="Setting" appPath="ViewLogsAppPath" url="Setting"></siteMapNode>

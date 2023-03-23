@@ -383,12 +383,12 @@ var indexManager = {
     //},
 
     initNewFeatureHighlightPopup: function () {
-        const lmenu = $("#menu-CHATBOT");
-        if (lmenu.length === 0) {
+        const lmenu = $("#menu-TRANSFER");
+        if ($("#ShowHighlightPopup").val() === "0" || lmenu.length === 0) {
             return;
         }
 
-        const featureName = "AbnormalLogin";
+        const featureName = "AutoTransfer";
 
         const cookiesName = indexManager.hidePopupCookies + featureName;
         const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
@@ -396,7 +396,6 @@ var indexManager = {
         if (hidePopup !== "1") {
             popupManager.closeAllPopup();
             const box = $("#boxHighlightPopupNewFeature");
-
             box.css({ top: lmenu.position().top + 130 });
             box.removeClass("hide");
 
@@ -448,6 +447,7 @@ var indexManager = {
                 newFeatureLink.attr("href", newFeatureLink.attr("href").replace(menuBar.domElements.sessionId, menuBar.domElements.reportSessionId))
                 clearInterval(rebuildNewFeatureLinkInterval);
             }
+
 
             retryTimes++;
             retryTimes >= 10 && clearInterval(rebuildNewFeatureLinkInterval);

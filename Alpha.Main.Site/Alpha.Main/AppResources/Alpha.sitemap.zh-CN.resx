@@ -417,4 +417,7 @@
   <data name="searchTickets" xml:space="preserve">
     <value>搜索注单</value>
   </data>
+  <data name="AutoTransferMonitoring" xml:space="preserve">
+    <value>监控自动转账</value>
+  </data>
 </root>

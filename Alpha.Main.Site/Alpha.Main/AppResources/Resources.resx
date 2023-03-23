@@ -722,13 +722,13 @@
     <value>Check Out</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Abnormal Login Alert is automatically enabled to notify you of suspicious logins via Telegram.</value>
+    <value>System can now help you auto transfer to your downline periodically.</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Abnormal Login Alert</value>
+    <value>Auto Transfer Accounts</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>Customize it in &lt;b&gt;Chatbot &gt; Abnormal Login Alert&lt;/b&gt; as per your requirements. Your security is our top priority!</value>
+    <value>Go to &lt;b&gt;Transfer &gt; Transfer page&lt;/b&gt; to enable/disable auto transfer for downlines.</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Get Started</value>

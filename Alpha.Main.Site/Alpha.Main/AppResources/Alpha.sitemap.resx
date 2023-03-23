@@ -423,4 +423,7 @@
   <data name="searchTickets" xml:space="preserve">
     <value>Search Tickets</value>
   </data>
+  <data name="AutoTransferMonitoring" xml:space="preserve">
+    <value>Auto Transfer Monitor</value>
+  </data>
 </root>

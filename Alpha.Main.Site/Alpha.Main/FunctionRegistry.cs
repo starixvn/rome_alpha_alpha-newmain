@@ -9,6 +9,7 @@ namespace Alpha.Main
     using System.Linq;
     using System.Web;
     using Alpha.Main.Services.Impl;
+    using Alpha.Web.Models;
     using Configurations;
     using Fanex.Logging.Extensions.Web;
     using Fanex.Products;
@@ -35,11 +36,11 @@ namespace Alpha.Main
             ["TotalBetsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewTotalBets),
             ["MemberInfoMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewMemberInfo),
 
-            ["TransferMenuItem"] = () => new MenuStatus(TransferMenuItemVisible && !TransferToDownlineHistoryMenuItemVisible),
-            ["TransferMenuItemWithDownlineHistory"] = () => new MenuStatus(TransferMenuItemVisible && TransferToDownlineHistoryMenuItemVisible),
-
-            ["TransferMenuItemBySite"] = () => new MenuStatus(TransferMenuItemBySiteVisible && !TransferToDownlineHistoryMenuItemVisible),
-            ["TransferMenuItemBySiteWithDownlineHistory"] = () => new MenuStatus(TransferMenuItemBySiteVisible && TransferToDownlineHistoryMenuItemVisible),
+            ["SingleTransferMenuItem"] = () => new MenuStatus(SingleTransferMenuItemVisible),
+            ["TransferMenuItem"] = () => new MenuStatus(!SingleTransferMenuItemVisible && TransferMenuItemVisible),
+            ["AutoTransferMonitoringMenuItem"] = () => new MenuStatus(TransferMenuItemVisible && AutoTransferMonitoringMenuItemVisible),
+            ["TransferAllAndClearCreditMenuItem"] = () => new MenuStatus(TransferMenuItemVisible && TransferAllAndClearCreditMenuItemVisible),
+            ["TransferDownlineHistoryMenuItem"] = () => new MenuStatus(TransferMenuItemVisible && TransferToDownlineHistoryMenuItemVisible),
 
             ["BetListsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.GetPermission(PageAccessType.ViewBetLists)),
             ["ViewLogMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewLog),
@@ -94,18 +95,49 @@ namespace Alpha.Main
         };
 
         private static bool TransferMenuItemVisible
-            => (!Current.IsSubAcc || Current.SubPageAccess.Transfer)
-            && !AuthAppSettings.OfferClearGivenCreditSites
-            .Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase) || string.Equals(s, "*", StringComparison.OrdinalIgnoreCase));
+            => !Current.IsSubAcc || Current.SubPageAccess.Transfer;
 
-        private static bool TransferMenuItemBySiteVisible
-            => (!Current.IsSubAcc || Current.SubPageAccess.Transfer)
-            && AuthAppSettings.OfferClearGivenCreditSites
-            .Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase) || string.Equals(s, "*", StringComparison.OrdinalIgnoreCase));
+        private static bool TransferAllAndClearCreditMenuItemVisible
+        {
+            get
+            {
+                if (Current.RoleId != UserLevel.Super.Value
+                    && Current.RoleId != UserLevel.Master.Value)
+                {
+                    return false;
+                }
+
+                return AuthAppSettings.OfferClearGivenCreditSites.Any(s
+                    => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase)
+                    || string.Equals(s, "*", StringComparison.OrdinalIgnoreCase));
+            }
+        }
 
         private static bool TransferToDownlineHistoryMenuItemVisible
             => AppSettings.IsAllowedTransferToDownlineHistorySite(Current.Site)
             && new TransferServiceImpl().IsAllDayBalanceTransfer(Current.CustId);
+
+        private static bool AutoTransferMonitoringMenuItemVisible
+            => AppSettings.IsEnableAutoTransfer(Current.Currency);
+
+        private static bool SingleTransferMenuItemVisible
+        {
+            get
+            {
+                if (!TransferMenuItemVisible)
+                {
+                    return false;
+                }
+
+                var menu = new List<bool> {
+                    TransferAllAndClearCreditMenuItemVisible,
+                    TransferToDownlineHistoryMenuItemVisible,
+                    AutoTransferMonitoringMenuItemVisible
+                };
+
+                return !menu.Any(m => m);
+            }
+        }
 
         private static Func<bool> showAccountInfo = () =>
         {

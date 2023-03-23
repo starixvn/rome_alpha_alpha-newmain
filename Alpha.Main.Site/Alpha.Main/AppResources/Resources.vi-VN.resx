@@ -720,15 +720,6 @@
   <data name="CheckOut" xml:space="preserve">
     <value>Xem ngay</value>
   </data>
-  <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Tính năng Cảnh Báo Đăng Nhập Lạ sẽ tự động bật để thông báo cho bạn về các phiên đăng nhập bất thường qua Telegram.</value>
-  </data>
-  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Cảnh Báo Đăng Nhập Lạ</value>
-  </data>
-  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>Bạn có thể tùy chỉnh tính năng này theo nhu cầu của bạn qua &lt;b&gt;Chatbot &gt; Cảnh Báo Đăng Nhập Lạ&lt;/b&gt;. Bảo mật thông tin của bạn là ưu tiên hàng đầu của chúng tôi.</value>
-  </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Bắt đầu</value>
   </data>
