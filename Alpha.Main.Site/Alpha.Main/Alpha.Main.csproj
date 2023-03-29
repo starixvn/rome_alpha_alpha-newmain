@@ -162,8 +162,8 @@
     <Reference Include="StackExchange.Redis, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
       <HintPath>..\packages\StackExchange.Redis.2.0.519\lib\net461\StackExchange.Redis.dll</HintPath>
     </Reference>
-    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.6.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.6.5\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
+    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.6.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.6.8\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.DataAccessLibrary, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.DataAccessLibrary.3.0.0.2\lib\net40\Sunplus.Agent.Model.DataAccessLibrary.dll</HintPath>
@@ -334,14 +334,17 @@
     <Compile Include="Criteria\SecurityCode\GetSubAccountSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\GetMainAccountSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\Theme\LogChangeThemeCriteria.cs" />
+    <Compile Include="Criteria\Transfer\GetIsAllDayBalTransferCriteria.cs" />
     <Compile Include="Criteria\UMMessage\GetUMMessageCriteria.cs" />
     <Compile Include="DataAccesses\Impl\BaseDataAccessImpl.cs" />
     <Compile Include="DataAccesses\Impl\PasswordDataAccessImpl.cs" />
     <Compile Include="DataAccesses\Impl\SecurityCodeDataAccessImpl.cs" />
     <Compile Include="DataAccesses\Impl\StatisticsDataAccessImpl.cs" />
+    <Compile Include="DataAccesses\Impl\TransferDataAccessImpl.cs" />
     <Compile Include="DataAccesses\PasswordDataAccess.cs" />
     <Compile Include="DataAccesses\SecurityCodeDataAccess.cs" />
     <Compile Include="DataAccesses\StatisticsDataAccess.cs" />
+    <Compile Include="DataAccesses\TransferDataAccess.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -426,6 +429,7 @@
     <Compile Include="Services\Impl\ProtectionCodeServiceImpl.cs" />
     <Compile Include="Services\Impl\TelegramBotServiceImpl.cs" />
     <Compile Include="Services\Impl\ThemeServiceImpl.cs" />
+    <Compile Include="Services\Impl\TransferServiceImpl.cs" />
     <Compile Include="Services\Impl\UMMessageServiceImpl.cs" />
     <Compile Include="Services\Impl\UpdateUsageLanguageService.cs" />
     <Compile Include="Services\KickoutCustomerService.cs" />
@@ -448,6 +452,7 @@
     <Compile Include="Services\SecurityCodeService.cs" />
     <Compile Include="Services\SiteMenuService.cs" />
     <Compile Include="Services\TelegramBotService.cs" />
+    <Compile Include="Services\TransferService.cs" />
     <Compile Include="Services\UMMessageService.cs" />
     <Compile Include="Services\ThemeService.cs" />
   </ItemGroup>

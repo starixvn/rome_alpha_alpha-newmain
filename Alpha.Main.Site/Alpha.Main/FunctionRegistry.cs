@@ -8,6 +8,7 @@ namespace Alpha.Main
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Web;
+    using Alpha.Main.Services.Impl;
     using Configurations;
     using Fanex.Logging.Extensions.Web;
     using Fanex.Products;
@@ -106,7 +107,8 @@ namespace Alpha.Main
             .Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase) || string.Equals(s, "*", StringComparison.OrdinalIgnoreCase));
 
         private static bool TransferToDownlineHistoryMenuItemVisible
-            => AppSettings.IsAllowedTransferToDownlineHistorySite(Current.Site) && Current.IsAllDayBalTransfer;
+            => AppSettings.IsAllowedTransferToDownlineHistorySite(Current.Site)
+            && new TransferServiceImpl().IsAllDayBalanceTransfer(Current.CustId);
 
         private static Func<bool> showAccountInfo = () =>
         {
