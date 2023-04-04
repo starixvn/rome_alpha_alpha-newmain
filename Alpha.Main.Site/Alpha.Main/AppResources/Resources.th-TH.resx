@@ -290,7 +290,7 @@
     <value>ยอดได้ทั้งหมด</value>
   </data>
   <data name="createdDate" xml:space="preserve">
-    <value>สร้างขึ้นเมื่อ</value>
+    <value>วันที่สร้าง</value>
   </data>
   <data name="givenCredit" xml:space="preserve">
     <value>เครดิตทั้งหมด</value>

@@ -1,0 +1,467 @@
+﻿@import '../Home/_variables-dark.scss';
+@import '../Home/_mixins.scss';
+
+html, body {
+    height: fit-content !important;
+    background: transparent;
+}
+
+.nav.nav-tabs {
+    li, li.active {
+        &:after {
+            background: #5C1218 !important;
+        }
+
+        a {
+            color: #5C1218;
+        }
+    }
+
+    .guideline {
+        &:after {
+            display: none;
+        }
+
+        .btn-guideline {
+            border-radius: 0;
+            border: 1px solid #0B599C;
+            color: #0B599C;
+            padding: 1px 12px;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 15px;
+            margin: 9px 0 0 0;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            .icon {
+                font-size: 11px;
+
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+.block {
+    margin-top: 20px;
+
+    .form-group {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        max-width: 500px;
+
+        input[type='text'], input[type='password'] {
+            border: 1px solid #ccc;
+            width: 360px;
+            box-shadow: none;
+            height: 30px;
+            border-radius: 0px;
+            cursor: pointer;
+        }
+
+        &.form-calendar {
+            .bootstrap-datetimepicker-widget.dropdown-menu {
+                inset: 30px auto auto 0px !important;
+
+                &:before {
+                    left: 7px !important;
+                    right: auto !important;
+                }
+
+                &:after {
+                    left: 8px !important;
+                    right: auto !important;
+                }
+            }
+        }
+    }
+
+    label {
+        display: block;
+        width: 100%;
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 3px;
+        font-weight: 400;
+    }
+
+    .require {
+        color: #A11515;
+    }
+}
+.list-scope{
+    label{
+        display: inline-block;
+        width: auto;
+        cursor: pointer;
+    }
+}
+.scope-input {
+    font-size: 13px;
+    line-height: 20px;
+    color: #444444;
+}
+
+.list-apiKeyScopes {
+    margin: 5px 0 0 16px;
+
+    .scope-input {
+        margin: 0 0 5px 0;
+    }
+}
+
+.multiselect .multiselect-selected-text {
+    width: 215px;
+}
+
+.icon-information-outline {
+    float: none;
+    margin: -1px 0 0 4px;
+    font-size: 16px;
+    cursor: default;
+    &:after{
+        visibility: hidden;
+    }
+}
+
+.icon-eye, .icon-eye-close, .icon-calendar {
+    color: #727272;
+    position: absolute;
+    z-index: 10;
+}
+
+.icon-eye, .icon-eye-close {
+    top: 7px;
+    right: 3px;
+}
+
+.icon-calendar {
+    top: 7px;
+    right: 8px;
+    font-size: 16px;
+    z-index: 10;
+    &:after{
+        display: none!important;
+    }
+}
+
+.icon-content-copy {
+    position: absolute;
+    color: #0B599C;
+    top: 7px;
+    right: 3px;
+}
+
+.tblRpt {
+    width: 70%;
+    max-width: 1000px;
+
+    .col-order {
+        text-align: center;
+        width: 44px;
+    }
+
+    thead {
+        th {
+            height: 32px;
+        }
+    }
+
+    tbody {
+        td {
+            height: 32px;
+            padding: 0px 8px;
+
+            .api-key-name {
+                color: #0B599C; 
+                cursor: pointer;
+
+                &:hover, &:active {
+                    color: #23527c;
+                }
+            }
+
+            .api-key-popup {
+                position: absolute;
+                background-color: #fff;
+                border: solid 1px #eee;
+                box-shadow: 0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
+                margin: 0;
+                padding: 10px;
+
+
+                label {
+                    float: left;
+                }
+
+                input {
+                    width: 250px;
+                }
+
+                .icon-content-copy {
+                    top: 30px;
+                }
+            }
+
+            &.col-expired {
+                font-weight: 600;
+            }
+
+            &.expired-date {
+                color: #FF0000;
+            }
+        }
+    }
+
+    .row-first {
+        color: #666;
+
+
+
+        tbody td {
+            white-space: normal;
+            word-wrap: break-word;
+        }
+    }
+
+    .btn-submit, .btn-remove {
+        min-width: 80px;
+        margin: 0 7px;
+        height: 26px;
+    }
+}
+
+.relative {
+    position: relative!important;
+}
+
+.control {
+    margin: 0;
+}
+
+.input-group.date .input-group-addon {
+    right: 20px;
+    position: absolute;
+    z-index: 100;
+    font-size: 16px;
+    padding: 0;
+    top: 7px;
+}
+
+.btn-group {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.scope-input {
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.scope-label {
+    width: fit-content !important;
+}
+
+.font-normal {
+    font-weight: normal;
+}
+
+.ml-25 {
+    margin-left: 25px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.w-460 {
+    width: 460px !important;
+}
+
+.w-310 {
+    width: 310px !important;
+}
+
+.w-450 {
+    width: 450px !important;
+}
+
+.input-pass {
+    font-family: 'password';
+}
+
+.input-pass::placeholder {
+    font-family: 'Roboto';
+}
+
+.icon-question {
+    color: #3b85c5;
+    position: absolute;
+    font-size: 20px;
+    top: 11px;
+}
+
+.expired-date {
+    color: red !important;
+}
+
+
+.block .form-group.div-intro {
+    margin-top: 10px;
+    line-height: 20px;
+}
+.no-click {
+    pointer-events: none;
+}
+.note {
+    font-size: 13px;
+    line-height: 20px;
+    color: #696969;
+    font-style: italic;
+    margin: -12px 0 17px 0;
+}
+
+
+.box-service-url {
+    font-size: 13px;
+
+    .label-service-url {
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .service-url-mask {
+        display: inline-block;
+        border: 1px solid #0B599C;
+        padding: 4px;
+        color: #0B599C;
+        margin-top: -2px;
+        font-size: 13px;
+        line-height: 20px;
+        opacity: 1;
+        border-radius: 0;
+        padding: 1px 11px;
+        float: none;
+        position: relative;
+
+        &.close {
+            .dummy-text {
+                display: inline-block;
+            }
+
+            .real-text, .icon {
+                display: none;
+            }
+        }
+
+        &.open {
+            border: none;
+            padding: 0;
+            color: #ccc;
+            opacity: 1;
+
+            .dummy-text {
+                display: none;
+            }
+
+            .real-text {
+                text-align: left;
+                color: #444444;
+                width: 360px;
+                padding-right: 30px;
+            }
+        }
+    }
+
+    &.result {
+        position: relative;
+        top: 0;
+        right: 0;
+
+        .service-url-mask {
+
+            &.close {
+                .dummy-text {
+                    display: inline-block;
+                }
+
+                .real-text {
+                    display: none;
+                }
+            }
+
+            &.open {
+                border: none;
+                padding: 0;
+                color: #ccc;
+
+                .dummy-text {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+// style result
+.block.block-result {
+    margin-top: 9px;
+
+    input:read-only {
+        background: #ECECEC;
+        color: #444444;
+    }
+
+    .form-group {
+        width: 360px;
+
+        .div-intro {
+            margin-top: 0;
+        }
+
+        &-link {
+            label {
+                display: inline-block;
+                width: auto;
+            }
+        }
+    }
+
+    .text-result {
+        font-size: 14px;
+        line-height: 22px;
+        margin-right: 16px;
+        font-weight: 400;
+    }
+}
+
+.form-group-button {
+    justify-content: flex-end;
+
+    button {
+        min-width: 80px;
+    }
+
+    .btn-submit {
+        min-width: 80px;
+    }
+}
+
+// API Key Management
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    inset: auto !important;
+}
+
+.apikey-form {
+    .box-service-url {
+        margin: 22px 0 12px;
+        height: 26px;
+        line-height: 26px;
+    }
+}

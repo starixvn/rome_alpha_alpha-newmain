@@ -12,6 +12,9 @@
         public static string GetChatbotResource(string key, string language)
             => GetResource(ChatBot.ResourceManager, key, language);
 
+        public static string GetApiKeyResource(string key, string language)
+            => GetResource(ApiKey.ResourceManager, key, language);
+
         private static string GetResource(ResourceManager resourceManager, string key, string language)
             => resourceManager.GetString(key, CultureInfo.GetCultureInfo(language));
     }

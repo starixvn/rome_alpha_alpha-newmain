@@ -106,7 +106,9 @@
                 message.ShowCreateMemberByQRCode,
                 !string.IsNullOrWhiteSpace(message.DarkModeName),
                 IsProtectedMode,
-                message.IsOfferProtectedMode);
+                message.IsOfferProtectedMode,
+                IsSubAccount,
+                message.SuperId);
 
         public bool IsEnabledOtp => SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp;
 

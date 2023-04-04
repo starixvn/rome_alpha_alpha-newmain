@@ -1,0 +1,56 @@
+﻿@model CreateApiKeyResultViewModel
+@{
+    Layout = "~/Views/ApiKey/Shared/_Layout.cshtml";
+}
+@section css {
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/apikey")
+    @StaticResources.RenderStylesWithDarkMode("~/Assets/bundles/apikey/apikey")
+}
+
+<form class="block block-result" id="apikey-form" autocomplete="off">
+    <div class="form-group div-intro">@ApiKey.APIKey_SendInfo</div>
+    <div class="form-group">
+        <label>@ApiKey.APIKeyName</label>
+        <input type="text" class="form-control" id="apiname" autocomplete="off" value="@Model.ApiName" readonly />
+    </div>
+    <div class="form-group">
+        <label>@ApiKey.APIKey</label>
+        <div class="relative">
+            <input type="text" class="form-control" id="key" autocomplete="off" value="@Model.Key" readonly />
+            <span class="icon-content-copy icon" data-clipboard-action="copy" data-clipboard-target="#key" title="@Security.Copied"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>@ApiKey.APISecret</label>
+        <div class="relative">
+            <input type="text" class="form-control" id="secret" autocomplete="off" readonly value="@Model.Secret" />
+            <span class="icon-content-copy icon icon-copy-secret" data-clipboard-action="copy" data-clipboard-target="#secret" title="@Security.Copied"></span>
+        </div>
+    </div>
+    <p class="note note-save">@Html.Raw(ApiKey.APISecretCanNotBeRetrieved)</p>
+    <div class="form-group">
+        <label>@ApiKey.APIPassphrase</label>
+        <input type="text" class="form-control" id="key" autocomplete="off" value="@ApiKey.CreatedPreviousStep" readonly />
+    </div>
+    <div class="form-group form-group-link">
+        <label class="text-result">@ApiKey.ServiceURL</label>
+        <div class="box-service-url result">
+            <div class="service-url-mask close relative">
+                <div class="dummy-text">@ApiKey.GetLinkHere</div>
+                <input type="text" class="real-text" value="@AppSettings.APIGatewaysURL" id="serviceurl" readonly />
+                <span class="icon-content-copy icon icon-copy-secret" data-clipboard-action="copy" data-clipboard-target="#serviceurl" title="@Security.Copied"></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group form-group-button mt-10">
+        <button class="btn-submit" id="btnOk">OK</button>
+    </div>
+</form>
+
+@section js {
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetScripts.RenderCommon("/bundles/site-main/apikey")
+    @StaticResources.AssetScripts.RenderCommon("/bundles/site-main/apikey/clipboard")
+    @StaticResources.RenderScripts("~/Assets/bundles/apikey/create-apikey-result")
+}

@@ -1,4 +1,5 @@
-﻿@model HeaderNavViewModel
+﻿
+@model HeaderNavViewModel
 @{
     var changeNickNameUrl = $"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}";
     var mainFrameName = "main";
@@ -161,6 +162,10 @@
                         <li><a href="@($"{Model.MainRootPath}SecurityCode/ChangeUserOwnSecurityCode")" target="main"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
                     }
                     <li><a href="@($"{Model.MainRootPath}otp/SetUpOtp")" target="main"><span class="icon icon-otp"></span>OTP</a></li>
+                    @if (Model.ShowAPIKeyFunction)
+                    {
+                        <li><a href="@($"{Model.MainRootPath}ApiKey/CreateApiKey")" target="main"><span class="icon icon-settingapi"></span>@ApiKey.API</a></li>
+                    }
                     @if (Model.IsOfferProtectedMode)
                     {
                         <li><a href="@($"{Model.MainRootPath}ProtectionCode/Setup")" target="main"><span class="icon icon-key"></span>@Resources.ProtectionCode</a></li>

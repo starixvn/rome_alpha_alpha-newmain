@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Action" xml:space="preserve">
+    <value>เลือกปฏิบัติการ</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>ทั้งหมด</value>
+  </data>
+  <data name="API" xml:space="preserve">
+    <value>API</value>
+  </data>
+  <data name="APIKey" xml:space="preserve">
+    <value>API Key</value>
+  </data>
+  <data name="APIKeyManagement" xml:space="preserve">
+    <value>จัดการ API Key</value>
+  </data>
+  <data name="APIKeyName" xml:space="preserve">
+    <value>ชื่อ API Key</value>
+  </data>
+  <data name="APIKeyNameCanNotContainSpecialCharacters" xml:space="preserve">
+    <value>ชื่อ API Key ไม่สามารถใช้อักษรพิเศษต่างๆ ได้</value>
+  </data>
+  <data name="APIPassphrase" xml:space="preserve">
+    <value>API Passphrase</value>
+  </data>
+  <data name="APIPassPhraseIsImportantForYouToUseLater" xml:space="preserve">
+    <value>API Passphrase เป็นข้อมูลจำเป็นที่สำคัญสำหรับการใช้งานในภายหลัง กรุณาเก็บรักษาไว้ให้ดี</value>
+  </data>
+  <data name="APIPassPhraseMustBeBetweenCharacters" xml:space="preserve">
+    <value>API Passphrase ต้องมีความยาวระหว่าง [7-32] ตัวอักษร</value>
+  </data>
+  <data name="APISecret" xml:space="preserve">
+    <value>API Secret</value>
+  </data>
+  <data name="APISecretCanNotBeRetrieved" xml:space="preserve">
+    <value>API Secret จะแสดงให้ดูเพียงแค่ครั้งเดียวเท่านั้น และไม่สามารถเรียกคืนมาแสดงผลได้อีก กรุณาจำหรือจดไว้ และเก็บรักษาไว้ให้ดี</value>
+  </data>
+  <data name="AreYouSureRevokeAPIKey" xml:space="preserve">
+    <value>คุณแน่ใจว่าต้องการเพิกถอน API Key</value>
+  </data>
+  <data name="CantSelectTimeFromPast" xml:space="preserve">
+    <value>วันหมดอายุต้องมากกว่าวันที่ปัจจุบัน</value>
+  </data>
+  <data name="CreateAPIKey" xml:space="preserve">
+    <value>สร้าง API Key ใหม่</value>
+  </data>
+  <data name="CreatedDate" xml:space="preserve">
+    <value>วันที่สร้าง</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>แก้ไข</value>
+  </data>
+  <data name="EditAPIKey" xml:space="preserve">
+    <value>แก้ไข API Key</value>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>วันที่หมดอายุ</value>
+  </data>
+  <data name="Never" xml:space="preserve">
+    <value>ไม่มีกำหนด</value>
+  </data>
+  <data name="NoMoreThan50Characters" xml:space="preserve">
+    <value>ชื่อ API มีความยาวได้ไม่เกิน 50 ตัวอักษร</value>
+  </data>
+  <data name="PleaseInputAPIKeyName" xml:space="preserve">
+    <value>กรุณาใส่ชื่อ API</value>
+  </data>
+  <data name="PleaseInputPassPhrase" xml:space="preserve">
+    <value>กรุุณาใส่ API Passphrase</value>
+  </data>
+  <data name="Revoke" xml:space="preserve">
+    <value>เพิกถอน</value>
+  </data>
+  <data name="ScopesIsRequired" xml:space="preserve">
+    <value>ต้องเลือกระดับการเข้าถึง</value>
+  </data>
+  <data name="ScopesSetThePermisson" xml:space="preserve">
+    <value>(การใช้งานที่อนุญาตให้กับ API Key)</value>
+  </data>
+  <data name="Scope_1" xml:space="preserve">
+    <value>รายงานรายละเอียด ชนะ แพ้</value>
+  </data>
+  <data name="Scope_2" xml:space="preserve">
+    <value>รายงานการเดิมพันที่ยังไม่สิ้นสุด</value>
+  </data>
+  <data name="SelectScopes" xml:space="preserve">
+    <value>เลือกระดับการเข้าถึง</value>
+  </data>
+  <data name="ThisActionCannotBeUndone" xml:space="preserve">
+    <value>เมื่อดำเนินการแล้วจะไม่สามารถย้อนกลับได้</value>
+  </data>
+  <data name="UpdateSuccessful" xml:space="preserve">
+    <value>อัพเดทเสร็จสมบูรณ์</value>
+  </data>
+  <data name="Expired" xml:space="preserve">
+    <value>หมดอายุแล้ว</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>บันทึก</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="LimitedChars" xml:space="preserve">
+    <value>มีตัวอักษรระหว่าง 7-32</value>
+  </data>
+  <data name="Guideline" xml:space="preserve">
+    <value>คู่มือ</value>
+  </data>
+  <data name="APIKey_PassphraseValidate" xml:space="preserve">
+    <value>API Passphrase ไม่สามารถใส่ช่องว่าง ตัวอักษรสัญลักษณ์ หรือตัวอักษรกำกับเสียงได้</value>
+  </data>
+  <data name="APIKey_KeyNameInfo" xml:space="preserve">
+    <value>ชื่อ API Key : ชื่อที่บ่งบอกและแบ่งแยกแต่ละ API Key เพื่อให้ง่ายต่อการบริหารจัดการ</value>
+  </data>
+  <data name="APIKey_PassphraseInfo" xml:space="preserve">
+    <value>API Passphrase : เช่นเดียวกับรหัสผ่าน - ต้องเก็บรักษาไว้ให้ดี</value>
+  </data>
+  <data name="APIKey_ExpirationInfo" xml:space="preserve">
+    <value>วันหมดอายุ : วันสุดท้ายที่สามารถใช้งาน API Key ได้</value>
+  </data>
+  <data name="APIKey_ScopesInfo" xml:space="preserve">
+    <value>ระดับการเข้าถึง คือ การอนุญาต API Key ให้เข้าถึงรายงานที่ระบุได้</value>
+  </data>
+  <data name="APIKey_SendInfo" xml:space="preserve">
+    <value>กรุณาเก็บรวบรวมข้อมูลเหล่านี้รวมทั้งคำแนะนำ และส่งมอบไปให้ทีมพัฒนาระบบของคุณ</value>
+  </data>
+  <data name="CreatedPreviousStep" xml:space="preserve">
+    <value>ข้อมูลนี้ถูกสร้างขึ้นจากขั้นตอนก่อนหน้า</value>
+  </data>
+  <data name="ServiceURL" xml:space="preserve">
+    <value>URL ที่บริการ</value>
+  </data>
+  <data name="GetLinkHere" xml:space="preserve">
+    <value>รับลิงค์ที่นี่</value>
+  </data>
+  <data name="APIKey_Intro" xml:space="preserve">
+    <value>&lt;span&gt;API สำหรับเอเย่นท์จะช่วยให้ท่านสามารถเข้าถึงรายงานและบริการผ่านการเรียกใช้งาน API.  ด้วยการสร้าง API Key ท่านสามารถปรับแต่งการเข้าถึงข้อมูลให้เหมาะสมกับการใช้งาน   สำหรับรายละเอียดเพิ่มเติม สามารถศึกษาได้จากคู่มือการใช้งาน API  &lt;a id="lnk-api-guides" href="{0}" target="_blank"&gt;ในลิงค์นี้&lt;/a&gt;.&lt;/span&gt;</value>
+  </data>
+</root>

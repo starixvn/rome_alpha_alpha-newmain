@@ -28,7 +28,7 @@
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
     <TargetFrameworkProfile />
     <Use64BitIISExpress />
-    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
     <SonarQubeTestProject>False</SonarQubeTestProject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -599,6 +599,30 @@
     <Content Include="App_Data\SPNames\UAT\DBONUSER.ON_USER.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Assets\bundles\apikey\apikey-dark.css" />
+    <Content Include="Assets\bundles\apikey\apikey-dark.min.css">
+      <DependentUpon>apikey-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\apikey\apikey-management.js" />
+    <Content Include="Assets\bundles\apikey\apikey-management.min.js">
+      <DependentUpon>apikey-management.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\apikey\apikey.css" />
+    <Content Include="Assets\bundles\apikey\apikey.min.css">
+      <DependentUpon>apikey.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\apikey\create-apikey-result.js" />
+    <Content Include="Assets\bundles\apikey\create-apikey-result.min.js">
+      <DependentUpon>create-apikey-result.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\apikey\create-apikey.js" />
+    <Content Include="Assets\bundles\apikey\create-apikey.min.js">
+      <DependentUpon>create-apikey.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\apikey\edit-apikey.js" />
+    <Content Include="Assets\bundles\apikey\edit-apikey.min.js">
+      <DependentUpon>edit-apikey.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\captcha\captcha.css" />
     <Content Include="Assets\bundles\captcha\captcha.js" />
     <Content Include="Assets\bundles\captcha\captcha.min.css">
@@ -748,7 +772,9 @@
       <DependentUpon>create-nickname.js</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\nickname\nickname.css" />
-    <Content Include="Assets\bundles\nickname\nickname.min.css" />
+    <Content Include="Assets\bundles\nickname\nickname.min.css">
+      <DependentUpon>nickname.css</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\otp\otp-dark.css" />
     <Content Include="Assets\bundles\otp\otp-dark.min.css">
       <DependentUpon>otp-dark.css</DependentUpon>
@@ -978,6 +1004,18 @@
     </Content>
     <Content Include="Assets\styles\advertisement\popup-advertisement.min.css">
       <DependentUpon>popup-advertisement.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\apikey\apikey-dark.css">
+      <DependentUpon>apikey-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\apikey\apikey-dark.min.css">
+      <DependentUpon>apikey-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\apikey\apikey.css">
+      <DependentUpon>apikey.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\apikey\apikey.min.css">
+      <DependentUpon>apikey.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\captcha\captcha.css">
       <DependentUpon>captcha.scss</DependentUpon>
@@ -1355,6 +1393,15 @@
     <Content Include="Views\Advertisement\AdvertisementPopup.cshtml" />
     <Content Include="Views\Default\SuggestEnableTelegramOtpPopup.cshtml" />
     <Content Include="Views\Default\NewFeatureHighlightPopup.cshtml" />
+    <Content Include="Views\ApiKey\ApiKeyManagement.cshtml" />
+    <Content Include="Views\ApiKey\CreateApiKey.cshtml" />
+    <Content Include="Views\ApiKey\EditApiKey.cshtml" />
+    <Content Include="Views\ApiKey\Shared\_Layout.cshtml" />
+    <Content Include="Views\ApiKey\CreateApiKeyResult.cshtml" />
+    <TypeScriptCompile Include="Assets\scripts\apikey\apikey-management.ts" />
+    <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey-result.ts" />
+    <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey.ts" />
+    <TypeScriptCompile Include="Assets\scripts\apikey\edit-apikey.ts" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
@@ -1362,6 +1409,8 @@
     <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot-setting.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\verify-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\advertisement\popup-advertisement.ts" />
+    <TypeScriptCompile Include="Assets\scripts\components\daterangepicker.ts" />
+    <TypeScriptCompile Include="Assets\scripts\components\multiselection-dropdown-default.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\data-proccessing-notification.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\kick-out.ts" />
@@ -1577,6 +1626,8 @@
     <Content Include="Assets\styles\home\ChatBotBanneri1.scss" />
     <Content Include="Assets\styles\home\ChatBotBanneri1-dark.scss" />
     <Content Include="Assets\styles\advertisement\popup-advertisement.scss" />
+    <Content Include="Assets\styles\apikey\apikey.scss" />
+    <Content Include="Assets\styles\apikey\apikey-dark.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -1683,6 +1734,7 @@
     </Compile>
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Controllers\AdvertisementController.cs" />
+    <Compile Include="Controllers\ApiKeyController.cs" />
     <Compile Include="Controllers\BannerController.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -1737,6 +1789,7 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Handlers\ApiKeyHandler.cs" />
     <Compile Include="Handlers\BannerHandler.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -1786,6 +1839,11 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Requests\AllLanguagesQuery.cs" />
+    <Compile Include="Requests\ApiKey\CreateApiKeyCommand.cs" />
+    <Compile Include="Requests\ApiKey\GetApiKeyQuery.cs" />
+    <Compile Include="Requests\ApiKey\GetCustomerApiKeyQuery.cs" />
+    <Compile Include="Requests\ApiKey\RevokeApiKeyCommand.cs" />
+    <Compile Include="Requests\ApiKey\UpdateApiKeyCommand.cs" />
     <Compile Include="Requests\Banner\BannerQuery.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -1887,6 +1945,10 @@
     </Compile>
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
     <Compile Include="ViewModels\Advertisement\MyWatchlistViewModel.cs" />
+    <Compile Include="ViewModels\ApiKey\ApiKeyManagementViewModel.cs" />
+    <Compile Include="ViewModels\ApiKey\CreateApiKeyResultViewModel.cs" />
+    <Compile Include="ViewModels\ApiKey\CreateApiKeyViewModel.cs" />
+    <Compile Include="ViewModels\ApiKey\EditApiKeyViewModel.cs" />
     <Compile Include="ViewModels\Banner\BannerViewModel.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>

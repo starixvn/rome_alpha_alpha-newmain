@@ -295,7 +295,7 @@
                     mainDomain = mainDomain?.Replace($"{mainDomain?.Split('.')?.ElementAt(0)}.", string.Empty);
                 }
 
-                reportDomain = reportDomain.IndexOf("{0}", StringComparison.OrdinalIgnoreCase) != -1 ? 
+                reportDomain = reportDomain.IndexOf("{0}", StringComparison.OrdinalIgnoreCase) != -1 ?
                     string.Format(reportDomain, mainDomain) : reportDomain;
 
                 return reportDomain;
@@ -324,9 +324,9 @@
         public static string ReportRouting => Settings["Report:Routing"] ?? string.Empty;
 
         public static bool IsStandaloneReports => !string.IsNullOrWhiteSpace(Settings["Report:Domain"]);
-        
+
         public static string ContactUsSkypeId => Settings["skypeId"];
-        
+
         public static string ContactUsLetstalkId => Settings["letstalkid"];
 
         public static string ContactUsLetstalkIdNew => Settings["letstalkidNew"];
@@ -343,7 +343,7 @@
             => int.Parse(Settings["CDNReCheckin:IntervalInSeconds"] ?? "60");
 
         public static int RecheckinIntervalMiliseconds
-            => string.IsNullOrWhiteSpace(Settings["Recheckin:IntervalMiliseconds"]) ? 30000 : 
+            => string.IsNullOrWhiteSpace(Settings["Recheckin:IntervalMiliseconds"]) ? 30000 :
                 int.Parse(Settings["Recheckin:IntervalMiliseconds"]);
 
         public static string JsVersion => Settings["JsVersion"];
@@ -351,7 +351,10 @@
         public static bool EnableLogDifferentSessionBetweenMainAndReports { get; } = "1" == Settings["EnableLogDifferentSessionBetweenMainAndReports"];
 
         public static bool IsEnabledRechekin => Settings["DisabledCheckDuplicationLogin"] == "0";
-
+        public static Uri ApiKeyServiceUri => new Uri(Settings["ApiKeyServiceUri"]);
         public static bool IsStoreUserLangEnabled => Settings["IsStoreUserLangEnabled"] == "1";
+
+        public static string APIGatewaysURL => Settings["APIGatewaysURL"];
+        public static List<string> APISuperIds => Settings["APISuperIds"].Split(',').ToList();
     }
 }

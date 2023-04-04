@@ -1,0 +1,82 @@
+﻿@model CreateApiKeyViewModel
+@{
+    Layout = "~/Views/ApiKey/Shared/_Layout.cshtml";
+}
+@section css {
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode($"/bundles/site-main/tab-{Model.CustLevel.ToLowerInvariant()}")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/apikey")
+    @StaticResources.RenderStylesWithDarkMode("~/Assets/bundles/apikey/apikey")
+}
+<div class="realtive">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="@($"{Model.MainRootPath}Apikey/CreateApiKey")" role="tab" data-toggle="tab">@ApiKey.CreateAPIKey</a>
+        </li>
+        <li role="presentation" id="">
+            <a href="@($"{Model.MainRootPath}Apikey/ApiKeyManagement")" role="tab" data-toggle="tab">@ApiKey.APIKeyManagement</a>
+        </li>
+        <li class="guideline">
+            <a class="btn-guideline" href="@Model.HelpPage" target="_blank"><span class="icon icon-book"></span>@ApiKey.Guideline</a>
+        </li>
+    </ul>
+
+</div>
+<div class="tab-content">
+    <form class="block" id="apikey-form" autocomplete="off">
+        <div id="error-message" class="container-msg w-450"></div>
+        <div class="form-group div-intro">@Html.Raw(string.Format(ApiKey.APIKey_Intro, Model.APIGuidesURL))</div>
+        <div class="form-group">
+            <label>@ApiKey.APIKeyName<span class="require"> *</span><span class="icon-information-outline" title="@ApiKey.APIKey_KeyNameInfo"></span></label>
+            <input type="text" class="form-control" id="apiname" autocomplete="off" maxlength="50" />
+        </div>
+        <div class="form-group">
+            <label>@ApiKey.APIPassphrase<span class="require"> *</span><span class="icon-information-outline" title="@ApiKey.APIKey_PassphraseInfo&#10;@ApiKey.APIKey_PassphraseValidate"></span></label>
+            <div class="relative">
+                <input type="text" class="form-control input-pass" placeholder="@ApiKey.LimitedChars" id="passphrase" autocomplete="off" maxlength="32" />
+                <span class="icon-eye-close icon show-pass"></span>
+            </div>
+
+        </div>
+        <p class="note note-save">@Html.Raw(ApiKey.APIPassPhraseIsImportantForYouToUseLater)</p>
+        <div class="form-group">
+            <label>@ApiKey.ExpirationDate<span class="icon-information-outline" title="@ApiKey.APIKey_ExpirationInfo"></span></label>
+            <div class="relative" id="dpkContainer">
+                <input type="text" class="form-control" id="expirationdate" autocomplete="off" placeholder="MM/DD/YYYY" />
+                <span class="icon-calendar no-click"></span>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label>@ApiKey.SelectScopes<span class="icon-information-outline" title="@ApiKey.APIKey_ScopesInfo"></span></label>
+            <div class="list-scope">
+                <label class="scope-input"><input type="checkbox" value="All" id="ckbAll" checked /> @ApiKey.All</label>
+                <div class="list-apiKeyScopes" id="apiKeyScopes">
+                    @foreach (var scope in Model.Scopes)
+                    {
+                        <div><label class="scope-input"><input type="checkbox" value="@scope" name="scope" checked />@ResourceHelper.GetApiKeyResource($"Scope_{scope}", Model.Language)</label></div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="form-group ">
+            <input type="submit" class="btn-submit" value="@Resources.submit" />
+        </div>
+    </form>
+</div>
+@Html.Hidden("Language", Model.Language)
+@Html.Hidden("APIKey", ApiKey.APIKey)
+@Html.Hidden("PleaseInputAPIKeyName", ApiKey.PleaseInputAPIKeyName)
+@Html.Hidden("APIKeyNameCanNotContainSpecialCharacters", ApiKey.APIKeyNameCanNotContainSpecialCharacters)
+@Html.Hidden("NoMoreThan50Characters", ApiKey.NoMoreThan50Characters)
+@Html.Hidden("PleaseInputPassPhrase", ApiKey.PleaseInputPassPhrase)
+@Html.Hidden("APIKey_PassphraseValidate", ApiKey.APIKey_PassphraseValidate)
+@Html.Hidden("APIPassPhraseMustBeBetweenCharacters", ApiKey.APIPassPhraseMustBeBetweenCharacters)
+@Html.Hidden("CantSelectTimeFromPast", ApiKey.CantSelectTimeFromPast)
+@Html.Hidden("ScopesIsRequired", ApiKey.ScopesIsRequired)
+@Html.Hidden("CurrentDate", Model.CurrentDate)
+@section js {
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetScripts.RenderCommon("/bundles/site-main/apikey")
+    @StaticResources.RenderScripts("~/Assets/bundles/apikey/create-apikey")
+}

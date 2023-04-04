@@ -111,6 +111,10 @@ html * {
   padding-bottom: 16px;
 }
 
+.icon-settingapi {
+    font-size: 20px;
+}
+
 .mainmenu-container {
   overflow-x: hidden;
   overflow-y: auto;
@@ -1147,6 +1151,35 @@ html * {
 
         a.btn-submit {
             text-decoration: none;
+        }
+    }
+}
+//bootbox confirm use in modal revoke api
+.bootbox-confirm {
+    .btn {
+        width: 80px !important;
+        height: 28px !important;
+        padding: 0 !important;
+        min-width: 80px !important;
+        color: #EDEDED !important;
+        font-weight: 500 !important;
+        font-size: 13px !important;
+        line-height: 15px !important;
+    }
+
+    .btn-primary {
+        background: #36587D !important;
+
+        &:hover {
+            background: darken(#36587D, 5%) !important;
+        }
+    }
+
+    .btn-default {
+        background: #696969 !important;
+
+        &:hover {
+            background: darken(#696969, 5%) !important;
         }
     }
 }
