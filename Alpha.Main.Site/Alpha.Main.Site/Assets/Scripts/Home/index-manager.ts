@@ -30,13 +30,15 @@ var indexManager = {
         content: null,
         accountInfoContent: null,
         currentURLCookieName: null,
-        pagePopup: null
+        pagePopup: null,
+        feedbackFunction: null
     },
 
     urls: {
         reCheckinUrl: alpha.urls.oldMainRootPath + '_Authorization/Handlers/ReCheckin.ashx',
         feedback: alpha.urls.messageRootPath + 'Feedback/Index',
-        checkExistFeedback: alpha.urls.messageRootPath + 'Feedback/CheckExist',
+        checkExistFeedback: alpha.urls.messageRootPath + 'Feedback/CheckExist?functionId=',
+        feedbackFunction: alpha.urls.messageRootPath + 'Feedback/Function?id=',
     },
 
     init: function () {
@@ -50,7 +52,7 @@ var indexManager = {
         indexManager.registerEvents();
         indexManager.setCurrentUrl();
 
-        indexManager.initFeedback();
+        $("#feedback-box").click(indexManager.openFeedback);
         indexManager.initNewFeatureHighlightPopup();
 
         if (indexManager.requiredNetworkSpeedCalculation) {
@@ -88,6 +90,7 @@ var indexManager = {
         indexManager.showOldCustomerList = $('#showOldCustomerList').val() == '1';
         indexManager.reportDomain = $('#reportDomain').val();
         indexManager.recheckInIntervalMiliseconds = $("#RecheckinIntervalMiliseconds").val();
+        indexManager.domElements.feedbackFunction = $("#feedback-function");
     },
 
     changeMenu: function (url) {
@@ -172,9 +175,10 @@ var indexManager = {
             indexManager.domElements.mainFrame = $('#main');
             indexManager.domElements.mainFrame
                 .on('load.newmain', function () {
+                    indexManager.domElements.feedbackFunction.addClass("hide");
                     var iframeWindow = indexManager.domElements.mainFrame[0].contentWindow || indexManager.domElements.mainFrame[0].contentDocument;
                     indexManager.closeAllOpenDropdowns(iframeWindow);
-
+                    
                     indexManager.cacheCurrentUrl();
                     try {
                         $(iframeWindow.document).on('click touchend',
@@ -301,42 +305,32 @@ var indexManager = {
         return url.indexOf('dcs/viewcustomersetting') > -1;
     },
 
-    initFeedback: function () {
-        $(".txt-feedback, .feedback-box .icon-feedback, #btn-feedback").click(function () { indexManager.openFeedback(); });
+    initFeedbackFunction: function (id) {
+        //var hideFeedback = sessionStorage.getItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackCookies));
+        //if (hideFeedback === '1') {
+        //    indexManager.domElements.feedbackFunction.addClass("hide");
+        //} else {
+        //    indexManager.domElements.feedbackFunction.removeClass("hide");
+        //}
 
-        $("#main").load(function () {
-            if ($("#main").height() >= $('#main').contents().height()) {
-                $(".div-feedback").css({ right: -20 });
-            }
-        });
+        $.get(indexManager.urls.checkExistFeedback + id, function (isExists) {
+            if (!isExists) {
+                indexManager.domElements.mainFrame.height() >= indexManager.domElements.mainFrame.contents().height()
+                        && indexManager.domElements.feedbackFunction.css({ right: -20 });
 
-        var hideFeedback = localStorage.getItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackCookies));
-
-        if (hideFeedback === '1') {
-            $(".div-feedback").remove();
-            return;
-        }
-
-        $.ajax({
-            type: "POST",
-            url: indexManager.urls.checkExistFeedback,
-            data: {},
-            success: (result) => {
-                if (result) {
-                    return;
-                }
-
-                $(".div-feedback").css({
+                indexManager.domElements.feedbackFunction.css({
                     top: $(window).height() - 100
                 });
 
-                $(".div-feedback").removeClass('hide');
-                $(".icon-close-feedback").click(function () {
-                    localStorage.setItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackCookies), "1");
-                    $(".div-feedback").addClass('hide');
+                indexManager.domElements.feedbackFunction.click(function () {
+                    popupManager.open(indexManager.urls.feedbackFunction + id, undefined, 680, 800, null, null, null, null, null, null, { customClass: "feedback-modal" });
                 });
-            },
-            complete: () => { }
+                indexManager.domElements.feedbackFunction.removeClass("hide");
+                //$(".icon-close-feedback").click(function () {
+                //    localStorage.setItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackCookies), "1");
+                //    $(".div-feedback").addClass('hide');
+                //});
+            }
         });
     },
 
@@ -367,8 +361,9 @@ var indexManager = {
             //});
         }
     },
+
     openFeedback: function () {
-        popupManager.open(indexManager.urls.feedback, $("#FeedbackTitle").val(), 680, 550, null, null, null, null, null, null, { customClass: 'feedback-modal' });
+        popupManager.open(indexManager.urls.feedback, undefined, 680, 550, null, null, null, null, null, null, { customClass: 'feedback-modal' });
     },
 
     hideFloatingFeedbackIcon: function () {
@@ -377,8 +372,9 @@ var indexManager = {
 
     removeCookies: function () {
         localStorage.removeItem(indexManager.currentUrlCookieName);
-        localStorage.removeItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackCookies));
+        //localStorage.removeItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackCookies));
     },
+
     getCustomerCookiesName: function (key) {
         return `${key}_${$("#CustId").val()}_${$("#SubAccId").val()}`;
     }

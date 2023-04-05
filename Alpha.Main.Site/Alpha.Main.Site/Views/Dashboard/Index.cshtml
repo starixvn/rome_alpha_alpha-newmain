@@ -19,5 +19,8 @@
 </head>
 <body>
     <p class="text">@Html.Raw(string.Format(Resources.DashboardViewOverallInformation, "<span onclick=\"location.href=top.headerNav.urls.home;\" class=\"icon icon-home\"></span>"))</p>
+    <script type="text/javascript">
+        setTimeout(function () { window.top.indexManager.initFeedbackFunction(1); }, 1000);
+    </script>
 </body>
 </html>
