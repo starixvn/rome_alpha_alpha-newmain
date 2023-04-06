@@ -16,7 +16,6 @@ if (typeof String.prototype.startsWith != 'function') {
 var indexManager = {
     currentTab: null,
     currentUrlCookieName: 'DFFKDHFJKLDHFJDH',
-    hideFeedbackCookies: 'HideFeedback',
     hidePopupCookies: 'HidePopup',
 
     requiredNetworkSpeedCalculation: false,
@@ -52,7 +51,7 @@ var indexManager = {
         indexManager.registerEvents();
         indexManager.setCurrentUrl();
 
-        $("#feedback-box").click(indexManager.openFeedback);
+        indexManager.initFeedbackGlobal();
         indexManager.initNewFeatureHighlightPopup();
 
         if (indexManager.requiredNetworkSpeedCalculation) {
@@ -305,13 +304,17 @@ var indexManager = {
         return url.indexOf('dcs/viewcustomersetting') > -1;
     },
 
-    initFeedbackFunction: function (id) {
-        //var hideFeedback = sessionStorage.getItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackCookies));
-        //if (hideFeedback === '1') {
-        //    indexManager.domElements.feedbackFunction.addClass("hide");
-        //} else {
-        //    indexManager.domElements.feedbackFunction.removeClass("hide");
-        //}
+    initFeedbackGlobal: function () {
+        $("#feedback-box").click(function () {
+            popupManager.open(indexManager.urls.feedback, undefined, 440, 380, null, null, null, null, null, null, { customClass: 'feedback-modal' });
+        });
+    },
+
+    initFeedbackFunction: function (id, width, height) {
+        const hideFeedbackFunctionSessionKey = indexManager.getCustomerCookiesName('HideFeedbackFunction') + "_" + id;
+        if (sessionStorage.getItem(hideFeedbackFunctionSessionKey) === "1") {
+            return;
+        }
 
         $.get(indexManager.urls.checkExistFeedback + id, function (isExists) {
             if (!isExists) {
@@ -322,14 +325,18 @@ var indexManager = {
                     top: $(window).height() - 100
                 });
 
-                indexManager.domElements.feedbackFunction.click(function () {
-                    popupManager.open(indexManager.urls.feedbackFunction + id, undefined, 680, 800, null, null, null, null, null, null, { customClass: "feedback-modal" });
-                });
+                indexManager.domElements.feedbackFunction.find(".feedback-box")
+                    .off()
+                    .click(function () {
+                        popupManager.open(indexManager.urls.feedbackFunction + id, undefined, width || 440, height || 380, null, null, null, null, null, null, { customClass: "feedback-modal" });
+                    });
+                indexManager.domElements.feedbackFunction.find(".icon-close-feedback")
+                    .off()
+                    .click(function () {
+                        sessionStorage.setItem(hideFeedbackFunctionSessionKey, "1");
+                        indexManager.domElements.feedbackFunction.addClass("hide");
+                    });
                 indexManager.domElements.feedbackFunction.removeClass("hide");
-                //$(".icon-close-feedback").click(function () {
-                //    localStorage.setItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackCookies), "1");
-                //    $(".div-feedback").addClass('hide');
-                //});
             }
         });
     },
@@ -362,17 +369,12 @@ var indexManager = {
         }
     },
 
-    openFeedback: function () {
-        popupManager.open(indexManager.urls.feedback, undefined, 680, 550, null, null, null, null, null, null, { customClass: 'feedback-modal' });
-    },
-
     hideFloatingFeedbackIcon: function () {
-        $(".div-feedback").remove();
+        indexManager.domElements.feedbackFunction.addClass("hide");
     },
 
     removeCookies: function () {
         localStorage.removeItem(indexManager.currentUrlCookieName);
-        //localStorage.removeItem(indexManager.getCustomerCookiesName(indexManager.hideFeedbackCookies));
     },
 
     getCustomerCookiesName: function (key) {
