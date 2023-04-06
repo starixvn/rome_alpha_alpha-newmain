@@ -981,43 +981,37 @@ html * {
 }
 
 .feedback-modal {
-  width: 564px !important;
-  height: 450px !important;
-  padding: 0 !important;
+    padding: 0 !important;
 
-  .modal-dialog {
-    height: 450px !important;
-  }
 
-  .modal-content {
-    .modal-header {
-      padding: 22px 11px 0 11px;
+    .modal-content {
+        .modal-header {
+            padding: 0 11px;
 
-      .icon-close {
-        width: 40px;
-        top: -15px;
+            .icon-close {
+                width: 40px;
 
-        &:before {
-          left: 0;
+                &:before {
+                    left: 0;
+                }
+            }
         }
-      }
+
+        .modal-title {
+            border: 0;
+            padding: 14px 0 10px;
+        }
+
+        .modal-body {
+            padding: 0px 11px 8px;
+        }
     }
 
-    .modal-title {
-      border: 0;
+    .popup-title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 23px;
     }
-
-    .modal-body {
-      padding: 0px 11px 8px;
-      height: 380px !important;
-    }
-  }
-
-  .popup-title {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 23px;
-  }
 }
 
 /********** popup hightlight *************/
