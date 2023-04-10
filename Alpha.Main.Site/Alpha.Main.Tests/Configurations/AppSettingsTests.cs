@@ -279,7 +279,7 @@
             // Arrange
             AppSettings.Settings = new NameValueCollection
             {
-                ["SiteGroup"] = "IBCBET"
+                ["SiteLabel"] = "IBCBET"
             };
 
             // Act
@@ -295,7 +295,7 @@
             // Arrange
             AppSettings.Settings = new NameValueCollection
             {
-                ["SiteGroup"] = "ABC"
+                ["SiteLabel"] = "ABC"
             };
 
             // Act
@@ -303,21 +303,7 @@
 
             // Assert
             Assert.True(actualSetting);
-        }
-
-        [Test]
-        public void IsMBCSite_NotHasConfig_ReturnsFalse()
-        {
-            // Arrange
-            AppSettings.Settings = new NameValueCollection();
-
-            // Act
-            var actualSetting = AppSettings.IsMBCSite;
-
-            // Assert
-            Assert.False(actualSetting);
-        }
-       
+        }       
 
         [Test]
         public void NoticeTypes_HasConfig_ReturnsCorrectSetting()
@@ -361,7 +347,7 @@
             // Arrange
             AppSettings.Settings = new NameValueCollection
             {
-                ["SiteGroup"] = "IBCBET"
+                ["SiteLabel"] = "IBCBET"
             };
 
             // Act

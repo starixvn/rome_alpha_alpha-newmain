@@ -143,8 +143,9 @@
         public static bool DisableMessages => Settings["DisableMessages"] == "1";
 
         [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "MBC", Justification = "Reviewed!")]
-        public static bool IsMBCSite => !string.IsNullOrWhiteSpace(Settings["SiteGroup"])
-            && !Settings["SiteGroup"].Equals("789y", StringComparison.OrdinalIgnoreCase);
+        public static bool IsMBCSite => !IsSiteLabel789y;
+
+        public static bool IsSiteLabel789y => SiteLabel.Equals(SiteLabel789y);
 
         public static bool DisabledVietnamese => IsMBCSite;
 
@@ -194,7 +195,10 @@
 
         public static bool BannerIsHideMobileSabaApp => "1" == Settings["Banner:IsHideMobileSabaApp"];
 
-        public static string SiteGroup => Settings["SiteGroup"];
+        public static string SiteLabel => Settings["SiteLabel"];
+
+        public static string SiteLabel789y => Settings["SiteLabel789y"];
+
 
         public static IEnumerable<int> IndirectLoginSuperIds
             => Settings["IndirectLogin:AllowSuperIds"]

@@ -37,6 +37,7 @@
             settingService = Substitute.For<SettingService>();
             chatbotController = new ChatBotController(mediator, userSession);
             compareLogic = new CompareLogic();
+            AppSettings.Settings["SiteLabel"] = "Nova88";
         }
 
         [Test]
