@@ -318,12 +318,7 @@ var indexManager = {
 
         $.get(indexManager.urls.checkExistFeedback + id, function (isExists) {
             if (!isExists) {
-                indexManager.domElements.mainFrame.height() >= indexManager.domElements.mainFrame.contents().height()
-                        && indexManager.domElements.feedbackFunction.css({ right: -20 });
-
-                indexManager.domElements.feedbackFunction.css({
-                    top: $(window).height() - 100
-                });
+                indexManager.calulateFeedbackFunctionPosition();
 
                 indexManager.domElements.feedbackFunction.find(".feedback-box")
                     .off()
@@ -337,7 +332,17 @@ var indexManager = {
                         indexManager.domElements.feedbackFunction.addClass("hide");
                     });
                 indexManager.domElements.feedbackFunction.removeClass("hide");
+                $(window).off("resize").resize(indexManager.calulateFeedbackFunctionPosition);
             }
+        });
+    },
+
+    calulateFeedbackFunctionPosition() {
+        indexManager.domElements.mainFrame.height() >= indexManager.domElements.mainFrame.contents().height()
+            && indexManager.domElements.feedbackFunction.css({ right: -20 });
+
+        indexManager.domElements.feedbackFunction.css({
+            top: $(window).height() - 100
         });
     },
 
