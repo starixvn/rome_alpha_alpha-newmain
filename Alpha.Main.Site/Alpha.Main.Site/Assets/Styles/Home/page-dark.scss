@@ -941,55 +941,56 @@ html * {
 }
 
 .div-feedback {
-  height: 36px;
-  position: absolute;
-  z-index: 89;
-  transform: rotate(-90deg);
-  font-size: 18px;
-  top: 200px;
-  right: 0px;
-  color: #000;
-  margin: -23px -40px 0 0;
+    height: 36px;
+    position: absolute;
+    z-index: 89;
+    transform: rotate(-90deg);
+    font-size: 18px;
+    top: 200px;
+    right: 0px;
+    color: #000;
+    margin: -23px -40px 0 0;
 
-  .feedback-box {
-    background-color: #38B038;
-    border-radius: 16px;
-    display: inline-block;
-    width: 145px;
-    text-align: center;
-    cursor: pointer;
+    .feedback-box {
+        background-color: #38B038;
+        border-radius: 16px;
+        display: inline-block;
+        width: 145px;
+        text-align: left;
+        cursor: pointer;
 
-    &:hover {
-      .txt-feedback {
-        color: #FFE65F;
-      }
+        &:hover {
+            .txt-feedback {
+                color: #FFE65F;
+            }
 
-      .icon-feedback {
-        background-color: #FFE65F;
-        fill: #FFE65F;
-      }
+            .icon-feedback {
+                background-color: #FFE65F;
+                fill: #FFE65F;
+            }
+        }
     }
-  }
 
-  .icon-feedback {
-    position: relative;
-    mask: url('Images/feedback.svg');
-    -webkit-mask-image: url('Images/feedback.svg');
-    mask-image: url('Images/feedback.svg');
-    background-color: #fff;
-    height: 25px;
-    width: 24px;
-    display: inline-block;
-    background-size: 100% 100%;
-    cursor: pointer;
-    fill: #fff;
-    top: 6px;
-    left: 6px;
-  }
+    .icon-feedback {
+        position: relative;
+        background: url('Images/feedback-star.png') no-repeat;
+        background-color: #fff;
+        height: 24px;
+        width: 24px;
+        display: inline-block;
+        background-size: 100% 100%;
+        cursor: pointer;
+        top: 5px;
+        left: 5px;
+        mask: none;
+        -webkit-mask-image: none;
+        border-radius: 30px;
+        transform: rotate(18deg);
+    }
 }
 
 .icon-close-feedback {
-  background: url(Images/icon-close-feedback.png) no-repeat;
+  background: url(Images/icon-close-feedback-dark.png) no-repeat;
   height: 26px;
   width: 26px;
   display: inline-block;
