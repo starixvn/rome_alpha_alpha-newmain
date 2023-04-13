@@ -76,12 +76,12 @@ var alpha = {
                 else {
                     try {
                         localStorage.removeItem(indexManager.currentUrlCookieName);
-                        localStorage.removeItem(indexManager.hideFeedbackCookies);
                     }
                     finally {
                         index.location = signOutUrl;
                     }
                 }
+                sessionStorage.clear();
             },
             signOut2: function () {
                 var index: any = window;
@@ -108,6 +108,7 @@ var alpha = {
                         index.location = signOutUrl;
                     }
                 }
+                sessionStorage.clear();
             },
             isIe: function () {
                 return /(MSIE|Trident\/|Edge\/)/i.test(navigator.userAgent);

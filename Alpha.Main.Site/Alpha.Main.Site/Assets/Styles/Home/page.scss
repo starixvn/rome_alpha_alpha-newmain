@@ -915,51 +915,82 @@ html * {
 }
 
 .div-feedback {
-  height: 36px;
-  position: absolute;
-  z-index: 89;
-  transform: rotate(-90deg);
-  font-size: 18px;
-  top: 200px;
-  right: 0px;
-  color: #000;
-  margin: -23px -40px 0 0;
+    height: 36px;
+    position: absolute;
+    z-index: 89;
+    transform: rotate(-90deg);
+    font-size: 18px;
+    top: 200px;
+    right: 0px;
+    color: #000;
 
-  .feedback-box {
-    background-color: #38B038;
-    border-radius: 16px;
-    display: inline-block;
-    width: 145px;
-    text-align: center;
-    cursor: pointer;
+    &.en-US, &.ja-JP, &.ko-KR {
+        margin: -13px -30px 0 0;
 
-    &:hover {
-      .txt-feedback {
-        color: #FFE65F;
-      }
-
-      .icon-feedback {
-        background-color: #FFE65F;
-        fill: #FFE65F;
-      }
+        .feedback-box {
+            width: 124px;
+        }
     }
-  }
 
-  .icon-feedback {
-    position: relative;
-    mask: url('Images/feedback.svg');
-    -webkit-mask-image: url('Images/feedback.svg');
-    mask-image: url('Images/feedback.svg');
-    background-color: #fff;
-    height: 25px;
-    width: 24px;
-    display: inline-block;
-    background-size: 100% 100%;
-    cursor: pointer;
-    fill: #fff;
-    top: 6px;
-    left: 6px;
-  }
+    &.zh-TW, &.zh-CN {
+        margin: 7px -10px 0 0;
+
+        .feedback-box {
+            width: 85px;
+        }
+    }
+
+    &.vi-VN {
+        margin: 3px -14px 0 0;
+
+        .feedback-box {
+            width: 92px;
+        }
+    }
+
+    &.th-TH {
+        margin: -18px -35px 0 0;
+
+        .feedback-box {
+            width: 135px;
+        }
+    }
+
+    .feedback-box {
+        background-color: #38B038;
+        border-radius: 16px;
+        display: inline-block;
+        text-align: left;
+        cursor: pointer;
+
+        &:hover {
+            .txt-feedback {
+                color: #FFE65F;
+            }
+
+            .icon-feedback {
+                background-color: #FFE65F;
+                fill: #FFE65F;
+            }
+        }
+    }
+
+    .icon-feedback {
+        position: relative;
+        background: url('Images/feedback-star.png') no-repeat;
+        background-color: #fff;
+        height: 24px;
+        width: 24px;
+        display: inline-block;
+        background-size: 100% 100%;
+        cursor: pointer;
+        top: 5px;
+        left: 5px;
+        mask: none;
+        -webkit-mask-image: none;
+        border-radius: 30px;
+        transform: rotate(18deg);
+    }
 }
 
 .icon-close-feedback {
@@ -981,43 +1012,37 @@ html * {
 }
 
 .feedback-modal {
-  width: 564px !important;
-  height: 450px !important;
-  padding: 0 !important;
+    padding: 0 !important;
 
-  .modal-dialog {
-    height: 450px !important;
-  }
 
-  .modal-content {
-    .modal-header {
-      padding: 22px 11px 0 11px;
+    .modal-content {
+        .modal-header {
+            padding: 0 11px;
 
-      .icon-close {
-        width: 40px;
-        top: -15px;
+            .icon-close {
+                width: 40px;
 
-        &:before {
-          left: 0;
+                &:before {
+                    left: 0;
+                }
+            }
         }
-      }
+
+        .modal-title {
+            border: 0;
+            padding: 14px 0 10px;
+        }
+
+        .modal-body {
+            padding: 0px 11px 8px;
+        }
     }
 
-    .modal-title {
-      border: 0;
+    .popup-title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 23px;
     }
-
-    .modal-body {
-      padding: 0px 11px 8px;
-      height: 380px !important;
-    }
-  }
-
-  .popup-title {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 23px;
-  }
 }
 
 /********** popup hightlight *************/

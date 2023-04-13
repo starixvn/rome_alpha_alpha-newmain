@@ -1,5 +1,4 @@
-﻿
-@model HeaderNavViewModel
+﻿@model HeaderNavViewModel
 @{
     var changeNickNameUrl = $"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}";
     var mainFrameName = "main";
@@ -21,19 +20,6 @@
         }
         <li class="feedback-box" id="feedback-box">
             <span class="icon-feedback"></span>
-            <div class="dropdown-feedback hide">
-                <div class="text">
-                    <img src="~/Assets/Images/feedback.svg" alt="Help us improve!" />
-                    <p><span>@Resources.FeedbackTitle</span>@Resources.LoveToHear</p>
-                </div>
-                <div class="action">
-                    <label class="label">
-                        <input id="btn-hide-feedback-popup" type="checkbox" name="name" value="" />
-                        <span>@Resources.doNotShowAgain</span>
-                    </label>
-                    <input id="btn-feedback" type="submit" class="btn-submit" value="@Resources.Feedback">
-                </div>
-            </div>
         </li>
         @if (Model.ShowCreateMemberByQRCode)
         {

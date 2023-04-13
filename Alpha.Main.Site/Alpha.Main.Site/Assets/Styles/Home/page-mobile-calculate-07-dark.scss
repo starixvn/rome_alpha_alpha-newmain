@@ -690,47 +690,25 @@ body {
         }
     }
 }
-//popup feedback
+
+// popup feedback
 .hidden-mobile {
     display: none;
 }
+
 .feedback-box {
     &.active {
         &:before {
             margin: 3px 0px 0;
         }
     }
-
-    .dropdown-feedback {
-        top: 73px;
-
-        .text {
-            p {
-                font-size: calculateScale(12px);
-
-                span {
-                    font-size: calculateScale(16px);
-                }
-            }
-        }
-
-        .action {
-            .label, .btn-submit {
-                font-size: calculateScale(12px);
-                input{
-                    top: 1px;
-                }
-            }
-        }
-    }
 }
+
 .feedback-modal {
     width: 100% !important;
     height: 100% !important;
     top: 0 !important;
     left: 0 !important;
-
-    
 
     .modal-content {
         .modal-body {

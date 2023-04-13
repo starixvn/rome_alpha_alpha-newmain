@@ -45,7 +45,7 @@
                 <span class="txt-progress">@Resources.DataProcessingIsInProgress</span>
             </div>
         </div>
-        <div class="div-feedback hidden-mobile hide">
+        <div class="div-feedback @Model.Language hide" id="feedback-function">
             <div class="feedback-box">
                 <div class="icon-feedback"></div>
                 <div class="txt-feedback">@Resources.Feedback</div>
@@ -82,7 +82,6 @@
         <!-- End of LiveChat code -->
     }
 
-    @Html.Hidden("FeedbackTitle", Resources.FeedbackTitle)
     <script async defer src="@TempData["fpsScript"]" type="text/javascript"></script>
 </body>
 </html>
