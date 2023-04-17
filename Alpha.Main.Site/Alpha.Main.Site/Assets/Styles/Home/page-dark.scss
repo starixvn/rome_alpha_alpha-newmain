@@ -1076,10 +1076,9 @@ html * {
     position: absolute;
     background: $popup-bg-black;
     border: 1px solid $popup-border-black;
-    border-radius: 3px;
-    top: 85px;
-    left: -290px;
-    width: 380px;
+    top: 175px;
+    left: 15px;
+    width: 390px;
     z-index: 130;
     color: $text-color;
     padding: 20px;
@@ -1098,26 +1097,26 @@ html * {
     &:before {
         position: absolute;
         content: "";
-        top: -15px;
-        left: 18px;
+        top: 23px;
+        left: -16px;
         width: 0;
         height: 0;
         border-style: solid;
-        border-width: 0 11px 16px 11px;
-        border-color: transparent transparent #2b2b2b transparent;
+        border-width: 11px 16px 11px 0;
+        border-color: transparent #2b2b2b transparent transparent;
         z-index: 3;
     }
 
     &:after {
         position: absolute;
         content: "";
-        top: -18px;
-        left: 17px;
+        top: 22px;
+        left: -18px;
         width: 0;
         height: 0;
         border-style: solid;
-        border-width: 0 12px 18px 12px;
-        border-color: transparent transparent #474747 transparent;
+        border-width: 12px 18px 12px 0;
+        border-color: transparent #474747 transparent transparent;
     }
 
     .text {
