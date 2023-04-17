@@ -722,9 +722,15 @@
     <value>Check Out</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Go to Profile Settings to choose your preferred language.</value>
+    <value>Go to &lt;b&gt;Create Downline &gt; Search &amp; Copy (New View)&lt;/b&gt; to create multiple accounts.</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Display Language</value>
+    <value>Create Multiple Accounts</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
+    <value>Classic View will be the default option until New View takes over on {0} (dd/mm/yyyy).</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>Get started</value>
   </data>
 </root>
