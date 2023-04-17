@@ -52,9 +52,9 @@
     <!--/Report-->
     <!--MemberInfo-->
     <siteMapNode resourceKey="memberInfo" menuItemType="MemberInfoMenuItem" functionType="[H]" byPassProtectedModeInternal="true">
-      <siteMapNode resourceKey="newMaster" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx?lv=4" menuItemType="CreateAccountMenuItem" roles="Super"></siteMapNode>
-      <siteMapNode resourceKey="newAgent" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx?lv=3" menuItemType="CreateAccountMenuItem" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="newMember" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx?lv=2" menuItemType="CreateAccountMenuItem" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="newMaster" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx?lv=4&amp;isNew=false" menuItemType="CreateAccountMenuItem" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="newAgent" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx?lv=3&amp;isNew=false" menuItemType="CreateAccountMenuItem" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="newMember" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx?lv=2&amp;isNew=false" menuItemType="CreateAccountMenuItem" roles="Agent"></siteMapNode>
       <siteMapNode menuItemType="SubAccountMenuItem" resourceKey="subaccount" appPath="OldMainAppPath" url="_SubAcc/SubAccList.aspx" byPassProtectedModeInternal="true"></siteMapNode>
 
       <siteMapNode resourceKey="customerlist" appPath="MemberInfoAppPath" url="CustomerList/member" roles="Agent"></siteMapNode>
