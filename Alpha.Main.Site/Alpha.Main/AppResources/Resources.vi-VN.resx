@@ -721,13 +721,13 @@
     <value>Xem ngay</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Đi đến &lt;b&gt;Tạo Tài Khoản Cấp Dưới &gt; Tìm &amp; Sao Chép (Giao Diện Mới)&lt;/b&gt; để tạo đồng loạt nhiều tài khoản.</value>
+    <value>Đi đến &lt;b&gt;Tạo Tài Khoản Cấp Dưới &gt; Tìm &amp; Sao Chép (phiên bản mới)&lt;/b&gt; để tạo đồng loạt nhiều tài khoản.</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Ngôn Ngữ Hiển Thị</value>
+    <value>Tạo Đồng Loạt Tài Khoản</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>Giao Diện Thường sẽ được chọn mặc định cho đến khi chuyển sang Giao Diện Mới vào ngày {0} (dd/mm/yyyy).</value>
+    <value>Phiên bản cũ sẽ được chọn mặc định cho đến khi chuyển sang phiên bản mới vào ngày {0} (dd/mm/yyyy).</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Bắt đầu</value>

@@ -662,7 +662,7 @@
     <value>前往 &lt;b&gt;建立下線 &gt; 搜尋 &amp; 複製 (新版面)&lt;/b&gt;建立多組帳戶</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>語言顯示</value>
+    <value>同時建立多組帳戶</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
     <value>經典版將設為預設版型，{0} (日/月/年) 起將全面切換成新版面。</value>
