@@ -893,6 +893,8 @@
     <Content Include="Assets\Images\backupdomain.svg" />
     <Content Include="Assets\Images\language-dark.svg" />
     <Content Include="Assets\Images\language.svg" />
+    <Content Include="Assets\Images\createmultipleaccounts.svg" />
+    <Content Include="Assets\Images\createmultipleaccounts-dark.svg" />
     <Content Include="Assets\Images\arrowbackupdomainmb.svg" />
     <Content Include="Assets\Images\arrowbackupdomain.svg" />
     <Content Include="Assets\Images\icon-chatbot-1.svg" />

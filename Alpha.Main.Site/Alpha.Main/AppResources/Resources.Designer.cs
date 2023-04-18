@@ -19,7 +19,7 @@ namespace Alpha.Main.AppResources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -520,6 +520,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get started.
+        /// </summary>
+        public static string GetStarted {
+            get {
+                return ResourceManager.GetString("GetStarted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Given Credit.
         /// </summary>
         public static string givenCredit {
@@ -556,7 +565,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Go to Profile Settings to choose your preferred language..
+        ///   Looks up a localized string similar to Go to &lt;b&gt;Create Downline &gt; Search &amp; Copy (New View)&lt;/b&gt; to create multiple accounts..
         /// </summary>
         public static string HighlightPopupNewFeatureIntro {
             get {
@@ -565,7 +574,16 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Display Language.
+        ///   Looks up a localized string similar to Classic View will be the default option until New View takes over on {0} (dd/mm/yyyy)..
+        /// </summary>
+        public static string HighlightPopupNewFeatureIntro2 {
+            get {
+                return ResourceManager.GetString("HighlightPopupNewFeatureIntro2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Multiple Accounts.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {

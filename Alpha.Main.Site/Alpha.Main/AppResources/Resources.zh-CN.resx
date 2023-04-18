@@ -659,9 +659,15 @@
     <value>查看</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>去个人设置选择您的首选语言</value>
+    <value>前往 &lt;b&gt;建立下线 &gt; 搜寻 &amp; 复制 (新版面)&lt;/b&gt;建立多组账号</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>语言显示</value>
+    <value>同时建立多组账号</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
+    <value>经典版将设为预设版型，{0} (日/月/年) 起将全面切会换新版面。</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>开始吧</value>
   </data>
 </root>

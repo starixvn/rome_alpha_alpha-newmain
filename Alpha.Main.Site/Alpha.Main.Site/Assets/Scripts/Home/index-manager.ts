@@ -52,7 +52,7 @@ var indexManager = {
         indexManager.setCurrentUrl();
 
         indexManager.initFeedbackGlobal();
-        //indexManager.initNewFeatureHighlightPopup();
+        indexManager.initNewFeatureHighlightPopup();
 
         if (indexManager.requiredNetworkSpeedCalculation) {
             setTimeout(indexManager.calculateUserConnectionSpeed, 8000);
@@ -347,7 +347,7 @@ var indexManager = {
     },
 
     initNewFeatureHighlightPopup: function () {
-        const featureName = "DisplayLanguage";
+        const featureName = "CopyAccount";
         const cookiesName = indexManager.hidePopupCookies + featureName;
         const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
 
@@ -364,13 +364,13 @@ var indexManager = {
 
             box.find("#linkHighlightPopupCheckOut").click(() => box.addClass("hide"));
 
-            //$(window).scroll(() => box.addClass("hide"));
+            $(window).scroll(() => box.addClass("hide"));
 
-            //$("#main-menu-tab")["mCustomScrollbar"]({
-            //    callbacks: {
-            //        onScrollStart: () => box.addClass("hide")
-            //    }
-            //});
+            $("#main-menu-tab")["mCustomScrollbar"]({
+                callbacks: {
+                    onScrollStart: () => box.addClass("hide")
+                }
+            });
         }
     },
 

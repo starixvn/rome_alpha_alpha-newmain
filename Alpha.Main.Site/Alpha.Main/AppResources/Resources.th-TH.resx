@@ -656,9 +656,15 @@
     <value>ออก</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>ไปที่หน้าการตั้งค่าโปรไฟล์เพื่อเลือกภาษาที่คุณต้องการใช้</value>
+    <value>ไปยัง &lt;b&gt;สร้างดาวน์ไลน์ &gt; ค้นหาและคัดลอก (มุมมองใหม่)&lt;/b&gt;เพื่อสร้างบัญชีจำนวนหลายรายการ</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>ภาษาสำหรับแสดงผล</value>
+    <value>สร้างหลายบัญชี</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
+    <value>มุมมองแบบเดิมจะเป็นตัวเลือกตั้งต้น จนถึงวันที่ {0} (dd/mm/yyyy) แล้วจะถูกแทนที่ด้วยมุมมองแบบใหม่</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>เริ่มต้น</value>
   </data>
 </root>

@@ -724,12 +724,14 @@ body {
 }
 /********** popup hightlight *************/
 .popup-highlight {
-    left: auto;
-    right: 10px;
+    left: 10px;
+    right: auto;
     top: 63px;
 
     &:before {
-        right: 10px;
-        left: auto;
+        right: auto;
+        left: 11px;
+        transform: rotate(90deg);
+        top: -18px;
     }
 }

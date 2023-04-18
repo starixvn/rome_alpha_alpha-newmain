@@ -1020,7 +1020,8 @@ html * {
             padding: 0 11px;
 
             .icon-close {
-                width: 40px;
+                width: 80px;
+                height: 50px;
 
                 &:before {
                     left: 0;
@@ -1049,11 +1050,10 @@ html * {
 .popup-highlight {
     position: absolute;
     background: $popup-bg;
-    border-radius: 3px;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
-    top: 85px;
-    left: -290px;
-    width: 380px;
+    top: 175px;
+    left: 15px;
+    width: 390px;
     z-index: 130;
     color: $text-color;
     padding: 20px;
@@ -1072,13 +1072,13 @@ html * {
     &:before {
         position: absolute;
         content: "";
-        top: -15px;
-        left: 18px;
+        top: 23px;
+        left: -15px;
         width: 0;
         height: 0;
         border-style: solid;
-        border-width: 0 11px 16px 11px;
-        border-color: transparent transparent #ffffff transparent;
+        border-width: 11px 16px 11px 0;
+        border-color: transparent #ffffff transparent transparent;
     }
 
     .text {
@@ -1104,6 +1104,10 @@ html * {
             font-size: 14px;
             line-height: 20px;
             margin: 0 0 7px 0;
+
+            b {
+                color: #0B599C;
+            }
         }
     }
 
