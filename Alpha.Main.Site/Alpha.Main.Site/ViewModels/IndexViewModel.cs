@@ -12,6 +12,7 @@
     using Main.Helpers;
     using Models.Requests;
     using SecurityCode.Web;
+    using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
 
     public class IndexViewModel
@@ -180,5 +181,7 @@
         public string Username => message.IsSubAcc ? message.SubUserName : message.UserName;
 
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
+
+        public bool HasCreateAccountPermission => !message.IsSubAcc || message.SubPageAccess.Contains(PageAccessType.CreateAccount);
     }
 }
