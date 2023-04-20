@@ -417,4 +417,7 @@
   <data name="BackupDomains" xml:space="preserve">
     <value>โดเมนสำรอง</value>
   </data>
+  <data name="AutoTransferMonitoring" xml:space="preserve">
+    <value>ตรวจสถานะการโอนอัตโนมัติ</value>
+  </data>
 </root>

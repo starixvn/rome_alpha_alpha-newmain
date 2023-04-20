@@ -417,4 +417,7 @@
   <data name="BackupDomains" xml:space="preserve">
     <value>后备域名</value>
   </data>
+  <data name="AutoTransferMonitoring" xml:space="preserve">
+    <value>监控自动转账</value>
+  </data>
 </root>

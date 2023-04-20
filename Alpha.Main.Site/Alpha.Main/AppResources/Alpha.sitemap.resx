@@ -424,6 +424,6 @@
     <value>Backup Domains</value>
   </data>
   <data name="AutoTransferMonitoring" xml:space="preserve">
-    <value>Auto Transfer Monitoring</value>
+    <value>Auto Transfer Monitor</value>
   </data>
 </root>

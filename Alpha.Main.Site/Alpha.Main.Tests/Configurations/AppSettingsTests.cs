@@ -735,7 +735,6 @@
             Assert.AreEqual(expected, actualSetting);
         }
 
-
         [TestCase("")]
         [TestCase("01/05/2023 12:00:00")]
         public void EnableSupportAutoTransferDate_HasConfig_ReturnsCorrectValues(string configSites)
@@ -745,15 +744,12 @@
             {
                 ["EnableSupportAutoTransferDate"] = configSites,
             };
-
-            // Act
             DateTime enableSupportAutoTransferDate;
 
+            // Act
             var actualSetting = DateTime.TryParse(configSites, out enableSupportAutoTransferDate)
               ? enableSupportAutoTransferDate
               : (DateTime?)null;
-
-
 
             // Assert
             Assert.AreEqual(AppSettings.EnableSupportAutoTransferDate, actualSetting);
