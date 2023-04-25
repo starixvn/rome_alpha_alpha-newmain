@@ -670,4 +670,7 @@
   <data name="GetStarted" xml:space="preserve">
     <value>开始吧</value>
   </data>
+  <data name="SessionExpired" xml:space="preserve">
+    <value>您的登录已超时。</value>
+  </data>
 </root>

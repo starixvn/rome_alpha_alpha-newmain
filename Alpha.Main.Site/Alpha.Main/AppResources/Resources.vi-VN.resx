@@ -732,4 +732,7 @@
   <data name="GetStarted" xml:space="preserve">
     <value>Bắt đầu</value>
   </data>
+  <data name="SessionExpired" xml:space="preserve">
+    <value>Phiên làm việc đã hết hạn.</value>
+  </data>
 </root>

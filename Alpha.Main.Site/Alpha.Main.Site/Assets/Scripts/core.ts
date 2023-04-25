@@ -56,7 +56,8 @@ var alpha = {
                 return eval("(" + reponse + ")");
             },
 
-            signOut: function (errMsg = 'Your login session was expired.') {
+            signOut: function (errMsg = null) {
+                errMsg = errMsg || $('#SessionExpired').val();
                 var index: any = window;
                 while (index != index.parent) {
                     index = index.parent;

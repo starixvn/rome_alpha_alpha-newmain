@@ -667,4 +667,7 @@
   <data name="GetStarted" xml:space="preserve">
     <value>เริ่มต้น</value>
   </data>
+  <data name="SessionExpired" xml:space="preserve">
+    <value>การเข้าสู่ระบบของคุณหมดเวลาแล้ว</value>
+  </data>
 </root>
