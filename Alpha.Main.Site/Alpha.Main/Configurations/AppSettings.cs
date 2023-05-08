@@ -205,7 +205,6 @@
 
         public static string SiteLabel789y => Settings["SiteLabel789y"];
 
-
         public static IEnumerable<int> IndirectLoginSuperIds
             => Settings["IndirectLogin:AllowSuperIds"]
             .Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries)
@@ -226,6 +225,7 @@
             => int.Parse(Settings["UMAnnouncementPopup:ClientIntervalInMinutes"]);
 
         private static string[] allowedSitesToViewBonusDetail;
+
         public static string[] AllowedSitesToViewBonusDetail
         {
             get
@@ -374,5 +374,7 @@
 
         public static string APIGatewaysURL => Settings["APIGatewaysURL"];
         public static List<string> APISuperIds => Settings["APISuperIds"].Split(',').ToList();
+
+        public static bool IsOfferCreateAccountLiteMode => Settings["CreateNewAccount:OfferLiteMode"] == "1";
     }
 }

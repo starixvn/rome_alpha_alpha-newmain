@@ -426,4 +426,7 @@
   <data name="AutoTransferMonitoring" xml:space="preserve">
     <value>Auto Transfer Monitor</value>
   </data>
+  <data name="PTTemplate" xml:space="preserve">
+    <value>Position Taking (%) Template</value>
+  </data>
 </root>

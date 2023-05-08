@@ -62,8 +62,8 @@
 
             siteMenuService.GetMenuByUserLevel(Arg.Any<UserLevel>()).Returns(new List<MenuItem>
             {
-                new MenuItem(getMenuStatusFunc, unauthorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty, null, null),
-                new MenuItem(getMenuStatusFunc, unauthorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty, null, null)
+                new MenuItem(getMenuStatusFunc, unauthorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty,()=>string.Empty,()=>string.Empty),
+                new MenuItem(getMenuStatusFunc, unauthorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty,()=>string.Empty,()=>string.Empty)
             });
 
             //// Act

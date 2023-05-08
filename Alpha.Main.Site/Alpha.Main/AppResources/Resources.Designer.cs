@@ -19,7 +19,7 @@ namespace Alpha.Main.AppResources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -592,7 +592,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to System can now help you auto transfer to your downline periodically..
+        ///   Looks up a localized string similar to A lightweight and user-friendly interface to simplify the account creation process.
         /// </summary>
         public static string HighlightPopupNewFeatureIntro {
             get {
@@ -601,7 +601,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Go to &lt;b&gt;Transfer &gt; Transfer page&lt;/b&gt; to enable/disable auto transfer for downlines..
+        ///   Looks up a localized string similar to Enjoy a hassle-free experience while still accessing all the essential functionalities with just a few clicks..
         /// </summary>
         public static string HighlightPopupNewFeatureIntro2 {
             get {
@@ -628,7 +628,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Auto Transfer Accounts.
+        ///   Looks up a localized string similar to Create a New Account with Lite mode.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {

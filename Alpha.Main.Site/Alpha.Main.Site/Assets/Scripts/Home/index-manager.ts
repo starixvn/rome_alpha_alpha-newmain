@@ -37,7 +37,8 @@ var indexManager = {
         accountInfoContent: null,
         currentURLCookieName: null,
         pagePopup: null,
-        feedbackFunction: null
+        feedbackFunction: null,
+        language: null
     },
 
     urls: {
@@ -126,6 +127,7 @@ var indexManager = {
         indexManager.reportDomain = $('#reportDomain').val();
         indexManager.recheckInIntervalMiliseconds = $("#RecheckinIntervalMiliseconds").val();
         indexManager.domElements.feedbackFunction = $("#feedback-function");
+        indexManager.domElements.language = $("#language");
     },
 
     changeMenu: function (url) {
@@ -195,7 +197,7 @@ var indexManager = {
             : localStorage.getItem(indexManager.currentUrlCookieName) || defaultUrl;
         currentUrl = indexManager.isIgnoreRedirectUrl(currentUrl)
             ? defaultUrl
-            : indexManager.replaceIsDarkModeQueryStringValue(currentUrl);
+            : indexManager.replaceQueryStringValues(currentUrl);
 
         if (currentUrl.indexOf(headerNav.urls.home) !== -1) {
             currentUrl = currentUrl.replace("Index2", "Index");
@@ -350,10 +352,13 @@ var indexManager = {
         return false;
     },
 
-    replaceIsDarkModeQueryStringValue: function (url: string) {
-        return indexManager.isDCSUrl(url)
-            ? url.replace(/(isdarkmode=)[^\&]+/i, '$1' + $('#isDarkMode').val())
-            : url;
+    replaceQueryStringValues: function (url: string) {
+        if (indexManager.isDCSUrl(url)) {
+            return url;
+        }
+
+        var newUrl = url.replace(/(isdarkmode=)[^\&]+/i, '$1' + $('#isDarkMode').val());
+        return newUrl.replace(/(lng=)[^\&]+/i, '$1' + indexManager.domElements.language.data("currentlanguage"));
     },
 
     isDCSUrl: function (url: string) {
@@ -407,12 +412,12 @@ var indexManager = {
     //},
 
     initNewFeatureHighlightPopup: function () {
-        const leftMenu = $("#menu-TRANSFER");
+        const leftMenu = $("#menu-MEMBERINFO");
         if ($("#ShowHighlightPopup").val() === "0" || !leftMenu.length) {
             return;
         }
 
-        const featureName = "AutoTransfer";
+        const featureName = "CreateAccountLiteMode";
         const cookiesName = indexManager.hidePopupCookies + featureName;
         const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
 
@@ -472,7 +477,6 @@ var indexManager = {
                 newFeatureLink.attr("href", newFeatureLink.attr("href").replace(menuBar.domElements.sessionId, menuBar.domElements.reportSessionId))
                 clearInterval(rebuildNewFeatureLinkInterval);
             }
-
 
             retryTimes++;
             retryTimes >= 10 && clearInterval(rebuildNewFeatureLinkInterval);
