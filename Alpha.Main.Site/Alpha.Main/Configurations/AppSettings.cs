@@ -360,7 +360,5 @@
 
         public static string APIGatewaysURL => Settings["APIGatewaysURL"];
         public static List<string> APISuperIds => Settings["APISuperIds"].Split(',').ToList();
-
-        public static string CreateNewAccountBannerEndDate => DateTime.Parse(Settings["CreateNewAccount:BannerEndDate"]).ToString("dd/MM/yyyy");
     }
 }
