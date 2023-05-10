@@ -86,20 +86,7 @@ namespace Alpha.Main.Site.Controllers
 
             var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode(), null, nicknameChecker);
 
-            var viewModel = await mediator.SendAsync(query);
-
-            // FPS Scritp ==================
-
-            var fpsScript = this.userSession.GetProperty<string>(fpsScriptKey);
-
-            if (!string.IsNullOrWhiteSpace(fpsScript))
-            {
-                TempData[fpsScriptKey] = fpsScript;
-
-                this.userSession.SetProperty(fpsScriptKey, string.Empty);
-            }
-
-            //================
+            var viewModel = await mediator.SendAsync(query);            
 
             return View(viewModel);
         }
