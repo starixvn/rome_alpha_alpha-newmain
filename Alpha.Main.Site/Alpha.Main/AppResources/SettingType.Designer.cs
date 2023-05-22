@@ -187,6 +187,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bet Setting.
+        /// </summary>
+        internal static string _23 {
+            get {
+                return ResourceManager.GetString("_23", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Commission.
         /// </summary>
         internal static string _3 {
