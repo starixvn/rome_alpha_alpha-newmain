@@ -149,6 +149,11 @@
             }
         }
 
+        public static string MapResultPath()
+        {
+            return AppPathHelper.GetAppPath("site-results", "~/");
+        }
+
         internal static string MapReportsDomain(string virtualPath = "~/")
         {
             var reportDomain = AppSettings.ReportDomain;

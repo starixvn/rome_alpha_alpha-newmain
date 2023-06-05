@@ -24,7 +24,10 @@ var alpha = {
                 : "not found",
             messageRootPath: top.document.getElementById('messageRootPath') != null
                 ? (<HTMLInputElement>top.document.getElementById('messageRootPath')).value
-                : "not found"
+                : "not found",
+            resultRootPath: top.document.getElementById('resultRootPath') != null
+                ? (<HTMLInputElement>top.document.getElementById('resultRootPath')).value
+                : "/site-results/"
         },
     user:
         {
