@@ -26,6 +26,7 @@
 @Html.Hidden("isDarkMode", Model.IsDarkMode.ToString().ToLowerInvariant())
 @Html.Hidden("RecheckinIntervalMiliseconds", Model.RecheckinIntervalMiliseconds)
 @Html.Hidden("SessionId", Model.SessionID)
+@Html.Hidden("resultRootPath", Model.ResultRootPath)
 @if (Model.IsOfferLiveChat)
 {
     @Html.Hidden("UsernameShowOnLiveChat", Model.Username)

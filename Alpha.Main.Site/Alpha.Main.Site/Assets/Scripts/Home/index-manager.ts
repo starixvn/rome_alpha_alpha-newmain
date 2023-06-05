@@ -75,6 +75,24 @@ var indexManager = {
             if (e.data.event_id === "betlist-result") {
                 popupManager.openMultiple(e.data.url, e.data.title, e.data.width, e.data.height, undefined, undefined, undefined, undefined, undefined, undefined, e.data.options);
             }
+
+            if (e.data.event_id === "pplivecasino-result") {
+                var left = popupManager.leftPosition();
+                var top = popupManager.topPosition() + 100;
+                var option = "toolbar=no,scrollbars=no,resizable=yes,top=" + top + ",left=" + left + ",width=835,height=400,location=no";
+                var resultPopup = window.open("", "_blank", option);
+                resultPopup.document.title = "PP Live Casino Result";
+                $.ajax({
+                    type: "POST",
+                    url: location.origin.split(':')[0] +"://" + location.hostname + '/' + alpha.urls.resultRootPath + e.data.url,
+                    success: function (data) {
+                        resultPopup.location.href = data.Result;
+                    },
+                    error: function () {
+                        resultPopup.location.href = alpha.urls.oldMainRootPath + 'Error.aspx';
+                    }
+                });
+            }
         }, false);
     },
 
