@@ -555,6 +555,12 @@ var menuBar = {
                 'opacity': '1'
             });
         };
+    },
+
+    activeMyWatchlistSubMenuItem: function () {
+        const riskManagementMenu = $('#menu-RISKMANAGEMENT');
+        riskManagementMenu.find('.parent-menu').trigger("click");
+        riskManagementMenu.find('#sub-menu-MYWATCHLIST').addClass('active');
     }
 };
 
