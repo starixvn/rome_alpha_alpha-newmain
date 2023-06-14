@@ -722,18 +722,24 @@
     <value>Check Out</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Go to &lt;b&gt;Create Downline &gt; Search &amp; Copy (New View)&lt;/b&gt; to create multiple accounts.</value>
+    <value>Search for Win/Loss results by username</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Create Multiple Accounts</value>
+    <value>Discover &lt;b&gt;New View&lt;/b&gt; on Win Loss Detail Report</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>Classic View will be the default option until New View takes over on {0} (dd/mm/yyyy).</value>
+    <value>Divide data into weekly periods</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
-    <value>Get started</value>
+    <value>Get Started</value>
   </data>
   <data name="SessionExpired" xml:space="preserve">
     <value>Your login has timed out.</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro3" xml:space="preserve">
+    <value>Copy data from Report without exporting</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro4" xml:space="preserve">
+    <value>Filter tickets on Bet List</value>
   </data>
 </root>

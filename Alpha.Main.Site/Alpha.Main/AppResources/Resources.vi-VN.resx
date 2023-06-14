@@ -721,18 +721,24 @@
     <value>Xem ngay</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Đi đến &lt;b&gt;Tạo Tài Khoản Cấp Dưới &gt; Tìm &amp; Sao Chép (phiên bản mới)&lt;/b&gt; để tạo đồng loạt nhiều tài khoản.</value>
+    <value>Tìm kết quả thắng thua theo tên người dùng</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Tạo Đồng Loạt Tài Khoản</value>
+    <value>Trải Nghiệm &lt;b&gt;Phiên Bản Mới&lt;/b&gt; Của Báo Cáo Chi Tiết Thắng Thua</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>Phiên bản cũ sẽ được chọn mặc định cho đến khi chuyển sang phiên bản mới vào ngày {0} (dd/mm/yyyy).</value>
+    <value>Phân chia dữ liệu theo tuần</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Bắt đầu</value>
   </data>
   <data name="SessionExpired" xml:space="preserve">
     <value>Phiên làm việc đã hết hạn.</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro3" xml:space="preserve">
+    <value>Sao chép dữ liệu mà không cần xuất ra tệp</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro4" xml:space="preserve">
+    <value>Lọc vé cược trên Danh Sách Cược</value>
   </data>
 </root>

@@ -520,7 +520,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Get started.
+        ///   Looks up a localized string similar to Get Started.
         /// </summary>
         public static string GetStarted {
             get {
@@ -565,7 +565,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Go to &lt;b&gt;Create Downline &gt; Search &amp; Copy (New View)&lt;/b&gt; to create multiple accounts..
+        ///   Looks up a localized string similar to Search for Win/Loss results by username.
         /// </summary>
         public static string HighlightPopupNewFeatureIntro {
             get {
@@ -574,7 +574,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Classic View will be the default option until New View takes over on {0} (dd/mm/yyyy)..
+        ///   Looks up a localized string similar to Divide data into weekly periods.
         /// </summary>
         public static string HighlightPopupNewFeatureIntro2 {
             get {
@@ -583,7 +583,25 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create Multiple Accounts.
+        ///   Looks up a localized string similar to Copy data from Report without exporting.
+        /// </summary>
+        public static string HighlightPopupNewFeatureIntro3 {
+            get {
+                return ResourceManager.GetString("HighlightPopupNewFeatureIntro3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filter tickets on Bet List.
+        /// </summary>
+        public static string HighlightPopupNewFeatureIntro4 {
+            get {
+                return ResourceManager.GetString("HighlightPopupNewFeatureIntro4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discover &lt;b&gt;New View&lt;/b&gt; on Win Loss Detail Report.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {

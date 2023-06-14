@@ -1051,9 +1051,9 @@ html * {
     position: absolute;
     background: $popup-bg;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
-    top: 175px;
+    top: 130px;
     left: 15px;
-    width: 390px;
+    width: 400px;
     z-index: 130;
     color: $text-color;
     padding: 20px;
@@ -1107,6 +1107,19 @@ html * {
 
             b {
                 color: #0B599C;
+            }
+        }
+
+        ul {
+            padding: 0 0 0 19px;
+            margin: 0;
+
+            li {
+                margin: 0;
+                list-style: disc;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 20px;
             }
         }
     }

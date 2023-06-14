@@ -1,21 +1,27 @@
 ﻿@model IndexViewModel
-<div class="popup-highlight hide" id="boxHighlightPopupNewFeature">
-    <button type="button" class="icon icon-close close" title="@Resources.close"><span aria-hidden="true"></span></button>
-    <div class="text">
-        <img src="~/Assets/Images/createmultipleaccounts@(Model.DarkModeName).svg?v=@AppSettings.JsVersion" alt="change display language">
-        <div>
-            <p><span>@Resources.HighlightPopupNewFeatureTitle</span></p>
-            <p>@Html.Raw(Resources.HighlightPopupNewFeatureIntro)</p>
-            @*<p>@string.Format(Resources.HighlightPopupNewFeatureIntro2, AppSettings.CreateNewAccountBannerEndDate)</p>*@
+@if (Model.HasReportPermission)
+{
+    <div class="popup-highlight hide" id="boxHighlightPopupNewFeature">
+        <button type="button" class="icon icon-close close" title="@Resources.close"><span aria-hidden="true"></span></button>
+        <div class="text">
+            <img src="~/Assets/Images/winlostreport@(Model.DarkModeName).svg?v=@AppSettings.JsVersion" alt="Win Loss Report">
+            <div>
+                <p><span>@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</span></p>               
+                <ul>
+                    <li>@Resources.HighlightPopupNewFeatureIntro</li>
+                    <li>@Resources.HighlightPopupNewFeatureIntro2</li>
+                    <li>@Resources.HighlightPopupNewFeatureIntro3</li>
+                    <li>@Resources.HighlightPopupNewFeatureIntro4</li>
+                </ul>
+                @*<p>@string.Format(Resources.HighlightPopupNewFeatureIntro2, AppSettings.CreateNewAccountBannerEndDate)</p>*@
+            </div>
+        </div>
+        <div class="action">
+            <label class="label">
+                <input id="chkHideHighlightPopupNewFeature" type="checkbox" />
+                <span>@Resources.doNotShowAgain</span>
+            </label>
+            <a class="btn-submit" id="linkHighlightPopupCheckOut" href="@Model.NewWinLossReportUrl" target="main">@Resources.GetStarted</a>
         </div>
     </div>
-    <div class="action">
-        <label class="label">
-            <input id="chkHideHighlightPopupNewFeature" type="checkbox" />
-            <span>@Resources.doNotShowAgain</span>
-        </label>
-        @if (Model.HasCreateAccountPermission) {
-            <a class="btn-submit" id="linkHighlightPopupCheckOut" href="@MicroSites.OldMainUrl("_MemberInfo/SearchAndCopy/MasterPage.aspx?isNew=true")" target="main">@Resources.GetStarted</a>
-        }
-    </div>
-</div>
+}

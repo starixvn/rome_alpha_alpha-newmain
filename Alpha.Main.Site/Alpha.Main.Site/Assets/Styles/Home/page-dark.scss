@@ -1076,9 +1076,9 @@ html * {
     position: absolute;
     background: $popup-bg-black;
     border: 1px solid $popup-border-black;
-    top: 175px;
+    top: 130px;
     left: 15px;
-    width: 390px;
+    width: 400px;
     z-index: 130;
     color: $text-color;
     padding: 20px;
@@ -1145,6 +1145,19 @@ html * {
 
             b {
                 color: #41A4FF;
+            }
+        }
+
+        ul {
+            padding: 0 0 0 19px;
+            margin: 0;
+
+            li {
+                margin: 0;
+                list-style: disc;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 20px;
             }
         }
     }

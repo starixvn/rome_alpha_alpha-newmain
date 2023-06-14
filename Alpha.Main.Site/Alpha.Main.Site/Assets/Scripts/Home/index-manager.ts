@@ -53,7 +53,7 @@ var indexManager = {
         indexManager.setCurrentUrl();
 
         indexManager.initFeedbackGlobal();
-        //indexManager.initNewFeatureHighlightPopup();
+        indexManager.initNewFeatureHighlightPopup();
 
         if (indexManager.requiredNetworkSpeedCalculation) {
             setTimeout(indexManager.calculateUserConnectionSpeed, 8000);
@@ -377,7 +377,7 @@ var indexManager = {
     },
 
     initNewFeatureHighlightPopup: function () {
-        const featureName = "CopyAccount";
+        const featureName = "WinLossReportNew";
         const cookiesName = indexManager.hidePopupCookies + featureName;
         const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
 
@@ -392,7 +392,8 @@ var indexManager = {
                 box.addClass("hide");
             });
 
-            box.find("#linkHighlightPopupCheckOut").click(() => box.addClass("hide"));
+            const newFeatureLink = box.find("#linkHighlightPopupCheckOut");
+            newFeatureLink.click(() => box.addClass("hide"));
 
             $(window).scroll(() => box.addClass("hide"));
 
@@ -401,6 +402,22 @@ var indexManager = {
                     onScrollStart: () => box.addClass("hide")
                 }
             });
+
+            // Rebuild URL for Reports/Bet Lists incase of internal
+            if (newFeatureLink.attr("href").indexOf("(S(") !== -1) {
+                let retryTimes = 0;
+                let rebuildNewFeatureLinkInterval = setInterval(function () {
+                    if (menuBar.domElements.sessionId
+                        && menuBar.domElements.reportSessionId
+                        && newFeatureLink.attr("href").indexOf(menuBar.domElements.reportSessionId) === -1) {
+                        newFeatureLink.attr("href", newFeatureLink.attr("href").replace(menuBar.domElements.sessionId, menuBar.domElements.reportSessionId))
+                        clearInterval(rebuildNewFeatureLinkInterval);
+                    }
+
+                    retryTimes++;
+                    retryTimes >= 10 && clearInterval(rebuildNewFeatureLinkInterval);
+                }, 1000);
+            }
         }
     },
 
