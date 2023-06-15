@@ -22,6 +22,7 @@ var indexManager = {
     showOldCustomerList: false,
     reportDomain: "",
     recheckInIntervalMiliseconds: 30000,
+    isInternal: true,
 
     domElements: {
         mainFrame: null,
@@ -97,6 +98,7 @@ var indexManager = {
     },
 
     cachedDomElements: function () {
+        indexManager.isInternal = $('#isInternal').val() === "1";
         indexManager.domElements.partialContents = $('.partial-content');
         indexManager.domElements.content = $('#content');
         indexManager.domElements.accountInfoContent = $('#accountinfo-content');
@@ -161,7 +163,7 @@ var indexManager = {
         try {
             $('.modal[id^="page-popup-"]').remove();
 
-            if ($("#isInternal").val() === "0") {
+            if (!indexManager.isInternal) {
                 var mainFrame = <HTMLIFrameElement>document.getElementById("main");
                 var mainFrameDocument = mainFrame.contentWindow || mainFrame.contentDocument;
                 var currentUrl = mainFrameDocument && mainFrameDocument.location.href || mainFrame.src;
@@ -172,7 +174,7 @@ var indexManager = {
 
     setCurrentUrl: function () {
         const defaultUrl = indexManager.domElements.content.data('default-url');
-        let currentUrl = $("#isInternal").val() === "1"
+        let currentUrl = indexManager.isInternal
             ? defaultUrl
             : localStorage.getItem(indexManager.currentUrlCookieName) || defaultUrl;
         currentUrl = indexManager.isIgnoreRedirectUrl(currentUrl)
@@ -195,7 +197,7 @@ var indexManager = {
                     indexManager.domElements.feedbackFunction.addClass("hide");
                     var iframeWindow = indexManager.domElements.mainFrame[0].contentWindow || indexManager.domElements.mainFrame[0].contentDocument;
                     indexManager.closeAllOpenDropdowns(iframeWindow);
-                    
+
                     indexManager.cacheCurrentUrl();
                     try {
                         $(iframeWindow.document).on('click touchend',
@@ -214,6 +216,16 @@ var indexManager = {
                     indexManager.domElements.accountInfoContent[0].contentDocument;
                 indexManager.closeAllOpenDropdowns(iframeWindow);
             });
+        }
+    },
+
+    updateCurrentUrl: function (queryString) {
+        if (!indexManager.isInternal) {
+            const currentUrl = localStorage.getItem(indexManager.currentUrlCookieName);
+            if (currentUrl) {
+                const currentUrlArray = currentUrl.split("?");
+                localStorage.setItem(indexManager.currentUrlCookieName, currentUrlArray[0] + "?" + queryString);
+            }
         }
     },
 
