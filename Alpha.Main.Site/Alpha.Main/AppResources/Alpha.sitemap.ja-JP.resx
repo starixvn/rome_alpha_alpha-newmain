@@ -334,9 +334,6 @@
   <data name="Setting" xml:space="preserve">
     <value>Setting</value>
   </data>
-  <data name="schedule" xml:space="preserve">
-    <value>Schedule</value>
-  </data>
   <data name="BetLists" xml:space="preserve">
     <value>ベットリスト</value>
   </data>

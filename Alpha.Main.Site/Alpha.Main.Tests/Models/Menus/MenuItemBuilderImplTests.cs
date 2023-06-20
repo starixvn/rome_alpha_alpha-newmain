@@ -14,7 +14,6 @@
         private MenuItemBuilderImpl menuItemBuilderImpl;
         private IAuthorizationService authorizationService;
         private IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration;
-        private IDictionary<string, Func<string>> menuItemDisplayName;
         private Func<bool> isProtectedModeFunc;
         private Func<bool> isInternalFunc;
         private Func<string, string> buildInvalidSessionUniqueKeyFunc;
@@ -27,15 +26,11 @@
             {
                 { string.Empty, null }
             };
-            menuItemDisplayName = new Dictionary<string, Func<string>>
-            {
-                { string.Empty, null }
-            };
             isProtectedModeFunc = () => false;
             isInternalFunc = () => false;
             buildInvalidSessionUniqueKeyFunc = (string url) => string.Empty;
 
-            menuItemBuilderImpl = new MenuItemBuilderImpl(authorizationService, menuItemTypeConfiguration, menuItemDisplayName, isProtectedModeFunc, isInternalFunc, buildInvalidSessionUniqueKeyFunc);
+            menuItemBuilderImpl = new MenuItemBuilderImpl(authorizationService, menuItemTypeConfiguration, isProtectedModeFunc, isInternalFunc, buildInvalidSessionUniqueKeyFunc);
         }
 
         [Test]

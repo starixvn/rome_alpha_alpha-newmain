@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using Main.Models.Menus;
+    using NSubstitute;
     using NUnit.Framework;
 
     [TestFixture]
@@ -35,8 +36,8 @@
             {
                 SubMenus = new List<IMenuItem>
                 {
-                    new MenuItem(getMenuStatusFunc, authorizedUrlFunction, null, () => false, () => false, () => false, (string url) => string.Empty),
-                    new MenuItem(getMenuStatusFunc, unauthorizedUrlFunction, null, () => false, () => false, () => false, (string url) => string.Empty)
+                    new MenuItem(getMenuStatusFunc, authorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty),
+                    new MenuItem(getMenuStatusFunc, unauthorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty)
                 }
             };
 
@@ -54,7 +55,7 @@
             };
 
             // Act
-            var actualMenuItem = new MenuItem(null, authorizedUrlFunction, null, () => false, () => false, () => false, (string url) => string.Empty);
+            var actualMenuItem = new MenuItem(null, authorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty);
 
             // Assert
             Assert.IsFalse(actualMenuItem.Status.Visible);
@@ -75,26 +76,10 @@
             };
 
             // Act
-            var actualMenuItemStatus = new MenuItem(getMenuStatusFunc, authorizedUrlFunction, null, () => false, () => false, () => false, (string url) => string.Empty).Status;
+            var actualMenuItemStatus = new MenuItem(getMenuStatusFunc, authorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty).Status;
 
             // Assert
             Assert.AreEqual(expectedMenuStatus, actualMenuItemStatus);
-        }
-
-        [Test]
-        public void DisplayName_GetDisplayNameFuncIsNotNull_ReturnValueOfFunc()
-        {
-            // Arrange
-            Func<string> getDisplayName = () =>
-            {
-                return "DisplayName";
-            };
-
-            // Act
-            var actualMenuItem = new MenuItem(null, null, getDisplayName, () => false, () => false, () => false, (string url) => string.Empty);
-
-            // Assert
-            Assert.IsTrue(actualMenuItem.DisplayName.Equals("DisplayName"));
         }
     }
 }

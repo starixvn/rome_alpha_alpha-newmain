@@ -44,7 +44,6 @@
 
       <siteMapNode resourceKey="result" url="~/Normal" appPath="ResultSiteVirtualPath" byPassProtectedMode="true"></siteMapNode>
 
-      <siteMapNode menuItemType="NG2MenuItem" resourceKey="schedule" appPath="NG2SiteVirtualPath" url="~/Schedule"></siteMapNode>
       <siteMapNode menuItemType="ProgressiveContributionMenuItem" resourceKey="ProgressiveGamesContribution" appPath="ReportsAppPath" url="/progressivecontribution/index" useDomainConfig="Report:Domain"></siteMapNode>
       <siteMapNode menuItemType="BonusDetailMenuItem" resourceKey="BonusDetail" appPath="ReportsAppPath" url="/bonusdetail/index" useDomainConfig="Report:Domain"></siteMapNode>
       <siteMapNode resourceKey="BetCreditTracking" appPath="ReportsAppPath" url="/betcredithistory/index" isHiddenInMobile="true" useDomainConfig="Report:Domain"></siteMapNode>
@@ -102,7 +101,6 @@
       <siteMapNode menuItemType="NumberGameMenuItem" resourceKey="numbergame" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/NumberGame.aspx"></siteMapNode>
       <siteMapNode resourceKey="lbl1x2" appPath="ExTotalBetsForecastAppPath" url="_Forecast/FC1X2.aspx"></siteMapNode>
       <siteMapNode resourceKey="scoreMap" appPath="ExTotalBetsForecastAppPath" url="ForecastScoreMap/Index"></siteMapNode>
-      <siteMapNode menuItemType="NG2MenuItem" resourceKey="ng2" appPath="NG2SiteVirtualPath" url="~/Forecast/RealBet"></siteMapNode>
     </siteMapNode>
 
     <siteMapNode resourceKey="BetStatistics" menuItemType="BetStatisticsMenuItem" functionType="[E]" roles="Super">

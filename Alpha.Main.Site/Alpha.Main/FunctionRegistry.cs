@@ -80,8 +80,6 @@ namespace Alpha.Main
                 }),
             ["BetChoiceLimitMenuItem"] = () => new MenuStatus(
                 () => Current.IsShowBetChoiceLimit),
-            ["NG2MenuItem"] = () => new MenuStatus(
-                () => ProductManager.IsShowSettings(ProductIdConstants.NG2)),
             ["ProgressiveContributionMenuItem"] = () => new MenuStatus(() => new User().IsEnabledJackpot),
             ["ProgressiveJackpotMenuItem"] = () => new MenuStatus(() => new User().ShowProgressiveJackpotGames),
             ["IndirectLoginAccountMenuItem"] = () => new MenuStatus(
@@ -177,13 +175,6 @@ namespace Alpha.Main
                 return getDefaultUrl;
             }
         }
-
-        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]
-        [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "Reviewed!")]
-        public static readonly IDictionary<string, Func<string>> MenuItemDisplayNameRules = new Dictionary<string, Func<string>>
-        {
-            ["ng2"] = () => { return ProductManager.GetProductName(ProductIdConstants.NG2); }
-        };
 
         public static Func<bool> IsProtectedModeFunc => () => Current.IsProtectedMode;
 

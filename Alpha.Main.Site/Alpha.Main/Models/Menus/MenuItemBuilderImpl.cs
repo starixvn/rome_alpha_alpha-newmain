@@ -14,26 +14,23 @@
     {
         private readonly IAuthorizationService authorizationService;
         private readonly IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration;
-        private readonly IDictionary<string, Func<string>> menuItemDisplayName;
         private readonly Func<bool> isProtectedModeFunc;
         private readonly Func<bool> isInternalFunc;
         private readonly Func<string, string> buildInvalidSessionUniqueKeyFunc;
 
-        public MenuItemBuilderImpl() : this(null, null, null, null, null, null)
+        public MenuItemBuilderImpl() : this(null, null, null, null, null)
         {
         }
 
         internal MenuItemBuilderImpl(
             IAuthorizationService authorizationService,
             IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration,
-            IDictionary<string, Func<string>> menuItemDisplayName,
             Func<bool> isProtectedModeFunc,
             Func<bool> isInternalFunc,
             Func<string, string> buildInvalidSessionUniqueKeyFunc)
         {
             this.authorizationService = authorizationService ?? new AuthorizationService();
             this.menuItemTypeConfiguration = menuItemTypeConfiguration ?? FunctionRegistry.MenuItemTypeStatusRules;
-            this.menuItemDisplayName = menuItemDisplayName ?? FunctionRegistry.MenuItemDisplayNameRules;
             this.isProtectedModeFunc = isProtectedModeFunc ?? FunctionRegistry.IsProtectedModeFunc;
             this.isInternalFunc = isInternalFunc ?? FunctionRegistry.IsInternalFunc;
             this.buildInvalidSessionUniqueKeyFunc = buildInvalidSessionUniqueKeyFunc ?? FunctionRegistry.BuildInvalidSessionUniqueKey;
@@ -75,7 +72,6 @@
             var menuItem = new MenuItem(
                 menuItemTypeConfiguration[node["menuItemType"] ?? string.Empty],
                 authorizationService.IsAuthorized,
-                menuItemDisplayName.ContainsKey(node.ResourceKey) ? menuItemDisplayName[node.ResourceKey] : null,
                 isProtectedModeFunc,
                 isInternalFunc,
                 isHideForSite,

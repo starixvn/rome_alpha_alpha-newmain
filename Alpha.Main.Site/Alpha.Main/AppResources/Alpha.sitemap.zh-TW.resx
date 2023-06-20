@@ -336,9 +336,6 @@
   <data name="BetChoiceLimit" xml:space="preserve">
     <value>选择投注限额</value>
   </data>
-  <data name="schedule" xml:space="preserve">
-    <value>時間表</value>
-  </data>
   <data name="winLossByProduct" xml:space="preserve">
     <value> 投注產品輸贏</value>
   </data>
