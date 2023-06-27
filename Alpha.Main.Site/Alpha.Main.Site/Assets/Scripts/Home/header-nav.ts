@@ -435,6 +435,8 @@ var headerNav = {
     setProfilePictureOnNav: function (profilePicure) {
         $('#userPicture').attr('src', profilePicure);
         $('#profile-avatar-image').attr('src', profilePicure);
+        $("#logoProfileImg").attr('src', profilePicure);
+        briefProfile.setProfilePictureStorage();
     },
 
     removeBookmarksInUrl: function (url) {
