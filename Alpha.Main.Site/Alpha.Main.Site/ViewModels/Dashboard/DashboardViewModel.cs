@@ -16,7 +16,5 @@
         public string OldMainRootPath => UrlHelper.MapOldMainPath("~/");
 
         public string MainRootPath => UrlHelper.MapMainPath("~/");
-
-        public bool IsShowPortalMessage { get; } = !AppSettings.DisableMessages;
     }
 }
