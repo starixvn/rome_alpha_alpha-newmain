@@ -193,7 +193,7 @@
             // Arrange
             AppSettings.Settings = new NameValueCollection
             {
-                ["TotalBetsForecast:AllowedSitesToViewTBF"] = "site"
+                ["NewTBF:AllowSitesToViewForecast"] = "site"
             };
 
             var expectedSetting = "site";

@@ -116,8 +116,13 @@
         {
             get
             {
-                return Converter.ToString2(Settings["TotalBetsForecast:AllowedSitesToViewTBF"]);
+                return Converter.ToString2(Settings["NewTBF:AllowSitesToViewForecast"]);
             }
+        }
+
+        public static string[] NewTBFAllowedSites
+        {
+            get => (AllowedSitesToViewTBF ?? string.Empty).Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
         }
 
         public static List<string> DevicesUseCustomScrollbar

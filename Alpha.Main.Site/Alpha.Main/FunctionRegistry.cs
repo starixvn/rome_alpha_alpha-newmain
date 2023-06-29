@@ -71,13 +71,12 @@ namespace Alpha.Main
                         return false;
                     }
 
-                    if (!string.IsNullOrWhiteSpace(AppSettings.AllowedSitesToViewTBF)
-                        && (AppSettings.AllowedSitesToViewTBF.IndexOf(Current.Site, StringComparison.OrdinalIgnoreCase) < 0))
+                    if (AppSettings.NewTBFAllowedSites.Any(site => string.Equals(site, "*") || string.Equals(site, Current.Site, StringComparison.OrdinalIgnoreCase)))
                     {
-                        return false;
+                        return true;
                     }
 
-                    return true;
+                    return false;
                 }),
             ["BetChoiceLimitMenuItem"] = () => new MenuStatus(
                 () => Current.IsShowBetChoiceLimit),
