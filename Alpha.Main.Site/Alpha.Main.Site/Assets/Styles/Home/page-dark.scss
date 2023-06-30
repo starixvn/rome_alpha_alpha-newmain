@@ -944,50 +944,20 @@ html * {
     height: 36px;
     position: absolute;
     z-index: 89;
-    transform: rotate(-90deg);
     font-size: 18px;
-    top: 200px;
-    right: 0px;
+    bottom: 25px;
+    right: 10px;
     color: #000;
-
-    &.en-US, &.ja-JP, &.ko-KR {
-        margin: -13px -30px 0 0;
-
-        .feedback-box {
-            width: 124px;
-        }
-    }
-
-    &.zh-TW, &.zh-CN {
-        margin: 7px -10px 0 0;
-
-        .feedback-box {
-            width: 85px;
-        }
-    }
-
-    &.vi-VN {
-        margin: 3px -14px 0 0;
-
-        .feedback-box {
-            width: 92px;
-        }
-    }
-
-    &.th-TH {
-        margin: -18px -35px 0 0;
-
-        .feedback-box {
-            width: 135px;
-        }
-    }
+    margin: 0 !important;
 
     .feedback-box {
         background-color: #38B038;
-        border-radius: 16px;
-        display: inline-block;
+        border-radius: 14px;
+        display: flex;
         text-align: left;
         cursor: pointer;
+        width: auto !important;
+        padding: 8px 35px 8px 10px;
 
         &:hover {
             .txt-feedback {
@@ -995,40 +965,36 @@ html * {
             }
 
             .icon-feedback {
-                background-color: #FFE65F;
-                fill: #FFE65F;
+                //background-color: #FFE65F;
+               // fill: #FFE65F;
             }
         }
     }
 
     .icon-feedback {
         position: relative;
-        background: url('Images/feedback-star.png') no-repeat;
-        background-color: #fff;
-        height: 24px;
-        width: 24px;
+        background: url('Images/feedback-report.png') no-repeat;
+        height: 30px;
+        width: 30px;
         display: inline-block;
         background-size: 100% 100%;
         cursor: pointer;
-        top: 5px;
-        left: 5px;
         mask: none;
         -webkit-mask-image: none;
-        border-radius: 30px;
-        transform: rotate(18deg);
+        top: 0;
     }
 }
 
 .icon-close-feedback {
-  background: url(Images/icon-close-feedback-dark.png) no-repeat;
-  height: 26px;
-  width: 26px;
+  background: url(Images/icon-close-feedback2.png) no-repeat;
+  height: 20px;
+  width: 20px;
   display: inline-block;
   background-size: 100% 100%;
   cursor: pointer;
-  position: relative;
-  top: 5px;
-  left: -5px;
+  position: absolute;
+  top: 13px;
+  right:10px;
 }
 
 .txt-feedback {

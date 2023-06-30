@@ -1169,8 +1169,10 @@
     <Content Include="Assets\styles\home\images\bage_bg_dark.svg" />
     <Content Include="Assets\styles\home\images\chatbot-intro.svg" />
     <Content Include="Assets\styles\home\images\feedback_dark.svg" />
+	<Content Include="Assets\styles\home\images\feedback-report.svg" />
     <Content Include="Assets\styles\home\images\icon-close-feedback-dark.png" />
     <Content Include="Assets\styles\home\images\icon-close-feedback.png" />
+	<Content Include="Assets\styles\home\images\icon-close-feedback2.png" />
     <Content Include="Assets\styles\home\page-dark.css">
       <DependentUpon>page-dark.scss</DependentUpon>
     </Content>
