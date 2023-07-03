@@ -941,14 +941,46 @@ html * {
 }
 
 .div-feedback {
-    height: 36px;
     position: absolute;
     z-index: 89;
-    font-size: 18px;
-    bottom: 25px;
+    font-size: 14px;
+    bottom: 10px;
     right: 10px;
     color: #000;
     margin: 0 !important;
+    display: block !important;
+
+    &.en-US, &.ja-JP, &.ko-KR {
+        margin: -13px -30px 0 0;
+
+        .feedback-box {
+            width: 124px;
+        }
+    }
+
+    &.zh-TW, &.zh-CN {
+        margin: 7px -10px 0 0;
+
+        .feedback-box {
+            width: 85px;
+        }
+    }
+
+    &.vi-VN {
+        margin: 3px -14px 0 0;
+
+        .feedback-box {
+            width: 92px;
+        }
+    }
+
+    &.th-TH {
+        margin: -18px -35px 0 0;
+
+        .feedback-box {
+            width: 135px;
+        }
+    }
 
     .feedback-box {
         background-color: #38B038;
@@ -998,7 +1030,8 @@ html * {
 }
 
 .txt-feedback {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   padding: 2px 6px;
   color: #fff;
 }
