@@ -948,7 +948,6 @@ html * {
     right: 10px;
     color: #000;
     margin: 0 !important;
-    display: block !important;
 
     &.en-US, &.ja-JP, &.ko-KR {
         margin: -13px -30px 0 0;
@@ -997,22 +996,23 @@ html * {
             }
 
             .icon-feedback {
-                //background-color: #FFE65F;
-               // fill: #FFE65F;
+                background-color: #FFE65F;
+                fill: #FFE65F;
             }
         }
     }
 
     .icon-feedback {
         position: relative;
-        background: url('Images/feedback-report.png') no-repeat;
-        height: 30px;
+        mask: url('Images/feedback-report.svg');
+        -webkit-mask-image: url('Images/feedback-report.svg');
+        mask-image: url('Images/feedback-report.svg');
+        height: 31px;
         width: 30px;
         display: inline-block;
         background-size: 100% 100%;
         cursor: pointer;
         mask: none;
-        -webkit-mask-image: none;
         top: 0;
     }
 }

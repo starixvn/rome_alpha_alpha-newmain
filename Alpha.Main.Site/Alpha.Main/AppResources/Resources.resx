@@ -742,4 +742,10 @@
   <data name="HighlightPopupNewFeatureIntro4" xml:space="preserve">
     <value>Filter tickets on Bet List</value>
   </data>
+  <data name="FeedbackOnFunctionTitle" xml:space="preserve">
+    <value>Help us improve {0}</value>
+  </data>
+  <data name="WinLossDetailReport" xml:space="preserve">
+    <value>Win Loss Detail Report</value>
+  </data>
 </root>

@@ -741,4 +741,10 @@
   <data name="HighlightPopupNewFeatureIntro4" xml:space="preserve">
     <value>Lọc vé cược trên Danh Sách Cược</value>
   </data>
+  <data name="FeedbackOnFunctionTitle" xml:space="preserve">
+    <value>Giúp chúng tôi cải thiện {0}</value>
+  </data>
+  <data name="WinLossDetailReport" xml:space="preserve">
+    <value>Báo Cáo Chi Tiết Thắng Thua</value>
+  </data>
 </root>

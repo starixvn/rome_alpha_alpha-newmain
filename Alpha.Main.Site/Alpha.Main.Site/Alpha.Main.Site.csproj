@@ -1113,6 +1113,7 @@
     <Content Include="Assets\styles\error\images\error-bg.png" />
     <Content Include="Assets\styles\error\images\error-bg-dark.png" />
     <Content Include="Assets\styles\home\images\feedback-report.png" />
+    <Content Include="Assets\styles\home\images\feedback-report.svg" />
     <Content Include="Assets\styles\home\images\feedback-star.png" />
     <Content Include="Assets\styles\home\images\feedback.svg" />
     <Content Include="Assets\styles\home\ChatBotBanneri1-dark.css">

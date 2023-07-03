@@ -676,4 +676,10 @@
   <data name="HighlightPopupNewFeatureIntro4" xml:space="preserve">
     <value>คัดกรองตั๋วจากรายการเดิมพัน</value>
   </data>
+  <data name="FeedbackOnFunctionTitle" xml:space="preserve">
+    <value>ช่วยเราปรับปรุง {0} ให้ดียิ่งขึ้น</value>
+  </data>
+  <data name="WinLossDetailReport" xml:space="preserve">
+    <value>รายงานรายละเอียดการแพ้ชนะ</value>
+  </data>
 </root>

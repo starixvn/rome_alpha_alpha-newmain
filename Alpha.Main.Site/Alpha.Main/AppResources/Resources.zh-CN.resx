@@ -679,4 +679,10 @@
   <data name="HighlightPopupNewFeatureIntro4" xml:space="preserve">
     <value>在投注历史中过滤注单</value>
   </data>
+  <data name="FeedbackOnFunctionTitle" xml:space="preserve">
+    <value>帮助我们改进{0}</value>
+  </data>
+  <data name="WinLossDetailReport" xml:space="preserve">
+    <value>输赢细节报告</value>
+  </data>
 </root>

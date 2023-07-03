@@ -493,6 +493,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Help us improve {0}.
+        /// </summary>
+        public static string FeedbackOnFunctionTitle {
+            get {
+                return ResourceManager.GetString("FeedbackOnFunctionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Help us improve!.
         /// </summary>
         public static string FeedbackTitle {
@@ -1876,6 +1885,15 @@ namespace Alpha.Main.AppResources {
         public static string WinLossAnalysisChartIntroduction {
             get {
                 return ResourceManager.GetString("WinLossAnalysisChartIntroduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win Loss Detail Report.
+        /// </summary>
+        public static string WinLossDetailReport {
+            get {
+                return ResourceManager.GetString("WinLossDetailReport", resourceCulture);
             }
         }
         
