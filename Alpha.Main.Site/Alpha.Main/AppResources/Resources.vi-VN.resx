@@ -721,13 +721,13 @@
     <value>Xem ngay</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Tìm kết quả thắng thua theo tên người dùng</value>
+    <value>Tính năng Cảnh Báo Đăng Nhập Lạ sẽ tự động bật để thông báo cho bạn về các phiên đăng nhập bất thường qua Telegram.</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Trải Nghiệm &lt;b&gt;Phiên Bản Mới&lt;/b&gt; Của Báo Cáo Chi Tiết Thắng Thua</value>
+    <value>Cảnh Báo Đăng Nhập Lạ</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>Phân chia dữ liệu theo tuần</value>
+    <value>Bạn có thể tùy chỉnh tính năng này theo nhu cầu của bạn qua &lt;b&gt;Chatbot &gt; Cảnh Báo Đăng Nhập Lạ&lt;/b&gt;. Bảo mật thông tin của bạn là ưu tiên hàng đầu của chúng tôi.</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Bắt đầu</value>

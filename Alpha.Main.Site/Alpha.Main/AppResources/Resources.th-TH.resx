@@ -656,13 +656,13 @@
     <value>ออก</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>ค้นหาผล แพ้/ชนะ จากชื่อผู้ใช้</value>
+    <value>การแจ้งเตือนการเข้าสู่ระบบที่ผิดปกติ ได้เปิดใช้งานโดยอัตโนมัติเพื่อแจ้งให้คุณทราบผ่านทางเทเลแกรมเกี่ยวกับการเข้าสู่ระบบที่น่าสงสัย</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>ค้นพบ &lt;b&gt;มุมมองใหม่&lt;/b&gt; ในรายงานรายละเอียดยอดแพ้ชนะ</value>
+    <value>แจ้งเตือนการเข้าสู่ระบบที่ผิดปกติ</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>แบ่งข้อมูลเป็นรายสัปดาห์</value>
+    <value>ปรับแก้ไขการตั้งค่าได้ใน &lt;b&gt;แชทบอท &gt; แจ้งเตือนการเข้าสู่ระบบผิดปกติ&lt;/b&gt;  ได้ตามความต้องการของคุณ ความปลอดภัยของคุณคือสิ่งสำคัญที่สุดของเรา!</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>เริ่มต้น</value>

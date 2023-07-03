@@ -883,6 +883,8 @@
     <Content Include="Assets\bundles\suggest-telegram-otp.min.js">
       <DependentUpon>suggest-telegram-otp.js</DependentUpon>
     </Content>
+    <Content Include="Assets\Images\abnormal-login-alert-dark.svg" />
+    <Content Include="Assets\Images\abnormal-login-alert.svg" />
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop-dark_vi-VN.jpg" />
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop_vi-VN.jpg" />
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile-dark_vi-VN.jpg" />
