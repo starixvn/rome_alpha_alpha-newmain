@@ -1012,7 +1012,6 @@ html * {
         display: inline-block;
         background-size: 100% 100%;
         cursor: pointer;
-        mask: none;
         top: 0;
     }
 }
@@ -1077,7 +1076,7 @@ html * {
     border: 1px solid $popup-border-black;
     top: 130px;
     left: 15px;
-    width: 400px;
+    width: 420px;
     z-index: 130;
     color: $text-color;
     padding: 20px;

@@ -954,7 +954,6 @@ html * {
         display: inline-block;
         background-size: 100% 100%;
         cursor: pointer;
-        mask: none;
         top: 0;
     }
 }
@@ -1020,7 +1019,7 @@ html * {
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
     top: 130px;
     left: 15px;
-    width: 400px;
+    width: 420px;
     z-index: 130;
     color: $text-color;
     padding: 20px;
