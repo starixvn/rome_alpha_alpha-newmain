@@ -656,18 +656,30 @@
     <value>ออก</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>ไปยัง &lt;b&gt;สร้างดาวน์ไลน์ &gt; ค้นหาและคัดลอก (มุมมองใหม่)&lt;/b&gt;เพื่อสร้างบัญชีจำนวนหลายรายการ</value>
+    <value>ค้นหาผล แพ้/ชนะ จากชื่อผู้ใช้</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>สร้างหลายบัญชี</value>
+    <value>ค้นพบ &lt;b&gt;มุมมองใหม่&lt;/b&gt; ในรายงานรายละเอียดยอดแพ้ชนะ</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>มุมมองแบบเดิมจะเป็นตัวเลือกตั้งต้น จนถึงวันที่ {0} (dd/mm/yyyy) แล้วจะถูกแทนที่ด้วยมุมมองแบบใหม่</value>
+    <value>แบ่งข้อมูลเป็นรายสัปดาห์</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>เริ่มต้น</value>
   </data>
   <data name="SessionExpired" xml:space="preserve">
     <value>การเข้าสู่ระบบของคุณหมดเวลาแล้ว</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro3" xml:space="preserve">
+    <value>คัดลอกข้อมูลรายงานโดยไม่ได้ส่งออก</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro4" xml:space="preserve">
+    <value>คัดกรองตั๋วจากรายการเดิมพัน</value>
+  </data>
+  <data name="FeedbackOnFunctionTitle" xml:space="preserve">
+    <value>ช่วยเราปรับปรุง {0} ให้ดียิ่งขึ้น</value>
+  </data>
+  <data name="WinLossDetailReport" xml:space="preserve">
+    <value>รายงานรายละเอียดการแพ้ชนะ</value>
   </data>
 </root>

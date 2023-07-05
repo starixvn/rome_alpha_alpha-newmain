@@ -897,6 +897,8 @@
     <Content Include="Assets\Images\createmultipleaccounts-dark.svg" />
     <Content Include="Assets\Images\arrowbackupdomainmb.svg" />
     <Content Include="Assets\Images\arrowbackupdomain.svg" />
+    <Content Include="Assets\Images\winlostreport.svg" />
+    <Content Include="Assets\Images\winlostreport-dark.svg" />
     <Content Include="Assets\Images\icon-chatbot-1.svg" />
     <Content Include="Assets\Images\icon-chatbot-2.svg" />
     <Content Include="Assets\Images\icon-chatbot-3.svg" />
@@ -1110,6 +1112,8 @@
     </Content>
     <Content Include="Assets\styles\error\images\error-bg.png" />
     <Content Include="Assets\styles\error\images\error-bg-dark.png" />
+    <Content Include="Assets\styles\home\images\feedback-report.png" />
+    <Content Include="Assets\styles\home\images\feedback-report.svg" />
     <Content Include="Assets\styles\home\images\feedback-star.png" />
     <Content Include="Assets\styles\home\images\feedback.svg" />
     <Content Include="Assets\styles\home\ChatBotBanneri1-dark.css">
@@ -1169,6 +1173,7 @@
     <Content Include="Assets\styles\home\images\feedback_dark.svg" />
     <Content Include="Assets\styles\home\images\icon-close-feedback-dark.png" />
     <Content Include="Assets\styles\home\images\icon-close-feedback.png" />
+    <Content Include="Assets\styles\home\images\icon-close-feedback2.png" />
     <Content Include="Assets\styles\home\page-dark.css">
       <DependentUpon>page-dark.scss</DependentUpon>
     </Content>

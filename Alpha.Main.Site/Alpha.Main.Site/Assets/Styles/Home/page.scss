@@ -915,53 +915,22 @@ html * {
 }
 
 .div-feedback {
-    height: 36px;
     position: absolute;
     z-index: 89;
-    transform: rotate(-90deg);
-    font-size: 18px;
-    top: 200px;
-    right: 0px;
+    font-size: 14px;
+    bottom: 10px;
+    right: 10px;
     color: #000;
-
-    &.en-US, &.ja-JP, &.ko-KR {
-        margin: -13px -30px 0 0;
-
-        .feedback-box {
-            width: 124px;
-        }
-    }
-
-    &.zh-TW, &.zh-CN {
-        margin: 7px -10px 0 0;
-
-        .feedback-box {
-            width: 85px;
-        }
-    }
-
-    &.vi-VN {
-        margin: 3px -14px 0 0;
-
-        .feedback-box {
-            width: 92px;
-        }
-    }
-
-    &.th-TH {
-        margin: -18px -35px 0 0;
-
-        .feedback-box {
-            width: 135px;
-        }
-    }
+    margin: 0 !important;
 
     .feedback-box {
         background-color: #38B038;
-        border-radius: 16px;
-        display: inline-block;
+        border-radius: 14px;
+        display: flex;
         text-align: left;
         cursor: pointer;
+        width: auto !important;
+        padding: 8px 35px 8px 10px;
 
         &:hover {
             .txt-feedback {
@@ -977,38 +946,35 @@ html * {
 
     .icon-feedback {
         position: relative;
-        background: url('Images/feedback-star.png') no-repeat;
-        background-color: #fff;
-        height: 24px;
-        width: 24px;
+        mask: url('Images/feedback-report.svg');
+        -webkit-mask-image: url('Images/feedback-report.svg');
+        mask-image: url('Images/feedback-report.svg');
+        height: 31px;
+        width: 30px;
         display: inline-block;
         background-size: 100% 100%;
         cursor: pointer;
-        top: 5px;
-        left: 5px;
-        mask: none;
-        -webkit-mask-image: none;
-        border-radius: 30px;
-        transform: rotate(18deg);
+        top: 0;
     }
 }
 
 .icon-close-feedback {
-  background: url(Images/icon-close-feedback.png) no-repeat;
-  height: 26px;
-  width: 26px;
-  display: inline-block;
-  background-size: 100% 100%;
-  cursor: pointer;
-  position: relative;
-  top: 5px;
-  left: -5px;
+    background: url(Images/icon-close-feedback2.png) no-repeat;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    background-size: 100% 100%;
+    cursor: pointer;
+    position: absolute;
+    top: 13px;
+    right: 10px;
 }
 
 .txt-feedback {
-  display: inline-block;
-  padding: 2px 6px;
-  color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 2px 6px;
+    color: #fff;
 }
 
 .feedback-modal {
@@ -1051,9 +1017,9 @@ html * {
     position: absolute;
     background: $popup-bg;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
-    top: 175px;
+    top: 130px;
     left: 15px;
-    width: 390px;
+    width: 420px;
     z-index: 130;
     color: $text-color;
     padding: 20px;
@@ -1107,6 +1073,19 @@ html * {
 
             b {
                 color: #0B599C;
+            }
+        }
+
+        ul {
+            padding: 0 0 0 19px;
+            margin: 0;
+
+            li {
+                margin: 0;
+                list-style: disc;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 20px;
             }
         }
     }

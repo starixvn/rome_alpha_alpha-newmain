@@ -184,6 +184,16 @@
 
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
 
-        public bool HasCreateAccountPermission => !message.IsSubAcc || message.SubPageAccess.Contains(PageAccessType.CreateAccount);
+        public string NewWinLossReportUrl
+        {
+            get
+            {
+                var directDownline = Enumeration.FromValue<UserLevel>((byte)(message.RoleId - 1)).DisplayName;
+
+                return $"{UrlHelper.MapReportsPath("~/")}WinLossDetail/{directDownline}New";
+            }
+        }
+
+        public bool HasReportPermission => !message.IsSubAcc || message.SubPageAccess.Contains(PageAccessType.ViewReports);
     }
 }

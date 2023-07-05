@@ -659,18 +659,30 @@
     <value>查看</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>前往 &lt;b&gt;建立下線 &gt; 搜尋 &amp; 複製 (新版面)&lt;/b&gt;建立多組帳戶</value>
+    <value>使用賬號搜索輸贏結果</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>同時建立多組帳戶</value>
+    <value>發覺輸贏細節的&lt;b&gt;新版本&lt;/b&gt;</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>經典版將設為預設版型，{0} (日/月/年) 起將全面切換成新版面。</value>
+    <value>將數據分為每週期</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>開始吧</value>
   </data>
   <data name="SessionExpired" xml:space="preserve">
     <value>您的登錄已超時。</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro3" xml:space="preserve">
+    <value>複製報告中的數據而無需導出</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro4" xml:space="preserve">
+    <value>在投注歷史中過濾注單</value>
+  </data>
+  <data name="FeedbackOnFunctionTitle" xml:space="preserve">
+    <value>幫助我們改進{0}</value>
+  </data>
+  <data name="WinLossDetailReport" xml:space="preserve">
+    <value>輸贏細節報告</value>
   </data>
 </root>

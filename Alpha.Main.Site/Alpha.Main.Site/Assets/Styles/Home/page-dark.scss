@@ -941,14 +941,13 @@ html * {
 }
 
 .div-feedback {
-    height: 36px;
     position: absolute;
     z-index: 89;
-    transform: rotate(-90deg);
-    font-size: 18px;
-    top: 200px;
-    right: 0px;
+    font-size: 14px;
+    bottom: 10px;
+    right: 10px;
     color: #000;
+    margin: 0 !important;
 
     &.en-US, &.ja-JP, &.ko-KR {
         margin: -13px -30px 0 0;
@@ -984,10 +983,12 @@ html * {
 
     .feedback-box {
         background-color: #38B038;
-        border-radius: 16px;
-        display: inline-block;
+        border-radius: 14px;
+        display: flex;
         text-align: left;
         cursor: pointer;
+        width: auto !important;
+        padding: 8px 35px 8px 10px;
 
         &:hover {
             .txt-feedback {
@@ -1003,36 +1004,33 @@ html * {
 
     .icon-feedback {
         position: relative;
-        background: url('Images/feedback-star.png') no-repeat;
-        background-color: #fff;
-        height: 24px;
-        width: 24px;
+        mask: url('Images/feedback-report.svg');
+        -webkit-mask-image: url('Images/feedback-report.svg');
+        mask-image: url('Images/feedback-report.svg');
+        height: 31px;
+        width: 30px;
         display: inline-block;
         background-size: 100% 100%;
         cursor: pointer;
-        top: 5px;
-        left: 5px;
-        mask: none;
-        -webkit-mask-image: none;
-        border-radius: 30px;
-        transform: rotate(18deg);
+        top: 0;
     }
 }
 
 .icon-close-feedback {
-  background: url(Images/icon-close-feedback-dark.png) no-repeat;
-  height: 26px;
-  width: 26px;
+  background: url(Images/icon-close-feedback2.png) no-repeat;
+  height: 20px;
+  width: 20px;
   display: inline-block;
   background-size: 100% 100%;
   cursor: pointer;
-  position: relative;
-  top: 5px;
-  left: -5px;
+  position: absolute;
+  top: 13px;
+  right:10px;
 }
 
 .txt-feedback {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   padding: 2px 6px;
   color: #fff;
 }
@@ -1076,9 +1074,9 @@ html * {
     position: absolute;
     background: $popup-bg-black;
     border: 1px solid $popup-border-black;
-    top: 175px;
+    top: 130px;
     left: 15px;
-    width: 390px;
+    width: 420px;
     z-index: 130;
     color: $text-color;
     padding: 20px;
@@ -1145,6 +1143,19 @@ html * {
 
             b {
                 color: #41A4FF;
+            }
+        }
+
+        ul {
+            padding: 0 0 0 19px;
+            margin: 0;
+
+            li {
+                margin: 0;
+                list-style: disc;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 20px;
             }
         }
     }
