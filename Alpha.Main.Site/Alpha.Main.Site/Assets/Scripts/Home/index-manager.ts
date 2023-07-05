@@ -94,6 +94,10 @@ var indexManager = {
                     }
                 });
             }
+
+            if (e.data.event_id === "winlossdetailnew-feedback") {
+                indexManager.initFeedbackFunction(e.data.feedback_id, undefined, undefined);
+            }
         }, false);
     },
 
