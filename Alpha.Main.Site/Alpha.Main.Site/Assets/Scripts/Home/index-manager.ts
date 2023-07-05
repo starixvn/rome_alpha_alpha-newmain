@@ -85,7 +85,7 @@ var indexManager = {
                 resultPopup.document.title = "PP Live Casino Result";
                 $.ajax({
                     type: "POST",
-                    url: location.origin.split(':')[0] +"://" + location.hostname + '/' + alpha.urls.resultRootPath + e.data.url,
+                    url: location.origin.split(':')[0] + "://" + location.hostname + '/' + alpha.urls.resultRootPath + e.data.url,
                     success: function (data) {
                         resultPopup.location.href = data.Result;
                     },
@@ -377,46 +377,48 @@ var indexManager = {
     //},
 
     initNewFeatureHighlightPopup: function () {
-        const featureName = "WinLossReportNew";
-        const cookiesName = indexManager.hidePopupCookies + featureName;
-        const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
+        if ($("#subPageAccess").val().includes("[E]")) {
+            const featureName = "WinLossReportNew";
+            const cookiesName = indexManager.hidePopupCookies + featureName;
+            const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
 
-        if (hidePopup !== "1") {
-            popupManager.closeAllPopup();
-            const box = $("#boxHighlightPopupNewFeature").removeClass("hide");
+            if (hidePopup !== "1") {
+                popupManager.closeAllPopup();
+                const box = $("#boxHighlightPopupNewFeature").removeClass("hide");
 
-            box.find(".icon-close").click(() => box.addClass("hide"));
+                box.find(".icon-close").click(() => box.addClass("hide"));
 
-            box.find("#chkHideHighlightPopupNewFeature").click(function () {
-                localStorage.setItem(indexManager.getCustomerCookiesName(cookiesName), "1");
-                box.addClass("hide");
-            });
+                box.find("#chkHideHighlightPopupNewFeature").click(function () {
+                    localStorage.setItem(indexManager.getCustomerCookiesName(cookiesName), "1");
+                    box.addClass("hide");
+                });
 
-            const newFeatureLink = box.find("#linkHighlightPopupCheckOut");
-            newFeatureLink.click(() => box.addClass("hide"));
+                const newFeatureLink = box.find("#linkHighlightPopupCheckOut");
+                newFeatureLink.click(() => box.addClass("hide"));
 
-            $(window).scroll(() => box.addClass("hide"));
+                $(window).scroll(() => box.addClass("hide"));
 
-            $("#main-menu-tab")["mCustomScrollbar"]({
-                callbacks: {
-                    onScrollStart: () => box.addClass("hide")
-                }
-            });
-
-            // Rebuild URL for Reports/Bet Lists incase of internal
-            if (newFeatureLink.attr("href").indexOf("(S(") !== -1) {
-                let retryTimes = 0;
-                let rebuildNewFeatureLinkInterval = setInterval(function () {
-                    if (menuBar.domElements.sessionId
-                        && menuBar.domElements.reportSessionId
-                        && newFeatureLink.attr("href").indexOf(menuBar.domElements.reportSessionId) === -1) {
-                        newFeatureLink.attr("href", newFeatureLink.attr("href").replace(menuBar.domElements.sessionId, menuBar.domElements.reportSessionId))
-                        clearInterval(rebuildNewFeatureLinkInterval);
+                $("#main-menu-tab")["mCustomScrollbar"]({
+                    callbacks: {
+                        onScrollStart: () => box.addClass("hide")
                     }
+                });
 
-                    retryTimes++;
-                    retryTimes >= 10 && clearInterval(rebuildNewFeatureLinkInterval);
-                }, 1000);
+                // Rebuild URL for Reports/Bet Lists incase of internal
+                if (newFeatureLink.attr("href").indexOf("(S(") !== -1) {
+                    let retryTimes = 0;
+                    let rebuildNewFeatureLinkInterval = setInterval(function () {
+                        if (menuBar.domElements.sessionId
+                            && menuBar.domElements.reportSessionId
+                            && newFeatureLink.attr("href").indexOf(menuBar.domElements.reportSessionId) === -1) {
+                            newFeatureLink.attr("href", newFeatureLink.attr("href").replace(menuBar.domElements.sessionId, menuBar.domElements.reportSessionId))
+                            clearInterval(rebuildNewFeatureLinkInterval);
+                        }
+
+                        retryTimes++;
+                        retryTimes >= 10 && clearInterval(rebuildNewFeatureLinkInterval);
+                    }, 1000);
+                }
             }
         }
     },
