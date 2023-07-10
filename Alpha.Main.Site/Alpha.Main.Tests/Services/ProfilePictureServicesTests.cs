@@ -127,21 +127,5 @@
 
             exceptionHandlerWrapper.Received().Handle(Arg.Any<Exception>());
         }
-
-        [Test]
-        public void UpdateActorProfilePictureStandbyServer_ThrowException_CallWriteLog()
-        {
-            dynamicRepository
-               .When(repo => repo.Execute(Arg.Any<UpdateActorProfilePictureStandbyServerCommand>()))
-               .Do((callInfo) =>
-               {
-                   throw new Exception("DB eroor");
-               });
-
-            profilePictureServices.UpdateActorProfilePictureStandbyServer(
-                new UpdateActorProfilePictureParam(CustId.InvalidId, 1, "192.168.0.1"));
-
-            exceptionHandlerWrapper.Received().Handle(Arg.Any<Exception>());
-        }
     }
 }

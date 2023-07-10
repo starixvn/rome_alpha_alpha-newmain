@@ -317,7 +317,6 @@
     <Compile Include="Criteria\Password\SkipForceChangePasswordCommand.cs" />
     <Compile Include="Criteria\Password\UpdateLastChangePasswordIndirectAccountCriteria.cs" />
     <Compile Include="Criteria\ProfilePicture\SelectActorProfilePictureCriteria.cs" />
-    <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureStandbyServerCommand.cs" />
     <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureMainServerCommand.cs" />
     <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureCommandBase.cs" />
     <Compile Include="Criteria\ProtectionCode\GetProtectionCodeCriteria.cs" />

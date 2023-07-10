@@ -1,27 +1,19 @@
 ﻿@model IndexViewModel
-@if (Model.HasReportPermission)
-{
-    <div class="popup-highlight hide" id="boxHighlightPopupNewFeature">
-        <button type="button" class="icon icon-close close" title="@Resources.close"><span aria-hidden="true"></span></button>
-        <div class="text">
-            <img src="~/Assets/Images/winlostreport@(Model.DarkModeName).svg?v=@AppSettings.JsVersion" alt="Win Loss Report">
-            <div>
-                <p><span>@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</span></p>               
-                <ul>
-                    <li>@Resources.HighlightPopupNewFeatureIntro</li>
-                    <li>@Resources.HighlightPopupNewFeatureIntro2</li>
-                    <li>@Resources.HighlightPopupNewFeatureIntro3</li>
-                    <li>@Resources.HighlightPopupNewFeatureIntro4</li>
-                </ul>
-                @*<p>@string.Format(Resources.HighlightPopupNewFeatureIntro2, AppSettings.CreateNewAccountBannerEndDate)</p>*@
-            </div>
-        </div>
-        <div class="action">
-            <label class="label">
-                <input id="chkHideHighlightPopupNewFeature" type="checkbox" />
-                <span>@Resources.doNotShowAgain</span>
-            </label>
-            <a class="btn-submit" id="linkHighlightPopupCheckOut" href="@Model.NewWinLossReportUrl" target="main">@Resources.GetStarted</a>
+<div class="popup-highlight hide" id="boxHighlightPopupNewFeature">
+    <button type="button" class="icon icon-close close" title="@Resources.close"><span aria-hidden="true"></span></button>
+    <div class="text">
+        <img src="~/Assets/Images/abnormal-login-alert@(Model.DarkModeName).svg?v=@AppSettings.JsVersion" alt="Abnormal Login Alert">
+        <div>
+            <p><span>@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</span></p>
+            <p>@Html.Raw(Resources.HighlightPopupNewFeatureIntro)</p>
+            <p>@Html.Raw(Resources.HighlightPopupNewFeatureIntro2)</p>
         </div>
     </div>
-}
+    <div class="action">
+        <label class="label">
+            <input id="chkHideHighlightPopupNewFeature" type="checkbox" />
+            <span>@Resources.doNotShowAgain</span>
+        </label>
+        <a class="btn-submit" id="linkHighlightPopupCheckOut" href="@Model.HightLightFeatureUrl" target="main">@Resources.GetStarted</a>
+    </div>
+</div>

@@ -301,7 +301,6 @@
     <Compile Include="Criteria\Password\UpdateMainAccountPasswordCriteriaTests.cs" />
     <Compile Include="Criteria\Password\UpdateSubAccountPasswordCriteriaTests.cs" />
     <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureCommandBaseTests.cs" />
-    <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureStandbyServerCommandTests.cs" />
     <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureMainServerCommandTests.cs" />
     <Compile Include="Criteria\ProfilePicture\SelectActorProfilePictureCriteriaTests.cs" />
     <Compile Include="Criteria\ProtectionCode\GetProtectionCodeCriteriaTests.cs" />

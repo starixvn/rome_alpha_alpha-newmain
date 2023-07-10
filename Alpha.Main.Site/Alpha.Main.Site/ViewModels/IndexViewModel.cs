@@ -195,5 +195,13 @@
         }
 
         public bool HasReportPermission => !message.IsSubAcc || message.SubPageAccess.Contains(PageAccessType.ViewReports);
+
+        public string HightLightFeatureUrl
+        {
+            get
+            {
+                return $"{MainRootPath}TelegramChatBot/Setup";
+            }
+        }
     }
 }

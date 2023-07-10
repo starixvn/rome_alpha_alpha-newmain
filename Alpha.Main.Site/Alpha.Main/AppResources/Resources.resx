@@ -722,13 +722,13 @@
     <value>Check Out</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Search for Win/Loss results by username</value>
+    <value>Abnormal Login Alert is automatically enabled to notify you of suspicious logins via Telegram.</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Discover &lt;b&gt;New View&lt;/b&gt; on Win Loss Detail Report</value>
+    <value>Abnormal Login Alert</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>Divide data into weekly periods</value>
+    <value>Customize it in &lt;b&gt;Chatbot &gt; Abnormal Login Alert&lt;/b&gt; as per your requirements. Your security is our top priority!</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Get Started</value>

@@ -53,12 +53,7 @@
                         param.Mode,
                         param.IP);
 
-                dynamicRepository.Execute(command);
-
-                if (command.ErrCode.Equals(0))
-                {
-                    UpdateActorProfilePictureStandbyServer(param);
-                }
+                dynamicRepository.Execute(command);              
 
                 return Result.CreateErrorResult(command.ErrMsg, command.ErrCode);
             }
@@ -67,23 +62,6 @@
                 exceptionHandlerWrapper.Handle(ex);
                 return ErrorDefaultResult;
             }
-        }
-
-        internal void UpdateActorProfilePictureStandbyServer(UpdateActorProfilePictureParam param)
-        {
-            try
-            {
-                var command = new UpdateActorProfilePictureStandbyServerCommand(
-                            param.ActorId,
-                            param.Mode,
-                            param.IP);
-
-                dynamicRepository.Execute(command);
-            }
-            catch (Exception ex)
-            {
-                exceptionHandlerWrapper.Handle(ex);
-            }
-        }
+        }       
     }
 }
