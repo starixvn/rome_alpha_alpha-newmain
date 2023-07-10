@@ -659,13 +659,13 @@
     <value>查看</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>使用賬號搜索輸贏結果</value>
+    <value>登入異常提示的功能將會自動啟用並通過 Telegram 通知，如有可疑登入。</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>發覺輸贏細節的&lt;b&gt;新版本&lt;/b&gt;</value>
+    <value>登入異常提示</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>將數據分為每週期</value>
+    <value>根據您的要求在 &lt;b&gt;“Chatbot” &gt; “登入異常提示”&lt;/b&gt; 中對其進行定制。確保您的戶口安全性是我們首要任務！</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>開始吧</value>

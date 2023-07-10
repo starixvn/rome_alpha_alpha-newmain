@@ -574,7 +574,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Search for Win/Loss results by username.
+        ///   Looks up a localized string similar to Abnormal Login Alert is automatically enabled to notify you of suspicious logins via Telegram..
         /// </summary>
         public static string HighlightPopupNewFeatureIntro {
             get {
@@ -583,7 +583,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Divide data into weekly periods.
+        ///   Looks up a localized string similar to Customize it in &lt;b&gt;Chatbot &gt; Abnormal Login Alert&lt;/b&gt; as per your requirements. Your security is our top priority!.
         /// </summary>
         public static string HighlightPopupNewFeatureIntro2 {
             get {
@@ -610,7 +610,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discover &lt;b&gt;New View&lt;/b&gt; on Win Loss Detail Report.
+        ///   Looks up a localized string similar to Abnormal Login Alert.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {
