@@ -336,9 +336,6 @@
   <data name="Setting" xml:space="preserve">
     <value>설정</value>
   </data>
-  <data name="schedule" xml:space="preserve">
-    <value>Schedule</value>
-  </data>
   <data name="BetLists" xml:space="preserve">
     <value>배팅 리스트</value>
   </data>

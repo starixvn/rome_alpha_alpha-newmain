@@ -12,26 +12,24 @@
         private string link = string.Empty;
         private Func<MenuStatus> getMenuStatusFunc;
         private Predicate<string> authorizeUrlFunc;
-        private Func<string> getDisplayName;
         private readonly Func<bool> isProtectedModeFunc;
         private readonly Func<bool> isInternalFunc;
         private readonly Func<bool> isHideForSite;
         private readonly Func<string, string> buildInvalidSessionUniqueKeyFunc;
 
         public MenuItem(Func<MenuStatus> getMenuStatusFunc = null)
-            : this(getMenuStatusFunc, null, null, null, null, null, null)
+            : this(getMenuStatusFunc, null, null, null, null, null)
         {
         }
 
         public MenuItem(Func<MenuStatus> getMenuStatusFunc, Predicate<string> authorizeUrlFunc)
-            : this(getMenuStatusFunc, authorizeUrlFunc, null, null, null, null, null)
+            : this(getMenuStatusFunc, authorizeUrlFunc, null, null, null, null)
         {
         }
 
         public MenuItem(
             Func<MenuStatus> getMenuStatusFunc,
             Predicate<string> authorizeUrlFunc,
-            Func<string> getDisplayName,
             Func<bool> isProtectedModeFunc,
             Func<bool> isInternalFunc,
             Func<bool> isHideForSite,
@@ -39,7 +37,6 @@
         {
             this.getMenuStatusFunc = getMenuStatusFunc ?? (() => new MenuStatus(true, false));
             this.authorizeUrlFunc = authorizeUrlFunc;
-            this.getDisplayName = getDisplayName;
             this.isProtectedModeFunc = isProtectedModeFunc;
             this.isInternalFunc = isInternalFunc;
             this.isHideForSite = isHideForSite;
@@ -64,7 +61,7 @@
         {
             get
             {
-                return getDisplayName != null ? getDisplayName() : Alpha_sitemap.ResourceManager.GetString(ResourceKey);
+                return Alpha_sitemap.ResourceManager.GetString(ResourceKey);
             }
         }
 
