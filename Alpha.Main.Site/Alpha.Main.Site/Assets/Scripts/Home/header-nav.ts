@@ -392,10 +392,6 @@ var headerNav = {
             menuBar.loadAuthFrame();
         }
 
-        if (menuBar.domElements.betlistDomain) {
-            menuBar.loadBetlistAuthFrame();
-        }
-
         headerNav.reloadPage();
     },
 
@@ -419,10 +415,6 @@ var headerNav = {
     syncTheme: function (isDarkMode: boolean) {
         if (menuBar.domElements.reportDomain) {
             menuBar.loadAuthFrame();
-        }
-
-        if (menuBar.domElements.betlistDomain) {
-            menuBar.loadBetlistAuthFrame();
         }
         
         headerNav.reloadPage();
