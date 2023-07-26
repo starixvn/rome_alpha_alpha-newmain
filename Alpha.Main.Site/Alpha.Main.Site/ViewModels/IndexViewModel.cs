@@ -203,7 +203,5 @@
                 return $"{MainRootPath}TelegramChatBot/Setup";
             }
         }
-
-        public string TotalBetsForecastRootPath => UrlHelper.MapTotalBetsForecastPath();
     }
 }

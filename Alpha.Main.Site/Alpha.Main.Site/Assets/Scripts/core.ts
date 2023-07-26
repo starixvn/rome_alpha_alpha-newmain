@@ -27,10 +27,7 @@ var alpha = {
                 : "not found",
             resultRootPath: top.document.getElementById('resultRootPath') != null
                 ? (<HTMLInputElement>top.document.getElementById('resultRootPath')).value
-                : "/site-results/",
-            totalBetsForecastRootPath: top.document.getElementById('totalBetsForecastRootPath') != null
-                ? (<HTMLInputElement>top.document.getElementById('totalBetsForecastRootPath')).value
-                : "not found"
+                : "/site-results/"
         },
     user:
         {
