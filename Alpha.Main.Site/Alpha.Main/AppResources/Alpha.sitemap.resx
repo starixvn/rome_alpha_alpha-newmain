@@ -420,4 +420,7 @@
   <data name="BackupDomains" xml:space="preserve">
     <value>Backup Domains</value>
   </data>
+  <data name="searchTickets" xml:space="preserve">
+    <value>Search Tickets</value>
+  </data>
 </root>

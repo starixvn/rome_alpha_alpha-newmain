@@ -790,6 +790,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Search Tickets.
+        /// </summary>
+        public static string searchTickets {
+            get {
+                return ResourceManager.GetString("searchTickets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Security.
         /// </summary>
         public static string SercurityCode {

@@ -414,4 +414,7 @@
   <data name="BackupDomains" xml:space="preserve">
     <value>后备域名</value>
   </data>
+  <data name="searchTickets" xml:space="preserve">
+    <value>搜索注单</value>
+  </data>
 </root>
