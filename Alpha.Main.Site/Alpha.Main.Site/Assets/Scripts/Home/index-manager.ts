@@ -39,6 +39,7 @@ var indexManager = {
         feedback: alpha.urls.messageRootPath + 'Feedback/Index',
         checkExistFeedback: alpha.urls.messageRootPath + 'Feedback/CheckExist?functionId=',
         feedbackFunction: alpha.urls.messageRootPath + 'Feedback/Function?id=',
+        soccerForecast: alpha.urls.totalBetsForecastRootPath + 'Forecast'
     },
 
     init: function () {
@@ -58,6 +59,8 @@ var indexManager = {
         if (indexManager.requiredNetworkSpeedCalculation) {
             setTimeout(indexManager.calculateUserConnectionSpeed, 8000);
         }
+
+        indexManager.quickIntroductionSoccerForecast();
     },
 
     registerEvents: function () {
@@ -451,6 +454,14 @@ var indexManager = {
             retryTimes >= 10 && clearInterval(rebuildNewFeatureLinkInterval);
         }, 1000);
     },
+
+    quickIntroductionSoccerForecast: function () {
+        var isShowQuickIntroduction = $.cookie("readQuickIntroduction");
+
+        if (!isShowQuickIntroduction) {
+            $('#main').attr('src', location.origin + '/' + indexManager.urls.soccerForecast);
+        }
+    }
 };
 
 $(function () {

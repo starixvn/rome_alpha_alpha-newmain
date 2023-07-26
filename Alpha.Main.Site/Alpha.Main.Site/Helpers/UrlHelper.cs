@@ -161,5 +161,10 @@
 
             return $"{reportDomain}{cookieless}/";
         }
+
+        public static string MapTotalBetsForecastPath()
+        {
+            return AppPathHelper.GetAppPath("site-totalbetsforecast", "~/");
+        }
     }
 }
