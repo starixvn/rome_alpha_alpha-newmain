@@ -1,10 +1,16 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using System;
+    using System.Collections.Specialized;
+    using System.Threading.Tasks;
     using Alpha.Main.Configurations;
     using Alpha.Main.ProfilePicture.Models;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.SecurityCode.Services;
+    using Alpha.SecurityCode.Web;
+    using Alpha.Web.Helpers;
     using Alpha.Web.Models;
+    using AlphaPlus.User.Models;
     using AppResources;
     using Fanex.Logging;
     using Main.Models;
@@ -12,18 +18,10 @@
     using NSubstitute;
     using NUnit.Framework;
     using Params.Otp;
-    using SecurityCode.Web;
     using Services;
     using Site.Handlers;
-    using Site.Helpers;
     using Site.Requests.Otp;
-    using Sunplus.Agent.Model.Entities;
-    using System;
-    using System.Collections.Specialized;
-    using System.Threading.Tasks;
-    using TelegramBot.Client.Models;
     using TelegramBot.Client.Services;
-    using Web.Helpers;
     using CustomResult = Alpha.Main.Models.Result;
 
     [TestFixture]
@@ -64,7 +62,7 @@
             securityCodeChecker = Substitute.For<SecurityCodeChecker>();
             logger = Substitute.For<ILogger>();
 
-            customerOtpHandler = new CustomerOtpHandler(customerOtpService, userSession, sessionManager, browserHelper, user, nicknameChecker,telegramSettingService,securityCodeChecker, logger);
+            customerOtpHandler = new CustomerOtpHandler(customerOtpService, userSession, sessionManager, browserHelper, user, nicknameChecker, telegramSettingService, securityCodeChecker, logger);
         }
 
         #region Handle Change Otp Status Command
@@ -168,7 +166,7 @@
         {
             ResetOtpCommand message = null;
 
-            Assert.ThrowsAsync<ArgumentNullException>(async() => await customerOtpHandler.Handle(message));
+            Assert.ThrowsAsync<ArgumentNullException>(async () => await customerOtpHandler.Handle(message));
         }
 
         [Test]
@@ -190,7 +188,7 @@
         public async Task HandleResetOtpCommand_SubAccountHasLimitedHostPermision_ReturnUnAuthorizedResult()
         {
             // Arrange
-            userSession.IsLimitedHostPermisionOnSubAccountFunction.Returns(true);
+            userSession.IsLimitedHostPermissionOnSubAccountFunction.Returns(true);
             var command = new ResetOtpCommand(userSession);
 
             // Act
@@ -538,7 +536,7 @@
         {
             SetUpOtpQuery message = null;
 
-            Assert.ThrowsAsync<ArgumentNullException>(async() => await customerOtpHandler.Handle(message));
+            Assert.ThrowsAsync<ArgumentNullException>(async () => await customerOtpHandler.Handle(message));
         }
 
         ////[Test]
@@ -548,7 +546,7 @@
         ////    userSession.CustId.Returns(1);
         ////    userSession.SubAccId.Returns(2);
         ////    var setUpOtpQuery = new SetUpOtpQuery(userSession);
-            
+
         ////    customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>())
         ////        .Returns(new CustomerOtp { Enabled = true });
 
@@ -568,7 +566,7 @@
         ////    userSession.IsSubAcc.Returns(true);
         ////    userSession.SubUserName.Returns("a");
         ////    var setUpOtpQuery = new SetUpOtpQuery(userSession);
-            
+
         ////    customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(new CustomerOtp { Enabled = false });
         ////    customerOtpService.GenerateCustomerOtp(Arg.Any<int>(), Arg.Any<string>(), Arg.Any<int>())
         ////        .Returns(new CustomerOtp());
@@ -587,7 +585,7 @@
         ////    userSession.CustId.Returns(1);
         ////    userSession.SubAccId.Returns(2);
         ////    var setUpOtpQuery = new SetUpOtpQuery(userSession);
-            
+
         ////    var expectedCustomerOtp = new CustomerOtp
         ////    {
         ////        CustId = 1,
@@ -627,7 +625,7 @@
         {
             VerifyOtpCommand message = null;
 
-            Assert.ThrowsAsync<ArgumentNullException>(async() => await customerOtpHandler.Handle(message));
+            Assert.ThrowsAsync<ArgumentNullException>(async () => await customerOtpHandler.Handle(message));
         }
 
         [Test]
@@ -745,6 +743,7 @@
             // Assert
             Assert.IsEmpty(viewModel.AlternateUsername);
         }
+
         #endregion Handle Verify Otp Different Device Query
 
         #region Check Difference Device Command
@@ -754,7 +753,7 @@
         {
             CheckDifferenceDeviceCommand message = null;
 
-            Assert.ThrowsAsync<ArgumentNullException>(async() => await customerOtpHandler.Handle(message));
+            Assert.ThrowsAsync<ArgumentNullException>(async () => await customerOtpHandler.Handle(message));
         }
 
         [Test]

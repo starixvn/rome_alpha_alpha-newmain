@@ -14,8 +14,12 @@ namespace Alpha.Main.Site.Controllers
     using Alpha.Main.Constants;
     using Alpha.Main.Helpers;
     using Alpha.Main.Site.Helpers;
+    using Alpha.SecurityCode.Services;
     using Alpha.SecurityCode.Web;
+    using Alpha.Web;
     using Alpha.Web.Filters;
+    using Alpha.Web.Helpers;
+    using AlphaPlus.User.Models;
     using AppResources;
     using Configurations;
     using Constants;
@@ -26,18 +30,12 @@ namespace Alpha.Main.Site.Controllers
     using Newtonsoft.Json;
     using Requests;
     using Requests.Otp;
-    using SecurityCode.Services;
-    using Sunplus.Agent.Model.Entities;
-    using Sunplus.Agent.Utilities;
-    using Web;
-    using Web.Helpers;
 
     [SessionState(SessionStateBehavior.Required)]
     public class DefaultController : BaseController
     {
         private const string OtpVerifyDifferenceDevicePath = "~/otp/VerifyOtpDifferenceDevice";
         private const string UnSupportedBrowsers = "UnsupportedBrowsers";
-        private const string fpsScriptKey = "fpsScript";
         private const string SecretKey = "!@#$";
         private readonly IUserSession userSession;
         private readonly IMediator mediator;
@@ -86,7 +84,7 @@ namespace Alpha.Main.Site.Controllers
 
             var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode(), null, nicknameChecker);
 
-            var viewModel = await mediator.SendAsync(query);            
+            var viewModel = await mediator.SendAsync(query);
 
             return View(viewModel);
         }
@@ -197,7 +195,7 @@ namespace Alpha.Main.Site.Controllers
             var pageAccess = userSession.SubPageAccess;
             var pageAccessPermissions = $"{pageAccess.CreateAccount}${pageAccess.Transfer}${pageAccess.UpdateAccount}$" +
                 $"{pageAccess.ViewLog}${pageAccess.ViewMemberInfo}${pageAccess.ViewReports}${pageAccess.ViewTotalBets}${pageAccess.GetPermission("[L]")}";
-            var cookieNameCurrentPage = CookieHelper.GetCookieNameOfCurrentPage(userSession.CustId, userSession.SubAccId, Encryption.PearsonEncode);
+            var cookieNameCurrentPage = CookieHelper.GetCookieNameOfCurrentPage(userSession.CustId, userSession.SubAccId, Sunplus.Agent.Utilities.Encryption.PearsonEncode);
 
             var sessions = new List<object>
             {

@@ -2,14 +2,14 @@
 {
     using System.Net;
     using System.Web.Mvc;
+    using Alpha.Web;
     using Alpha.Web.Filters;
+    using AlphaPlus.User.Models;
     using AppResources;
     using Main.Models;
     using MediatR;
     using Requests.Nickname;
-    using Sunplus.Agent.Model.Entities;
     using ViewModels.Nickname;
-    using Web;
 
     public class NicknameController : BaseController
     {

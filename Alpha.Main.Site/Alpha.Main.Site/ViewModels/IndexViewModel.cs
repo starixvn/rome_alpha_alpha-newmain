@@ -5,12 +5,13 @@
     using System.Web;
     using Alpha.Main.AppResources;
     using Alpha.Main.ProfilePicture.Models;
+    using Alpha.SecurityCode.Web;
+    using AlphaPlus.User.Models;
     using Alpha.Web.Helpers;
     using Alpha.Web.Models;
     using Configurations;
     using Helpers;
     using Models.Requests;
-    using SecurityCode.Web;
     using Sunplus.Agent.Utilities;
 
     public class IndexViewModel
@@ -175,7 +176,7 @@
 
         public bool IsEnabledCDNReCheckin
             => !string.IsNullOrWhiteSpace(AssetAppPath)
-            && !Web.Configurations.AppSettings.AssetAppPath.Equals(AssetAppPath, StringComparison.OrdinalIgnoreCase);
+            && !AlphaPlus.Configurations.AppSettings.AssetAppPath.Equals(AssetAppPath, StringComparison.OrdinalIgnoreCase);
 
         public int CDNReCheckinIntervalInSeconds { get; } = AppSettings.CDNReCheckinIntervalInSeconds;
 

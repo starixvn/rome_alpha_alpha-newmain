@@ -15,7 +15,6 @@
     @Html.AntiForgeryToken()
     @Html.Hidden("mainRootPath", MicroSites.MainUrl())
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
-    @StaticResources.AssetScripts.Render("/bundles/site-main/chatbot/chatbot-default")
     @RenderSection("Scripts", required: false)
     @GoogleAnalyticHepler.Render()
 </body>

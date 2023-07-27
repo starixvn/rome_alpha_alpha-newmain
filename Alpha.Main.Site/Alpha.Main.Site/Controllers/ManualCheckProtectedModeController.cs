@@ -5,7 +5,7 @@
     using System.Web.Security;
     using Alpha.Web;
     using Alpha.Web.Helpers;
-    using Sunplus.Agent.Model.Entities;
+    using AlphaPlus.User.Models;
 
     public abstract class ManualCheckProtectedModeController : BaseController
     {

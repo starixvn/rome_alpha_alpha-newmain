@@ -438,59 +438,7 @@
 
             // Assert
             Assert.AreEqual(expectedSetting, actualSetting);
-        }
-
-        [Test]
-        public void ChatBotBaseUrl_HasConfig_ReturnCorrectSetting()
-        {
-            // Arrange
-            var expectedSetting = "Url";
-            AppSettings.Settings = new NameValueCollection
-            {
-                ["Chatbot:BaseUrl"] = expectedSetting
-            };
-
-            // Act
-            var actualSetting = AppSettings.ChatBotBaseUrl;
-
-            // Assert
-            Assert.AreEqual(expectedSetting, actualSetting);
-        }
-
-        [Test]
-        public void ChatBotApiKey_HasConfig_ReturnCorrectSetting()
-        {
-            // Arrange
-            var expectedSetting = "ApiKey";
-            AppSettings.Settings = new NameValueCollection
-            {
-                ["Chatbot:ApiKey"] = expectedSetting
-            };
-
-            // Act
-            var actualSetting = AppSettings.ChatBotApiKey;
-
-            // Assert
-            Assert.AreEqual(expectedSetting, actualSetting);
-        }
-
-        [Test]
-        public void OfferChatbotSites_HasConfig_ReturnCorrectSetting()
-        {
-            // Arrange
-
-            AppSettings.Settings = new NameValueCollection
-            {
-                ["OfferChatbotSites"] = "BEST-ODDS,733333"
-            };
-            var expectedSetting = new[] { "BEST-ODDS", "733333" };
-
-            // Act
-            var actualSetting = AppSettings.OfferChatbotSites;
-
-            // Assert
-            Assert.AreEqual(expectedSetting, actualSetting);
-        }
+        }              
 
         [Test]
         public void RemoteRefURL_HasConfig_ReturnCorrectSetting()

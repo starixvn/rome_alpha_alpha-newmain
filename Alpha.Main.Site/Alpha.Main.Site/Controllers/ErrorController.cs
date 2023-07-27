@@ -4,7 +4,7 @@
     using System.Web.SessionState;
     using Alpha.Main.Site.Helpers;
     using Alpha.Web.Filters;
-    using Sunplus.Agent.Model.Entities;
+    using AlphaPlus.User.Models;
 
     [AllowAnonymous]
     [AllowProtectedMode]

@@ -1,9 +1,8 @@
 ﻿namespace Alpha.Main.Site.Requests.Password
 {
     using Alpha.Web.Models;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
     using CustomResult = Alpha.Main.Models.Result;
 
     public class ResetMainAccountPasswordCommand : IRequest<CustomResult>
@@ -54,7 +53,7 @@
                 return this.userSession.UserLoginIp;
             }
         }
-     
+
         public string ActorName
         {
             get

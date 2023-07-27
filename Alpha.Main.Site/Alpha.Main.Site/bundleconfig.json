@@ -259,49 +259,7 @@
     "inputFiles": [
       "Assets/styles/home/page-mobile-calculate-07.css"
     ]
-  },
-  {
-    "outputFileName": "Assets/bundles/chatbot/chatbot.css",
-    "inputFiles": [
-      "Assets/styles/chatbot/chatbot.css"
-    ]
-  },
-  {
-    "outputFileName": "Assets/bundles/chatbot/register-account.css",
-    "inputFiles": [
-      "Assets/styles/chatbot/chatbot-setting.css",
-      "Assets/styles/chatbot/register-account.css"
-    ]
-  },
-  {
-    "outputFileName": "Assets/bundles/chatbot/register-account.js",
-    "inputFiles": [
-      "Assets/scripts/core.js",
-      "Assets/scripts/chatbot/base-chatbot.js",
-      "Assets/scripts/chatbot/verify-account.js",
-      "Assets/scripts/chatbot/add-account.js"
-    ]
-  },
-  {
-    "outputFileName": "Assets/bundles/chatbot/chatbot-setting.css",
-    "inputFiles": [
-      "Assets/styles/chatbot/chatbot-setting.css"
-    ]
-  },
-  {
-    "outputFileName": "Assets/bundles/chatbot/chatbot-setting.js",
-    "inputFiles": [
-      "Assets/scripts/core.js",
-      "Assets/scripts/chatbot/base-chatbot.js",
-      "Assets/scripts/chatbot/chatbot-setting.js"
-    ]
-  },
-  {
-    "outputFileName": "Assets/bundles/chatbot/chatbot-guide.js",
-    "inputFiles": [
-      "Assets/scripts/chatbot/chatbot-guide.js"
-    ]
-  },
+  }, 
   {
     "outputFileName": "Assets/bundles/nickname/create-nickname.js",
     "inputFiles": [
@@ -314,31 +272,7 @@
     "inputFiles": [
       "Assets/styles/nickname/nickname.css"
     ]
-  },
-  {
-    "outputFileName": "Assets/bundles/captcha/captcha.css",
-    "inputFiles": [
-      "Assets/styles/captcha/captcha.css"
-    ]
-  },
-  {
-    "outputFileName": "Assets/bundles/captcha/captcha.js",
-    "inputFiles": [
-      "Assets/scripts/captcha/captcha.js"
-    ]
-  },
-  {
-    "outputFileName": "Assets/bundles/newcustomer-captcha/captcha.css",
-    "inputFiles": [
-      "Assets/styles/newcustomer-captcha/captcha.css"
-    ]
-  },
-  {
-    "outputFileName": "Assets/bundles/newcustomer-captcha/captcha.js",
-    "inputFiles": [
-      "Assets/scripts/newcustomer-captcha/captcha.js"
-    ]
-  },
+  },  
   {
     "outputFileName": "Assets/bundles/home/le-mtagconfig.js",
     "inputFiles": [
@@ -448,31 +382,6 @@
     "outputFileName": "Assets/bundles/otp/otp-dark.css",
     "inputFiles": [
       "Assets/styles/otp/otp-dark.css"
-    ]
-  },
-  {
-    "outputFileName": "Assets/bundles/chatbot/chatbot-dark.css",
-    "inputFiles": [
-      "Assets/styles/chatbot/chatbot-dark.css"
-    ]
-  },
-  {
-    "outputFileName": "Assets/bundles/chatbot/chatbot-setting-dark.css",
-    "inputFiles": [
-      "Assets/styles/chatbot/chatbot-setting-dark.css"
-    ]
-  },
-  {
-    "outputFileName": "Assets/bundles/chatbot/register-account-dark.css",
-    "inputFiles": [
-      "Assets/styles/chatbot/chatbot-setting-dark.css",
-      "Assets/styles/chatbot/register-account-dark.css"
-    ]
-  },
-  {
-    "outputFileName": "Assets/bundles/newcustomer-captcha/captcha-dark.css",
-    "inputFiles": [
-      "Assets/styles/newcustomer-captcha/captcha-dark.css"
     ]
   },
   {

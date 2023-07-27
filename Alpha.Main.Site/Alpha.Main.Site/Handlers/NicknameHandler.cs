@@ -1,11 +1,11 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using AlphaPlus.User.Models;
     using Main.Models;
     using MediatR;
     using Params.Nickname;
     using Requests.Nickname;
     using Services;
-    using Sunplus.Agent.Model.Entities;
 
     public class NicknameHandler : IRequestHandler<CreateNicknameCommand, Result>
     {

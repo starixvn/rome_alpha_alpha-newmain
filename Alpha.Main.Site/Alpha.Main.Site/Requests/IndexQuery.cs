@@ -3,12 +3,12 @@
 namespace Alpha.Main.Site.Models.Requests
 {
     using Alpha.Main.Site.Helpers;
+    using Alpha.Web.Helpers;
     using Alpha.Web.Models;
+    using AlphaPlus.User.Models;
     using Configurations;
     using MediatR;
-    using Sunplus.Agent.Model.Entities;
     using ViewModels;
-    using Web.Helpers;
 
     public class IndexQuery : IAsyncRequest<IndexViewModel>
     {

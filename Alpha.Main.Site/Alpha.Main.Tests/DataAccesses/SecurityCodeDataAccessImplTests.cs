@@ -100,7 +100,7 @@
                 ["errcode"] = 0,
                 ["errmsg"] = string.Empty
             };
-            objectDb.GetOuputParams().Returns(outputParams);
+            objectDb.GetOutputParams().Returns(outputParams);
 
             // Act
             var actualResult = securityCodeDataAccess.UpdateSecurityCode(new UpdateMainAccountSecurityCodeCriteria());
@@ -124,7 +124,7 @@
                 ["errcode"] = 1,
                 ["errmsg"] = "ErrorMessage"
             };
-            objectDb.GetOuputParams().Returns(outputParams);
+            objectDb.GetOutputParams().Returns(outputParams);
 
             // Act
             var actualResult = securityCodeDataAccess.UpdateSecurityCode(new UpdateSubAccountSecurityCodeCriteria());

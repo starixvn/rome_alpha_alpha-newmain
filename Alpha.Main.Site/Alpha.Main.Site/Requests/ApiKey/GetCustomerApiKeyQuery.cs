@@ -2,9 +2,8 @@
 {
     using Alpha.Main.Site.ViewModels.ApiKey;
     using Alpha.Web.Models;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
 
     public class GetCustomerApiKeyQuery : IAsyncRequest<ApiKeyManagementViewModel>
     {

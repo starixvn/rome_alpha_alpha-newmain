@@ -1,25 +1,25 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using System;
+    using System.Threading.Tasks;
     using Alpha.Main.Configurations;
     using Alpha.Main.ProfilePicture.Models;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.Main.Services;
+    using Alpha.SecurityCode.Web;
+    using Alpha.Web.Helpers;
     using Alpha.Web.Models;
+    using AlphaPlus.User.Models;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
     using Main.Constants;
     using Models.Requests;
     using NSubstitute;
     using NUnit.Framework;
-    using SecurityCode.Web;
     using Site.Handlers;
     using Site.Requests;
     using Site.ViewModels;
-    using Sunplus.Agent.Model.Entities;
-    using System;
-    using System.Threading.Tasks;
     using TelegramBot.Client.Services;
-    using Web.Helpers;
 
     [TestFixture]
     public class DefaultHandlerTests

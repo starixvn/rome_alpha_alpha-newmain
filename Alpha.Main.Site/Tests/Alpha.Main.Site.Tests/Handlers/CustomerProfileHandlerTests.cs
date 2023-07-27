@@ -2,21 +2,21 @@
 
 namespace Alpha.Main.Site.Tests.Handlers
 {
+    using System;
     using Alpha.Main.ProfilePicture.Models;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.Main.Services;
+    using Alpha.SecurityCode.Web;
+    using Alpha.Web.Helpers;
+    using AlphaPlus.User.Models;
     using Constants;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
     using Models.Requests.CustomerProfile;
     using NSubstitute;
     using NUnit.Framework;
-    using SecurityCode.Web;
     using Site.Handlers;
     using Site.ViewModels.CustomerProfile;
-    using Sunplus.Agent.Model.Entities;
-    using System;
-    using Web.Helpers;
 
     [TestFixture]
     public class CustomerProfileHandlerTests

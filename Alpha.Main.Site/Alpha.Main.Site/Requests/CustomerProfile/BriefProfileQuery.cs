@@ -1,9 +1,10 @@
 ﻿#pragma warning disable 618, 612
+
 namespace Alpha.Main.Site.Models.Requests.CustomerProfile
 {
+    using Alpha.SecurityCode.Web;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using SecurityCode.Web;
-    using Sunplus.Agent.Model.Entities;
     using ViewModels.CustomerProfile;
 
     public class BriefProfileQuery : IRequest<BriefProfileViewModel>

@@ -5,13 +5,10 @@
     using System.Configuration;
     using System.Linq;
     using System.Web;
-    using Alpha.Main.Configurations;
-    using Alpha.Main.Services;
-    using Alpha.Main.Services.Impl;
-    using Auth.Services;
-    using Auth.Services.Impl;
+    using Alpha.Auth.Services;
+    using Alpha.Auth.Services.Impl;
     using Fanex.Common.Helper;
-    using Sunplus.Agent.Model.Entities;
+     using AlphaPlus.User.Models;
 
     public class MenuItemBuilderImpl : MenuItemBuilder
     {

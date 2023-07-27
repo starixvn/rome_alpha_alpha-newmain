@@ -7,14 +7,13 @@ namespace Alpha.Main.Site.Controllers
     using System.Web.Mvc;
     using System.Web.SessionState;
     using Alpha.Main.Configurations;
+    using Alpha.Web;
     using Alpha.Web.Filters;
+    using AlphaPlus.User.Models;
     using MediatR;
     using Requests.Dashboard.BalanceInfo;
-    using Sunplus.Agent.Model.Entities;
-    using Sunplus.Agent.Model.Entities.Permission;
     using TelegramBot.Client.Services;
     using ViewModels.Dashboard;
-    using Web;
 
     [SessionState(SessionStateBehavior.ReadOnly)]
     public class DashboardController : BaseController

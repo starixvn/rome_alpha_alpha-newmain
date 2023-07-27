@@ -2,7 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
-    using Auth.Services;
+    using Alpha.Auth.Services;
     using Helpers;
     using Main.Models.Menus;
     using NSubstitute;

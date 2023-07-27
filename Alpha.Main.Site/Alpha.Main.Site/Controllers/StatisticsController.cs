@@ -4,10 +4,10 @@ namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using Alpha.Web;
+    using AlphaPlus.User.Models;
     using MediatR;
     using Requests.Dashboard.Statistics;
-    using Sunplus.Agent.Model.Entities;
-    using Web;
 
     [SessionState(SessionStateBehavior.ReadOnly)]
     public class StatisticsController : BaseController

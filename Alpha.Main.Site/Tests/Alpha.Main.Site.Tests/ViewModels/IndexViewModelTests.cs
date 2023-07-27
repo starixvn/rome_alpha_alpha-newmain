@@ -1,16 +1,16 @@
 ﻿namespace Alpha.Main.Site.Tests.ViewModels
 {
+    using System;
     using Alpha.Main.Configurations;
     using Alpha.Main.ProfilePicture.Models;
     using Alpha.SecurityCode.Web;
+    using Alpha.Web.Helpers;
     using Alpha.Web.Models;
+    using AlphaPlus.User.Models;
     using Models.Requests;
     using NSubstitute;
     using NUnit.Framework;
     using Site.ViewModels;
-    using Sunplus.Agent.Model.Entities;
-    using System;
-    using Web.Helpers;
 
     [TestFixture]
     public class IndexViewModelTests

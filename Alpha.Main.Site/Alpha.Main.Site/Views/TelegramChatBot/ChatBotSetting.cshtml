@@ -3,7 +3,6 @@
     Layout = "~/Views/TelegramChatBot/Shared/_Layout.cshtml";
 }
 @section Styles {
-    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/chatbot/chatbot-default")
     @StaticResources.AssetStyles.RenderCommonWithDarkMode($"/bundles/site-main/tab-{Model.CustLevel.ToLowerInvariant()}")
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/telegramchatbot/chatbot-setting")
 <style>

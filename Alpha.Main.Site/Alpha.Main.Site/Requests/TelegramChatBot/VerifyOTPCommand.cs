@@ -1,9 +1,8 @@
 ﻿namespace Alpha.Main.Site.Requests.TelegramChatBot
 {
-    using TelegramBot.Client.Models;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Entities;
-    using Sunplus.Agent.Model.Base;
+    using TelegramBot.Client.Models;
 
     public class VerifyOTPCommand : IAsyncRequest<Result>
     {

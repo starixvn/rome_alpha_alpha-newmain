@@ -1,9 +1,8 @@
 ﻿namespace Alpha.Main.Site.Requests.TelegramChatBot
 {
     using Alpha.Main.Site.ViewModels.TelegramChatBot;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
 
     public class GenerateQRCodeCommand : IAsyncRequest<VerifyAccountViewModel>
     {

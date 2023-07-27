@@ -7,16 +7,15 @@ namespace Alpha.Main
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Web;
-    using Alpha.Main.Services;
+    using Alpha.Main.Constants;
     using Alpha.Main.Services.Impl;
     using Alpha.Web.Models;
+    using AlphaPlus.User.Models;
     using Configurations;
     using Models;
     using Models.Menus;
-    using Sunplus.Agent.Model.Definitions;
-    using Sunplus.Agent.Model.Entities;
-    using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
-    using static Sunplus.Agent.Model.Entities.UserSession;
+    using static AlphaPlus.User.Models.UserPermission;
+    using static AlphaPlus.User.Models.UserSession;
     using AuthAppSettings = Alpha.Auth.Configurations.AppSettings;
 
     public static class FunctionRegistry
@@ -44,7 +43,7 @@ namespace Alpha.Main
             ["BetListsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.GetPermission(PageAccessType.ViewBetLists)),
             ["ViewLogMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewLog),
             ["SubAccountMenuItem"] = () => new MenuStatus(!Current.IsSubAcc),
-            ["NumberGameMenuItem"] = () => new MenuStatus(IsEnableProduct(ProductIdConstants.NumberGame)),
+            ["NumberGameMenuItem"] = () => new MenuStatus(IsEnableProduct(ProductId.NumberGame)),
             ["ConsolidatedReportMenuItem"] = () => new MenuStatus(Current.IsShowConsolidatedReport),
             ["LastBetMonitorMenuItem"] = () => new MenuStatus(
                 null,

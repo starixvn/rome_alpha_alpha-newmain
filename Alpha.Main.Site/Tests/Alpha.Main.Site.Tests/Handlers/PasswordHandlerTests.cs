@@ -1,8 +1,12 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using System;
     using Alpha.Main.ProfilePicture.Models;
     using Alpha.Main.ProfilePicture.Params;
     using Alpha.Main.ProfilePicture.Services;
+    using Alpha.SecurityCode.Services;
+    using Alpha.Web.Helpers;
+    using AlphaPlus.User.Models;
     using AppResources;
     using Constants;
     using Helpers;
@@ -12,15 +16,11 @@
     using NSubstitute;
     using NUnit.Framework;
     using Params.Password;
-    using SecurityCode.Services;
     using Services;
     using Site.Handlers;
     using Site.Requests.Password;
     using Site.ViewModels.Security;
-    using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
-    using System;
-    using Web.Helpers;
 
     [TestFixture]
     public class PasswordHandlerTests
@@ -85,7 +85,7 @@
         public void HandleResetSubAccountPasswordCommand_LimitPermissionSubAccount_ReturnUnAuthorizedResult()
         {
             // Arrange
-            userSession.IsLimitedHostPermisionOnSubAccountFunction.Returns(true);
+            userSession.IsLimitedHostPermissionOnSubAccountFunction.Returns(true);
             var command = new ResetSubAccountPasswordCommand(userSession);
 
             // Act

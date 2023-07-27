@@ -76,8 +76,6 @@
 
         public bool IsOfferLiveChat { get; } = AppSettings.IsOfferLiveChat;
 
-        public bool IsOfferDarkMode { get; } = Web.Configurations.AppSettings.IsOfferDarkMode;
-
         public bool IsDarkMode { get; }
 
         public bool IsProtectedMode { get; }

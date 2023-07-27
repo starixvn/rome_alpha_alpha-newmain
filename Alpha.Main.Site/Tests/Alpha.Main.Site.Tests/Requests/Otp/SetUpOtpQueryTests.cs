@@ -1,12 +1,12 @@
 ﻿namespace Alpha.Main.Site.Tests.Requests.Otp
 {
+    using System.Collections.Specialized;
     using Alpha.Main.Configurations;
     using Alpha.Main.Site.Requests.Otp;
     using Alpha.Main.Site.Tests.Constants;
+    using AlphaPlus.User.Models;
     using NSubstitute;
     using NUnit.Framework;
-    using Sunplus.Agent.Model.Entities;
-    using System.Collections.Specialized;
 
     public class SetUpOtpQueryTests
     {

@@ -1,8 +1,7 @@
 ﻿namespace Alpha.Main.Site.Requests.TelegramChatBot
 {
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
     using TelegramBot.Client.Models;
 
     public class UpdateFunctionCommand : IAsyncRequest<Result>

@@ -3,13 +3,13 @@
     using System.Threading.Tasks;
     using System.Web.Mvc;
     using Alpha.Main.Site.Requests.TelegramChatBot;
+    using Alpha.SecurityCode.Web;
+    using Alpha.Web.Filters;
+    using AlphaPlus.User.Models;
     using AppResources;
     using Main.Models;
     using MediatR;
     using Requests.Otp;
-    using SecurityCode.Web;
-    using Sunplus.Agent.Model.Entities;
-    using Web.Filters;
 
     public class OtpController : ManualCheckProtectedModeController
     {

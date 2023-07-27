@@ -1,8 +1,7 @@
 ﻿namespace Alpha.Main.Site.Models.Request.SecurityCode
 {
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
     using ViewModels.Security;
 
     public class ForceChangeSecurityCodeQuery : IRequest<ForceChangeSecurityCodeViewModel>

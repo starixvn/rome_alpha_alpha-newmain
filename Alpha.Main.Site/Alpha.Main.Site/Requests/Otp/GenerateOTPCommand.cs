@@ -1,6 +1,6 @@
 ﻿using Alpha.Main.Models;
+using AlphaPlus.User.Models;
 using MediatR;
-using Sunplus.Agent.Model.Entities;
 
 namespace Alpha.Main.Site.Requests.Otp
 {

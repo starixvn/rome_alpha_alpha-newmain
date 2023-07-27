@@ -1,13 +1,13 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
     using Alpha.Main.Constants;
     using Alpha.Main.Models.ApiKey;
     using Alpha.Main.Services;
     using Alpha.Main.Site.Requests.ApiKey;
     using Alpha.Main.Site.ViewModels.ApiKey;
     using MediatR;
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
 
     public class ApiKeyHandler :
         IAsyncRequestHandler<CreateApiKeyCommand, CreateApiKeyResult>,

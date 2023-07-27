@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Site.Models.Requests
 {
+    using AlphaPlus.User.Models;
     using Configurations;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
     using ViewModels;
 
     public class AllLanguagesQuery : IRequest<LanguageViewModel>

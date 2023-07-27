@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Site.Tests.Requests.Otp
 {
     using Alpha.Main.Site.Requests.Otp;
+    using AlphaPlus.User.Models;
     using NSubstitute;
     using NUnit.Framework;
-    using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
     public class ResetOtpCommandTests

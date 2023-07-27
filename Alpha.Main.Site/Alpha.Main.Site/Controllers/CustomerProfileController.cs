@@ -4,11 +4,11 @@ namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using Alpha.Web;
     using Alpha.Web.Filters;
+    using AlphaPlus.User.Models;
     using MediatR;
     using Models.Requests.CustomerProfile;
-    using Sunplus.Agent.Model.Entities;
-    using Web;
 
     [SessionState(SessionStateBehavior.ReadOnly)]
     public class CustomerProfileController : BaseController

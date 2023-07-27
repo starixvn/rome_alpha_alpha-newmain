@@ -86,7 +86,7 @@
             var param = new UpdateProtectionCodeParam(protectionCode, "1234", 1, 0, "E", "::1");
             aes.Decrypt(param.ProtectionCode, param.HashKey).Returns(rawProtectionCode);
             encryptor.CfsEnCode(rawProtectionCode).Returns(encodedProtectionCode);
-            dynamicRepository.ExecuteAsync(Arg.Any<ICriteria>()).Returns(Task.CompletedTask);
+            dynamicRepository.ExecuteAsync(Arg.Any<INonQueryCommand>()).Returns(Task.CompletedTask);
 
             // Act
             var result = await protectionCodeService.UpdateAsync(param);

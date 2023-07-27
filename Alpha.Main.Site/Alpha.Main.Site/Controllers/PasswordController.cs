@@ -3,13 +3,13 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using Alpha.Auth.Filters;
+    using Alpha.Web.Filters;
+    using AlphaPlus.User.Models;
     using AppResources;
-    using Auth.Filters;
     using Main.Models;
     using MediatR;
     using Requests.Password;
-    using Sunplus.Agent.Model.Entities;
-    using Web.Filters;
 
     [SessionState(SessionStateBehavior.Default)]
     public class PasswordController : ManualCheckProtectedModeController

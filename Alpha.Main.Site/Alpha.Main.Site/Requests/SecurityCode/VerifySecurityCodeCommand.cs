@@ -1,9 +1,8 @@
 ﻿namespace Alpha.Main.Site.Models.Request.SecurityCode
 {
+    using AlphaPlus.User.Models;
     using Main.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
 
     public class VerifySecurityCodeCommand : IRequest<Result>
     {

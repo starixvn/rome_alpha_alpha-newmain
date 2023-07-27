@@ -1,13 +1,9 @@
 ﻿namespace Alpha.Main.Site.Requests.TelegramChatBot
 {
-    using Alpha.Main.Configurations;
     using Alpha.Main.Site.ViewModels.TelegramChatBot;
     using Alpha.Web.Models;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
-    using System;
-    using System.Linq;
 
     public class SetUpChatBotQuery : IAsyncRequest<ChatBotViewModel>
     {
@@ -22,9 +18,6 @@
             CustLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
             SubAccId = userSession.SubAccId;
             Language = userSession.Language;
-            IsShowLetstalkChatBot = !userSession.IsSubAcc
-                && (AppSettings.OfferChatbotSites.Contains("*")
-                    || AppSettings.OfferChatbotSites.Contains(userSession.Site, StringComparer.OrdinalIgnoreCase));
         }
 
         public int CustId { get; }
@@ -34,7 +27,5 @@
         public int SubAccId { get; }
 
         public string Language { get; }
-
-        public bool IsShowLetstalkChatBot { get; }
     }
 }

@@ -1,9 +1,8 @@
 ﻿namespace Alpha.Main.Site.Requests.Otp
 {
     using Alpha.Main.Site.ViewModels.Security;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
 
     public class VerifyOtpQuery : IRequest<VerifyOTPViewModel>
     {

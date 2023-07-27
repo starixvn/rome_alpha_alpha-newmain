@@ -4,6 +4,9 @@
     using System.Threading.Tasks;
     using System.Web;
     using System.Web.Mvc;
+    using Alpha.SecurityCode.Services;
+    using AlphaPlus.User.Models;
+    using Alpha.Web.Helpers;
     using Alpha.Web.Models;
     using KellermanSoftware.CompareNetObjects;
     using Main.Constants;
@@ -12,12 +15,9 @@
     using Models.Requests.UserMessages;
     using NSubstitute;
     using NUnit.Framework;
-    using SecurityCode.Services;
     using Site.Controllers;
     using Site.Requests;
     using Site.Requests.Otp;
-    using Sunplus.Agent.Model.Entities;
-    using Web.Helpers;
 
     [TestFixture]
     public class DefaultControllerTests
@@ -145,7 +145,7 @@
             var query = new IndexQuery(userSession, securityCodeChecker.IsEnableSecurityCode(), false, nicknameChecker);
 
             // Act
-             await defaultController.Index();
+            await defaultController.Index();
 
             // Assert
             await mediator.Received().SendAsync(

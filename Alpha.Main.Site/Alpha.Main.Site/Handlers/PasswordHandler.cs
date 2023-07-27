@@ -1,21 +1,21 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System;
     using Alpha.Main.ProfilePicture.Models;
     using Alpha.Main.ProfilePicture.Params;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.SecurityCode.Services;
+    using Alpha.Web.Helpers;
     using Alpha.Web.Models;
+    using AlphaPlus.User.Models;
     using AppResources;
     using Main.Models;
     using MediatR;
     using Params.Password;
     using Requests.Password;
     using Services;
-    using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
-    using System;
     using ViewModels.Security;
-    using Web.Helpers;
     using CustomResult = Alpha.Main.Models.Result;
 
     public class PasswordHandler :
@@ -374,7 +374,7 @@
                 return false;
             }
 
-            if (userSession.IsLimitedHostPermisionOnSubAccountFunction)
+            if (userSession.IsLimitedHostPermissionOnSubAccountFunction)
             {
                 return false;
             }

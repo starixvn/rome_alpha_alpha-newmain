@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Site.Requests.Nickname
 {
+    using Alpha.Web.Helpers;
+    using AlphaPlus.User.Models;
     using Main.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Entities;
-    using Web.Helpers;
 
     public class CreateNicknameCommand : IRequest<Result>
     {

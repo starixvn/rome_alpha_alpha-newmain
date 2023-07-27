@@ -9,14 +9,17 @@
     using System.Reflection;
     using System.Threading;
     using System.Web.Mvc;
-    using Alpha.Captcha.Services;
     using Alpha.Main.Configurations;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.NetThrottling;
     using Alpha.NetThrottling.Models;
     using Alpha.NetThrottling.Resolvers;
     using Alpha.NetThrottling.Utils;
-    using Chatbot.Client.Services;
+    using Alpha.SecurityCode.Services;
+    using Alpha.Web.Helpers;
+    using Alpha.Web.Helpers.Impl;
+    using AlphaPlus.User.Models;
+    using AlphaPlus.User.Models.Helpers;
     using DataAccesses;
     using DataAccesses.Impl;
     using Fanex.Caching;
@@ -32,19 +35,14 @@
     using MediatR;
     using ONEbook.OTP.Helpers;
     using ONEbook.OTP.Services;
-    using SecurityCode.Services;
     using Services;
     using Services.Impl;
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
     using StackExchange.Redis;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
     using TelegramBot.Client.Services;
-    using Web.Helpers;
-    using Web.Helpers.Impl;
 
     public static class DependencyConfig
     {
@@ -102,6 +100,7 @@
             container.Register<BrowserHelper, BrowserHelperImpl>(Lifestyle.Singleton);
             container.Register(() => Fanex.Logging.Logger.Log, Lifestyle.Singleton);
 
+            UserSession.Init(new HttpContextHelper());
             container.RegisterPerWebRequest<IUserSession, UserSessionExt>();
             container.RegisterPerWebRequest<MenuItemBuilder, MenuItemBuilderImpl>();
             container.RegisterSingleton<CacheRefService, CacheRefServiceImpl>();
@@ -133,14 +132,12 @@
                 container.GetInstance<INetThrottlingService>(),
                 container.GetInstance<IOTPService>()));
 
-            container.RegisterPerWebRequest<Chatbot.Client.Services.SettingService, SettingServiceImpl>();
-            container.RegisterPerWebRequest<ISettingService>(() => new TelegramBot.Client.Services.SettingService(CreateTelegramBotHttpClient()));
+            container.RegisterPerWebRequest<ISettingService>(() => new SettingService(CreateTelegramBotHttpClient()));
             container.RegisterPerWebRequest<IBotService>(() => new BotService(CreateTelegramBotHttpClient()));
             container.RegisterPerWebRequest<INotificationService>(() => new NotificationService(CreateTelegramBotHttpClient()));
             container.RegisterPerWebRequest<IOTPService>(() => new OTPService(CreateTelegramBotHttpClient()));
             container.RegisterPerWebRequest<TelegramBotService, TelegramBotServiceImpl>();
             container.RegisterPerWebRequest<TransferService, TransferServiceImpl>();
-
             container.RegisterPerWebRequest<IUser, User>();
             container.RegisterSingleton(() => AesService.Default);
 
@@ -154,7 +151,6 @@
             container.RegisterPerWebRequest<KickoutCustomerService, KickoutCustomerServiceImpl>();
             container.RegisterPerWebRequest<BannerService, BannerServiceImpl>();
             container.RegisterPerWebRequest<UMMessageService, UMMessageServiceImpl>();
-            container.RegisterPerWebRequest<ISessionService, SessionService>();
             container.RegisterPerWebRequest<ProtectionCodeService, ProtectionCodeServiceImpl>();
             container.RegisterPerWebRequest<ThemeService, ThemeServiceImpl>();
             container.RegisterPerWebRequest<UpdateUsageLanguageService, UpdateUsageLanguageServiceImpl>();
@@ -181,7 +177,7 @@
             container.RegisterPerWebRequest<INetThrottler>(() => new NetThrottler(isUsedRedis: false));
             container.RegisterPerWebRequest<IThrottleSetting>(() => new ThrottleSetting(isUsedRedis: false));
             container.Register<IClock, Clock>(Lifestyle.Scoped);
-            container.Register<ILogger, NetThrottling.Utils.Logger>(Lifestyle.Scoped);
+            container.Register<ILogger, Logger>(Lifestyle.Scoped);
             container.Register<ICacheServiceFactory, CacheServiceFactory>(Lifestyle.Scoped);
             container.Register<IResolver, BaseResolver>(Lifestyle.Scoped);
             container.Register<INetThrottlingService, NetThrottlingService>(Lifestyle.Scoped);
