@@ -157,13 +157,7 @@
             if (this.publicMessageId !== 0) {
                 this.appendMessageToPopup(publicMessage.Content);
             }
-        }
-        else {
-            const spanMoveBets = this.$("#span-movebets");
-            if (spanMoveBets.length) {
-                spanMoveBets.remove();
-            }
-        }
+        }       
     }
 
     showPrivateMessage = (results: any) => {
