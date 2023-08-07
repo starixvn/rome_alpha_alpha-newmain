@@ -655,6 +655,15 @@
   <data name="CheckOut" xml:space="preserve">
     <value>ออก</value>
   </data>
+  <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
+    <value>Expand your monitoring capabilities with a wider set of filter conditions.</value>
+  </data>
+  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
+    <value>Discover &lt;b&gt;New View&lt;/b&gt; on Last Bets</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
+    <value>ปรับแก้ไขการตั้งค่าได้ใน &lt;b&gt;แชทบอท &gt; แจ้งเตือนการเข้าสู่ระบบผิดปกติ&lt;/b&gt;  ได้ตามความต้องการของคุณ ความปลอดภัยของคุณคือสิ่งสำคัญที่สุดของเรา!</value>
+  </data>
   <data name="GetStarted" xml:space="preserve">
     <value>เริ่มต้น</value>
   </data>

@@ -722,10 +722,10 @@
     <value>Check Out</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>System can now help you auto transfer to your downline periodically.</value>
+    <value>Expand your monitoring capabilities with a wider set of filter conditions.</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Auto Transfer Accounts</value>
+    <value>Discover &lt;b&gt;New View&lt;/b&gt; on Last Bets</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
     <value>Go to &lt;b&gt;Transfer &gt; Transfer page&lt;/b&gt; to enable/disable auto transfer for downlines.</value>

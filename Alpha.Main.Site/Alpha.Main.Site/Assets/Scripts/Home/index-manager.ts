@@ -96,7 +96,7 @@ var indexManager = {
             }
 
             if (e.data.event_id === "winlossdetailnew-feedback") {
-                indexManager.initFeedbackFunction(e.data.feedback_id, undefined, undefined);
+                indexManager.initFeedbackFunction(e.data.feedback_id, e.data.popup_width, e.data.popup_height);
             }
         }, false);
     },
@@ -383,41 +383,36 @@ var indexManager = {
     //},
 
     initNewFeatureHighlightPopup: function () {
-        const lmenu = $("#menu-TRANSFER");
-        if ($("#ShowHighlightPopup").val() === "0" || lmenu.length === 0) {
-            return;
-        }
-
-        const featureName = "AutoTransfer";
-
+        const featureName = "LastBetsEnhancement";
         const cookiesName = indexManager.hidePopupCookies + featureName;
         const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
 
         if (hidePopup !== "1") {
             popupManager.closeAllPopup();
             const box = $("#boxHighlightPopupNewFeature");
-            box.css({ top: lmenu.position().top + 130 });
-            box.removeClass("hide");
+            if (box.length) {
+                box.removeClass("hide");
 
-            box.find(".icon-close").click(() => box.addClass("hide"));
+                box.find(".icon-close").click(() => box.addClass("hide"));
 
-            box.find("#chkHideHighlightPopupNewFeature").click(function () {
-                localStorage.setItem(indexManager.getCustomerCookiesName(cookiesName), "1");
-                box.addClass("hide");
-            });
+                box.find("#chkHideHighlightPopupNewFeature").click(function () {
+                    localStorage.setItem(indexManager.getCustomerCookiesName(cookiesName), "1");
+                    box.addClass("hide");
+                });
 
-            const newFeatureLink = box.find("#linkHighlightPopupCheckOut");
-            newFeatureLink.click(() => box.addClass("hide"));
+                const newFeatureLink = box.find("#linkHighlightPopupCheckOut");
+                newFeatureLink.click(() => box.addClass("hide"));
 
-            $(window).scroll(() => box.addClass("hide"));
+                $(window).scroll(() => box.addClass("hide"));
 
-            $("#main-menu-tab")["mCustomScrollbar"]({
-                callbacks: {
-                    onScrollStart: () => box.addClass("hide")
-                }
-            });
+                $("#main-menu-tab")["mCustomScrollbar"]({
+                    callbacks: {
+                        onScrollStart: () => box.addClass("hide")
+                    }
+                });
 
-            // indexManager.replaceCookieslessURL(newFeatureLink);
+                indexManager.replaceCookieslessURL(newFeatureLink);
+            }
         }
     },
 
