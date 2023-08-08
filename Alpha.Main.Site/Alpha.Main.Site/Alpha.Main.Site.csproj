@@ -880,6 +880,8 @@
     <Content Include="Assets\Images\autotransfer-dark.svg" />
     <Content Include="Assets\Images\arrowbackupdomainmb.svg" />
     <Content Include="Assets\Images\arrowbackupdomain.svg" />
+    <Content Include="Assets\Images\lastbets-dark.svg" />
+    <Content Include="Assets\Images\lastbets.svg" />
     <Content Include="Assets\Images\winlostreport.svg" />
     <Content Include="Assets\Images\winlostreport-dark.svg" />
     <Content Include="Assets\Images\icon-chatbot-1.svg" />
