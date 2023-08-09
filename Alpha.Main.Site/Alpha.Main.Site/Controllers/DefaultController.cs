@@ -240,7 +240,8 @@ namespace Alpha.Main.Site.Controllers
                 AppSettings.BetlistDomain,
                 Request.Cookies[$"{cookieNameCurrentPage}-betlist-{Session.SessionID}"]?.Value,
                 AppSettings.ReportDomain,
-                Request.Cookies[$"{cookieNameCurrentPage}-{Session.SessionID}"]?.Value
+                Request.Cookies[$"{cookieNameCurrentPage}-{Session.SessionID}"]?.Value,
+                userSession.IsEnabledSecurityCodeInBetLists
             };
 
             foreach (var item in sessions)
