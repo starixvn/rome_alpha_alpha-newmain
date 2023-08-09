@@ -76,7 +76,7 @@
     </siteMapNode>
     <!--/MemberInfo-->
     <siteMapNode resourceKey="BetLists" appPath="OldMainAppPath" menuItemType="BetListsMenuItem" functionType="[L]">
-      <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="/LastBets/Index" roles="Agent" useDomainConfig="Betlist:Domain"></siteMapNode>
+      <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="/LastBets/Index" roles="Agent" useDomainConfig="Betlist:Domain" isNew="true"></siteMapNode>
       <siteMapNode resourceKey="searchTickets" appPath="BetListsAppPath" url="/SearchTickets/Index" useDomainConfig="Betlist:Domain" isNew="true"></siteMapNode>
       <siteMapNode resourceKey="cancelledBets" appPath="BetListsAppPath" url="/CancelledBet/Index" useDomainConfig="Betlist:Domain"></siteMapNode>
 
@@ -151,8 +151,8 @@
     </siteMapNode>
     <siteMapNode resourceKey="riskManagement" menuItemType="MemberInfoMenuItem" functionType="[H]" byPassProtectedModeInternal="true">
       <siteMapNode resourceKey="MemberWinLimit" appPath="MemberInfoAppPath" url="WinLossLimit/Index"></siteMapNode>
-      <siteMapNode resourceKey="MyWatchlist" appPath="MemberInfoAppPath" url="ReachedThreshold/Index" roles="Agent" isNew="true"></siteMapNode>
-      <siteMapNode resourceKey="MyThresholds" appPath="MemberInfoAppPath" url="MyThresholds/Index" roles="Super,Master" isNew="true"></siteMapNode>
+      <siteMapNode resourceKey="MyWatchlist" appPath="MemberInfoAppPath" url="ReachedThreshold/Index" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="MyThresholds" appPath="MemberInfoAppPath" url="MyThresholds/Index" roles="Super,Master"></siteMapNode>
     </siteMapNode>
     <siteMapNode resourceKey="chatbot" appPath="MainAppPath" url="TelegramChatBot/Setup"></siteMapNode>
     <siteMapNode resourceKey="SercurityCode" appPath="MainAppPath" url="Otp/SetupOtp" isNew="false"></siteMapNode>

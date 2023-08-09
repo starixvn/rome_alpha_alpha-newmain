@@ -659,10 +659,10 @@
     <value>查看</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Expand your monitoring capabilities with a wider set of filter conditions.</value>
+    <value>通过更广泛的筛选条件扩展您的监控能力。</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Discover &lt;b&gt;New View&lt;/b&gt; on Last Bets</value>
+    <value>发现&lt;b&gt;新视图&lt;/b&gt;最后投注</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
     <value>根据您的要求在 &lt;b&gt;“Chatbot” &gt; “登入异常提示”&lt;/b&gt; 中对其进行定制。確保您的戶口安全性是我們首要任务！</value>
@@ -684,14 +684,5 @@
   </data>
   <data name="WinLossDetailReport" xml:space="preserve">
     <value>输赢细节报告</value>
-  </data>
-  <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>系统现在可以协助您定期自动转账于您的下线。</value>
-  </data>
-  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>前往 &lt;b&gt; 转账 &gt; 转账页面 &lt;/b&gt; 开启/禁用 自动转账于下线。</value>
-  </data>
-  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>自动转账的账号</value>
   </data>
 </root>

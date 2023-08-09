@@ -190,11 +190,8 @@
             => Enumeration.FromValue<UserLevel>(message.RoleId).IsAgentLevel()
             && !IsProtectedMode
             && (!message.IsSubAcc || message.SubPageAccess.Contains(PageAccessType.ViewBetLists));
+
         public string HightLightFeatureUrl
             => $"{UrlHelper.MapBetListPath("~/")}MonitoringBets/Index";
-
-        public bool ShowHighlightPopup
-            => (!message.IsSubAcc || message.SubPageAccess.Contains(PageAccessType.Transfer))
-            && AppSettings.IsEnableAutoTransfer(message.Currency);
     }
 }

@@ -862,8 +862,6 @@
     <Content Include="Assets\bundles\suggest-telegram-otp.min.js">
       <DependentUpon>suggest-telegram-otp.js</DependentUpon>
     </Content>
-    <Content Include="Assets\Images\abnormal-login-alert-dark.svg" />
-    <Content Include="Assets\Images\abnormal-login-alert.svg" />
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop-dark_vi-VN.jpg" />
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop_vi-VN.jpg" />
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile-dark_vi-VN.jpg" />
@@ -871,23 +869,16 @@
     <Content Include="Assets\Images\chatbot-i1.svg" />
     <Content Include="Assets\Images\chatbot-i7.svg" />
     <Content Include="Assets\Images\feedback.svg" />
-    <Content Include="Assets\Images\backupdomain.svg" />
-    <Content Include="Assets\Images\language-dark.svg" />
-    <Content Include="Assets\Images\language.svg" />
-    <Content Include="Assets\Images\createmultipleaccounts.svg" />
-    <Content Include="Assets\Images\createmultipleaccounts-dark.svg" />
 	<Content Include="Assets\Images\autotransfer.svg" />
     <Content Include="Assets\Images\autotransfer-dark.svg" />
     <Content Include="Assets\Images\arrowbackupdomainmb.svg" />
     <Content Include="Assets\Images\arrowbackupdomain.svg" />
-    <Content Include="Assets\Images\lastbets-dark.svg" />
-    <Content Include="Assets\Images\lastbets.svg" />
-    <Content Include="Assets\Images\winlostreport.svg" />
-    <Content Include="Assets\Images\winlostreport-dark.svg" />
     <Content Include="Assets\Images\icon-chatbot-1.svg" />
     <Content Include="Assets\Images\icon-chatbot-2.svg" />
     <Content Include="Assets\Images\icon-chatbot-3.svg" />
     <Content Include="Assets\Images\icon-chatbot-4.svg" />
+    <Content Include="Assets\Images\new_feature.svg" />
+    <Content Include="Assets\Images\new_feature-dark.svg" />
     <Content Include="Assets\Images\icon-telegram.png" />
     <Content Include="Assets\bundles\telegramchatbot\chatbot-dark.css" />
     <Content Include="Assets\bundles\telegramchatbot\chatbot-dark.min.css">

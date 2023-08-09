@@ -383,6 +383,11 @@ var indexManager = {
     //},
 
     initNewFeatureHighlightPopup: function () {
+        const leftMenu = $("#menu-BETLISTS");
+        if (!leftMenu.length) {
+            return;
+        }
+
         const featureName = "LastBetsEnhancement";
         const cookiesName = indexManager.hidePopupCookies + featureName;
         const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
@@ -391,6 +396,7 @@ var indexManager = {
             popupManager.closeAllPopup();
             const box = $("#boxHighlightPopupNewFeature");
             if (box.length) {
+                box.css({ top: leftMenu.position().top + 130 });
                 box.removeClass("hide");
 
                 box.find(".icon-close").click(() => box.addClass("hide"));
