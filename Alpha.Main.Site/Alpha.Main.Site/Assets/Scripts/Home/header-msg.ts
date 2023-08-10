@@ -12,7 +12,6 @@
     private domElements = {
         privateMessage: null,
         publicMessage: null,
-        moveBetsMessage: null,
         marqueeMessage: null,
         hotMessages: null,
         userMessageModal: null,
@@ -51,10 +50,6 @@
         } else if (messageType == alpha.messageType.Special) {
             indexManager.changeMenu(this.urls.mainAppSpecialMessageForm);
         }
-    }
-
-    viewMoveBetsMessage = (event: JQueryEventObject) => {
-        event.stopPropagation();
     }
 
     resetHotMessageElements = (showFullMessage) => {
@@ -135,12 +130,9 @@
     }
 
     onSuccessGetMessages = (rawResults) => {
-        const results = rawResults,
-            movebetsMessage = results.MoveBetsInformation.Content || "";
+        const results = rawResults;
 
-        this.showPublicMessage(results);
-
-        this.domElements.moveBetsMessage.html(movebetsMessage);
+        this.showPublicMessage(results);      
 
         this.showPrivateMessage(results);
 
@@ -165,13 +157,7 @@
             if (this.publicMessageId !== 0) {
                 this.appendMessageToPopup(publicMessage.Content);
             }
-        }
-        else {
-            const spanMoveBets = this.$("#span-movebets");
-            if (spanMoveBets.length) {
-                spanMoveBets.remove();
-            }
-        }
+        }       
     }
 
     showPrivateMessage = (results: any) => {
@@ -213,10 +199,10 @@
         this.privateMsg = this.domElements.privateMessage[0];
         this.publicMsg = this.domElements.publicMessage[0];
 
-        this.privateMsg.onmouseover = this.publicMsg.onmouseover = this.domElements.moveBetsMessage[0].onmouseover = () => {
+        this.privateMsg.onmouseover = this.publicMsg.onmouseover = () => {
             this.pauseMarquee();
         };
-        this.privateMsg.onmouseout = this.publicMsg.onmouseout = this.domElements.moveBetsMessage[0].onmouseout = () => {
+        this.privateMsg.onmouseout = this.publicMsg.onmouseout = () => {
             this.playMarquee();
         };
 
@@ -258,7 +244,6 @@
     protected cacheElements = () => {
         this.domElements.privateMessage = this.$('#private-message');
         this.domElements.publicMessage = this.$('#public-message');
-        this.domElements.moveBetsMessage = this.$('#movebets-message');
         this.domElements.marqueeMessage = this.$('#marqueeMessage');
         this.domElements.hotMessages = this.$('#userMessageModalBody');
         this.domElements.contentMessage = this.$('#msg-content');
@@ -272,7 +257,6 @@
     protected registerEvents = () => {
         this.domElements.privateMessage.on('click', this.viewLiveMessage);
         this.domElements.publicMessage.on('click', this.viewLiveMessage);
-        this.domElements.moveBetsMessage.on('click', this.viewMoveBetsMessage);
         this.domElements.showMoreContainer.on('click', this.showMoreHotMessage);
         this.domElements.showLessContainer.on('click', this.showLessHotMessage);
     };
