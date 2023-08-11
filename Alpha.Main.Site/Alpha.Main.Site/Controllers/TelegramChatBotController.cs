@@ -26,12 +26,19 @@
             this.userSession = userSession;
         }
 
-        public async Task<ActionResult> Setup(SetUpChatBotQuery query)
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             if (AppSettings.EnabledUMTelegramChatbot)
-            {
-                return Redirect($"~/PartialUM/Index?umfrom={AppSettings.TelegramChatbotUMFrom}&umto={AppSettings.TelegramChatbotUMTo}");
+{
+                filterContext.Result = new RedirectResult($"~/PartialUM/Index?umfrom={AppSettings.TelegramChatbotUMFrom}&umto={AppSettings.TelegramChatbotUMTo}");
+                return;
             }
+
+            base.OnActionExecuting(filterContext);
+        }
+
+        public async Task<ActionResult> Setup(SetUpChatBotQuery query)
+        {
 
             var model = await mediator.SendAsync(query);
 

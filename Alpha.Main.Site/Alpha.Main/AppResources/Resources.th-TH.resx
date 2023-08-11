@@ -563,7 +563,7 @@
     <value>โปรดคลิก {0} เพื่อดูข้อมูลโดยรวม</value>
   </data>
   <data name="PartialUMAnnouncement" xml:space="preserve">
-    <value>เรากำลังอัปเดตฟังก์ชันนี้เพื่อประสบการณ์ที่ดีขึ้น </value>
+    <value>เรากำลังอัปเดตฟังก์ชันนี้เพื่อประสบการณ์ที่ดีขึ้น ดังนั้น ฟังก์ชันนี้จึงถูกปิดชั่วคราว ({0} - {1} (GMT+8)) โปรดลองอีกครั้งในภายหลังและขออภัยในความไม่สะดวก</value>
   </data>
   <data name="LiveMessage" xml:space="preserve">
     <value>Live Message</value>
