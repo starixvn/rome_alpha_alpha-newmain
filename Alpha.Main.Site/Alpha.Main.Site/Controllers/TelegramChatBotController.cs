@@ -1,9 +1,10 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
+    using System.Threading.Tasks;
+    using System.Web.Mvc;
     using Alpha.Main.AppResources;
     using Alpha.Main.Configurations;
     using Alpha.Main.Models;
-    using Alpha.Main.Site.Models.Requests;
     using Alpha.Main.Site.Requests;
     using Alpha.Main.Site.Requests.TelegramChatBot;
     using Alpha.Main.Site.ViewModels.TelegramChatBot;
@@ -12,8 +13,6 @@
     using CaptchaMvc.HtmlHelpers;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
-    using System.Threading.Tasks;
-    using System.Web.Mvc;
     using Result = Main.Models.Result;
 
     public class TelegramChatBotController : BaseController
@@ -27,8 +26,20 @@
             this.userSession = userSession;
         }
 
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            if (AppSettings.EnabledUMTelegramChatbot)
+{
+                filterContext.Result = new RedirectResult($"~/PartialUM/Index?umfrom={AppSettings.TelegramChatbotUMFrom}&umto={AppSettings.TelegramChatbotUMTo}");
+                return;
+            }
+
+            base.OnActionExecuting(filterContext);
+        }
+
         public async Task<ActionResult> Setup(SetUpChatBotQuery query)
         {
+
             var model = await mediator.SendAsync(query);
 
             return model.IsLinked

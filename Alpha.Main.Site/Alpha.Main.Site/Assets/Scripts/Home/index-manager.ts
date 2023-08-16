@@ -37,7 +37,7 @@ var indexManager = {
     urls: {
         reCheckinUrl: alpha.urls.oldMainRootPath + '_Authorization/Handlers/ReCheckin.ashx',
         feedback: alpha.urls.messageRootPath + 'Feedback/Index',
-        checkExistFeedback: alpha.urls.messageRootPath + 'Feedback/CheckExist?functionId=',
+        checkExistFeedback: alpha.urls.messageRootPath + 'Feedback/CheckExist?id=',
         feedbackFunction: alpha.urls.messageRootPath + 'Feedback/Function?id=',
     },
 
@@ -350,11 +350,13 @@ var indexManager = {
             return;
         }
 
-        $.get(indexManager.urls.checkExistFeedback + id, function (isExists) {
-            if (!isExists) {
+        $.get(indexManager.urls.checkExistFeedback + id, function (result) {
+            if (!result.IsExist) {
                 //indexManager.calulateFeedbackFunctionPosition();
 
-                indexManager.domElements.feedbackFunction.find(".feedback-box")
+                const feedbackBox = indexManager.domElements.feedbackFunction.find(".feedback-box");
+                feedbackBox.find(".txt-feedback").text(result.FunctionName || "Feedback");
+                feedbackBox
                     .off()
                     .click(function () {
                         popupManager.open(indexManager.urls.feedbackFunction + id, undefined, width || 440, height || 380, null, null, null, null, null, null, { customClass: "feedback-modal" });

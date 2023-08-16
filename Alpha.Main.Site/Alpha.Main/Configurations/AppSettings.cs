@@ -348,6 +348,12 @@
 
         public static Uri TelegramBotClientUri => new Uri(Settings["TelegramBotClientUri"]);
 
+        public static bool EnabledUMTelegramChatbot => Settings["TelegramBot:EnabledUM"] == "1";
+
+        public static string TelegramChatbotUMFrom => Settings["TelegramBot:UMFrom"];
+
+        public static string TelegramChatbotUMTo => Settings["TelegramBot:UMTo"];
+
         public static int CDNReCheckinIntervalInSeconds
             => int.Parse(Settings["CDNReCheckin:IntervalInSeconds"] ?? "60");
 

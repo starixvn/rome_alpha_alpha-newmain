@@ -566,7 +566,7 @@
     <value>請點擊 {0} 以查看整體資料。</value>
   </data>
   <data name="PartialUMAnnouncement" xml:space="preserve">
-    <value>我們正在更新此功能以獲得更好的體驗。因此，此功能將暫時關閉（{0} - {1}）。請稍後再試，給您帶來不便,敬請諒解。</value>
+    <value>我們正在更新此功能以獲得更好的體驗。因此，此功能將暫時關閉（{0} - {1} (GMT+8)）。請稍後再試，給您帶來不便,敬請諒解。</value>
   </data>
   <data name="LiveMessage" xml:space="preserve">
     <value>在線客服</value>
