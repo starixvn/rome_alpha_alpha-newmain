@@ -417,4 +417,7 @@
   <data name="searchTickets" xml:space="preserve">
     <value>ค้นหาตั๋วเดิมพัน</value>
   </data>
+  <data name="AutoTransferMonitoring" xml:space="preserve">
+    <value>ตรวจสถานะการโอนอัตโนมัติ</value>
+  </data>
 </root>

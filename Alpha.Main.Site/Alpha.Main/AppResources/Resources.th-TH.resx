@@ -655,15 +655,6 @@
   <data name="CheckOut" xml:space="preserve">
     <value>ออก</value>
   </data>
-  <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>การแจ้งเตือนการเข้าสู่ระบบที่ผิดปกติ ได้เปิดใช้งานโดยอัตโนมัติเพื่อแจ้งให้คุณทราบผ่านทางเทเลแกรมเกี่ยวกับการเข้าสู่ระบบที่น่าสงสัย</value>
-  </data>
-  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>แจ้งเตือนการเข้าสู่ระบบที่ผิดปกติ</value>
-  </data>
-  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>ปรับแก้ไขการตั้งค่าได้ใน &lt;b&gt;แชทบอท &gt; แจ้งเตือนการเข้าสู่ระบบผิดปกติ&lt;/b&gt;  ได้ตามความต้องการของคุณ ความปลอดภัยของคุณคือสิ่งสำคัญที่สุดของเรา!</value>
-  </data>
   <data name="GetStarted" xml:space="preserve">
     <value>เริ่มต้น</value>
   </data>
@@ -681,5 +672,14 @@
   </data>
   <data name="WinLossDetailReport" xml:space="preserve">
     <value>รายงานรายละเอียดการแพ้ชนะ</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
+    <value>ระบบจะสามารถช่วยคุณถ่ายโอนยอดไปยังดาวน์ไลน์ของคุณโดยอัตโนมัติ เป็นประจำ</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
+    <value>ไปที่ &lt;b&gt;โอน &gt; หน้าโอน&lt;/b&gt; เพื่อเปิด/ปิดระบบโอนอัตโนมัติสำหรับดาวน์ไลน์</value>
+  </data>
+  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
+    <value>บัญชีโอนอัตโนมัติ</value>
   </data>
 </root>

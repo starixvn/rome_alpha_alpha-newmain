@@ -91,5 +91,7 @@ namespace Alpha.Main.Site.Models.Requests
 
         private static bool IsQRCodeHidden => AppSettings.Settings["QRCode:Hide"] == "1";
         public int SuperId => userSession.SRecommendId;
+
+        public string Currency => userSession.Currency;
     }
 }

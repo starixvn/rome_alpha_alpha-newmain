@@ -574,7 +574,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Abnormal Login Alert is automatically enabled to notify you of suspicious logins via Telegram..
+        ///   Looks up a localized string similar to System can now help you auto transfer to your downline periodically..
         /// </summary>
         public static string HighlightPopupNewFeatureIntro {
             get {
@@ -583,7 +583,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Customize it in &lt;b&gt;Chatbot &gt; Abnormal Login Alert&lt;/b&gt; as per your requirements. Your security is our top priority!.
+        ///   Looks up a localized string similar to Go to &lt;b&gt;Transfer &gt; Transfer page&lt;/b&gt; to enable/disable auto transfer for downlines..
         /// </summary>
         public static string HighlightPopupNewFeatureIntro2 {
             get {
@@ -610,7 +610,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Abnormal Login Alert.
+        ///   Looks up a localized string similar to Auto Transfer Accounts.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {

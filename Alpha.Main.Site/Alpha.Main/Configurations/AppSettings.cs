@@ -371,5 +371,22 @@
 
         public static string APIGatewaysURL => Settings["APIGatewaysURL"];
         public static List<string> APISuperIds => Settings["APISuperIds"].Split(',').ToList();
+
+        public static bool IsEnableAutoTransfer(string currency)
+        {
+            var s = Settings["OfferAutoTransfer.Currencies"];
+            if (string.IsNullOrWhiteSpace(s))
+            {
+                return false;
+            }
+
+            if (s == "*")
+            {
+                return true;
+            }
+
+            return s.Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries)
+                .Any(c => string.Equals(currency, c.Trim(), StringComparison.OrdinalIgnoreCase));
+        }
     }
 }

@@ -56,6 +56,7 @@
         public int OnUserId => message.OnUserId;
 
         public string UserLevel => Enumeration.FromValue<UserLevel>(message.RoleId).DisplayName.ToLower();
+        public byte RoleId => message.RoleId;
 
         public string Language => message.Language;
 
@@ -194,8 +195,6 @@
             }
         }
 
-        public bool HasReportPermission => !message.IsSubAcc || message.SubPageAccess.Contains(PageAccessType.ViewReports);
-
         public string HightLightFeatureUrl
         {
             get
@@ -203,5 +202,9 @@
                 return $"{MainRootPath}TelegramChatBot/Setup";
             }
         }
+
+        public bool ShowHighlightPopup
+            => (!message.IsSubAcc || message.SubPageAccess.Contains(PageAccessType.Transfer))
+            && AppSettings.IsEnableAutoTransfer(message.Currency);
     }
 }
