@@ -1,4 +1,5 @@
 ﻿/// <reference path="menu-bar.ts" />
+
 declare var popupManager: any;
 declare interface String {
     startsWith(text: string, position: string): boolean;
@@ -199,6 +200,8 @@ var indexManager = {
             indexManager.domElements.mainFrame
                 .on('load.newmain', function () {
                     indexManager.domElements.feedbackFunction.addClass("hide");
+                    toastMessage.updatePosition();
+
                     var iframeWindow = indexManager.domElements.mainFrame[0].contentWindow || indexManager.domElements.mainFrame[0].contentDocument;
                     indexManager.closeAllOpenDropdowns(iframeWindow);
 
@@ -370,6 +373,8 @@ var indexManager = {
                 indexManager.domElements.feedbackFunction.removeClass("hide");
                 //$(window).off("resize").resize(indexManager.calulateFeedbackFunctionPosition);
             }
+
+            toastMessage.updatePosition();
         });
     },
 
@@ -455,6 +460,7 @@ var indexManager = {
         }, 1000);
     },
 };
+
 
 $(function () {
     indexManager.init();

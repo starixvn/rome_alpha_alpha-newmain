@@ -682,4 +682,7 @@
   <data name="WinLossDetailReport" xml:space="preserve">
     <value>รายงานรายละเอียดการแพ้ชนะ</value>
   </data>
+  <data name="Here" xml:space="preserve">
+    <value>ที่นี่</value>
+  </data>
 </root>

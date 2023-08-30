@@ -30,7 +30,7 @@
             isInternalFunc = () => false;
             buildInvalidSessionUniqueKeyFunc = (string url) => string.Empty;
 
-            menuItemBuilderImpl = new MenuItemBuilderImpl(authorizationService, menuItemTypeConfiguration, isProtectedModeFunc, isInternalFunc, buildInvalidSessionUniqueKeyFunc);
+            menuItemBuilderImpl = new MenuItemBuilderImpl(authorizationService, menuItemTypeConfiguration, isProtectedModeFunc, isInternalFunc, buildInvalidSessionUniqueKeyFunc, null, null);
         }
 
         [Test]

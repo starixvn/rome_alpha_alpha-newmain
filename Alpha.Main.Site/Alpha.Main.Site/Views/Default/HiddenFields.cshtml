@@ -27,6 +27,7 @@
 @Html.Hidden("RecheckinIntervalMiliseconds", Model.RecheckinIntervalMiliseconds)
 @Html.Hidden("SessionId", Model.SessionID)
 @Html.Hidden("resultRootPath", Model.ResultRootPath)
+@Html.Hidden("transferRootPath", Model.TransferRootPath)
 @if (Model.IsOfferLiveChat)
 {
     @Html.Hidden("UsernameShowOnLiveChat", Model.Username)
@@ -40,3 +41,9 @@
 @Html.Hidden("CustId", Model.CustId)
 @Html.Hidden("SubAccId", Model.SubAccId)
 @Html.Hidden("SessionExpired", Resources.SessionExpired)
+@Html.Hidden("Here", Resources.Here)
+@Html.Hidden("minAgo", Resources.minAgo)
+@Html.Hidden("minsAgo", Resources.minsAgo)
+@Html.Hidden("hoursAgo", Resources.hoursAgo)
+@Html.Hidden("daysAgo", Resources.daysAgo)
+

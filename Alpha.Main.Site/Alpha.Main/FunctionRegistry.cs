@@ -118,7 +118,7 @@ namespace Alpha.Main
             && new TransferServiceImpl().IsAllDayBalanceTransfer(Current.CustId);
 
         private static bool AutoTransferMonitoringMenuItemVisible
-            => AppSettings.IsEnableAutoTransfer(Current.Currency);
+            => AppSettings.IsEnableAutoTransfer(Current.Currency, Current.CustId);
 
         private static bool SingleTransferMenuItemVisible
         {

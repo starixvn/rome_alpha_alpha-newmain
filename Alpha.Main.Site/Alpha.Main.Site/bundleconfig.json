@@ -4,6 +4,7 @@
     "inputFiles": [
       "Assets/scripts/home/assetsCDNHealthcheck.js",
       "Assets/scripts/core.js",
+      "Assets/scripts/home/toast-message.js",
       "Assets/scripts/home/index-manager.js",
       "Assets/scripts/old-main.js",
       "Assets/scripts/home/header-nav.js",

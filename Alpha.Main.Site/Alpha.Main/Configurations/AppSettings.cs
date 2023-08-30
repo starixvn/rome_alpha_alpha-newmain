@@ -7,6 +7,7 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Web;
+    using Alpha.Main.Services.Impl;
     using Fanex.Common;
 
     public static class AppSettings
@@ -374,8 +375,13 @@
         public static string APIGatewaysURL => Settings["APIGatewaysURL"];
         public static List<string> APISuperIds => Settings["APISuperIds"].Split(',').ToList();
 
-        public static bool IsEnableAutoTransfer(string currency)
+        public static bool IsEnableAutoTransfer(string currency, int custId)
         {
+            if (new TransferServiceImpl().IsAllDayBalanceTransfer(custId))
+            {
+                return false;
+            }
+
             var s = Settings["OfferAutoTransfer.Currencies"];
             if (string.IsNullOrWhiteSpace(s))
             {

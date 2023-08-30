@@ -79,6 +79,8 @@
 
         public string ResultRootPath => UrlHelper.MapResultPath();
 
+        public string TransferRootPath => UrlHelper.MapTransferPath("~/");
+
         public string PasswordHash { get; }
 
         public string SubPageAccess => message.SubPageAccess;

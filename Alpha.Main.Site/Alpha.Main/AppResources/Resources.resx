@@ -748,4 +748,19 @@
   <data name="WinLossDetailReport" xml:space="preserve">
     <value>Win Loss Detail Report</value>
   </data>
+  <data name="Here" xml:space="preserve">
+    <value>Here</value>
+  </data>
+  <data name="minAgo" xml:space="preserve">
+    <value>min ago</value>
+  </data>
+  <data name="minsAgo" xml:space="preserve">
+    <value>mins ago</value>
+  </data>
+  <data name="hoursAgo" xml:space="preserve">
+    <value>hour(s) ago</value>
+  </data>
+  <data name="daysAgo" xml:space="preserve">
+    <value>day(s) ago</value>
+  </data>
 </root>

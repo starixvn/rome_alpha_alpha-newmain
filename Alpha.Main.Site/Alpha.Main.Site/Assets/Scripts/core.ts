@@ -27,7 +27,10 @@ var alpha = {
                 : "not found",
             resultRootPath: top.document.getElementById('resultRootPath') != null
                 ? (<HTMLInputElement>top.document.getElementById('resultRootPath')).value
-                : "/site-results/"
+                : "/site-results/",
+            transferRootPath: top.document.getElementById('transferRootPath') != null
+                ? (<HTMLInputElement>top.document.getElementById('transferRootPath')).value
+                : "/site-transfer/"
         },
     user:
         {
@@ -215,8 +218,7 @@ $(() => {
         },
         error: function (xhr) {
             if (xhr.status === 401
-                || xhr.status === 403)
-            {
+                || xhr.status === 403) {
                 alpha.core.signOut();
             }
         }

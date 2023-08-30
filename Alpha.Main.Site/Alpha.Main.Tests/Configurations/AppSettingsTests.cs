@@ -748,7 +748,7 @@
             };
 
             // Act
-            var actualValue = AppSettings.IsEnableAutoTransfer("UUS");
+            var actualValue = AppSettings.IsEnableAutoTransfer("UUS", 0);
 
             // Assert
             Assert.AreEqual(expectedValue, actualValue);

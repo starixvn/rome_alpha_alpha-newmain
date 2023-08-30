@@ -685,4 +685,7 @@
   <data name="WinLossDetailReport" xml:space="preserve">
     <value>输赢细节报告</value>
   </data>
+  <data name="Here" xml:space="preserve">
+    <value>此处</value>
+  </data>
 </root>
