@@ -10,7 +10,7 @@
         public void GetSettingKey_Always_ReturnValidSettingKey()
         {
             // Arrange
-            var criteria = new GetBannerCriteria("en-US", "Local", "Nova88", 1);
+            var criteria = new GetBannerCriteria("en-US", "Local", "MBC", 1);
 
             // Act
             var actualSettingKey = criteria.GetSettingKey();
@@ -26,7 +26,7 @@
         public void IsValid_LanguageCode_ReturnsCorrectExpected(string languageCode, bool expected)
         {
             // Arrange
-            var criteria = new GetBannerCriteria(languageCode, "Local", "Nova88", 1);
+            var criteria = new GetBannerCriteria(languageCode, "Local", "MBC", 1);
 
             // Act
             var actual = criteria.IsValid();
@@ -42,7 +42,7 @@
         public void IsValid_Environments_ReturnsCorrectExpected(string environments, bool expected)
         {
             // Arrange
-            var criteria = new GetBannerCriteria("en-US", environments, "nova88", 1);
+            var criteria = new GetBannerCriteria("en-US", environments, "MBC", 1);
 
             // Act
             var actual = criteria.IsValid();
@@ -51,7 +51,7 @@
             Assert.AreEqual(expected, actual);
         }
 
-        [TestCase("Nova88", true)]
+        [TestCase("MBC", true)]
         [TestCase("qwerty", true)]
         [TestCase("", false)]
         [TestCase(null, false)]
@@ -74,7 +74,7 @@
         public void IsValid_Type_ReturnsCorrectExpected(byte type, bool expected)
         {
             // Arrange
-            var criteria = new GetBannerCriteria("en-US", "Local", "Nova88", type);
+            var criteria = new GetBannerCriteria("en-US", "Local", "MBC", type);
 
             // Act
             var actual = criteria.IsValid();
