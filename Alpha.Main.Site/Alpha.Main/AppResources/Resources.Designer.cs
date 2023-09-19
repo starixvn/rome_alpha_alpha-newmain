@@ -592,7 +592,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expand your monitoring capabilities with a wider set of filter conditions..
+        ///   Looks up a localized string similar to System can now help you auto transfer to your downline periodically..
         /// </summary>
         public static string HighlightPopupNewFeatureIntro {
             get {
@@ -628,7 +628,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discover &lt;b&gt;New View&lt;/b&gt; on Last Bets.
+        ///   Looks up a localized string similar to Auto Transfer Accounts.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {
@@ -899,7 +899,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to min ago.
+        ///   Looks up a localized string similar to 1 min ago.
         /// </summary>
         public static string minAgo {
             get {

@@ -139,7 +139,7 @@
             container.RegisterPerWebRequest<INotificationService>(() => new NotificationService(CreateTelegramBotHttpClient()));
             container.RegisterPerWebRequest<IOTPService>(() => new OTPService(CreateTelegramBotHttpClient()));
             container.RegisterPerWebRequest<TelegramBotService, TelegramBotServiceImpl>();
-
+            container.RegisterPerWebRequest<TransferService, TransferServiceImpl>();
 
             container.RegisterPerWebRequest<IUser, User>();
             container.RegisterSingleton(() => AesService.Default);
@@ -166,6 +166,7 @@
             container.RegisterPerWebRequest<SecurityCodeDataAccess, SecurityCodeDataAccessImpl>();
             container.RegisterPerWebRequest<PasswordDataAccess, PasswordDataAccessImpl>();
             container.RegisterPerWebRequest<StatisticsDataAccess, StatisticsDataAccessImpl>();
+            container.RegisterPerWebRequest<TransferDataAccess, TransferDataAccessImpl>();
         }
 
         private static void RegisterProductConfiguration()

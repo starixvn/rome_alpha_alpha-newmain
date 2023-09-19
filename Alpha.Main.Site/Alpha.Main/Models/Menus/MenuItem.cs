@@ -92,27 +92,15 @@
                     link.Replace(runtimeAppPath, appVirtualPath) : string.Empty;
 
                 var invalidSessionUniqueKey = buildInvalidSessionUniqueKeyFunc(menuLink);
-                var firstMark = menuLink.IndexOf('?');
-                var orgUrl = firstMark == -1 ? menuLink : menuLink.Substring(0, firstMark);
-
-                var queryString = new List<string>();
-
-                if (firstMark != -1)
-                {
-                    queryString.Add(menuLink.Substring(firstMark + 1));
-                }
-
-                if (!string.IsNullOrWhiteSpace(invalidSessionUniqueKey))
-                {
-                    queryString.Add($"ssguid={invalidSessionUniqueKey}");
-                }
 
                 if (!string.IsNullOrWhiteSpace(link) && string.Equals("transfer", ResourceKey, StringComparison.OrdinalIgnoreCase))
                 {
-                    queryString.Add($"adbt={transferService.IsAllDayBalanceTransfer(user.CustId)}");
+                    menuLink = string.Format(menuLink, transferService.IsAllDayBalanceTransfer(user.CustId));
                 }
 
-                return queryString.Any() ? $"{orgUrl}?{string.Join("&", queryString)}" : menuLink;
+                return string.IsNullOrWhiteSpace(invalidSessionUniqueKey)
+                    ? menuLink
+                    : $"{menuLink}?ssguid={invalidSessionUniqueKey}";
             }
 
             set

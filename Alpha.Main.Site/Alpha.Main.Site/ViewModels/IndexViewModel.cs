@@ -27,7 +27,8 @@
             Func<string> getDefaultUrl,
             Func<string, string> encodeDataFunction,
             BrowserHelper browserHelper,
-            ActorProfilePictureModel profilePicture)
+            ActorProfilePictureModel profilePicture,
+            bool isEnableAutoTransfer)
         {
             if (message == null)
             {
@@ -45,6 +46,7 @@
             this.ShowOldCustomerList = AppSettings.ShowOldCustomerList;
             IsProtectedMode = message.IsProtectedMode;
             AssetAppPath = message.AssetAppPath;
+            IsEnableAutoTransfer = isEnableAutoTransfer;
         }
 
         public bool EnableSecurityCode => message.EnableSecurityCode;
@@ -195,5 +197,11 @@
 
         public string HightLightFeatureUrl
             => $"{UrlHelper.MapBetListPath("~/")}MonitoringBets/Index";
+
+        public bool IsEnableAutoTransfer { get; set; }
+
+        public bool ShowHighlightPopup
+            => (!message.IsSubAcc || message.SubPageAccess.Contains(PageAccessType.Transfer))
+            && IsEnableAutoTransfer;
     }
 }

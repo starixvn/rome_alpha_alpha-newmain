@@ -28,7 +28,7 @@ class ToastMessage {
         this.$hoursAgo = this.$("#hoursAgo").val();
         this.$daysAgo = this.$("#daysAgo").val();
         this.$here = this.$("#Here").val().toUpperCase();
-        this.monitorURL = alpha.urls.transferRootPath + "AutoTransfer/Monitoring";
+        this.monitorURL = alpha.urls.transferRootPath + "AutoTransfer/Monitoring?Status=Failed";
         this.showingToasts = {};
         this.toastId = 0;
 
@@ -129,7 +129,6 @@ class ToastMessage {
 
         return {
             bottom: feedback.height(),
-            width: feedback.width(),
         };
     }
 
@@ -167,7 +166,7 @@ class ToastMessage {
 
     private getAgoText(minDiffs) {
         if (minDiffs <= 1) {
-            return "1 " + this.$minAgo;
+            return this.$minAgo;
         }
 
         if (minDiffs < 60) {

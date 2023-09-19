@@ -27,7 +27,7 @@
             AppSettings.Settings["UMAnnouncementPopup:ClientIntervalInMinutes"] = "60";
             userSession = Substitute.For<IUserSession>();
             userSession.SubPageAccess.Returns(new PageAccess());
-            nicknameChecker= Substitute.For<NicknameChecker>();
+            nicknameChecker = Substitute.For<NicknameChecker>();
             query = new IndexQuery(userSession, false, false, nicknameChecker);
             profilePicture = new ActorProfilePictureModel();
             SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
@@ -56,7 +56,7 @@
             browserHelper.GetUserAgent().Returns("android");
 
             // Act
-            var viewModel = new IndexViewModel(query, null, null, browserHelper, profilePicture);
+            var viewModel = new IndexViewModel(query, null, null, browserHelper, profilePicture, false);
 
             // Assert
             Assert.AreEqual(0.5, viewModel.InitialScaleViewPort);
@@ -84,7 +84,7 @@
             SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp.Returns(true);
 
             // Act
-            var viewModel = new IndexViewModel(query, null, null, browserHelper, profilePicture);
+            var viewModel = new IndexViewModel(query, null, null, browserHelper, profilePicture, false);
 
             // Assert
             Assert.AreEqual(0.7, viewModel.InitialScaleViewPort);

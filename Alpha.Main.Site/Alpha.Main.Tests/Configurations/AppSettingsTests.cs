@@ -734,24 +734,5 @@
             // Assert
             Assert.AreEqual(expected, actualSetting);
         }
-
-        [TestCase("", false)]
-        [TestCase("*", true)]
-        [TestCase("UUS", true)]
-        [TestCase("USD", false)]
-        public void IsEnableAutoTransfer_Always_ReturnsCorrectValues(string currencies, bool expectedValue)
-        {
-            // Arrange
-            AppSettings.Settings = new NameValueCollection
-            {
-                ["EnableSupportAutoTransferDate"] = currencies,
-            };
-
-            // Act
-            var actualValue = AppSettings.IsEnableAutoTransfer("UUS", 0);
-
-            // Assert
-            Assert.AreEqual(expectedValue, actualValue);
-        }
     }
 }

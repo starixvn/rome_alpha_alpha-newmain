@@ -659,13 +659,13 @@
     <value>查看</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>通過更廣泛的篩選條件擴展您的監控能力。</value>
+    <value>系統現在可以協助您定期自動轉賬於您的下線。</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>發現&lt;b&gt;新視圖&lt;/b&gt;最後投注</value>
+    <value>自動轉賬的賬號</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>根據您的要求在 &lt;b&gt;“Chatbot” &gt; “登入異常提示”&lt;/b&gt; 中對其進行定制。確保您的戶口安全性是我們首要任務！</value>
+    <value>前往 &lt;b&gt; 轉賬 &gt; 轉賬頁面 &lt;/b&gt; 開啟/禁用 自動轉賬於下線。</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>開始吧</value>
@@ -687,5 +687,17 @@
   </data>
   <data name="Here" xml:space="preserve">
     <value>此處</value>
+  </data>
+  <data name="minAgo" xml:space="preserve">
+    <value>一分鐘前</value>
+  </data>
+  <data name="minsAgo" xml:space="preserve">
+    <value>分鐘之前</value>
+  </data>
+  <data name="hoursAgo" xml:space="preserve">
+    <value>小時之前</value>
+  </data>
+  <data name="daysAgo" xml:space="preserve">
+    <value>天之前</value>
   </data>
 </root>
