@@ -337,7 +337,7 @@
     <value>Giới hạn lựa chọn</value>
   </data>
   <data name="LastBets" xml:space="preserve">
-    <value>Cược mới nhất</value>
+    <value>Cược Gần Nhất</value>
   </data>
   <data name="BetLists" xml:space="preserve">
     <value>Danh sách cược</value>

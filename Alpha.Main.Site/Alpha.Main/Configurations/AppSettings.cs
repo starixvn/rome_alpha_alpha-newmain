@@ -334,6 +334,8 @@
 
         public static bool IsStandaloneReports => !string.IsNullOrWhiteSpace(Settings["Report:Domain"]);
 
+        public static bool IsStandaloneBetList => !string.IsNullOrWhiteSpace(Settings["Betlist:Domain"]);
+
         public static string ContactUsSkypeId => Settings["skypeId"];
 
         public static string ContactUsLetstalkId => Settings["letstalkid"];

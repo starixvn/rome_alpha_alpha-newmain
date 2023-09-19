@@ -720,6 +720,15 @@
   <data name="CheckOut" xml:space="preserve">
     <value>Xem ngay</value>
   </data>
+  <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
+    <value>Tăng cường khả năng giám sát của bạn bằng các tiêu chí lọc đa dạng hơn.</value>
+  </data>
+  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
+    <value>Khám Phá &lt;b&gt;Phiên Bản Mới&lt;/b&gt; Của Cược Gần Nhất</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
+    <value>Bạn có thể tùy chỉnh tính năng này theo nhu cầu của bạn qua &lt;b&gt;Chatbot &gt; Cảnh Báo Đăng Nhập Lạ&lt;/b&gt;. Bảo mật thông tin của bạn là ưu tiên hàng đầu của chúng tôi.</value>
+  </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Bắt đầu</value>
   </data>

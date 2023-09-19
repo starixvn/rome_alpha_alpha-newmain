@@ -56,6 +56,7 @@
         public int OnUserId => message.OnUserId;
 
         public string UserLevel => Enumeration.FromValue<UserLevel>(message.RoleId).DisplayName.ToLower();
+
         public byte RoleId => message.RoleId;
 
         public string Language => message.Language;
@@ -185,26 +186,12 @@
 
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
 
-        public string NewWinLossReportUrl
-        {
-            get
-            {
-                var directDownline = Enumeration.FromValue<UserLevel>((byte)(message.RoleId - 1)).DisplayName;
-
-                return $"{UrlHelper.MapReportsPath("~/")}WinLossDetail/{directDownline}New";
-            }
-        }
+        public bool HightLightFeaturePermission
+            => Enumeration.FromValue<UserLevel>(message.RoleId).IsAgentLevel()
+            && !IsProtectedMode
+            && (!message.IsSubAcc || message.SubPageAccess.Contains(PageAccessType.ViewBetLists));
 
         public string HightLightFeatureUrl
-        {
-            get
-            {
-                return $"{MainRootPath}TelegramChatBot/Setup";
-            }
-        }
-
-        public bool ShowHighlightPopup
-            => (!message.IsSubAcc || message.SubPageAccess.Contains(PageAccessType.Transfer))
-            && AppSettings.IsEnableAutoTransfer(message.Currency);
+            => $"{UrlHelper.MapBetListPath("~/")}MonitoringBets/Index";
     }
 }

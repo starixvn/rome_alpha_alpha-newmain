@@ -31,6 +31,8 @@
         [ThreadStatic]
         private static Func<string, string> mapMainPath;
 
+        private static Func<string, string> mapBetListPath;
+
         public static Func<string, string> MapExTotalBetsForecastPath
         {
             get
@@ -149,6 +151,28 @@
             }
         }
 
+        public static Func<string, string> MapBetListPath
+        {
+            get
+            {
+                if (mapBetListPath != null)
+                {
+                    return mapBetListPath;
+                }
+
+                if (AppSettings.IsStandaloneBetList)
+                {
+                    mapBetListPath = MapBetListDomain;
+                }
+                else
+                {
+                    mapBetListPath = MicroSites.BetListsUrl;
+                }
+
+                return mapBetListPath;
+            }
+        }
+
         public static string MapResultPath()
         {
             return AppPathHelper.GetAppPath("site-results", "~/");
@@ -160,6 +184,14 @@
             var cookieless = HttpContext.Current.Session.IsCookieless ? $"/(S({HttpContext.Current.Session.SessionID}))" : string.Empty;
 
             return $"{reportDomain}{cookieless}/";
+        }
+
+        internal static string MapBetListDomain(string virtualPath = "~/")
+        {
+            var betListDomain = AppSettings.BetlistDomain;
+            var cookieless = HttpContext.Current.Session.IsCookieless ? $"/(S({HttpContext.Current.Session.SessionID}))" : string.Empty;
+
+            return $"{betListDomain}{cookieless}/";
         }
     }
 }

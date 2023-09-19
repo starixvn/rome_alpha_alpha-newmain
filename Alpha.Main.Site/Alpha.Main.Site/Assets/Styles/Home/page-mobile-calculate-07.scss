@@ -726,7 +726,7 @@ body {
 .popup-highlight {
     left: 10px;
     right: auto;
-    top: 63px;
+    top: 63px !important;
 
     &:before {
         right: auto;
