@@ -38,10 +38,10 @@
       <HintPath>..\packages\Alpha.Auth.4.0.0-standard2\lib\net461\Alpha.Auth.dll</HintPath>
     </Reference>
     <Reference Include="Alpha.NetThrottling, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.NetThrottling.2.0.0-standard1\lib\net461\Alpha.NetThrottling.dll</HintPath>
+      <HintPath>..\packages\Alpha.NetThrottling.2.0.0-standard2\lib\net461\Alpha.NetThrottling.dll</HintPath>
     </Reference>
     <Reference Include="Alpha.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Web.2.0.0-standard3\lib\net461\Alpha.Web.dll</HintPath>
+      <HintPath>..\packages\Alpha.Web.2.0.0-standard4\lib\net461\Alpha.Web.dll</HintPath>
     </Reference>
     <Reference Include="AlphaPlus.Configurations, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AlphaPlus.Configurations.1.0.0-beta5\lib\netstandard2.0\AlphaPlus.Configurations.dll</HintPath>
@@ -84,7 +84,7 @@
       <HintPath>..\packages\Fanex.Logging.Extensions.Web.1.0.8\lib\net461\Fanex.Logging.Extensions.Web.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.RemotingRef, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.RemotingRef.1.5.1-beta-02\lib\netstandard2.0\Fanex.RemotingRef.dll</HintPath>
+      <HintPath>..\packages\Fanex.RemotingRef.1.5.1-beta-03\lib\net461\Fanex.RemotingRef.dll</HintPath>
     </Reference>
     <Reference Include="KellermanSoftware.Compare-NET-Objects, Version=3.6.0.0, Culture=neutral, PublicKeyToken=d970ace04cc85217, processorArchitecture=MSIL">
       <HintPath>..\packages\CompareNETObjects.3.06.0.0\lib\net46\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
