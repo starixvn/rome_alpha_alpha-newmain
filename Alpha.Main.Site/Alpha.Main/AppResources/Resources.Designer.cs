@@ -592,7 +592,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A lightweight and user-friendly interface to simplify the account creation process.
+        ///   Looks up a localized string similar to Simplify account creation with a user-friendly interface. Enjoy a hassle-free experience while accessing all essential features in just a few clicks. .
         /// </summary>
         public static string HighlightPopupNewFeatureIntro {
             get {
@@ -628,7 +628,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create a New Account with Lite mode.
+        ///   Looks up a localized string similar to Create New Account with Lite Mode.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {

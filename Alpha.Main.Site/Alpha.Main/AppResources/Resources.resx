@@ -722,10 +722,10 @@
     <value>Check Out</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>A lightweight and user-friendly interface to simplify the account creation process</value>
+    <value>Simplify account creation with a user-friendly interface. Enjoy a hassle-free experience while accessing all essential features in just a few clicks. </value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Create a New Account with Lite mode</value>
+    <value>Create New Account with Lite Mode</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
     <value>Enjoy a hassle-free experience while still accessing all the essential functionalities with just a few clicks.</value>
