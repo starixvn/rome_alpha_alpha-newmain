@@ -763,7 +763,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Position Taking (%) Template.
+        ///   Looks up a localized string similar to Position Taking Template.
         /// </summary>
         public static string PTTemplate {
             get {
