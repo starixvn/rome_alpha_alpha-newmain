@@ -45,7 +45,7 @@
 
         private static string GetMobileSabaAppToken(string siteLabel)
         {
-            if (siteLabel.Equals("Nova88", StringComparison.OrdinalIgnoreCase))
+            if (siteLabel.Equals("MBC", StringComparison.OrdinalIgnoreCase))
             {
                 return "GueGhmPRxEWbbp3FIbpqPA";
             }

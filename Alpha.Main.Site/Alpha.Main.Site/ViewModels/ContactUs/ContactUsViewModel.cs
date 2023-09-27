@@ -16,7 +16,7 @@
 
         public ContactUsViewModel(string domain)
         {
-            IsShowSkypeId = AppSettings.SiteLabel.Equals("Nova88", StringComparison.OrdinalIgnoreCase);
+            IsShowSkypeId = AppSettings.SiteLabel.Equals("MBC", StringComparison.OrdinalIgnoreCase);
             _skypeId = AppSettings.ContactUsSkypeId;
 
             var newDomains = AppSettings.ContactUsNewDomains ?? string.Empty;
