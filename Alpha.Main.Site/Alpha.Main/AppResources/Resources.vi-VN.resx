@@ -720,8 +720,7 @@
   <data name="CheckOut" xml:space="preserve">
     <value>Xem ngay</value>
   </data>
-  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>Bạn có thể tùy chỉnh tính năng này theo nhu cầu của bạn qua &lt;b&gt;Chatbot &gt; Cảnh Báo Đăng Nhập Lạ&lt;/b&gt;. Bảo mật thông tin của bạn là ưu tiên hàng đầu của chúng tôi.</value>
+    <value>Đơn giản hóa việc tạo tài khoản với giao diện thân thiện người dùng. Trải nghiệm dễ dàng và mượt mà khi bạn có thể truy cập vào tất cả các tính năng cần thiết chỉ với vài cú nhấp chuột.</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Bắt đầu</value>
@@ -740,5 +739,8 @@
   </data>
   <data name="WinLossDetailReport" xml:space="preserve">
     <value>Báo Cáo Chi Tiết Thắng Thua</value>
+  </data>
+  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
+    <value>Tạo tài khoản mới với Thiết Lập Rút Gọn</value>
   </data>
 </root>

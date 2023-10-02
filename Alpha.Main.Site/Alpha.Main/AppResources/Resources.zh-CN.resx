@@ -659,13 +659,7 @@
     <value>查看</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>系统现在可以协助您定期自动转账于您的下线。</value>
-  </data>
-  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>自动转账的账号</value>
-  </data>
-  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>前往 &lt;b&gt; 转账 &gt; 转账页面 &lt;/b&gt; 开启/禁用 自动转账于下线。</value>
+    <value>通过友好界面简化账号创建。 只需点击几下即可简单方便的体验访问所有基本功能。</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>开始吧</value>
@@ -685,8 +679,8 @@
   <data name="WinLossDetailReport" xml:space="preserve">
     <value>输赢细节报告</value>
   </data>
-  <data name="Here" xml:space="preserve">
-    <value>此处</value>
+  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
+    <value>使用精简模式创建新账号</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>一分钟前</value>

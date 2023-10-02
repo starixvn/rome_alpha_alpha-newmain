@@ -502,4 +502,7 @@
   <data name="GenerateOTP" xml:space="preserve">
     <value>產生一次性密碼</value>
   </data>
+  <data name="PositionTakingTemplate" xml:space="preserve">
+    <value>佔成數模板</value>
+  </data>
 </root>

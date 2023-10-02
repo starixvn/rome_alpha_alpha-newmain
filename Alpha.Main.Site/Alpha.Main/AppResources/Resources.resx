@@ -727,9 +727,6 @@
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
     <value>Create New Account with Lite Mode</value>
   </data>
-  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>Enjoy a hassle-free experience while still accessing all the essential functionalities with just a few clicks.</value>
-  </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Get Started</value>
   </data>

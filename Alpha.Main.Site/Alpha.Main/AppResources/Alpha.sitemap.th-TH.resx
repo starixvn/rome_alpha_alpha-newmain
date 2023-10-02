@@ -420,4 +420,7 @@
   <data name="AutoTransferMonitoring" xml:space="preserve">
     <value>ตรวจสถานะการโอนอัตโนมัติ</value>
   </data>
+  <data name="PTTemplate" xml:space="preserve">
+    <value>เทมเพลตค่าแบ่งสู้</value>
+  </data>
 </root>

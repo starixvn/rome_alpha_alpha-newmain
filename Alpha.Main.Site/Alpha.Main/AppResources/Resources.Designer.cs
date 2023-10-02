@@ -601,15 +601,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enjoy a hassle-free experience while still accessing all the essential functionalities with just a few clicks..
-        /// </summary>
-        public static string HighlightPopupNewFeatureIntro2 {
-            get {
-                return ResourceManager.GetString("HighlightPopupNewFeatureIntro2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Copy data from Report without exporting.
         /// </summary>
         public static string HighlightPopupNewFeatureIntro3 {

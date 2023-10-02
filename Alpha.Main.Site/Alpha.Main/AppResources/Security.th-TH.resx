@@ -504,4 +504,7 @@
   <data name="GenerateOTP" xml:space="preserve">
     <value>สร้างรหัสผ่านครั้งเดียว (OTP)</value>
   </data>
+  <data name="PositionTakingTemplate" xml:space="preserve">
+    <value>เทมเพลตค่าแบ่งสู้</value>
+  </data>
 </root>
