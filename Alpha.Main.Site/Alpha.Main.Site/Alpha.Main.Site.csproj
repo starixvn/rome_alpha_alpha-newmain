@@ -1423,6 +1423,7 @@
     <TypeScriptCompile Include="Assets\scripts\dashboard\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\kick-out.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\suggest-telegram-otp.ts" />
+    <TypeScriptCompile Include="Assets\scripts\home\toast-message.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\um-message.ts" />
     <TypeScriptCompile Include="Assets\scripts\newcustomer-captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\nickname\create-nickname.ts" />

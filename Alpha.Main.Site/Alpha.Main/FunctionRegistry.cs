@@ -8,11 +8,11 @@ namespace Alpha.Main
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Web;
+    using Alpha.Main.Services;
     using Alpha.Main.Services.Impl;
     using Alpha.Web.Models;
     using Configurations;
     using Fanex.Logging.Extensions.Web;
-    using Fanex.Products;
     using Helpers;
     using Models;
     using Models.Menus;
@@ -25,6 +25,8 @@ namespace Alpha.Main
 
     public static class FunctionRegistry
     {
+        private static TransferService transferService = new TransferServiceImpl();
+
         [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]
         [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "Reviewed!")]
         public static readonly Dictionary<string, Func<MenuStatus>> MenuItemTypeStatusRules = new Dictionary<string, Func<MenuStatus>>
@@ -115,10 +117,10 @@ namespace Alpha.Main
 
         private static bool TransferToDownlineHistoryMenuItemVisible
             => AppSettings.IsAllowedTransferToDownlineHistorySite(Current.Site)
-            && new TransferServiceImpl().IsAllDayBalanceTransfer(Current.CustId);
+            && transferService.IsAllDayBalanceTransfer(Current.CustId);
 
         private static bool AutoTransferMonitoringMenuItemVisible
-            => AppSettings.IsEnableAutoTransfer(Current.Currency);
+            => transferService.IsEnableAutoTransfer(Current.Currency, Current.CustId, AppSettings.Settings["OfferAutoTransfer.Currencies"]);
 
         private static bool SingleTransferMenuItemVisible
         {

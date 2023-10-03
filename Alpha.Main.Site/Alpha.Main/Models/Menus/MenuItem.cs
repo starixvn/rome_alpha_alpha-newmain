@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Web;
+    using Alpha.Main.Services;
     using AppResources;
     using Configurations;
 
@@ -16,14 +17,16 @@
         private readonly Func<bool> isInternalFunc;
         private readonly Func<bool> isHideForSite;
         private readonly Func<string, string> buildInvalidSessionUniqueKeyFunc;
+        private readonly TransferService transferService;
+        private readonly IUser user;
 
         public MenuItem(Func<MenuStatus> getMenuStatusFunc = null)
-            : this(getMenuStatusFunc, null, null, null, null, null)
+            : this(getMenuStatusFunc, null, null, null, null, null, null, null)
         {
         }
 
         public MenuItem(Func<MenuStatus> getMenuStatusFunc, Predicate<string> authorizeUrlFunc)
-            : this(getMenuStatusFunc, authorizeUrlFunc, null, null, null, null)
+            : this(getMenuStatusFunc, authorizeUrlFunc, null, null, null, null, null, null)
         {
         }
 
@@ -33,7 +36,9 @@
             Func<bool> isProtectedModeFunc,
             Func<bool> isInternalFunc,
             Func<bool> isHideForSite,
-            Func<string, string> buildInvalidSessionUniqueKeyFunc)
+            Func<string, string> buildInvalidSessionUniqueKeyFunc,
+            TransferService transferService,
+            IUser user)
         {
             this.getMenuStatusFunc = getMenuStatusFunc ?? (() => new MenuStatus(true, false));
             this.authorizeUrlFunc = authorizeUrlFunc;
@@ -41,6 +46,8 @@
             this.isInternalFunc = isInternalFunc;
             this.isHideForSite = isHideForSite;
             this.buildInvalidSessionUniqueKeyFunc = buildInvalidSessionUniqueKeyFunc;
+            this.transferService = transferService;
+            this.user = user;
         }
 
         public string Key { get; set; }
@@ -80,11 +87,16 @@
                     $"/(S({session?.SessionID}))" : string.Empty;
 
                 var menuLink = !string.IsNullOrWhiteSpace(UseDomainConfig) ? $"{UseDomainConfig}{cookieless}{link}" :
-                    appVirtualPath.Equals("/site-reports") || appVirtualPath.Equals("/site-betlists") ? reportUrl : 
-                    !string.IsNullOrWhiteSpace(link) && !string.IsNullOrWhiteSpace(runtimeAppPath) ? 
+                    appVirtualPath.Equals("/site-reports") || appVirtualPath.Equals("/site-betlists") ? reportUrl :
+                    !string.IsNullOrWhiteSpace(link) && !string.IsNullOrWhiteSpace(runtimeAppPath) ?
                     link.Replace(runtimeAppPath, appVirtualPath) : string.Empty;
 
                 var invalidSessionUniqueKey = buildInvalidSessionUniqueKeyFunc(menuLink);
+
+                if (!string.IsNullOrWhiteSpace(link) && string.Equals("transfer", ResourceKey, StringComparison.OrdinalIgnoreCase))
+                {
+                    menuLink = string.Format(menuLink, transferService.IsAllDayBalanceTransfer(user.CustId));
+                }
 
                 return string.IsNullOrWhiteSpace(invalidSessionUniqueKey)
                     ? menuLink
@@ -139,7 +151,7 @@
         public bool IsOld { get; set; }
 
         public bool IsMobileView
-        {    
+        {
             get { return HttpContext.Current != null && HttpContext.Current.Request.Browser.IsMobileDevice; }
         }
 
@@ -147,7 +159,7 @@
 
         public string UseDomainConfig { get; set; }
 
-        private bool isVisibleForMobileOrDesktop() => 
+        private bool isVisibleForMobileOrDesktop() =>
             IsMobileView && !IsHiddenInMobile ||
             !IsMobileView;
     }

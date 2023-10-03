@@ -301,7 +301,7 @@
     <value>สถานะ</value>
   </data>
   <data name="transfer" xml:space="preserve">
-    <value>ตั้งค่าใหม่</value>
+    <value>ถ่ายโอน</value>
   </data>
   <data name="viewLog" xml:space="preserve">
     <value>ดูบันทึก</value>

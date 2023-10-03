@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
     using System.Threading.Tasks;
+    using Alpha.Main.Configurations;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.SecurityCode.Web;
     using Alpha.Web.Models;
@@ -38,14 +39,16 @@
         private readonly ProfilePictureServices customerProfileService;
         private readonly LogoutService logoutService;
         private readonly ISettingService telegramSettingService;
+        private readonly TransferService transferService;
 
         public DefaultHandler(
             SessionManager sessionManager,
             BrowserHelper browserHelper,
             ProfilePictureServices customerProfileService,
             LogoutService logoutService,
-            ISettingService telegramSettingService)
-            : this(sessionManager, browserHelper, logoutService, null, null, customerProfileService, telegramSettingService)
+            ISettingService telegramSettingService,
+            TransferService transferService)
+            : this(sessionManager, browserHelper, logoutService, null, null, customerProfileService, telegramSettingService, transferService)
         {
         }
 
@@ -56,7 +59,8 @@
             Func<string> getDefaultUrl,
             Func<string, string> encodeDataFunction,
             ProfilePictureServices customerProfileService,
-            ISettingService telegramSettingService)
+            ISettingService telegramSettingService,
+            TransferService transferService)
         {
             this.sessionManager = sessionManager;
             this.browserHelper = browserHelper;
@@ -66,6 +70,7 @@
             this.encodeDataFunction = encodeDataFunction ?? Encryption.PearsonEncode;
             this.customerProfileService = customerProfileService;
             this.telegramSettingService = telegramSettingService;
+            this.transferService = transferService;
         }
 
         public BrowserViewModel Handle(BrowserQuery message)
@@ -87,7 +92,10 @@
         {
             var profile = customerProfileService.GetActorProfilePicture(message.CustId);
 
-            var viewModel = new IndexViewModel(message, getDefaultUrl, encodeDataFunction, browserHelper, profile);
+            var isEnableAutoTransfer = transferService.IsEnableAutoTransfer(message.Currency, message.CustId, AppSettings.Settings["OfferAutoTransfer.Currencies"]);
+
+            var viewModel = new IndexViewModel(
+                message, getDefaultUrl, encodeDataFunction, browserHelper, profile, isEnableAutoTransfer);
 
             var custBotMessenger = await GetCustBotMessenger(message.CustId, message.SubAccId, message.Language);
             if (custBotMessenger == null)

@@ -942,7 +942,7 @@ html * {
 
 .div-feedback {
     position: absolute;
-    z-index: 89;
+    z-index: 9999999;
     font-size: 14px;
     bottom: 10px;
     right: 10px;
@@ -1074,6 +1074,7 @@ html * {
     position: absolute;
     background: $popup-bg-black;
     border: 1px solid $popup-border-black;
+    top: 310px;
     left: 15px;
     width: 400px;
     z-index: 130;

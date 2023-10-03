@@ -439,6 +439,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to day(s) ago.
+        /// </summary>
+        public static string daysAgo {
+            get {
+                return ResourceManager.GetString("daysAgo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disabled.
         /// </summary>
         public static string Disabled {
@@ -565,6 +574,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Here.
+        /// </summary>
+        public static string Here {
+            get {
+                return ResourceManager.GetString("Here", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Highest turnover members of the month.
         /// </summary>
         public static string highestTurnoverOfTheMonth {
@@ -574,7 +592,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expand your monitoring capabilities with a wider set of filter conditions..
+        ///   Looks up a localized string similar to System can now help you auto transfer to your downline periodically..
         /// </summary>
         public static string HighlightPopupNewFeatureIntro {
             get {
@@ -610,7 +628,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discover &lt;b&gt;New View&lt;/b&gt; on Last Bets.
+        ///   Looks up a localized string similar to Auto Transfer Accounts.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {
@@ -633,6 +651,15 @@ namespace Alpha.Main.AppResources {
         public static string HomeIconIntroduction {
             get {
                 return ResourceManager.GetString("HomeIconIntroduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to hour(s) ago.
+        /// </summary>
+        public static string hoursAgo {
+            get {
+                return ResourceManager.GetString("hoursAgo", resourceCulture);
             }
         }
         
@@ -872,11 +899,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1 min ago.
+        /// </summary>
+        public static string minAgo {
+            get {
+                return ResourceManager.GetString("minAgo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The protection code must be at least 6 characters long..
         /// </summary>
         public static string MinLengthNewProtectionCodeError {
             get {
                 return ResourceManager.GetString("MinLengthNewProtectionCodeError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mins ago.
+        /// </summary>
+        public static string minsAgo {
+            get {
+                return ResourceManager.GetString("minsAgo", resourceCulture);
             }
         }
         

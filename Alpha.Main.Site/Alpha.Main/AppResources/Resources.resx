@@ -722,10 +722,10 @@
     <value>Check Out</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Expand your monitoring capabilities with a wider set of filter conditions.</value>
+    <value>System can now help you auto transfer to your downline periodically.</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Discover &lt;b&gt;New View&lt;/b&gt; on Last Bets</value>
+    <value>Auto Transfer Accounts</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
     <value>Go to &lt;b&gt;Transfer &gt; Transfer page&lt;/b&gt; to enable/disable auto transfer for downlines.</value>
@@ -747,5 +747,20 @@
   </data>
   <data name="WinLossDetailReport" xml:space="preserve">
     <value>Win Loss Detail Report</value>
+  </data>
+  <data name="Here" xml:space="preserve">
+    <value>Here</value>
+  </data>
+  <data name="minAgo" xml:space="preserve">
+    <value>1 min ago</value>
+  </data>
+  <data name="minsAgo" xml:space="preserve">
+    <value>mins ago</value>
+  </data>
+  <data name="hoursAgo" xml:space="preserve">
+    <value>hour(s) ago</value>
+  </data>
+  <data name="daysAgo" xml:space="preserve">
+    <value>day(s) ago</value>
   </data>
 </root>

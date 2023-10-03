@@ -49,7 +49,7 @@
             encodeDataFunction = Substitute.For<Func<string, string>>();
             logoutService = Substitute.For<LogoutService>();
             telegramSettingService = Substitute.For<ISettingService>();
-            defaultHandler = new DefaultHandler(sessionManager, browserHelper, logoutService, getDefaultUrl, encodeDataFunction, customerProfileService, telegramSettingService);
+            defaultHandler = new DefaultHandler(sessionManager, browserHelper, logoutService, getDefaultUrl, encodeDataFunction, customerProfileService, telegramSettingService, null);
             userSession = Substitute.For<IUserSession>();
 
             profilePicture = new ActorProfilePictureModel();
@@ -129,7 +129,7 @@
             string argumentUsed = null;
             sessionManager.Add(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
 
-            var expectedViewModel = new IndexViewModel(query, getDefaultUrl, encodeDataFunction, browserHelper, profilePicture);
+            var expectedViewModel = new IndexViewModel(query, getDefaultUrl, encodeDataFunction, browserHelper, profilePicture, false);
 
             // Act
             var viewModel = await defaultHandler.Handle(query);

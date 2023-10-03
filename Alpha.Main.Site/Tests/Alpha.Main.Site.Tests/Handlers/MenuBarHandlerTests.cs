@@ -38,7 +38,7 @@
         public void HandleMenuBarQuery_WhenCalled_ExecuteGetMenuByUserLevel()
         {
             //// Arrange
-            var menuBarQuery = new MenuBarQuery(2, "userAgent");            
+            var menuBarQuery = new MenuBarQuery(2, "userAgent");
 
             //// Act
             menuBarHandler.Handle(menuBarQuery);
@@ -62,8 +62,8 @@
 
             siteMenuService.GetMenuByUserLevel(Arg.Any<UserLevel>()).Returns(new List<MenuItem>
             {
-                new MenuItem(getMenuStatusFunc, unauthorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty),
-                new MenuItem(getMenuStatusFunc, unauthorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty)
+                new MenuItem(getMenuStatusFunc, unauthorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty, null, null),
+                new MenuItem(getMenuStatusFunc, unauthorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty, null, null)
             });
 
             //// Act

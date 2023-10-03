@@ -1,7 +1,12 @@
 ﻿/// <reference path="menu-bar.ts" />
+
 declare var popupManager: any;
 declare interface String {
     startsWith(text: string, position: string): boolean;
+}
+
+declare interface Window {
+    bootboxAlert(text: string);
 }
 
 if (typeof String.prototype.startsWith != 'function') {
@@ -23,6 +28,7 @@ var indexManager = {
     reportDomain: "",
     recheckInIntervalMiliseconds: 30000,
     isInternal: true,
+    isReloadTopPage: false,
 
     domElements: {
         mainFrame: null,
@@ -57,6 +63,12 @@ var indexManager = {
 
         if (indexManager.requiredNetworkSpeedCalculation) {
             setTimeout(indexManager.calculateUserConnectionSpeed, 8000);
+        }
+
+        var messageForReloadSite = indexManager.getCustomCookies("messageForReloadSite");
+        if (messageForReloadSite != '') {
+            window.bootboxAlert(messageForReloadSite);
+            indexManager.removeCustomCookies("messageForReloadSite");
         }
     },
 
@@ -198,7 +210,14 @@ var indexManager = {
             indexManager.domElements.mainFrame = $('#main');
             indexManager.domElements.mainFrame
                 .on('load.newmain', function () {
+                    if (indexManager.isReloadTopPage) {
+                        window.top.location.reload();
+                        return;
+                    }
+
                     indexManager.domElements.feedbackFunction.addClass("hide");
+                    toastMessage.updatePosition();
+
                     var iframeWindow = indexManager.domElements.mainFrame[0].contentWindow || indexManager.domElements.mainFrame[0].contentDocument;
                     indexManager.closeAllOpenDropdowns(iframeWindow);
 
@@ -233,6 +252,9 @@ var indexManager = {
         }
     },
 
+    getCurrentUrl: function () {
+        return indexManager.isInternal ? "" : localStorage.getItem(indexManager.currentUrlCookieName);
+    },
     closeAllOpenDropdowns: function (iframeWindow) {
         const closeDropdownSubMenu = () => {
             $('.dropdown-submenu').find('.dropdown-menu').hide();
@@ -370,6 +392,8 @@ var indexManager = {
                 indexManager.domElements.feedbackFunction.removeClass("hide");
                 //$(window).off("resize").resize(indexManager.calulateFeedbackFunctionPosition);
             }
+
+            toastMessage.updatePosition();
         });
     },
 
@@ -383,12 +407,12 @@ var indexManager = {
     //},
 
     initNewFeatureHighlightPopup: function () {
-        const leftMenu = $("#menu-BETLISTS");
-        if (!leftMenu.length) {
+        const leftMenu = $("#menu-TRANSFER");
+        if ($("#ShowHighlightPopup").val() === "0" || !leftMenu.length) {
             return;
         }
 
-        const featureName = "LastBetsEnhancement";
+        const featureName = "AutoTransfer";
         const cookiesName = indexManager.hidePopupCookies + featureName;
         const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
 
@@ -417,7 +441,7 @@ var indexManager = {
                     }
                 });
 
-                indexManager.replaceCookieslessURL(newFeatureLink);
+                // indexManager.replaceCookieslessURL(newFeatureLink);
             }
         }
     },
@@ -454,7 +478,21 @@ var indexManager = {
             retryTimes >= 10 && clearInterval(rebuildNewFeatureLinkInterval);
         }, 1000);
     },
+
+    addCustomCookies: function (cookieName, value) {
+        var key = indexManager.getCustomerCookiesName(cookieName);
+        localStorage.setItem(key, value);
+    },
+    getCustomCookies: function (cookieName) {
+        var key = indexManager.getCustomerCookiesName(cookieName);
+        return localStorage.getItem(key) || '';
+    },
+    removeCustomCookies: function (cookieName) {
+        var key = indexManager.getCustomerCookiesName(cookieName);
+        localStorage.removeItem(key);
+    },
 };
+
 
 $(function () {
     indexManager.init();

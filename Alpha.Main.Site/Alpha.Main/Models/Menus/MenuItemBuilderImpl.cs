@@ -5,6 +5,8 @@
     using System.Configuration;
     using System.Linq;
     using System.Web;
+    using Alpha.Main.Services;
+    using Alpha.Main.Services.Impl;
     using Auth.Services;
     using Auth.Services.Impl;
     using Fanex.Common.Helper;
@@ -17,8 +19,10 @@
         private readonly Func<bool> isProtectedModeFunc;
         private readonly Func<bool> isInternalFunc;
         private readonly Func<string, string> buildInvalidSessionUniqueKeyFunc;
+        private readonly TransferService transferService;
+        private readonly IUser user;
 
-        public MenuItemBuilderImpl() : this(null, null, null, null, null)
+        public MenuItemBuilderImpl() : this(null, null, null, null, null, null, null)
         {
         }
 
@@ -27,13 +31,17 @@
             IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration,
             Func<bool> isProtectedModeFunc,
             Func<bool> isInternalFunc,
-            Func<string, string> buildInvalidSessionUniqueKeyFunc)
+            Func<string, string> buildInvalidSessionUniqueKeyFunc,
+            TransferService transferService,
+            IUser user)
         {
             this.authorizationService = authorizationService ?? new AuthorizationService();
             this.menuItemTypeConfiguration = menuItemTypeConfiguration ?? FunctionRegistry.MenuItemTypeStatusRules;
             this.isProtectedModeFunc = isProtectedModeFunc ?? FunctionRegistry.IsProtectedModeFunc;
             this.isInternalFunc = isInternalFunc ?? FunctionRegistry.IsInternalFunc;
             this.buildInvalidSessionUniqueKeyFunc = buildInvalidSessionUniqueKeyFunc ?? FunctionRegistry.BuildInvalidSessionUniqueKey;
+            this.transferService = transferService ?? new TransferServiceImpl();
+            this.user = user ?? new User();
         }
 
         private static void SetDataForMenuItem(IMenuItem menuItem, SiteMapNode node)
@@ -75,7 +83,9 @@
                 isProtectedModeFunc,
                 isInternalFunc,
                 isHideForSite,
-                buildInvalidSessionUniqueKeyFunc);
+                buildInvalidSessionUniqueKeyFunc,
+                transferService,
+                user);
 
             SetDataForMenuItem(menuItem, node);
 
