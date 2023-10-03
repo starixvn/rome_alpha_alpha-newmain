@@ -8,7 +8,10 @@
     using Alpha.Auth.Services;
     using Alpha.Auth.Services.Impl;
     using Fanex.Common.Helper;
-     using AlphaPlus.User.Models;
+    using AlphaPlus.User.Models;
+    using Alpha.Main.Services;
+    using Alpha.Main.Services.Impl;
+    using Alpha.Main.Configurations;
 
     public class MenuItemBuilderImpl : MenuItemBuilder
     {
