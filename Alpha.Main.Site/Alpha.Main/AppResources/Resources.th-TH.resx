@@ -691,4 +691,7 @@
   <data name="daysAgo" xml:space="preserve">
     <value>วันที่แล้ว</value>
   </data>
+  <data name="Here" xml:space="preserve">
+    <value>ที่นี่</value>
+  </data>
 </root>

@@ -25,7 +25,7 @@
         private readonly TransferService transferService;
         private readonly IUser user;
 
-        public MenuItemBuilderImpl() : this(null, null, null, null, null, null, null)
+        public MenuItemBuilderImpl() : this(null, null, null, null, null, null, null, null, null)
         {
         }
 
@@ -36,7 +36,9 @@
             Func<bool> isInternalFunc,
             Func<string, string> buildInvalidSessionUniqueKeyFunc,
             Func<string> buildLanguageQueryStringFunc,
-            Func<string> buildDarkModeQueryStringFunc)
+            Func<string> buildDarkModeQueryStringFunc,
+            TransferService transferService,
+            IUser user)
         {
             this.authorizationService = authorizationService ?? new AuthorizationService();
             this.menuItemTypeConfiguration = menuItemTypeConfiguration ?? FunctionRegistry.MenuItemTypeStatusRules;
@@ -90,7 +92,9 @@
                 isHideForSite,
                 buildInvalidSessionUniqueKeyFunc,
                 buildLanguageQueryStringFunc,
-                buildDarkModeQueryStringFunc);
+                buildDarkModeQueryStringFunc,
+                transferService,
+                user);
 
             SetDataForMenuItem(menuItem, node);
 
@@ -98,11 +102,11 @@
         }
 
         private static Func<bool> IsHideForSite(SiteMapNode node) => () =>
-              {
-                  var hideForSites = node["hideForSites"] == null ? Enumerable.Empty<string>() :
-                      node["hideForSites"].Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
-                  return hideForSites
-                      .Any(site => string.Equals(site, "*", StringComparison.OrdinalIgnoreCase) || string.Equals(site, UserSession.Current?.Site, StringComparison.OrdinalIgnoreCase));
-              };
+          {
+              var hideForSites = node["hideForSites"] == null ? Enumerable.Empty<string>() :
+                  node["hideForSites"].Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
+              return hideForSites
+                  .Any(site => string.Equals(site, "*", StringComparison.OrdinalIgnoreCase) || string.Equals(site, UserSession.Current?.Site, StringComparison.OrdinalIgnoreCase));
+          };
     }
 }

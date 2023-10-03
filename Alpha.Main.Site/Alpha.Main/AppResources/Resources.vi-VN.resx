@@ -720,6 +720,7 @@
   <data name="CheckOut" xml:space="preserve">
     <value>Xem ngay</value>
   </data>
+  <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
     <value>Đơn giản hóa việc tạo tài khoản với giao diện thân thiện người dùng. Trải nghiệm dễ dàng và mượt mà khi bạn có thể truy cập vào tất cả các tính năng cần thiết chỉ với vài cú nhấp chuột.</value>
   </data>
   <data name="GetStarted" xml:space="preserve">

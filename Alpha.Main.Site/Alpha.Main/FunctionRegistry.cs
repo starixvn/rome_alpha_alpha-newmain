@@ -143,57 +143,57 @@ namespace Alpha.Main
         }
 
         private static Func<bool> showAccountInfo = () =>
-                {
-                    return Current == null ? false : Current.SubPageAccess.ViewMemberInfo && !Current.IsProtectedMode;
-                };
+        {
+            return Current == null ? false : Current.SubPageAccess.ViewMemberInfo && !Current.IsProtectedMode;
+        };
 
         private static Func<string> getDefaultUrl = () =>
-                {
-                    if (HttpContext.Current == null)
-                    {
-                        return string.Empty;
-                    }
+        {
+            if (HttpContext.Current == null)
+            {
+                return string.Empty;
+            }
 
-                    var defaultMainPage = HttpContext.Current.Response.ApplyAppPathModifier("~/Dashboard/Index");
-                    var currentUrlCookieName = CookieHelper.GetCookieNameOfCurrentPage(Current.CustId, Current.SubAccId, Encryption.PearsonEncode);
+            var defaultMainPage = HttpContext.Current.Response.ApplyAppPathModifier("~/Dashboard/Index");
+            var currentUrlCookieName = CookieHelper.GetCookieNameOfCurrentPage(Current.CustId, Current.SubAccId, Encryption.PearsonEncode);
 
-                    var currentURLCookie = HttpContext.Current.Request.Cookies[currentUrlCookieName];
-                    var ignoreUrls = new List<string>
-                    {
+            var currentURLCookie = HttpContext.Current.Request.Cookies[currentUrlCookieName];
+            var ignoreUrls = new List<string>
+            {
                 "Error.aspx",
                 "SignIn.aspx",
                 "ChangePassword.aspx",
                 "SecurityCode",
                 "Dashboard",
                 "PartialUM"
-                    };
+            };
 
-                    if (currentURLCookie != null &&
-                        !string.IsNullOrWhiteSpace(currentURLCookie.Value) &&
-                        !Current.IsInternal &&
-                        !ignoreUrls.Any(str => currentURLCookie.Value.Contains(str)))
+            if (currentURLCookie != null &&
+                !string.IsNullOrWhiteSpace(currentURLCookie.Value) &&
+                !Current.IsInternal &&
+                !ignoreUrls.Any(str => currentURLCookie.Value.Contains(str)))
+            {
+                if (!string.IsNullOrWhiteSpace(currentURLCookie.Value)
+                && (currentURLCookie.Value.IndexOf("http", StringComparison.OrdinalIgnoreCase) >= 0 || currentURLCookie.Value.IndexOf("https", StringComparison.OrdinalIgnoreCase) >= 0))
+                {
+                    try
                     {
-                        if (!string.IsNullOrWhiteSpace(currentURLCookie.Value)
-                        && (currentURLCookie.Value.IndexOf("http", StringComparison.OrdinalIgnoreCase) >= 0 || currentURLCookie.Value.IndexOf("https", StringComparison.OrdinalIgnoreCase) >= 0))
-                        {
-                            try
-                            {
-                                Uri currentUrl = new Uri(HttpUtility.UrlDecode(currentURLCookie.Value));
+                        Uri currentUrl = new Uri(HttpUtility.UrlDecode(currentURLCookie.Value));
 
-                                if (HttpContext.Current.Request.Url.Host == currentUrl.Host)
-                                {
-                                    return currentUrl.ToString();
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                ExceptionHandler.Handle(ex, TraceEventType.Information);
-                            }
+                        if (HttpContext.Current.Request.Url.Host == currentUrl.Host)
+                        {
+                            return currentUrl.ToString();
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        ExceptionHandler.Handle(ex, TraceEventType.Information);
+                    }
+                }
+            }
 
-                    return defaultMainPage;
-                };
+            return defaultMainPage;
+        };
 
         public static Func<bool> ShowAccountInfo
         {
@@ -216,15 +216,15 @@ namespace Alpha.Main
         public static Func<bool> IsInternalFunc => () => Current.IsInternal;
 
         public static Func<string, string> BuildInvalidSessionUniqueKey => (string url) =>
-                {
-                    if (url.IndexOf("/winlossdetail/", StringComparison.OrdinalIgnoreCase) > -1
-                    && AppSettings.EnableLogDifferentSessionBetweenMainAndReports)
-                    {
-                        return $"{Current.CustId}-{Current.SubAccId}";
-                    }
+        {
+            if (url.IndexOf("/winlossdetail/", StringComparison.OrdinalIgnoreCase) > -1
+            && AppSettings.EnableLogDifferentSessionBetweenMainAndReports)
+            {
+                return $"{Current.CustId}-{Current.SubAccId}";
+            }
 
-                    return string.Empty;
-                };
+            return string.Empty;
+        };
 
         public static Func<string> BuildLanguageQueryString => () => $"lng={Current.Language}";
 

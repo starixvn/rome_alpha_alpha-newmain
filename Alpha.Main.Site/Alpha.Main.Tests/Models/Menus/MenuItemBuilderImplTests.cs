@@ -35,13 +35,15 @@
             buildDarkModeQueryStringFunc = () => string.Empty;
 
             menuItemBuilderImpl = new MenuItemBuilderImpl(
-                authorizationService, 
+                authorizationService,
                 menuItemTypeConfiguration,
-                isProtectedModeFunc, 
-                isInternalFunc, 
-                buildInvalidSessionUniqueKeyFunc, 
+                isProtectedModeFunc,
+                isInternalFunc,
+                buildInvalidSessionUniqueKeyFunc,
                 buildLanguageQueryStringFunc,
-                buildDarkModeQueryStringFunc);
+                buildDarkModeQueryStringFunc,
+                null,
+                null);
         }
 
         [Test]
