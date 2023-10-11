@@ -53,12 +53,6 @@ var menuBar = {
 
             setInterval(function () { menuBar.loadAuthFrame() }, 60 * 1000);
         }
-
-        if (menuBar.domElements.betlistDomain) {
-            menuBar.loadBetlistAuthFrame();
-
-            setInterval(function () { menuBar.loadBetlistAuthFrame() }, 60 * 1000);
-        }
     },
 
     storeElements: function () {
@@ -427,6 +421,7 @@ var menuBar = {
 
     loadAuthFrame: function () {
         var authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-" + menuBar.domElements.sessionId;
+        var authCookieBetlist = menuBar.topWindow.indexManager.currentUrlCookieName + "-betlist-" + menuBar.domElements.sessionId;
         var authCookieValue = $.cookie(authCookie);
         if (authCookieValue && authCookieValue.length > 0) {
             menuBar.domElements.cookieless = "/(S(" + authCookieValue + "))";
@@ -448,8 +443,11 @@ var menuBar = {
                             menuBar.domElements.reportSessionId = result;
                             sessionId = "/(S(" + result + "))";
                             menuBar.domElements.cookieless = sessionId;
-
                             $.cookie(authCookie, result, { path: '/' });
+
+                            menuBar.domElements.betlistSessionId = result;
+                            menuBar.domElements.betlistCookieless = sessionId;
+                            $.cookie(authCookieBetlist, result, { path: '/' });
 
                             menuBar.domElements.authReportCount++;
                             if (menuBar.domElements.authReportCount < 2) {
@@ -465,53 +463,6 @@ var menuBar = {
                             }
 
                             menuBar.domElements.header.find('iframe#reportFrame')[0].src = menuBar.domElements.reportDomain + sessionId + returnUrl;
-                        }
-                    }
-                }
-            });
-        });
-    },
-
-    loadBetlistAuthFrame: function () {
-        var authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-betlist-" + menuBar.domElements.sessionId;
-        var authCookieValue = $.cookie(authCookie);
-        if (authCookieValue && authCookieValue.length > 0) {
-            menuBar.domElements.betlistCookieless = "/(S(" + authCookieValue + "))";
-        }
-
-        $.get(alpha.urls.mainRootPath + 'Default/Auth').done((returnUrl) => {
-            $.ajax({
-                type: "GET",
-                dataType: "text/html",
-                url: menuBar.domElements.betlistDomain + menuBar.domElements.betlistCookieless + returnUrl,
-                complete: (xhr) => {
-                    if (xhr.status === 400) {
-                        menuBar.loadBetlistAuthFrame();
-                    }
-                    else if (xhr.status === 200) {
-                        var result = xhr.responseText;
-                        var sessionId = "";
-                        if (result !== "OK" && result.length === 24) {
-                            menuBar.domElements.betlistSessionId = result;
-                            sessionId = "/(S(" + result + "))";
-                            menuBar.domElements.betlistCookieless = sessionId;
-
-                            $.cookie(authCookie, result, { path: '/' });
-
-                            menuBar.domElements.authBetlistCount++;
-                            if (menuBar.domElements.authBetlistCount < 2) {
-                                setTimeout(() => {
-                                    menuBar.loadBetlistAuthFrame();
-                                }, 1000);
-                            }
-                        }
-
-                        if (result === "OK" || result.length === 24) {
-                            menuBar.domElements.header.find('iframe#betlistFrame')[0].oncancel = function () {
-                                menuBar.domElements.header.find('iframe#betlistFrame')[0].src = menuBar.domElements.betlistDomain + sessionId + returnUrl;
-                            }
-
-                            menuBar.domElements.header.find('iframe#betlistFrame')[0].src = menuBar.domElements.betlistDomain + sessionId + returnUrl;
                         }
                     }
                 }
