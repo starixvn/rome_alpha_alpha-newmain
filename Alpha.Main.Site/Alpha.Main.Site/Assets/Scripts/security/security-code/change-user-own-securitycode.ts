@@ -130,12 +130,6 @@ var changeUserOwnSecurityCode = {
                     }, 2000);
                 }
 
-                if (changeUserOwnSecurityCode.topWindow.menuBar.domElements.betlistDomain) {
-                    setTimeout(() => {
-                        (<HTMLIFrameElement>top.document.getElementById('betlistFrame')).src = changeUserOwnSecurityCode.topWindow.menuBar.domElements.betlistDomain + changeUserOwnSecurityCode.topWindow.menuBar.domElements.cookieless + '/Auth/SecurityCode' + functionName + '?s=' + isOff;
-                    }, 2000);
-                }
-
                 setTimeout(() => {
                     if (isOff) {
                         $element

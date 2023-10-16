@@ -28,7 +28,6 @@ var menuBar = {
         cookieless: "/",
         sessionId: "",
         reportSessionId: "",
-        betlistDomain: null,
         betlistCookieless: "/",
         betlistSessionId: "",
         authReportCount: 0,
@@ -78,7 +77,6 @@ var menuBar = {
         menuBar.domElements.closeIconOnMobile = $('#closeIconOnMobile');
         menuBar.domElements.reportDomain = $('#reportDomain').val();
         menuBar.domElements.sessionId = $('#SessionId').val();
-        menuBar.domElements.betlistDomain = $('#betlistDomain').val();
     },
 
     initSideBar: function () {

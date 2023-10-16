@@ -80,12 +80,6 @@ class VerifyOtp {
                 }, 2000);
             }
 
-            if (this.topWindow.menuBar.domElements.betlistDomain) {
-                setTimeout(() => {
-                    (<HTMLIFrameElement>top.document.getElementById('betlistFrame')).src = verifyOtp.topWindow.menuBar.domElements.betlistDomain + verifyOtp.topWindow.menuBar.domElements.cookieless + '/Auth/Otp';
-                }, 2000);
-            }
-
             setTimeout(() => {
                 securityHelper.afterVerifed();
                 this.$txtOtp.attr("disabled", "disabled");

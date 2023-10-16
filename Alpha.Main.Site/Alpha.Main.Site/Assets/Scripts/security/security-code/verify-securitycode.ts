@@ -76,12 +76,6 @@ var verifySecurityCode = {
                         }, 2000);
                     }
 
-                    if (verifySecurityCode.topWindow.menuBar.domElements.betlistDomain) {
-                        setTimeout(() => {
-                            (<HTMLIFrameElement>top.document.getElementById('betlistFrame')).src = verifySecurityCode.topWindow.menuBar.domElements.betlistDomain + verifySecurityCode.topWindow.menuBar.domElements.cookieless + '/Auth/SecurityCode';
-                        }, 2000);
-                    }
-
                     setTimeout(() => {
                         securityHelper.afterVerifed();
                     }, 3000);

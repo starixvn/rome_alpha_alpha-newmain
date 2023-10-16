@@ -376,7 +376,7 @@ var headerNav = {
             data: { languageCode: lang, displayLanguage: isDisplayLanguage },
             success: function (result) {
                 if (result !== undefined) {
-                    if (menuBar.domElements.reportDomain || menuBar.domElements.betlistDomain) {
+                    if (menuBar.domElements.reportDomain) {
                         headerNav.syncLang(result);
                     }
                     else {
@@ -402,7 +402,7 @@ var headerNav = {
             url: headerNav.urls.changeTheme,
             data: { isDarkMode: !isDarkMode },
             success: function (result) {
-                if (result && (menuBar.domElements.reportDomain || menuBar.domElements.betlistDomain)) {
+                if (result && menuBar.domElements.reportDomain) {
                     headerNav.syncTheme(!isDarkMode);
                 }
                 else {
