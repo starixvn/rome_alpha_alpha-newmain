@@ -17,16 +17,18 @@
         private readonly Func<bool> isInternalFunc;
         private readonly Func<bool> isHideForSite;
         private readonly Func<string, string> buildInvalidSessionUniqueKeyFunc;
+        private readonly Func<string> buildLanguageQueryStringFunc;
+        private readonly Func<string> buildDarkModeQueryStringFunc;
         private readonly TransferService transferService;
         private readonly IUser user;
 
         public MenuItem(Func<MenuStatus> getMenuStatusFunc = null)
-            : this(getMenuStatusFunc, null, null, null, null, null, null, null)
+            : this(getMenuStatusFunc, null, null, null, null, null, null, null, null, null)
         {
         }
 
         public MenuItem(Func<MenuStatus> getMenuStatusFunc, Predicate<string> authorizeUrlFunc)
-            : this(getMenuStatusFunc, authorizeUrlFunc, null, null, null, null, null, null)
+            : this(getMenuStatusFunc, authorizeUrlFunc, null, null, null, null, null, null, null, null)
         {
         }
 
@@ -37,6 +39,8 @@
             Func<bool> isInternalFunc,
             Func<bool> isHideForSite,
             Func<string, string> buildInvalidSessionUniqueKeyFunc,
+            Func<string> buildLanguageQueryStringFunc,
+            Func<string> buildDarkModeQueryStringFunc,
             TransferService transferService,
             IUser user)
         {
@@ -46,6 +50,8 @@
             this.isInternalFunc = isInternalFunc;
             this.isHideForSite = isHideForSite;
             this.buildInvalidSessionUniqueKeyFunc = buildInvalidSessionUniqueKeyFunc;
+            this.buildLanguageQueryStringFunc = buildLanguageQueryStringFunc;
+            this.buildDarkModeQueryStringFunc = buildDarkModeQueryStringFunc;
             this.transferService = transferService;
             this.user = user;
         }
@@ -96,6 +102,15 @@
                 if (!string.IsNullOrWhiteSpace(link) && string.Equals("transfer", ResourceKey, StringComparison.OrdinalIgnoreCase))
                 {
                     menuLink = string.Format(menuLink, transferService.IsAllDayBalanceTransfer(user.CustId));
+                }
+
+                if (menuLink.IndexOf("PTTemplate/Index", StringComparison.OrdinalIgnoreCase) > -1)
+                {
+                    var languageParam = buildLanguageQueryStringFunc();
+                    var darkModeParam = buildDarkModeQueryStringFunc();
+                    return string.IsNullOrWhiteSpace(invalidSessionUniqueKey)
+                    ? $"{menuLink}?{languageParam}&{darkModeParam}"
+                    : $"{menuLink}?ssguid={invalidSessionUniqueKey}&{languageParam}&{darkModeParam}";
                 }
 
                 return string.IsNullOrWhiteSpace(invalidSessionUniqueKey)
@@ -149,6 +164,8 @@
         public bool IsNew { get; set; }
 
         public bool IsOld { get; set; }
+
+        public bool IsIncludeLanguage { get; set; }
 
         public bool IsMobileView
         {

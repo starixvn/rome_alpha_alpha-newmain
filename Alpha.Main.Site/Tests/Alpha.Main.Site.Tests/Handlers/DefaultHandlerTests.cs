@@ -37,6 +37,7 @@
         private ActorProfilePictureModel profilePicture;
         private NicknameChecker nicknameChecker;
         private ISettingService telegramSettingService;
+        private TransferService transferService;
 
         [SetUp]
         public void SetUp()
@@ -49,7 +50,8 @@
             encodeDataFunction = Substitute.For<Func<string, string>>();
             logoutService = Substitute.For<LogoutService>();
             telegramSettingService = Substitute.For<ISettingService>();
-            defaultHandler = new DefaultHandler(sessionManager, browserHelper, logoutService, getDefaultUrl, encodeDataFunction, customerProfileService, telegramSettingService, null);
+            transferService = Substitute.For<TransferService>();
+            defaultHandler = new DefaultHandler(sessionManager, browserHelper, logoutService, getDefaultUrl, encodeDataFunction, customerProfileService, telegramSettingService, transferService);
             userSession = Substitute.For<IUserSession>();
 
             profilePicture = new ActorProfilePictureModel();

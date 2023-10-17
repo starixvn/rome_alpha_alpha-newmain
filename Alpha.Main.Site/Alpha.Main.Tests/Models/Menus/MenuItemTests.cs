@@ -36,8 +36,8 @@
             {
                 SubMenus = new List<IMenuItem>
                 {
-                    new MenuItem(getMenuStatusFunc, authorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty, null, null),
-                    new MenuItem(getMenuStatusFunc, unauthorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty, null, null)
+                    new MenuItem(getMenuStatusFunc, authorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty,()=>string.Empty,()=>string.Empty,null,null),
+                    new MenuItem(getMenuStatusFunc, unauthorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty,()=>string.Empty,()=>string.Empty,null,null)
                 }
             };
 
@@ -55,7 +55,7 @@
             };
 
             // Act
-            var actualMenuItem = new MenuItem(null, authorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty, null, null);
+            var actualMenuItem = new MenuItem(null, authorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty, () => string.Empty, () => string.Empty, null, null);
 
             // Assert
             Assert.IsFalse(actualMenuItem.Status.Visible);
@@ -76,7 +76,7 @@
             };
 
             // Act
-            var actualMenuItemStatus = new MenuItem(getMenuStatusFunc, authorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty, null, null).Status;
+            var actualMenuItemStatus = new MenuItem(getMenuStatusFunc, authorizedUrlFunction, () => false, () => false, () => false, (string url) => string.Empty, () => string.Empty, () => string.Empty, null, null).Status;
 
             // Assert
             Assert.AreEqual(expectedMenuStatus, actualMenuItemStatus);

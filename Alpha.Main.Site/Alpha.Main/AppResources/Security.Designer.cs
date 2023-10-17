@@ -788,6 +788,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Position Taking Template.
+        /// </summary>
+        public static string PositionTakingTemplate {
+            get {
+                return ResourceManager.GetString("PositionTakingTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Regenerate QR.
         /// </summary>
         public static string RegenerateQR {

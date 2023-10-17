@@ -505,4 +505,7 @@ Notes: your password is cAsE sEnSiTiVe.</value>
   <data name="RegisteredMobileApplication" xml:space="preserve">
     <value>OTP via Mobile Authenticator</value>
   </data>
+  <data name="PositionTakingTemplate" xml:space="preserve">
+    <value>Position Taking Template</value>
+  </data>
 </root>

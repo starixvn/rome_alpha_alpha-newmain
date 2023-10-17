@@ -28,7 +28,7 @@
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
     <TargetFrameworkProfile />
     <Use64BitIISExpress />
-    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
     <SonarQubeTestProject>False</SonarQubeTestProject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -873,6 +873,8 @@
     <Content Include="Assets\Images\autotransfer-dark.svg" />
     <Content Include="Assets\Images\arrowbackupdomainmb.svg" />
     <Content Include="Assets\Images\arrowbackupdomain.svg" />
+    <Content Include="Assets\Images\litemode-dark.svg" />
+    <Content Include="Assets\Images\litemode.svg" />
     <Content Include="Assets\Images\MenuBarBanner\MBC\280x70_msa_en-US.jpg" />
     <Content Include="Assets\Images\MenuBarBanner\MBC\280x70_msa_th-TH.jpg" />
     <Content Include="Assets\Images\MenuBarBanner\MBC\280x70_msa_zh-CN.jpg" />

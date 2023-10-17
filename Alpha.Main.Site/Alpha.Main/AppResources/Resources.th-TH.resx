@@ -656,13 +656,7 @@
     <value>ออก</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>ระบบจะสามารถช่วยคุณถ่ายโอนยอดไปยังดาวน์ไลน์ของคุณโดยอัตโนมัติ เป็นประจำ</value>
-  </data>
-  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>บัญชีโอนอัตโนมัติ</value>
-  </data>
-  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>ไปที่ &lt;b&gt;โอน &gt; หน้าโอน&lt;/b&gt; เพื่อเปิด/ปิดระบบโอนอัตโนมัติสำหรับดาวน์ไลน์</value>
+    <value>ลดความซับซ้อนในการสร้างบัญชีด้วยอินเทอร์เฟซที่ใช้งานง่าย เพลิดเพลินไปกับประสบการณ์ที่ไม่ยุ่งยากในขณะที่เข้าถึงฟีเจอร์ที่จำเป็นทั้งหมดได้ด้วยการคลิกเพียงไม่กี่ครั้ง</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>เริ่มต้น</value>
@@ -682,8 +676,8 @@
   <data name="WinLossDetailReport" xml:space="preserve">
     <value>รายงานรายละเอียดการแพ้ชนะ</value>
   </data>
-  <data name="Here" xml:space="preserve">
-    <value>ที่นี่</value>
+  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
+    <value>สร้างบัญชีใหม่ด้วยโหมด Lite</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>หนึ่งนาทีที่แล้ว</value>
@@ -696,5 +690,8 @@
   </data>
   <data name="daysAgo" xml:space="preserve">
     <value>วันที่แล้ว</value>
+  </data>
+  <data name="Here" xml:space="preserve">
+    <value>ที่นี่</value>
   </data>
 </root>

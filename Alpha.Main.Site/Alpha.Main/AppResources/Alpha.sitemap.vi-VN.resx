@@ -423,4 +423,7 @@
   <data name="searchTickets" xml:space="preserve">
     <value>Tìm Vé Cược</value>
   </data>
+  <data name="PTTemplate" xml:space="preserve">
+    <value>Mẫu Position Taking</value>
+  </data>
 </root>

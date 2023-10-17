@@ -420,4 +420,7 @@
   <data name="AutoTransferMonitoring" xml:space="preserve">
     <value>監控自動轉賬</value>
   </data>
+  <data name="PTTemplate" xml:space="preserve">
+    <value>佔成數模板</value>
+  </data>
 </root>

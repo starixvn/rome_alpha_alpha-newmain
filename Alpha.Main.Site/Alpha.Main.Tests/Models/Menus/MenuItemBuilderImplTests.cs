@@ -17,6 +17,8 @@
         private Func<bool> isProtectedModeFunc;
         private Func<bool> isInternalFunc;
         private Func<string, string> buildInvalidSessionUniqueKeyFunc;
+        private Func<string> buildLanguageQueryStringFunc;
+        private Func<string> buildDarkModeQueryStringFunc;
 
         [SetUp]
         public void SetUp()
@@ -29,8 +31,19 @@
             isProtectedModeFunc = () => false;
             isInternalFunc = () => false;
             buildInvalidSessionUniqueKeyFunc = (string url) => string.Empty;
+            buildLanguageQueryStringFunc = () => string.Empty;
+            buildDarkModeQueryStringFunc = () => string.Empty;
 
-            menuItemBuilderImpl = new MenuItemBuilderImpl(authorizationService, menuItemTypeConfiguration, isProtectedModeFunc, isInternalFunc, buildInvalidSessionUniqueKeyFunc, null, null);
+            menuItemBuilderImpl = new MenuItemBuilderImpl(
+                authorizationService,
+                menuItemTypeConfiguration,
+                isProtectedModeFunc,
+                isInternalFunc,
+                buildInvalidSessionUniqueKeyFunc,
+                buildLanguageQueryStringFunc,
+                buildDarkModeQueryStringFunc,
+                null,
+                null);
         }
 
         [Test]

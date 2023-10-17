@@ -1,32 +1,25 @@
 ﻿@model IndexViewModel
-<div class="popup-highlight hide" id="boxHighlightPopupNewFeature">
-    <button type="button" class="icon icon-close close" title="@Resources.close"><span aria-hidden="true"></span></button>
-    <div class="text">
-        <img src="~/Assets/Images/autotransfer@(Model.DarkModeName).svg?v=@AppSettings.JsVersion" alt="@Resources.HighlightPopupNewFeatureTitle">
-        <div>
-            <p><span>@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</span></p>
-            <p>@Html.Raw(Resources.HighlightPopupNewFeatureIntro)</p>
-            <p>@Html.Raw(Resources.HighlightPopupNewFeatureIntro2)</p>
+@if (Model.HightLightFeaturePermission)
+{
+    <div class="popup-highlight hide" id="boxHighlightPopupNewFeature">
+        <button type="button" class="icon icon-close close" title="@Resources.close">
+            <span aria-hidden="true"></span>
+        </button>
+        <div class="text">
+            <img src="~/Assets/Images/litemode@(Model.DarkModeName).svg?v=@AppSettings.JsVersion" alt="@Resources.HighlightPopupNewFeatureTitle">
+            <div>
+                <p>
+                    <span>@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</span>
+                </p>
+                <p>@Html.Raw(Resources.HighlightPopupNewFeatureIntro)</p>
+            </div>
+        </div>
+        <div class="action">
+            <label class="label">
+                <input id="chkHideHighlightPopupNewFeature" type="checkbox" />
+                <span>@Resources.doNotShowAgain</span>
+            </label>
+            <a class="btn-submit" id="linkHighlightPopupCheckOut" href="@Model.HightLightFeatureUrl" target="main">@Resources.GetStarted</a>
         </div>
     </div>
-    <div class="action">
-        <label class="label">
-            <input id="chkHideHighlightPopupNewFeature" type="checkbox" />
-            <span>@Resources.doNotShowAgain</span>
-        </label>
-
-        @switch (Model.RoleId)
-        {
-            case 2:
-                <a class="btn-submit" id="linkHighlightPopupCheckOut" href="@MicroSites.OldMainUrl("_Transfer/Agent/MemberList.aspx")" target="main">@Resources.GetStarted</a>
-                break;
-            case 3:
-                <a class="btn-submit" id="linkHighlightPopupCheckOut" href="@MicroSites.OldMainUrl("_Transfer/Master/AgentList.aspx")" target="main">@Resources.GetStarted</a>
-                break;
-            case 4:
-                <a class="btn-submit" id="linkHighlightPopupCheckOut" href="@MicroSites.OldMainUrl("_Transfer/Super/MasterList.aspx")" target="main">@Resources.GetStarted</a>
-                break;
-        }
-    </div>
-</div>
-@Html.Hidden("ShowHighlightPopup", Model.ShowHighlightPopup ? 1 : 0)
+}

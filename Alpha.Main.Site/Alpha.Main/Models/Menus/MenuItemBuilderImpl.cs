@@ -5,6 +5,7 @@
     using System.Configuration;
     using System.Linq;
     using System.Web;
+    using Alpha.Main.Configurations;
     using Alpha.Main.Services;
     using Alpha.Main.Services.Impl;
     using Auth.Services;
@@ -19,10 +20,12 @@
         private readonly Func<bool> isProtectedModeFunc;
         private readonly Func<bool> isInternalFunc;
         private readonly Func<string, string> buildInvalidSessionUniqueKeyFunc;
+        private readonly Func<string> buildLanguageQueryStringFunc;
+        private readonly Func<string> buildDarkModeQueryStringFunc;
         private readonly TransferService transferService;
         private readonly IUser user;
 
-        public MenuItemBuilderImpl() : this(null, null, null, null, null, null, null)
+        public MenuItemBuilderImpl() : this(null, null, null, null, null, null, null, null, null)
         {
         }
 
@@ -32,6 +35,8 @@
             Func<bool> isProtectedModeFunc,
             Func<bool> isInternalFunc,
             Func<string, string> buildInvalidSessionUniqueKeyFunc,
+            Func<string> buildLanguageQueryStringFunc,
+            Func<string> buildDarkModeQueryStringFunc,
             TransferService transferService,
             IUser user)
         {
@@ -42,6 +47,8 @@
             this.buildInvalidSessionUniqueKeyFunc = buildInvalidSessionUniqueKeyFunc ?? FunctionRegistry.BuildInvalidSessionUniqueKey;
             this.transferService = transferService ?? new TransferServiceImpl();
             this.user = user ?? new User();
+            this.buildLanguageQueryStringFunc = buildLanguageQueryStringFunc ?? FunctionRegistry.BuildLanguageQueryString;
+            this.buildDarkModeQueryStringFunc = buildDarkModeQueryStringFunc ?? FunctionRegistry.BuildDarkModeQueryString;
         }
 
         private static void SetDataForMenuItem(IMenuItem menuItem, SiteMapNode node)
@@ -63,7 +70,7 @@
             menuItem.Link = node.Url;
             menuItem.AppPath = node["AppPath"];
             menuItem.IsBeta = node["isBeta"] != null && bool.Parse(node["isBeta"]);
-            menuItem.IsNew = node["isNew"] != null && bool.Parse(node["isNew"]);
+            menuItem.IsNew = node["menuItemType"] == "CreateAccountMenuItem" ? AppSettings.IsOfferCreateAccountLiteMode : (node["isNew"] != null && bool.Parse(node["isNew"]));
             menuItem.IsOld = node["isOld"] != null && bool.Parse(node["isOld"]);
             menuItem.IsHiddenInMobile = node["isHiddenInMobile"] != null && bool.Parse(node["isHiddenInMobile"]);
             menuItem.ByPassAuthorization = node["byPassAuthorization"] == null ? false : bool.Parse(node["byPassAuthorization"]);
@@ -84,6 +91,8 @@
                 isInternalFunc,
                 isHideForSite,
                 buildInvalidSessionUniqueKeyFunc,
+                buildLanguageQueryStringFunc,
+                buildDarkModeQueryStringFunc,
                 transferService,
                 user);
 
@@ -93,11 +102,11 @@
         }
 
         private static Func<bool> IsHideForSite(SiteMapNode node) => () =>
-        {
-            var hideForSites = node["hideForSites"] == null ? Enumerable.Empty<string>() :
-                node["hideForSites"].Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
-            return hideForSites
-                .Any(site => string.Equals(site, "*", StringComparison.OrdinalIgnoreCase) || string.Equals(site, UserSession.Current?.Site, StringComparison.OrdinalIgnoreCase));
-        };
+          {
+              var hideForSites = node["hideForSites"] == null ? Enumerable.Empty<string>() :
+                  node["hideForSites"].Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
+              return hideForSites
+                  .Any(site => string.Equals(site, "*", StringComparison.OrdinalIgnoreCase) || string.Equals(site, UserSession.Current?.Site, StringComparison.OrdinalIgnoreCase));
+          };
     }
 }

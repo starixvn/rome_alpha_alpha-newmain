@@ -500,4 +500,7 @@
   <data name="GenerateOTP" xml:space="preserve">
     <value>产生一次性密码</value>
   </data>
+  <data name="PositionTakingTemplate" xml:space="preserve">
+    <value>占成数模板</value>
+  </data>
 </root>

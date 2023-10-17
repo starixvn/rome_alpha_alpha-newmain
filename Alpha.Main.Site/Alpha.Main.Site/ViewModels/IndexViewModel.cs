@@ -22,6 +22,7 @@
         private readonly Func<string, string> encodeDataFunction;
         private readonly BrowserHelper browserHelper;
         private readonly ActorProfilePictureModel profilePicture;
+
         public IndexViewModel(
             IndexQuery message,
             Func<string> getDefaultUrl,
@@ -191,12 +192,11 @@
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
 
         public bool HightLightFeaturePermission
-            => Enumeration.FromValue<UserLevel>(message.RoleId).IsAgentLevel()
-            && !IsProtectedMode
-            && (!message.IsSubAcc || message.SubPageAccess.Contains(PageAccessType.ViewBetLists));
+            => !IsProtectedMode
+            && AppSettings.IsOfferCreateAccountLiteMode
+            && (!message.IsSubAcc || message.SubPageAccess.Contains(PageAccessType.CreateAccount));
 
-        public string HightLightFeatureUrl
-            => $"{UrlHelper.MapBetListPath("~/")}MonitoringBets/Index";
+        public string HightLightFeatureUrl => MicroSites.MemberInfoUrl($"~/CreateAccount?lng={Language}&isDarkMode={IsDarkMode.ToString().ToLowerInvariant()}");
 
         public bool IsEnableAutoTransfer { get; set; }
 

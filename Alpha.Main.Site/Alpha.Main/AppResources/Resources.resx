@@ -722,13 +722,10 @@
     <value>Check Out</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>System can now help you auto transfer to your downline periodically.</value>
+    <value>Simplify account creation with a user-friendly interface. Enjoy a hassle-free experience while accessing all essential features in just a few clicks. </value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Auto Transfer Accounts</value>
-  </data>
-  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>Go to &lt;b&gt;Transfer &gt; Transfer page&lt;/b&gt; to enable/disable auto transfer for downlines.</value>
+    <value>Create New Account with Lite Mode</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Get Started</value>

@@ -659,13 +659,7 @@
     <value>查看</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>系統現在可以協助您定期自動轉賬於您的下線。</value>
-  </data>
-  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>自動轉賬的賬號</value>
-  </data>
-  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>前往 &lt;b&gt; 轉賬 &gt; 轉賬頁面 &lt;/b&gt; 開啟/禁用 自動轉賬於下線。</value>
+    <value>通過友好界面簡化賬號創建。 只需點擊幾下即可簡單方便的體驗訪問所有基本功能。</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>開始吧</value>
@@ -685,8 +679,8 @@
   <data name="WinLossDetailReport" xml:space="preserve">
     <value>輸贏細節報告</value>
   </data>
-  <data name="Here" xml:space="preserve">
-    <value>此處</value>
+  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
+    <value>使用精簡模式創建新賬號</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>一分鐘前</value>
@@ -699,5 +693,8 @@
   </data>
   <data name="daysAgo" xml:space="preserve">
     <value>天之前</value>
+  </data>
+  <data name="Here" xml:space="preserve">
+    <value>此處</value>
   </data>
 </root>

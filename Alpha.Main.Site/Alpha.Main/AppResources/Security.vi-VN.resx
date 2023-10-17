@@ -504,4 +504,7 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   <data name="ToSetupChatbot" xml:space="preserve">
     <value>Để cài đặt Chatbot, vui lòng làm theo hướng dẫn sau:</value>
   </data>
+  <data name="PositionTakingTemplate" xml:space="preserve">
+    <value>Mẫu Position Taking</value>
+  </data>
 </root>

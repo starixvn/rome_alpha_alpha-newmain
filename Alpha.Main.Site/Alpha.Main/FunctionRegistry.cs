@@ -33,6 +33,7 @@ namespace Alpha.Main
         {
             [string.Empty] = null,
             ["CreateAccountMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.GetPermission(PageAccessType.CreateAccount)),
+            ["PTTemplateMenuItem"] = () => new MenuStatus(AppSettings.IsOfferCreateAccountLiteMode && (!Current.IsSubAcc || Current.SubPageAccess.GetPermission(PageAccessType.CreateAccount))),
             ["ReportMenuItem"] = () => new MenuStatus(() => !Current.IsSubAcc || Current.SubPageAccess.ViewReports, null),
             ["BetStatisticsMenuItem"] = () => new MenuStatus(() => !Current.IsSubAcc || Current.SubPageAccess.ViewReports, null),
             ["TotalBetsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewTotalBets),
@@ -224,5 +225,9 @@ namespace Alpha.Main
 
             return string.Empty;
         };
+
+        public static Func<string> BuildLanguageQueryString => () => $"lng={Current.Language}";
+
+        public static Func<string> BuildDarkModeQueryString => () => $"isDarkMode={(!string.IsNullOrWhiteSpace(Current.DarkModeName)).ToString().ToLowerInvariant()}";
     }
 }
