@@ -80,14 +80,14 @@
         {
             var session = HttpContext.Current.Session;
 
-            return session[$"{session.SessionID}_{sessionKey}"];
+            return session[$"{sessionKey}"];
         }
 
         private static void SetSessionValue(string sessionKey, object value)
         {
             var session = HttpContext.Current.Session;
 
-            session[$"{session.SessionID}_{sessionKey}"] = value;
+            session[$"{sessionKey}"] = value;
         }
     }
 }
