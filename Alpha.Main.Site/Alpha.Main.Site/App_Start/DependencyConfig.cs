@@ -19,7 +19,6 @@
     using Alpha.Web.Helpers;
     using Alpha.Web.Helpers.Impl;
     using AlphaPlus.User.Models;
-    using AlphaPlus.User.Models.Helpers;
     using DataAccesses;
     using DataAccesses.Impl;
     using Fanex.Caching;
@@ -40,7 +39,6 @@
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
-    using StackExchange.Redis;
     using Sunplus.Agent.Utilities;
     using TelegramBot.Client.Services;
 
@@ -189,11 +187,9 @@
         private static RedisCache CreateRedisCache()
         {
             var redisConfigurationString = ConfigurationManager.AppSettings["RedisConfigurationOptions:Alpha.NetThrottling"];
-            var configurationOptions = ConfigurationOptions.Parse(redisConfigurationString);
             var redisCacheOptions = new RedisCacheOptions
             {
-                ApplicationName = configurationOptions.ClientName,
-                ConnectionOptions = configurationOptions
+                ConnectionString = redisConfigurationString
             };
 
             return new RedisCache(redisCacheOptions);

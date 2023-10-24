@@ -70,12 +70,6 @@ var verifySecurityCode = {
                         top.revertSecurityCodePopupTitle();
                     }
 
-                    if (verifySecurityCode.topWindow.menuBar.domElements.reportDomain) {
-                        setTimeout(() => {
-                            (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = verifySecurityCode.topWindow.menuBar.domElements.reportDomain + verifySecurityCode.topWindow.menuBar.domElements.cookieless + '/Auth/SecurityCode';
-                        }, 2000);
-                    }
-
                     setTimeout(() => {
                         securityHelper.afterVerifed();
                     }, 3000);

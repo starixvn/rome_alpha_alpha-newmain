@@ -376,23 +376,10 @@ var headerNav = {
             data: { languageCode: lang, displayLanguage: isDisplayLanguage },
             success: function (result) {
                 if (result !== undefined) {
-                    if (menuBar.domElements.reportDomain) {
-                        headerNav.syncLang(result);
-                    }
-                    else {
-                        headerNav.reloadPage();
-                    }
+                    headerNav.reloadPage();
                 }
             }
         });
-    },
-
-    syncLang: function (lang: string) {
-        if (menuBar.domElements.reportDomain) {
-            menuBar.loadAuthFrame();
-        }
-
-        headerNav.reloadPage();
     },
 
     changeTheme: function () {
@@ -402,22 +389,9 @@ var headerNav = {
             url: headerNav.urls.changeTheme,
             data: { isDarkMode: !isDarkMode },
             success: function (result) {
-                if (result && menuBar.domElements.reportDomain) {
-                    headerNav.syncTheme(!isDarkMode);
-                }
-                else {
-                    result && headerNav.reloadPage();
-                }
+                result && headerNav.reloadPage();
             }
         });
-    },
-
-    syncTheme: function (isDarkMode: boolean) {
-        if (menuBar.domElements.reportDomain) {
-            menuBar.loadAuthFrame();
-        }
-        
-        headerNav.reloadPage();
     },
 
     reloadPage: function () {
