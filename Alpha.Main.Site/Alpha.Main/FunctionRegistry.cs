@@ -4,7 +4,6 @@ namespace Alpha.Main
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Web;
@@ -12,13 +11,10 @@ namespace Alpha.Main
     using Alpha.Main.Services.Impl;
     using Alpha.Web.Models;
     using Configurations;
-    using Fanex.Logging.Extensions.Web;
-    using Helpers;
     using Models;
     using Models.Menus;
     using Sunplus.Agent.Model.Definitions;
     using Sunplus.Agent.Model.Entities;
-    using Sunplus.Agent.Utilities;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
     using AuthAppSettings = Alpha.Auth.Configurations.AppSettings;
@@ -155,42 +151,6 @@ namespace Alpha.Main
             }
 
             var defaultMainPage = HttpContext.Current.Response.ApplyAppPathModifier("~/Dashboard/Index");
-            var currentUrlCookieName = CookieHelper.GetCookieNameOfCurrentPage(Current.CustId, Current.SubAccId, Encryption.PearsonEncode);
-
-            var currentURLCookie = HttpContext.Current.Request.Cookies[currentUrlCookieName];
-            var ignoreUrls = new List<string>
-            {
-                "Error.aspx",
-                "SignIn.aspx",
-                "ChangePassword.aspx",
-                "SecurityCode",
-                "Dashboard",
-                "PartialUM"
-            };
-
-            if (currentURLCookie != null &&
-                !string.IsNullOrWhiteSpace(currentURLCookie.Value) &&
-                !Current.IsInternal &&
-                !ignoreUrls.Any(str => currentURLCookie.Value.Contains(str)))
-            {
-                if (!string.IsNullOrWhiteSpace(currentURLCookie.Value)
-                && (currentURLCookie.Value.IndexOf("http", StringComparison.OrdinalIgnoreCase) >= 0 || currentURLCookie.Value.IndexOf("https", StringComparison.OrdinalIgnoreCase) >= 0))
-                {
-                    try
-                    {
-                        Uri currentUrl = new Uri(HttpUtility.UrlDecode(currentURLCookie.Value));
-
-                        if (HttpContext.Current.Request.Url.Host == currentUrl.Host)
-                        {
-                            return currentUrl.ToString();
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        ExceptionHandler.Handle(ex, TraceEventType.Information);
-                    }
-                }
-            }
 
             return defaultMainPage;
         };
