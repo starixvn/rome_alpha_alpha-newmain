@@ -35,7 +35,6 @@ var indexManager = {
         partialContents: null,
         content: null,
         accountInfoContent: null,
-        currentURLCookieName: null,
         pagePopup: null,
         feedbackFunction: null,
         language: null
@@ -119,9 +118,7 @@ var indexManager = {
         indexManager.domElements.partialContents = $('.partial-content');
         indexManager.domElements.content = $('#content');
         indexManager.domElements.accountInfoContent = $('#accountinfo-content');
-        indexManager.domElements.currentURLCookieName = $('#currentURLCookieName');
         indexManager.domElements.pagePopup = $('#page-popup');
-        indexManager.currentUrlCookieName = indexManager.domElements.currentURLCookieName.val();
         indexManager.requiredNetworkSpeedCalculation = $('#requiredNetworkSpeedCalculation').val() == '1';
         indexManager.showOldCustomerList = $('#showOldCustomerList').val() == '1';
         indexManager.reportDomain = $('#reportDomain').val();

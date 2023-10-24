@@ -9,7 +9,6 @@
     using Alpha.Web.Models;
     using Configurations;
     using Helpers;
-    using Main.Helpers;
     using Models.Requests;
     using SecurityCode.Web;
     using Sunplus.Agent.Model.Entities;
@@ -93,8 +92,6 @@
         public bool IsInternalWebVPN => message.IsInternalWebVpn;
 
         public bool IsInternal => message.IsInternal || message.IsIndirectLoggedIn;
-
-        public string CurrentURLCookieName => CookieHelper.GetCookieNameOfCurrentPage(CustId, SubAccId, encodeDataFunction);
 
         public bool IsShowIntroduction => true;
 
