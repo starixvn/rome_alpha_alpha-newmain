@@ -238,9 +238,9 @@ namespace Alpha.Main.Site.Controllers
                 userSession.AutoFollowBetIsDummyAgent,
                 Session.SessionID,
                 AppSettings.BetlistDomain,
-                Request.Cookies[$"{cookieNameCurrentPage}-betlist-{Session.SessionID}"]?.Value,
+                Request.Cookies[$"DFFKDHFJKLDHFJDH-betlist-{Session.SessionID}"]?.Value,
                 AppSettings.ReportDomain,
-                Request.Cookies[$"{cookieNameCurrentPage}-{Session.SessionID}"]?.Value,
+                Request.Cookies[$"DFFKDHFJKLDHFJDH-{Session.SessionID}"]?.Value,
                 userSession.IsEnabledSecurityCodeInBetLists
             };
 
