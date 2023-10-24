@@ -721,7 +721,7 @@
     <value>Xem ngay</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>&lt;b&gt;Tên miền của Member&lt;/b&gt; hiện đã được tích hợp. Giờ đây, bạn có thể &lt;b&gt;dễ dàng truy xuất tên miền&lt;/b&gt; trên Telegram Chatbot.</value>
+    <value>Giờ đây, bạn có thể lên lịch thực hiện Chuyển Khoản Tự Động theo ý muốn.</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Bắt đầu</value>
@@ -742,6 +742,6 @@
     <value>Báo Cáo Chi Tiết Thắng Thua</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Tên Miền Khả Dụng</value>
+    <value>Khám phá Lịch Chuyển Khoản Tự Động</value>
   </data>
 </root>

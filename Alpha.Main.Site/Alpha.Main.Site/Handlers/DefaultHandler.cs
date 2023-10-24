@@ -95,7 +95,7 @@
             var isEnableAutoTransfer = transferService.IsEnableAutoTransfer(message.Currency, message.CustId, AppSettings.Settings["OfferAutoTransfer.Currencies"]);
 
             var viewModel = new IndexViewModel(
-                message, getDefaultUrl, encodeDataFunction, browserHelper, profile, isEnableAutoTransfer);
+                message, getDefaultUrl, encodeDataFunction, browserHelper, profile, isEnableAutoTransfer, transferService);
 
             var custBotMessenger = await GetCustBotMessenger(message.CustId, message.SubAccId, message.Language);
             if (custBotMessenger == null)

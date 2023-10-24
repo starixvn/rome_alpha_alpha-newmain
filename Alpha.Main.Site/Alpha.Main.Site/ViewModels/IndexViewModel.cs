@@ -5,8 +5,8 @@
     using System.Web;
     using Alpha.Main.AppResources;
     using Alpha.Main.ProfilePicture.Models;
+    using Alpha.Main.Services;
     using Alpha.SecurityCode.Web;
-    using AlphaPlus.User.Models;
     using Alpha.Web.Helpers;
     using Alpha.Web.Models;
     using Configurations;
@@ -21,6 +21,7 @@
         private readonly Func<string, string> encodeDataFunction;
         private readonly BrowserHelper browserHelper;
         private readonly ActorProfilePictureModel profilePicture;
+        private readonly TransferService transferService;
 
         public IndexViewModel(
             IndexQuery message,
@@ -28,7 +29,8 @@
             Func<string, string> encodeDataFunction,
             BrowserHelper browserHelper,
             ActorProfilePictureModel profilePicture,
-            bool isEnableAutoTransfer)
+            bool isEnableAutoTransfer,
+            TransferService transferService)
         {
             if (message == null)
             {
@@ -47,6 +49,8 @@
             IsProtectedMode = message.IsProtectedMode;
             AssetAppPath = message.AssetAppPath;
             IsEnableAutoTransfer = isEnableAutoTransfer;
+
+            this.transferService = transferService;
         }
 
         public bool EnableSecurityCode => message.EnableSecurityCode;
@@ -188,9 +192,30 @@
 
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
 
-        public bool HightLightFeaturePermission => false;
+        public bool HightLightFeaturePermission => true;
 
-        public string HightLightFeatureUrl => MicroSites.MessageUrl($"~/BackupDomains/Index");
+        public string HightLightFeatureUrl
+        {
+            get
+            {
+                var url = string.Empty;
+
+                if (message.RoleId == Alpha.Web.Models.UserLevel.Super.Value)
+                {
+                    url = "_Transfer/Super/MasterList.aspx?v=2;adbt={0}";
+                }
+                else if (message.RoleId == Alpha.Web.Models.UserLevel.Master.Value)
+                {
+                    url = "_Transfer/Master/AgentList.aspx?v=2;adbt={0}";
+                }
+                else
+                {
+                    url = "_Transfer/Agent/MemberList.aspx?v=2;adbt={0}";
+                }
+
+                return string.Format(MicroSites.OldMainUrl(url), transferService.IsAllDayBalanceTransfer(CustId));
+            }
+        }
 
         public bool IsEnableAutoTransfer { get; set; }
     }

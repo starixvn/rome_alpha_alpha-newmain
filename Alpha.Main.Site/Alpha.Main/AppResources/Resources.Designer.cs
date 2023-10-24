@@ -592,7 +592,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;b&gt;Member domains&lt;/b&gt; now included. Enjoy &lt;b&gt;easy domain retrieval&lt;/b&gt; with Telegram chatbot..
+        ///   Looks up a localized string similar to Now you can schedule when you want Auto Transfer to be executed..
         /// </summary>
         public static string HighlightPopupNewFeatureIntro {
             get {
@@ -619,7 +619,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Available Domains.
+        ///   Looks up a localized string similar to Discover Auto Transfer Schedule.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {

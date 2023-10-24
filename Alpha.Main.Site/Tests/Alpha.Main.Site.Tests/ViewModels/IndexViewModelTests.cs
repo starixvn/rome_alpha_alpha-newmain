@@ -56,7 +56,7 @@
             browserHelper.GetUserAgent().Returns("android");
 
             // Act
-            var viewModel = new IndexViewModel(query, null, null, browserHelper, profilePicture, false);
+            var viewModel = new IndexViewModel(query, null, null, browserHelper, profilePicture, false, null);
 
             // Assert
             Assert.AreEqual(0.5, viewModel.InitialScaleViewPort);
@@ -84,7 +84,7 @@
             SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp.Returns(true);
 
             // Act
-            var viewModel = new IndexViewModel(query, null, null, browserHelper, profilePicture, false);
+            var viewModel = new IndexViewModel(query, null, null, browserHelper, profilePicture, false, null);
 
             // Assert
             Assert.AreEqual(0.7, viewModel.InitialScaleViewPort);

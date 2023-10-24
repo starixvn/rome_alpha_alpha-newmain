@@ -656,7 +656,7 @@
     <value>ออก</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>&lt;b&gt;โดเมนเวปสมาชิก&lt;/b&gt; ได้เพิ่มเข้ามาแล้ว คุณสามารถ&lt;b&gt;ดึงข้อมูลโดเมนอย่างง่ายดาย&lt;/b&gt; ผ่าน Telegram chatbot</value>
+    <value>ตอนนี้คุณสามารถกำหนดเวลาที่คุณต้องการให้ดำเนินการโอนอัตโนมัติได้แล้ว</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>เริ่มต้น</value>
@@ -677,7 +677,7 @@
     <value>รายงานรายละเอียดการแพ้ชนะ</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>โดเมนที่มีอยู่</value>
+    <value>พบกับกำหนดการโอนอัตโนมัติ</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>หนึ่งนาทีที่แล้ว</value>
