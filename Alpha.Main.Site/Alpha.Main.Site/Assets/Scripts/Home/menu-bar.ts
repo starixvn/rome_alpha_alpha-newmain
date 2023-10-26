@@ -78,16 +78,11 @@ var menuBar = {
             var authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-" + menuBar.domElements.sessionId;
             var authCookieBetlist = menuBar.topWindow.indexManager.currentUrlCookieName + "-betlist-" + menuBar.domElements.sessionId;
 
-            var authCookieValue = $.cookie(authCookie);
-            var authCookieValueBetlist = $.cookie(authCookieBetlist);
+            menuBar.domElements.betlistCookieless =
+                menuBar.domElements.cookieless = "/(S(" + menuBar.domElements.sessionId + "))";
 
-            if (authCookieValue && authCookieValue.length > 0) {
-                menuBar.domElements.betlistCookieless =
-                    menuBar.domElements.cookieless = "/(S(" + authCookieValue + "))";
-            }
-
-            $.cookie(authCookie, authCookieValue, { path: '/' });
-            $.cookie(authCookieBetlist, authCookieValueBetlist, { path: '/' });
+            $.cookie(authCookie, menuBar.domElements.sessionId, { path: '/' });
+            $.cookie(authCookieBetlist, menuBar.domElements.sessionId, { path: '/' });
         }
     },
 
