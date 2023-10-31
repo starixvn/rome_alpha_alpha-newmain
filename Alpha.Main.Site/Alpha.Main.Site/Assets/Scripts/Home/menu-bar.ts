@@ -45,7 +45,6 @@ var menuBar = {
         menuBar.bindEvents();
         menuBar.initSideBar();
         menuBar.setMenuBarBanner();
-        menuBar.setPositionBackupDomain();
     },
 
     storeElements: function () {
