@@ -418,7 +418,7 @@
     <value>Quản Lý Rủi Ro</value>
   </data>
   <data name="BackupDomains" xml:space="preserve">
-    <value>Tên Miền Dự Phòng</value>
+    <value>Tên Miền Khả Dụng</value>
   </data>
   <data name="searchTickets" xml:space="preserve">
     <value>Tìm Vé Cược</value>

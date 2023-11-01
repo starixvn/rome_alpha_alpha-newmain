@@ -412,7 +412,7 @@
     <value>風險管理</value>
   </data>
   <data name="BackupDomains" xml:space="preserve">
-    <value>後備域名</value>
+    <value>可用網域</value>
   </data>
   <data name="searchTickets" xml:space="preserve">
     <value>搜索注單</value>
