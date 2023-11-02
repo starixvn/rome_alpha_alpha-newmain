@@ -19,7 +19,7 @@ namespace Alpha.Main.AppResources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -592,7 +592,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Simplify account creation with a user-friendly interface. Enjoy a hassle-free experience while accessing all essential features in just a few clicks. .
+        ///   Looks up a localized string similar to &lt;b&gt;Member domains&lt;/b&gt; now included. Enjoy &lt;b&gt;easy domain retrieval&lt;/b&gt; with Telegram chatbot..
         /// </summary>
         public static string HighlightPopupNewFeatureIntro {
             get {
@@ -619,7 +619,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create New Account with Lite Mode.
+        ///   Looks up a localized string similar to Available Domains.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {

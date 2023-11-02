@@ -721,7 +721,7 @@
     <value>Xem ngay</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Đơn giản hóa việc tạo tài khoản với giao diện thân thiện người dùng. Trải nghiệm dễ dàng và mượt mà khi bạn có thể truy cập vào tất cả các tính năng cần thiết chỉ với vài cú nhấp chuột.</value>
+    <value>&lt;b&gt;Tên miền của Member&lt;/b&gt; hiện đã được tích hợp. Giờ đây, bạn có thể &lt;b&gt;dễ dàng truy xuất tên miền&lt;/b&gt; trên Telegram Chatbot.</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Bắt đầu</value>
@@ -742,6 +742,6 @@
     <value>Báo Cáo Chi Tiết Thắng Thua</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Tạo tài khoản mới với Thiết Lập Rút Gọn</value>
+    <value>Tên Miền Khả Dụng</value>
   </data>
 </root>
