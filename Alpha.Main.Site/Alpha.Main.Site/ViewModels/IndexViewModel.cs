@@ -11,7 +11,6 @@
     using Helpers;
     using Models.Requests;
     using SecurityCode.Web;
-    using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
 
     public class IndexViewModel
@@ -188,17 +187,10 @@
 
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
 
-        public bool HightLightFeaturePermission
-            => !IsProtectedMode
-            && AppSettings.IsOfferCreateAccountLiteMode
-            && (!message.IsSubAcc || message.SubPageAccess.Contains(PageAccessType.CreateAccount));
+        public bool HightLightFeaturePermission => true;
 
-        public string HightLightFeatureUrl => MicroSites.MemberInfoUrl($"~/CreateAccount?lng={Language}&isDarkMode={IsDarkMode.ToString().ToLowerInvariant()}");
+        public string HightLightFeatureUrl => MicroSites.MessageUrl($"~/BackupDomains/Index");
 
         public bool IsEnableAutoTransfer { get; set; }
-
-        public bool ShowHighlightPopup
-            => (!message.IsSubAcc || message.SubPageAccess.Contains(PageAccessType.Transfer))
-            && IsEnableAutoTransfer;
     }
 }

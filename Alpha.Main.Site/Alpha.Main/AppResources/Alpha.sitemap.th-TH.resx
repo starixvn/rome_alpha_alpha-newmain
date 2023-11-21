@@ -412,7 +412,7 @@
     <value>การจัดการความเสี่ยง</value>
   </data>
   <data name="BackupDomains" xml:space="preserve">
-    <value>โดเมนสำรอง</value>
+    <value>โดเมนที่มีอยู่</value>
   </data>
   <data name="searchTickets" xml:space="preserve">
     <value>ค้นหาตั๋วเดิมพัน</value>

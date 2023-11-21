@@ -656,7 +656,7 @@
     <value>ออก</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>ลดความซับซ้อนในการสร้างบัญชีด้วยอินเทอร์เฟซที่ใช้งานง่าย เพลิดเพลินไปกับประสบการณ์ที่ไม่ยุ่งยากในขณะที่เข้าถึงฟีเจอร์ที่จำเป็นทั้งหมดได้ด้วยการคลิกเพียงไม่กี่ครั้ง</value>
+    <value>&lt;b&gt;โดเมนเวปสมาชิก&lt;/b&gt; ได้เพิ่มเข้ามาแล้ว คุณสามารถ&lt;b&gt;ดึงข้อมูลโดเมนอย่างง่ายดาย&lt;/b&gt; ผ่าน Telegram chatbot</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>เริ่มต้น</value>
@@ -677,7 +677,7 @@
     <value>รายงานรายละเอียดการแพ้ชนะ</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>สร้างบัญชีใหม่ด้วยโหมด Lite</value>
+    <value>โดเมนที่มีอยู่</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>หนึ่งนาทีที่แล้ว</value>

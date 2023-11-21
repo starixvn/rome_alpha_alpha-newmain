@@ -124,7 +124,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Backup Domains.
+        ///   Looks up a localized string similar to Available Domains.
         /// </summary>
         public static string BackupDomains {
             get {

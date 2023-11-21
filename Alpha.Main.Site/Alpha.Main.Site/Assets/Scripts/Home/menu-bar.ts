@@ -45,7 +45,6 @@ var menuBar = {
         menuBar.bindEvents();
         menuBar.initSideBar();
         menuBar.setMenuBarBanner();
-        menuBar.setPositionBackupDomain();
 
         if (menuBar.domElements.reportDomain) {
             menuBar.loadAuthFrame();
@@ -493,17 +492,6 @@ var menuBar = {
         alpha.detectResponsiveInformation();
         // Desktop: 1, Mobile: 2
         return alpha.isScreenLower768 ? 2 : 1;
-    },
-
-    setPositionBackupDomain: function () {
-        window.onload = function () {
-            var positionBackupDomain = $("#menu-BACKUPDOMAINS").offset().top - 45;
-
-            $(".backupdomain-modal").css({
-                'top': positionBackupDomain,
-                'opacity': '1'
-            });
-        };
     },
 
     activeMyWatchlistSubMenuItem: function () {

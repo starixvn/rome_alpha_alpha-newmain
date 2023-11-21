@@ -722,10 +722,10 @@
     <value>Check Out</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Simplify account creation with a user-friendly interface. Enjoy a hassle-free experience while accessing all essential features in just a few clicks. </value>
+    <value>&lt;b&gt;Member domains&lt;/b&gt; now included. Enjoy &lt;b&gt;easy domain retrieval&lt;/b&gt; with Telegram chatbot.</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Create New Account with Lite Mode</value>
+    <value>Available Domains</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Get Started</value>

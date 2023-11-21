@@ -409,42 +409,46 @@ var indexManager = {
     //},
 
     initNewFeatureHighlightPopup: function () {
-        const leftMenu = $("#menu-MEMBERINFO");
-        if ($("#ShowHighlightPopup").val() === "0" || !leftMenu.length) {
+        const leftMenu = $("#menu-BACKUPDOMAINS");
+        if (!leftMenu.length) {
             return;
         }
 
-        const featureName = "CreateAccountLiteMode";
+        const box = $("#boxHighlightPopupNewFeature");
+        if (!box.length) {
+            return;
+        }
+
+        // RedmineId should be included to make FeatureName is unique.
+        const featureName = "AvailableDomains_194024";
         const cookiesName = indexManager.hidePopupCookies + featureName;
         const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
 
         if (hidePopup !== "1") {
             popupManager.closeAllPopup();
-            const box = $("#boxHighlightPopupNewFeature");
-            if (box.length) {
-                box.css({ top: leftMenu.position().top + 130 });
-                box.removeClass("hide");
 
-                box.find(".icon-close").click(() => box.addClass("hide"));
+            box.css({ top: leftMenu.position().top + 35 });
+            box.removeClass("hide");
 
-                box.find("#chkHideHighlightPopupNewFeature").click(function () {
-                    localStorage.setItem(indexManager.getCustomerCookiesName(cookiesName), "1");
-                    box.addClass("hide");
-                });
+            box.find(".icon-close").click(() => box.addClass("hide"));
 
-                const newFeatureLink = box.find("#linkHighlightPopupCheckOut");
-                newFeatureLink.click(() => box.addClass("hide"));
+            box.find("#chkHideHighlightPopupNewFeature").click(function () {
+                localStorage.setItem(indexManager.getCustomerCookiesName(cookiesName), "1");
+                box.addClass("hide");
+            });
 
-                $(window).scroll(() => box.addClass("hide"));
+            const newFeatureLink = box.find("#linkHighlightPopupCheckOut");
+            newFeatureLink.click(() => box.addClass("hide"));
 
-                $("#main-menu-tab")["mCustomScrollbar"]({
-                    callbacks: {
-                        onScrollStart: () => box.addClass("hide")
-                    }
-                });
+            //$(window).scroll(() => box.addClass("hide"));
 
-                // indexManager.replaceCookieslessURL(newFeatureLink);
-            }
+            $("#main-menu-tab")["mCustomScrollbar"]({
+                callbacks: {
+                    onScrollStart: () => box.addClass("hide")
+                }
+            });
+
+            // indexManager.replaceCookieslessURL(newFeatureLink);
         }
     },
 

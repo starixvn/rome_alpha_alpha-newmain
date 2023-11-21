@@ -659,7 +659,7 @@
     <value>查看</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>通过友好界面简化账号创建。 只需点击几下即可简单方便的体验访问所有基本功能。</value>
+    <value>现已包括&lt;b&gt;会员网域名&lt;/b&gt;。 可以使用Telegram聊天机器人&lt;b&gt;轻松进行检索域名&lt;/b&gt;。</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>开始吧</value>
@@ -680,7 +680,7 @@
     <value>输赢细节报告</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>使用精简模式创建新账号</value>
+    <value>可用域名</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>一分钟前</value>

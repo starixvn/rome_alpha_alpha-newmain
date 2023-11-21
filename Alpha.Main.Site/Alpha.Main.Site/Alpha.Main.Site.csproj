@@ -895,8 +895,6 @@
     <Content Include="Assets\Images\MenuBarBanner\Nova88\600x140_msa_th-TH.jpg" />
     <Content Include="Assets\Images\MenuBarBanner\Nova88\600x140_msa_zh-CN.jpg" />
     <Content Include="Assets\Images\MenuBarBanner\Nova88\600x140_msa_zh-TW.jpg" />
-    <Content Include="Assets\Images\new_feature.svg" />
-    <Content Include="Assets\Images\new_feature-dark.svg" />
     <Content Include="Assets\Images\icon-telegram.png" />
     <Content Include="Assets\bundles\telegramchatbot\chatbot-dark.css" />
     <Content Include="Assets\bundles\telegramchatbot\chatbot-dark.min.css">
@@ -992,6 +990,8 @@
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop-dark_zh-TW.jpg" />
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile_zh-TW.jpg" />
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop_zh-TW.jpg" />
+    <Content Include="Assets\Images\new_feature-dark.svg" />
+    <Content Include="Assets\Images\new_feature.svg" />
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
     <Content Include="Assets\Images\switch.png" />
     <Content Include="Assets\Images\TelegramChatbot\tryitnow_en-US.png" />
