@@ -150,7 +150,7 @@
       <siteMapNode resourceKey="systemUpdate"  appPath="MessageAppPath" url="Announcement/Index" byPassAuthorization="true" byPassProtectedMode="true"></siteMapNode>
       <siteMapNode resourceKey="personalMessage" appPath="MessageAppPath"  url="MessageHistory/Index?messagetype=1" byPassAuthorization="true"></siteMapNode>
     </siteMapNode>
-    <siteMapNode resourceKey="riskManagement" menuItemType="MemberInfoMenuItem" functionType="[H]" byPassProtectedModeInternal="true">
+    <siteMapNode resourceKey="riskManagement" menuItemType="MemberInfoMenuItem" functionType="[H]">
       <siteMapNode resourceKey="MemberWinLimit" appPath="MemberInfoAppPath" url="WinLossLimit/Index"></siteMapNode>
       <siteMapNode resourceKey="MyWatchlist" appPath="MemberInfoAppPath" url="ReachedThreshold/Index" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="MyThresholds" appPath="MemberInfoAppPath" url="MyThresholds/Index" roles="Super,Master"></siteMapNode>
