@@ -19,8 +19,6 @@
     using Alpha.Web.Helpers;
     using Alpha.Web.Helpers.Impl;
     using AlphaPlus.User.Models;
-    using DataAccesses;
-    using DataAccesses.Impl;
     using Fanex.Caching;
     using Fanex.Caching.Redis;
     using Fanex.Cryptography.Aes;
@@ -157,10 +155,6 @@
         private static void RegisterDataAccesses(Container container)
         {
             container.RegisterPerWebRequest<IDynamicRepository, DynamicRepository>();
-            container.RegisterPerWebRequest<SecurityCodeDataAccess, SecurityCodeDataAccessImpl>();
-            container.RegisterPerWebRequest<PasswordDataAccess, PasswordDataAccessImpl>();
-            container.RegisterPerWebRequest<StatisticsDataAccess, StatisticsDataAccessImpl>();
-            container.RegisterPerWebRequest<TransferDataAccess, TransferDataAccessImpl>();
         }
 
         private static void RegisterProductConfiguration()

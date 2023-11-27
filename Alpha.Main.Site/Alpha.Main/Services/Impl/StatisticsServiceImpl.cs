@@ -1,39 +1,28 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
+    using System.Collections.Generic;
     using Alpha.Web.Models;
     using Criteria.Statistics;
-    using DataAccesses;
     using Fanex.Data.Repository;
     using Models.Statistics;
-    using System.Collections.Generic;
-    using System.Linq;
 
     public class StatisticsServiceImpl : StatisticsService
     {
         private readonly BalanceUpDayInfoService balanceUpDayInfoService;
         private readonly IDynamicRepository dynamicRepository;
-        private readonly StatisticsDataAccess statisticsDataAccess;
 
         public StatisticsServiceImpl(
             BalanceUpDayInfoService balanceUpDayInfoService,
-            IDynamicRepository dynamicRepository,
-            StatisticsDataAccess statisticsDataAccess)
+            IDynamicRepository dynamicRepository)
         {
             this.balanceUpDayInfoService = balanceUpDayInfoService;
             this.dynamicRepository = dynamicRepository;
-            this.statisticsDataAccess = statisticsDataAccess;
         }
 
         public Statistics GetStatistics(int custId, UserLevel userLevel)
-        {
-            var criteria = new GetStatisticsCriteria(userLevel, custId);
+            => dynamicRepository.Get<Statistics>(new GetStatisticsCriteria(userLevel, custId));
 
-            var statistics = statisticsDataAccess.GetStatistics(criteria, userLevel);
-
-            return statistics;
-        }
-
-        public List<TopWinningMember> GetTopWinningMembers(int custId, UserLevel userLevel)
+        public IEnumerable<TopWinningMember> GetTopWinningMembers(int custId, UserLevel userLevel)
         {
             var criteria = new GetTopWinningMembersCriteria(
                 userLevel,
@@ -41,12 +30,10 @@
                 balanceUpDayInfoService.GetBalanceUpDayInfo().BalanceUpDay,
                 balanceUpDayInfoService.GetBalanceUpDayInfo().MoveBetsDay);
 
-            var topWinninMembers = statisticsDataAccess.GetTopWinningMembers(criteria);
-
-            return topWinninMembers;
+            return dynamicRepository.Fetch<TopWinningMember>(criteria);
         }
 
-        public List<TopTurnoverMember> GetTopTurnoverMembers(int custId, UserLevel userLevel)
+        public IEnumerable<TopTurnoverMember> GetTopTurnoverMembers(int custId, UserLevel userLevel)
         {
             var criteria = new GetTopTurnoverMembersCriteria(
                 userLevel,
@@ -54,18 +41,10 @@
                 balanceUpDayInfoService.GetBalanceUpDayInfo().BalanceUpDay,
                 balanceUpDayInfoService.GetBalanceUpDayInfo().MoveBetsDay);
 
-            var topTurnoverMembers = statisticsDataAccess.GetTopTurnoverMembers(criteria);
-
-            return topTurnoverMembers;
+            return dynamicRepository.Fetch<TopTurnoverMember>(criteria);
         }
 
-        public List<NewMember> GetNewMembers(int custId)
-        {
-            var criteria = new GetNewMembersCriteria(custId);
-
-            var members = dynamicRepository.Fetch<NewMember>(criteria).ToList();
-
-            return members;
-        }
+        public IEnumerable<NewMember> GetNewMembers(int custId)
+            => dynamicRepository.Fetch<NewMember>(new GetNewMembersCriteria(custId));
     }
 }

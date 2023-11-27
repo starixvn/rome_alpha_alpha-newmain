@@ -1,7 +1,6 @@
 ﻿namespace Alpha.Main.Tests.Criteria.SecurityCode
 {
     using Alpha.Main.Criteria.SecurityCode;
-    using Alpha.Main.Params.SecurityCode;
     using NUnit.Framework;
 
     [TestFixture]
@@ -11,8 +10,7 @@
         public void GetSettingKey_Always_ReturnsValidSettingKey()
         {
             // Arrange
-            var param = new UpdateSecurityCodeFunctionParam(true, "BetList", 1, 0, "E", "::1");
-            var criteria = new UpdateSecurityCodeFunctionCriteria(param);
+            var criteria = new UpdateSecurityCodeFunctionCriteria(true, "BetList", 1, 0, "E", "::1");
             var expectedSettingKey = "Age_CustomerUpdSecurityFunctionInfo";
 
             // Act
@@ -28,8 +26,7 @@
         public void IsValid_CustId_ReturnsCorrectExpected(int custId, bool expected)
         {
             // Arrange
-            var param = new UpdateSecurityCodeFunctionParam(true, "BetList", custId, 0, "E", "::1");
-            var criteria = new UpdateSecurityCodeFunctionCriteria(param);
+            var criteria = new UpdateSecurityCodeFunctionCriteria(true, "BetList", custId, 0, "E", "::1");
 
             // Act
             var actual = criteria.IsValid();
@@ -44,8 +41,7 @@
         public void IsValid_SubAccId_ReturnsCorrectExpected(int subAccId, bool expected)
         {
             // Arrange
-            var param = new UpdateSecurityCodeFunctionParam(true, "BetList", 1, subAccId, "E", "::1");
-            var criteria = new UpdateSecurityCodeFunctionCriteria(param);
+            var criteria = new UpdateSecurityCodeFunctionCriteria(true, "BetList", 1, subAccId, "E", "::1");
 
             // Act
             var actual = criteria.IsValid();

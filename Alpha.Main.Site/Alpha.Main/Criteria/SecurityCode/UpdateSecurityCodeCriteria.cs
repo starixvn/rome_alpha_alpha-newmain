@@ -3,7 +3,7 @@
     using Fanex.Data;
     using Fanex.Data.Repository;
 
-    public class UpdateSecurityCodeCriteria : CriteriaBase
+    public class UpdateSecurityCodeCriteria : NonQueryCommand
     {
         public int CustId { get; set; }
 

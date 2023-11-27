@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Configuration;
     using System.Diagnostics;
     using System.Linq;
     using System.Reflection;
@@ -21,8 +22,6 @@
     using CaptchaMvc.Interface;
     using Fanex.Caching;
     using Fanex.Data;
-    using Fanex.Data.SqlServer;
-    using Fanex.Logging.Extensions.Database;
     using Fanex.Logging.Extensions.Web;
     using Fanex.RemotingRef;
     using ONEbook.UM;
@@ -42,19 +41,26 @@
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            var connectionStrings = ConfigurationManager.ConnectionStrings
+                .Cast<ConnectionStringSettings>()
+                .ToDictionary(
+                    connection => connection.Name,
+                    connection => new ConnectionConfiguration(connection.Name, connection.ConnectionString, connection.ProviderName),
+                    StringComparer.OrdinalIgnoreCase);
+            DbSettingProviderManager
+                .StartNewSession()
+                .Use(connectionStrings)
+                .Use(Configurations.AppSettings.FanexDataServiceApi)
+                .Register(resourcePath: Configurations.AppSettings.StoreProcedurePath)
+                .Run();
+
             AlphaPlus.Configurations.ConfigurationManager.Init(new ConfigurationHelper());
-            var sensitivteInfo = new[] { "password", "seccode", "securitycode" };
             LoggingConfig.ExceptionHandler = new ExceptionHandlerAdapter();
-            LoggingConfig.Init(sensitivteInfo, DatabaseInfoGetters.GetDbExceptionInfo);
+            LoggingConfig.Init(new[] { "password", "seccode", "securitycode" });
 
             DependencyConfig.Init();
             StaticResources.Init(GetBuildVersion());
-
-            DbSettingProviderManager
-                .StartNewSession()
-                .WithSqlServer(resourcePath: Configurations.AppSettings.StoreProcedurePath)
-                .Run();
-
             ShareSession.Init();
 
             var umConfig = new UMClientConfiguration().Initialize();

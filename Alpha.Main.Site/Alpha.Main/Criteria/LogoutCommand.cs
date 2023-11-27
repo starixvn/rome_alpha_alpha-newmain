@@ -2,20 +2,9 @@
 {
     using Fanex.Data;
     using Fanex.Data.Repository;
-    using Params;
 
     public class LogoutCommand : NonQueryCommand
     {
-        public LogoutCommand(LogoutParam logoutParam) : this(
-            logoutParam.OnlineUserId,
-            string.IsNullOrWhiteSpace(logoutParam.SubUserName) ? logoutParam.CustName : logoutParam.SubUserName,
-            logoutParam.CustRoleId,
-            logoutParam.ServerId,
-            logoutParam.NickName,
-            logoutParam.Reason)
-        {
-        }
-
         public LogoutCommand(
             int onlineUserId,
             string userName,

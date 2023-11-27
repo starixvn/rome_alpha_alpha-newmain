@@ -39,7 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Alpha.Auth, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Auth.4.0.0\lib\net461\Alpha.Auth.dll</HintPath>
+      <HintPath>..\packages\Alpha.Auth.4.0.0.1\lib\net461\Alpha.Auth.dll</HintPath>
     </Reference>
     <Reference Include="Alpha.NetThrottling, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Alpha.NetThrottling.2.0.0\lib\net461\Alpha.NetThrottling.dll</HintPath>
@@ -72,20 +72,14 @@
     <Reference Include="Fanex.Cryptography.Aes, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Cryptography.Aes.1.0.0.5\lib\net461\Fanex.Cryptography.Aes.dll</HintPath>
     </Reference>
-    <Reference Include="Fanex.Data, Version=4.2.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Data.4.2.2\lib\net461\Fanex.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Fanex.Data.Repository, Version=4.2.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Data.Repository.4.2.2\lib\net461\Fanex.Data.Repository.dll</HintPath>
+    <Reference Include="Fanex.Data.ProxyClient, Version=0.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Data.ProxyClient.0.0.3-alpha02\lib\netstandard2.0\Fanex.Data.ProxyClient.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.Logging, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Logging.2.0.1\lib\net461\Fanex.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.Logging.Extensions, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Logging.Extensions.1.0.6\lib\net461\Fanex.Logging.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="Fanex.Logging.Extensions.Database, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Logging.Extensions.Database.1.0.8\lib\net461\Fanex.Logging.Extensions.Database.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.Logging.Extensions.Web, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Logging.Extensions.Web.1.0.8\lib\net461\Fanex.Logging.Extensions.Web.dll</HintPath>
@@ -114,8 +108,8 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="ONEbook.OTP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ONEbook.OTP.1.0.0\lib\net461\ONEbook.OTP.dll</HintPath>
@@ -302,15 +296,6 @@
     <Compile Include="Criteria\Theme\LogChangeThemeCriteria.cs" />
     <Compile Include="Criteria\Transfer\GetIsAllDayBalTransferCriteria.cs" />
     <Compile Include="Criteria\UMMessage\GetUMMessageCriteria.cs" />
-    <Compile Include="DataAccesses\Impl\BaseDataAccessImpl.cs" />
-    <Compile Include="DataAccesses\Impl\PasswordDataAccessImpl.cs" />
-    <Compile Include="DataAccesses\Impl\SecurityCodeDataAccessImpl.cs" />
-    <Compile Include="DataAccesses\Impl\StatisticsDataAccessImpl.cs" />
-    <Compile Include="DataAccesses\Impl\TransferDataAccessImpl.cs" />
-    <Compile Include="DataAccesses\PasswordDataAccess.cs" />
-    <Compile Include="DataAccesses\SecurityCodeDataAccess.cs" />
-    <Compile Include="DataAccesses\StatisticsDataAccess.cs" />
-    <Compile Include="DataAccesses\TransferDataAccess.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -336,6 +321,7 @@
     <Compile Include="Models\BalanceInfo\BalanceInfo.cs" />
     <Compile Include="Models\BalanceInfo\BalanceUpDayInfo.cs" />
     <Compile Include="Models\ProfilePicture\ActorProfilePictureModel.cs" />
+    <Compile Include="Models\TransferModel.cs" />
     <Compile Include="Models\UMMessage\UMMessageDTO.cs" />
     <Compile Include="Models\UMMessage\UMMessageItem.cs" />
     <Compile Include="Models\UnauthorizedResult.cs" />

@@ -19,7 +19,8 @@
             {
                 if (!param.IsDisabledRecheckin)
                 {
-                    dynamicRepository.Execute(new KickoutCustomerCriteria(param));
+                    dynamicRepository.Execute(new KickoutCustomerCriteria(
+                        param.CustId, param.CustLevel.Value, param.ServerId, param.IP, param.SubAccountId));
                 }
             }
             catch (Exception ex)

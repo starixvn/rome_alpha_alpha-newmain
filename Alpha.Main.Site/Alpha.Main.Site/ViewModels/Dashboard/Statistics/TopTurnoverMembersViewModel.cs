@@ -5,11 +5,11 @@
 
     public class TopTurnoverMembersViewModel
     {
-        public TopTurnoverMembersViewModel(List<TopTurnoverMember> members)
+        public TopTurnoverMembersViewModel(IEnumerable<TopTurnoverMember> members)
         {
             Members = members;
         }
 
-        public List<TopTurnoverMember> Members { get; }
+        public IEnumerable<TopTurnoverMember> Members { get; }
     }
 }

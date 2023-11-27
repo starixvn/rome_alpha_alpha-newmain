@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
+    using System;
     using Alpha.Web.Models;
     using AppResources;
     using Constants;
@@ -7,16 +8,12 @@
     using Fanex.Data.Repository;
     using KellermanSoftware.CompareNetObjects;
     using Main.Criteria.Password;
-    using Main.DataAccesses;
     using Main.Services;
     using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
-    using Params;
     using Params.Password;
     using Sunplus.Agent.Utilities;
-    using System;
-    using CustomResult = Alpha.Main.Models.Result;
 
     [TestFixture]
     public class PasswordServiceImplTests
@@ -24,7 +21,6 @@
         private CompareLogic compareLogic;
         private PasswordServiceImpl passwordService;
         private Encryptor encryptor;
-        private PasswordDataAccess passwordDataAccess;
         private IAesService aes;
         private KickoutCustomerService kickoutCustomerService;
         private IDynamicRepository repository;
@@ -37,7 +33,6 @@
             compareLogic = new CompareLogic();
 
             encryptor = Substitute.For<Encryptor>();
-            passwordDataAccess = Substitute.For<PasswordDataAccess>();
             aes = Substitute.For<IAesService>();
             kickoutCustomerService= Substitute.For<KickoutCustomerService>();
             repository = Substitute.For<IDynamicRepository>();
@@ -46,7 +41,6 @@
 
             passwordService = Substitute.ForPartsOf<PasswordServiceImpl>(
                 encryptor,
-                passwordDataAccess,
                 aes,
                 kickoutCustomerService,
                 repository,
@@ -133,13 +127,11 @@
             encryptor.CfsEnCode(currentPassword).Returns("OldPassword");
             encryptor.CfsEnCode(newPassword).Returns("UserPassword");
 
-            passwordDataAccess.UpdatePassword(Arg.Any<UpdateMainAccountPasswordCriteria>()).Returns(new CustomResult { Code = 1 });
-
             // Act
             passwordService.ChangeMainAccountPassword(param);
 
             // Assert
-            passwordDataAccess.Received().UpdatePassword(
+            repository.Received().Execute(
                 Arg.Is<UpdateMainAccountPasswordCriteria>(
                     p => p.CustId == param.CustId
                         && p.Language == param.LanguageKey
@@ -204,13 +196,11 @@
             encryptor.CfsEnCode(Arg.Is(currentPassword)).Returns("OldPassword");
             encryptor.CfsEnCode(Arg.Is(newPassword)).Returns("UserPassword");
 
-            passwordDataAccess.UpdatePassword(Arg.Any<UpdateSubAccountPasswordCriteria>()).Returns(new CustomResult { Code = 0 });
-
             // Act
             passwordService.ChangeSubAccountPassword(param);
 
             // Assert
-            passwordDataAccess.Received().UpdatePassword(
+            repository.Received().Execute(
                 Arg.Is<UpdateSubAccountPasswordCriteria>(
                     p => p.CustId == param.CustId
                         && p.Language == param.LanguageKey
@@ -275,13 +265,11 @@
                 UserId = param.ActorId
             };
 
-            passwordDataAccess.UpdatePassword(Arg.Any<ResetMainAccountPasswordCriteria>()).Returns(new CustomResult { Code = 1 });
-
             // Act
             passwordService.ResetMainAccountPassword(param);
 
             // Assert
-            passwordDataAccess.Received().UpdatePassword(
+            repository.Received().Execute(
                 Arg.Is<ResetMainAccountPasswordCriteria>(
                     c => compareLogic.Compare(c, criteria).AreEqual));
         }

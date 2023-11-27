@@ -1,13 +1,11 @@
 ﻿namespace Alpha.Main.Criteria.Nickname
 {
-    using Params.Nickname;
-
     public class UpdateNicknameLoginOnlyCommand : NicknameNonQueryCommand
     {
-        public UpdateNicknameLoginOnlyCommand(UpdateNicknameLoginOnlyParam param)
-            : base(param.CustId, param.IP, param.LanguageKey)
+        public UpdateNicknameLoginOnlyCommand(int custId, bool nickNameLoginOnly, string language, string ip)
+            : base(custId, ip, language)
         {
-            NickNameLoginOnly = param.NickNameLoginOnly;
+            NickNameLoginOnly = nickNameLoginOnly;
         }
 
         public bool NickNameLoginOnly { get; }

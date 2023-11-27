@@ -12,6 +12,7 @@
     using Alpha.Main.Services;
     using Alpha.Main.Services.Impl;
     using Alpha.Main.Configurations;
+    using Fanex.Data.Repository;
 
     public class MenuItemBuilderImpl : MenuItemBuilder
     {
@@ -45,7 +46,7 @@
             this.isProtectedModeFunc = isProtectedModeFunc ?? FunctionRegistry.IsProtectedModeFunc;
             this.isInternalFunc = isInternalFunc ?? FunctionRegistry.IsInternalFunc;
             this.buildInvalidSessionUniqueKeyFunc = buildInvalidSessionUniqueKeyFunc ?? FunctionRegistry.BuildInvalidSessionUniqueKey;
-            this.transferService = transferService ?? new TransferServiceImpl();
+            this.transferService = transferService ?? new TransferServiceImpl(new DynamicRepository());
             this.user = user ?? new User();
             this.buildLanguageQueryStringFunc = buildLanguageQueryStringFunc ?? FunctionRegistry.BuildLanguageQueryString;
             this.buildDarkModeQueryStringFunc = buildDarkModeQueryStringFunc ?? FunctionRegistry.BuildDarkModeQueryString;

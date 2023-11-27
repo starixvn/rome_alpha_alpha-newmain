@@ -31,14 +31,17 @@
         {
             // Arrange
             var param = new KickoutCustomerParam(1, UserLevel.Master, 90, "::1", 0);
-            var criteria = new KickoutCustomerCriteria(param);
 
             // Act
             kickoutCustomerService.Kickout(param);
 
             // Assert
             dynamicRepository.Received().Execute(Arg.Is<KickoutCustomerCriteria>(
-                c => compareLogic.Compare(c, criteria).AreEqual));
+                c => c.CustId == 1
+                && c.RoleId == 3
+                && c.ServerId == 90
+                && c.IP == "::1"
+                && c.SubAccId == 0));
         }
     }
 }

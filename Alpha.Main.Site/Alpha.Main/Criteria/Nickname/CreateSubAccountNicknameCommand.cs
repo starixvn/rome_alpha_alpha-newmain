@@ -1,13 +1,15 @@
 ﻿namespace Alpha.Main.Criteria.Nickname
 {
-    using Params.Nickname;
-
     public class CreateSubAccountNicknameCommand : CreateNicknameCommand
     {
-        public CreateSubAccountNicknameCommand(CreateNicknameParam param)
-            : base(param)
+        public CreateSubAccountNicknameCommand(
+            int custId,
+            int subAccId,
+            string nickname,
+            string language,
+            string ip) : base(custId, nickname, language, ip)
         {
-            SubAccId = param.SubAccountId;
+            SubAccId = subAccId;
         }
 
         public int SubAccId { get; }
