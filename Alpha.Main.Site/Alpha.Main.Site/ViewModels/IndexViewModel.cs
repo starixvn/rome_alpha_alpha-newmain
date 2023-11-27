@@ -188,7 +188,7 @@
 
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
 
-        public bool HightLightFeaturePermission => true;
+        public bool HightLightFeaturePermission => false;
 
         public string HightLightFeatureUrl => MicroSites.MessageUrl($"~/BackupDomains/Index");
 
