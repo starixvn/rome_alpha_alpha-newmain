@@ -4,10 +4,10 @@
     using Alpha.Main.Constants;
     using Alpha.Main.Site.Controllers;
     using Alpha.Main.Site.Requests.Dashboard.Statistics;
+    using AlphaPlus.User.Models;
     using MediatR;
     using NSubstitute;
     using NUnit.Framework;
-    using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
     public class StatisticsControllerTests

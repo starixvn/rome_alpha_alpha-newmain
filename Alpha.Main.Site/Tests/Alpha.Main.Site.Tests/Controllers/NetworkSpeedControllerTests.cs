@@ -5,7 +5,7 @@
     using NUnit.Framework;
     using Site.Controllers;
     using Site.Requests.NetworkSpeed;
-    using Sunplus.Agent.Model.Entities;
+    using AlphaPlus.User.Models;
 
     [TestFixture]
     public class NetworkSpeedControllerTests

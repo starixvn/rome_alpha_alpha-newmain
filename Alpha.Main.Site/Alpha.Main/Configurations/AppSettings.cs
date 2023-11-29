@@ -182,16 +182,7 @@
                     .Where(custIdString => !string.IsNullOrWhiteSpace(custIdString))
                     .Select(custIdString => Converter.ToInt(custIdString));
 
-        public static string RemoteRefURL => Settings["RemoteRefURL"];
-        public static string ChatBotBaseUrl => Settings["Chatbot:BaseUrl"];
-
-        public static string ChatBotApiKey => Settings["Chatbot:ApiKey"];
-
-        public static int IntervalThresholdToSendRequestInSeconds
-            => int.Parse(Settings["IntervalThresholdToSendRequestInSeconds"] ?? "2");
-
-        public static string[] OfferChatbotSites
-            => Settings["OfferChatbotSites"].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+        public static string RemoteRefURL => Settings["RemoteRefURL"];      
 
         public static string CreatedSettingLastDateSessionKey => "CreatedSettingLastDate";
 

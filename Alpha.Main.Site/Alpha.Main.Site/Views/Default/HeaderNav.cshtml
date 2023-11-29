@@ -12,12 +12,9 @@
         <li class="maintenance-box hide" id="um-message-box" title="@Resources.UMAnnouncementTitle">
             <span class="icon-under-maintenance"></span>
         </li>
-        @if (Model.IsOfferDarkMode)
-        {
-            <li class="switch-mode-box">
-                <span class="switch-mode @(Model.IsDarkMode ? "dark-mode" : string.Empty)"></span>
-            </li>
-        }
+        <li class="switch-mode-box">
+            <span class="switch-mode @(Model.IsDarkMode ? "dark-mode" : string.Empty)"></span>
+        </li>
         <li class="feedback-box" id="feedback-box">
             <span class="icon-feedback"></span>
         </li>
@@ -71,7 +68,7 @@
                         <div class="userinfo">
                             <div class="info level username">
                                 @Model.Username
-                                @if (Sunplus.Agent.Model.Entities.UserSession.Current.IsIndirectLoggedIn)
+                                @if (AlphaPlus.User.Models.UserSession.Current.IsIndirectLoggedIn)
                                 {
                                     <span class="icon-account-circle">&nbsp;</span>
                                 }
@@ -115,7 +112,7 @@
                         <div class="userinfo">
                             <div class="info level username">
                                 @Model.Username
-                                @if (Sunplus.Agent.Model.Entities.UserSession.Current.IsIndirectLoggedIn)
+                                @if (AlphaPlus.User.Models.UserSession.Current.IsIndirectLoggedIn)
                                 {
                                     <span class="icon-account-circle">&nbsp;</span>
                                 }
@@ -183,5 +180,4 @@
         }
         <li class="hidden-mobile logout"><a class="icon icon-logout withripple" data-toggle="tooltip" data-placement="bottom" title="@Resources.LogOut"></a></li>
     </ul>
-    <iframe style="display:none;width:0px;height:0px" id="reportFrame" width="0" height="0"></iframe>
 </section>

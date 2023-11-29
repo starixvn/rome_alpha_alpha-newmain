@@ -1,19 +1,19 @@
 ﻿namespace Alpha.Main.Site.Tests.Controllers
 {
+    using System.Linq;
+    using System.Threading.Tasks;
+    using System.Web.Mvc;
     using Alpha.Main.Configurations;
     using Alpha.Main.Models;
     using Alpha.Main.Site.Controllers;
     using Alpha.Main.Site.Requests;
     using Alpha.Main.Site.Requests.TelegramChatBot;
     using Alpha.Main.Site.ViewModels.TelegramChatBot;
+    using AlphaPlus.User.Models;
     using KellermanSoftware.CompareNetObjects;
     using MediatR;
     using NSubstitute;
     using NUnit.Framework;
-    using Sunplus.Agent.Model.Entities;
-    using System.Linq;
-    using System.Threading.Tasks;
-    using System.Web.Mvc;
     using TelegramBot.Client.Models;
 
     [TestFixture]
@@ -67,7 +67,6 @@
             Assert.True(compareLogic.Compare(expectedViewModel.NotificationFunctions, actualViewModel.NotificationFunctions).AreEqual);
             Assert.True(compareLogic.Compare(expectedViewModel.Language, actualViewModel.Language).AreEqual);
             Assert.True(compareLogic.Compare(expectedViewModel.CustLevel, actualViewModel.CustLevel).AreEqual);
-            Assert.True(compareLogic.Compare(expectedViewModel.IsShowLetstalkChatBot, actualViewModel.IsShowLetstalkChatBot).AreEqual);
         }
 
         [Test]
@@ -296,8 +295,8 @@
         {
             // Arrange
             userSession.IsInternal.Returns(false);
-            var command = new UpdateLanguageCommand(userSession) 
-            { 
+            var command = new UpdateLanguageCommand(userSession)
+            {
                 Language = "en-US"
             };
 

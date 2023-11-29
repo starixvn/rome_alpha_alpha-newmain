@@ -3,42 +3,31 @@
 namespace Alpha.Main.Site.Controllers
 {
     using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Mvc;
     using System.Web.Routing;
     using System.Web.Security;
     using System.Web.SessionState;
     using Alpha.Main.Constants;
-    using Alpha.Main.Helpers;
     using Alpha.Main.Site.Helpers;
-    using Alpha.SecurityCode.Web;
+    using Alpha.SecurityCode.Services;
+    using Alpha.Web;
     using Alpha.Web.Filters;
+    using Alpha.Web.Helpers;
+    using AlphaPlus.User.Models;
     using AppResources;
     using Configurations;
-    using Constants;
-    using Fanex.Cryptography.Aes;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
-    using Newtonsoft.Json;
     using Requests;
     using Requests.Otp;
-    using SecurityCode.Services;
-    using Sunplus.Agent.Model.Entities;
-    using Sunplus.Agent.Utilities;
-    using Web;
-    using Web.Helpers;
 
     [SessionState(SessionStateBehavior.Required)]
     public class DefaultController : BaseController
     {
         private const string OtpVerifyDifferenceDevicePath = "~/otp/VerifyOtpDifferenceDevice";
         private const string UnSupportedBrowsers = "UnsupportedBrowsers";
-        private const string fpsScriptKey = "fpsScript";
-        private const string SecretKey = "!@#$";
         private readonly IUserSession userSession;
         private readonly IMediator mediator;
         private readonly SecurityCodeChecker securityCodeChecker;
@@ -54,14 +43,6 @@ namespace Alpha.Main.Site.Controllers
             this.mediator = mediator;
             this.securityCodeChecker = securityCodeChecker;
             this.nicknameChecker = nicknameChecker;
-        }
-
-        [HttpGet, AllowProtectedMode]
-        public string Auth()
-        {
-            var param = AesService.Default.Encrypt($"{userSession.UserName}&{GetSessionKeyValue()}&{GetOutputValuesAfterLogin()}&{DateTime.Now}", SecretKey);
-
-            return $"/Auth?param={param}";
         }
 
         [AllowProtectedMode]
@@ -86,7 +67,7 @@ namespace Alpha.Main.Site.Controllers
 
             var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode(), null, nicknameChecker);
 
-            var viewModel = await mediator.SendAsync(query);            
+            var viewModel = await mediator.SendAsync(query);
 
             return View(viewModel);
         }
@@ -187,74 +168,6 @@ namespace Alpha.Main.Site.Controllers
                 default:
                     return Resources.NoPermissionAccessPage;
             }
-        }
-
-        private string GetSessionKeyValue()
-        {
-            var sessionKeyValue = string.Empty;
-            var enableJackpotGameIds = userSession.GetProperty<IList<int>>(SessionConstants.GameEnable + SessionConstants.Jackpot);
-            var enableJackpotGames = $"{string.Join(",", enableJackpotGameIds ?? Enumerable.Empty<int>())}";
-            var pageAccess = userSession.SubPageAccess;
-            var pageAccessPermissions = $"{pageAccess.CreateAccount}${pageAccess.Transfer}${pageAccess.UpdateAccount}$" +
-                $"{pageAccess.ViewLog}${pageAccess.ViewMemberInfo}${pageAccess.ViewReports}${pageAccess.ViewTotalBets}${pageAccess.GetPermission("[L]")}";
-            var cookieNameCurrentPage = CookieHelper.GetCookieNameOfCurrentPage(userSession.CustId, userSession.SubAccId, Encryption.PearsonEncode);
-
-            var sessions = new List<object>
-            {
-                userSession.CustId,
-                userSession.UserName,
-                userSession.Site,
-                userSession.Language,
-                userSession.LangKey,
-                userSession.RoleId,
-                userSession.Currency,
-                userSession.CurrencyId,
-                userSession.IsShowConsolidatedReport,
-                userSession.GetProperty<DateTime>(SessionConstants.CustomerDatelimit),
-                userSession.IsAdminCanViewVNIP,
-                userSession.SubAccId,
-                userSession.UserLoginIp,
-                userSession.IsProtectedMode,
-                userSession.DarkModeName,
-                userSession.GetProperty<string>(SessionConstants.MainDomainSessionKey),
-                userSession.GetProperty<string>(SessionConstants.LoginIP_Browser),
-                userSession.AssetAppPath,
-                enableJackpotGames,
-                true,
-                pageAccessPermissions,
-                userSession.IsEnabledSecurityCodeInStatement,
-                userSession.SecurityCode,
-                SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp,
-                SecurityCodeSessionManager.SecurityCodeSession.IsAlreadyInputSecurityCode,
-                AppSettings.ReportRouting,
-                userSession.AdminId,
-                userSession.AdminName,
-                userSession.IndirectCustId,
-                userSession.IndirectSubAccId,
-                userSession.IndirectUsername,
-                userSession.IsPasswordExpired,
-                userSession.NickName,
-                Session["ONEbook.UM.ByPassUM"],
-                userSession.AutoFollowBetIsDummyAgent,
-                Session.SessionID,
-                AppSettings.BetlistDomain,
-                Request.Cookies[$"DFFKDHFJKLDHFJDH-betlist-{Session.SessionID}"]?.Value,
-                AppSettings.ReportDomain,
-                Request.Cookies[$"DFFKDHFJKLDHFJDH-{Session.SessionID}"]?.Value,
-                userSession.IsEnabledSecurityCodeInBetLists
-            };
-
-            foreach (var item in sessions)
-            {
-                sessionKeyValue += $"{item};";
-            }
-
-            return sessionKeyValue.Substring(0, sessionKeyValue.Length - 1);
-        }
-
-        private string GetOutputValuesAfterLogin()
-        {
-            return JsonConvert.SerializeObject(userSession.GetProperty<Hashtable>(SessionConstants.Outputs));
         }
     }
 }

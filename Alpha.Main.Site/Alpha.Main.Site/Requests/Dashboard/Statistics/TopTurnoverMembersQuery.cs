@@ -3,8 +3,8 @@
 namespace Alpha.Main.Site.Requests.Dashboard.Statistics
 {
     using Alpha.Web.Models;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Entities;
     using ViewModels.Dashboard.Statistics;
 
     public class TopTurnoverMembersQuery : IRequest<TopTurnoverMembersViewModel>

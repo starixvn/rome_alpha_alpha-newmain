@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
+    using AlphaPlus.Configurations;
     using Alpha.NetThrottling;
     using Alpha.NetThrottling.Models;
-    using Alpha.Web.Configurations;
-    using Sunplus.Agent.Model.Entities;
+     using AlphaPlus.User.Models;
     using System;
     using System.Web;
 

@@ -10,9 +10,9 @@
     using Alpha.Main.Site.ViewModels.TelegramChatBot;
     using Alpha.Web;
     using Alpha.Web.Filters;
+    using AlphaPlus.User.Models;
     using CaptchaMvc.HtmlHelpers;
     using MediatR;
-    using Sunplus.Agent.Model.Entities;
     using Result = Main.Models.Result;
 
     public class TelegramChatBotController : BaseController
@@ -29,7 +29,7 @@
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             if (AppSettings.EnabledUMTelegramChatbot)
-{
+            {
                 filterContext.Result = new RedirectResult($"~/PartialUM/Index?umfrom={AppSettings.TelegramChatbotUMFrom}&umto={AppSettings.TelegramChatbotUMTo}");
                 return;
             }
@@ -39,7 +39,6 @@
 
         public async Task<ActionResult> Setup(SetUpChatBotQuery query)
         {
-
             var model = await mediator.SendAsync(query);
 
             return model.IsLinked

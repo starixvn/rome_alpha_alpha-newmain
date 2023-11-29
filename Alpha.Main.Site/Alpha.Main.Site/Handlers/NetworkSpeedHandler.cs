@@ -5,12 +5,12 @@
     using System.Web;
     using Alpha.Main.Site.Requests.NetworkSpeed;
     using Alpha.Main.Site.ViewModels.NetworkSpeed;
+    using AlphaPlus.User.Models;
     using Configurations;
     using Fanex.Logging;
     using Fanex.Logging.Extensions;
     using Fanex.Logging.Extensions.Web;
     using MediatR;
-    using Sunplus.Agent.Model.Entities;
 
     public class NetworkSpeedHandler :
         IRequestHandler<NetworkSpeedQuery, NetworkSpeedViewModel>,
@@ -63,7 +63,7 @@
                                     $"Sub Account Name: {userSession.SubUserName}"))
                                 .AddSection("request info", () => WebInfoGetters.GetRequestInfo(request))
                                 .AddSection("browser info", () => WebInfoGetters.GetBrowserInfo(request.Browser))
-                                .AddSection("server info", () => WebInfoGetters.GetRequestHeader(request.Headers))                                
+                                .AddSection("server info", () => WebInfoGetters.GetRequestHeader(request.Headers))
                                 .ToString();
 
             logger.Info(logMessage);

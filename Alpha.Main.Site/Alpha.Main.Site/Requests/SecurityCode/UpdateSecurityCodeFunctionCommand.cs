@@ -1,9 +1,8 @@
 ﻿namespace Alpha.Main.Site.Models.Request.SecurityCode
 {
     using Alpha.Main.Models;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
 
     public class UpdateSecurityCodeFunctionCommand : IRequest<Result>
     {

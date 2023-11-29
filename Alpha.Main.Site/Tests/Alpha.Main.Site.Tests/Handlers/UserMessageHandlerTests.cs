@@ -1,11 +1,7 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
-    using System;
-    using System.Collections.Generic;
-    using Alpha.Main.Services;
     using Alpha.Main.Site.Handlers;
     using Alpha.Main.Site.Models.Requests.UserMessages;
-    using NSubstitute;
     using NUnit.Framework;
 
     [TestFixture]
@@ -30,6 +26,6 @@
 
             // Assert
             Assert.IsEmpty(act);
-        }        
+        }
     }
 }

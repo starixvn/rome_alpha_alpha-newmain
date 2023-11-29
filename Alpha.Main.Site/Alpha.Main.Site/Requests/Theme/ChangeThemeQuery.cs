@@ -1,8 +1,7 @@
 ﻿namespace Alpha.Main.Site.Requests.Theme
 {
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
 
     public class ChangeThemeQuery : IRequest<bool>
     {

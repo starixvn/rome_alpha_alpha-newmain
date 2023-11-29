@@ -9,10 +9,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/otp/otp")
-    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/chatbot/chatbot-default")
-    @StaticResources.AssetStyles.RenderCommonWithDarkMode($"/bundles/site-main/chatbot/tab-{Model.RegisterAccountViewModel.CustLevel}")
-    @if (!Model.RegisterAccountViewModel.ChatBotViewModel.IsLinked)
-    {
+    @if (!Model.RegisterAccountViewModel.ChatBotViewModel.IsLinked)    {
         @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/telegramchatbot/register-account")
     }
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/telegramchatbot/chatbot")
@@ -90,7 +87,6 @@
     {
         @StaticResources.RenderScripts("~/assets/bundles/telegramchatbot/register-account")
     }
-    @StaticResources.AssetScripts.Render("/bundles/site-main/chatbot/chatbot-default")
 
 </body>
 </html>

@@ -8,33 +8,29 @@
     using System.Web.Helpers;
     using System.Web.Mvc;
     using System.Web.Routing;
-    using Alpha.Logging;
+    using Alpha.Auth.Configurations;
+    using Alpha.Auth.Filters;
+    using Alpha.Web;
+    using Alpha.Web.Filters;
+    using Alpha.Web.Helpers;
+    using AlphaPlus.Logging;
+    using AlphaPlus.Logging.Web;
+    using AlphaPlus.User.Models;
     using App_Start;
-    using Auth.Filters;
     using CaptchaMvc.Infrastructure;
     using CaptchaMvc.Interface;
-    using Chatbot.Client;
-    using Chatbot.Client.Configurations;
-    using Configurations;
     using Fanex.Caching;
     using Fanex.Data;
-    using Fanex.Data.CrossCutting.WrappingException;
-    using Fanex.Data.OldConnectionStringProvider;
+    using Fanex.Data.SqlServer;
     using Fanex.Logging.Extensions.Database;
     using Fanex.Logging.Extensions.Web;
     using Fanex.RemotingRef;
-    using Helpers;
     using ONEbook.UM;
     using ONEbook.UM.AspNetMVC.Filters;
     using ONEbook.UM.Configurations;
-    using ONEbook.UM.Helpers;
     using ONEbook.UM.NETFramework;
     using ONEbook.UM.Services;
     using ONEbook.UM.Transport;
-    using Sunplus.Agent.Model.Entities;
-    using Web;
-    using Web.Filters;
-    using Web.Helpers;
 
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -46,24 +42,18 @@
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-
+            AlphaPlus.Configurations.ConfigurationManager.Init(new ConfigurationHelper());
             var sensitivteInfo = new[] { "password", "seccode", "securitycode" };
+            LoggingConfig.ExceptionHandler = new ExceptionHandlerAdapter();
             LoggingConfig.Init(sensitivteInfo, DatabaseInfoGetters.GetDbExceptionInfo);
 
-            ChatbotClientManager
-                .UseConfig(new BotClientConfigs(AppSettings.ChatBotBaseUrl, AppSettings.ChatBotApiKey))
-                .UseRestClient(new RestClientHelper());
             DependencyConfig.Init();
             StaticResources.Init(GetBuildVersion());
 
             DbSettingProviderManager
                 .StartNewSession()
-                .Use(new OldConnectionStringProvider())
-                .UseDefaultDbSettingProvider(
-                    resourcePath: AppSettings.StoreProcedurePath,
-                    enableWatching: true)
-               .Use((settingKey, commandTimeout) => new WrappingExceptionObjectDb(settingKey, commandTimeout))
-               .Run();
+                .WithSqlServer(resourcePath: Configurations.AppSettings.StoreProcedurePath)
+                .Run();
 
             ShareSession.Init();
 
@@ -72,7 +62,7 @@
                 .UseConfig(umConfig)
                 .UseCacheService(new UMCacheService(new CacheService()))
                 .UseRestClient(new UMRestClient(umConfig))
-                .UseHttpContext(new HttpContextHelper());
+                .UseHttpContext(new ONEbook.UM.Helpers.HttpContextHelper());
             GlobalFilters.Filters.Add(new CheckUMFilterAttribute(
                 new MaintenanceService(UMClientManager.RestClient, UMClientManager.CacheService, UMClientManager.UMClientConfigs, UMClientManager.HttpContext), null));
 
@@ -84,14 +74,14 @@
             AntiForgeryConfig.SuppressXFrameOptionsHeader = true;
 
             RefDataTypeContainer
-                .ConnectTo(new Uri(AppSettings.RemoteRefURL))
+                .ConnectTo(new Uri(Configurations.AppSettings.RemoteRefURL))
                 .FromApplication("Alpha.Main.Site");
             CaptchaUtils.CaptchaManager.StorageProvider = new CookieStorageProvider();
             var defaultCaptchaManager = (DefaultCaptchaManager)CaptchaUtils.CaptchaManager;
             defaultCaptchaManager.ImageUrlFactory = (helper, pair) => ImageUrlFactory(defaultCaptchaManager, helper, pair);
             defaultCaptchaManager.RefreshUrlFactory = RefreshUrlFactory;
 
-            if (AppSettings.IsStandaloneReports)
+            if (Configurations.AppSettings.IsStandaloneReports)
             {
                 Helpers.UrlHelper.MapReportsPath = Helpers.UrlHelper.MapReportsDomain;
             }
@@ -113,7 +103,7 @@
             var currentCustomer = UserSession.Current;
 
             if (ex is FormatException &&
-                Request.Params.AllKeys.Any(key => Auth.Configurations.AuthorizationSection.Instance.CustIdQueryStringParamNames.Any(cf => string.Equals(key, cf, StringComparison.OrdinalIgnoreCase))))
+                Request.Params.AllKeys.Any(key => AuthorizationSection.Instance.CustIdQueryStringParamNames.Any(cf => string.Equals(key, cf, StringComparison.OrdinalIgnoreCase))))
             {
                 return;
             }
@@ -133,10 +123,10 @@
             Assembly assembly = Assembly.GetCallingAssembly();
             FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
 
-            return $"{versionInfo.FileVersion}.{AppSettings.JsVersion}";
+            return $"{versionInfo.FileVersion}.{Configurations.AppSettings.JsVersion}";
         }
 
-        private string RefreshUrlFactory(System.Web.Mvc.UrlHelper urlHelper, KeyValuePair<string, ICaptchaValue> keyValuePair)
+        private string RefreshUrlFactory(UrlHelper urlHelper, KeyValuePair<string, ICaptchaValue> keyValuePair)
         {
             return urlHelper.Action("Refresh", "DefaultCaptcha", new { area = string.Empty });
         }

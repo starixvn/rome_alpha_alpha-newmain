@@ -1,10 +1,9 @@
 ﻿namespace Alpha.Main.Site.Requests.ApiKey
 {
-    using Alpha.Main.Models.ApiKey;
-    using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
     using System;
+    using Alpha.Main.Models.ApiKey;
+    using AlphaPlus.User.Models;
+    using MediatR;
 
     public class UpdateApiKeyCommand : IAsyncRequest<Result>
     {

@@ -1,9 +1,8 @@
 ﻿namespace Alpha.Main.Site.Requests.Otp
 {
+    using AlphaPlus.User.Models;
     using Main.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
 
     public class RemoveOtpCommand : IRequest<Result>
     {

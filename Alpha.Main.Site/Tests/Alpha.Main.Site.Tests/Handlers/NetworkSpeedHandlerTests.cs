@@ -2,13 +2,13 @@
 {
     using System.Collections.Specialized;
     using System.Web;
+    using AlphaPlus.User.Models;
     using Configurations;
     using Fanex.Logging;
     using NSubstitute;
     using NUnit.Framework;
     using Site.Handlers;
     using Site.Requests.NetworkSpeed;
-    using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
     public class NetworkSpeedHandlerTests

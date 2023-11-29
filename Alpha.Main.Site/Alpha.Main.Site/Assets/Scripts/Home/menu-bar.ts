@@ -45,12 +45,6 @@ var menuBar = {
         menuBar.bindEvents();
         menuBar.initSideBar();
         menuBar.setMenuBarBanner();
-
-        if (menuBar.domElements.reportDomain) {
-            menuBar.loadAuthFrame();
-
-            setInterval(function () { menuBar.loadAuthFrame() }, 60 * 1000);
-        }
     },
 
     storeElements: function () {
@@ -75,7 +69,20 @@ var menuBar = {
         menuBar.domElements.announcementItems = $("#menu-ANNOUNCEMENTS li a");
         menuBar.domElements.closeIconOnMobile = $('#closeIconOnMobile');
         menuBar.domElements.reportDomain = $('#reportDomain').val();
-        menuBar.domElements.sessionId = $('#SessionId').val();
+        menuBar.domElements.reportSessionId =
+            menuBar.domElements.betlistSessionId =
+            menuBar.domElements.sessionId = $('#SessionId').val();
+
+        if (menuBar.domElements.reportDomain) {
+            var authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-" + menuBar.domElements.sessionId;
+            var authCookieBetlist = menuBar.topWindow.indexManager.currentUrlCookieName + "-betlist-" + menuBar.domElements.sessionId;
+
+            menuBar.domElements.betlistCookieless =
+                menuBar.domElements.cookieless = "/(S(" + menuBar.domElements.sessionId + "))";
+
+            $.cookie(authCookie, menuBar.domElements.sessionId, { path: '/' });
+            $.cookie(authCookieBetlist, menuBar.domElements.sessionId, { path: '/' });
+        }
     },
 
     initSideBar: function () {
@@ -414,57 +421,6 @@ var menuBar = {
                 tabPT.css('left', tabPTLeft);
             }
         }, 400);
-    },
-
-    loadAuthFrame: function () {
-        var authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-" + menuBar.domElements.sessionId;
-        var authCookieBetlist = menuBar.topWindow.indexManager.currentUrlCookieName + "-betlist-" + menuBar.domElements.sessionId;
-        var authCookieValue = $.cookie(authCookie);
-        if (authCookieValue && authCookieValue.length > 0) {
-            menuBar.domElements.cookieless = "/(S(" + authCookieValue + "))";
-        }
-
-        $.get(alpha.urls.mainRootPath + 'Default/Auth').done((returnUrl) => {
-            $.ajax({
-                type: "GET",
-                dataType: "text/html",
-                url: menuBar.domElements.reportDomain + menuBar.domElements.cookieless + returnUrl,
-                complete: (xhr) => {
-                    if (xhr.status === 400) {
-                        menuBar.loadAuthFrame();
-                    }
-                    else if (xhr.status === 200) {
-                        var result = xhr.responseText;
-                        var sessionId = "";
-                        if (result !== "OK" && result.length === 24) {
-                            menuBar.domElements.reportSessionId = result;
-                            sessionId = "/(S(" + result + "))";
-                            menuBar.domElements.cookieless = sessionId;
-                            $.cookie(authCookie, result, { path: '/' });
-
-                            menuBar.domElements.betlistSessionId = result;
-                            menuBar.domElements.betlistCookieless = sessionId;
-                            $.cookie(authCookieBetlist, result, { path: '/' });
-
-                            menuBar.domElements.authReportCount++;
-                            if (menuBar.domElements.authReportCount < 2) {
-                                setTimeout(() => {
-                                    menuBar.loadAuthFrame();
-                                }, 1000);
-                            }
-                        }
-
-                        if (result === "OK" || result.length === 24) {
-                            menuBar.domElements.header.find('iframe#reportFrame')[0].oncancel = function () {
-                                menuBar.domElements.header.find('iframe#reportFrame')[0].src = menuBar.domElements.reportDomain + sessionId + returnUrl;
-                            }
-
-                            menuBar.domElements.header.find('iframe#reportFrame')[0].src = menuBar.domElements.reportDomain + sessionId + returnUrl;
-                        }
-                    }
-                }
-            });
-        });
     },
 
     setMenuBarBanner: function () {

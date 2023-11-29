@@ -3,8 +3,6 @@
     using Alpha.Main.Configurations;
     using Alpha.Main.Site.Requests.TelegramChatBot;
     using Alpha.Web.Helpers;
-    using Sunplus.Agent.Model.Entities;
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using TelegramBot.Client.Models;
@@ -21,9 +19,7 @@
             ReportFunctions = chatBotViewModel.CustBotMessenger.Functions.Where(function => function.Type == 1);
             NotificationFunctions = chatBotViewModel.CustBotMessenger.Functions.Where(function => function.Type == 2);
             Language = chatBotViewModel.CustBotMessenger.Language;
-
             CustLevel = query.CustLevel.DisplayName;
-            IsShowLetstalkChatBot = query.IsShowLetstalkChatBot;
         }
 
         public ChatBotViewModel ChatBotViewModel { get; }
@@ -40,9 +36,7 @@
 
         public string Language { get; }
 
-        public string CustLevel { get; }
-
-        public bool IsShowLetstalkChatBot { get; }
+        public string CustLevel { get; }      
 
         public string HowToUseLink
             => AppSettings.IsSiteLabel789y ?

@@ -28,7 +28,7 @@
     }
     <div class="userinfo">
         <span class="userName">@Model.Username</span>
-        @if (Sunplus.Agent.Model.Entities.UserSession.Current.IsIndirectLoggedIn)
+        @if (AlphaPlus.User.Models.UserSession.Current.IsIndirectLoggedIn)
         {
             <span class="icon-account-circle">&nbsp;</span>
         }

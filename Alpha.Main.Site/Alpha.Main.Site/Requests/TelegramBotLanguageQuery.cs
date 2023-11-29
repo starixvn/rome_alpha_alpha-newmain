@@ -2,8 +2,8 @@
 {
     using Alpha.Main.Configurations;
     using Alpha.Main.Site.ViewModels;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
 
     public class TelegramBotLanguageQuery : IRequest<LanguageViewModel>
     {

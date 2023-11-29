@@ -1,9 +1,8 @@
 ﻿namespace Alpha.Main.Site.Requests.ApiKey
 {
     using Alpha.Main.Models.ApiKey;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
 
     public class RevokeApiKeyCommand : IAsyncRequest<Result>
     {

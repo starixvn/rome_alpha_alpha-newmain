@@ -7,12 +7,12 @@
     using Alpha.Main.Site.Controllers;
     using Alpha.Main.Site.Requests.Dashboard.BalanceInfo;
     using Alpha.Main.Site.ViewModels.Dashboard;
+    using AlphaPlus.User.Models;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
     using MediatR;
     using NSubstitute;
     using NUnit.Framework;
-    using Sunplus.Agent.Model.Entities;
     using TelegramBot.Client.Services;
 
     [TestFixture]

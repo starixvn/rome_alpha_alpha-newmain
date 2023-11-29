@@ -5,7 +5,7 @@
     using Alpha.Main.Site.ViewModels.Advertisement;
     using Alpha.Web;
     using Alpha.Web.Filters;
-    using Sunplus.Agent.Model.Entities;
+    using AlphaPlus.User.Models;
 
     [SessionState(SessionStateBehavior.ReadOnly)]
     public class AdvertisementController : BaseController

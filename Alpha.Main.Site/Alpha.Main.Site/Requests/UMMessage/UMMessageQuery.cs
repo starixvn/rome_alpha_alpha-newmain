@@ -3,9 +3,8 @@
     using System.Collections.Generic;
     using Alpha.Main.Configurations;
     using Alpha.Main.Models.UMMessage;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
 
     public class UMMessageQuery : IAsyncRequest<IEnumerable<UMMessageDTO>>
     {

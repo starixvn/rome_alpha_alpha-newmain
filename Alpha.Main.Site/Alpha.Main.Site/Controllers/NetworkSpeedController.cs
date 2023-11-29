@@ -2,11 +2,11 @@
 {
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using Alpha.Web;
     using Alpha.Web.Filters;
+    using AlphaPlus.User.Models;
     using MediatR;
     using Requests.NetworkSpeed;
-    using Sunplus.Agent.Model.Entities;
-    using Web;
 
     [AllowProtectedMode]
     [SessionState(SessionStateBehavior.ReadOnly)]

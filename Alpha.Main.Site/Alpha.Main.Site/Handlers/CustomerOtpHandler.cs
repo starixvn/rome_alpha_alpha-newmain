@@ -5,22 +5,22 @@
     using Alpha.Main.Constants;
     using Alpha.Main.Site.Requests.TelegramChatBot;
     using Alpha.Main.Site.ViewModels.TelegramChatBot;
+    using Alpha.SecurityCode.Services;
     using Alpha.SecurityCode.Web;
+    using Alpha.Web.Helpers;
+    using AlphaPlus.User.Models;
     using AppResources;
+    using Fanex.Logging;
     using Main.Models;
     using Main.Models.Otp;
     using MediatR;
     using Params.Otp;
     using Requests.Otp;
     using Services;
-    using Sunplus.Agent.Model.Entities;
     using TelegramBot.Client.Services;
     using ViewModels.Security;
-    using Web.Helpers;
-    using TelegramResult = TelegramBot.Client.Models.Result;
     using Function = TelegramBot.Client.Models.Function;
-    using Alpha.SecurityCode.Services;
-    using Fanex.Logging;
+    using TelegramResult = TelegramBot.Client.Models.Result;
 
     public class CustomerOtpHandler :
         IAsyncRequestHandler<SetUpOtpQuery, OtpViewModel>,
@@ -338,7 +338,7 @@
                 return false;
             }
 
-            if (userSession.IsLimitedHostPermisionOnSubAccountFunction)
+            if (userSession.IsLimitedHostPermissionOnSubAccountFunction)
             {
                 return false;
             }
@@ -399,6 +399,7 @@
 
             return customerOtpService.IsDifferenceDevice(message.CustId, deviceId, message.SubAccountId);
         }
+
         public async Task<TelegramResult> Handle(UpdateOtpTelegramCommand message)
         {
             var custMessenger = await telegramSettingService.GetCustBotMessengerAsync(message.CustId, message.SubAccId, message.Language);
@@ -452,7 +453,7 @@
             {
                 return await telegramSettingService.IsEnableOTP(custId, subAccId);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 await logger.ErrorAsync(ex.Message, ex);
                 return false;

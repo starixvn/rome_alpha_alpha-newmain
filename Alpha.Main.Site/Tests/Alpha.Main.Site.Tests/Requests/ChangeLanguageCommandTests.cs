@@ -2,11 +2,11 @@
 
 namespace Alpha.Main.Site.Tests.Requests
 {
+    using AlphaPlus.User.Models;
     using Main.Constants;
     using NSubstitute;
     using NUnit.Framework;
     using Site.Requests;
-    using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
     public class ChangeLanguageCommandTests

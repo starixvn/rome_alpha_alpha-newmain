@@ -2,18 +2,17 @@
 {
     using System.Collections.Specialized;
     using System.Threading.Tasks;
-    using System.Web.Mvc;
     using Alpha.Main.AppResources;
     using Alpha.Main.Configurations;
     using Alpha.Main.Models;
     using Alpha.Main.Site.Controllers;
     using Alpha.Main.Site.Requests.Otp;
     using Alpha.SecurityCode.Web;
+    using AlphaPlus.User.Models;
     using KellermanSoftware.CompareNetObjects;
     using MediatR;
     using NSubstitute;
     using NUnit.Framework;
-    using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
     public class OtpControllerTests
@@ -44,7 +43,7 @@
             var query = new SetUpOtpQuery(userSession);
 
             // Act
-           await otpController.SetUpOtp(query);
+            await otpController.SetUpOtp(query);
 
             // Assert
             await mediator.Received().SendAsync(query);

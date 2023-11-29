@@ -4,7 +4,7 @@
     using NSubstitute;
     using NUnit.Framework;
     using Site.Controllers;
-    using Sunplus.Agent.Model.Entities;
+    using AlphaPlus.User.Models;
 
     [TestFixture]
     public class ErrorControllerTests

@@ -70,31 +70,11 @@
   {
     "outputFile": "Assets/styles/home/home-mobile-calculate-07.css",
     "inputFile": "Assets/styles/home/home-mobile-calculate-07.scss"
-  },
-  {
-    "outputFile": "Assets/styles/chatbot/chatbot.css",
-    "inputFile": "Assets/styles/chatbot/chatbot.scss"
-  },
-  {
-    "outputFile": "Assets/styles/chatbot/register-account.css",
-    "inputFile": "Assets/styles/chatbot/register-account.scss"
-  },
-  {
-    "outputFile": "Assets/styles/chatbot/chatbot-setting.css",
-    "inputFile": "Assets/styles/chatbot/chatbot-setting.scss"
-  },
+  }, 
   {
     "outputFile": "Assets/styles/nickname/nickname.css",
     "inputFile": "Assets/styles/nickname/nickname.scss"
-  },
-  {
-    "outputFile": "Assets/styles/captcha/captcha.css",
-    "inputFile": "Assets/styles/captcha/captcha.scss"
-  },
-  {
-    "outputFile": "Assets/styles/newcustomer-captcha/captcha.css",
-    "inputFile": "Assets/styles/newcustomer-captcha/captcha.scss"
-  },
+  },  
   {
     "outputFile": "Assets/styles/protection-code/protection.css",
     "inputFile": "Assets/styles/protection-code/protection.scss"
@@ -116,24 +96,8 @@
     "inputFile": "Assets/styles/home/page-mobile-calculate-07-dark.scss"
   },
   {
-    "outputFile": "Assets/styles/chatbot/chatbot-dark.css",
-    "inputFile": "Assets/styles/chatbot/chatbot-dark.scss"
-  },
-  {
-    "outputFile": "Assets/styles/chatbot/chatbot-setting-dark.css",
-    "inputFile": "Assets/styles/chatbot/chatbot-setting-dark.scss"
-  },
-  {
-    "outputFile": "Assets/styles/chatbot/register-account-dark.css",
-    "inputFile": "Assets/styles/chatbot/register-account-dark.scss"
-  },
-  {
     "outputFile": "Assets/styles/error/error-dark.css",
     "inputFile": "Assets/styles/error/error-dark.scss"
-  },
-  {
-    "outputFile": "Assets/styles/newcustomer-captcha/captcha-dark.css",
-    "inputFile": "Assets/styles/newcustomer-captcha/captcha-dark.scss"
   },
   {
     "outputFile": "Assets/styles/security/security-dark.css",

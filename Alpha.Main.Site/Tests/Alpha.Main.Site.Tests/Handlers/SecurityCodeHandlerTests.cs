@@ -1,8 +1,11 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using System;
     using Alpha.Main.ProfilePicture.Models;
     using Alpha.Main.ProfilePicture.Services;
-    using Alpha.Main.Tests.TestData.Helper;
+    using Alpha.SecurityCode.Web;
+    using Alpha.Web.Helpers;
+    using AlphaPlus.User.Models;
     using AppResources;
     using Fanex.Cryptography.Aes;
     using Helpers;
@@ -13,14 +16,10 @@
     using NSubstitute;
     using NUnit.Framework;
     using Params.SecurityCode;
-    using SecurityCode.Web;
     using Services;
     using Site.Handlers.SecurityCode;
     using Site.ViewModels.Security;
-    using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
-    using System;
-    using Web.Helpers;
 
     [TestFixture]
     public class SecurityCodeHandlerTests
@@ -69,7 +68,7 @@
                 user,
                 aes);
 
-            compareLogic = new CompareLogic();            
+            compareLogic = new CompareLogic();
             UrlHelperTestSetUp.SetUp();
             aes = Substitute.For<IAesService>();
         }

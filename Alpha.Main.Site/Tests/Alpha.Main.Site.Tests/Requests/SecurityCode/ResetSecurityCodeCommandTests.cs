@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Site.Tests.Requests.SecurityCode
 {
     using Alpha.Main.Site.Models.Request.SecurityCode;
+    using AlphaPlus.User.Models;
     using NSubstitute;
     using NUnit.Framework;
-    using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
     public class ResetSecurityCodeCommandTests

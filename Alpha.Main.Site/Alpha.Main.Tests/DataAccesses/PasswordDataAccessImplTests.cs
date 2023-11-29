@@ -55,7 +55,7 @@
                 ["errcode"] = 0,
                 ["errmsg"] = string.Empty
             };
-            objectDb.GetOuputParams().Returns(outputParams);
+            objectDb.GetOutputParams().Returns(outputParams);
 
             // Act
             var actualResult = passwordDataAccess.UpdatePassword(new UpdateMainAccountPasswordCriteria());
@@ -79,7 +79,7 @@
                 ["errcode"] = 1,
                 ["errmsg"] = "ErrorMessage"
             };
-            objectDb.GetOuputParams().Returns(outputParams);
+            objectDb.GetOutputParams().Returns(outputParams);
 
             // Act
             var actualResult = passwordDataAccess.UpdatePassword(new UpdateSubAccountPasswordCriteria());

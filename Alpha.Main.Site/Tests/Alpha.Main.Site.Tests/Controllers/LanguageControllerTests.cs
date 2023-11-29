@@ -4,11 +4,10 @@
     using Alpha.Main.Configurations;
     using Alpha.Main.Site.Controllers;
     using Alpha.Main.Site.Models.Requests;
-    using Alpha.Main.Site.Requests;
+    using AlphaPlus.User.Models;
     using MediatR;
     using NSubstitute;
     using NUnit.Framework;
-    using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
     public class LanguageControllerTests

@@ -3,7 +3,9 @@
     using System;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.SecurityCode.Web;
+    using Alpha.Web.Helpers;
     using Alpha.Web.Models;
+    using AlphaPlus.User.Models;
     using AppResources;
     using Fanex.Cryptography.Aes;
     using Main.Models;
@@ -11,10 +13,8 @@
     using Models.Request.SecurityCode;
     using Params.SecurityCode;
     using Services;
-    using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
     using ViewModels.Security;
-    using Web.Helpers;
     using CustomResult = Alpha.Main.Models.Result;
 
     public class SecurityCodeHandler :
@@ -101,7 +101,7 @@
                 UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.Username),
                 IsEnabledBetLists = message.IsEnabledSecurityCodeInBetLists,
                 IsEnabledStatement = message.IsEnabledSecurityCodeInStatement,
-                IsOfferProtectedMode=message.IsOfferProtectedMode
+                IsOfferProtectedMode = message.IsOfferProtectedMode
             };
         }
 

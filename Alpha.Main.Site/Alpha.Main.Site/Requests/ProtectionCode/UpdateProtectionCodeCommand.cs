@@ -1,9 +1,8 @@
 ﻿namespace Alpha.Main.Site.Requests.ProtectionCode
 {
     using Alpha.Main.Models;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
 
     public class UpdateProtectionCodeCommand : IAsyncRequest<Result>
     {

@@ -7,8 +7,8 @@
     using Alpha.Main.Site.Requests.ProtectionCode;
     using Alpha.Web;
     using Alpha.Web.Filters;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Entities;
 
     public class ProtectionCodeController : BaseController
     {
@@ -21,7 +21,7 @@
             this.userSession = userSession;
         }
 
-        public async Task <ActionResult> Setup(ProtectionCodeQuery query)
+        public async Task<ActionResult> Setup(ProtectionCodeQuery query)
         {
             if (query.IsOfferProtectedMode)
             {

@@ -1,15 +1,15 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System;
+    using System.Web;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.Main.Site.Models.Requests.CustomerProfile;
+    using Alpha.Web.Helpers;
+    using AlphaPlus.User.Models;
     using AppResources;
     using Fanex.Common;
     using MediatR;
-    using Sunplus.Agent.Model.Entities;
-    using System;
-    using System.Web;
     using ViewModels.CustomerProfile;
-    using Web.Helpers;
 
     public class CustomerProfileHandler :
          IRequestHandler<BriefProfileQuery, BriefProfileViewModel>

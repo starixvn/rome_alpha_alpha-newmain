@@ -17,7 +17,7 @@
 
             using (var db = ObjectDbFactory.CreateInstance(criteria.GetSettingKey()))
             {
-                var reader = db.ExecuteReader(criteria.GetSpParams());
+                var reader = db.ExecuteReader(criteria);
                 if (reader.Read())
                 {
                     return reader.GetString(0);

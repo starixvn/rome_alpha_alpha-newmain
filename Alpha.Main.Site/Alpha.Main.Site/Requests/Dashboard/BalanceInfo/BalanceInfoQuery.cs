@@ -4,8 +4,8 @@ namespace Alpha.Main.Site.Requests.Dashboard.BalanceInfo
 {
     using System;
     using Alpha.Web.Models;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Entities;
     using ViewModels.Dashboard.BalanceInfo;
 
     public class BalanceInfoQuery : IRequest<BalanceInfoViewModel>

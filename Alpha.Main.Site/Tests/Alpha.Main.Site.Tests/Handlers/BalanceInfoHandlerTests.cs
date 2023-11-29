@@ -1,6 +1,8 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using System;
     using Alpha.Web.Models;
+    using AlphaPlus.User.Models;
     using Constants;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
@@ -12,8 +14,6 @@
     using Site.Handlers;
     using Site.Requests.Dashboard.BalanceInfo;
     using Site.ViewModels.Dashboard.BalanceInfo;
-    using Sunplus.Agent.Model.Entities;
-    using System;
 
     [TestFixture]
     public class BalanceInfoHandlerTests

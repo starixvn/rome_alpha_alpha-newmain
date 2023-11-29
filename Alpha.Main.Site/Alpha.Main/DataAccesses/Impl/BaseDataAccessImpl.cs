@@ -16,8 +16,8 @@
 
             using (var db = ObjectDbFactory.CreateInstance(criteria.GetSettingKey()))
             {
-                db.ExecuteNonQuery(criteria.GetSpParams());
-                var outputParams = db.GetOuputParams();
+                db.ExecuteNonQuery(criteria);
+                var outputParams = db.GetOutputParams();
 
                 var code = (int)outputParams["errcode"];
 

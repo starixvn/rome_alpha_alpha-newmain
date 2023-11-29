@@ -4,8 +4,8 @@ namespace Alpha.Main.Site.Requests
 {
     using Alpha.Main.Constants;
     using Alpha.Main.Site.Constants;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Entities;
 
     public class ChangeLanguageCommand : IRequest<string>
     {

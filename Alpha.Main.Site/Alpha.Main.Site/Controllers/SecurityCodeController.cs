@@ -6,15 +6,15 @@
     using System.Web.Mvc;
     using System.Web.SessionState;
     using Alpha.Auth.Filters;
+    using Alpha.SecurityCode.Web;
+    using Alpha.Web.Filters;
+    using AlphaPlus.User.Models;
     using AppResources;
     using Configurations;
     using Main.Models;
     using MediatR;
     using Models.Request.SecurityCode;
     using Models.Requests;
-    using SecurityCode.Web;
-    using Sunplus.Agent.Model.Entities;
-    using Web.Filters;
 
     [SessionState(SessionStateBehavior.Default)]
     public class SecurityCodeController : ManualCheckProtectedModeController

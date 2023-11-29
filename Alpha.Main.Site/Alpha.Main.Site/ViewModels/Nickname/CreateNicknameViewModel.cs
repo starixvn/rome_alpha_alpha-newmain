@@ -1,10 +1,10 @@
 ﻿namespace Alpha.Main.Site.ViewModels.Nickname
 {
+    using AlphaPlus.User.Models;
+    using Alpha.Web.Helpers;
     using AppResources;
     using Helpers;
     using Main.Models;
-    using Sunplus.Agent.Model.Entities;
-    using Web.Helpers;
 
     public class CreateNicknameViewModel
     {

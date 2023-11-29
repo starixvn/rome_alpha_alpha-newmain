@@ -6,12 +6,11 @@
     using Alpha.Main.Site.Controllers;
     using Alpha.Main.Site.Models.Request.SecurityCode;
     using Alpha.SecurityCode.Web;
+    using AlphaPlus.User.Models;
     using Configurations;
     using MediatR;
-    using Models.Requests;
     using NSubstitute;
     using NUnit.Framework;
-    using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
     public class SecurityCodeControllerTests
@@ -27,7 +26,6 @@
             userSession = Substitute.For<IUserSession>();
             userSession.IsForcedSecurityCode.Returns(true);
             SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
-
 
             securityCodeController = new SecurityCodeController(mediator, userSession);
             AppSettings.Settings["SiteLabel"] = "MBC";

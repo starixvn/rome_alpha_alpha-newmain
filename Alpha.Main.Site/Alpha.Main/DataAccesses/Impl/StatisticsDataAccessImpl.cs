@@ -24,7 +24,7 @@
 
             using (var db = ObjectDbFactory.CreateInstance(criteria.GetSettingKey()))
             {
-                var reader = db.ExecuteReader(criteria.GetSpParams());
+                var reader = db.ExecuteReader(criteria);
 
                 if (reader.Read())
                 {
@@ -58,7 +58,7 @@
 
             using (var db = ObjectDbFactory.CreateInstance(criteria.GetSettingKey()))
             {
-                var reader = db.ExecuteReader(criteria.GetSpParams());
+                var reader = db.ExecuteReader(criteria);
 
                 while (reader.Read())
                 {
@@ -85,7 +85,7 @@
 
             using (var db = ObjectDbFactory.CreateInstance(criteria.GetSettingKey()))
             {
-                var reader = db.ExecuteReader(criteria.GetSpParams());
+                var reader = db.ExecuteReader(criteria);
 
                 while (reader.Read())
                 {

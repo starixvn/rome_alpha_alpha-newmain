@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.Requests
 {
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Entities;
 
     public class KickoutQuery : IRequest<bool>
     {

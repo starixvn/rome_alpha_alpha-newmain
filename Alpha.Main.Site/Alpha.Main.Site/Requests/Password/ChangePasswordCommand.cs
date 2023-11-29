@@ -1,13 +1,12 @@
 ﻿namespace Alpha.Main.Site.Requests.Password
 {
+    using AlphaPlus.User.Models;
     using Main.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
 
     public class ChangePasswordCommand : IRequest<Result>
     {
-        protected readonly IUserSession userSession;      
+        protected readonly IUserSession userSession;
 
         public ChangePasswordCommand() : this(null)
         {

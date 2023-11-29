@@ -9,9 +9,8 @@
     using Alpha.Web;
     using Alpha.Web.Filters;
     using Alpha.Web.Models;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Entities;
-    using Alpha.Main.Configurations;
 
     public class ApiKeyController : BaseController
     {

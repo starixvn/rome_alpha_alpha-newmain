@@ -25,7 +25,7 @@
     public class User : IUser
     {
         private const string Jackpot = "Jackpot";
-        private const string GameEnableSessionKey = "_GameEnable_";
+        private const string GameEnableSessionKey = "GameEnable_";
         private const string IsAdminCanUpdateSubAccountSessionKey = "IsAdminCanUpdateSubAccount";
         private const string IsEnabledTelegramOTPSessionKey = "IsEnabledTelegramOTP";
         private const string CustIdSessionKey = "CustId";
@@ -35,7 +35,7 @@
         public bool IsEnabledJackpot => GetEnableProductsByGameName(Jackpot).Any();
 
         private static IList<int> GetEnableProductsByGameName(string gameName)
-            => (IList<int>)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + GameEnableSessionKey + gameName];
+            => (IList<int>)HttpContext.Current.Session[GameEnableSessionKey + gameName];
 
         public bool IsAdminCanUpdateSubAccount
             => GetSessionValue<bool>(IsAdminCanUpdateSubAccountSessionKey);
@@ -80,14 +80,14 @@
         {
             var session = HttpContext.Current.Session;
 
-            return session[$"{session.SessionID}_{sessionKey}"];
+            return session[$"{sessionKey}"];
         }
 
         private static void SetSessionValue(string sessionKey, object value)
         {
             var session = HttpContext.Current.Session;
 
-            session[$"{session.SessionID}_{sessionKey}"] = value;
+            session[$"{sessionKey}"] = value;
         }
     }
 }

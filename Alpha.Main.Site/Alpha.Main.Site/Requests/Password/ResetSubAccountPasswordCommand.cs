@@ -1,9 +1,8 @@
 ﻿namespace Alpha.Main.Site.Requests.Password
 {
+    using AlphaPlus.User.Models;
     using Main.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
 
     public class ResetSubAccountPasswordCommand : IRequest<Result>
     {
@@ -40,7 +39,7 @@
         {
             get
             {
-                return userSession.IsSubAcc ? 
+                return userSession.IsSubAcc ?
                     userSession.SubUserName : userSession.UserName;
             }
         }

@@ -1,13 +1,13 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using System.Threading.Tasks;
     using Alpha.Main.Constants;
     using Alpha.Main.Site.Handlers;
     using Alpha.Main.Site.Requests.TelegramChatBot;
+    using AlphaPlus.User.Models;
     using KellermanSoftware.CompareNetObjects;
     using NSubstitute;
     using NUnit.Framework;
-    using Sunplus.Agent.Model.Entities;
-    using System.Threading.Tasks;
     using TelegramBot.Client.Models;
     using TelegramBot.Client.Services;
 
@@ -104,8 +104,8 @@
 
             // Assert
             await settingService.Received().UnlinkAsync(
-                Arg.Is(message.CustId), 
-                Arg.Is(message.SubAccId), 
+                Arg.Is(message.CustId),
+                Arg.Is(message.SubAccId),
                 Arg.Is(message.IP));
         }
 
@@ -118,7 +118,7 @@
                 BotId = 1
             };
             botService.GetBySystem(Arg.Any<string>()).Returns(botEntity);
-            var custBotMessenger = new CustBotMessenger 
+            var custBotMessenger = new CustBotMessenger
             {
                 IsVerifyOTP = true,
                 Enabled = true

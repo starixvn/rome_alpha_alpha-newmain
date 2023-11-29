@@ -1,9 +1,8 @@
 ﻿namespace Alpha.Main.Site.Requests.ProtectionCode
 {
     using Alpha.Main.Site.ViewModels.ProtectionCode;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
 
     public class ProtectionCodeQuery : IAsyncRequest<ProtectionCodeViewModel>
     {

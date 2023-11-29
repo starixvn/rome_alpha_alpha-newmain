@@ -2,9 +2,8 @@
 {
     using Alpha.Main.Configurations;
     using Alpha.Main.Site.ViewModels.Banner;
+    using AlphaPlus.User.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Entities;
 
     public class BannerQuery : IAsyncRequest<BannerViewModel>
     {

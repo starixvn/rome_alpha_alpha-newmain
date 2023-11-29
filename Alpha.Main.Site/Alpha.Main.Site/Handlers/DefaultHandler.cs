@@ -6,6 +6,7 @@
     using Alpha.Main.Configurations;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.SecurityCode.Web;
+    using Alpha.Web.Helpers;
     using Alpha.Web.Models;
     using Fanex.Logging.Extensions.Web;
     using MediatR;
@@ -18,7 +19,6 @@
     using TelegramBot.Client.Services;
     using TelegramBot.Constants;
     using ViewModels;
-    using Web.Helpers;
 
     public class DefaultHandler :
         IAsyncRequestHandler<IndexQuery, IndexViewModel>,
@@ -127,7 +127,6 @@
                 await Fanex.Logging.Logger.Log.ErrorAsync(ex.Message, ex);
                 return null;
             }
-
         }
 
         public bool Handle(KickoutQuery message)
