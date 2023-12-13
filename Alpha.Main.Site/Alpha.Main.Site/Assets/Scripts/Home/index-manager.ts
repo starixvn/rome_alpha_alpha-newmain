@@ -409,11 +409,7 @@ var indexManager = {
     //},
 
     initNewFeatureHighlightPopup: function () {
-        var leftMenu = $("#menu-TRANSFER");
-        if (!leftMenu.length) {
-            leftMenu = $("#sub-menu-TRANSFER");
-        }
-
+        const leftMenu = $("#menu-MEMBERINFO");
         if (!leftMenu.length) {
             return;
         }
@@ -424,7 +420,7 @@ var indexManager = {
         }
 
         // RedmineId should be included to make FeatureName is unique.
-        const featureName = "AutoTransferSchedule_195443";
+        const featureName = "197629/179159_Simplify_Downline_Creation";
         const cookiesName = indexManager.hidePopupCookies + featureName;
         const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
 

@@ -1077,7 +1077,7 @@ html * {
     left: 15px;
     width: 400px;
     z-index: 130;
-    color: $text-color;
+    color: $popup-text-color;
     padding: 20px;
 
     .icon-close {
@@ -1142,6 +1142,10 @@ html * {
 
             b {
                 color: #41A4FF;
+            }
+
+            strong {
+                color: #fff;
             }
         }
 
