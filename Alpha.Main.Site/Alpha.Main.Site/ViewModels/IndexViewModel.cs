@@ -192,7 +192,7 @@
 
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
 
-        public bool HightLightFeaturePermission => true;
+        public bool HightLightFeaturePermission => AppSettings.IsMBCSite;
 
         public string HightLightFeatureUrl
         {
