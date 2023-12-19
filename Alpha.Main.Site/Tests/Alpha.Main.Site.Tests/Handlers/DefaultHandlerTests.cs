@@ -131,7 +131,7 @@
             string argumentUsed = null;
             sessionManager.Add(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
 
-            var expectedViewModel = new IndexViewModel(query, getDefaultUrl, encodeDataFunction, browserHelper, profilePicture, false);
+            var expectedViewModel = new IndexViewModel(query, getDefaultUrl, encodeDataFunction, browserHelper, profilePicture, false, null);
 
             // Act
             var viewModel = await defaultHandler.Handle(query);

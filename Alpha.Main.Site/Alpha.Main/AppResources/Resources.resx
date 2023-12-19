@@ -722,10 +722,10 @@
     <value>Check Out</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>&lt;b&gt;Member domains&lt;/b&gt; now included. Enjoy &lt;b&gt;easy domain retrieval&lt;/b&gt; with Telegram chatbot.</value>
+    <value>Now you can schedule when you want Auto Transfer to be executed.</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Available Domains</value>
+    <value>Discover Auto Transfer Schedule</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Get Started</value>

@@ -168,7 +168,7 @@ window.age = window.age || {
             if (title == '' && iframeTitle != 'Home') {
                 popUp.find(".popup-title").html(iframeTitle);
             }
-        } catch(e) { }
+        } catch (e) { }
     }
 };
 
@@ -467,8 +467,16 @@ var AgeWnd = function () {
 };
 
 window.ageWnd = window.ageWnd || new AgeWnd();
+var bootboxLocale = {
+    "en": "en",
+    "ct": "zh_TW",
+    "cs": "zh_CN",
+    "th": "th"
+};
 
 window.bootboxConfirm = function (message, handleElement, acceptCallback, cancelCallback, popUpOptions) {
+    bootbox.setLocale(bootboxLocale[$("#langKey").val() || "en"]);
+
     bootbox.confirm(message, function (result) {
         if (result && acceptCallback && typeof (acceptCallback) == "function") {
             acceptCallback();
@@ -486,6 +494,8 @@ window.bootboxConfirm = function (message, handleElement, acceptCallback, cancel
 };
 
 window.bootboxAlert = function (message, handleElement, callbackFunction, popUpOptions) {
+    bootbox.setLocale(bootboxLocale[$("#langKey").val() || "en"]);
+
     bootbox.alert(message, function () {
         if (callbackFunction && typeof (callbackFunction) == "function") {
             callbackFunction();
@@ -915,9 +925,11 @@ function clearPopupSubtitle(hasSubTitle) {
 }
 
 function closePopupAndReloadMainFrameAfterUpdateSuccess(timeOut, afterLoadMainFrameFunction) {
-    var popUp = top.ageWnd.popUp[top.ageWnd.popUp.length - 1];
-    var iframes = popUp.find('#popup-iframe');
-    var iframeSrc = iframes && iframes.length && iframes.attr('src');
+    var popUp = top.ageWnd.popUp.length ? top.ageWnd.popUp[top.ageWnd.popUp.length - 1] : null;
+    if (popUp) {
+        var iframes = popUp.find('#popup-iframe');
+        var iframeSrc = iframes && iframes.length && iframes.attr('src');
+    }
 
     function blurElementToScrollIframe() {
         top.main.$('txtUserName').blur();

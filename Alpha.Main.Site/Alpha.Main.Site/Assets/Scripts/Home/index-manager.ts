@@ -409,7 +409,11 @@ var indexManager = {
     //},
 
     initNewFeatureHighlightPopup: function () {
-        const leftMenu = $("#menu-BACKUPDOMAINS");
+        var leftMenu = $("#menu-TRANSFER");
+        if (!leftMenu.length) {
+            leftMenu = $("#sub-menu-TRANSFER");
+        }
+
         if (!leftMenu.length) {
             return;
         }
@@ -420,7 +424,7 @@ var indexManager = {
         }
 
         // RedmineId should be included to make FeatureName is unique.
-        const featureName = "AvailableDomains_194024";
+        const featureName = "AutoTransferSchedule_195443";
         const cookiesName = indexManager.hidePopupCookies + featureName;
         const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
 

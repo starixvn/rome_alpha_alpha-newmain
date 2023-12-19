@@ -659,7 +659,7 @@
     <value>查看</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>現已包括&lt;b&gt;會員網域名&lt;/b&gt;。 可以使用Telegram聊天機器人&lt;b&gt;輕松進行檢索域名&lt;/b&gt;。</value>
+    <value>現在您可以安排執行自動轉帳的日程表。</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>開始吧</value>
@@ -680,7 +680,7 @@
     <value>輸贏細節報告</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>可用域名</value>
+    <value>發現自動轉帳日程表。</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>一分鐘前</value>
