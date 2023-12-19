@@ -6,12 +6,16 @@
             <span aria-hidden="true"></span>
         </button>
         <div class="text">
-            <img src="~/Assets/Images/new_feature@(Model.DarkModeName).svg?v=@AppSettings.JsVersion" alt="@Resources.HighlightPopupNewFeatureTitle">
+            <img src="~/Assets/Images/@(Model.HightLightFeatureImageName).svg?v=@AppSettings.JsVersion" alt="@Resources.HighlightPopupNewFeatureTitle">
             <div>
                 <p>
                     <span>@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</span>
                 </p>
-                <p>@Html.Raw(Resources.HighlightPopupNewFeatureIntro)</p>
+                <p>
+                    @Html.Raw(Resources.HighlightPopupNewFeatureIntro)
+                    <br/>
+                    @Html.Raw(Resources.HighlightPopupNewFeatureIntro2)
+                </p>
             </div>
         </div>
         <div class="action">

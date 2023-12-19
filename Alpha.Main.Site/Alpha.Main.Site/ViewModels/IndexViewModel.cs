@@ -9,6 +9,7 @@
     using Alpha.SecurityCode.Web;
     using Alpha.Web.Helpers;
     using Alpha.Web.Models;
+    using AlphaPlus.User.Models;
     using Configurations;
     using Helpers;
     using Models.Requests;
@@ -192,30 +193,14 @@
 
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
 
-        public bool HightLightFeaturePermission => AppSettings.IsMBCSite;
+        public bool HightLightFeaturePermission =>
+            !IsProtectedMode &&
+            !AppSettings.IsSiteLabel789y &&
+            (!message.IsSubAcc || message.SubPageAccess.Contains(PageAccessType.CreateAccount));
 
-        public string HightLightFeatureUrl
-        {
-            get
-            {
-                var url = string.Empty;
+        public string HightLightFeatureImageName => "new_feature_litemode" + DarkModeName;
 
-                if (message.RoleId == Alpha.Web.Models.UserLevel.Super.Value)
-                {
-                    url = "_Transfer/Super/MasterList.aspx?v=2;adbt={0}";
-                }
-                else if (message.RoleId == Alpha.Web.Models.UserLevel.Master.Value)
-                {
-                    url = "_Transfer/Master/AgentList.aspx?v=2;adbt={0}";
-                }
-                else
-                {
-                    url = "_Transfer/Agent/MemberList.aspx?v=2;adbt={0}";
-                }
-
-                return string.Format(MicroSites.OldMainUrl(url), transferService.IsAllDayBalanceTransfer(CustId));
-            }
-        }
+        public string HightLightFeatureUrl => MicroSites.MemberInfoUrl($"~/CreateAccount?lng={Language}&isDarkMode={IsDarkMode.ToString().ToLowerInvariant()}");
 
         public bool IsEnableAutoTransfer { get; set; }
     }

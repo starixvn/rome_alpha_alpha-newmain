@@ -722,10 +722,10 @@
     <value>Check Out</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Now you can schedule when you want Auto Transfer to be executed.</value>
+    <value>Explore the &lt;b&gt;"Other RNG Casino"&lt;/b&gt;, separate from &lt;b&gt; Live &amp; RNG Casino &lt;/b&gt; group. </value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Discover Auto Transfer Schedule</value>
+    <value>Introducing a &lt;b&gt;New Position Taking Group&lt;/b&gt;!</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Get Started</value>
@@ -759,5 +759,8 @@
   </data>
   <data name="daysAgo" xml:space="preserve">
     <value>day(s) ago</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
+    <value>Enjoy &lt;strong&gt;precise PT settings&lt;/strong&gt; and seamless downline creation in &lt;strong&gt;Lite Mode.&lt;/strong&gt; Don't forget to &lt;strong&gt;review and adjust&lt;/strong&gt; your PT template accordingly.</value>
   </data>
 </root>
