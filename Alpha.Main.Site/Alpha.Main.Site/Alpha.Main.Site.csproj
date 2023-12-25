@@ -1180,6 +1180,12 @@
     <Content Include="Web.dr.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
+    <Content Include="Web.AppSettings.drinternal.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
+    <Content Include="Web.drinternal.config">
+      <DependentUpon>Web.uati1.config</DependentUpon>
+    </Content>
     <TypeScriptCompile Include="Assets\scripts\apikey\apikey-management.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey-result.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey.ts" />
