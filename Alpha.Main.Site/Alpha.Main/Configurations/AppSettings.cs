@@ -284,7 +284,7 @@
         public static bool IsViva88Domain
             => DomainsWithViva88ContactInfo.Any(domain => domain.Equals(HttpContext.Current.Request.Headers["Host"], StringComparison.OrdinalIgnoreCase));
 
-        public static bool IsOfferLiveChat => "1" == Settings["IsOfferLiveChat"];
+        public static string LiveChatLicenseID => Settings["LiveChatLicenseID"];
 
         public static string ReportDomain
         {

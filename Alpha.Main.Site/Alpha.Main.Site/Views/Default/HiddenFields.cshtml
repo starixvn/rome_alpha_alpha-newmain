@@ -27,7 +27,7 @@
 @Html.Hidden("SessionId", Model.SessionID)
 @Html.Hidden("resultRootPath", Model.ResultRootPath)
 @Html.Hidden("transferRootPath", Model.TransferRootPath)
-@if (Model.IsOfferLiveChat)
+@if (!string.IsNullOrEmpty(Model.LiveChatLicenseID))
 {
     @Html.Hidden("UsernameShowOnLiveChat", Model.Username)
 }

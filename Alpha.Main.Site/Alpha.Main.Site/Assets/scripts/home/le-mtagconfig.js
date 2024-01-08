@@ -1,6 +1,4 @@
-﻿window.__lc = window.__lc || {};
-window.__lc.license = 14782380;
-window.__lc.asyncInit = true;
+﻿
 ; (function (n, t, c) {
     function i(n) { return e._h ? e._h.apply(null, n) : e._q.push(n) };
     var e = {

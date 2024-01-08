@@ -71,8 +71,13 @@
         @Html.Hidden("EnabledOTPSuccessMessage", ChatBot.EnabledTelegramOtpNotification)
         @StaticResources.RenderScripts("~/assets/bundles/suggest-telegram-otp")
     }
-    @if (Model.IsOfferLiveChat)
+    @if (!string.IsNullOrEmpty(Model.LiveChatLicenseID))
     {
+        <script type="text/javascript">
+            window.__lc = window.__lc || {};
+            window.__lc.license = @Model.LiveChatLicenseID;
+            window.__lc.asyncInit = true;
+        </script>
         @StaticResources.RenderScripts("~/assets/bundles/home/le-mtagconfig")
         <!-- Start of LiveChat (www.livechatinc.com) code -->
         <noscript>

@@ -166,7 +166,7 @@
                                     <a href="@($"{Model.MainRootPath}ContactUs/Index")" target="main"><span class="icon icon-contactus"></span>@Resources.ContactUs</a>
                                 </li>
                             }
-                            @if (Model.IsOfferLiveChat)
+                            @if (!string.IsNullOrEmpty(Model.LiveChatLicenseID))
                             {
                                 <li>
                                     <a href="javascript:;" id="liveChat" class="white-space-nowrap"><span class="icon icon-Live-chat"></span>@Resources.LiveMessage</a>
