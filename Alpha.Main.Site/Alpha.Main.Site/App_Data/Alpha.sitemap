@@ -68,7 +68,7 @@
       <siteMapNode resourceKey="problemAccountList" appPath="MemberInfoAppPath" url="ProblemAccount"></siteMapNode>
 
       <siteMapNode resourceKey="creditbalance" appPath="MemberInfoAppPath" url="CreditBalance"></siteMapNode>
-      <siteMapNode resourceKey="positionTaking" appPath="OldMainAppPath" url="_MemberInfo/PositionTakingList/Sportbook/SportbookPositionTakingList.aspx"></siteMapNode>
+      <siteMapNode resourceKey="positionTaking" appPath="OldMainAppPath" url="SportsbookPT/Index?productId=1&amp;showpticon=true"></siteMapNode>
 
       <siteMapNode resourceKey="memberCommission" appPath="OldMainAppPath" url="_MemberInfo/Commission/MemberCommissionSportbook.aspx"></siteMapNode>
       <!--<siteMapNode resourceKey="BetChoiceLimit" menuItemType="BetChoiceLimitMenuItem" appPath="OldMainAppPath" url="MemberInformation/BetChoiceLimit/Index"></siteMapNode>-->
