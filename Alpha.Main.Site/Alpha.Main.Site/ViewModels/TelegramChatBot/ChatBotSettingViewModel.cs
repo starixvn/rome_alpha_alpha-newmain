@@ -20,6 +20,7 @@
             NotificationFunctions = chatBotViewModel.CustBotMessenger.Functions.Where(function => function.Type == 2);
             Language = chatBotViewModel.CustBotMessenger.Language;
             CustLevel = query.CustLevel.DisplayName;
+            IsEnableAutoTransfer = chatBotViewModel.IsEnableAutoTransfer;
         }
 
         public ChatBotViewModel ChatBotViewModel { get; }
@@ -36,7 +37,9 @@
 
         public string Language { get; }
 
-        public string CustLevel { get; }      
+        public string CustLevel { get; }
+
+        public bool IsEnableAutoTransfer { get; }
 
         public string HowToUseLink
             => AppSettings.IsSiteLabel789y ?

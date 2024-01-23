@@ -18,6 +18,7 @@
             CustLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
             SubAccId = userSession.SubAccId;
             Language = userSession.Language;
+            Currency = userSession.Currency;
         }
 
         public int CustId { get; }
@@ -27,5 +28,7 @@
         public int SubAccId { get; }
 
         public string Language { get; }
+
+        public string Currency { get; }
     }
 }

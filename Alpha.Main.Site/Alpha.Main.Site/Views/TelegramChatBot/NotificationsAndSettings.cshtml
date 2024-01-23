@@ -1,4 +1,5 @@
-﻿@model Alpha.Main.Site.ViewModels.TelegramChatBot.ChatBotSettingViewModel
+﻿@using Alpha.Main.Constants
+@model Alpha.Main.Site.ViewModels.TelegramChatBot.ChatBotSettingViewModel
 
 <div class="panel chatbot-setting chatbot-notification-setting">
     <div class="panel-heading" role="tab" id="headingNotification">
@@ -22,18 +23,22 @@
                 <tbody>
                     @foreach (var function in Model.NotificationFunctions)
                     {
+                        if (function.FunctionId == ChatBotFunctionIds.AutoTransferAlert && !Model.IsEnableAutoTransfer)
+                        {
+                            continue;
+                        }
+
                         <tr>
                             <td class="text-center bold">@function.FunctionName</td>
                             <td>@Html.Raw(function.Description)</td>
                             <td class="text-center">
                                 <label class="switch">
-                                    <input data-functionId="@function.FunctionId" 
+                                    <input data-functionId="@function.FunctionId"
                                            data-functionName="@function.FunctionName"
                                            data-type="@function.Type"
-                                           type="checkbox" 
+                                           type="checkbox"
                                            class="function"
-                                           @(function.Enabled ? "checked" : string.Empty)
-                                           />
+                                           @(function.Enabled ? "checked" : string.Empty) />
                                     <span class="slider"></span>
                                 </label>
                             </td>

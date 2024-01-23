@@ -244,6 +244,7 @@
     <Compile Include="Configurations\AppSettings.cs" />
     <Compile Include="Constants\ApiKeyScope.cs" />
     <Compile Include="Constants\BannerType.cs" />
+    <Compile Include="Constants\ChatBotFunctionIds.cs" />
     <Compile Include="Constants\ChatBotFunctionType.cs" />
     <Compile Include="Constants\Language.cs" />
     <Compile Include="Constants\SelfdestructionPeriod.cs" />

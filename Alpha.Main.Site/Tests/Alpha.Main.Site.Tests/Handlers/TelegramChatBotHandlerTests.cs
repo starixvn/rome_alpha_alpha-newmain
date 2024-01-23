@@ -2,6 +2,7 @@
 {
     using System.Threading.Tasks;
     using Alpha.Main.Constants;
+    using Alpha.Main.Services;
     using Alpha.Main.Site.Handlers;
     using Alpha.Main.Site.Requests.TelegramChatBot;
     using AlphaPlus.User.Models;
@@ -21,6 +22,7 @@
         private IUserSession userSession;
         private ISettingService settingService;
         private IBotService botService;
+        private TransferService transferService;
         private TelegramChatBotHandler handler;
 
         [SetUp]
@@ -34,8 +36,9 @@
 
             settingService = Substitute.For<ISettingService>();
             botService = Substitute.For<IBotService>();
+            transferService = Substitute.For<TransferService>();
 
-            handler = new TelegramChatBotHandler(settingService, botService);
+            handler = new TelegramChatBotHandler(settingService, botService, transferService);
         }
 
         [Test]
