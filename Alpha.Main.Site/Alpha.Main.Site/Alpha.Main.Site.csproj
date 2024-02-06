@@ -1192,20 +1192,23 @@
     <Content Include="Web.ConnectionStrings.drinternal.config">
       <DependentUpon>Web.ConnectionStrings.config</DependentUpon>
     </Content>
-    <Content Include="Web.AppSettings.local4.config" >
+    <Content Include="Web.AppSettings.local4.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
-    <Content Include="Web.AppSettings.napinternal4.config" >
+    <Content Include="Web.AppSettings.napinternal4.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
-    <Content Include="Web.AppSettings.pro4.config" >
+    <Content Include="Web.AppSettings.pro4.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
-    <Content Include="Web.AppSettings.sit4.config" >
+    <Content Include="Web.AppSettings.sit4.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
-    <Content Include="Web.AppSettings.uat4.config" >
+    <Content Include="Web.AppSettings.uat4.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
+    <Content Include="Web.pro4.config">
+      <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
     <TypeScriptCompile Include="Assets\scripts\apikey\apikey-management.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey-result.ts" />
