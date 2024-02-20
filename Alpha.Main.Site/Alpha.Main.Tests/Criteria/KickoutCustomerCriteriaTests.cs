@@ -3,7 +3,6 @@
     using Alpha.Web.Models;
     using Main.Criteria;
     using NUnit.Framework;
-    using Params;
 
     [TestFixture]
     public class KickoutCustomerCriteriaTests
@@ -12,7 +11,7 @@
         public void GetSettingKey_Always_Return_CorrectSPName()
         {
             // Arrange
-            var criteria = new KickoutCustomerCriteria(GetKickoutCustomerParam());
+            var criteria = GetKickoutCustomerCriteria();
 
             // Act
             var settingKey = criteria.GetSettingKey();
@@ -25,7 +24,7 @@
         public void Constructor_Always_SetCorrectProperties()
         {
             // Arrange
-            var criteria = new KickoutCustomerCriteria(GetKickoutCustomerParam());
+            var criteria = GetKickoutCustomerCriteria();
 
             // Act & Assert
             Assert.True(
@@ -42,8 +41,7 @@
         public void IsValid_CustId_ReturnCorrectValue(int custId, bool expected)
         {
             // Arrange
-            var param = new KickoutCustomerParam(custId, UserLevel.Master, 90, "::1", 0);
-            var criteria = new KickoutCustomerCriteria(param);
+            var criteria = new KickoutCustomerCriteria(custId, UserLevel.Master.Value, 90, "::1", 0);
 
             // Act
             var actual = criteria.IsValid();
@@ -58,8 +56,7 @@
         public void IsValid_ServerId_ReturnCorrectValue(int serverId, bool expected)
         {
             // Arrange
-            var param = new KickoutCustomerParam(1, UserLevel.Master, serverId, "::1", 0);
-            var criteria = new KickoutCustomerCriteria(param);
+            var criteria = new KickoutCustomerCriteria(1, UserLevel.Master.Value, serverId, "::1", 0);
 
             // Act
             var actual = criteria.IsValid();
@@ -68,7 +65,7 @@
             Assert.AreEqual(expected, actual);
         }
 
-        private static KickoutCustomerParam GetKickoutCustomerParam()
-            => new KickoutCustomerParam(1, UserLevel.Master, 90, "::1", 0);
+        private static KickoutCustomerCriteria GetKickoutCustomerCriteria()
+            => new KickoutCustomerCriteria(1, UserLevel.Master.Value, 90, "::1", 0);
     }
 }

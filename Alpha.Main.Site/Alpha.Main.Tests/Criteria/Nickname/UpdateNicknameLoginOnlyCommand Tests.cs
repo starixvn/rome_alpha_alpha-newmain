@@ -1,7 +1,6 @@
 ﻿namespace Alpha.Main.Tests.Criteria.Nickname
 {
     using Alpha.Main.Criteria.Nickname;
-    using Alpha.Main.Params.Nickname;
     using NUnit.Framework;
 
     [TestFixture]
@@ -11,9 +10,7 @@
         public void GetSettingKey_Always_ReturnsValidSettingKey()
         {
             // Arrange
-            var createNicknameParam = new CreateNicknameParam(1, 0, string.Empty, string.Empty, "en", false);
-            var param = new UpdateNicknameLoginOnlyParam(createNicknameParam, false);
-            var command = new UpdateNicknameLoginOnlyCommand(param);
+            var command = new UpdateNicknameLoginOnlyCommand(1, true, "EN", "::1");
             var expectedSettingKey = "Age_CustomerUpdNicknameLoginOnly";
 
             // Act

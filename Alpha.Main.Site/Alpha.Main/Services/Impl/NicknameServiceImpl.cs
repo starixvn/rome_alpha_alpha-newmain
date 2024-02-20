@@ -43,8 +43,8 @@
             if (IsValidNickName(param.Nickname))
             {
                 NicknameNonQueryCommand command = param.IsSubAccount
-                    ? new CreateSubAccountNicknameCommand(param)
-                    : new CreateNicknameCommand(param);
+                    ? new CreateSubAccountNicknameCommand(param.CustId, param.SubAccountId, param.Nickname, param.LanguageKey, param.IP)
+                    : new CreateNicknameCommand(param.CustId, param.Nickname, param.LanguageKey, param.IP);
 
                 return Execute(command);
             }
@@ -55,8 +55,8 @@
         private Result UpdateNicknameLoginOnly(UpdateNicknameLoginOnlyParam param)
         {
             NicknameNonQueryCommand command = param.IsSubAccount
-                ? new UpdateSubAccountNicknameLoginOnlyCommand(param)
-                : new UpdateNicknameLoginOnlyCommand(param);
+                ? new UpdateSubAccountNicknameLoginOnlyCommand(param.CustId, param.SubAccountId, param.NickNameLoginOnly, param.LanguageKey, param.IP)
+                : new UpdateNicknameLoginOnlyCommand(param.CustId, param.NickNameLoginOnly, param.LanguageKey, param.IP);
 
             return Execute(command);
         }

@@ -11,6 +11,6 @@
             ImageContent = imageContent;
         }
 
-        public byte[] ImageContent { get; }
+        public byte[] ImageContent { get; set; }
     }
 }

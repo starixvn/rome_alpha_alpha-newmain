@@ -15,6 +15,12 @@ namespace Alpha.Main.Services.Impl
         }
 
         public void Logout(LogoutParam logoutParam)
-            => dynamicRepository.Execute(new LogoutCommand(logoutParam));
+            => dynamicRepository.Execute(new LogoutCommand(
+                logoutParam.OnlineUserId,
+                string.IsNullOrWhiteSpace(logoutParam.SubUserName) ? logoutParam.CustName : logoutParam.SubUserName,
+                logoutParam.CustRoleId,
+                logoutParam.ServerId,
+                logoutParam.NickName,
+                logoutParam.Reason));
     }
 }

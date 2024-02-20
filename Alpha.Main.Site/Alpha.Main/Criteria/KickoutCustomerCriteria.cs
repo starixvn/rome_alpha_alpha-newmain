@@ -1,17 +1,21 @@
 ﻿namespace Alpha.Main.Criteria
 {
     using Fanex.Data.Repository;
-    using Params;
 
     public class KickoutCustomerCriteria : NonQueryCommand
     {
-        public KickoutCustomerCriteria(KickoutCustomerParam param)
+        public KickoutCustomerCriteria(
+            int custId,
+            byte roleId,
+            int serverId,
+            string ip,
+            int subAccId)
         {
-            CustId = param.CustId;
-            RoleId = param.CustLevel.Value;
-            ServerId = param.ServerId;
-            IP = param.IP;
-            SubAccId = param.SubAccountId;
+            CustId = custId;
+            RoleId = roleId;
+            ServerId = serverId;
+            IP = ip;
+            SubAccId = subAccId;
         }
 
         public int CustId { get; }

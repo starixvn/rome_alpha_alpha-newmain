@@ -35,16 +35,43 @@
   </Function>
   <Function Name="Statistics">
     <Setting Key="Age_CustomerSelStatisticsInfo_Ag" SpName="Age_CustomerSelStatisticsInfo_Ag" DbName="DBBOF.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+      <Mapping DataField="total_outstanding" ObjectProperty="TotalOutstanding" />
+      <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
+      <Mapping DataField="total_memberActive" ObjectProperty="TotalMemberActive" />
+      <Mapping DataField="total_memberClosed" ObjectProperty="TotalMemberClosed" />
+      <Mapping DataField="total_memberSuspended" ObjectProperty="TotalMemberSuspended" />
     </Setting>
     <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg" DbName="DBBOF.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+      <Mapping DataField="total_outstanding" ObjectProperty="TotalOutstanding" />
+      <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
+      <Mapping DataField="total_memberActive" ObjectProperty="TotalMemberActive" />
+      <Mapping DataField="total_memberClosed" ObjectProperty="TotalMemberClosed" />
+      <Mapping DataField="total_memberSuspended" ObjectProperty="TotalMemberSuspended" />
+      <Mapping DataField="total_agentActive" ObjectProperty="TotalAgentActive" />
+      <Mapping DataField="total_agentClosed" ObjectProperty="TotalAgentClosed" />
+      <Mapping DataField="total_agentSuspended" ObjectProperty="TotalAgentSuspended" />
     </Setting>
     <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg" DbName="DBBOF.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+      <Mapping DataField="total_outstanding" ObjectProperty="TotalOutstanding" />
+      <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
+      <Mapping DataField="total_memberActive" ObjectProperty="TotalMemberActive" />
+      <Mapping DataField="total_memberClosed" ObjectProperty="TotalMemberClosed" />
+      <Mapping DataField="total_memberSuspended" ObjectProperty="TotalMemberSuspended" />
+      <Mapping DataField="total_agentActive" ObjectProperty="TotalAgentActive" />
+      <Mapping DataField="total_agentClosed" ObjectProperty="TotalAgentClosed" />
+      <Mapping DataField="total_agentSuspended" ObjectProperty="TotalAgentSuspended" />
+      <Mapping DataField="total_masterActive" ObjectProperty="TotalMasterActive" />
+      <Mapping DataField="total_masterClosed" ObjectProperty="TotalMasterClosed" />
+      <Mapping DataField="total_masterSuspended" ObjectProperty="TotalMasterSuspended" />
     </Setting>
     <Setting Key="Age_CustomerSelTopWinningMembers_Ag" SpName="Age_CustomerSelTopWinningMembers_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+      <Mapping DataField="winlost" ObjectProperty="WinLoss" />
     </Setting>
     <Setting Key="Age_CustomerSelTopWinningMembers_MAg" SpName="Age_CustomerSelTopWinningMembers_MAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+      <Mapping DataField="winlost" ObjectProperty="WinLoss" />
     </Setting>
     <Setting Key="Age_CustomerSelTopWinningMembers_SAg" SpName="Age_CustomerSelTopWinningMembers_SAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+      <Mapping DataField="winlost" ObjectProperty="WinLoss" />
     </Setting>
     <Setting Key="Age_CustomerSelTopTurnoverMembers_SAg" SpName="Age_CustomerSelTopTurnoverMembers_SAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
     </Setting>

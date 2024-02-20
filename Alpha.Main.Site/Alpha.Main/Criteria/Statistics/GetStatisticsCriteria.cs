@@ -1,8 +1,9 @@
 ﻿namespace Alpha.Main.Criteria.Statistics
 {
-    using Alpha.Web.Models;
-    using Fanex.Data.Repository;
     using System.Collections.Generic;
+    using Alpha.Web.Models;
+    using Fanex.Data;
+    using Fanex.Data.Repository;
 
     public class GetStatisticsCriteria : CriteriaBase
     {
@@ -13,17 +14,18 @@
             [UserLevel.Super] = "Age_CustomerSelStatisticsInfo_SAg"
         };
 
-        private readonly string settingKey;
-
         public GetStatisticsCriteria(UserLevel userLevel, int custId)
         {
-            settingKey = SettingKeys[userLevel];
+            UserLevel = userLevel;
             CustId = custId;
         }
 
+        [SpParam(Ignored = true)]
+        public UserLevel UserLevel { get; }
+
         public int CustId { get; }
 
-        public override string GetSettingKey() => settingKey;
+        public override string GetSettingKey() => SettingKeys[UserLevel];
 
         public override bool IsValid() => CustId > 0;
     }

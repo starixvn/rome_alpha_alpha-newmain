@@ -2,7 +2,7 @@
 {
     using Fanex.Data.Repository;
 
-    public class ResetMainAccountPasswordCriteria : CriteriaBase
+    public class ResetMainAccountPasswordCriteria : NonQueryCommand
     {
         public int CustId { get; set; }
 

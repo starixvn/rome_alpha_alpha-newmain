@@ -1,13 +1,11 @@
 ﻿namespace Alpha.Main.Criteria.Nickname
 {
-    using Params.Nickname;
-
     public class CreateNicknameCommand : NicknameNonQueryCommand
     {
-        public CreateNicknameCommand(CreateNicknameParam param)
-            : base(param.CustId, param.IP, param.LanguageKey)
+        public CreateNicknameCommand(int custId, string nickname, string language, string ip)
+            : base(custId, ip, language)
         {
-            Nickname = param.Nickname;
+            Nickname = nickname;
         }
 
         public string Nickname { get; }

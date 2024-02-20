@@ -1,17 +1,21 @@
 ﻿namespace Alpha.Main.Criteria.SecurityCode
 {
-    using Alpha.Main.Params.SecurityCode;
-
     public class UpdateSecurityCodeFunctionCriteria : UpdateSecurityCodeCriteria
     {
-        public UpdateSecurityCodeFunctionCriteria(UpdateSecurityCodeFunctionParam param)
+        public UpdateSecurityCodeFunctionCriteria(
+            bool isOn,
+            string function,
+            int custId,
+            int subAccId,
+            string langKey,
+            string ip)
         {
-            IsOn = param.IsOn;
-            Function = param.Function;
-            CustId = param.CustId;
-            SubAccId = param.SubAccId;
-            Language = param.LangKey;
-            IP = param.IP;
+            IsOn = isOn;
+            Function = function;
+            CustId = custId;
+            SubAccId = subAccId;
+            Language = langKey;
+            IP = ip;
         }
 
         public bool IsOn { get; }

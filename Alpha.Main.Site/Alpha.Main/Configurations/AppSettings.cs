@@ -136,6 +136,8 @@
 
         public static string StoreProcedurePath => Settings["StoredProcedurePath"];
 
+        public static string FanexDataServiceApi => Settings["FanexDataServiceApi"];
+
         public static string MessageSuper => Settings["Message:Super"];
 
         public static string MessageMaster => Settings["Message:Master"];

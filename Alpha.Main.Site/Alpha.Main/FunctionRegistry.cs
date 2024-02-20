@@ -13,6 +13,7 @@ namespace Alpha.Main
     using Alpha.Web.Models;
     using AlphaPlus.User.Models;
     using Configurations;
+    using Fanex.Data.Repository;
     using Models;
     using Models.Menus;
     using static AlphaPlus.User.Models.UserPermission;
@@ -21,7 +22,7 @@ namespace Alpha.Main
 
     public static class FunctionRegistry
     {
-        private static TransferService transferService = new TransferServiceImpl();
+        private static TransferService transferService = new TransferServiceImpl(new DynamicRepository());
 
         [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]
         [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "Reviewed!")]

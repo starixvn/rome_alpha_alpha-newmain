@@ -6,7 +6,6 @@
     using System.Threading.Tasks;
     using AppResources;
     using Criteria.Password;
-    using DataAccesses;
     using Fanex.Cryptography.Aes;
     using Fanex.Data.Repository;
     using Models;
@@ -26,7 +25,6 @@
         private static readonly Regex NoWhiteSpace = new Regex(@"^\S*$");
 
         private readonly Encryptor encryptor;
-        private readonly PasswordDataAccess passwordDataAccess;
         private readonly IAesService aes;
         private readonly KickoutCustomerService kickoutCustomerService;
         private readonly IDynamicRepository dynamicRepository;
@@ -35,7 +33,6 @@
 
         public PasswordServiceImpl(
             Encryptor encryptor,
-            PasswordDataAccess passwordDataAccess,
             IAesService aes,
             KickoutCustomerService kickoutCustomerService,
             IDynamicRepository dynamicRepository,
@@ -43,7 +40,6 @@
             TelegramBotService telegramBotService)
         {
             this.encryptor = encryptor;
-            this.passwordDataAccess = passwordDataAccess;
             this.aes = aes;
             this.kickoutCustomerService = kickoutCustomerService;
             this.dynamicRepository = dynamicRepository;
@@ -87,7 +83,8 @@
                 UserId = param.ActorId
             };
 
-            var updateResult = passwordDataAccess.UpdatePassword(criteria);
+            dynamicRepository.Execute(criteria);
+            var updateResult = new Result { Code = criteria.ErrCode, Message = criteria.ErrMsg };
 
             if (updateResult.IsSuccessful)
             {
@@ -151,7 +148,8 @@
                 SubAccId = param.SubAccountId
             };
 
-            var updateResult = passwordDataAccess.UpdatePassword(criteria);
+            dynamicRepository.Execute(criteria);
+            var updateResult = new Result { Code = criteria.ErrCode, Message = criteria.ErrMsg };
 
             if (updateResult.IsSuccessful)
             {
@@ -213,7 +211,8 @@
                 UserId = param.ActorId
             };
 
-            var updateResult = passwordDataAccess.UpdatePassword(criteria);
+            dynamicRepository.Execute(criteria);
+            var updateResult = new Result { Code = criteria.ErrCode, Message = criteria.ErrMsg };
 
             if (updateResult.IsSuccessful)
             {
@@ -297,7 +296,8 @@
                 UserId = param.ActorId
             };
 
-            var updateResult = passwordDataAccess.UpdatePassword(criteria);
+            dynamicRepository.Execute(criteria);
+            var updateResult = new Result { Code = criteria.ErrCode, Message = criteria.ErrMsg };
 
             if (updateResult.IsSuccessful)
             {

@@ -6,7 +6,7 @@
     using Alpha.Main.Services;
     using AppResources;
     using Criteria.SecurityCode;
-    using DataAccesses;
+    using Fanex.Data.Repository;
     using Models;
     using Params.SecurityCode;
     using Sunplus.Agent.Utilities;
@@ -24,18 +24,18 @@
         private const int AccountClosed = 200;
         private const int AccountClosedStatus = 2;
         private const int WrongSecurityCode = 9009;
-        private readonly SecurityCodeDataAccess securityCodeDataAccess;
+        private readonly IDynamicRepository dynamicRepository;
         private readonly Encryptor encryptor;
         private readonly INetThrottlingService netThrottlingService;
         private readonly TelegramBotService telegramBotService;
 
         public SecurityCodeServiceImpl(
-            SecurityCodeDataAccess securityCodeDataAccess,
+            IDynamicRepository dynamicRepository,
             Encryptor encryptor,
             INetThrottlingService netThrottlingService,
             TelegramBotService telegramBotService)
         {
-            this.securityCodeDataAccess = securityCodeDataAccess;
+            this.dynamicRepository = dynamicRepository;
             this.encryptor = encryptor;
             this.netThrottlingService = netThrottlingService;
             this.telegramBotService = telegramBotService;
@@ -54,18 +54,19 @@
                 return validateResult;
             }
 
-            var result = securityCodeDataAccess.UpdateSecurityCode(
-                 new UpdateMainAccountSecurityCodeCriteria
-                 {
-                     CustId = param.CustId,
-                     SubaccId = param.SubAccId,
-                     UserId = param.UserId,
-                     HashedSecurityCode = HashSecurityCode(param.CustId, param.NewSecurityCode, param.IsResetMember),
-                     IP = param.IP,
-                     Language = param.Language
-                 });
+            var command = new UpdateMainAccountSecurityCodeCriteria
+            {
+                CustId = param.CustId,
+                SubaccId = param.SubAccId,
+                UserId = param.UserId,
+                HashedSecurityCode = HashSecurityCode(param.CustId, param.NewSecurityCode, param.IsResetMember),
+                IP = param.IP,
+                Language = param.Language
+            };
+            dynamicRepository.Execute(command);
+            var result = new Result { Code = command.ErrCode, Message = command.ErrMsg };
 
-            if (result != null && result.IsSuccessful && !param.IsMemberLevel)
+            if (result.IsSuccessful && !param.IsMemberLevel)
             {
                 Task.Run(() => telegramBotService.NotifyChangeSecurityCode(param.CustId, 0));
             }
@@ -95,9 +96,10 @@
                 Language = param.Language
             };
 
-            var result = securityCodeDataAccess.UpdateSecurityCode(command);
+            dynamicRepository.Execute(command);
+            var result = new Result { Code = command.ErrCode, Message = command.ErrMsg };
 
-            if (result != null && result.IsSuccessful && !param.IsMemberLevel)
+            if (result.IsSuccessful && !param.IsMemberLevel)
             {
                 Task.Run(() => telegramBotService.NotifyChangeSecurityCode(param.CustId, param.SubAccId));
             }
@@ -133,9 +135,10 @@
                 Language = param.Language
             };
 
-            var result = securityCodeDataAccess.UpdateSecurityCode(command);
+            dynamicRepository.Execute(command);
+            var result = new Result { Code = command.ErrCode, Message = command.ErrMsg };
 
-            if (result != null && result.IsSuccessful && !param.IsMemberLevel)
+            if (result.IsSuccessful && !param.IsMemberLevel)
             {
                 netThrottlingService.Throttle();
 
@@ -280,21 +283,18 @@
 
         private string GetSecurityCode(int custId, int subAccountId)
         {
+            CriteriaBase criteria;
+
             if (subAccountId.Equals(0))
             {
-                return securityCodeDataAccess.GetSecurityCode(
-                    new GetMainAccountSecurityCodeCriteria
-                    {
-                        CustId = custId
-                    });
+                criteria = new GetMainAccountSecurityCodeCriteria { CustId = custId };
+            }
+            else
+            {
+                criteria = new GetSubAccountSecurityCodeCriteria { CustId = custId, SubaccId = subAccountId };
             }
 
-            return securityCodeDataAccess.GetSecurityCode(
-                    new GetSubAccountSecurityCodeCriteria
-                    {
-                        CustId = custId,
-                        SubaccId = subAccountId
-                    });
+            return dynamicRepository.Get<string>(criteria);
         }
 
         private Result UpdateSecurityCodeCounter(
@@ -304,24 +304,32 @@
             int subAccountId,
             string ip)
         {
-            var result = subAccountId.Equals(0)
-                ? securityCodeDataAccess.UpdateSecurityCode(
-                    new UpdateMainAccountSecurityCodeCounterCriteria
-                    {
-                        CustId = custId,
-                        CheckedSecurityCode = isCorrectSecurityCode,
-                        IP = ip,
-                        Language = language
-                    })
-                : securityCodeDataAccess.UpdateSecurityCode(
-                    new UpdateSubAccountSecurityCodeCounterCriteria
-                    {
-                        CustId = custId,
-                        SubaccId = subAccountId,
-                        CheckedSecurityCode = isCorrectSecurityCode,
-                        IP = ip,
-                        Language = language
-                    });
+            UpdateSecurityCodeCriteria command;
+
+            if (subAccountId.Equals(0))
+            {
+                command = new UpdateMainAccountSecurityCodeCounterCriteria
+                {
+                    CustId = custId,
+                    CheckedSecurityCode = isCorrectSecurityCode,
+                    IP = ip,
+                    Language = language
+                };
+            }
+            else
+            {
+                command = new UpdateSubAccountSecurityCodeCounterCriteria
+                {
+                    CustId = custId,
+                    SubaccId = subAccountId,
+                    CheckedSecurityCode = isCorrectSecurityCode,
+                    IP = ip,
+                    Language = language
+                };
+            }
+
+            dynamicRepository.Execute(command);
+            var result = new Result { Code = command.ErrCode, Message = command.ErrMsg };
 
             if (result.Code == AccountClosed)
             {
@@ -337,6 +345,12 @@
         }
 
         public Result UpdateSecurityCodeFunction(UpdateSecurityCodeFunctionParam param)
-            => securityCodeDataAccess.UpdateSecurityCode(new UpdateSecurityCodeFunctionCriteria(param));
+        {
+            var command = new UpdateSecurityCodeFunctionCriteria(
+                param.IsOn, param.Function, param.CustId, param.SubAccId, param.LangKey, param.IP);
+            dynamicRepository.Execute(command);
+
+            return new Result { Code = command.ErrCode, Message = command.ErrMsg };
+        }
     }
 }

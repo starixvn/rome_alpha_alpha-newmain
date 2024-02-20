@@ -1,13 +1,15 @@
 ﻿namespace Alpha.Main.Criteria.Nickname
 {
-    using Params.Nickname;
-
     public class UpdateSubAccountNicknameLoginOnlyCommand : UpdateNicknameLoginOnlyCommand
     {
-        public UpdateSubAccountNicknameLoginOnlyCommand(UpdateNicknameLoginOnlyParam param)
-            : base(param)
+        public UpdateSubAccountNicknameLoginOnlyCommand(
+            int custId,
+            int subAccId,
+            bool nickNameLoginOnly,
+            string language,
+            string ip) : base(custId, nickNameLoginOnly, language, ip)
         {
-            SubAccId = param.SubAccountId;
+            SubAccId = subAccId;
         }
 
         public int SubAccId { get; }

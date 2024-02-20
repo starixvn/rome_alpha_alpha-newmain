@@ -1,20 +1,24 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
     using System;
-    using Alpha.Main.Criteria.Transfer;
-    using Alpha.Main.DataAccesses;
-    using Alpha.Main.DataAccesses.Impl;
     using System.Linq;
+    using Alpha.Main.Criteria.Transfer;
+    using Alpha.Main.Models;
+    using Fanex.Data.Repository;
 
     public class TransferServiceImpl : TransferService
     {
-        private readonly TransferDataAccess transferDataAccess;
+        private readonly IDynamicRepository dynamicRepository;
 
-        public TransferServiceImpl(TransferDataAccess transferDataAccess = null)
-            => this.transferDataAccess = transferDataAccess ?? new TransferDataAccessImpl();
+        public TransferServiceImpl(IDynamicRepository dynamicRepository)
+            => this.dynamicRepository = dynamicRepository;
 
         public bool IsAllDayBalanceTransfer(int custId)
-            => transferDataAccess.IsAllDayBalanceTransfer(new GetIsAllDayBalTransferCriteria(custId));
+        {
+            var transferModel = dynamicRepository.Get<TransferModel>(new GetIsAllDayBalTransferCriteria(custId));
+
+            return transferModel != null && transferModel.IsAllDayBalTransfer;
+        }
 
         public bool IsEnableAutoTransfer(string currency, int custId, string offerCurrencies)
         {

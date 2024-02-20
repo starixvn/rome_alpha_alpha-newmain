@@ -5,10 +5,13 @@
   </Function>
   <Function Name="Statistics">
     <Setting Key="Age_CustomerSelTopWinningMembers_Ag" SpName="Age_CustomerSelTopWinningMembers_Ag" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+      <Mapping DataField="winlost" ObjectProperty="WinLoss" />
     </Setting>
     <Setting Key="Age_CustomerSelTopWinningMembers_MAg" SpName="Age_CustomerSelTopWinningMembers_MAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+      <Mapping DataField="winlost" ObjectProperty="WinLoss" />
     </Setting>
     <Setting Key="Age_CustomerSelTopWinningMembers_SAg" SpName="Age_CustomerSelTopWinningMembers_SAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+      <Mapping DataField="winlost" ObjectProperty="WinLoss" />
     </Setting>
     <Setting Key="Age_CustomerSelTopTurnoverMembers_SAg" SpName="Age_CustomerSelTopTurnoverMembers_SAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
     </Setting>

@@ -28,12 +28,10 @@
 
             var statistics = statisticsService.GetStatistics(message.CustId, message.UserLevel);
 
-            var viewModel = new StatisticsViewModel(
+            return new StatisticsViewModel(
                 statistics,
                 message.UserLevel,
                 message.UserSession.SubPageAccess.ViewReports);
-
-            return viewModel;
         }
 
         public TopWinningMembersViewModel Handle(TopWinningMembersQuery message)
@@ -45,9 +43,7 @@
 
             var members = statisticsService.GetTopWinningMembers(message.CustId, message.UserLevel);
 
-            var viewModel = new TopWinningMembersViewModel(members);
-
-            return viewModel;
+            return new TopWinningMembersViewModel(members);
         }
 
         public TopTurnoverMembersViewModel Handle(TopTurnoverMembersQuery message)
@@ -59,9 +55,7 @@
 
             var members = statisticsService.GetTopTurnoverMembers(message.CustId, message.UserLevel);
 
-            var viewModel = new TopTurnoverMembersViewModel(members);
-
-            return viewModel;
+            return new TopTurnoverMembersViewModel(members);
         }
 
         public NewMembersViewModel Handle(NewMembersQuery message)
@@ -73,9 +67,7 @@
 
             var members = statisticsService.GetNewMembers(message.CustId);
 
-            var viewModel = new NewMembersViewModel(members);
-
-            return viewModel;
+            return new NewMembersViewModel(members);
         }
     }
 }
