@@ -95,6 +95,11 @@
 
         private string GetProductOrSportType(int productId, int sportTypeId)
         {
+            if (productId == 1)
+            {
+                return cacheRefService.GetProductName(productId) + " " + cacheRefService.GetSportName(sportTypeId);
+            }
+
             if (sportTypeId > 0)
             {
                 return cacheRefService.GetSportName(sportTypeId);
