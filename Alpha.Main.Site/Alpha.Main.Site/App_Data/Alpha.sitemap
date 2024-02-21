@@ -15,9 +15,9 @@
       <siteMapNode menuItemType="NewReportsMenuItem" resourceKey="agentwinloss" appPath="ReportsAppPath" url="/enteredresult/agentnew" roles="Master" useDomainConfig="Report:Domain"></siteMapNode>
       <siteMapNode menuItemType="NewReportsMenuItem" resourceKey="masterwinloss" appPath="ReportsAppPath" url="/enteredresult/masternew" roles="Super" useDomainConfig="Report:Domain"></siteMapNode>
 
-      <siteMapNode resourceKey="memberwinlossdetail" appPath="ReportsAppPath" url="/winlossdetail/member" roles="Agent" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
-      <siteMapNode resourceKey="agentwinlostdetail" appPath="ReportsAppPath" url="/winlossdetail/agent" roles="Master" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
-      <siteMapNode resourceKey="masterwinlostdetail" appPath="ReportsAppPath" url="/winlossdetail/master" roles="Super" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="memberwinlossdetail" appPath="ReportsAppPath" url="/winlossdetail/membernew" roles="Agent" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="agentwinlostdetail" appPath="ReportsAppPath" url="/winlossdetail/agentnew" roles="Master" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="masterwinlostdetail" appPath="ReportsAppPath" url="/winlossdetail/masternew" roles="Super" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
 
       <siteMapNode resourceKey="matchWinLostDetail" appPath="ReportsAppPath" url="/matchwinlossdetail/index" useDomainConfig="Report:Domain"></siteMapNode>
 
@@ -77,7 +77,7 @@
     </siteMapNode>
     <!--/MemberInfo-->
     <siteMapNode resourceKey="BetLists" appPath="OldMainAppPath" menuItemType="BetListsMenuItem" functionType="[L]">
-      <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="/LastBets/Index" roles="Agent" useDomainConfig="Betlist:Domain" isNew="true"></siteMapNode>
+      <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="/MonitoringBets/Index" roles="Agent" useDomainConfig="Betlist:Domain" isNew="true"></siteMapNode>
       <siteMapNode resourceKey="searchTickets" appPath="BetListsAppPath" url="/SearchTickets/Index" useDomainConfig="Betlist:Domain" isNew="true"></siteMapNode>
       <siteMapNode resourceKey="cancelledBets" appPath="BetListsAppPath" url="/CancelledBet/Index" useDomainConfig="Betlist:Domain"></siteMapNode>
 
