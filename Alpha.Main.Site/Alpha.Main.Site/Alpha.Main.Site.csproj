@@ -1210,6 +1210,15 @@
     <Content Include="Web.pro4.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
+    <Content Include="Web.ConnectionStrings.napinternal4.config">
+      <DependentUpon>Web.ConnectionStrings.config</DependentUpon>
+    </Content>
+    <Content Include="Web.ConnectionStrings.pro4.config">
+      <DependentUpon>Web.ConnectionStrings.config</DependentUpon>
+    </Content>
+    <Content Include="Web.napinternal4.config">
+      <DependentUpon>Web.uati1.config</DependentUpon>
+    </Content>
     <TypeScriptCompile Include="Assets\scripts\apikey\apikey-management.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey-result.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey.ts" />
