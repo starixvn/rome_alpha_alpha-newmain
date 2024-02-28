@@ -702,6 +702,22 @@
     <Content Include="Assets\Images\arrowbackupdomain.svg" />
     <Content Include="Assets\Images\new_feature_litemode-dark.svg" />
     <Content Include="Assets\Images\new_feature_litemode.svg" />
+    <Content Include="Assets\Images\MenuBarBanner\777\280x70_msa_en-US.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\777\280x70_msa_th-TH.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\777\280x70_msa_zh-CN.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\777\280x70_msa_zh-TW.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\777\600x140_msa_en-US.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\777\600x140_msa_th-TH.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\777\600x140_msa_zh-CN.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\777\600x140_msa_zh-TW.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBC\280x70_msa_en-US.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBC\280x70_msa_th-TH.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBC\280x70_msa_zh-CN_.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBC\280x70_msa_zh-TW.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBC\600x140_msa_en-US.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBC\600x140_msa_th-TH.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBC\600x140_msa_zh-CN.jpg" />
+    <Content Include="Assets\Images\MenuBarBanner\IBC\600x140_msa_zh-TW.jpg" />
     <Content Include="Assets\Images\MenuBarBanner\MBC\280x70_msa_en-US.jpg" />
     <Content Include="Assets\Images\MenuBarBanner\MBC\280x70_msa_th-TH.jpg" />
     <Content Include="Assets\Images\MenuBarBanner\MBC\280x70_msa_zh-CN.jpg" />
@@ -714,14 +730,6 @@
     <Content Include="Assets\Images\icon-chatbot-2.svg" />
     <Content Include="Assets\Images\icon-chatbot-3.svg" />
     <Content Include="Assets\Images\icon-chatbot-4.svg" />
-    <Content Include="Assets\Images\MenuBarBanner\Nova88\280x70_msa_en-US.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\Nova88\280x70_msa_th-TH.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\Nova88\280x70_msa_zh-CN.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\Nova88\280x70_msa_zh-TW.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\Nova88\600x140_msa_en-US.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\Nova88\600x140_msa_th-TH.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\Nova88\600x140_msa_zh-CN.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\Nova88\600x140_msa_zh-TW.jpg" />
     <Content Include="Assets\Images\icon-telegram.png" />
     <Content Include="Assets\bundles\telegramchatbot\chatbot-dark.css" />
     <Content Include="Assets\bundles\telegramchatbot\chatbot-dark.min.css">
@@ -777,30 +785,6 @@
     <Content Include="Assets\Images\MenuBarBanner\789Y\600x140_msa_vi-VN.jpg" />
     <Content Include="Assets\Images\MenuBarBanner\789Y\600x140_msa_zh-CN.jpg" />
     <Content Include="Assets\Images\MenuBarBanner\789Y\600x140_msa_zh-TW.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBCBET\280x70_msa_en-US.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBCBET\280x70_msa_th-TH.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBCBET\280x70_msa_zh-CN.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBCBET\280x70_msa_zh-TW.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBCBET\600x140_msa_en-US.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBCBET\600x140_msa_th-TH.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBCBET\600x140_msa_zh-CN.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBCBET\600x140_msa_zh-TW.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBCIndo\280x70_msa_en-US.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBCIndo\280x70_msa_th-TH.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBCIndo\280x70_msa_zh-CN_.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBCIndo\280x70_msa_zh-TW.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBCIndo\600x140_msa_en-US.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBCIndo\600x140_msa_th-TH.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBCIndo\600x140_msa_zh-CN.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBCIndo\600x140_msa_zh-TW.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBC\280x70_msa_en-US.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBC\280x70_msa_th-TH.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBC\280x70_msa_zh-CN_.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBC\280x70_msa_zh-TW.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBC\600x140_msa_en-US.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBC\600x140_msa_th-TH.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBC\600x140_msa_zh-CN.jpg" />
-    <Content Include="Assets\Images\MenuBarBanner\IBC\600x140_msa_zh-TW.jpg" />
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile-dark_zh-CN.jpg" />
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop-dark_zh-CN.jpg" />
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile_zh-CN.jpg" />
@@ -1207,6 +1191,33 @@
     </Content>
     <Content Include="Web.ConnectionStrings.drinternal.config">
       <DependentUpon>Web.ConnectionStrings.config</DependentUpon>
+    </Content>
+    <Content Include="Web.AppSettings.local4.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
+    <Content Include="Web.AppSettings.napinternal4.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
+    <Content Include="Web.AppSettings.pro4.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
+    <Content Include="Web.AppSettings.sit4.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
+    <Content Include="Web.AppSettings.uat4.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
+    <Content Include="Web.pro4.config">
+      <DependentUpon>Web.uati1.config</DependentUpon>
+    </Content>
+    <Content Include="Web.ConnectionStrings.napinternal4.config">
+      <DependentUpon>Web.ConnectionStrings.config</DependentUpon>
+    </Content>
+    <Content Include="Web.ConnectionStrings.pro4.config">
+      <DependentUpon>Web.ConnectionStrings.config</DependentUpon>
+    </Content>
+    <Content Include="Web.napinternal4.config">
+      <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
     <TypeScriptCompile Include="Assets\scripts\apikey\apikey-management.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey-result.ts" />

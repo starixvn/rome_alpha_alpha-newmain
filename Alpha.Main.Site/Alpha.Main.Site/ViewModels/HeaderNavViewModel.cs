@@ -74,7 +74,7 @@
 
         public bool ShowCreateMemberByQRCode { get; }
 
-        public bool IsOfferLiveChat { get; } = AppSettings.IsOfferLiveChat;
+        public string LiveChatLicenseID { get; } = AppSettings.LiveChatLicenseID;
 
         public bool IsDarkMode { get; }
 

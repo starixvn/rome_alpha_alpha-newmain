@@ -165,7 +165,7 @@
             return HttpUtility.HtmlEncode(message.NickName);
         }
 
-        public bool IsOfferLiveChat { get; } = AppSettings.IsOfferLiveChat;
+        public string LiveChatLicenseID { get; } = AppSettings.LiveChatLicenseID;
 
         public int UMAnnouncementPopupClientIntervalInMinutes { get; } = AppSettings.UMAnnouncementPopupClientIntervalInMinutes;
 
