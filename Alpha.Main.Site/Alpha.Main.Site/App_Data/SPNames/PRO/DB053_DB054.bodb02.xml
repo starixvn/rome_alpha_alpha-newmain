@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Functions>
   <Function Name="Report">
-    <Setting Key="Age_CustomerSelBalanceInfo_Ag" SpName="Age_CustomerSelBalanceInfo_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelBalanceInfo_Ag" SpName="Age_CustomerSelBalanceInfo_Ag" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
       <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
       <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
@@ -11,7 +11,7 @@
       <Mapping DataField="givenCredit" ObjectProperty="GivenCredit" />
       <Mapping DataField="memberCredit" ObjectProperty="MemberCredit" />
     </Setting>
-    <Setting Key="Age_CustomerSelBalanceInfo_MAg" SpName="Age_CustomerSelBalanceInfo_MAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelBalanceInfo_MAg" SpName="Age_CustomerSelBalanceInfo_MAg" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
       <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
       <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
@@ -21,7 +21,7 @@
       <Mapping DataField="givenCredit" ObjectProperty="GivenCredit" />
       <Mapping DataField="memberCredit" ObjectProperty="MemberCredit" />
     </Setting>
-    <Setting Key="Age_CustomerSelBalanceInfo_SAg" SpName="Age_CustomerSelBalanceInfo_SAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelBalanceInfo_SAg" SpName="Age_CustomerSelBalanceInfo_SAg" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
       <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
       <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
@@ -33,14 +33,14 @@
     </Setting>
   </Function>
   <Function Name="Statistics">
-    <Setting Key="Age_CustomerSelStatisticsInfo_Ag" SpName="Age_CustomerSelStatisticsInfo_Ag" DbName="DBBOF.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_Ag" SpName="Age_CustomerSelStatisticsInfo_Ag" DbName="DBBOF.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="total_outstanding" ObjectProperty="TotalOutstanding" />
       <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
       <Mapping DataField="total_memberActive" ObjectProperty="TotalMemberActive" />
       <Mapping DataField="total_memberClosed" ObjectProperty="TotalMemberClosed" />
       <Mapping DataField="total_memberSuspended" ObjectProperty="TotalMemberSuspended" />
     </Setting>
-    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg" DbName="DBBOF.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg" DbName="DBBOF.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="total_outstanding" ObjectProperty="TotalOutstanding" />
       <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
       <Mapping DataField="total_memberActive" ObjectProperty="TotalMemberActive" />
@@ -50,7 +50,7 @@
       <Mapping DataField="total_agentClosed" ObjectProperty="TotalAgentClosed" />
       <Mapping DataField="total_agentSuspended" ObjectProperty="TotalAgentSuspended" />
     </Setting>
-    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg" DbName="DBBOF.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg" DbName="DBBOF.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="total_outstanding" ObjectProperty="TotalOutstanding" />
       <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
       <Mapping DataField="total_memberActive" ObjectProperty="TotalMemberActive" />

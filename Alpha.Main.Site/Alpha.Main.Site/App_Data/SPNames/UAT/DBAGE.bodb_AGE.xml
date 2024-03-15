@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Functions>
   <Function Name="Profile Picture">
-    <Setting Key="Age_CustomerSelProfilePicture" SpName="Age_CustomerSelProfilePicture" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
-    <Setting Key="Age_CustomerUpdProfilePicture" SpName="Age_CustomerUpdProfilePicture" DbName="DBCust.bodb_Credit.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_CustomerSelProfilePicture" SpName="Age_CustomerSelProfilePicture" DbName="DBAGE.bodb02.wsv_alp" Plain="0" />
+    <Setting Key="Age_CustomerUpdProfilePicture" SpName="Age_CustomerUpdProfilePicture" DbName="DBCust.bodb_Credit.wsv_alp" Plain="0" />
   </Function>
   <Function Name="Banner">
-    <Setting Key="Age_Banner_SelectRandomBanner" SpName="Age_Banner_SelectRandomBanner" DbName="DBAGE.bodb_AGE.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_Banner_SelectRandomBanner" SpName="Age_Banner_SelectRandomBanner" DbName="DBAGE.bodb_AGE.wsv_alp" Plain="0" />
   </Function>
 </Functions>

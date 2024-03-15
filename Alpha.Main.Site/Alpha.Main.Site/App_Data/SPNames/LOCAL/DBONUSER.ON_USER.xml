@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Functions>
   <Function Name="Announcement">
-    <Setting Key="Age_MessageNoticeSelByCustID" SpName="Age_MessageNoticeSelByCustID" DbName="DBONUSER.ON_USER.BODBDownlineNet" Plain="0">
+    <Setting Key="Age_MessageNoticeSelByCustID" SpName="Age_MessageNoticeSelByCustID" DbName="DBONUSER.ON_USER.wsv_alp" Plain="0">
       <Mapping DataField="typeid" ObjectProperty="TypeId" />
     </Setting>
-    <Setting Key="Age_MessageNoticeUpdStatus" SpName="Age_MessageNoticeUpdStatus" DbName="DBONUSER.ON_USER.BODBDownlineNet" Plain="0">
+    <Setting Key="Age_MessageNoticeUpdStatus" SpName="Age_MessageNoticeUpdStatus" DbName="DBONUSER.ON_USER.wsv_alp" Plain="0">
     </Setting>
   </Function>
   <Function Name="Alpha.Auth">
-    <Setting Key="Age_ReCheckin" SpName="Age_ReCheckin" DbName="DBONUSER.ON_USER.BODBDownlineNet" Plain="0" />
-    <Setting Key="Age_CheckOut" SpName="Age_CheckOut" DbName="DBONUSER.ON_USER.BODBDownlineNet" Plain="0" />
-    <Setting Key="Age_OnUser_ForceKickedout" SpName="Age_OnUser_ForceKickedout" DbName="DBONUSER.ON_USER.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_ReCheckin" SpName="Age_ReCheckin" DbName="DBONUSER.ON_USER.wsv_alp" Plain="0" />
+    <Setting Key="Age_CheckOut" SpName="Age_CheckOut" DbName="DBONUSER.ON_USER.wsv_alp" Plain="0" />
+    <Setting Key="Age_OnUser_ForceKickedout" SpName="Age_OnUser_ForceKickedout" DbName="DBONUSER.ON_USER.wsv_alp" Plain="0" />
   </Function>
 </Functions>
