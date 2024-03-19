@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Functions>
   <Function Name="Report">
-    <Setting Key="Age_SelBalanceUpDay" SpName="Age_SelBalanceUpDay" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
-    <Setting Key="Age_CustomerSelBalanceInfo_Ag" SpName="Age_CustomerSelBalanceInfo_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_SelBalanceUpDay" SpName="Age_SelBalanceUpDay" DbName="DBAGE.bodb02.wsv_alp" Plain="0" />
+    <Setting Key="Age_CustomerSelBalanceInfo_Ag" SpName="Age_CustomerSelBalanceInfo_Ag" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
       <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
       <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
@@ -12,7 +12,7 @@
       <Mapping DataField="givenCredit" ObjectProperty="GivenCredit" />
       <Mapping DataField="memberCredit" ObjectProperty="MemberCredit" />
     </Setting>
-    <Setting Key="Age_CustomerSelBalanceInfo_MAg" SpName="Age_CustomerSelBalanceInfo_MAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelBalanceInfo_MAg" SpName="Age_CustomerSelBalanceInfo_MAg" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
       <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
       <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
@@ -22,7 +22,7 @@
       <Mapping DataField="givenCredit" ObjectProperty="GivenCredit" />
       <Mapping DataField="memberCredit" ObjectProperty="MemberCredit" />
     </Setting>
-    <Setting Key="Age_CustomerSelBalanceInfo_SAg" SpName="Age_CustomerSelBalanceInfo_SAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelBalanceInfo_SAg" SpName="Age_CustomerSelBalanceInfo_SAg" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
       <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
       <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
@@ -34,14 +34,14 @@
     </Setting>
   </Function>
   <Function Name="Statistics">
-    <Setting Key="Age_CustomerSelStatisticsInfo_Ag" SpName="Age_CustomerSelStatisticsInfo_Ag" DbName="DBBOF.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_Ag" SpName="Age_CustomerSelStatisticsInfo_Ag" DbName="DBBOF.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="total_outstanding" ObjectProperty="TotalOutstanding" />
       <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
       <Mapping DataField="total_memberActive" ObjectProperty="TotalMemberActive" />
       <Mapping DataField="total_memberClosed" ObjectProperty="TotalMemberClosed" />
       <Mapping DataField="total_memberSuspended" ObjectProperty="TotalMemberSuspended" />
     </Setting>
-    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg" DbName="DBBOF.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg" DbName="DBBOF.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="total_outstanding" ObjectProperty="TotalOutstanding" />
       <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
       <Mapping DataField="total_memberActive" ObjectProperty="TotalMemberActive" />
@@ -51,7 +51,7 @@
       <Mapping DataField="total_agentClosed" ObjectProperty="TotalAgentClosed" />
       <Mapping DataField="total_agentSuspended" ObjectProperty="TotalAgentSuspended" />
     </Setting>
-    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg" DbName="DBBOF.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg" DbName="DBBOF.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="total_outstanding" ObjectProperty="TotalOutstanding" />
       <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
       <Mapping DataField="total_memberActive" ObjectProperty="TotalMemberActive" />
@@ -64,29 +64,29 @@
       <Mapping DataField="total_masterClosed" ObjectProperty="TotalMasterClosed" />
       <Mapping DataField="total_masterSuspended" ObjectProperty="TotalMasterSuspended" />
     </Setting>
-    <Setting Key="Age_CustomerSelTopWinningMembers_Ag" SpName="Age_CustomerSelTopWinningMembers_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelTopWinningMembers_Ag" SpName="Age_CustomerSelTopWinningMembers_Ag" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="winlost" ObjectProperty="WinLoss" />
     </Setting>
-    <Setting Key="Age_CustomerSelTopWinningMembers_MAg" SpName="Age_CustomerSelTopWinningMembers_MAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelTopWinningMembers_MAg" SpName="Age_CustomerSelTopWinningMembers_MAg" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="winlost" ObjectProperty="WinLoss" />
     </Setting>
-    <Setting Key="Age_CustomerSelTopWinningMembers_SAg" SpName="Age_CustomerSelTopWinningMembers_SAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelTopWinningMembers_SAg" SpName="Age_CustomerSelTopWinningMembers_SAg" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="winlost" ObjectProperty="WinLoss" />
     </Setting>
-    <Setting Key="Age_CustomerSelTopTurnoverMembers_SAg" SpName="Age_CustomerSelTopTurnoverMembers_SAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelTopTurnoverMembers_SAg" SpName="Age_CustomerSelTopTurnoverMembers_SAg" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
     </Setting>
-    <Setting Key="Age_CustomerSelTopTurnoverMembers_MAg" SpName="Age_CustomerSelTopTurnoverMembers_MAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelTopTurnoverMembers_MAg" SpName="Age_CustomerSelTopTurnoverMembers_MAg" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
     </Setting>
-    <Setting Key="Age_CustomerSelTopTurnoverMembers_Ag" SpName="Age_CustomerSelTopTurnoverMembers_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelTopTurnoverMembers_Ag" SpName="Age_CustomerSelTopTurnoverMembers_Ag" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
     </Setting>
   </Function>
   <Function Name="Alpha.Auth">
-    <Setting Key="Age_CustomerSelCheckBelonging" SpName="Age_CustomerSelCheckBelonging" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
-    <Setting Key="Age_CustomerStatusSel" SpName="Age_CustomerStatusSel" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
-    <Setting Key="Age_Rpt_CustomerConsolidatedGroup_CheckBelonging" SpName="Age_Rpt_CustomerConsolidatedGroup_CheckBelonging" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
-    <Setting Key="Age_CustomerSelCheckBelonging_MultiCust" SpName="Age_CustomerSelCheckBelonging_MultiCust" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_CustomerSelCheckBelonging" SpName="Age_CustomerSelCheckBelonging" DbName="DBAGE.bodb02.wsv_alp" Plain="0" />
+    <Setting Key="Age_CustomerStatusSel" SpName="Age_CustomerStatusSel" DbName="DBAGE.bodb02.wsv_alp" Plain="0" />
+    <Setting Key="Age_Rpt_CustomerConsolidatedGroup_CheckBelonging" SpName="Age_Rpt_CustomerConsolidatedGroup_CheckBelonging" DbName="DBAGE.bodb02.wsv_alp" Plain="0" />
+    <Setting Key="Age_CustomerSelCheckBelonging_MultiCust" SpName="Age_CustomerSelCheckBelonging_MultiCust" DbName="DBAGE.bodb02.wsv_alp" Plain="0" />
   </Function>
   <Function Name="Alpha.Announcement">
-    <Setting Key="Age_CustomerShowAnnouncement" SpName="Age_CustomerShowAnnouncement" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_CustomerShowAnnouncement" SpName="Age_CustomerShowAnnouncement" DbName="DBAGE.bodb02.wsv_alp" Plain="0" />
   </Function>
 </Functions>
