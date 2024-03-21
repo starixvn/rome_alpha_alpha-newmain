@@ -54,7 +54,7 @@
       <siteMapNode resourceKey="newMaster" appPath="MemberInfoAppPath" url="CopyAccount?lv=4" menuItemType="CreateAccountMenuItem" roles="Super"></siteMapNode>
       <siteMapNode resourceKey="newAgent" appPath="MemberInfoAppPath" url="CopyAccount?lv=3" menuItemType="CreateAccountMenuItem" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="newMember" appPath="MemberInfoAppPath" url="CopyAccount?lv=2" menuItemType="CreateAccountMenuItem" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="PTTemplate" appPath="MemberInfoAppPath" url="PTTemplate/Index" isNew="true" menuItemType="PTTemplateMenuItem"></siteMapNode>
+      <siteMapNode resourceKey="PTTemplate" appPath="MemberInfoAppPath" url="PTTemplate/Index" menuItemType="PTTemplateMenuItem"></siteMapNode>
       <siteMapNode menuItemType="SubAccountMenuItem" resourceKey="subaccount" appPath="OldMainAppPath" url="_SubAcc/SubAccList.aspx" byPassProtectedModeInternal="true"></siteMapNode>
 
       <siteMapNode resourceKey="customerlist" appPath="MemberInfoAppPath" url="CustomerList/member" roles="Agent"></siteMapNode>
@@ -77,8 +77,8 @@
     </siteMapNode>
     <!--/MemberInfo-->
     <siteMapNode resourceKey="BetLists" appPath="OldMainAppPath" menuItemType="BetListsMenuItem" functionType="[L]">
-      <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="/MonitoringBets/Index" roles="Agent" useDomainConfig="Betlist:Domain" isNew="true"></siteMapNode>
-      <siteMapNode resourceKey="searchTickets" appPath="BetListsAppPath" url="/SearchTickets/Index" useDomainConfig="Betlist:Domain" isNew="true"></siteMapNode>
+      <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="/MonitoringBets/Index" roles="Agent" useDomainConfig="Betlist:Domain"></siteMapNode>
+      <siteMapNode resourceKey="searchTickets" appPath="BetListsAppPath" url="/SearchTickets/Index" useDomainConfig="Betlist:Domain"></siteMapNode>
       <siteMapNode resourceKey="cancelledBets" appPath="BetListsAppPath" url="/CancelledBet/Index" useDomainConfig="Betlist:Domain"></siteMapNode>
 
       <siteMapNode resourceKey="correctscore" appPath="BetListsAppPath" url="/correctscore/index" useDomainConfig="Betlist:Domain"></siteMapNode>
@@ -156,9 +156,9 @@
       <siteMapNode resourceKey="MyThresholds" appPath="MemberInfoAppPath" url="MyThresholds/Index" roles="Super,Master"></siteMapNode>
     </siteMapNode>
     <siteMapNode resourceKey="chatbot" appPath="MainAppPath" url="TelegramChatBot/Setup"></siteMapNode>
-    <siteMapNode resourceKey="SercurityCode" appPath="MainAppPath" url="Otp/SetupOtp" isNew="false"></siteMapNode>
+    <siteMapNode resourceKey="SercurityCode" appPath="MainAppPath" url="Otp/SetupOtp"></siteMapNode>
     <siteMapNode resourceKey="BackupDomains" menuItemType="MemberInfoMenuItem"
                  functionType="[H]" appPath="MessageAppPath"
-                 url="backupdomains/index" isNew="true"></siteMapNode>
+                 url="backupdomains/index"></siteMapNode>
   </siteMapNode>
 </siteMap>

@@ -193,10 +193,7 @@
 
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
 
-        public bool HightLightFeaturePermission =>
-            !IsProtectedMode &&
-            !AppSettings.IsSiteLabel789y &&
-            (!message.IsSubAcc || message.SubPageAccess.Contains(PageAccessType.CreateAccount));
+        public bool HightLightFeaturePermission => false;
 
         public string HightLightFeatureImageName => "new_feature_litemode" + DarkModeName;
 

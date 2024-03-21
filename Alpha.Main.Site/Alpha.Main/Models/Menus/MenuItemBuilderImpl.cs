@@ -7,11 +7,10 @@
     using System.Web;
     using Alpha.Auth.Services;
     using Alpha.Auth.Services.Impl;
-    using Fanex.Common.Helper;
-    using AlphaPlus.User.Models;
     using Alpha.Main.Services;
     using Alpha.Main.Services.Impl;
-    using Alpha.Main.Configurations;
+    using AlphaPlus.User.Models;
+    using Fanex.Common.Helper;
     using Fanex.Data.Repository;
 
     public class MenuItemBuilderImpl : MenuItemBuilder
@@ -71,7 +70,7 @@
             menuItem.Link = node.Url;
             menuItem.AppPath = node["AppPath"];
             menuItem.IsBeta = node["isBeta"] != null && bool.Parse(node["isBeta"]);
-            menuItem.IsNew = node["menuItemType"] == "CreateAccountMenuItem" ? AppSettings.IsOfferCreateAccountLiteMode : (node["isNew"] != null && bool.Parse(node["isNew"]));
+            menuItem.IsNew = node["isNew"] != null && bool.Parse(node["isNew"]);
             menuItem.IsOld = node["isOld"] != null && bool.Parse(node["isOld"]);
             menuItem.IsHiddenInMobile = node["isHiddenInMobile"] != null && bool.Parse(node["isHiddenInMobile"]);
             menuItem.ByPassAuthorization = node["byPassAuthorization"] == null ? false : bool.Parse(node["byPassAuthorization"]);
