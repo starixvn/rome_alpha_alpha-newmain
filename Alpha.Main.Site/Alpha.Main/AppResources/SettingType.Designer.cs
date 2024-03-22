@@ -198,6 +198,42 @@ namespace Alpha.Main.AppResources {
         /// <summary>
         ///   Looks up a localized string similar to Commission.
         /// </summary>
+        internal static string _25 {
+            get {
+                return ResourceManager.GetString("_25", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bet Setting.
+        /// </summary>
+        internal static string _26 {
+            get {
+                return ResourceManager.GetString("_26", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parlay Max Payout.
+        /// </summary>
+        internal static string _27 {
+            get {
+                return ResourceManager.GetString("_27", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Position Taking.
+        /// </summary>
+        internal static string _28 {
+            get {
+                return ResourceManager.GetString("_28", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Commission.
+        /// </summary>
         internal static string _3 {
             get {
                 return ResourceManager.GetString("_3", resourceCulture);
