@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
+    using System;
     using System.Linq;
     using Configurations;
     using Helpers;
@@ -90,5 +91,10 @@
             => !IsSubAccount
             && (AppSettings.APISuperIds.Any(s => string.Equals(s, "*"))
                 || AppSettings.APISuperIds.Any(s => string.Equals(s, SuperId.ToString())));
+
+        public string HowToUseIndexPath
+            => AppSettings.SupportedNewHandbook
+            ? UrlHelper.MapHowToUsePath("~/Default")
+            : UrlHelper.MapHowToUsePath("~/Index.aspx");
     }
 }
