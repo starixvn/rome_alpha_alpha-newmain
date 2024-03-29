@@ -429,4 +429,7 @@
   <data name="PTTemplate" xml:space="preserve">
     <value>Position Taking Template</value>
   </data>
+  <data name="bookedBets" xml:space="preserve">
+    <value>Booked Bets</value>
+  </data>
 </root>

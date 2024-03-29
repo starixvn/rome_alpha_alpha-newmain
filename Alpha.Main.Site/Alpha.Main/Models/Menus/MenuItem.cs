@@ -15,7 +15,7 @@
         private Predicate<string> authorizeUrlFunc;
         private readonly Func<bool> isProtectedModeFunc;
         private readonly Func<bool> isInternalFunc;
-        private readonly Func<bool> isHideForSite;
+        private readonly Func<bool> isShowForSite;
         private readonly Func<string, string> buildInvalidSessionUniqueKeyFunc;
         private readonly Func<string> buildLanguageQueryStringFunc;
         private readonly Func<string> buildDarkModeQueryStringFunc;
@@ -37,7 +37,7 @@
             Predicate<string> authorizeUrlFunc,
             Func<bool> isProtectedModeFunc,
             Func<bool> isInternalFunc,
-            Func<bool> isHideForSite,
+            Func<bool> isShowForSite,
             Func<string, string> buildInvalidSessionUniqueKeyFunc,
             Func<string> buildLanguageQueryStringFunc,
             Func<string> buildDarkModeQueryStringFunc,
@@ -48,7 +48,7 @@
             this.authorizeUrlFunc = authorizeUrlFunc;
             this.isProtectedModeFunc = isProtectedModeFunc;
             this.isInternalFunc = isInternalFunc;
-            this.isHideForSite = isHideForSite;
+            this.isShowForSite = isShowForSite;
             this.buildInvalidSessionUniqueKeyFunc = buildInvalidSessionUniqueKeyFunc;
             this.buildLanguageQueryStringFunc = buildLanguageQueryStringFunc;
             this.buildDarkModeQueryStringFunc = buildDarkModeQueryStringFunc;
@@ -131,7 +131,7 @@
                 var isAuthorized = (ByPassAuthorization
                     || authorizeUrlFunc(Link))
                     && isVisibleForMobileOrDesktop()
-                    && !isHideForSite();
+                    && isShowForSite();
 
                 if (isProtectedModeFunc())
                 {

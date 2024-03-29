@@ -250,6 +250,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Booked Bets.
+        /// </summary>
+        public static string bookedBets {
+            get {
+                return ResourceManager.GetString("bookedBets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancelled Bets.
         /// </summary>
         public static string cancelledBets {

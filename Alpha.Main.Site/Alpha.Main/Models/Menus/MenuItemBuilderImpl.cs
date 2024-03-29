@@ -82,14 +82,14 @@
         public IMenuItem BuildMenuItem(SiteMapNode node)
         {
             Check.Argument.IsNotNull(node, nameof(node));
-            Func<bool> isHideForSite = IsHideForSite(node);
+            Func<bool> isShowForSite = IsShowForSite(node);
 
             var menuItem = new MenuItem(
                 menuItemTypeConfiguration[node["menuItemType"] ?? string.Empty],
                 authorizationService.IsAuthorized,
                 isProtectedModeFunc,
                 isInternalFunc,
-                isHideForSite,
+                isShowForSite,
                 buildInvalidSessionUniqueKeyFunc,
                 buildLanguageQueryStringFunc,
                 buildDarkModeQueryStringFunc,
@@ -101,12 +101,13 @@
             return menuItem;
         }
 
-        private static Func<bool> IsHideForSite(SiteMapNode node) => () =>
-          {
-              var hideForSites = node["hideForSites"] == null ? Enumerable.Empty<string>() :
-                  node["hideForSites"].Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
-              return hideForSites
-                  .Any(site => string.Equals(site, "*", StringComparison.OrdinalIgnoreCase) || string.Equals(site, UserSession.Current?.Site, StringComparison.OrdinalIgnoreCase));
-          };
+        private static Func<bool> IsShowForSite(SiteMapNode node) => () =>
+        {
+            var showForSites = node["showForSites"] == null ? Enumerable.Empty<string>() :
+                node["showForSites"].Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
+
+            return !showForSites.Any() ||
+                showForSites.Any(site => string.Equals(site, UserSession.Current?.Site, StringComparison.OrdinalIgnoreCase));
+        };
     }
 }
