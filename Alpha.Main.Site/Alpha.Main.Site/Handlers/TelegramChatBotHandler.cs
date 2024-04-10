@@ -5,6 +5,7 @@
     using System.Threading.Tasks;
     using Alpha.Main.Configurations;
     using Alpha.Main.Constants;
+    using Alpha.Main.Services;
     using Alpha.Main.Site.Helpers;
     using Alpha.Main.Site.Requests.TelegramChatBot;
     using Alpha.Main.Site.ViewModels.TelegramChatBot;
@@ -24,14 +25,16 @@
         private const int UnlinkedErrorCode = 102;
         private readonly ISettingService settingService;
         private readonly IBotService botService;
+        private readonly TransferService transferService;
 
         public TelegramChatBotHandler(
             ISettingService settingService,
-            IBotService botService)
+            IBotService botService,
+            TransferService transferService)
         {
-
             this.settingService = settingService;
             this.botService = botService;
+            this.transferService = transferService;
         }
 
         public async Task<ChatBotViewModel> Handle(SetUpChatBotQuery message)
@@ -41,7 +44,10 @@
                 message.SubAccId,
                 Language.MapNewChineseLanguageCode(message.Language));
 
-            return new ChatBotViewModel(custBotMessenger);
+            var isEnableAutoTransfer = transferService.IsEnableAutoTransfer(
+                message.Currency, message.CustId, AppSettings.Settings["OfferAutoTransfer.Currencies"]);
+
+            return new ChatBotViewModel(custBotMessenger, isEnableAutoTransfer);
         }
 
         public async Task<VerifyAccountViewModel> Handle(GenerateQRCodeCommand message)
