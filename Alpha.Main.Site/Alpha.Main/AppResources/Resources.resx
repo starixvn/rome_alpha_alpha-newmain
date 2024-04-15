@@ -722,10 +722,10 @@
     <value>Check Out</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Find &lt;b&gt;consolidated guidelines&lt;/b&gt; and &lt;b&gt;glossary terms&lt;/b&gt; for quick and easy reference.</value>
+    <value>Stay ahead with the &lt;strong&gt;latest updates&lt;/strong&gt;, minimize risks, and maximize profits for the &lt;strong&gt;Top 10 Highest-turnover Soccer Matches&lt;/strong&gt; using our Telegram Chatbot.</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Explore the &lt;b&gt;One-Stop Handbook&lt;/b&gt;!</value>
+    <value>Discover &lt;b&gt;Soccer Total Bets&lt;/b&gt; on the Telegram Chatbot</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Get Started</value>
@@ -762,5 +762,8 @@
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
     <value>&lt;b&gt;Navigate&lt;/b&gt; effortlessly and &lt;b&gt;boost your proficiency&lt;/b&gt;!</value>
+  </data>
+  <data name="SetupChatbot" xml:space="preserve">
+    <value>Set Up Chatbot</value>
   </data>
 </root>

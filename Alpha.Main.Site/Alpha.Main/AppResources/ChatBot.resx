@@ -121,7 +121,7 @@
     <value>Chatbot</value>
   </data>
   <data name="ChatbotSetup" xml:space="preserve">
-    <value>Chatbot Setup</value>
+    <value>Setup Chatbot</value>
   </data>
   <data name="InstallLetstalk" xml:space="preserve">
     <value>Install Letstalk and create a free account.</value>

@@ -112,7 +112,7 @@
             }
 
             sessionManager.Add(PasswordHashSessionKey, viewModel.PasswordHash);
-
+            viewModel.IsLinkedChatbot = custBotMessenger != null && custBotMessenger.IsVerifyOTP && custBotMessenger.Enabled;
             return viewModel;
         }
 

@@ -93,5 +93,7 @@ namespace Alpha.Main.Site.Models.Requests
         public int SuperId => userSession.SRecommendId;
 
         public string Currency => userSession.Currency;
+
+        public bool ViewTotalBets => userSession.SubPageAccess.ViewTotalBets;
     }
 }

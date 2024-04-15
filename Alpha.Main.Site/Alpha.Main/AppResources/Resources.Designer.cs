@@ -592,7 +592,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Find &lt;b&gt;consolidated guidelines&lt;/b&gt; and &lt;b&gt;glossary terms&lt;/b&gt; for quick and easy reference..
+        ///   Looks up a localized string similar to Stay ahead with the &lt;strong&gt;latest updates&lt;/strong&gt;, minimize risks, and maximize profits for the &lt;strong&gt;Top 10 Highest-turnover Soccer Matches&lt;/strong&gt; using our Telegram Chatbot..
         /// </summary>
         public static string HighlightPopupNewFeatureIntro {
             get {
@@ -628,7 +628,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Explore the &lt;b&gt;One-Stop Handbook&lt;/b&gt;!.
+        ///   Looks up a localized string similar to Discover &lt;b&gt;Soccer Total Bets&lt;/b&gt; on the Telegram Chatbot.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {
@@ -1399,6 +1399,15 @@ namespace Alpha.Main.AppResources {
         public static string SessionExpired {
             get {
                 return ResourceManager.GetString("SessionExpired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set Up Chatbot.
+        /// </summary>
+        public static string SetupChatbot {
+            get {
+                return ResourceManager.GetString("SetupChatbot", resourceCulture);
             }
         }
         

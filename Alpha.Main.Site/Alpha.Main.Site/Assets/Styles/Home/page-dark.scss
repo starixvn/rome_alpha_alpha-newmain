@@ -1145,7 +1145,8 @@ html * {
             }
 
             strong {
-                color: #fff;
+                color: #fff;                
+                font-family: 'Roboto Bold';             
             }
         }
 
@@ -1188,7 +1189,7 @@ html * {
             font-size: $font-size;
             margin: 0;
             line-height: 28px;
-            margin-left: 15px;
+            margin-left: 10px;
         }
 
         a.btn-submit {

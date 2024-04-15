@@ -659,7 +659,7 @@
     <value>查看</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>寻找 &lt;b&gt; 综合指南 &lt;/b&gt; 和 &lt;b&gt; 词汇表以供快速和简单的参考。</value>
+    <value>使用我们的Telegram Chatbot，获知 &lt;strong&gt;前10 场足球赛事最高投注额的最新动态&lt;/strong&gt;，这可降低风险并提高利润。</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>开始吧</value>
@@ -680,7 +680,7 @@
     <value>输赢细节报告</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>探索 &lt;b&gt; 一站式手册 &lt;/b&gt;！</value>
+    <value>通过 Telegram Chatbot 探索 &lt;b&gt;足球总投注&lt;/b&gt;。</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>一分钟前</value>
@@ -699,5 +699,8 @@
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
     <value>&lt;b&gt; 轻松导航 &lt;/b&gt; 和 &lt;b&gt; 提高您的熟练性 &lt;/b&gt;！</value>
+  </data>
+  <data name="SetupChatbot" xml:space="preserve">
+    <value>设置Chatbot</value>
   </data>
 </root>

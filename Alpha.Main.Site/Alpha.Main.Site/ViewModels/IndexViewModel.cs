@@ -193,13 +193,19 @@
 
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
 
-        public bool HightLightFeaturePermission => AppSettings.SupportedNewHandbook;
+        public bool HightLightFeaturePermission => !message.IsSubAcc || message.ViewTotalBets;
 
         public string HightLightFeatureImageName => "new_feature_litemode" + DarkModeName;
 
-        public string HightLightFeatureUrl
-            => UrlHelper.MapHowToUsePath("~/Default");
+        public string HightLightFeatureUrl => MicroSites.MainUrl($"~/TelegramChatBot/Setup");
+
+        public string HightLightFeatureTourUrl =>
+            AppSettings.IsSiteLabel789y ?
+                MicroSites.MessageUrl("~/StaticMessage/Guide?id=167820") :
+                MicroSites.HowToUseUrl("~/Index.aspx?linktomessagesite=167819");
 
         public bool IsEnableAutoTransfer { get; set; }
+
+        public bool IsLinkedChatbot { get; set; }
     }
 }
