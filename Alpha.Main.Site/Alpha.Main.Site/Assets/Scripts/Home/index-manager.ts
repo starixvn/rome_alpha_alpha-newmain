@@ -110,6 +110,10 @@ var indexManager = {
             if (e.data.event_id === "winlossdetailnew-feedback") {
                 indexManager.initFeedbackFunction(e.data.feedback_id, e.data.popup_width, e.data.popup_height);
             }
+
+            if (e.data.event_id === "winlossdetailnew-addtomywatchlist") {
+                popupManager.open(e.data.url, undefined, e.data.width, e.data.height, "modal-mobile-friendly");
+            }
         }, false);
     },
 
