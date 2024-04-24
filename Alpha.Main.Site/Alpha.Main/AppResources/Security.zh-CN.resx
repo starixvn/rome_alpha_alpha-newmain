@@ -305,26 +305,26 @@
   <data name="OtpNotes" xml:space="preserve">
     <value>将需要输入OTP当您执行敏感操作或使用不同设备/浏览器登录。在启用OTP通知之前，您需要将您账号添加到手机验证器或将您账号链接到Telegram Chatbot。</value>
   </data>
-  <data name="DownloadSophos" xml:space="preserve">
-    <value>在您的设备上下载Sophos Authenticator。</value>
+  <data name="DownloadGoogleAuthenticator" xml:space="preserve">
+    <value>在您的设备上下载Google Authenticator。</value>
   </data>
-  <data name="SophosAuthenticator" xml:space="preserve">
-    <value>Sophos 验证器</value>
+  <data name="GoogleAuthenticator" xml:space="preserve">
+    <value>Google Authenticator 验证器</value>
   </data>
   <data name="OtherAuthenticators" xml:space="preserve">
-    <value>还支持其他两个因素身份验证应用程序，如Google Authenticator ，Microsoft Authenticator 等。</value>
+    <value>还支持其他两个因素身份验证应用程序，如Sophos ，Microsoft Authenticator 等。</value>
   </data>
   <data name="ScanQRCode" xml:space="preserve">
-    <value>通過使用Sophos掃描此QR碼創建帳号</value>
+    <value>通過使用Google Authenticator掃描此QR碼創建帳号</value>
   </data>
   <data name="UnableScanQRCode" xml:space="preserve">
     <value>无法扫描QR码？</value>
   </data>
   <data name="ManualInputOtpKey" xml:space="preserve">
-    <value>请在 Sophos 手动添加页面输入以下的键，然后单击完成（iOS）或添加（Android）</value>
+    <value>请在 Google Authenticator 手动添加页面输入以下的键，然后单击添加</value>
   </data>
   <data name="Enter6DigitsOtp" xml:space="preserve">
-    <value>在下面的文本框中输入Sophos的6位数代码，然后点击验证以完成注册。</value>
+    <value>在下面的文本框中输入Google Authenticator的6位数代码，然后点击验证以完成注册。</value>
   </data>
   <data name="ClickToRemoveOtp" xml:space="preserve">
     <value>点击下面的按钮删除用户注册的设备，并将其OTP状态设置为已禁用。</value>
@@ -335,7 +335,7 @@
   <data name="EnableDisableOtp" xml:space="preserve">
     <value>启用 / 禁用OTP</value>
   </data>
-  <data name="EnableOtpViaSophos" xml:space="preserve">
+  <data name="EnableOtpViaMobileAuthenticatorApp" xml:space="preserve">
     <value>通过Authenticator Mobile App启用 OTP</value>
   </data>
   <data name="OtpIsInvalidOrExpired" xml:space="preserve">

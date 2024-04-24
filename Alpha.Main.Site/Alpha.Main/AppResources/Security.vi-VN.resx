@@ -309,26 +309,26 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   <data name="OtpNotes" xml:space="preserve">
     <value>OTP sẽ được yêu cầu khi bạn thực hiện những tác vụ quan trọng hoặc đăng nhập bằng một thiết bị/trình duyệt khác. Trước khi bật thông báo OTP, bạn cần thêm tài khoản của bạn vào Ứng dụng xác thực hoặc liên kết tài khoản với Telegram Chatbot.</value>
   </data>
-  <data name="DownloadSophos" xml:space="preserve">
-    <value>Tải Sophos Authenticator về thiết bị.</value>
+  <data name="DownloadGoogleAuthenticator" xml:space="preserve">
+    <value>Tải Google Authenticator về thiết bị.</value>
   </data>
-  <data name="SophosAuthenticator" xml:space="preserve">
-    <value>Sophos Authenticator</value>
+  <data name="GoogleAuthenticator" xml:space="preserve">
+    <value>Google Authenticator</value>
   </data>
   <data name="OtherAuthenticators" xml:space="preserve">
-    <value>Các ứng dụng bảo mật 2 lớp khác như Google Authenticator, Microsoft Authenticator, v..v... cũng được hỗ trợ.</value>
+    <value>Các ứng dụng bảo mật 2 lớp khác như Sophos, Microsoft Authenticator, v..v... cũng được hỗ trợ.</value>
   </data>
   <data name="ScanQRCode" xml:space="preserve">
-    <value>Tạo tài khoản bằng cách quét mã QR này bằng ứng dụng Sophos</value>
+    <value>Tạo tài khoản bằng cách quét mã QR này bằng ứng dụng Google Authenticator</value>
   </data>
   <data name="UnableScanQRCode" xml:space="preserve">
     <value>Không quét được mã QR?</value>
   </data>
   <data name="ManualInputOtpKey" xml:space="preserve">
-    <value>Vui lòng điền dãy số dưới đây vào phần "Manual Add" trong ứng dụng Sophos và nhấn Done (iOS) hoặc Add (Android)</value>
+    <value>Vui lòng điền dãy số dưới đây vào phần "Manual Add" trong ứng dụng Google Authenticator và nhấn Add</value>
   </data>
   <data name="Enter6DigitsOtp" xml:space="preserve">
-    <value>Điền mã 6 kí tự được tạo ra bởi Sophos vào ô dưới đây và nhấn Verify để hoàn tất quá trình đăng ký.</value>
+    <value>Điền mã 6 kí tự được tạo ra bởi Google Authenticator vào ô dưới đây và nhấn Verify để hoàn tất quá trình đăng ký.</value>
   </data>
   <data name="ClickToRemoveOtp" xml:space="preserve">
     <value>Nhấn nút bên dưới để xoá thiết bị của người dùng này và chuyển trạng thái OTP của họ thành Chưa kích hoạt.</value>
@@ -339,7 +339,7 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   <data name="EnableDisableOtp" xml:space="preserve">
     <value>Kích hoạt/tắt tính năng OTP</value>
   </data>
-  <data name="EnableOtpViaSophos" xml:space="preserve">
+  <data name="EnableOtpViaMobileAuthenticatorApp" xml:space="preserve">
     <value>Kích hoạt tính năng OTP thông qua ứng dụng Authenticator trên di động</value>
   </data>
   <data name="OtpIsInvalidOrExpired" xml:space="preserve">

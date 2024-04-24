@@ -22,7 +22,7 @@
                                @(Model.CustomerOtp.Enabled ? "checked " : "")
                                data-is-already-setup="@Model.IsAlreadySetup.ToString().ToLower()"
                                data-is-checked="@Model.CustomerOtp.Enabled.ToString().ToLower()" />
-                        @Security.EnableOtpViaSophos
+                        @Security.EnableOtpViaMobileAuthenticatorApp
                     </label>
                 </li>
                 <li>
