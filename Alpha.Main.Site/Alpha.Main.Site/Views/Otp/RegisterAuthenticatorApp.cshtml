@@ -3,29 +3,29 @@
     Layout = null;
 }
 <div class="panel" id="register-panel" style="@(Model.IsAlreadySetup ? "display:none;" : "")">
-    <div class="panel-heading" role="tab" id="headingRegisterSophos">
+    <div class="panel-heading" role="tab" id="headingRegisterOtpApp">
         <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#registerSophos" aria-expanded="false" aria-controls="registerSophos">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#registerOtpApp" aria-expanded="false" aria-controls="registerOtpApp">
                 @Security.RegisterMobileApplication
             </a>
         </h4>
     </div>
 
-    <div id="registerSophos" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingRegisterSophos">
+    <div id="registerOtpApp" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingRegisterOtpApp">
         <div class="panel-body">
             <ul class="list-requirements">
                 <li>
-                    <strong>@Security.DownloadSophos</strong>
+                    <strong>@Security.DownloadGoogleAuthenticator</strong>
                     <div class="download-content">
-                        <div class="logo-sophos">
+                        <div class="logo-otp-app">
                             <img src="~/Assets/Styles/otp/images/logo.png" />
                         </div>
                         <div class="list-download">
-                            <h2>Sophos Authenticator</h2>
-                            <p><strong>Sophos Gmbh</strong></p>
+                            <h2>Google Authenticator</h2>
+                            <p><strong>Google</strong></p>
                             <ul class="list-inline">
-                                <li><a href="https://itunes.apple.com/vn/app/sophos-authenticator/id864224575?mt=8" class="btn-download-ios" target="_parent"><img src="~/Assets/Styles/otp/images/apple.png" /></a></li>
-                                <li><a href="https://play.google.com/store/apps/details?id=com.sophos.sophtoken&hl=en" target="_blank" class="btn-download-android"><img src="~/Assets/Styles/otp/images/google.png" /></a></li>
+                                <li><a href="https://apps.apple.com/us/app/google-authenticator/id388497605?mt=8" class="btn-download-ios" target="_parent"><img src="~/Assets/Styles/otp/images/apple.png" /></a></li>
+                                <li><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en&gl=US&pli=1" target="_blank" class="btn-download-android"><img src="~/Assets/Styles/otp/images/google.png" /></a></li>
                             </ul>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                 </li>
                 <li>
                     <strong>@Security.ScanQRCode</strong>
-                    <div class="qr-code sophos-qr">
+                    <div class="qr-code otp-app-qr">
                         <img src="@Html.Raw(Model.CustomerOtp.QRCode)" />
                     </div>
                     <div class="username-customize">
@@ -96,7 +96,7 @@
                 <input id="cbkEnableOtp"
                        type="checkbox"
                        disabled />
-                @Security.EnableOtpViaSophos
+                @Security.EnableOtpViaMobileAuthenticatorApp
             </label>
         </div>
     </div>

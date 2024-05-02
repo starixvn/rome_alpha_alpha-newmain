@@ -311,26 +311,26 @@
   <data name="OtpNotes" xml:space="preserve">
     <value>จำเป็นต้องใช้รหัส OTP เมื่อคุณต้องการดำเนินการใดๆที่สำคัญกับบัญชีหรือเข้าสู่ระบบด้วยอุปกรณ์หรือเบราว์เซอร์แตกต่างกัน โดยก่อนเปิดใช้งานการแจ้งเตือนรหัส OTP คุณจำเป็นต้องเชื่อมต่อบัญชีของคุณกับ Mobile Authenticator หรือเชื่อมต่อบัญชีของคุณกับเทเลแกรมแชทบอท</value>
   </data>
-  <data name="DownloadSophos" xml:space="preserve">
-    <value>ดาวน์โหลด Sophos Authenticator Mobile App สู่เครื่องของคุณ</value>
+  <data name="DownloadGoogleAuthenticator" xml:space="preserve">
+    <value>ดาวน์โหลด Google Authenticator Mobile App สู่เครื่องของคุณ</value>
   </data>
-  <data name="SophosAuthenticator" xml:space="preserve">
-    <value>Sophos Authenticator</value>
+  <data name="GoogleAuthenticator" xml:space="preserve">
+    <value>Google Authenticator</value>
   </data>
   <data name="OtherAuthenticators" xml:space="preserve">
-    <value>อีก 2 ตัวนอกเหนือจาก authenticator applications คือ Google Authenticator หรือ Microsoft Authenticator ก็รอบรับเช่นเดียวกัน</value>
+    <value>อีก 2 ตัวนอกเหนือจาก authenticator applications คือ Sophos หรือ Microsoft Authenticator ก็รอบรับเช่นเดียวกัน</value>
   </data>
   <data name="ScanQRCode" xml:space="preserve">
-    <value>สร้างบัญชีผู้ใช้โดยการสแกน QR โค้ดนี้กับSophos</value>
+    <value>สร้างบัญชีผู้ใช้โดยการสแกน QR โค้ดนี้กับGoogle Authenticator</value>
   </data>
   <data name="UnableScanQRCode" xml:space="preserve">
     <value>ไม่สามารถแสกน QR code ?</value>
   </data>
   <data name="ManualInputOtpKey" xml:space="preserve">
-    <value>โปรดใส่ เงื่อนไขด้านล่างเพื่อเป็นการเพิ่มหน้าใน Sophos และคลิ๊ก Done (iOS) หรือ Add (Android)</value>
+    <value>โปรดใส่ เงื่อนไขด้านล่างเพื่อเป็นการเพิ่มหน้าใน Google Authenticator และคลิ๊ก Add</value>
   </data>
   <data name="Enter6DigitsOtp" xml:space="preserve">
-    <value> ใส่ตัวเลข 6 ตัวที่สร้างโดย Sophos ลงไปในกล่องข้อความด้านล่างแล้วคลิ๊กยืนยันเพื่อเป็นการลงทะเบียน</value>
+    <value> ใส่ตัวเลข 6 ตัวที่สร้างโดย Google Authenticator ลงไปในกล่องข้อความด้านล่างแล้วคลิ๊กยืนยันเพื่อเป็นการลงทะเบียน</value>
   </data>
   <data name="ClickToRemoveOtp" xml:space="preserve">
     <value>คลิกที่ปุ่มด้านล่างนี้เพื่อลบผู้ใช้ที่ลงทะเบียนอุปกรณ์และการตั้งค่า/ สถานะของผู้ใช้งาน OTP เพื่อปิดการใช้งาน</value>
@@ -341,7 +341,7 @@
   <data name="EnableDisableOtp" xml:space="preserve">
     <value>เปิดการใช้งาน/ปิดการใช้งาน OTP</value>
   </data>
-  <data name="EnableOtpViaSophos" xml:space="preserve">
+  <data name="EnableOtpViaMobileAuthenticatorApp" xml:space="preserve">
     <value>เปิดการใช้งาน OTP ทาง Authenticator Mobile App</value>
   </data>
   <data name="OtpIsInvalidOrExpired" xml:space="preserve">

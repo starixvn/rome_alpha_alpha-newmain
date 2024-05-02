@@ -11,7 +11,7 @@ class SetupOtp {
     $registerPanel: any;
     $removeSecretKeyPanel: any;
     $btnRemoveOtp: any;
-    $cbkEnableSophosOtp: any;
+    $cbkEnableOtp: any;
     $btnChangeStatus: any;
     $changeStatusMessage: any;
     $setupOtpMessage: any;
@@ -44,8 +44,8 @@ class SetupOtp {
         this.cachedDomElements();
         this.registerEvents();
 
-        this.isAlreadySetup = this.$cbkEnableSophosOtp.data("is-already-setup");
-        this.previousStatus = this.$cbkEnableSophosOtp.data("is-checked");
+        this.isAlreadySetup = this.$cbkEnableOtp.data("is-already-setup");
+        this.previousStatus = this.$cbkEnableOtp.data("is-checked");
     }
 
     cachedDomElements = () => {
@@ -54,7 +54,7 @@ class SetupOtp {
         this.$registerPanel = this.$("#register-panel");
         this.$removeSecretKeyPanel = this.$("#remove-secret-key-panel");
         this.$btnRemoveOtp = this.$("#btn-remove-otp");
-        this.$cbkEnableSophosOtp = this.$(".cbkEnableSophosOtp");
+        this.$cbkEnableOtp = this.$(".cbkEnableOtp");
         this.$btnChangeStatus = this.$("#btn-change-status");
         this.$changeStatusMessage = this.$("#change-status-message");
         this.$setupOtpMessage = this.$("#setup-otp-message");
@@ -70,7 +70,7 @@ class SetupOtp {
         this.$otpForm.submit(this.setUpEvent);
         this.$usernameForm.submit(this.changeUsernameEvent);
         this.$btnRemoveOtp.click(this.removeOtpEvent);
-        this.$cbkEnableSophosOtp.click(this.changeStatusEvent);
+        this.$cbkEnableOtp.click(this.changeStatusEvent);
         this.$btnChangeUsername.click(this.changeUsernameButtonEvent);
 
         var that = this;
@@ -140,12 +140,12 @@ class SetupOtp {
             this.$btnSubmitOtp.attr("disabled", "disabled");
             this.$txtOtp.attr("disabled", "disabled");
             this.$btnChangeStatus.removeAttr("disabled");
-            this.$cbkEnableSophosOtp.removeAttr("disabled");
+            this.$cbkEnableOtp.removeAttr("disabled");
         }
     }
 
     onChangedOtpStatusEvent = (e: any) => {
-        var newStatus = this.$cbkEnableSophosOtp.is(":checked");
+        var newStatus = this.$cbkEnableOtp.is(":checked");
         if (newStatus !== this.previousStatus) {
             this.$btnChangeStatus.removeAttr("disabled");
         }
@@ -184,7 +184,7 @@ class SetupOtp {
             parent.window.location.href = parent.window.location.href;
         }, 2000);
 
-        this.previousStatus = this.$cbkEnableSophosOtp.is(":checked");
+        this.previousStatus = this.$cbkEnableOtp.is(":checked");
     }
 
     removeOtpEvent = (e: any) => {
