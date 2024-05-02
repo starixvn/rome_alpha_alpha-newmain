@@ -1,4 +1,4 @@
-﻿@model OtpViewModel
+@model OtpViewModel
 @{
     Layout = null;
 }
@@ -18,7 +18,7 @@
                     <strong>@Security.DownloadGoogleAuthenticator</strong>
                     <div class="download-content">
                         <div class="logo-otp-app">
-                            <img src="~/Assets/Styles/otp/images/logo.png" />
+                            <img src="~/Assets/Styles/otp/images/logo.png?v=2" />
                         </div>
                         <div class="list-download">
                             <h2>Google Authenticator</h2>
@@ -67,10 +67,10 @@
                                     <p>Key: <strong id="secret-key">@Html.Raw(Model.CustomerOtp.SecretKey)</strong> <span id="copy-icon" class="icon-content-copy" data-clipboard-action="copy" data-clipboard-target="#secret-key" title="@Security.Copied"></span></p>
                                     <div class="example">
                                         <div class="col-left">
-                                            <img src="~/Assets/Styles/otp/images/manual-ios.png" title="IOS" />
+                                            <img src="~/Assets/Styles/otp/images/manual-ios.png?v=2" title="IOS" />
                                         </div>
                                         <div class="col-right">
-                                            <img src="~/Assets/Styles/otp/images/manual-android.png" title="Android" />
+                                            <img src="~/Assets/Styles/otp/images/manual-android.png?v=2" title="Android" />
                                         </div>
                                     </div>
                                 </div>
