@@ -656,7 +656,7 @@
     <value>ออก</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>เชิญพบกับ&lt;b&gt; "RNG Casino อื่นๆ" &lt;/b&gt;ซึ่งแยกมาจาก&lt;b&gt; Live &amp; RNG Casino&lt;/b&gt;</value>
+    <value>ค้นหา &lt;b&gt; คู่มือควบรวม &lt;/b&gt; และ &lt;b&gt; สารบัญคำศัพท์ &lt;/b&gt; สำหรับการอ้างอิงที่ง่ายและรวดเร็ว</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>เริ่มต้น</value>
@@ -677,7 +677,7 @@
     <value>รายงานรายละเอียดการแพ้ชนะ</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>ขอแนะนำ &lt;b&gt; ค่าแบ่งสู้กลุ่มใหม่&lt;/b&gt;!</value>
+    <value>สำรวจ &lt;b&gt; คู่มือแบบครบวงจร &lt;/b&gt;!</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>หนึ่งนาทีที่แล้ว</value>
@@ -695,7 +695,6 @@
     <value>ที่นี่</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>คุณจะสามารถ &lt;strong&gt; ตั้งค่าแบ่งสู้ได้อย่างแม่นยำ&lt;/strong&gt; และสร้างดาวน์ไลน์ได้อย่างราบรื่นใน &lt;strong&gt;โหมดไลท์&lt;/strong&gt;อย่าลืม &lt;strong&gt; ตรวจสอบและปรับแต่ง&lt;/strong&gt; เทมเพลตค่าแบ่งสู้ของคุณให้เหมาะสม
-</value>
+    <value>&lt;b&gt; สำรวจ &lt;/b&gt; อย่างง่ายดายและ &lt;b&gt; เพิ่มประสิทธิภาพของคุณ &lt;/b&gt;!</value>
   </data>
 </root>

@@ -1196,6 +1196,32 @@ html * {
         }
     }
 }
+
+.popup-highlight.highlight-top {
+    left: unset;
+    top: 50px;
+    right: 32px;
+
+    &:before {
+        top: -19px;
+        left: unset;
+        right: 16px;
+        transform: rotate(90deg);
+    }
+}
+
+.popup-highlight.highlight-left {
+    left: unset;
+    top: 155px;
+
+    &:before {
+        left: unset;
+        top: 77px;
+        right: -16px;
+        transform: rotate(180deg);
+    }
+}
+
 //bootbox confirm use in modal revoke api
 .bootbox-confirm {
     .btn {

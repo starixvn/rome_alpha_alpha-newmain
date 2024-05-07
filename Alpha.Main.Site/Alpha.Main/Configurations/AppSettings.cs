@@ -184,7 +184,7 @@
                     .Where(custIdString => !string.IsNullOrWhiteSpace(custIdString))
                     .Select(custIdString => Converter.ToInt(custIdString));
 
-        public static string RemoteRefURL => Settings["RemoteRefURL"];      
+        public static string RemoteRefURL => Settings["RemoteRefURL"];
 
         public static string CreatedSettingLastDateSessionKey => "CreatedSettingLastDate";
 
@@ -369,5 +369,18 @@
         public static List<string> APISuperIds => Settings["APISuperIds"].Split(',').ToList();
 
         public static bool IsOfferCreateAccountLiteMode => Settings["CreateNewAccount:OfferLiteMode"] == "1";
+
+        public static bool SupportedNewHandbook
+        {
+            get
+            {
+                var label = SiteLabel;
+                var marketsSupportedNewHandbook = Settings["MarketsSupportedNewHandbook"];
+
+                return string.Equals("*", marketsSupportedNewHandbook, StringComparison.OrdinalIgnoreCase)
+                        || (!string.IsNullOrWhiteSpace(marketsSupportedNewHandbook)
+                            && ("," + marketsSupportedNewHandbook + ",").ToLowerInvariant().IndexOf(label.ToLowerInvariant()) != -1);
+            }
+        }
     }
 }

@@ -720,9 +720,6 @@
   <data name="CheckOut" xml:space="preserve">
     <value>Xem ngay</value>
   </data>
-  <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Giờ đây, bạn có thể lên lịch thực hiện Chuyển Khoản Tự Động theo ý muốn.</value>
-  </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Bắt đầu</value>
   </data>
@@ -740,8 +737,5 @@
   </data>
   <data name="WinLossDetailReport" xml:space="preserve">
     <value>Báo Cáo Chi Tiết Thắng Thua</value>
-  </data>
-  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Khám phá Lịch Chuyển Khoản Tự Động</value>
   </data>
 </root>
