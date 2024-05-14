@@ -1,4 +1,4 @@
-﻿@model string
+﻿@model Alpha.Main.Site.ViewModels.Dashboard.DashboardBannerViewModel
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,20 +14,20 @@
         .icon-home:after { content: none; }
         .text { padding: 10px 0; margin: 0; font-size: 15px; }
         .banner { padding: 1px; }
-        .banner img { border-radius: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5); }
-        .hidden-mobile { position: fixed; left: -100%; }
-        .visible-mobile { position: fixed; left: 0; width: 100%; }
+        .banner img { border-radius: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5); max-width: 100% }
+        .sm { display: none }
     </style>
     <style media="screen and (max-device-width: 768px)">
-        .text { font-size: 20px; }
-        .banner img { width: 100% }
+        .text { font-size: 20px; }       
+        .sm { display: block; }
+        .pc { display: none; }
     </style>
 </head>
 <body>
     <p class="text">@Html.Raw(string.Format(Resources.DashboardViewOverallInformation, "<span onclick=\"location.href=top.headerNav.urls.home;\" class=\"icon icon-home\"></span>"))</p>
     <div class="banner">
-        <img class="hidden-mobile" src="~/Assets/Images/Banner/banner_@(Model).jpg" alt="" />
-        <img class="visible-mobile" src="~/Assets/Images/Banner/banner_mobile_@(Model).jpg" alt="" />
+        <img class="pc" src="~/Assets/Images/DashboardBanner/@Model.BannerName" alt="" />
+        <img class="sm" src="~/Assets/Images/DashboardBanner/@Model.BannerMobileName" alt="" />
     </div>
 </body>
 </html>

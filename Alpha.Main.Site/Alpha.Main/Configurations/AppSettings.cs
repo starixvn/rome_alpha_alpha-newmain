@@ -382,5 +382,19 @@
                             && ("," + marketsSupportedNewHandbook + ",").ToLowerInvariant().IndexOf(label.ToLowerInvariant()) != -1);
             }
         }
+
+        private static HashSet<string> dashboardBannerOfferedSites;
+        public static HashSet<string> DashboardBannerOfferedSites
+        {
+            get
+            {
+                var config = Settings["Dashboard:BannerOfferedSites"] ?? string.Empty;
+                dashboardBannerOfferedSites = dashboardBannerOfferedSites ?? new HashSet<string>(
+                    config.Split(',').Select(s => s.Trim()),
+                    StringComparer.OrdinalIgnoreCase);
+
+                return dashboardBannerOfferedSites;
+            }
+        }
     }
 }

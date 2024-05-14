@@ -3,7 +3,6 @@
 namespace Alpha.Main.Site.Controllers
 {
     using System;
-    using System.Threading.Tasks;
     using System.Web.Mvc;
     using System.Web.SessionState;
     using Alpha.Main.Configurations;
@@ -38,10 +37,14 @@ namespace Alpha.Main.Site.Controllers
                 return View("~/Views/Dashboard/IndexProtectedMode.cshtml");
             }
 
-            var language = Main.Constants.Language.MapToMainLanguageCode(userSession.Language);
+            var viewModel = new DashboardBannerViewModel(userSession);
 
-            return View("~/Views/Dashboard/Banner.cshtml", (object)language);
-            //return Index2();
+            if (viewModel.IsShow)
+            {
+                return View("~/Views/Dashboard/Banner.cshtml", viewModel);
+            }
+
+            return Index2();
         }
 
         [HttpGet]
