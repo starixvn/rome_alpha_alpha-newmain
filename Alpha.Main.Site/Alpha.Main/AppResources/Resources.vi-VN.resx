@@ -720,7 +720,9 @@
   <data name="CheckOut" xml:space="preserve">
     <value>Xem ngay</value>
   </data>
-  <value>Nhận ngay &lt;strong&gt;thông tin mới nhất&lt;/strong&gt;, giảm rủi ro, và tối ưu hóa lợi nhuận với &lt;strong&gt;Top 10 Trận Bóng Có Tiền Cược Cao Nhất&lt;/strong&gt; thông qua Telegram Chatbot.</value>
+  <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
+    <value>Nhận ngay &lt;strong&gt;thông tin mới nhất&lt;/strong&gt;, giảm rủi ro, và tối ưu hóa lợi nhuận với &lt;strong&gt;Top 10 Trận Bóng Có Tiền Cược Cao Nhất&lt;/strong&gt; thông qua Telegram Chatbot.</value>
+  </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Bắt đầu</value>
   </data>
