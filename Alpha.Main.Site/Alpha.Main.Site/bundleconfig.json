@@ -259,7 +259,7 @@
     "inputFiles": [
       "Assets/styles/home/page-mobile-calculate-07.css"
     ]
-  }, 
+  },
   {
     "outputFileName": "Assets/bundles/nickname/create-nickname.js",
     "inputFiles": [
@@ -272,7 +272,7 @@
     "inputFiles": [
       "Assets/styles/nickname/nickname.css"
     ]
-  },  
+  },
   {
     "outputFileName": "Assets/bundles/home/le-mtagconfig.js",
     "inputFiles": [

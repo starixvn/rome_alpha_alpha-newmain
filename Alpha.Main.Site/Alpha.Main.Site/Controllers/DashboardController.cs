@@ -31,14 +31,17 @@ namespace Alpha.Main.Site.Controllers
 
         [HttpGet]
         [AllowProtectedMode]
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
             if (userSession.IsProtectedMode)
             {
                 return View("~/Views/Dashboard/IndexProtectedMode.cshtml");
             }
 
-            return Index2();
+            var language = Main.Constants.Language.MapToMainLanguageCode(userSession.Language);
+
+            return View("~/Views/Dashboard/Banner.cshtml", (object)language);
+            //return Index2();
         }
 
         [HttpGet]
