@@ -695,6 +695,24 @@
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile_vi-VN.jpg" />
     <Content Include="Assets\Images\chatbot-i1.svg" />
     <Content Include="Assets\Images\chatbot-i7.svg" />
+    <Content Include="Assets\Images\DashboardBanner\i7\banner_en-US.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\i7\banner_mobile_en-US.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\i7\banner_mobile_th-TH.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\i7\banner_mobile_zh-CN.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\i7\banner_mobile_zh-TW.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\i7\banner_th-TH.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\i7\banner_zh-CN.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\i7\banner_zh-TW.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\i1\banner_en-US.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\i1\banner_mobile_en-US.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\i1\banner_mobile_th-TH.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\i7\banner_mobile_vi-VN.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\i1\banner_mobile_zh-CN.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\i1\banner_mobile_zh-TW.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\i1\banner_th-TH.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\i7\banner_vi-VN.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\i1\banner_zh-CN.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\i1\banner_zh-TW.jpg" />
     <Content Include="Assets\Images\feedback.svg" />
     <Content Include="Assets\Images\autotransfer.svg" />
     <Content Include="Assets\Images\autotransfer-dark.svg" />
@@ -1219,6 +1237,7 @@
     <Content Include="Web.napinternal4.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
+    <Content Include="Views\Dashboard\Banner.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\apikey\apikey-management.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey-result.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey.ts" />
@@ -1738,6 +1757,7 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\DashboardBannerViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewModel.cs" />
     <Compile Include="ViewModels\HeaderNavViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />

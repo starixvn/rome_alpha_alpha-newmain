@@ -70,11 +70,11 @@
   {
     "outputFile": "Assets/styles/home/home-mobile-calculate-07.css",
     "inputFile": "Assets/styles/home/home-mobile-calculate-07.scss"
-  }, 
+  },
   {
     "outputFile": "Assets/styles/nickname/nickname.css",
     "inputFile": "Assets/styles/nickname/nickname.scss"
-  },  
+  },
   {
     "outputFile": "Assets/styles/protection-code/protection.css",
     "inputFile": "Assets/styles/protection-code/protection.scss"

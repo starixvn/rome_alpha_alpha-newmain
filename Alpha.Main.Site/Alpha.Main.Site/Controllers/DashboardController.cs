@@ -3,7 +3,6 @@
 namespace Alpha.Main.Site.Controllers
 {
     using System;
-    using System.Threading.Tasks;
     using System.Web.Mvc;
     using System.Web.SessionState;
     using Alpha.Main.Configurations;
@@ -31,11 +30,18 @@ namespace Alpha.Main.Site.Controllers
 
         [HttpGet]
         [AllowProtectedMode]
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
             if (userSession.IsProtectedMode)
             {
                 return View("~/Views/Dashboard/IndexProtectedMode.cshtml");
+            }
+
+            var viewModel = new DashboardBannerViewModel(userSession);
+
+            if (viewModel.IsShow)
+            {
+                return View("~/Views/Dashboard/Banner.cshtml", viewModel);
             }
 
             return Index2();
