@@ -720,6 +720,9 @@
   <data name="CheckOut" xml:space="preserve">
     <value>Xem ngay</value>
   </data>
+  <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
+    <value>Nhận ngay &lt;strong&gt;thông tin mới nhất&lt;/strong&gt;, giảm rủi ro, và tối ưu hóa lợi nhuận với &lt;strong&gt;Top 10 Trận Bóng Có Tiền Cược Cao Nhất&lt;/strong&gt; thông qua Telegram Chatbot.</value>
+  </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Bắt đầu</value>
   </data>
@@ -737,5 +740,11 @@
   </data>
   <data name="WinLossDetailReport" xml:space="preserve">
     <value>Báo Cáo Chi Tiết Thắng Thua</value>
+  </data>
+  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
+    <value>Khám Phá &lt;b&gt;Tổng Cược Bóng Đá&lt;/b&gt; qua Telegram Chatbot.</value>
+  </data>
+  <data name="SetupChatbot" xml:space="preserve">
+    <value>Cài Đặt Chatbot</value>
   </data>
 </root>

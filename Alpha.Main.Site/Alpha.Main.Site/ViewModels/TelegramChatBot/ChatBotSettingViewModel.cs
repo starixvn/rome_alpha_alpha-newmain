@@ -43,7 +43,7 @@
 
         public string HowToUseLink
             => AppSettings.IsSiteLabel789y ?
-                MicroSites.MessageUrl("~/StaticMessage/Guide?id=167819") :
+                MicroSites.MessageUrl("~/StaticMessage/Guide?id=167820") :
                 MicroSites.HowToUseUrl("~/Index.aspx?linktomessagesite=167819");
     }
 }
