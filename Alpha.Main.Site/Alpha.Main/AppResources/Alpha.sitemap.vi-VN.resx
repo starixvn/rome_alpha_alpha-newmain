@@ -426,4 +426,7 @@
   <data name="PTTemplate" xml:space="preserve">
     <value>Mẫu Position Taking</value>
   </data>
+  <data name="MemberBettingBehavior" xml:space="preserve">
+    <value>Hành Vi Đặt Cược Member</value>
+  </data>
 </root>
