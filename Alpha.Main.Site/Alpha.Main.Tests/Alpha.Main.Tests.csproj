@@ -254,10 +254,6 @@
     <Compile Include="Criteria\KickoutCustomerCriteriaTests.cs" />
     <Compile Include="Criteria\Language\UpdateUsageLanguageCommandTests.cs" />
     <Compile Include="Criteria\LogoutCommandTests.cs" />
-    <Compile Include="Criteria\Nickname\CreateNicknameCommandTests.cs" />
-    <Compile Include="Criteria\Nickname\CreateSubAccountNicknameCommandTests.cs" />
-    <Compile Include="Criteria\Nickname\UpdateNicknameLoginOnlyCommand Tests.cs" />
-    <Compile Include="Criteria\Nickname\UpdateSubAccountNicknameLoginOnlyCommandTests.cs" />
     <Compile Include="Criteria\Otp\CheckEnableOtpCommandTests.cs" />
     <Compile Include="Criteria\Otp\DeleteCustOtpSecretKeyCommandTests.cs" />
     <Compile Include="Criteria\Otp\GetCustomerOtpCriteriaTests.cs" />

@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
     using System.Net;
+    using System.Threading.Tasks;
     using System.Web.Mvc;
     using Alpha.Web;
     using Alpha.Web.Filters;
@@ -31,7 +32,7 @@
         }
 
         [HttpPost, ValidateAntiForgeryToken, AllowProtectedMode]
-        public ActionResult Index(string nickname)
+        public async Task<ActionResult> Index(string nickname)
         {
             var message = new CreateNicknameCommand(userSession)
             {
@@ -39,7 +40,7 @@
             };
 
             var result = message.IsValid()
-                ? mediator.Send(message)
+                ? await mediator.SendAsync(message)
                 : Result.CreateErrorResult(Security.NotAuthorized, (int)HttpStatusCode.Forbidden);
 
             return result.IsSuccessful
