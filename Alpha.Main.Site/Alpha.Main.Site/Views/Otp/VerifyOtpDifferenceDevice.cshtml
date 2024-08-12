@@ -1,6 +1,7 @@
 ﻿@model VerifyOtpDifferenceDeviceViewModel
 @{
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
+    var profilePictureSrc = string.IsNullOrWhiteSpace(Model.ProfilePicture) ? Url.Content("~/assets/images/icon_user_default.png") : Model.ProfilePicture;
 }
 @section css {
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
@@ -12,7 +13,7 @@
         <h1 class="title">OTP</h1>
         <p> @string.Format(Security.OtpHiMessage, Model.UsernameShower)</p>
         <figure class="avatar">
-            <img id="logoProfileImg" alt="Avatar" src='' class='profile-avatar' />
+            <img id="logoProfileImg" alt="Avatar" src='@profilePictureSrc' class='profile-avatar' />
             <figcaption><span class="username">@Model.Username</span><br /><span class="nickname">@Model.AlternateUsername</span></figcaption>
         </figure>
         <div class="rowlg">
