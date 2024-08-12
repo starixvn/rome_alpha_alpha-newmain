@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Action" xml:space="preserve">
-    <value>เลือกปฏิบัติการ</value>
+    <value>การดำเนินการ</value>
   </data>
   <data name="All" xml:space="preserve">
     <value>ทั้งหมด</value>
@@ -163,7 +163,7 @@
     <value>สร้าง API Key ใหม่</value>
   </data>
   <data name="CreatedDate" xml:space="preserve">
-    <value>วันที่สร้าง</value>
+    <value>สร้างขึ้นเมื่อ</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>แก้ไข</value>

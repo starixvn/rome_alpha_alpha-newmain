@@ -143,7 +143,7 @@
     <value>เรียนเอเย่นท์ของเรา เพื่อให้ท่านเห็นความแตกต่างหากเข้าใช้งานเวปไซต์ปลอม เราได้ทำการเลือกรูปโปรไฟล์ส่วนตัวให้กับท่าน ซึ่งท่านสามารถเข้าทำการเปลี่ยนแปลงได้ โดย&lt;a class="change-picture-link" href="{0}" target="main" id="changePictureLink"&gt;กดที่นี่&lt;/a&gt;.&lt;br/&gt;ทั้งนี้ ท่านสามารถเปลี่ยนภาษาที่ท่านต้องการได้ โดย&lt;a class="change-picture-link" href="{1}" target="main"&gt;กดที่นี่&lt;/a&gt;. ขอบคุณ</value>
   </data>
   <data name="clickHere" xml:space="preserve">
-    <value>คลิ๊ก</value>
+    <value>คลิ๊กที่นี่</value>
   </data>
   <data name="uploadNow" xml:space="preserve">
     <value>เพื่ออัพโหลดตอนนี้</value>
@@ -179,16 +179,16 @@
     <value>เมนูหลัก</value>
   </data>
   <data name="balanceInfo" xml:space="preserve">
-    <value>ข้อมูลยอดเงินคงเหลือ</value>
+    <value>บัญชีคงเหลือ</value>
   </data>
   <data name="agent" xml:space="preserve">
-    <value>ตัวแทน</value>
+    <value>เอเย่นต์</value>
   </data>
   <data name="master" xml:space="preserve">
-    <value>ตัวแทนหลัก</value>
+    <value>มาสเตอร์</value>
   </data>
   <data name="super" xml:space="preserve">
-    <value>สูงสุด</value>
+    <value>ซุปเปอร์</value>
   </data>
   <data name="agentGivenCredit" xml:space="preserve">
     <value>เครดิตของเอเย่น</value>
@@ -281,19 +281,19 @@
     <value>สมาชิก</value>
   </data>
   <data name="turnover" xml:space="preserve">
-    <value>เงินหมุนเวียน</value>
+    <value>มูลค่าการเดิมพัน</value>
   </data>
   <data name="username" xml:space="preserve">
-    <value>ชื่อผู้ใช้ระบบ</value>
+    <value>ชื่อผู้ใช้</value>
   </data>
   <data name="winningAmount" xml:space="preserve">
     <value>ยอดได้ทั้งหมด</value>
   </data>
   <data name="createdDate" xml:space="preserve">
-    <value>วันที่สร้าง</value>
+    <value>สร้างขึ้นเมื่อ</value>
   </data>
   <data name="givenCredit" xml:space="preserve">
-    <value>เครดิตทั้งหมด</value>
+    <value>เครดิตที่ได้รับ</value>
   </data>
   <data name="Notice_2" xml:space="preserve">
     <value>วงเงินเดิมพัน ของท่าน ถูกเปลี่ยนแปลงเป็นที่เรียบร้อยแล้ว โดยทางต้นสาย  กรุณาตรวจสอบรายละเอียดต่าง ๆ ของลูกค้าของท่านอีกครั้ง</value>
@@ -404,7 +404,7 @@
     <value>สถิติของคุณ</value>
   </data>
   <data name="balance" xml:space="preserve">
-    <value>ข้อมูลยอดเงินคงเหลือ</value>
+    <value>บัญชีคงเหลือ</value>
   </data>
   <data name="Enabled" xml:space="preserve">
     <value>เปิดการใช้งาน</value>
@@ -428,7 +428,7 @@
     <value>ประกาศ</value>
   </data>
   <data name="active" xml:space="preserve">
-    <value>เปิด</value>
+    <value>ใช้งานอยู่</value>
   </data>
   <data name="closed" xml:space="preserve">
     <value>ปิด</value>
@@ -437,7 +437,7 @@
     <value>ระงับ</value>
   </data>
   <data name="submit" xml:space="preserve">
-    <value>ตกลง</value>
+    <value>ส่ง</value>
   </data>
   <data name="to" xml:space="preserve">
     <value>ถึง</value>
@@ -446,7 +446,7 @@
     <value>จาก</value>
   </data>
   <data name="outstanding" xml:space="preserve">
-    <value>การเดิมพันที่ยังไม่สิ้นสุด</value>
+    <value>เดิมพันที่ยังไม่สิ้นสุด</value>
   </data>
   <data name="NoPermissionAccessPage" xml:space="preserve">
     <value>ขออภัยคุณไม่ได้รับอนุญาติให้เข้าหน้านี้</value>
@@ -545,7 +545,7 @@
     <value>ขออภัยในความไม่สะดวก มา ณ ที่นี้ด้วย</value>
   </data>
   <data name="AllProducts" xml:space="preserve">
-    <value>โปรดักส์ทั้งหมด</value>
+    <value>ผลิตภัณฑ์ทั้งหมด</value>
   </data>
   <data name="UMSchedule" xml:space="preserve">
     <value>แผนการบำรุงรักษา (GMT +8) และในช่วงเวลานี้ฟังก์ชันเหล่านี้จะไม่สามารถใช้งานได้:</value>
@@ -599,7 +599,7 @@
     <value>จำเป็นต้องยืนยันรหัสป้องกัน</value>
   </data>
   <data name="Update" xml:space="preserve">
-    <value>ล่าสุด</value>
+    <value>อัปเดต</value>
   </data>
   <data name="UpdateProtectionCodeSuccessfully" xml:space="preserve">
     <value>รหัสป้องกันของคุณอัปเดตสำเร็จแล้ว</value>
@@ -638,7 +638,7 @@
     <value>ไม่มี</value>
   </data>
   <data name="Yes" xml:space="preserve">
-    <value>มี</value>
+    <value>ใช่</value>
   </data>
   <data name="AdvertisementMyWatchlistGlobalThresholdDetailAgent" xml:space="preserve">
     <value>ไปที่ &lt;b&gt; การจัดการความเสี่ยง &lt;/b&gt; --&gt; รายการเฝ้าดูของฉัน - ขีดจำกัดของฉัน --&gt; ตั้งค่าขีดจำกัดการชนะ/แพ้</value>

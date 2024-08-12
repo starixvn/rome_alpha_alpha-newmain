@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="agentwinloss" xml:space="preserve">
-    <value>เอเจนต์ ได้เสีย</value>
+    <value>ยอดได้เสียของเอเย่นต์</value>
   </data>
   <data name="agentwinlostdetail" xml:space="preserve">
-    <value>รายละเอียดการชนะ แพ้ ของ</value>
+    <value>รายละเอียดยอดได้เสียของเอเย่นต์</value>
   </data>
   <data name="BetType24" xml:space="preserve">
     <value>ดับเบิ้ลชานส์</value>
@@ -142,7 +142,7 @@
     <value>เครดิต / บัญชีคงเหลือ</value>
   </data>
   <data name="customerlist" xml:space="preserve">
-    <value>รายชื่อลูกค้า</value>
+    <value>รายชื่อสมาชิก</value>
   </data>
   <data name="dailywinlossanalysisreport" xml:space="preserve">
     <value>การวิเคราะห์ ผลได้เสีย รายวัน</value>
@@ -157,22 +157,22 @@
     <value>การแข่งขันความเร็ว</value>
   </data>
   <data name="htft" xml:space="preserve">
-    <value>ครึ่งเวลาแรก/ เต็มเวลา</value>
+    <value>ครึ่งแรก/เต็มเวลา</value>
   </data>
   <data name="lbl1x2" xml:space="preserve">
     <value>ราคาพูล</value>
   </data>
   <data name="agentList" xml:space="preserve">
-    <value>รายชื่อ เอเจนต์</value>
+    <value>รายชื่อเอเย่นต์</value>
   </data>
   <data name="agentOutstanding" xml:space="preserve">
-    <value>เอเย่นต์ยอดคงค้าง</value>
+    <value>เดิมพันที่ยังไม่สิ้นสุดของเอเย่นต์</value>
   </data>
   <data name="cancelledBets" xml:space="preserve">
-    <value>ยกเลิกการวางเดิมพัน</value>
+    <value>การเดิมพันที่ยกเลิก</value>
   </data>
   <data name="commissionByBettype" xml:space="preserve">
-    <value>คอมมิชั่นจากประเภทพนัน</value>
+    <value>ค่าคอมมิชชั่นตามประเภทการเดิมพัน</value>
   </data>
   <data name="commssionhorseracing" xml:space="preserve">
     <value>คอมมิสชั่นการแข่งขันม้า</value>
@@ -184,16 +184,16 @@
     <value>Home/Draw/Away No Bet</value>
   </data>
   <data name="HOUL" xml:space="preserve">
-    <value>ราคาต่อรอง / สูง ต่ำ / เกมส์สด</value>
+    <value>แฮนดิแคป/สูงต่ำ/เกมส์สด</value>
   </data>
   <data name="masterList" xml:space="preserve">
     <value>รายชื่อตัวแทนหลัก</value>
   </data>
   <data name="masterOutstanding" xml:space="preserve">
-    <value>การเดิมพันที่ยังไม่สิ้นสุดของ Master</value>
+    <value>เดิมพันที่ยังไม่สิ้นสุดของมาสเตอร์</value>
   </data>
   <data name="matchWinLostDetail" xml:space="preserve">
-    <value>รายละเอียดการได้หรือเสีย</value>
+    <value>รายละเอียดการได้เสียตามคู่แข่งขัน</value>
   </data>
   <data name="memberCommission" xml:space="preserve">
     <value>คอมมิชชั่นของสมาชิก</value>
@@ -202,10 +202,10 @@
     <value>ข้อมูลสมาชิก</value>
   </data>
   <data name="memberOutstanding" xml:space="preserve">
-    <value>การเดิมพันที่ยังไม่สิ้นสุดของ สมาชิก</value>
+    <value>เดิมพันที่ยังไม่สิ้นสุดของสมาชิก</value>
   </data>
   <data name="memberWinLoss" xml:space="preserve">
-    <value>สมาชิก (ชนะ แพ้)</value>
+    <value>ยอดได้เสียของสมาชิก</value>
   </data>
   <data name="monitor" xml:space="preserve">
     <value>ตรวจสอบเดิมพันสุดท้าย</value>
@@ -220,7 +220,7 @@
     <value>สมาชิกใหม่</value>
   </data>
   <data name="outRight" xml:space="preserve">
-    <value>ทายผลผู้ชนะ</value>
+    <value>เอาท์ไรท์</value>
   </data>
   <data name="positionTaking" xml:space="preserve">
     <value>เปอร์เซ็นที่รับความเสี่ยง</value>
@@ -229,16 +229,16 @@
     <value>กระดานผล</value>
   </data>
   <data name="statement" xml:space="preserve">
-    <value>บัญชี</value>
+    <value>รายการเดินบัญชี</value>
   </data>
   <data name="winLossByBettype" xml:space="preserve">
     <value>ชนะ แพ้ โดยชนิดของการวางเดิมพัน</value>
   </data>
   <data name="masterwinloss" xml:space="preserve">
-    <value>ตัวแทนหลัก ชนะ แพ้</value>
+    <value>ยอดได้เสียของมาสเตอร์</value>
   </data>
   <data name="masterwinlostdetail" xml:space="preserve">
-    <value>ตัวแทนหลัก ชนะ แพ้ รายละเอียด</value>
+    <value>รายละเอียดยอดได้เสียของมาสเตอร์</value>
   </data>
   <data name="matchwinloss" xml:space="preserve">
     <value>ผลแพ้ชนะต่อแมตช์</value>
@@ -247,7 +247,7 @@
     <value>จำกัด ได้/เสีย ของสมาชิก</value>
   </data>
   <data name="memberwinlossdetail" xml:space="preserve">
-    <value>รายละเอียด</value>
+    <value>รายละเอียดการได้เสียของสมาชิก</value>
   </data>
   <data name="moneyline" xml:space="preserve">
     <value>การทายผู้เล่นหรือทีมที่จะชนะ</value>
@@ -259,7 +259,7 @@
     <value>เกมหมายเลข</value>
   </data>
   <data name="OE1x2DND" xml:space="preserve">
-    <value>คี่/คู่ + 1x2 + DND</value>
+    <value>คี่/คู่ + ราคาพูล + เสมอ/ไม่เสมอ</value>
   </data>
   <data name="parlay" xml:space="preserve">
     <value>บอลชุด</value>
@@ -277,10 +277,10 @@
     <value>บัญชีย่อย</value>
   </data>
   <data name="totalbets" xml:space="preserve">
-    <value>จำนวนการวางเดิมพันทั้งหมด</value>
+    <value>ยอดเดิมพันทั้งหมด</value>
   </data>
   <data name="winlossanalysis" xml:space="preserve">
-    <value>การวิเคราะห์ ผล แพ้ ชนะ</value>
+    <value>การวิเคราะห์ยอดได้เสีย</value>
   </data>
   <data name="announcements" xml:space="preserve">
     <value>ประกาศ</value>
@@ -310,7 +310,7 @@
     <value>สถิติของคุณ</value>
   </data>
   <data name="winLossAnalysisChart" xml:space="preserve">
-    <value>แผนภูมิวิเคราะห์ เงินได้เสีย</value>
+    <value>แผนภูมิวิเคราะห์ยอดได้เสีย</value>
   </data>
   <data name="BetType13" xml:space="preserve">
     <value>ไม่มีการยิงประตู</value>
@@ -337,7 +337,7 @@
     <value>เลือกวงเงินเดิมพัน</value>
   </data>
   <data name="winLossByProduct" xml:space="preserve">
-    <value>ยอดได้เสียตามโปรดักส์</value>
+    <value>ยอดได้เสียตามผลิตภัณฑ์</value>
   </data>
   <data name="superWinLossDetailByPT" xml:space="preserve">
     <value>รายละเอียดการชนะหรือแพ้ของซุปเปอร์นั้นขึ้นอยู่กับค่าความเสี่ยง</value>
@@ -397,7 +397,7 @@
     <value>เก่า</value>
   </data>
   <data name="BetCreditTracking" xml:space="preserve">
-    <value>ติดตามเครดิตเดิมพัน</value>
+    <value>ความเคลื่อนไหวของเครดิตเดิมพัน</value>
   </data>
   <data name="MyWatchlist" xml:space="preserve">
     <value>รายการเฝ้าดูของฉัน</value>
@@ -421,7 +421,7 @@
     <value>ตรวจสถานะการโอนอัตโนมัติ</value>
   </data>
   <data name="PTTemplate" xml:space="preserve">
-    <value>เทมเพลตค่าแบ่งสู้</value>
+    <value>เทมเพลตค่าความเสี่ยง</value>
   </data>
   <data name="MemberBettingBehavior" xml:space="preserve">
     <value>พฤติกรรมการเดิมพันของสมาชิก</value>

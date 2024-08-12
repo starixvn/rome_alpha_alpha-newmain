@@ -142,7 +142,7 @@
     <value>信用額度/餘額</value>
   </data>
   <data name="customerlist" xml:space="preserve">
-    <value>會員</value>
+    <value>會員名單</value>
   </data>
   <data name="dailywinlossanalysisreport" xml:space="preserve">
     <value>每日輸贏分析</value>
@@ -163,7 +163,7 @@
     <value>獨贏盤</value>
   </data>
   <data name="agentList" xml:space="preserve">
-    <value>代理</value>
+    <value>代理名單</value>
   </data>
   <data name="agentOutstanding" xml:space="preserve">
     <value>代理未結束交易</value>
@@ -262,7 +262,7 @@
     <value>單雙盤 + 1x2 + DND</value>
   </data>
   <data name="parlay" xml:space="preserve">
-    <value>过关</value>
+    <value>過關</value>
   </data>
   <data name="reports" xml:space="preserve">
     <value>报告</value>
