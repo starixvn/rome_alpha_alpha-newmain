@@ -22,12 +22,7 @@
                 <span>@Resources.doNotShowAgain</span>
             </label>
 
-            @if (!Model.IsLinkedChatbot)
-            {
-                <a class="btn-submit btn-chatbot" id="linkHighlightPopupCheckOut" href="@Model.HightLightFeatureUrl" target="main">@Resources.SetupChatbot</a>
-            }
-
-            <a class="btn-submit" id="linkHighlightPopupTour" href="@Model.HightLightFeatureTourUrl" target="_blank">@Resources.QuickTour</a>
+            <a class="btn-submit" id="linkHighlightPopupCheckOut" href="@Model.HightLightFeatureUrl" target="main">@Resources.GetStarted</a>
         </div>
     </div>
 }

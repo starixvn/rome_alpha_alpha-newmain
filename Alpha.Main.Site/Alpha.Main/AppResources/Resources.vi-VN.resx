@@ -721,7 +721,7 @@
     <value>Xem ngay</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Nhận ngay &lt;strong&gt;thông tin mới nhất&lt;/strong&gt;, giảm rủi ro, và tối ưu hóa lợi nhuận với &lt;strong&gt;Top 10 Trận Bóng Có Tiền Cược Cao Nhất&lt;/strong&gt; thông qua Telegram Chatbot.</value>
+    <value>Hãy khám phá &lt;b&gt;Hồ Sơ Member&lt;/b&gt; và &lt;b&gt;Thống Kê Cược&lt;/b&gt; để hiểu rõ hơn về cách họ đặt cược. Điều này sẽ giúp bạn quản lý rủi ro một cách hiệu quả và đưa ra các quyết định chính xác hơn.</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Bắt đầu</value>
@@ -742,7 +742,7 @@
     <value>Báo Cáo Chi Tiết Thắng Thua</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Khám Phá &lt;b&gt;Tổng Cược Bóng Đá&lt;/b&gt; qua Telegram Chatbot.</value>
+    <value>Chào mừng bạn đến &lt;b&gt;Hành Vi Đặt Cược Member&lt;/b&gt;!</value>
   </data>
   <data name="SetupChatbot" xml:space="preserve">
     <value>Cài Đặt Chatbot</value>

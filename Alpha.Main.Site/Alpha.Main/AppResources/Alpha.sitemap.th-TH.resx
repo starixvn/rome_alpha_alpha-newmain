@@ -423,4 +423,7 @@
   <data name="PTTemplate" xml:space="preserve">
     <value>เทมเพลตค่าแบ่งสู้</value>
   </data>
+  <data name="MemberBettingBehavior" xml:space="preserve">
+    <value>พฤติกรรมการเดิมพันของสมาชิก</value>
+  </data>
 </root>

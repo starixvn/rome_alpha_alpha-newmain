@@ -659,7 +659,7 @@
     <value>查看</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>使用我们的Telegram Chatbot，获知 &lt;strong&gt;前10 场足球赛事最高投注额的最新动态&lt;/strong&gt;，这可降低风险并提高利润。</value>
+    <value>通过&lt;b&gt;会员资料&lt;/b&gt;和&lt;b&gt;投注统计&lt;/b&gt;数据深入了解会员的投注行为，以最有效的管理风险并做出明智的决策。</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>开始吧</value>
@@ -680,7 +680,7 @@
     <value>输赢细节报告</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>通过 Telegram Chatbot 探索 &lt;b&gt;足球总投注&lt;/b&gt;。</value>
+    <value>欢迎来到&lt;b&gt;会员投注模式&lt;/b&gt;！</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>一分钟前</value>

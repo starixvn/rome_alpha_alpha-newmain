@@ -592,7 +592,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stay ahead with the &lt;strong&gt;latest updates&lt;/strong&gt;, minimize risks, and maximize profits for the &lt;strong&gt;Top 10 Highest-turnover Soccer Matches&lt;/strong&gt; using our Telegram Chatbot..
+        ///   Looks up a localized string similar to Gain valuable insights into Members&apos; betting behaviors through &lt;b&gt;Member Profile&lt;/b&gt; and &lt;b&gt;Betting Statistics&lt;/b&gt; to effectively manage risk, and make informed decisions..
         /// </summary>
         public static string HighlightPopupNewFeatureIntro {
             get {
@@ -628,7 +628,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discover &lt;b&gt;Soccer Total Bets&lt;/b&gt; on the Telegram Chatbot.
+        ///   Looks up a localized string similar to Welcome to &lt;b&gt;Member Betting Behavior&lt;/b&gt;!.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {

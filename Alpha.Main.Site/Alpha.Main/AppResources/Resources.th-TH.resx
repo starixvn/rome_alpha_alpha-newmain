@@ -656,7 +656,7 @@
     <value>ออก</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>ให้คุณล่วงหน้าไปก่อนด้วยข้อมูล &lt;strong&gt;อัปเดตล่าสุด&lt;/strong&gt; ลดความเสี่ยง และเพิ่มผลกำไรสูงสุด ด้วยข้อมูล &lt;strong&gt;ยอดเดิมพันสูงสุด 10 อันดับแรกของฟุตบอล&lt;/strong&gt; ผ่านเทเลแกรมแชทบอทของเรา</value>
+    <value>รับข้อมูลเชิงลึกอันมีค่า เกี่ยวกับพฤติกรรมการเดิมพันของสมาชิกผ่าน&lt;b&gt;โปรไฟล์สมาชิก&lt;/b&gt; และ&lt;b&gt;สถิติการเดิมพัน&lt;/b&gt; เพื่อจัดการความเสี่ยงได้อย่างมีประสิทธิภาพ และใช้ตัดสินใจอย่างมีข้อมูล</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>เริ่มต้น</value>
@@ -677,7 +677,7 @@
     <value>รายงานรายละเอียดการแพ้ชนะ</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>ค้นพบ &lt;b&gt;จำนวนการวางเดิมพันทั้งหมดของฟุตบอล&lt;/b&gt;บน เทเลแกรมแชตบอท</value>
+    <value>ยินดีต้อนรับสู่ &lt;b&gt;พฤติกรรมการเดิมพันของสมาชิก&lt;/b&gt;!</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>หนึ่งนาทีที่แล้ว</value>

@@ -423,4 +423,7 @@
   <data name="PTTemplate" xml:space="preserve">
     <value>占成数模板</value>
   </data>
+  <data name="MemberBettingBehavior" xml:space="preserve">
+    <value>会员投注模式</value>
+  </data>
 </root>
