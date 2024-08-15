@@ -193,7 +193,7 @@
 
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
 
-        public bool HightLightFeaturePermission => message.ViewMemberStatistic;
+        public bool HightLightFeaturePermission => false;
 
         public string HightLightFeatureImageName => "new_feature_litemode" + DarkModeName;
 
