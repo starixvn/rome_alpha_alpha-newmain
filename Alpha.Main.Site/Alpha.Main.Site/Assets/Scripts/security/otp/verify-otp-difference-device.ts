@@ -35,6 +35,12 @@ class VerifyOtpDefferenceDevice {
         this.$btnBack.click(() => alpha.core.signOut2());
         this.$otpForm.submit(this.verifyOtpEvent);
         this.$btnGenerateOTP.click(this.generateOTP);
+        this.$otpForm.on("keypress", (e) => {
+            var keyPressed = e.keyCode || e.which;
+            if (keyPressed === 13) {
+                this.verifyOtpEvent(e)
+            }
+        });
     }
 
     generateOTP = (e: any) => {
@@ -57,10 +63,11 @@ class VerifyOtpDefferenceDevice {
             this.countDown(countDownTime);
         }
         else {
-            this.$txtOtp.addClass("error").next().text(result.message);
+            this.$txtOtp.addClass("error");
+            this.$("#error").text(result.message);
             if (result.code === this.lockedAccountCode) {
                 alert(result.message);
-                alpha.core.signOut();
+                alpha.core.signOut(result.message);
             }
         }
     }
@@ -87,7 +94,8 @@ class VerifyOtpDefferenceDevice {
 
         var otp = this.$txtOtp.val();
         if (otp.length === 0) {
-            this.$txtOtp.addClass("error").next().text(this.resources.requiredFieldMessage);
+            this.$txtOtp.addClass("error");
+            this.$("#error").text(this.resources.requiredFieldMessage);
             return;
         }
 
@@ -109,11 +117,12 @@ class VerifyOtpDefferenceDevice {
             securityHelper.gotoHomePage();
         }
         else {
-            this.$txtOtp.addClass("error").next().text(result.message);
+            this.$txtOtp.addClass("error");
+            this.$("#error").text(result.message);
 
             if (result.code === this.lockedAccountCode) {
                 alert(result.message);
-                alpha.core.signOut();
+                alpha.core.signOut(result.message);
             }
         }
     }
