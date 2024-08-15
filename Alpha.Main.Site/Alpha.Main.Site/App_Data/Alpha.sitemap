@@ -152,9 +152,9 @@
     </siteMapNode>
     <siteMapNode resourceKey="riskManagement" menuItemType="MemberInfoMenuItem" functionType="[H]">
       <siteMapNode resourceKey="MemberWinLimit" appPath="MemberInfoAppPath" url="WinLossLimit/Index"></siteMapNode>
-	   <siteMapNode resourceKey="MyWatchlist" appPath="MemberInfoAppPath" url="ReachedThreshold/Index" roles="Agent"></siteMapNode>
+	    <siteMapNode resourceKey="MyWatchlist" appPath="MemberInfoAppPath" url="ReachedThreshold/Index" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="MyThresholds" appPath="MemberInfoAppPath" url="MyThresholds/Index" roles="Super,Master"></siteMapNode>
-	   <siteMapNode resourceKey="MemberBettingBehavior" appPath="MemberInfoAppPath" url="MemberBettingBehavior/Index"></siteMapNode>
+	    <!--<siteMapNode resourceKey="MemberBettingBehavior" appPath="MemberInfoAppPath" url="MemberBettingBehavior/Index"></siteMapNode>-->
     </siteMapNode>
     <siteMapNode resourceKey="chatbot" appPath="MainAppPath" url="TelegramChatBot/Setup"></siteMapNode>
     <siteMapNode resourceKey="SercurityCode" appPath="MainAppPath" url="Otp/SetupOtp"></siteMapNode>
