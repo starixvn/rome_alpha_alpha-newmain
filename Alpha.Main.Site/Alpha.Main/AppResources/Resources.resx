@@ -788,4 +788,10 @@ In Less Than 3 Days</value>
   <data name="RichProductsCollection_Description" xml:space="preserve">
     <value>Excite your players with our wide variety of games and products.</value>
   </data>
+  <data name="Interested" xml:space="preserve">
+    <value>Interested? </value>
+  </data>
+  <data name="ContactCSD" xml:space="preserve">
+    <value>Contact our CSD for more details!</value>
+  </data>
 </root>

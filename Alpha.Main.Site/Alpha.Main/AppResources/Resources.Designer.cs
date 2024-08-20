@@ -331,6 +331,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact our CSD for more details!.
+        /// </summary>
+        public static string ContactCSD {
+            get {
+                return ResourceManager.GetString("ContactCSD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact Us.
         /// </summary>
         public static string ContactUs {
@@ -669,6 +678,15 @@ namespace Alpha.Main.AppResources {
         public static string IamNotARobot {
             get {
                 return ResourceManager.GetString("IamNotARobot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interested? .
+        /// </summary>
+        public static string Interested {
+            get {
+                return ResourceManager.GetString("Interested", resourceCulture);
             }
         }
         

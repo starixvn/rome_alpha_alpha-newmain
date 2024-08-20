@@ -1,4 +1,28 @@
-﻿.white-label {
+﻿body {
+    background: transparent;
+}
+
+.icon-home {
+    margin-right: 0;
+}
+
+.icon-home:after {
+    content: none;
+}
+
+.text {
+    padding: 10px 0;
+    margin: 0;
+    font-size: 15px;
+}
+
+@media only screen and (max-device-width: 768px) {
+    .text {
+        font-size: 20px;
+    }
+}
+
+.white-label {
     background: url(Images/white-label/bg-whitelabel.png) no-repeat center center / cover;
     min-height: 815px;
     width: 100%;
@@ -33,12 +57,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: -100px;
             flex: 1 0 0;
 
             .image {
                 width: 250px;
                 height: 250px;
+                margin-bottom: -100px;
+                z-index: 1;
             }
 
             &:first-child {
@@ -81,6 +106,79 @@
                     font-style: normal;
                     font-weight: 400;
                     line-height: 36px; /* 150% */
+                }
+            }
+        }
+    }
+
+    .bottom {
+        display: flex;
+        padding: 60px 70px;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px;
+        align-self: stretch;
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 12px;
+            color: #FFF;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+
+            .title {
+                color: #00C2FF;
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+        }
+
+        .right {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            flex: 1 0 0;
+
+            .messenger {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 16px;
+
+                .info {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: var(--Border-radius-1, 5px);
+                    color: #FFF;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 21px;
+
+                    .name {
+                        font-size: 24px;
+                        font-weight: 700;
+                    }
+
+                    .better {
+                        padding: 0px 7px;
+                        text-align: center;
+                        border-radius: var(--Border-radius-2, 2px);
+                        background: #4CAF50;
+                        color: #fff;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 21px;
+                    }
                 }
             }
         }

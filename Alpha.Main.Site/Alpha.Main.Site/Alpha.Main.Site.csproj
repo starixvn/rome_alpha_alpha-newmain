@@ -944,6 +944,11 @@
     <Content Include="Assets\styles\home\images\icon-close-feedback-dark.png" />
     <Content Include="Assets\styles\home\images\icon-close-feedback.png" />
     <Content Include="Assets\styles\home\images\icon-close-feedback2.png" />
+    <Content Include="Assets\styles\home\images\white-label\bg-whitelabel.png" />
+    <Content Include="Assets\styles\home\images\white-label\line.svg" />
+    <Content Include="Assets\styles\home\images\white-label\no-bad-debt.png" />
+    <Content Include="Assets\styles\home\images\white-label\rich-products-collection.png" />
+    <Content Include="Assets\styles\home\images\white-label\turnkey.png" />
     <Content Include="Assets\styles\home\page-dark.css">
       <DependentUpon>page-dark.scss</DependentUpon>
     </Content>
@@ -980,8 +985,12 @@
     <Content Include="Assets\styles\home\page-mobile-calculate-07.min.css">
       <DependentUpon>page-mobile-calculate-07.css</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\home\whitelabel.css" />
-    <Content Include="Assets\styles\home\whitelabel.min.css" />
+    <Content Include="Assets\styles\home\whitelabel.css">
+      <DependentUpon>whitelabel.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\whitelabel.min.css">
+      <DependentUpon>whitelabel.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\home\_mixins2.scss" />
     <Content Include="Assets\styles\nickname\nickname.css">
       <DependentUpon>nickname.scss</DependentUpon>

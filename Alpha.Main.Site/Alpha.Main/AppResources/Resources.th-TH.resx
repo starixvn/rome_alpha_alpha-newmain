@@ -722,4 +722,10 @@
   <data name="RichProductsCollection_Description" xml:space="preserve">
     <value>สร้างความตื่นเต้นให้ผู้เล่นของคุณด้วยเกมและผลิตภัณฑ์ที่หลากหลายของเรา</value>
   </data>
+  <data name="Interested" xml:space="preserve">
+    <value>สนใจใช่ไหม?</value>
+  </data>
+  <data name="ContactCSD" xml:space="preserve">
+    <value>ติดต่อฝ่ายบริการลูกค้าของเราตอนนี้!</value>
+  </data>
 </root>
