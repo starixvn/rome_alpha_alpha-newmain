@@ -722,7 +722,9 @@
     <Content Include="Assets\Images\autotransfer-dark.svg" />
     <Content Include="Assets\Images\arrowbackupdomainmb.svg" />
     <Content Include="Assets\Images\arrowbackupdomain.svg" />
+    <Content Include="Assets\Images\new_feature_litemode-dark.png" />
     <Content Include="Assets\Images\new_feature_litemode-dark.svg" />
+    <Content Include="Assets\Images\new_feature_litemode.png" />
     <Content Include="Assets\Images\new_feature_litemode.svg" />
     <Content Include="Assets\Images\MenuBarBanner\777\280x70_msa_en-US.jpg" />
     <Content Include="Assets\Images\MenuBarBanner\777\280x70_msa_th-TH.jpg" />

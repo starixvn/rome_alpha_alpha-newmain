@@ -1014,143 +1014,100 @@ html * {
 /********** popup hightlight *************/
 .popup-highlight {
     position: absolute;
-    background: $popup-bg;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+    background: #00326D;
+    border: 1px solid #1F528D;
     top: 310px;
-    left: 15px;
-    width: 400px;
+    left: 215px;
     z-index: 130;
-    color: $text-color;
-    padding: 20px;
+    width: 572px;
+    background: #00326D;
+    border: 1px solid #1F528D;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    font-family: 'Anybody';
+    padding: 40px 25px 24px 216px;
+    color: #fff;
 
-    .icon-close {
-        position: absolute;
-        top: 5px;
-        margin: 0;
-        right: 5px;
-        color: $text-color;
-        opacity: 1;
-        font-size: 20px;
+    button.close {
         text-shadow: none;
+        color: #fff;
+        opacity: 1;
+        margin: 0;
+        font-size: 20px;
+        position: absolute;
+        top: 13px;
+        right: 12px;
     }
 
-    &:before {
+    .image-new-feature {
         position: absolute;
-        content: "";
-        top: 74px;
-        left: -15px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 11px 16px 11px 0;
-        border-color: transparent #ffffff transparent transparent;
+        top: -88px;
+        left: -215px;
     }
 
     .text {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 17px;
-
-        img {
-            display: block;
-            margin: 0 21px 0 0;
-        }
+        margin-bottom: 15px;
 
         p {
-            span {
-                font-weight: 600;
-                font-size: 18px;
-                line-height: 20px;
-                display: block;
-                margin: 0 0 8px 0;
-            }
-
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 20px;
-            margin: 0 0 7px 0;
-
-            b {
-                color: #0B599C;
-            }
-
-            strong {
-                font-family: 'Roboto Bold';
-            }
-        }
-
-        ul {
-            padding: 0 0 0 19px;
             margin: 0;
 
-            li {
-                margin: 0;
-                list-style: disc;
-                font-weight: 500;
-                font-size: 14px;
-                line-height: 20px;
+            span {
+                font-weight: 700;
+                font-style: italic;
+                font-size: 24px;
+                line-height: 32px;
             }
         }
     }
 
     .action {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start
+    }
 
-        .label {
-            color: $text-color;
-            font-weight: 400;
-            font-size: $font-size;
-            background-color: transparent;
-            padding: 2px 0 0;
-            cursor: pointer;
+    .btn-submit {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        border-radius: 10px;
+        background: linear-gradient(to bottom, #FFCC90 0%,#FFC09D 100%);
+        padding: 1px;
+        display: inline-block;
+        height: auto;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin: 0 0 11px 0;
 
-            input {
-                width: 16px;
-                height: 16px;
-                top: 4px;
-                margin-right: 3px;
+        span {
+            background: linear-gradient(to bottom, #fd9346 0%,#fd4646 100%);
+            display: block;
+            border-radius: 10px;
+            padding: 10px 14px 9px 16px;
+        }
+    }
+
+    .label {
+        font-size: 16px;
+        background: transparent;
+        margin: 0;
+        padding: 3px 0 3px 3px;
+        text-transform: capitalize;
+        font-weight: 400;
+
+        input {
+            width: 18px;
+            height: 18px;
+            margin-right: 7px;
+            top: 4px;
+
+            @-moz-document url-prefix() {
+                top: 2px;
             }
         }
-
-        .btn-submit {
-            font-weight: 500;
-            font-size: $font-size;
-            margin: 0;
-            line-height: 28px;
-            margin-left: 10px;
-        }
-
-        a.btn-submit {
-            text-decoration: none;
-        }
     }
 }
 
-.popup-highlight.highlight-top {
-    left: unset;
-    top: 50px;
-    right: 32px;
-
-    &:before {
-        top: -19px;
-        left: unset;
-        right: 16px;
-        transform: rotate(90deg);
-    }
-}
-
-.popup-highlight.highlight-left {
-    left: unset;
-    top: 155px;
-
-    &:before {
-        left: unset;
-        top: 77px;
-        right: -16px;
-        transform: rotate(180deg);
-    }
-}
 
 //bootbox confirm use in modal revoke api
 .bootbox-confirm {
