@@ -970,6 +970,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to White Label.
+        /// </summary>
+        public static string WhiteLabel {
+            get {
+                return ResourceManager.GetString("WhiteLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Win Loss Analysis.
         /// </summary>
         public static string winlossanalysis {

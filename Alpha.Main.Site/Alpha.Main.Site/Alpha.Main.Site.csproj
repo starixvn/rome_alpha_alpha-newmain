@@ -1238,6 +1238,7 @@
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
     <Content Include="Views\Dashboard\Banner.cshtml" />
+    <Content Include="Views\Dashboard\WhiteLabel.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\apikey\apikey-management.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey-result.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey.ts" />

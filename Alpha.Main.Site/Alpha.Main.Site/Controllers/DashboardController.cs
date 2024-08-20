@@ -37,6 +37,11 @@ namespace Alpha.Main.Site.Controllers
                 return View("~/Views/Dashboard/IndexProtectedMode.cshtml");
             }
 
+            if (AppSettings.IsOfferedWhiteLabel(userSession.Site))
+            {
+                return RedirectToAction("WhiteLabel");
+            }
+
             var viewModel = new DashboardBannerViewModel(userSession);
 
             if (viewModel.IsShow)
@@ -52,6 +57,13 @@ namespace Alpha.Main.Site.Controllers
         {
             var viewModel = new DashboardViewModel(userSession.RoleId);
 
+            return View(viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult WhiteLabel()
+        {
+            var viewModel = new DashboardBannerViewModel(userSession);
             return View(viewModel);
         }
 

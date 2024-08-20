@@ -411,7 +411,7 @@ var indexManager = {
     //},
 
     initNewFeatureHighlightPopup: function () {
-        const leftMenu = $("#menu-CHATBOT");
+        const leftMenu = $("#menu-WHITELABEL");
         if (!leftMenu.length) {
             return;
         }
@@ -422,13 +422,13 @@ var indexManager = {
         }
 
         // RedmineId should be included to make FeatureName is unique.
-        const featureName = "204089_MemberStatistic";
+        const featureName = "WhiteLabel";
         const cookiesName = indexManager.hidePopupCookies + featureName;
         const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
 
         if (hidePopup !== "1") {
             popupManager.closeAllPopup();
-            box.css({ top: leftMenu.position().top + 35 });
+            box.css({ top: leftMenu.position().top + 80 });
             box.removeClass("hide");
 
             box.find(".icon-close").click(() => box.addClass("hide"));
@@ -498,7 +498,6 @@ var indexManager = {
         localStorage.removeItem(key);
     },
 };
-
 
 $(function () {
     indexManager.init();

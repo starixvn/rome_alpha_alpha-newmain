@@ -46,7 +46,7 @@
             var expectedViewModel = new DashboardViewModel(userSession.RoleId);
 
             // Act
-            var actualView = (await dashboardController.Index()) as ViewResult;
+            var actualView = (dashboardController.Index()) as ViewResult;
 
             // Assert
             Assert.True(compareLogic.Compare(expectedViewModel, actualView.Model).AreEqual);
