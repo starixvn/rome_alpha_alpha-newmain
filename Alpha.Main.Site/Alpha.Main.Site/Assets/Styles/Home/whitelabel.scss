@@ -1,7 +1,88 @@
 ﻿.white-label {
-    background: url(Images/bg-whitelabel.png) no-repeat center center / cover;
+    background: url(Images/white-label/bg-whitelabel.png) no-repeat center center / cover;
     min-height: 815px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
     font-family: 'Anybody';
     font-weight: 400;
+
+    .intro {
+        display: flex;
+        padding: 40px 200px 0px 200px;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
+        color: #FFF;
+        text-align: center;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 60px; /* 150% */
+    }
+
+    .items {
+        display: flex;
+        padding: 0px 70px 40px 70px;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 12px;
+        align-self: stretch;
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: -100px;
+            flex: 1 0 0;
+
+            .image {
+                width: 250px;
+                height: 250px;
+            }
+
+            &:first-child {
+                .content {
+                    border-radius: 150px 8px 8px 8px;
+                }
+            }
+
+            &:last-child {
+                .content {
+                    border-radius: 8px 150px 8px 8px;
+                }
+            }
+
+            .content {
+                display: flex;
+                height: 270px;
+                padding: 100px 28px 24px 28px;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                align-self: stretch;
+                border-radius: 8px;
+                background: linear-gradient(180deg, #0C77AE 0%, #004D95 100%);
+                box-shadow: 0px -8px 24px 0px rgba(255, 255, 255, 0.25) inset;
+
+                .title {
+                    color: #FFF;
+                    text-align: center;
+                    font-size: 28px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                }
+
+                .description {
+                    color: #A0DFFF;
+                    text-align: center;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 36px; /* 150% */
+                }
+            }
+        }
+    }
 }

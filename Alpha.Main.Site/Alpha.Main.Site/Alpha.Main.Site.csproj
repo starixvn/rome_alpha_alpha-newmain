@@ -689,6 +689,10 @@
     <Content Include="Assets\bundles\suggest-telegram-otp.min.js">
       <DependentUpon>suggest-telegram-otp.js</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\whitelabel.css" />
+    <Content Include="Assets\bundles\whitelabel.min.css">
+      <DependentUpon>whitelabel.css</DependentUpon>
+    </Content>
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop-dark_vi-VN.jpg" />
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop_vi-VN.jpg" />
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile-dark_vi-VN.jpg" />
@@ -976,6 +980,8 @@
     <Content Include="Assets\styles\home\page-mobile-calculate-07.min.css">
       <DependentUpon>page-mobile-calculate-07.css</DependentUpon>
     </Content>
+    <Content Include="Assets\styles\home\whitelabel.css" />
+    <Content Include="Assets\styles\home\whitelabel.min.css" />
     <Content Include="Assets\styles\home\_mixins2.scss" />
     <Content Include="Assets\styles\nickname\nickname.css">
       <DependentUpon>nickname.scss</DependentUpon>
@@ -1452,6 +1458,7 @@
     <Content Include="Assets\styles\advertisement\popup-advertisement.scss" />
     <Content Include="Assets\styles\apikey\apikey.scss" />
     <Content Include="Assets\styles\apikey\apikey-dark.scss" />
+    <Content Include="Assets\styles\home\whitelabel.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
