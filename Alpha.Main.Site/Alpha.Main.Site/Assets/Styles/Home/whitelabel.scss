@@ -24,101 +24,115 @@
 
 .white-label {
     background: url(Images/white-label/bg-whitelabel.png) no-repeat center center / cover;
-    min-height: 815px;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     font-family: 'Anybody';
     font-weight: 400;
+    border-radius: 5px;
+    // draf css
+    width: 100%;
 
     .intro {
-        padding: 40px 200px 0px 200px;
-        align-self: stretch;
+        padding: 30px 102px 0 84px;
+        max-width: 1150px;
         color: #FFF;
         text-align: center;
         font-size: 40px;
         font-style: normal;
         font-weight: 800;
-        line-height: 60px; /* 150% */
+        line-height: 54px;
+        margin: 0 auto 148px;
 
-        .blue {
-            color: #00C2FF
-        }
+        span {
+            color: #00C2FF;
 
-        .number {
-            font-size: 60px;
+            strong {
+                font-size: 60px;
+                display: inline-block;
+                vertical-align: inherit;
+            }
         }
     }
 
     .items {
         display: flex;
-        padding: 0px 70px 40px 70px;
+        padding: 0px 20px 40px 20px;
         justify-content: center;
-        align-items: flex-start;
         gap: 12px;
         align-self: stretch;
+        position: relative;
+        width: 100%;
+        max-width: 1472px;
+        margin: 0 auto;
+
+        &:after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1000px;
+            height: 1px;
+            background: rgb(63,169,245);
+            background: linear-gradient(90deg, rgba(63,169,245,0) 0%, rgba(63,169,245,1) 51%, rgba(63,169,245,0) 100%);
+        }
 
         .item {
             display: flex;
             flex-direction: column;
             align-items: center;
             flex: 1 0 0;
+            padding: 0 28px 10px;
+            border-radius: 8px;
+            background: linear-gradient(180deg, #0C77AE 0%, #004D95 100%);
+            box-shadow: 0px -8px 24px 0px rgba(255, 255, 255, 0.25) inset;
+            min-height: 270px;
 
             .image {
-                width: 250px;
-                height: 250px;
-                margin-bottom: -100px;
+                margin-top: -150px;
                 z-index: 1;
+                margin-bottom: 9px;
+
+                img {
+                    margin: 0 auto;
+                    display: block;
+                }
             }
 
             &:first-child {
-                .content {
-                    border-radius: 150px 8px 8px 8px;
-                }
+                border-radius: 150px 8px 8px 8px;
             }
 
             &:last-child {
-                .content {
-                    border-radius: 8px 150px 8px 8px;
-                }
+                border-radius: 8px 150px 8px 8px;
             }
 
-            .content {
-                display: flex;
-                height: 270px;
-                padding: 100px 28px 24px 28px;
-                flex-direction: column;
-                align-items: center;
-                gap: 8px;
-                align-self: stretch;
-                border-radius: 8px;
-                background: linear-gradient(180deg, #0C77AE 0%, #004D95 100%);
-                box-shadow: 0px -8px 24px 0px rgba(255, 255, 255, 0.25) inset;
+            .title {
+                color: #FFF;
+                text-align: center;
+                font-size: 28px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
 
-                .title {
-                    color: #FFF;
-                    text-align: center;
-                    font-size: 28px;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: normal;
-                }
-
-                .description {
-                    color: #A0DFFF;
-                    text-align: center;
-                    font-size: 24px;
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 36px; /* 150% */
-                }
+            .description {
+                color: #A0DFFF;
+                text-align: center;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 36px; /* 150% */
             }
         }
     }
 
     .bottom {
         display: flex;
-        padding: 60px 70px;
+        padding: 60px 70px 25px;
         justify-content: center;
         align-items: flex-start;
         gap: 40px;
@@ -135,6 +149,18 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+            position: relative;
+
+            &:after {
+                position: absolute;
+                content: "";
+                top: 0;
+                right: -40px;
+                width: 1px;
+                height: 80px;
+                background: rgb(63,169,245);
+                background: linear-gradient(0deg, rgba(63,169,245,0) 0%, rgba(63,169,245,1) 51%, rgba(63,169,245,0) 100%);
+            }
 
             .title {
                 color: #00C2FF;
@@ -157,11 +183,15 @@
                 align-items: center;
                 gap: 16px;
 
+                .icon {
+                    margin: 0 0 -25px 0;
+                }
+
                 .info {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
-                    gap: var(--Border-radius-1, 5px);
+                    gap: 5px;
                     color: #FFF;
                     font-size: 20px;
                     font-style: normal;
@@ -176,7 +206,7 @@
                     .better {
                         padding: 0px 7px;
                         text-align: center;
-                        border-radius: var(--Border-radius-2, 2px);
+                        border-radius: 2px;
                         background: #4CAF50;
                         color: #fff;
                         font-size: 16px;
