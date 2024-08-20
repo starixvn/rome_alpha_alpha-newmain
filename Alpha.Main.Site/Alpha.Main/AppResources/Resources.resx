@@ -766,4 +766,26 @@
   <data name="SetupChatbot" xml:space="preserve">
     <value>Set Up Chatbot</value>
   </data>
+  <data name="WhiteLabel_Intro" xml:space="preserve">
+    <value>Kickstart Your Own White Label Platform
+In Less Than 3 Days</value>
+  </data>
+  <data name="TurnkeySolution" xml:space="preserve">
+    <value>Turnkey Solution</value>
+  </data>
+  <data name="TurnkeySolution_Description" xml:space="preserve">
+    <value>Effortlessly launch and personalize your own gaming brand in less than 3 days.</value>
+  </data>
+  <data name="NoBadDebt" xml:space="preserve">
+    <value>No Bad Debt</value>
+  </data>
+  <data name="NoBadDebt_Description" xml:space="preserve">
+    <value>Players deposit upfront, eliminating bad debt risks from your business.</value>
+  </data>
+  <data name="RichProductsCollection" xml:space="preserve">
+    <value>Rich Products Collection</value>
+  </data>
+  <data name="RichProductsCollection_Description" xml:space="preserve">
+    <value>Excite your players with our wide variety of games and products.</value>
+  </data>
 </root>

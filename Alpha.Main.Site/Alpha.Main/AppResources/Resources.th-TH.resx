@@ -700,4 +700,26 @@
   <data name="SetupChatbot" xml:space="preserve">
     <value>ตั้งค่าแชตบอท</value>
   </data>
+  <data name="WhiteLabel_Intro" xml:space="preserve">
+    <value>เริ่มต้นแพลตฟอร์มไวท์ลาเบลของคุณเอง
+ภายในเวลาไม่ถึง 3 วัน</value>
+  </data>
+  <data name="TurnkeySolution" xml:space="preserve">
+    <value>โซลูชั่นแบบครบวงจร</value>
+  </data>
+  <data name="TurnkeySolution_Description" xml:space="preserve">
+    <value>เปิดตัวและปรับแต่งแบรนด์เกมของคุณเองได้อย่างง่ายดายภายในเวลาไม่ถึง 3 วัน</value>
+  </data>
+  <data name="NoBadDebt" xml:space="preserve">
+    <value>ไม่มีหนี้เสีย</value>
+  </data>
+  <data name="NoBadDebt_Description" xml:space="preserve">
+    <value>ผู้เล่นฝากเงินล่วงหน้าเพื่อขจัดความเสี่ยงด้านหนี้เสียจากธุรกิจของคุณ</value>
+  </data>
+  <data name="RichProductsCollection" xml:space="preserve">
+    <value>คอลเลกชันผลิตภัณฑ์ที่หลากหลาย</value>
+  </data>
+  <data name="RichProductsCollection_Description" xml:space="preserve">
+    <value>สร้างความตื่นเต้นให้ผู้เล่นของคุณด้วยเกมและผลิตภัณฑ์ที่หลากหลายของเรา</value>
+  </data>
 </root>
