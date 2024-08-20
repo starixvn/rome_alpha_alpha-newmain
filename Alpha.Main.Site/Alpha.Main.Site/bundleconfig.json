@@ -449,5 +449,11 @@
     "inputFiles": [
       "Assets/styles/apikey/apikey-dark.css"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/whitelabel.css",
+    "inputFiles": [
+      "Assets/Styles/home/whitelabel.css"
+    ]
   }
 ]

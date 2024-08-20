@@ -178,5 +178,9 @@
   {
     "outputFile": "Assets/Styles/customer-profiles/customer-profile-dark.css",
     "inputFile": "Assets/Styles/customer-profiles/customer-profile-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/whitelabel.css",
+    "inputFile": "Assets/styles/home/whitelabel.scss"
   }
 ]
