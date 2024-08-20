@@ -1,4 +1,4 @@
-﻿@model Alpha.Main.Site.ViewModels.Dashboard.DashboardBannerViewModel
+﻿@model Alpha.Main.Site.ViewModels.ContactUs.ContactUsViewModel
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +14,7 @@
 <body>
     <p class="text">@Html.Raw(string.Format(Resources.DashboardViewOverallInformation, "<span onclick=\"location.href=top.headerNav.urls.home;\" class=\"icon icon-home\"></span>"))</p>
     <div class="white-label">
-        <div class="intro">@Resources.WhiteLabel_Intro</div>
+        <div class="intro">@Html.Raw(Resources.WhiteLabel_Intro)</div>
         <div class="items">
             <div class="item">
                 <div class="image">
@@ -51,22 +51,25 @@
             </div>
             <div class="line"></div>
             <div class="right">
-                <div class="messenger">
-                    <div class="icon">
-                        <img src="~/Assets/Styles/Home/Images/white-label/icon-skype.png" />
+                @if (Model.IsShowSkypeId)
+                {
+                    <div class="messenger">
+                        <div class="icon">
+                            <img src="~/Assets/Styles/Home/Images/white-label/icon-skype.png" />
+                        </div>
+                        <div class="info">
+                            <div class="name">@Resources.SkypeID</div>
+                            <div class="account">@Model.SkypeId</div>
+                        </div>
                     </div>
-                    <div class="info">
-                        <div class="name">Skype ID</div>
-                        <div class="account">live:nova99agent</div>
-                    </div>
-                </div>
+                }
                 <div class="messenger">
                     <div class="icon">
                         <img src="~/Assets/Styles/Home/Images/white-label/icon-letstalk.png" />
                     </div>
                     <div class="info">
-                        <div class="name">Lestalk IM ID</div>
-                        <div class="account">nova88_agent</div>
+                        <div class="name">@Resources.LetstalkIMID</div>
+                        <div class="account">@Model.LetstalkId</div>
                         <div class="better">@Resources.ContactUsLegend</div>
                     </div>
                 </div>

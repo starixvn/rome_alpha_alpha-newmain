@@ -32,10 +32,7 @@
     font-weight: 400;
 
     .intro {
-        display: flex;
         padding: 40px 200px 0px 200px;
-        flex-direction: column;
-        align-items: center;
         align-self: stretch;
         color: #FFF;
         text-align: center;
@@ -43,6 +40,14 @@
         font-style: normal;
         font-weight: 800;
         line-height: 60px; /* 150% */
+
+        .blue {
+            color: #00C2FF
+        }
+
+        .number {
+            font-size: 60px;
+        }
     }
 
     .items {

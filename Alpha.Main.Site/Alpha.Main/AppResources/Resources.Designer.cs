@@ -1997,8 +1997,8 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kickstart Your Own White Label Platform
-        ///In Less Than 3 Days.
+        ///   Looks up a localized string similar to Kickstart Your Own &lt;span class=&quot;blue&quot;&gt;White Label&lt;/span&gt; Platform
+        ///In Less Than &lt;span class=&quot;blue&quot;&gt;&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt; Days&lt;/span&gt;.
         /// </summary>
         public static string WhiteLabel_Intro {
             get {

@@ -6,6 +6,7 @@ namespace Alpha.Main.Site.Controllers
     using System.Web.Mvc;
     using System.Web.SessionState;
     using Alpha.Main.Configurations;
+    using Alpha.Main.Site.ViewModels.ContactUs;
     using Alpha.Web;
     using Alpha.Web.Filters;
     using AlphaPlus.User.Models;
@@ -63,7 +64,7 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet]
         public ActionResult WhiteLabel()
         {
-            var viewModel = new DashboardBannerViewModel(userSession);
+            var viewModel = new ContactUsViewModel(Request.Headers["Host"]);
             return View(viewModel);
         }
 

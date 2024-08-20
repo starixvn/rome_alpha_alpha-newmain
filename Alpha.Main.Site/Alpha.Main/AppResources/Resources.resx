@@ -767,8 +767,8 @@
     <value>Set Up Chatbot</value>
   </data>
   <data name="WhiteLabel_Intro" xml:space="preserve">
-    <value>Kickstart Your Own White Label Platform
-In Less Than 3 Days</value>
+    <value>Kickstart Your Own &lt;span class="blue"&gt;White Label&lt;/span&gt; Platform
+In Less Than &lt;span class="blue"&gt;&lt;span class="number"&gt;3&lt;/span&gt; Days&lt;/span&gt;</value>
   </data>
   <data name="TurnkeySolution" xml:space="preserve">
     <value>Turnkey Solution</value>
