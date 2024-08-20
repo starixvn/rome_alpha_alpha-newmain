@@ -3,6 +3,7 @@
     using System;
     using System.Threading.Tasks;
     using Alpha.Main.Constants;
+    using Alpha.Main.ProfilePicture.Services;
     using Alpha.Main.Site.Requests.TelegramChatBot;
     using Alpha.Main.Site.ViewModels.TelegramChatBot;
     using Alpha.SecurityCode.Services;
@@ -48,8 +49,10 @@
         private readonly ISettingService telegramSettingService;
         private readonly SecurityCodeChecker securityCodeChecker;
         private readonly ILogger logger;
+        private readonly ProfilePictureServices customerProfileService;
 
         public CustomerOtpHandler(
+            ProfilePictureServices customerProfileService,
             CustomerOtpService customerOtpService,
             IUserSession userSession,
             SessionManager sessionManager,
@@ -60,6 +63,7 @@
             SecurityCodeChecker securityCodeChecker,
             ILogger logger)
         {
+            this.customerProfileService = customerProfileService;
             this.customerOtpService = customerOtpService;
             this.userSession = userSession;
             this.sessionManager = sessionManager;
@@ -184,8 +188,11 @@
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
+            var profilePicture = customerProfileService.GetActorProfilePicture(message.CustId);
+
             return new VerifyOtpDifferenceDeviceViewModel
             {
+                ProfilePicture = profilePicture.ImageBase64String,
                 Username = message.UserName,
                 AlternateUsername = BuildAlternateUsername(message.IsSubAcc, message.SubUserName, message.NickName),
                 UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName),
