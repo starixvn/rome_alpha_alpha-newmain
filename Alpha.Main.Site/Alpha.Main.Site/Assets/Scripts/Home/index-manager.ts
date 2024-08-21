@@ -59,7 +59,10 @@ var indexManager = {
         indexManager.setCurrentUrl();
 
         indexManager.initFeedbackGlobal();
-        indexManager.initNewFeatureHighlightPopup();
+        var currentUrl = indexManager.getCurrentUrl();
+        if (currentUrl.indexOf("Dashboard/WhiteLabel") === -1) {
+            indexManager.initNewFeatureHighlightPopup();
+        }
 
         if (indexManager.requiredNetworkSpeedCalculation) {
             setTimeout(indexManager.calculateUserConnectionSpeed, 8000);
