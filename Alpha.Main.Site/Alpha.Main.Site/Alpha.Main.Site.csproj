@@ -947,6 +947,7 @@
     <Content Include="Assets\styles\home\images\icon-close-feedback.png" />
     <Content Include="Assets\styles\home\images\icon-close-feedback2.png" />
     <Content Include="Assets\styles\home\images\white-label\bg-whitelabel.png" />
+	<Content Include="Assets\styles\home\images\white-label\bg-whitelabel-sm.png" />
     <Content Include="Assets\styles\home\images\white-label\icon-letstalk.png" />
     <Content Include="Assets\styles\home\images\white-label\icon-skype.png" />
     <Content Include="Assets\styles\home\images\white-label\line.svg" />
