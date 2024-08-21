@@ -22,6 +22,16 @@
     }
 }
 
+html {
+    font-size: calc(100vw / 15.72);
+}
+
+.wrapper-white-label {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .white-label {
     background: url(Images/white-label/bg-whitelabel.png) no-repeat center center / cover;
     height: 100%;
@@ -31,11 +41,10 @@
     font-family: 'Anybody';
     font-weight: 400;
     border-radius: 5px;
-    // draf css
     width: 100%;
 
     .intro {
-        padding: 30px 102px 0 84px;
+        padding: 30px 1.02rem 0 0.84rem;
         max-width: 1150px;
         color: #FFF;
         text-align: center;
@@ -43,7 +52,7 @@
         font-style: normal;
         font-weight: 800;
         line-height: 54px;
-        margin: 0 auto 148px;
+        margin: 0 auto 1.48rem;
 
         span {
             color: #00C2FF;
@@ -58,7 +67,7 @@
 
     .items {
         display: flex;
-        padding: 0px 20px 40px 20px;
+        padding: 0px .2rem 40px .2rem;
         justify-content: center;
         gap: 12px;
         align-self: stretch;
@@ -85,29 +94,30 @@
             flex-direction: column;
             align-items: center;
             flex: 1 0 0;
-            padding: 0 28px 10px;
+            padding: 0 .28rem 10px;
             border-radius: 8px;
             background: linear-gradient(180deg, #0C77AE 0%, #004D95 100%);
             box-shadow: 0px -8px 24px 0px rgba(255, 255, 255, 0.25) inset;
             min-height: 270px;
 
             .image {
-                margin-top: -150px;
+                margin-top: -1.5rem;
                 z-index: 1;
-                margin-bottom: 9px;
+                margin-bottom: 0.09rem;
 
                 img {
+                    width: 2.51rem;
                     margin: 0 auto;
                     display: block;
                 }
             }
 
             &:first-child {
-                border-radius: 150px 8px 8px 8px;
+                border-radius: 1.5rem 8px 8px 8px;
             }
 
             &:last-child {
-                border-radius: 8px 150px 8px 8px;
+                border-radius: 8px 1.5rem 8px 8px;
             }
 
             .title {
@@ -132,10 +142,10 @@
 
     .bottom {
         display: flex;
-        padding: 60px 70px 25px;
+        padding: .6rem .7rem .25rem;
         justify-content: center;
         align-items: flex-start;
-        gap: 40px;
+        gap: 0.4rem;
         align-self: stretch;
 
         .left {
@@ -154,8 +164,9 @@
             &:after {
                 position: absolute;
                 content: "";
-                top: 0;
-                right: -40px;
+                top: 50%;
+                transform: translateY(-50%);
+                right: -.4rem;
                 width: 1px;
                 height: 80px;
                 background: rgb(63,169,245);
@@ -173,8 +184,7 @@
 
         .right {
             display: flex;
-            align-items: flex-start;
-            gap: 40px;
+            gap: 0.4rem;
             flex: 1 0 0;
 
             .messenger {
