@@ -21,22 +21,22 @@
                     <div class="image">
                         <img src="~/Assets/Styles/Home/Images/white-label/turnkey.png" />
                         <div class="title">@Resources.TurnkeySolution</div>
-                    </div>                          
-                    <div class="description">@Resources.TurnkeySolution_Description</div>                   
+                    </div>
+                    <div class="description">@Resources.TurnkeySolution_Description</div>
                 </div>
                 <div class="item">
                     <div class="image">
                         <img src="~/Assets/Styles/Home/Images/white-label/no-bad-debt.png" />
                         <div class="title">@Resources.NoBadDebt</div>
                     </div>
-                    <div class="description">@Resources.NoBadDebt_Description</div>                    
+                    <div class="description">@Resources.NoBadDebt_Description</div>
                 </div>
                 <div class="item">
                     <div class="image">
                         <img src="~/Assets/Styles/Home/Images/white-label/rich-products-collection.png" />
                         <div class="title">@Resources.RichProductsCollection</div>
                     </div>
-                    <div class="description">@Resources.RichProductsCollection_Description</div>                   
+                    <div class="description">@Resources.RichProductsCollection_Description</div>
                 </div>
             </div>
             <div class="bottom">
@@ -46,25 +46,25 @@
                 </div>
                 <div class="line"></div>
                 <div class="right">
-                @if (Model.IsShowSkypeId)
-                {
-                    <div class="messenger">
-                        <div class="icon">
-                            <img src="~/Assets/Styles/Home/Images/white-label/icon-skype.png" />
+                    @if (Model.IsShowSkypeId)
+                    {
+                        <div class="messenger">
+                            <div class="icon">
+                                <img src="~/Assets/Styles/Home/Images/white-label/icon-skype.png" />
+                            </div>
+                            <div class="info">
+                                <div class="name">@Resources.SkypeID</div>
+                                <div class="account">@Model.SkypeId</div>
+                            </div>
                         </div>
-                        <div class="info">
-                            <div class="name">Skype ID</div>
-                            <div class="account">live:nova99agent</div>
-                        </div>
-                    </div>
-                }
+                    }
                     <div class="messenger">
                         <div class="icon">
                             <img src="~/Assets/Styles/Home/Images/white-label/icon-letstalk.png" />
                         </div>
                         <div class="info">
-                            <div class="name">Letstak IM ID</div>
-                            <div class="account">nova88_agent</div>
+                            <div class="name">@Resources.LetstalkIMID</div>
+                            <div class="account">@Model.LetstalkId</div>
                             <div class="better">@Resources.ContactUsLegend</div>
                         </div>
                     </div>
