@@ -729,7 +729,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     right: auto;
-    top: calculateScale(210px) !important;
+    top: 210px !important;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -738,25 +738,28 @@ body {
     justify-content: center;
     width: calculateScale(320px);
 
+    &:before {
+        display: none;
+    }
+
     button.close {
         width: calculateScale(48px);
         height: calculateScale(48px);
         border: 1px solid #1F528D;
         border-radius: calculateScale(30px);
         font-size: calculateScale(20px);
-        top: auto;
-        right: auto;
-        bottom: calculateScale(-25px);
-        left: 50%;
-        margin-left: calculateScale(-24px);
+        top: calculateScale(-15px);
+        right: -1px;
+        bottom: auto;
+        left: auto;
         background: #00326D;
     }
 
     .image-new-feature {
         position: absolute;
-        top: calculateScale(-139px);
-        left: calculateScale(-23px);
-        width: calculateScale(373px);
+        top: calculateScale(-107px);
+        left: calculateScale(2px);
+        width: calculateScale(321px);
     }
 
     .text {

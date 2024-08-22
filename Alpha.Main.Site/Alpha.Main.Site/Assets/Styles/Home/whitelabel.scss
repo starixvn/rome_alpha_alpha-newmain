@@ -56,9 +56,7 @@ html {
 
     .items {
         display: flex;
-        padding: 0px .2rem 40px .2rem;
-        justify-content: center;
-        gap: 12px;
+        padding: 0px .2rem 40px .2rem;        
         align-self: stretch;
         position: relative;
         width: 100%;
@@ -84,10 +82,15 @@ html {
             align-items: center;
             flex: 1 0 0;
             padding: 0 .28rem 10px;
+            width: 32.75%;
             border-radius: 8px;
             background: linear-gradient(180deg, #0C77AE 0%, #004D95 100%);
             box-shadow: 0px -8px 24px 0px rgba(255, 255, 255, 0.25) inset;
             min-height: 270px;
+
+            + .item {
+                margin-left: 1.75%;
+            }
 
             .image {
                 margin-top: -1.5rem;
@@ -136,6 +139,7 @@ html {
         align-items: flex-start;
         gap: 0.4rem;
         align-self: stretch;
+       
 
         .left {
             display: flex;
@@ -149,6 +153,7 @@ html {
             font-weight: 400;
             line-height: normal;
             position: relative;
+            padding-right: 15px;
 
             &:after {
                 position: absolute;
@@ -180,10 +185,13 @@ html {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                gap: 16px;
-
+                padding-right: 15px;
+                .messenger{
+                    padding-right: 0;
+                }
                 .icon {
                     margin: 0 0 -25px 0;
+                    padding-right: 16px;
                 }
 
                 .info {
@@ -264,6 +272,8 @@ html {
                 flex: 1 0 0;
                 padding: 0;
                 min-height: auto;
+                width: 100%;
+                margin-left: 0 !important;
                 margin-bottom: calculateScale(41px);
 
                 .image {
@@ -275,6 +285,7 @@ html {
 
                     img {
                         width: calculateScale(130px);
+                        height: calculateScale(130px);
                         margin: 0 calculateScale(12px) 0 0;
                         display: block;
                     }

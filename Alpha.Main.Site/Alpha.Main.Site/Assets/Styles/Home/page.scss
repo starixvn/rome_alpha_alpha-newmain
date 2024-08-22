@@ -1017,16 +1017,29 @@ html * {
     background: #00326D;
     border: 1px solid #1F528D;
     top: 310px;
-    left: 215px;
+    left: 29px;
     z-index: 130;
-    width: 572px;
+    width: 442px;
     background: #00326D;
     border: 1px solid #1F528D;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.35);
     border-radius: 10px;
     font-family: 'Anybody';
-    padding: 40px 25px 24px 216px;
+    padding: 23px 215px 24px 23px;
     color: #fff;
+
+    &:before {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 9.5px 15px 9.5px 0;
+        border-color: transparent #00326D transparent transparent;
+        position: absolute;
+        left: -15px;
+        top: 75px;
+    }
 
     button.close {
         text-shadow: none;
@@ -1035,18 +1048,24 @@ html * {
         margin: 0;
         font-size: 20px;
         position: absolute;
-        top: 13px;
-        right: 12px;
+        top: -32px;
+        right: -31px;
+        width: 48px;
+        height: 48px;
+        border: 1px solid #1F528D;
+        background: #00326D;
+        border-radius: 30px;
+        z-index: 10;
     }
 
     .image-new-feature {
         position: absolute;
-        top: -88px;
-        left: -215px;
+        top: -65px;
+        right: -116px;
     }
 
     .text {
-        margin-bottom: 15px;
+        margin-bottom: 16px;
 
         p {
             margin: 0;
@@ -1054,8 +1073,8 @@ html * {
             span {
                 font-weight: 700;
                 font-style: italic;
-                font-size: 24px;
-                line-height: 32px;
+                font-size: 18px;
+                line-height: 24px;
             }
         }
     }
@@ -1083,7 +1102,7 @@ html * {
             background: linear-gradient(to bottom, #fd9346 0%,#fd4646 100%);
             display: block;
             border-radius: 10px;
-            padding: 10px 14px 9px 16px;
+            padding: 5px 14px 4px 16px;
         }
     }
 
