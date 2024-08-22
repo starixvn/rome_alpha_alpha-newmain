@@ -1,31 +1,28 @@
 ﻿@model IndexViewModel
 @if (Model.HightLightFeaturePermission)
 {
-<div class="popup-highlight hide" id="boxHighlightPopupNewFeature">
-    <button type="button" class="icon icon-close close" title="@Resources.close">
-        <span aria-hidden="true"></span>
-    </button>
-    <div class="text">
-        <img class="image-new-feature" src="~/Assets/Images/@(Model.HightLightFeatureImageName).png?v=@AppSettings.JsVersion" alt="@Resources.HighlightPopupNewFeatureTitle">
-        <div>
-            <p>
-                <span>@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</span>
-            </p>
-            @*
+    <div class="popup-highlight hide" id="boxHighlightPopupNewFeature">
+        <button type="button" class="icon icon-close close" title="@Resources.close">
+            <span aria-hidden="true"></span>
+        </button>
+        <div class="text">
+            <img src="~/Assets/Images/@(Model.HightLightFeatureImageName).svg?v=@AppSettings.JsVersion" alt="@Resources.HighlightPopupNewFeatureTitle">
+            <div>
                 <p>
-                  @Html.Raw(Resources.HighlightPopupNewFeatureIntro)
+                    <span>@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</span>
                 </p>
-            *@
+                <p>
+                    @Html.Raw(Resources.HighlightPopupNewFeatureIntro)
+                </p>
+            </div>
+        </div>
+        <div class="action">
+            <label class="label">
+                <input id="chkHideHighlightPopupNewFeature" type="checkbox" />
+                <span>@Resources.doNotShowAgain</span>
+            </label>
+
+            <a class="btn-submit" id="linkHighlightPopupCheckOut" href="@Model.HightLightFeatureUrl" target="main">@Resources.GetStarted</a>
         </div>
     </div>
-    <div class="action">
-        <a class="btn-submit" id="linkHighlightPopupCheckOut" href="@Model.HightLightFeatureUrl" target="main"><span>@Resources.GetStarted</span></a>
-        <label class="label">
-            <input id="chkHideHighlightPopupNewFeature" type="checkbox" />
-            <span>@Resources.doNotShowAgain</span>
-        </label>
-
-
-    </div>
-</div>
 }
