@@ -453,6 +453,10 @@ var indexManager = {
             });
 
             // indexManager.replaceCookieslessURL(newFeatureLink);
+
+            leftMenu.click(() => {
+                box.addClass("hide");
+            })
         }
     },
 
