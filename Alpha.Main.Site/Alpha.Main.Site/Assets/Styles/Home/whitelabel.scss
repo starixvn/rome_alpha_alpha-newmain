@@ -1,4 +1,5 @@
-﻿body {
+﻿@import "_mixins.scss";
+body {
     background: transparent;
 }
 
@@ -231,24 +232,25 @@ html {
     .white-label {
         background: url(Images/white-label/bg-whitelabel-sm.png) no-repeat top center / cover;
         border-radius: 0;
-        flex:1 ;
+        flex: 1;
+
         .intro {
-            padding: 41px 16px 0;
+            padding: calculateScale(41px) calculateScale(16px) 0;
             max-width: 100%;
-            font-size: 28px;
-            line-height: 32px;
-            margin: 0 auto 56px;
+            font-size: calculateScale(28px);
+            line-height: calculateScale(32px);
+            margin: 0 auto calculateScale(56px);
 
             span {
                 strong {
-                    font-size: 28px;
+                    font-size: calculateScale(28px);
                 }
             }
         }
 
         .items {
             display: block;
-            padding: 0px 16px 0px;
+            padding: 0 calculateScale(16px) 0;
 
             &:after {
                 width: calc(100% - 32px);
@@ -262,66 +264,66 @@ html {
                 flex: 1 0 0;
                 padding: 0;
                 min-height: auto;
-                margin-bottom: 41px;
+                margin-bottom: calculateScale(41px);
 
                 .image {
-                    margin-top: -37px;
-                    margin-bottom: -3px;
+                    margin-top: calculateScale(-37px);
+                    margin-bottom: calculateScale(-3px);
                     width: 100%;
                     display: flex;
 
 
                     img {
-                        width: 130px;
-                        margin: 0 12px 0 0;
+                        width: calculateScale(130px);
+                        margin: 0 calculateScale(12px) 0 0;
                         display: block;
                     }
                 }
 
                 &:first-child, &:last-child {
-                    border-radius: 8px;
+                    border-radius: calculateScale(8px);
                 }
 
 
                 .title {
                     text-align: left;
-                    font-size: 24px;
-                    line-height: 30px;
-                    margin-top: 38px;
+                    font-size: calculateScale(24px);
+                    line-height: calculateScale(30px);
+                    margin-top: calculateScale(38px);
                     display: flex;
                     align-items: center;
                 }
 
                 .description {
                     text-align: left;
-                    font-size: 20px;
-                    line-height: 28px;
-                    padding: 0 24px 20px;
+                    font-size: calculateScale(20px);
+                    line-height: calculateScale(28px);
+                    padding: 0 calculateScale(26px) calculateScale(20px);
                 }
             }
         }
 
         .bottom {
             display: block;
-            padding: 29px 16px 20px;
+            padding: calculateScale(29px) calculateScale(16px) calculateScale(20px);
 
             .left {
                 display: block;
                 color: #FFF;
-                font-size: 20px;
+                font-size: calculateScale(20px);
                 font-style: normal;
-                line-height: 20.7px;
+                line-height: calculateScale(20.7px);
                 text-align: center;
-                margin-bottom: 27px;
+                margin-bottom: calculateScale(27px);
 
                 &:after {
                     display: none;
                 }
 
                 .title {
-                    font-size: 24px;
-                    line-height: 24.84px;
-                    margin-bottom: 12px;
+                    font-size: calculateScale(24px);
+                    line-height: calculateScale(24.84px);
+                    margin-bottom: calculateScale(12px);
                 }
             }
 
@@ -330,12 +332,31 @@ html {
 
                 .messenger {
                     align-items: center;
-                    padding: 0 30px;
-                    margin-bottom: 38px;
+                    padding: 0 0 0 calculateScale(30px);
+                    margin-bottom: calculateScale(38px);
                     justify-content: flex-start;
+                    gap: calculateScale(16px);
+
+                    .icon img {
+                        width: calculateScale(80px);
+                    }
 
                     .info {
                         align-items: flex-start;
+                        gap: calculateScale(5px);
+                        font-size: calculateScale(20px);
+                        line-height: calculateScale(21px);
+
+                        .name {
+                            font-size: calculateScale(24px);
+                        }
+
+                        .better {
+                            padding: 0 calculateScale(7px);
+                            border-radius: calculateScale(2px);
+                            font-size: calculateScale(16px);
+                            line-height: calculateScale(21px);
+                        }
                     }
                 }
             }

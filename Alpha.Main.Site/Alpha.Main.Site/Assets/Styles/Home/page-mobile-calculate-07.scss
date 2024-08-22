@@ -724,14 +724,69 @@ body {
 }
 /********** popup hightlight *************/
 .popup-highlight {
-    left: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     right: auto;
-    top: 63px !important;
+    top: calculateScale(210px) !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: calculateScale(190px) calculateScale(16px) calculateScale(40px) calculateScale(16px);
+    text-align: center;
+    justify-content: center;
+    width: calculateScale(320px);
 
-    &:before {
+    button.close {
+        width: calculateScale(48px);
+        height: calculateScale(48px);
+        border: 1px solid #1F528D;
+        border-radius: calculateScale(30px);
+        font-size: calculateScale(20px);
+        top: auto;
         right: auto;
-        left: 11px;
-        transform: rotate(90deg);
-        top: -17px;
+        bottom: calculateScale(-25px);
+        left: 50%;
+        margin-left: calculateScale(-24px);
+        background: #00326D;
+    }
+
+    .image-new-feature {
+        position: absolute;
+        top: calculateScale(-139px);
+        left: calculateScale(-23px);
+        width: calculateScale(373px);
+    }
+
+    .text {
+        p {
+            span {
+                font-size: calculateScale(24px);
+                line-height: calculateScale(32px);
+            }
+        }
+    }
+
+    .btn-submit {
+        margin: 0 auto calculateScale(11px);
+        border-radius: calculateScale(10px);
+
+        span {
+            font-size: calculateScale(16px);
+            line-height: calculateScale(16px);
+            border-radius: calculateScale(10px);
+            padding: calculateScale(13px) calculateScale(15px) calculateScale(13px);
+        }
+    }
+
+    .label {
+        font-size: calculateScale(16px);
+        padding: calculateScale(3px) 0 calculateScale(3px) calculateScale(3px);
+
+        input {
+            width: calculateScale(18px);
+            height: calculateScale(18px);
+            margin-right: calculateScale(7px);
+            top: calculateScale(4px);
+        }
     }
 }
