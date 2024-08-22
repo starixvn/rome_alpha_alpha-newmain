@@ -59,10 +59,7 @@ var indexManager = {
         indexManager.setCurrentUrl();
 
         indexManager.initFeedbackGlobal();
-        var currentUrl = indexManager.getCurrentUrl();
-        if (currentUrl && currentUrl.indexOf("WhiteLabel") === -1) {
-            indexManager.initNewFeatureHighlightPopup();
-        }
+        indexManager.initNewFeatureHighlightPopup();
 
         if (indexManager.requiredNetworkSpeedCalculation) {
             setTimeout(indexManager.calculateUserConnectionSpeed, 8000);
@@ -228,7 +225,6 @@ var indexManager = {
                     indexManager.closeAllOpenDropdowns(iframeWindow);
 
                     indexManager.cacheCurrentUrl();
-
                     try {
                         $(iframeWindow.document).on('click touchend',
                             () => {
@@ -415,7 +411,7 @@ var indexManager = {
     //},
 
     initNewFeatureHighlightPopup: function () {
-        const leftMenu = $("#menu-WHITELABEL");
+        const leftMenu = $("#menu-CHATBOT");
         if (!leftMenu.length) {
             return;
         }
@@ -426,13 +422,13 @@ var indexManager = {
         }
 
         // RedmineId should be included to make FeatureName is unique.
-        const featureName = "WhiteLabel";
+        const featureName = "204089_MemberStatistic";
         const cookiesName = indexManager.hidePopupCookies + featureName;
         const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
 
         if (hidePopup !== "1") {
             popupManager.closeAllPopup();
-            box.css({ top: leftMenu.position().top + 80 });
+            box.css({ top: leftMenu.position().top + 35 });
             box.removeClass("hide");
 
             box.find(".icon-close").click(() => box.addClass("hide"));
@@ -454,10 +450,6 @@ var indexManager = {
             });
 
             // indexManager.replaceCookieslessURL(newFeatureLink);
-
-            leftMenu.click(() => {
-                box.addClass("hide");
-            })
         }
     },
 
@@ -507,6 +499,7 @@ var indexManager = {
     },
 };
 
-$(document).ready(() => {
+
+$(function () {
     indexManager.init();
-})
+});
