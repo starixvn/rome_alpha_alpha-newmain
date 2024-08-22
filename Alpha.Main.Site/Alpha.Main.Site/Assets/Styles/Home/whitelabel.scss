@@ -56,7 +56,7 @@ html {
 
     .items {
         display: flex;
-        padding: 0px .2rem 40px .2rem;        
+        padding: 0px .2rem 40px .2rem;
         align-self: stretch;
         position: relative;
         width: 100%;
@@ -139,7 +139,7 @@ html {
         align-items: flex-start;
         gap: 0.4rem;
         align-self: stretch;
-       
+
 
         .left {
             display: flex;
@@ -186,12 +186,15 @@ html {
                 justify-content: center;
                 align-items: center;
                 padding-right: 15px;
-                .messenger{
+
+                .messenger {
                     padding-right: 0;
                 }
+
                 .icon {
                     margin: 0 0 -25px 0;
                     padding-right: 16px;
+                    cursor: unset;
                 }
 
                 .info {
