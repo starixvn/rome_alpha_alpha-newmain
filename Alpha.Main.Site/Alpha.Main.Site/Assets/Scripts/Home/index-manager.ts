@@ -59,10 +59,6 @@ var indexManager = {
         indexManager.setCurrentUrl();
 
         indexManager.initFeedbackGlobal();
-        var currentUrl = indexManager.getCurrentUrl();
-        if (currentUrl.indexOf("Dashboard/WhiteLabel") === -1) {
-            indexManager.initNewFeatureHighlightPopup();
-        }
 
         if (indexManager.requiredNetworkSpeedCalculation) {
             setTimeout(indexManager.calculateUserConnectionSpeed, 8000);
@@ -228,6 +224,10 @@ var indexManager = {
                     indexManager.closeAllOpenDropdowns(iframeWindow);
 
                     indexManager.cacheCurrentUrl();
+                    var currentUrl = indexManager.getCurrentUrl();
+                    if (currentUrl && currentUrl.indexOf("WhiteLabel") === -1) {
+                        indexManager.initNewFeatureHighlightPopup();
+                    }
                     try {
                         $(iframeWindow.document).on('click touchend',
                             () => {
@@ -502,6 +502,6 @@ var indexManager = {
     },
 };
 
-$(function () {
+$(document).ready(() => {
     indexManager.init();
-});
+})
