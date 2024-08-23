@@ -398,13 +398,12 @@
             }
         }
 
-        public static IEnumerable<string> WhiteLabelOfferedSites
-            => Settings["WhiteLabel:OfferedSites"]
-            .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-            .Select(site => site.Trim());
-
         public static bool IsOfferedWhiteLabel(string site)
-            => WhiteLabelOfferedSites.Contains("*", StringComparer.CurrentCultureIgnoreCase)
-            || WhiteLabelOfferedSites.Contains(site, StringComparer.CurrentCultureIgnoreCase);
+            => WhiteLabelOfferedSites.Contains("*") || WhiteLabelOfferedSites.Contains(site);
+
+        private static IEnumerable<string> WhiteLabelOfferedSites { get; } = new HashSet<string>(
+            (Settings["WhiteLabel:OfferedSites"] ?? string.Empty)
+                .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(site => site.Trim()), StringComparer.OrdinalIgnoreCase);
     }
 }

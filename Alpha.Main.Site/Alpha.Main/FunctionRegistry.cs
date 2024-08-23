@@ -91,7 +91,8 @@ namespace Alpha.Main
             ["NewReportsMenuItem"] = () => new MenuStatus(
                 () => AppSettings.IsUsedNewReports(Current.Site, Current.SRecommendId)),
             ["BonusDetailMenuItem"] = () => new MenuStatus(
-                () => AppSettings.AllowedSitesToViewBonusDetail.Contains(Current.Site.ToUpperInvariant()))
+                () => AppSettings.AllowedSitesToViewBonusDetail.Contains(Current.Site.ToUpperInvariant())),
+            ["WhiteLabel"] = () => new MenuStatus(() => AppSettings.IsOfferedWhiteLabel(Current.Site))
         };
 
         private static bool TransferMenuItemVisible
