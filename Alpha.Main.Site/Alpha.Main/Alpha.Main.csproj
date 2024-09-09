@@ -50,8 +50,8 @@
     <Reference Include="AlphaPlus.Configurations, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AlphaPlus.Configurations.1.0.0\lib\netstandard2.0\AlphaPlus.Configurations.dll</HintPath>
     </Reference>
-    <Reference Include="AlphaPlus.User.Models, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AlphaPlus.User.Models.1.2.0\lib\netstandard2.0\AlphaPlus.User.Models.dll</HintPath>
+    <Reference Include="AlphaPlus.User.Models, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AlphaPlus.User.Models.1.2.0.1-scaleout001\lib\netstandard2.0\AlphaPlus.User.Models.dll</HintPath>
     </Reference>
     <Reference Include="Base32, Version=1.0.0.26, Culture=neutral, PublicKeyToken=3427d4dc8cee30c6, processorArchitecture=MSIL">
       <HintPath>..\packages\Base32.1.0.0.26\lib\portable-net40+sl40+win+wp80\Base32.dll</HintPath>
@@ -73,7 +73,7 @@
       <HintPath>..\packages\Fanex.Cryptography.Aes.1.0.0.5\lib\net461\Fanex.Cryptography.Aes.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.Customer.Client, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Customer.Client.1.0.1-beta-06\lib\netstandard2.0\Fanex.Customer.Client.dll</HintPath>
+      <HintPath>..\packages\Fanex.Customer.Client.1.0.1-beta-12\lib\netstandard2.0\Fanex.Customer.Client.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.Data.ProxyClient, Version=0.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Data.ProxyClient.0.0.3\lib\netstandard2.0\Fanex.Data.ProxyClient.dll</HintPath>

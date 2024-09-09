@@ -86,8 +86,8 @@
     <Reference Include="AlphaPlus.Logging.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AlphaPlus.Logging.Web.1.0.0\lib\net461\AlphaPlus.Logging.Web.dll</HintPath>
     </Reference>
-    <Reference Include="AlphaPlus.User.Models, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AlphaPlus.User.Models.1.2.0\lib\netstandard2.0\AlphaPlus.User.Models.dll</HintPath>
+    <Reference Include="AlphaPlus.User.Models, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AlphaPlus.User.Models.1.2.0.1-scaleout001\lib\netstandard2.0\AlphaPlus.User.Models.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -120,7 +120,7 @@
       <HintPath>..\packages\Fanex.Cryptography.Aes.1.0.0.5\lib\net461\Fanex.Cryptography.Aes.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.Customer.Client, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Customer.Client.1.0.1-beta-06\lib\netstandard2.0\Fanex.Customer.Client.dll</HintPath>
+      <HintPath>..\packages\Fanex.Customer.Client.1.0.1-beta-12\lib\netstandard2.0\Fanex.Customer.Client.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.Customer.Client.NETFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Customer.Client.NETFramework.1.0.0\lib\net461\Fanex.Customer.Client.NETFramework.dll</HintPath>

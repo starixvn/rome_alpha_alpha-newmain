@@ -35,7 +35,8 @@
                     message.IP,
                     message.Language,
                     message.Site,
-                    isEnableUpdateNickname),
+                    isEnableUpdateNickname,
+                    message.CustDBGroupId),
                 isNicknameLoginOnly);
 
             if (result.IsSuccessful)

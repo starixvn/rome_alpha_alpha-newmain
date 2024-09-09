@@ -33,6 +33,8 @@
 
         public string Site => userSession.Site;
 
+        public int CustDBGroupId => userSession.CustDBGroupId;
+
         public bool IsValid()
             => nicknameChecker.IsOfferForceLoginFlow;
     }
