@@ -398,8 +398,9 @@
             }
         }
 
-        public static bool IsOfferedWhiteLabel(string site)
-            => WhiteLabelOfferedSites.Contains("*") || WhiteLabelOfferedSites.Contains(site);
+        public static bool IsOfferedWhiteLabel(string site, string level)
+            => (WhiteLabelOfferedSites.Contains("*") || WhiteLabelOfferedSites.Contains(site))
+            && DateTime.Parse(Settings[$"WhiteLabel:{level}:OfferedDate"]) <= DateTime.Today;
 
         private static IEnumerable<string> WhiteLabelOfferedSites { get; } = new HashSet<string>(
             (Settings["WhiteLabel:OfferedSites"] ?? string.Empty)

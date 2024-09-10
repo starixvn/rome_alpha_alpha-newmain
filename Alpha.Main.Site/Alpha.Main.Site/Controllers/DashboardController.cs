@@ -9,6 +9,7 @@ namespace Alpha.Main.Site.Controllers
     using Alpha.Main.Site.ViewModels.ContactUs;
     using Alpha.Web;
     using Alpha.Web.Filters;
+    using Alpha.Web.Models;
     using AlphaPlus.User.Models;
     using MediatR;
     using Requests.Dashboard.BalanceInfo;
@@ -38,7 +39,7 @@ namespace Alpha.Main.Site.Controllers
                 return View("~/Views/Dashboard/IndexProtectedMode.cshtml");
             }
 
-            if (AppSettings.IsOfferedWhiteLabel(userSession.Site))
+            if (AppSettings.IsOfferedWhiteLabel(userSession.Site, Enumeration.FromValue<UserLevel>(userSession.RoleId).DisplayName))
             {
                 return RedirectToAction("WhiteLabel");
             }
