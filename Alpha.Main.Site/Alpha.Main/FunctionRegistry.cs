@@ -90,6 +90,8 @@ namespace Alpha.Main
                 () => !AppSettings.IsUsedNewReports(Current.Site, Current.SRecommendId)),
             ["NewReportsMenuItem"] = () => new MenuStatus(
                 () => AppSettings.IsUsedNewReports(Current.Site, Current.SRecommendId)),
+            ["OldReportsMenuItem"] = () => new MenuStatus(
+                () => AppSettings.IsUsedOldWinLossDetailReports(Current.SRecommendId)),
             ["BonusDetailMenuItem"] = () => new MenuStatus(
                 () => AppSettings.AllowedSitesToViewBonusDetail.Contains(Current.Site.ToUpperInvariant())),
             ["MemberBettingBehaviorMenuItem"] = () => new MenuStatus(() => AppSettings.IsOfferMemberBettingBehavior)
