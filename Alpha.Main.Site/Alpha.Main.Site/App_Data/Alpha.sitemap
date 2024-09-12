@@ -167,6 +167,9 @@
       <siteMapNode resourceKey="MemberBettingBehavior" menuItemType="MemberBettingBehaviorMenuItem" appPath="MemberInfoAppPath" url="MemberBettingBehavior/Index"></siteMapNode>
     </siteMapNode>
     <siteMapNode resourceKey="chatbot" appPath="MainAppPath" url="TelegramChatBot/Setup"></siteMapNode>
+    <siteMapNode resourceKey="WhiteLabel" menuItemType="WhiteLabel" functionType="[E]">
+      <siteMapNode resourceKey="SettlementReport" appPath="ReportsAppPath" url="/WhiteLabelSettlement/Index" useDomainConfig="Report:Domain" />
+    </siteMapNode>
     <siteMapNode resourceKey="SercurityCode" appPath="MainAppPath" url="Otp/SetupOtp"></siteMapNode>
     <siteMapNode resourceKey="BackupDomains" menuItemType="MemberInfoMenuItem"
                  functionType="[H]" appPath="MessageAppPath"

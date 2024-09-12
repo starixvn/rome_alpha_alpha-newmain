@@ -96,7 +96,9 @@ namespace Alpha.Main
                 () => AppSettings.AllowedSitesToViewBonusDetail.Contains(Current.Site.ToUpperInvariant())),
             ["MemberBettingBehaviorMenuItem"] = () => new MenuStatus(() => AppSettings.IsOfferMemberBettingBehavior),
             ["SigninNovaCasinoMenuItem"] = () => new MenuStatus(() => IsOfferedNovaCasino && new User().IsSyncedNovaCasino),
-            ["JoinNovaCasinoNowMenuItem"] = () => new MenuStatus(() => IsOfferedNovaCasino && !(new User().IsSyncedNovaCasino))
+            ["JoinNovaCasinoNowMenuItem"] = () => new MenuStatus(() => IsOfferedNovaCasino && !(new User().IsSyncedNovaCasino)),
+            ["WhiteLabel"] = () => new MenuStatus(
+                () => AppSettings.IsOfferedWhiteLabel(Current.Site, Enumeration.FromValue<UserLevel>(Current.RoleId).DisplayName) && Current.SubPageAccess.ViewReports)
         };
 
         private static bool IsOfferedNovaCasino => !Current.IsSubAcc && NovaCasinoSettings.IsOfferedNovaCasino(
