@@ -659,7 +659,7 @@
     <value>รับข้อมูลเชิงลึกอันมีค่า เกี่ยวกับพฤติกรรมการเดิมพันของสมาชิกผ่าน&lt;b&gt;โปรไฟล์สมาชิก&lt;/b&gt; และ&lt;b&gt;สถิติการเดิมพัน&lt;/b&gt; เพื่อจัดการความเสี่ยงได้อย่างมีประสิทธิภาพ และใช้ตัดสินใจอย่างมีข้อมูล</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
-    <value>เริ่มต้น</value>
+    <value>เริ่มต้นกันเลย</value>
   </data>
   <data name="SessionExpired" xml:space="preserve">
     <value>การเข้าสู่ระบบของคุณหมดเวลาแล้ว</value>
@@ -677,7 +677,7 @@
     <value>รายงานรายละเอียดการแพ้ชนะ</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>ยินดีต้อนรับสู่ &lt;b&gt;พฤติกรรมการเดิมพันของสมาชิก&lt;/b&gt;!</value>
+    <value>สนใจที่จะสร้างแบรนด์เกมของคุณเองหรือ?</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>หนึ่งนาทีที่แล้ว</value>
@@ -699,5 +699,32 @@
   </data>
   <data name="SetupChatbot" xml:space="preserve">
     <value>ตั้งค่าแชตบอท</value>
+  </data>
+  <data name="WhiteLabel_Intro" xml:space="preserve">
+    <value>เริ่มต้นแพลตฟอร์ม&lt;span&gt;ไวท์เลเบล&lt;/span&gt;ของคุณเอง ภายในเวลาไม่ถึง &lt;span&gt;&lt;strong&gt;3&lt;/strong&gt; วัน&lt;/span&gt;</value>
+  </data>
+  <data name="TurnkeySolution" xml:space="preserve">
+    <value>โซลูชั่นแบบครบวงจร</value>
+  </data>
+  <data name="TurnkeySolution_Description" xml:space="preserve">
+    <value>เปิดตัวและปรับแต่งแบรนด์เกมของคุณเองได้อย่างง่ายดายภายในเวลาไม่ถึง 3 วัน</value>
+  </data>
+  <data name="NoBadDebt" xml:space="preserve">
+    <value>ไม่มีหนี้เสีย</value>
+  </data>
+  <data name="NoBadDebt_Description" xml:space="preserve">
+    <value>ผู้เล่นฝากเงินล่วงหน้าเพื่อขจัดความเสี่ยงด้านหนี้เสียจากธุรกิจของคุณ</value>
+  </data>
+  <data name="RichProductsCollection" xml:space="preserve">
+    <value>คอลเลกชันผลิตภัณฑ์ที่หลากหลาย</value>
+  </data>
+  <data name="RichProductsCollection_Description" xml:space="preserve">
+    <value>สร้างความตื่นเต้นให้ผู้เล่นของคุณด้วยเกมและผลิตภัณฑ์ที่หลากหลายของเรา</value>
+  </data>
+  <data name="Interested" xml:space="preserve">
+    <value>สนใจใช่ไหม?</value>
+  </data>
+  <data name="ContactCSD" xml:space="preserve">
+    <value>ติดต่อฝ่ายบริการลูกค้าของเราตอนนี้!</value>
   </data>
 </root>

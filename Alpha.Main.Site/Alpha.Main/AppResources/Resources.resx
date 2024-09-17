@@ -725,10 +725,10 @@
     <value>Gain valuable insights into Members' betting behaviors through &lt;b&gt;Member Profile&lt;/b&gt; and &lt;b&gt;Betting Statistics&lt;/b&gt; to effectively manage risk, and make informed decisions.</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Welcome to &lt;b&gt;Member Betting Behavior&lt;/b&gt;!</value>
+    <value>Interested in building your own gaming brand?</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
-    <value>Get Started</value>
+    <value>Explore Now</value>
   </data>
   <data name="SessionExpired" xml:space="preserve">
     <value>Your login has timed out.</value>
@@ -765,5 +765,32 @@
   </data>
   <data name="SetupChatbot" xml:space="preserve">
     <value>Set Up Chatbot</value>
+  </data>
+  <data name="WhiteLabel_Intro" xml:space="preserve">
+    <value>Kickstart Your Own &lt;span&gt;White Label&lt;/span&gt; Platform In Less Than &lt;span&gt;&lt;strong&gt;3&lt;/strong&gt; Days&lt;/span&gt;</value>
+  </data>
+  <data name="TurnkeySolution" xml:space="preserve">
+    <value>Turnkey Solution</value>
+  </data>
+  <data name="TurnkeySolution_Description" xml:space="preserve">
+    <value>Effortlessly launch and personalize your own gaming brand in less than 3 days.</value>
+  </data>
+  <data name="NoBadDebt" xml:space="preserve">
+    <value>No Bad Debt</value>
+  </data>
+  <data name="NoBadDebt_Description" xml:space="preserve">
+    <value>Players deposit upfront, eliminating bad debt risks from your business.</value>
+  </data>
+  <data name="RichProductsCollection" xml:space="preserve">
+    <value>Rich Products Collection</value>
+  </data>
+  <data name="RichProductsCollection_Description" xml:space="preserve">
+    <value>Excite your players with our wide variety of games and products.</value>
+  </data>
+  <data name="Interested" xml:space="preserve">
+    <value>Interested? </value>
+  </data>
+  <data name="ContactCSD" xml:space="preserve">
+    <value>Contact our CSD for more details!</value>
   </data>
 </root>

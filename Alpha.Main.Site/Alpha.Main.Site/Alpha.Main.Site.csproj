@@ -689,6 +689,10 @@
     <Content Include="Assets\bundles\suggest-telegram-otp.min.js">
       <DependentUpon>suggest-telegram-otp.js</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\whitelabel.css" />
+    <Content Include="Assets\bundles\whitelabel.min.css">
+      <DependentUpon>whitelabel.css</DependentUpon>
+    </Content>
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop-dark_vi-VN.jpg" />
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Desktop_vi-VN.jpg" />
     <Content Include="Assets\Images\Advertisement\MyWatchlist\Mobile-dark_vi-VN.jpg" />
@@ -718,7 +722,9 @@
     <Content Include="Assets\Images\autotransfer-dark.svg" />
     <Content Include="Assets\Images\arrowbackupdomainmb.svg" />
     <Content Include="Assets\Images\arrowbackupdomain.svg" />
+    <Content Include="Assets\Images\new_feature_litemode-dark.png" />
     <Content Include="Assets\Images\new_feature_litemode-dark.svg" />
+    <Content Include="Assets\Images\new_feature_litemode.png" />
     <Content Include="Assets\Images\new_feature_litemode.svg" />
     <Content Include="Assets\Images\MenuBarBanner\777\280x70_msa_en-US.jpg" />
     <Content Include="Assets\Images\MenuBarBanner\777\280x70_msa_th-TH.jpg" />
@@ -940,6 +946,14 @@
     <Content Include="Assets\styles\home\images\icon-close-feedback-dark.png" />
     <Content Include="Assets\styles\home\images\icon-close-feedback.png" />
     <Content Include="Assets\styles\home\images\icon-close-feedback2.png" />
+    <Content Include="Assets\styles\home\images\white-label\bg-whitelabel.png" />
+	<Content Include="Assets\styles\home\images\white-label\bg-whitelabel-sm.png" />
+    <Content Include="Assets\styles\home\images\white-label\icon-letstalk.png" />
+    <Content Include="Assets\styles\home\images\white-label\icon-skype.png" />
+    <Content Include="Assets\styles\home\images\white-label\line.svg" />
+    <Content Include="Assets\styles\home\images\white-label\no-bad-debt.png" />
+    <Content Include="Assets\styles\home\images\white-label\rich-products-collection.png" />
+    <Content Include="Assets\styles\home\images\white-label\turnkey.png" />
     <Content Include="Assets\styles\home\page-dark.css">
       <DependentUpon>page-dark.scss</DependentUpon>
     </Content>
@@ -975,6 +989,12 @@
     </Content>
     <Content Include="Assets\styles\home\page-mobile-calculate-07.min.css">
       <DependentUpon>page-mobile-calculate-07.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\whitelabel.css">
+      <DependentUpon>whitelabel.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\whitelabel.min.css">
+      <DependentUpon>whitelabel.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\home\_mixins2.scss" />
     <Content Include="Assets\styles\nickname\nickname.css">
@@ -1238,6 +1258,7 @@
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
     <Content Include="Views\Dashboard\Banner.cshtml" />
+    <Content Include="Views\Dashboard\WhiteLabel.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\apikey\apikey-management.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey-result.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey.ts" />
@@ -1451,6 +1472,7 @@
     <Content Include="Assets\styles\advertisement\popup-advertisement.scss" />
     <Content Include="Assets\styles\apikey\apikey.scss" />
     <Content Include="Assets\styles\apikey\apikey-dark.scss" />
+    <Content Include="Assets\styles\home\whitelabel.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>

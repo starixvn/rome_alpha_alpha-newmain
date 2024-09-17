@@ -432,4 +432,10 @@
   <data name="MemberBettingBehavior" xml:space="preserve">
     <value>Member Betting Behavior</value>
   </data>
+  <data name="WhiteLabel" xml:space="preserve">
+    <value>White Label</value>
+  </data>
+  <data name="SettlementReport" xml:space="preserve">
+    <value>Settlement Report</value>
+  </data>
 </root>

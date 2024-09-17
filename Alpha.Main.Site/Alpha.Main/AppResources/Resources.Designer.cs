@@ -331,6 +331,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact our CSD for more details!.
+        /// </summary>
+        public static string ContactCSD {
+            get {
+                return ResourceManager.GetString("ContactCSD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact Us.
         /// </summary>
         public static string ContactUs {
@@ -538,7 +547,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Get Started.
+        ///   Looks up a localized string similar to Explore Now.
         /// </summary>
         public static string GetStarted {
             get {
@@ -628,7 +637,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome to &lt;b&gt;Member Betting Behavior&lt;/b&gt;!.
+        ///   Looks up a localized string similar to Interested in building your own gaming brand?.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {
@@ -669,6 +678,15 @@ namespace Alpha.Main.AppResources {
         public static string IamNotARobot {
             get {
                 return ResourceManager.GetString("IamNotARobot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interested? .
+        /// </summary>
+        public static string Interested {
+            get {
+                return ResourceManager.GetString("Interested", resourceCulture);
             }
         }
         
@@ -1061,6 +1079,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No Bad Debt.
+        /// </summary>
+        public static string NoBadDebt {
+            get {
+                return ResourceManager.GetString("NoBadDebt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Players deposit upfront, eliminating bad debt risks from your business..
+        /// </summary>
+        public static string NoBadDebt_Description {
+            get {
+                return ResourceManager.GetString("NoBadDebt_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No information is available.
         /// </summary>
         public static string noInfo {
@@ -1372,6 +1408,24 @@ namespace Alpha.Main.AppResources {
         public static string RequiredNewProtectionCode {
             get {
                 return ResourceManager.GetString("RequiredNewProtectionCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rich Products Collection.
+        /// </summary>
+        public static string RichProductsCollection {
+            get {
+                return ResourceManager.GetString("RichProductsCollection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excite your players with our wide variety of games and products..
+        /// </summary>
+        public static string RichProductsCollection_Description {
+            get {
+                return ResourceManager.GetString("RichProductsCollection_Description", resourceCulture);
             }
         }
         
@@ -1736,6 +1790,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Turnkey Solution.
+        /// </summary>
+        public static string TurnkeySolution {
+            get {
+                return ResourceManager.GetString("TurnkeySolution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Effortlessly launch and personalize your own gaming brand in less than 3 days..
+        /// </summary>
+        public static string TurnkeySolution_Description {
+            get {
+                return ResourceManager.GetString("TurnkeySolution_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Turnover.
         /// </summary>
         public static string turnover {
@@ -1921,6 +1993,15 @@ namespace Alpha.Main.AppResources {
         public static string WarningText {
             get {
                 return ResourceManager.GetString("WarningText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kickstart Your Own &lt;span&gt;White Label&lt;/span&gt; Platform In Less Than &lt;span&gt;&lt;strong&gt;3&lt;/strong&gt; Days&lt;/span&gt;.
+        /// </summary>
+        public static string WhiteLabel_Intro {
+            get {
+                return ResourceManager.GetString("WhiteLabel_Intro", resourceCulture);
             }
         }
         

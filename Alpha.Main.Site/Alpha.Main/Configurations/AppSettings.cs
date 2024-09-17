@@ -384,6 +384,7 @@
         }
 
         private static HashSet<string> dashboardBannerOfferedSites;
+
         public static HashSet<string> DashboardBannerOfferedSites
         {
             get
@@ -396,5 +397,14 @@
                 return dashboardBannerOfferedSites;
             }
         }
+
+        public static bool IsOfferedWhiteLabel(string site, string level)
+            => (WhiteLabelOfferedSites.Contains("*") || WhiteLabelOfferedSites.Contains(site))
+            && DateTime.Parse(Settings[$"WhiteLabel:{level}:OfferedDate"]) <= DateTime.Today;
+
+        private static IEnumerable<string> WhiteLabelOfferedSites { get; } = new HashSet<string>(
+            (Settings["WhiteLabel:OfferedSites"] ?? string.Empty)
+                .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(site => site.Trim()), StringComparer.OrdinalIgnoreCase);
     }
 }

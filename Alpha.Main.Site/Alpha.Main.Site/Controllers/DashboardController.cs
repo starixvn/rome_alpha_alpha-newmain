@@ -6,8 +6,10 @@ namespace Alpha.Main.Site.Controllers
     using System.Web.Mvc;
     using System.Web.SessionState;
     using Alpha.Main.Configurations;
+    using Alpha.Main.Site.ViewModels.ContactUs;
     using Alpha.Web;
     using Alpha.Web.Filters;
+    using Alpha.Web.Models;
     using AlphaPlus.User.Models;
     using MediatR;
     using Requests.Dashboard.BalanceInfo;
@@ -37,6 +39,11 @@ namespace Alpha.Main.Site.Controllers
                 return View("~/Views/Dashboard/IndexProtectedMode.cshtml");
             }
 
+            if (AppSettings.IsOfferedWhiteLabel(userSession.Site, Enumeration.FromValue<UserLevel>(userSession.RoleId).DisplayName))
+            {
+                return RedirectToAction("WhiteLabel");
+            }
+
             var viewModel = new DashboardBannerViewModel(userSession);
 
             if (viewModel.IsShow)
@@ -52,6 +59,13 @@ namespace Alpha.Main.Site.Controllers
         {
             var viewModel = new DashboardViewModel(userSession.RoleId);
 
+            return View(viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult WhiteLabel()
+        {
+            var viewModel = new ContactUsViewModel(Request.Headers["Host"]);
             return View(viewModel);
         }
 

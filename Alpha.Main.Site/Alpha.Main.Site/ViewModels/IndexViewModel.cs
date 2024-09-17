@@ -9,7 +9,6 @@
     using Alpha.SecurityCode.Web;
     using Alpha.Web.Helpers;
     using Alpha.Web.Models;
-    using AlphaPlus.User.Models;
     using Configurations;
     using Helpers;
     using Models.Requests;
@@ -197,7 +196,7 @@
 
         public string HightLightFeatureImageName => "new_feature_litemode" + DarkModeName;
 
-        public string HightLightFeatureUrl => MicroSites.MemberInfoUrl($"~/MemberBettingBehavior/Index");
+        public string HightLightFeatureUrl => MicroSites.MainUrl($"~/Dashboard/WhiteLabel");
 
         public bool IsEnableAutoTransfer { get; set; }
 

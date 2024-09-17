@@ -426,4 +426,10 @@
   <data name="MemberBettingBehavior" xml:space="preserve">
     <value>会员投注模式</value>
   </data>
+  <data name="WhiteLabel" xml:space="preserve">
+    <value>白牌</value>
+  </data>
+  <data name="SettlementReport" xml:space="preserve">
+    <value>结算报告</value>
+  </data>
 </root>

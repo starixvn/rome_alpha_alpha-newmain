@@ -28,6 +28,7 @@
     public class CustomerOtpHandlerTests
     {
         private CustomerOtpHandler customerOtpHandler;
+        private ProfilePictureServices profilePictureServices;
         private CustomerOtpService customerOtpService;
         private SessionManager sessionManager;
         private IUserSession userSession;
@@ -46,6 +47,7 @@
             {
                 ["OfferChatbotSites"] = "BEST-ODDS,733333"
             };
+            profilePictureServices = Substitute.For<ProfilePictureServices>();
             customerOtpService = Substitute.For<CustomerOtpService>();
             userSession = Substitute.For<IUserSession>();
             userSession.RoleId.Returns((byte)4);
@@ -62,7 +64,7 @@
             securityCodeChecker = Substitute.For<SecurityCodeChecker>();
             logger = Substitute.For<ILogger>();
 
-            customerOtpHandler = new CustomerOtpHandler(customerOtpService, userSession, sessionManager, browserHelper, user, nicknameChecker, telegramSettingService, securityCodeChecker, logger);
+            customerOtpHandler = new CustomerOtpHandler(profilePictureServices, customerOtpService, userSession, sessionManager, browserHelper, user, nicknameChecker, telegramSettingService, securityCodeChecker, logger);
         }
 
         #region Handle Change Otp Status Command

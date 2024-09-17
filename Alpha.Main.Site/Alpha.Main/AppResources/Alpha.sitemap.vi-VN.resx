@@ -429,4 +429,10 @@
   <data name="MemberBettingBehavior" xml:space="preserve">
     <value>Hành Vi Đặt Cược Member</value>
   </data>
+  <data name="WhiteLabel" xml:space="preserve">
+    <value>Nhãn Trắng</value>
+  </data>
+  <data name="SettlementReport" xml:space="preserve">
+    <value>Báo Cáo Quyết Toán</value>
+  </data>
 </root>

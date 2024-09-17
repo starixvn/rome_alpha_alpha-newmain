@@ -426,4 +426,10 @@
   <data name="MemberBettingBehavior" xml:space="preserve">
     <value>พฤติกรรมการเดิมพันของสมาชิก</value>
   </data>
+  <data name="WhiteLabel" xml:space="preserve">
+    <value>ไวท์เลเบล</value>
+  </data>
+  <data name="SettlementReport" xml:space="preserve">
+    <value>รายงานการชำระเงิน</value>
+  </data>
 </root>
