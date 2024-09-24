@@ -1432,6 +1432,51 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reward.
+        /// </summary>
+        public static string Reward {
+            get {
+                return ResourceManager.GetString("Reward", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reward Payable.
+        /// </summary>
+        public static string RewardPayable {
+            get {
+                return ResourceManager.GetString("RewardPayable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total reward amount that you need to settle with your downlines, awaiting confirmation.
+        /// </summary>
+        public static string RewardPayableTooltip {
+            get {
+                return ResourceManager.GetString("RewardPayableTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reward Receivable.
+        /// </summary>
+        public static string RewardReceivable {
+            get {
+                return ResourceManager.GetString("RewardReceivable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total reward amount expected from the upline, but not yet confirmed.
+        /// </summary>
+        public static string RewardReceivableTooltip {
+            get {
+                return ResourceManager.GetString("RewardReceivableTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rich Products Collection.
         /// </summary>
         public static string RichProductsCollection {

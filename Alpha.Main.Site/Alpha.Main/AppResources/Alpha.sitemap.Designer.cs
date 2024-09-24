@@ -808,6 +808,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reward Payment.
+        /// </summary>
+        public static string RewardPayment {
+            get {
+                return ResourceManager.GetString("RewardPayment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Risk Management.
         /// </summary>
         public static string riskManagement {

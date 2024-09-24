@@ -1,11 +1,8 @@
-﻿@using Alpha.Main.Helpers
-@using Alpha.Main.Site.ViewModels.Dashboard.BalanceInfo
+﻿@using Alpha.Main.Site.ViewModels.Dashboard.BalanceInfo
 @model BalanceInfoViewModel
-
 @{
     var balanceInfo = Model.BalanceInfo;
 }
-
 @helper TextRow(string label, string text)
 {
     <div class="row">
@@ -13,7 +10,6 @@
         <div class="col-xs-5 value"><strong>@text</strong></div>
     </div>
 }
-
 @helper NumericRow(string label, decimal value, bool canViewReports = false, string url = "", string id = "")
 {
     <div class="row">
@@ -30,38 +26,49 @@
         </div>
     </div>
 }
-
-    <div class="container">
-        <div class="panel-title"><span class="icon-balance"></span>@Resources.balanceInfo</div>
-        @TextRow(label: Model.UserLevelLabel, text: balanceInfo.UserName)
-        @TextRow(Resources.currency, Model.Currency)
-
-        <div class="group-title">@Resources.balance</div>
-        @NumericRow(Resources.cashBalance, balanceInfo.CashBalance)
-        @NumericRow(Resources.yesterdayCashBalance, balanceInfo.YesterdayCashBalance)
-        @NumericRow(Resources.totalBalance, balanceInfo.TotalBalance)
-        @NumericRow(Resources.yesterdayTotalBalance, balanceInfo.YesterdayTotalBalance)
-        @NumericRow(Resources.PendingTransfer3rd, balanceInfo.PendingTransfer3rd)
-        <div class="group-title">@Resources.winloss</div>
-        @NumericRow(
-            $"{Resources.todayWinLoss} ({DateTime.Today.ToString("MM/dd/yyyy")})",
-            balanceInfo.TodayWinLoss,
-            Model.CanViewReports,
-            MicroSites.OldMainUrl(Model.MemberTodayWinLossReportPath),
-            "dashboard-winloss")
-        @NumericRow(
-            $"{Resources.yesterdayWinLoss} ({DateTime.Today.AddDays(-1).ToString("MM/dd/yyyy")})",
-            balanceInfo.YesterdayWinLoss,
-            Model.CanViewReports,
-            MicroSites.OldMainUrl(Model.MemberYesterdayWinLossReportPath),
-            "dashboard-yesterday-winloss")
-
-        <div class="group-title">
-            @Resources.credit
+@helper RewardRow(string label, decimal value, string currency, string tooltip)
+{
+    <div class="row reward">
+        <div class="col-xs-7">@label
+            <span class="icon-information-outline" data-toggle="tooltip" data-placement="right" title="@tooltip"></span>
         </div>
-        @NumericRow(Model.GivenCreditLabel, balanceInfo.GivenCredit)
-        @NumericRow(Model.TotalDownlineCreditLabel, balanceInfo.MemberCredit)
+        <div class="col-xs-5 value">
+            <strong>@currency</strong>
+            <strong>@value.ToString("#,##0.00")</strong>
+        </div>
     </div>
+}
+
+<div class="container">
+    <div class="panel-title"><span class="icon-balance"></span>@Resources.balanceInfo</div>
+    @TextRow(label: Model.UserLevelLabel, text: balanceInfo.UserName)
+    @TextRow(Resources.currency, Model.Currency)
+    <div class="group-title">@Resources.balance</div>
+    @NumericRow(Resources.cashBalance, balanceInfo.CashBalance)
+    @NumericRow(Resources.yesterdayCashBalance, balanceInfo.YesterdayCashBalance)
+    @NumericRow(Resources.totalBalance, balanceInfo.TotalBalance)
+    @NumericRow(Resources.yesterdayTotalBalance, balanceInfo.YesterdayTotalBalance)
+    @NumericRow(Resources.PendingTransfer3rd, balanceInfo.PendingTransfer3rd)
+    <div class="group-title">@Resources.winloss</div>
+    @NumericRow(
+        $"{Resources.todayWinLoss} ({DateTime.Today.ToString("MM/dd/yyyy")})",
+        balanceInfo.TodayWinLoss,
+        Model.CanViewReports,
+        MicroSites.OldMainUrl(Model.MemberTodayWinLossReportPath),
+        "dashboard-winloss")
+    @NumericRow(
+        $"{Resources.yesterdayWinLoss} ({DateTime.Today.AddDays(-1).ToString("MM/dd/yyyy")})",
+        balanceInfo.YesterdayWinLoss,
+        Model.CanViewReports,
+        MicroSites.OldMainUrl(Model.MemberYesterdayWinLossReportPath),
+        "dashboard-yesterday-winloss")
+    <div class="group-title">@Resources.credit</div>
+    @NumericRow(Model.GivenCreditLabel, balanceInfo.GivenCredit)
+    @NumericRow(Model.TotalDownlineCreditLabel, balanceInfo.MemberCredit)
+    <div class="group-title">@Resources.Reward</div>
+    @RewardRow(Resources.RewardReceivable, Model.BalanceInfo.RewardReceivable ?? 0, Model.BalanceInfo.RewardCurrency, Resources.RewardReceivableTooltip)
+    @RewardRow(Resources.RewardPayable, Model.BalanceInfo.RewardPayable ?? 0, Model.BalanceInfo.RewardCurrency, Resources.RewardPayableTooltip)
+</div>
 <script>
 	$(document).ready(function () {
 		$(".open-link").unbind().bind('click', function (event) { alpha.viewDataURL(event); });

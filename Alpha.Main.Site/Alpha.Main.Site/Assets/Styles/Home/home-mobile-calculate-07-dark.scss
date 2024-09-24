@@ -64,12 +64,13 @@ body {
     }
 }
 
-
-
-
 .icon-information-outline {
     margin-left: calculateScale(5px);
     font-size: calculateScale(20px);
+}
+
+.reward .icon-information-outline {
+    font-size: calculateScale(16px);
 }
 
 .tab-content > .tab-pane {
@@ -202,7 +203,7 @@ body {
     .panel-title {
         display: none;
     }
-} 
+}
 
 
 .tblRpt thead th, .tblRpt tbody td, .tblRpt tfoot td {

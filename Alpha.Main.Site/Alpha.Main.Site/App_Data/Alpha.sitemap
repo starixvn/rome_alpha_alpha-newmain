@@ -119,17 +119,20 @@
       <siteMapNode menuItemType="AutoTransferMonitoringMenuItem" resourceKey="AutoTransferMonitoring" appPath="TransferAppPath" url="AutoTransfer/Monitoring?v4"></siteMapNode>
       <siteMapNode menuItemType="TransferAllAndClearCreditMenuItem" resourceKey="TransferAllAndClearCredit" appPath="TransferAppPath" url="TransferAllAndClearCredit/Index?v4"></siteMapNode>
       <siteMapNode menuItemType="TransferDownlineHistoryMenuItem" resourceKey="TransferToDownlineHistory" appPath="TransferAppPath" url="TransferToDownlineHistory/Index?v4"></siteMapNode>
+      <siteMapNode resourceKey="RewardPayment" appPath="TransferAppPath" url="Reward/Payment?v4"></siteMapNode>
     </siteMapNode>
     <siteMapNode resourceKey="transfer" menuItemType="TransferMenuItem" functionType="[C]" roles="Master">
       <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Master/AgentList.aspx?adbt={0}" functionType="[C]"></siteMapNode>
       <siteMapNode menuItemType="AutoTransferMonitoringMenuItem" resourceKey="AutoTransferMonitoring" appPath="TransferAppPath" url="AutoTransfer/Monitoring?v3"></siteMapNode>
       <siteMapNode menuItemType="TransferAllAndClearCreditMenuItem" resourceKey="TransferAllAndClearCredit" appPath="TransferAppPath" url="TransferAllAndClearCredit/Index?v3"></siteMapNode>
       <siteMapNode menuItemType="TransferDownlineHistoryMenuItem" resourceKey="TransferToDownlineHistory" appPath="TransferAppPath" url="TransferToDownlineHistory/Index?v3"></siteMapNode>
+      <siteMapNode resourceKey="RewardPayment" appPath="TransferAppPath" url="Reward/Payment?v3"></siteMapNode>
     </siteMapNode>
     <siteMapNode resourceKey="transfer" menuItemType="TransferMenuItem" functionType="[C]" roles="Agent">
       <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Agent/MemberList.aspx?adbt={0}" functionType="[C]"></siteMapNode>
       <siteMapNode menuItemType="AutoTransferMonitoringMenuItem" resourceKey="AutoTransferMonitoring" appPath="TransferAppPath" url="AutoTransfer/Monitoring?v2"></siteMapNode>
       <siteMapNode menuItemType="TransferDownlineHistoryMenuItem" resourceKey="TransferToDownlineHistory" appPath="TransferAppPath" url="TransferToDownlineHistory/Index?v2"></siteMapNode>
+      <siteMapNode resourceKey="RewardPayment" appPath="TransferAppPath" url="Reward/Payment?v2"></siteMapNode>
     </siteMapNode>
 
     <siteMapNode resourceKey="transfer" menuItemType="SingleTransferMenuItem"
