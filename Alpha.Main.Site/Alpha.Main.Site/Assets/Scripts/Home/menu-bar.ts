@@ -321,6 +321,7 @@ var menuBar = {
         }
 
         $('#main').attr('src', subMenuURL).attr("target", "main");
+        localStorage.setItem(indexManager.currentUrlCookieName, subMenuURL);
     },
 
     expandSideBar: function () {
