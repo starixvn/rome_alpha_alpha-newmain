@@ -28,6 +28,8 @@ var briefProfile = {
         briefProfile.setProfilePictureStorage();
         briefProfile.setActorNameStorage();
         briefProfile.registerEvents();
+
+        $(".open-link").unbind().bind('click', event => { alpha.viewDataURL(event); });
     },
 
     checkAndSetShowEditProfilePictureTooltip: function () {

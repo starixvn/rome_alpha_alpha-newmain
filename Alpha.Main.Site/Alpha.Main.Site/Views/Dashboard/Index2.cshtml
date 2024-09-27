@@ -13,6 +13,9 @@
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/default-home")
     @StaticResources.RenderStylesWithMediaDarkMode(767, "~/assets/bundles/home-mobile-calculate-07")
     @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagScript()
+
+	@StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetScripts.Render("/bundles/site-main/dashboard/dashboard-default")
 </head>
 <body>
     @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagNoScript()
@@ -38,17 +41,15 @@
     <!--[if IE 8]><!-->
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/es5-shim")
     <!--<![endif]-->
-    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
-    @StaticResources.AssetScripts.Render("/bundles/site-main/dashboard/dashboard-default")
-    @StaticResources.RenderScripts("~/assets/bundles/default-dashboard")
+	@StaticResources.RenderScripts("~/assets/bundles/default-dashboard")
     <script>
         $(() => {
             const topWindow = window.top;
-            if ($('#dashboard-winloss') && $('#dashboard-winloss').attr('href').indexOf('(S(') !== -1) {
+            if ($('#dashboard-winloss') && $('#dashboard-winloss').attr('href') && $('#dashboard-winloss').attr('href').indexOf('(S(') !== -1) {
                 $('#dashboard-winloss').attr('href', $('#dashboard-winloss').attr('href').replace(topWindow.menuBar.domElements.sessionId, topWindow.menuBar.domElements.reportSessionId));
             }
 
-            if ($('#dashboard-yesterday-winloss') && $('#dashboard-yesterday-winloss').attr('href').indexOf('(S(') !== -1) {
+            if ($('#dashboard-yesterday-winloss') && $('#dashboard-yesterday-winloss').attr('href') && $('#dashboard-yesterday-winloss').attr('href').indexOf('(S(') !== -1) {
                 $('#dashboard-yesterday-winloss').attr('href', $('#dashboard-yesterday-winloss').attr('href').replace(topWindow.menuBar.domElements.sessionId, topWindow.menuBar.domElements.reportSessionId));
             }
 

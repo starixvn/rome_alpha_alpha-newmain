@@ -13,7 +13,7 @@
 </head>
 <body class="unsupport-browser">
     <div id="warning-browser-message" class="warning-browser-message">
-        <a href="@AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/")" class="icon-close"></a>
+        <a data-url="@AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/")" class="icon-close open-link"></a>
         <p class="title"><span class="icon-alert"></span>@Resources.TitleUnsupportBrowser</p>
         <div class="content-msg">
             <span>@Resources.BrowserIsOutOfDate</span><a href="@Model.DownloadNewBrowserLink" target="_blank"> @(Resources.ClickToUpdateBrowser).</a>

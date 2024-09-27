@@ -33,6 +33,7 @@ class CreateApiKey {
         this.cachedDOMElements();
         this.renderDatetimePicker();
         this.registerEvents();
+        this.$(".open-link").unbind().bind('click', event => { this.topWindow.alpha.viewDataURL(event); });
     }
 
     resources = {

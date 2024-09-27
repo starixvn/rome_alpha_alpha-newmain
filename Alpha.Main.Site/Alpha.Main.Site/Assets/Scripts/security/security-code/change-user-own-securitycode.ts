@@ -14,10 +14,6 @@ var changeUserOwnSecurityCode = {
             changeUserOwnSecurityCode.resetOriginalInputStatus();
         });
 
-        $('#passwordNav').click(function () {
-            changeUserOwnSecurityCode.gotoPasswordPage()
-        });
-
         $('#txtOldSecCode').val("").focus();
 
         $("#txtSecCode").val("").keyup(function () {
@@ -34,6 +30,8 @@ var changeUserOwnSecurityCode = {
         });
 
         $(".switch-on").click(changeUserOwnSecurityCode.handleSwitchButton);
+
+        $(".open-link").unbind().bind('click', event => { alpha.viewDataURL(event); changeUserOwnSecurityCode.topWindow.alpha.viewDataURL(event); });
     },
     change: function () {
         $.blockUI();
@@ -110,9 +108,6 @@ var changeUserOwnSecurityCode = {
         securityHelper.hideHintSC();
         securityHelper.removeValidationIcon($("#txtSecCode"));
         securityHelper.removeValidationIcon($("#txtConfirmSecCode"));
-    },
-    gotoPasswordPage: function () {
-        window.location.href = $("#mainRootPath").val() + 'Password/ChangePassword';
     },
     refreshPage: function () {
         window.location.href = $("#mainRootPath").val() + 'SecurityCode/ChangeUserOwnSecurityCode';

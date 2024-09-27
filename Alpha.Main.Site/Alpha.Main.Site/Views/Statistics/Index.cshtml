@@ -41,7 +41,7 @@
         <div class="col-xs-5 value @(value < 0 ? "text-red" : string.Empty)">
             @if (canViewReports && value != 0)
             {
-                <a id="@id" href="@url" class="btn-link">@value.ToString("#,##0.00")</a>
+                <a id="@id" data-url="@url" class="btn-link open-link">@value.ToString("#,##0.00")</a>
             }
             else
             {
@@ -80,3 +80,8 @@
     @RenderDropdownTableMemberInfo($"{Resources.newMemberOfTheMonth}: {statistics.NumberNewMembers}", "listNewMembers", Url.Action("NewMembers", "Statistics"))
 </div>
 @Html.Hidden("SessionID", Model.SessionID)
+<script>
+	$(document).ready(function () {
+		$(".open-link").unbind().bind('click', function (event) { alpha.viewDataURL(event); });
+	});
+</script>

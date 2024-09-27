@@ -82,6 +82,8 @@ var headerNav = {
         headerNav.cachedDomElements();
         headerNav.initLanguage();
         headerNav.registerEvents();
+
+        $(".open-link").unbind().bind('click', event => { alpha.viewDataURL(event); });
     },
 
     initClock: function () {

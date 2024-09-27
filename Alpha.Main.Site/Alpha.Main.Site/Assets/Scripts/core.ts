@@ -205,6 +205,28 @@ var alpha = {
         Personal: 1,
         Special: 2,
         System: 3
+    },
+    viewDataURL: function (event: any) {
+        event.preventDefault();
+
+        var mainFrame = $('#main');
+        if (!mainFrame.attr("src")) {
+            var topWindow: any = window.top;
+            mainFrame = topWindow.$("#main");
+
+            if (!topWindow.alpha.core.isIe()) {
+                mainFrame.contents().find('head').append(topWindow.$('#AssetCommonCssLink').val());
+                mainFrame.contents().find('body').empty().block();
+            }
+        }
+        else {
+            if (!alpha.core.isIe()) {
+                mainFrame.contents().find('head').append($('#AssetCommonCssLink').val());
+                mainFrame.contents().find('body').empty().block();
+            }
+        }
+
+        mainFrame.attr('src', $(event.currentTarget).data("url"));
     }
 };
 
