@@ -33,6 +33,7 @@ var menuBar = {
         betlistSessionId: "",
         authReportCount: 0,
         authBetlistCount: 0,
+        signInS1BackOffice: null,
         signInNovaCasinoMenu: null,
         joinNovaCasinoNowMenu: null
     },
@@ -78,6 +79,7 @@ var menuBar = {
         menuBar.domElements.reportSessionId =
             menuBar.domElements.betlistSessionId =
             menuBar.domElements.sessionId = $('#SessionId').val();
+        menuBar.domElements.signInS1BackOffice = $("#sub-menu-SIGNINS1BACKOFFICE");
         menuBar.domElements.signInNovaCasinoMenu = $("#menu-SIGNINTONOVACASINO a");
         menuBar.domElements.joinNovaCasinoNowMenu = $("#menu-JOINNOVACASINONOW a");
 
@@ -172,6 +174,14 @@ var menuBar = {
         menuBar.domElements.joinNovaCasinoNowMenu.unbind().bind("click touchend", (event) => {
             event.preventDefault();
             menuBar.topWindow.bootboxConfirm(menuBar.resources.novaCasinoBriefIntroduction, undefined, () => menuBar.SSOToNovaCasino());
+        });
+        menuBar.domElements.signInS1BackOffice.click(menuBar.SSOS1BackOffice);
+    },
+    
+    SSOS1BackOffice: function () {
+        var ssoUrl = alpha.urls.mainRootPath + "WhiteLabel/SSO";
+        $.post(ssoUrl, (response) => {
+            response.ReturnUrl && window.open(response.ReturnUrl, "_blank").focus();
         });
     },
 

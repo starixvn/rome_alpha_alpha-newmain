@@ -1667,6 +1667,7 @@
     <Compile Include="Controllers\UMMessageController.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
+    <Compile Include="Controllers\WhiteLabelController.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handlers\ApiKeyHandler.cs" />
     <Compile Include="Handlers\BannerHandler.cs">
@@ -1857,6 +1858,7 @@
     <Compile Include="ViewModels\TelegramChatBot\ChatBotViewModel.cs" />
     <Compile Include="ViewModels\TelegramChatBot\RegisterAccountViewModel.cs" />
     <Compile Include="ViewModels\TelegramChatBot\VerifyAccountViewModel.cs" />
+    <Compile Include="ViewModels\WhiteLabel\WhiteLabelSSOResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">
