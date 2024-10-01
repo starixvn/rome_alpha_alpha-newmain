@@ -11,10 +11,10 @@
 <div class="realtive">
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation">
-            <a href="@($"{Model.MainRootPath}Apikey/CreateApiKey")" role="tab" data-toggle="tab">@ApiKey.CreateAPIKey</a>
+            <a class="open-link" data-url="@($"{Model.MainRootPath}Apikey/CreateApiKey")" role="tab" data-toggle="tab">@ApiKey.CreateAPIKey</a>
         </li>
         <li role="presentation" id="" class="active">
-            <a href="@($"{Model.MainRootPath}Apikey/ApiKeyManagement")" role="tab" data-toggle="tab">@ApiKey.APIKeyManagement</a>
+            <a class="open-link" data-url="@($"{Model.MainRootPath}Apikey/ApiKeyManagement")" role="tab" data-toggle="tab">@ApiKey.APIKeyManagement</a>
         </li>
         <li class="guideline">
             <a class="btn-guideline" href="@Model.HelpPage" target="_blank"><span class="icon icon-book"></span>@ApiKey.Guideline</a>

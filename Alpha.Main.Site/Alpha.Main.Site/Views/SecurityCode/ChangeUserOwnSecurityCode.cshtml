@@ -10,16 +10,16 @@
 }
 <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" id="passwordNav">
-        <a href="@($"{Model.MainRootPath}Password/ChangePassword")" role="tab" data-toggle="tab">@Security.Password</a>
+        <a class="open-link" data-url="@($"{Model.MainRootPath}Password/ChangePassword")" role="tab" data-toggle="tab">@Security.Password</a>
     </li>
     <li role="presentation" class="active">
         <a>@Security.SecurityCode</a>
     </li>
     <li role="presentation">
-        <a id="profilePicture" href="@MicroSites.AccountInfoUrl($"~/ProfilePicture/")">@Resources.EditProfilePicture</a>
+        <a id="profilePicture" class="open-link" data-url="@MicroSites.AccountInfoUrl($"~/ProfilePicture/")">@Resources.EditProfilePicture</a>
     </li>
     <li role="presentation" id="otpNav">
-        <a href="@($"{Model.MainRootPath}Otp/SetupOtp")" role="tab" data-toggle="tab">OTP</a>
+        <a class="open-link" data-url="@($"{Model.MainRootPath}Otp/SetupOtp")" role="tab" data-toggle="tab">OTP</a>
     </li>
     @if (Model.IsOfferProtectedMode)
     {

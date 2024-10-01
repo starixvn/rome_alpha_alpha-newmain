@@ -19,21 +19,21 @@
     @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagNoScript()
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="passwordNav">
-            <a href="@($"{Model.MainRootPath}Password/ChangePassword")" role="tab" data-toggle="tab">@Security.Password</a>
+            <a class="open-link" data-url="@($"{Model.MainRootPath}Password/ChangePassword")" role="tab" data-toggle="tab">@Security.Password</a>
         </li>
         @if (Model.EnableSecurityCode)
         {
             <li role="presentation" class="securityCodeNav">
-                <a href="@($"{Model.MainRootPath}SecurityCode/ChangeUserOwnSecurityCode")" role="tab" data-toggle="tab">@Security.SecurityCode</a>
+                <a class="open-link" data-url="@($"{Model.MainRootPath}SecurityCode/ChangeUserOwnSecurityCode")" role="tab" data-toggle="tab">@Security.SecurityCode</a>
             </li>
         }
         <li role="presentation">
-            <a id="profilePicture" href="@MicroSites.AccountInfoUrl($"~/ProfilePicture/")">@Resources.EditProfilePicture</a>
+            <a id="profilePicture" class="open-link" data-url="@MicroSites.AccountInfoUrl($"~/ProfilePicture/")">@Resources.EditProfilePicture</a>
         </li>
         @if (Model.IsShowNicknameLink)
         {
             <li role="presentation">
-                <a href="@MicroSites.OldMainUrl($"~/LoginOption/?custid={Model.CustomerOtp.CustId}")">@Resources.nickname</a>
+                <a class="open-link" data-url="@MicroSites.OldMainUrl($"~/LoginOption/?custid={Model.CustomerOtp.CustId}")">@Resources.nickname</a>
             </li>
         }
         <li role="presentation" class="active">

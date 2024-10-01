@@ -24,6 +24,7 @@ class SetupOtp {
 
     isAlreadySetup: boolean;
     previousStatus: boolean;
+    topWindow: any;
 
     resources = {
         removeOtpWarning: (<HTMLInputElement>document.getElementById('RemoveOtpWarning')).value,
@@ -38,6 +39,7 @@ class SetupOtp {
         this.$ = $;
         this.bootbox = bootbox;
         this.clipboard = clipboard;
+        this.topWindow = window.top;
     }
 
     init = () => {
@@ -46,6 +48,8 @@ class SetupOtp {
 
         this.isAlreadySetup = this.$cbkEnableOtp.data("is-already-setup");
         this.previousStatus = this.$cbkEnableOtp.data("is-checked");
+
+        this.$(".open-link").unbind().bind('click', event => { this.topWindow.alpha.viewDataURL(event); });
     }
 
     cachedDomElements = () => {

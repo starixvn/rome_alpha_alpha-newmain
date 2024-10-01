@@ -105,7 +105,7 @@
                 <ul id="header-dropdown-menu" class="dropdown-menu list-setting">
                     <li class="profile-group visible-mobile">
                         <div class="profile-avatar">
-                            <a href="@(viewProfileUrl)" target="@mainFrameName" class="img-link">
+                            <a data-url="@(viewProfileUrl)" class="img-link open-link">
                                 <img id="profile-avatar-image" width="50" height="50" src='@profileImageSrc' alt="" title="@Resources.ProfileClickTootip" />
                             </a>
                         </div>
@@ -125,7 +125,7 @@
                                 else
                                 {
                                     <span id="spanNickNameID">@Resources.nickname: </span>
-                                    <a href="@changeNickNameUrl" class="linkConfigNow" id="linkNickNameID" target="@mainFrameName">
+                                    <a data-url="@changeNickNameUrl" class="linkConfigNow open-link" id="linkNickNameID">
                                         <span id="labelNickname">@Resources.configNow</span>
                                     </a>
                                 }
@@ -136,22 +136,22 @@
                     <li class="visible-mobile dropdown-submenu language">@Html.Action("List", "Language")</li>
                     @if (Model.ShowNicknameMenu)
                     {
-                        <li><a href="@($"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}")" target="main"><span class="icon icon-account-key"></span>@Resources.nickname</a></li>
+                        <li><a class="open-link" data-url="@($"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}")"><span class="icon icon-account-key"></span>@Resources.nickname</a></li>
                     }
-                    <li><a href="@viewProfileUrl" target="main"><span class="icon icon-account-circle"></span>@Resources.EditProfilePicture</a></li>
-                    <li><a href="@($"{Model.MainRootPath}Password/ChangePassword")" target="main"><span class="icon icon-lock"></span>@Resources.password</a></li>
+                    <li><a class="open-link" data-url="@viewProfileUrl"><span class="icon icon-account-circle"></span>@Resources.EditProfilePicture</a></li>
+                    <li><a class="open-link" data-url="@($"{Model.MainRootPath}Password/ChangePassword")"><span class="icon icon-lock"></span>@Resources.password</a></li>
                     @if (Model.EnableSecurityCode)
                     {
-                        <li><a href="@($"{Model.MainRootPath}SecurityCode/ChangeUserOwnSecurityCode")" target="main"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
+                        <li><a class="open-link" data-url="@($"{Model.MainRootPath}SecurityCode/ChangeUserOwnSecurityCode")"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
                     }
-                    <li><a href="@($"{Model.MainRootPath}otp/SetUpOtp")" target="main"><span class="icon icon-otp"></span>OTP</a></li>
+                    <li><a class="open-link" data-url="@($"{Model.MainRootPath}otp/SetUpOtp")"><span class="icon icon-otp"></span>OTP</a></li>
                     @if (Model.ShowAPIKeyFunction)
                     {
-                        <li><a href="@($"{Model.MainRootPath}ApiKey/CreateApiKey")" target="main"><span class="icon icon-settingapi"></span>@ApiKey.API</a></li>
+                        <li><a class="open-link" data-url="@($"{Model.MainRootPath}ApiKey/CreateApiKey")"><span class="icon icon-settingapi"></span>@ApiKey.API</a></li>
                     }
                     @if (Model.IsOfferProtectedMode)
                     {
-                        <li><a href="@($"{Model.MainRootPath}ProtectionCode/Setup")" target="main"><span class="icon icon-key"></span>@Resources.ProtectionCode</a></li>
+                        <li><a class="open-link" data-url="@($"{Model.MainRootPath}ProtectionCode/Setup")"><span class="icon icon-key"></span>@Resources.ProtectionCode</a></li>
                     }
                     <li class="bg-light">
                         <ul class="list-unstyled">
@@ -163,7 +163,7 @@
                             @if (!Model.IsDisabledContactUsLink)
                             {
                                 <li>
-                                    <a href="@($"{Model.MainRootPath}ContactUs/Index")" target="main"><span class="icon icon-contactus"></span>@Resources.ContactUs</a>
+                                    <a class="open-link" data-url="@($"{Model.MainRootPath}ContactUs/Index")"><span class="icon icon-contactus"></span>@Resources.ContactUs</a>
                                 </li>
                             }
                             @if (!string.IsNullOrEmpty(Model.LiveChatLicenseID))

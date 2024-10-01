@@ -31,12 +31,15 @@ var changePassword = {
     },
 
     init: function () {
+        var topWindow: any;
+        topWindow = window.top;
         changePassword.cachedDomElements();
         changePassword.registerEvents();
 
         if (top.hasPopupOpen()) {
             changePassword.domElements.container.addClass("has-popup");
         }
+        $(".open-link").unbind().bind('click', event => { alpha.viewDataURL(event); topWindow.alpha.viewDataURL(event); });
     },
 
     registerEvents: function () {

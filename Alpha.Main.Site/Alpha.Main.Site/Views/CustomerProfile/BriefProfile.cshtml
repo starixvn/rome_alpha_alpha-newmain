@@ -18,7 +18,7 @@
     }
     else
     {
-        <a href="@(viewProfileUrl)" target="@mainFrameName" class="profile-avatar">
+        <a data-url="@(viewProfileUrl)" class="profile-avatar open-link">
             <img id="logoProfileImg" width="50" height="50"
                  profile-image-id="@Model.ProfileImageId"
                  default-avatar="@Model.IsDefaultAvatar.ToString().ToLower()"
@@ -42,14 +42,14 @@
             <div class="nickname-box" title="@Model.SubAccountTooltip" data-placement="right" data-toggle="tooltip">
                 @if (!string.IsNullOrEmpty(Model.NickName))
                 {
-                    <a href="@changeNickNameUrl" class="linkNickName" id="linkNickNameID" target="@mainFrameName">
+                    <a data-url="@changeNickNameUrl" class="linkNickName open-link" id="linkNickNameID">
                         <span id="labelNickname">@Model.NickName</span>
                     </a>
                 }
                 else
                 {
                     <span id="spanNickNameID">@Resources.nickname: </span>
-                    <a href="@changeNickNameUrl" class="linkConfigNow" id="linkNickNameID" target="@mainFrameName">
+                    <a data-url="@changeNickNameUrl" class="linkConfigNow open-link" id="linkNickNameID">
                         <span id="labelNickname">@Resources.configNow</span>
                     </a>
                 }
@@ -61,7 +61,7 @@
         }
         else
         {
-            <a class="otp" href="@MicroSites.MainUrl("~/otp/SetUpOtp")" target="@mainFrameName">OTP: @(Model.IsEnableOtp ? Resources.Enabled : Resources.Disabled)</a>
+            <a class="otp open-link" data-url="@MicroSites.MainUrl("~/otp/SetUpOtp")">OTP: @(Model.IsEnableOtp ? Resources.Enabled : Resources.Disabled)</a>
         }
     </div>
 
