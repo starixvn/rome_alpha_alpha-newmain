@@ -253,6 +253,8 @@ body {
 
 // Customize tooltip
 .tooltip {
+    pointer-events: none;
+
     &.in {
         opacity: 1;
     }
@@ -268,10 +270,6 @@ body {
 
     &.top {
         .tooltip-arrow {
-            display: none;
-        }
-
-        .tooltip-inner {
             &:after, &:before {
                 bottom: 0;
                 left: 50%;
@@ -287,15 +285,49 @@ body {
                 border-top-color: #f2f2f2;
                 border-width: 8px;
                 margin-left: -8px;
-                margin-bottom: -10px;
+                bottom: -7px;
             }
 
             &:before {
                 border-color: transparent;
                 border-top-color: #ccc;
-                border-width: 10px;
-                margin-left: -10px;
-                margin-bottom: -14px;
+                border-width: 7px;
+                margin-left: -7px;
+                bottom: -8px;
+            }
+        }
+    }
+
+    &.right {
+        .tooltip-inner {
+            min-width: 320px;
+        }
+
+        .tooltip-arrow {
+            &:after, &:before {
+                bottom: 0;
+                left: 50%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+            }
+
+            &:after {
+                border-color: transparent;
+                border-right-color: #f2f2f2;
+                border-width: 9px;
+                margin-left: -11px;
+                bottom: -10px;
+            }
+
+            &:before {
+                border-color: transparent;
+                border-right-color: #ccc;
+                border-width: 9px;
+                margin-left: -12px;
+                bottom: -10px;
             }
         }
     }

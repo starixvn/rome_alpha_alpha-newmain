@@ -69,6 +69,19 @@ body {
 
 .reward .icon-information-outline {
     font-size: calculateScale(16px);
+
+    &:after {
+        margin-top: calculateScale(-1px);
+        margin-left: calculateScale(-1.8px);
+    }
+
+    
+}
+.tooltip {
+    font-size: calculateScale(12px);
+
+    &.right {
+    }
 }
 
 .tab-content > .tab-pane {
