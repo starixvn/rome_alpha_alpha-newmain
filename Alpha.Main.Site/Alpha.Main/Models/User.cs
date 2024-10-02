@@ -32,6 +32,9 @@
         private const string IsEnabledTelegramOTPSessionKey = "IsEnabledTelegramOTP";
         private const string CustIdSessionKey = "CustId";
         public const string IsSyncedNovaCasinoSessionKey = "IsSyncedNovaCasino";
+        private const string IsOfferedWhiteLabelSessionKey = "IsOfferedWhiteLabel";
+
+        public bool IsOfferedWhiteLabel => GetSessionValue<bool>(IsOfferedWhiteLabelSessionKey);
 
         public bool ShowProgressiveJackpotGames => GetEnableProductsByGameName(Jackpot).Any(i => i != ProductId.Pragmatic);
 

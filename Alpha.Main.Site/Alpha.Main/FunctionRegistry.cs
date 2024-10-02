@@ -98,8 +98,20 @@ namespace Alpha.Main
             ["SigninNovaCasinoMenuItem"] = () => new MenuStatus(() => IsOfferedNovaCasino && new User().IsSyncedNovaCasino),
             ["JoinNovaCasinoNowMenuItem"] = () => new MenuStatus(() => IsOfferedNovaCasino && !(new User().IsSyncedNovaCasino)),
             ["WhiteLabel"] = () => new MenuStatus(
-                () => AppSettings.IsOfferedWhiteLabel(Current.Site, Enumeration.FromValue<UserLevel>(Current.RoleId).DisplayName) && Current.SubPageAccess.ViewReports)
+                () => AppSettings.IsOfferedWhiteLabel(Current.Site, Enumeration.FromValue<UserLevel>(Current.RoleId).DisplayName) && Current.SubPageAccess.ViewReports),
+#pragma warning disable S1067 // Expressions should not be too complex
+            ["WhiteLabelSignInBackOffice"] = () => new MenuStatus(
+                () => {
+                    var userLevel = Enumeration.FromValue<UserLevel>(Current.RoleId);
+                    return AppSettings.IsOfferedWhiteLabel(Current.Site, userLevel.DisplayName)
+                     && !Current.IsSubAcc
+                     && !Current.IsInternal
+                     && userLevel.IsAgentLevel()
+                     && new User().IsOfferedWhiteLabel;
+                })
+#pragma warning restore S1067 // Expressions should not be too complex
         };
+
 
         private static bool IsOfferedNovaCasino => !Current.IsSubAcc && NovaCasinoSettings.IsOfferedNovaCasino(
                Current.Site.ToUpperInvariant(),

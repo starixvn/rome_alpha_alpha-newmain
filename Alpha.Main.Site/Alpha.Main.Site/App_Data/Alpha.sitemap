@@ -168,7 +168,7 @@
     </siteMapNode>
     <siteMapNode resourceKey="chatbot" appPath="MainAppPath" url="TelegramChatBot/Setup"></siteMapNode>
     <siteMapNode resourceKey="WhiteLabel" menuItemType="WhiteLabel" functionType="[E]">
-	  <siteMapNode resourceKey="SignInS1BackOffice" appPath="MainAppPath" />
+	  <siteMapNode resourceKey="SignInS1BackOffice" appPath="MainAppPath" menuItemType="WhiteLabelSignInBackOffice" />
       <siteMapNode resourceKey="SettlementReport" appPath="ReportsAppPath" url="/WhiteLabelSettlement/Index" useDomainConfig="Report:Domain" />
     </siteMapNode>
     <siteMapNode resourceKey="SercurityCode" appPath="MainAppPath" url="Otp/SetupOtp"></siteMapNode>
