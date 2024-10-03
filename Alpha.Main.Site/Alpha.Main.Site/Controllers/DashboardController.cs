@@ -13,7 +13,6 @@ namespace Alpha.Main.Site.Controllers
     using AlphaPlus.User.Models;
     using MediatR;
     using Requests.Dashboard.BalanceInfo;
-    using TelegramBot.Client.Services;
     using ViewModels.Dashboard;
 
     [SessionState(SessionStateBehavior.ReadOnly)]
@@ -21,13 +20,11 @@ namespace Alpha.Main.Site.Controllers
     {
         private readonly IMediator mediator;
         private readonly IUserSession userSession;
-        private readonly IBotService botService;
 
-        public DashboardController(IMediator mediator, IUserSession userSession, IBotService botService)
+        public DashboardController(IMediator mediator, IUserSession userSession)
         {
             this.mediator = mediator;
             this.userSession = userSession;
-            this.botService = botService;
         }
 
         [HttpGet]
@@ -39,9 +36,15 @@ namespace Alpha.Main.Site.Controllers
                 return View("~/Views/Dashboard/IndexProtectedMode.cshtml");
             }
 
-            if (AppSettings.IsOfferedWhiteLabel(userSession.Site, Enumeration.FromValue<UserLevel>(userSession.RoleId).DisplayName))
+            var userLevelName = Enumeration.FromValue<UserLevel>(userSession.RoleId).DisplayName;
+            if (AppSettings.IsOfferedWhiteLabel(userSession.Site, userLevelName))
             {
                 return RedirectToAction("WhiteLabel");
+            }
+
+            if (AppSettings.IsOfferedNovaCasino(userSession.Site, userLevelName, userSession.Currency))
+            {
+                return RedirectToAction("NovaCasino");
             }
 
             var viewModel = new DashboardBannerViewModel(userSession);
@@ -64,6 +67,13 @@ namespace Alpha.Main.Site.Controllers
 
         [HttpGet]
         public ActionResult WhiteLabel()
+        {
+            var viewModel = new ContactUsViewModel(Request.Headers["Host"]);
+            return View(viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult NovaCasino()
         {
             var viewModel = new ContactUsViewModel(Request.Headers["Host"]);
             return View(viewModel);

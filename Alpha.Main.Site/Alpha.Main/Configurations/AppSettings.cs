@@ -415,5 +415,22 @@
                 .Select(site => site.Trim()), StringComparer.OrdinalIgnoreCase);
 
         public static bool IsOfferMemberBettingBehavior { get; } = Settings["IsOfferMemberBettingBehavior"] == "1";
+        public static bool IsOfferedNovaCasino(string site, string level, string currency)
+#pragma warning disable S1067 // Expressions should not be too complex
+            => (NovaCasinoOfferedSites.Contains("*") || NovaCasinoOfferedSites.Contains(site))
+            && (NovaCasinoOfferedCurrencies.Contains("*") || NovaCasinoOfferedCurrencies.Contains(currency))
+            && DateTime.Parse(Settings[$"NovaCasino:{level}:OfferedDate"]) <= DateTime.Today;
+
+#pragma warning restore S1067 // Expressions should not be too complex
+
+        private static IEnumerable<string> NovaCasinoOfferedSites { get; } = new HashSet<string>(
+            (Settings["NovaCasino:OfferedSites"] ?? string.Empty)
+                .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(site => site.Trim()), StringComparer.OrdinalIgnoreCase);
+
+        private static IEnumerable<string> NovaCasinoOfferedCurrencies { get; } = new HashSet<string>(
+           (Settings["NovaCasino:OfferedCurrencies"] ?? string.Empty)
+               .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+               .Select(site => site.Trim()), StringComparer.OrdinalIgnoreCase);
     }
 }

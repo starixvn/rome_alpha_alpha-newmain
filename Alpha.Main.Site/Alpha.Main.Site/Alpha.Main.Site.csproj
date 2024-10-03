@@ -947,7 +947,7 @@
     <Content Include="Assets\styles\home\images\icon-close-feedback.png" />
     <Content Include="Assets\styles\home\images\icon-close-feedback2.png" />
     <Content Include="Assets\styles\home\images\white-label\bg-whitelabel.png" />
-	<Content Include="Assets\styles\home\images\white-label\bg-whitelabel-sm.png" />
+    <Content Include="Assets\styles\home\images\white-label\bg-whitelabel-sm.png" />
     <Content Include="Assets\styles\home\images\white-label\icon-letstalk.png" />
     <Content Include="Assets\styles\home\images\white-label\icon-skype.png" />
     <Content Include="Assets\styles\home\images\white-label\line.svg" />
@@ -1259,6 +1259,7 @@
     </Content>
     <Content Include="Views\Dashboard\Banner.cshtml" />
     <Content Include="Views\Dashboard\WhiteLabel.cshtml" />
+    <Content Include="Views\Dashboard\NovaCasino.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\apikey\apikey-management.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey-result.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey.ts" />
