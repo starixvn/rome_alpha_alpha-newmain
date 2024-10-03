@@ -1,11 +1,9 @@
-﻿using Alpha.Main.Configurations;
-using Alpha.Main.Site.ViewModels.WhiteLabel;
+﻿using Alpha.Main.AppResources;
+using Alpha.Main.Site.Requests.WhiteLabel;
 using Alpha.Web;
+using Alpha.Web.Models;
 using AlphaPlus.User.Models;
-using Newtonsoft.Json;
-using System;
-using System.Net.Http;
-using System.Text;
+using MediatR;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.SessionState;
@@ -16,37 +14,27 @@ namespace Alpha.Main.Site.Controllers
     public class WhiteLabelController : BaseController
     {
         private readonly IUserSession userSession;
-        private readonly HttpClient httpClient;
+        private readonly IMediator mediator;
 
-        public WhiteLabelController(IUserSession userSession)
+        public WhiteLabelController(IUserSession userSession, IMediator mediator)
         {
             this.userSession = userSession;
-            httpClient = new HttpClient
-            {
-                BaseAddress = AppSettings.WhiteLabelBackOfficeApiUri,
-                Timeout = TimeSpan.FromSeconds(15)
-            };
+            this.mediator = mediator;
         }
 
         [HttpPost]
         public async Task<ActionResult> SSO()
         {
-            using (var jsonContent = new StringContent(JsonConvert.SerializeObject(new
+            if (userSession.IsSubAcc
+                || userSession.IsInternal
+                || userSession.IsIndirectLoggedIn
+                || !Enumeration.FromValue<UserLevel>(userSession.RoleId).IsAgentLevel())
             {
-                referenceId = "169659405",
-                browserUserAgent = Request.UserAgent,
-                userIp = userSession.UserLoginIp
-            }),
-            Encoding.UTF8,
-            "application/json"))
-            {
-                using (var response = await httpClient.PostAsync("Signin", jsonContent))
-                {
-                    response.EnsureSuccessStatusCode();
-                    var jsonResponse = await response.Content.ReadAsAsync<WhiteLabelSSOResponse>();
-                    return Json(jsonResponse, JsonRequestBehavior.DenyGet);
-                }
+                return Json(Main.Models.Result.CreateErrorResult(Security.NotAuthorized));
             }
+
+            var response = await mediator.SendAsync(new WhiteLabelSSORequest(userSession.CustId.ToString(), Request.UserAgent, userSession.UserLoginIp));
+            return Json(response, JsonRequestBehavior.DenyGet);
         }
     }
 }

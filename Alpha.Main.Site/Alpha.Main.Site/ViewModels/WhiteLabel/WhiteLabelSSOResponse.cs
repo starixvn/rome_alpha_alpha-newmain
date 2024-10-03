@@ -1,4 +1,6 @@
-﻿namespace Alpha.Main.Site.ViewModels.WhiteLabel
+﻿using Alpha.Main.Models;
+
+namespace Alpha.Main.Site.ViewModels.WhiteLabel
 {
     public class WhiteLabelSSOResponse
     {

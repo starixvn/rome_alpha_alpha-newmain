@@ -181,7 +181,11 @@ var menuBar = {
     SSOS1BackOffice: function () {
         var ssoUrl = alpha.urls.mainRootPath + "WhiteLabel/SSO";
         $.post(ssoUrl, (response) => {
-            response.ReturnUrl && window.open(response.ReturnUrl, "_blank").focus();
+            if (response.IsSuccessful) {
+                response.ReturnUrl && window.open(response.ReturnUrl, "_blank").focus();
+            } else {
+                menuBar.topWindow.bootboxAlert(response.Message);
+            }
         });
     },
 

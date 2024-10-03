@@ -880,7 +880,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sign in S1 BackOffice.
+        ///   Looks up a localized string similar to Sign in Back Office.
         /// </summary>
         public static string SignInS1BackOffice {
             get {

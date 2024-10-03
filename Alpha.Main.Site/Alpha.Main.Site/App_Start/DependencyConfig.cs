@@ -153,6 +153,7 @@
             container.RegisterPerWebRequest<ProtectionCodeService, ProtectionCodeServiceImpl>();
             container.RegisterPerWebRequest<ThemeService, ThemeServiceImpl>();
             container.RegisterPerWebRequest<UpdateUsageLanguageService, UpdateUsageLanguageServiceImpl>();
+            container.RegisterPerWebRequest<WhiteLabelService, WhiteLabelServiceImpl>();
             container.RegisterSingleton(new CustomerClientConfiguration().Initialize());
             container.RegisterSingleton<ICustomerService, Fanex.Customer.Client.Services.CustomerService>();
             container.RegisterPerWebRequest<Services.CustomerService, CustomerServiceImpl>();

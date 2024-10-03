@@ -101,17 +101,17 @@ namespace Alpha.Main
                 () => AppSettings.IsOfferedWhiteLabel(Current.Site, Enumeration.FromValue<UserLevel>(Current.RoleId).DisplayName) && Current.SubPageAccess.ViewReports),
 #pragma warning disable S1067 // Expressions should not be too complex
             ["WhiteLabelSignInBackOffice"] = () => new MenuStatus(
-                () => {
+                () =>
+                {
                     var userLevel = Enumeration.FromValue<UserLevel>(Current.RoleId);
                     return AppSettings.IsOfferedWhiteLabel(Current.Site, userLevel.DisplayName)
                      && !Current.IsSubAcc
                      && !Current.IsInternal
-                     && userLevel.IsAgentLevel()
-                     && new User().IsOfferedWhiteLabel;
+                     && !Current.IsIndirectLoggedIn
+                     && userLevel.IsAgentLevel();
                 })
 #pragma warning restore S1067 // Expressions should not be too complex
         };
-
 
         private static bool IsOfferedNovaCasino => !Current.IsSubAcc && NovaCasinoSettings.IsOfferedNovaCasino(
                Current.Site.ToUpperInvariant(),
@@ -166,16 +166,16 @@ namespace Alpha.Main
         private static Func<bool> showAccountInfo = () => Current == null ? false : Current.SubPageAccess.ViewMemberInfo && !Current.IsProtectedMode;
 
         private static Func<string> getDefaultUrl = () =>
-                        {
-                            if (HttpContext.Current == null)
-                            {
-                                return string.Empty;
-                            }
+                      {
+                          if (HttpContext.Current == null)
+                          {
+                              return string.Empty;
+                          }
 
-                            var defaultMainPage = HttpContext.Current.Response.ApplyAppPathModifier("~/Dashboard/Index");
+                          var defaultMainPage = HttpContext.Current.Response.ApplyAppPathModifier("~/Dashboard/Index");
 
-                            return defaultMainPage;
-                        };
+                          return defaultMainPage;
+                      };
 
         public static Func<bool> ShowAccountInfo
         {
@@ -198,15 +198,15 @@ namespace Alpha.Main
         public static Func<bool> IsInternalFunc => () => Current.IsInternal;
 
         public static Func<string, string> BuildInvalidSessionUniqueKey => (string url) =>
-                        {
-                            if (url.IndexOf("/winlossdetail/", StringComparison.OrdinalIgnoreCase) > -1
-                            && AppSettings.EnableLogDifferentSessionBetweenMainAndReports)
-                            {
-                                return $"{Current.CustId}-{Current.SubAccId}";
-                            }
+                      {
+                          if (url.IndexOf("/winlossdetail/", StringComparison.OrdinalIgnoreCase) > -1
+                          && AppSettings.EnableLogDifferentSessionBetweenMainAndReports)
+                          {
+                              return $"{Current.CustId}-{Current.SubAccId}";
+                          }
 
-                            return string.Empty;
-                        };
+                          return string.Empty;
+                      };
 
         public static Func<string> BuildLanguageQueryString => () => $"lng={Current.Language}";
 

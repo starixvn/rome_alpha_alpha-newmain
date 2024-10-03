@@ -1699,6 +1699,7 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Handlers\UserMessageHandler.cs" />
+    <Compile Include="Handlers\WhiteLabelHandler.cs" />
     <Compile Include="Helpers\QRCodeAdapter.cs" />
     <Compile Include="Helpers\DarkModeHelper.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
@@ -1807,6 +1808,7 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
+    <Compile Include="Requests\WhiteLabel\WhiteLabelSSORequest.cs" />
     <Compile Include="ViewModels\Advertisement\MyWatchlistViewModel.cs" />
     <Compile Include="ViewModels\ApiKey\ApiKeyManagementViewModel.cs" />
     <Compile Include="ViewModels\ApiKey\CreateApiKeyResultViewModel.cs" />
@@ -1859,6 +1861,7 @@
     <Compile Include="ViewModels\TelegramChatBot\RegisterAccountViewModel.cs" />
     <Compile Include="ViewModels\TelegramChatBot\VerifyAccountViewModel.cs" />
     <Compile Include="ViewModels\WhiteLabel\WhiteLabelSSOResponse.cs" />
+    <Compile Include="ViewModels\WhiteLabel\WhiteLabelSSOResponseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">
