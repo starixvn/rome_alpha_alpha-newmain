@@ -424,7 +424,9 @@
     <Content Include="App_Data\SPNames\INTERNAL\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBONUSER.ON_USER.xml" />
-    <Content Include="App_Data\SPNames\LOCAL\DB053_DB054.bodb02.xml" />
+    <Content Include="App_Data\SPNames\LOCAL\DB053_DB054.bodb02.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\LOCAL\DBACC.bodb02.xml">
       <SubType>Designer</SubType>
     </Content>

@@ -432,6 +432,9 @@
   <data name="SettlementReport" xml:space="preserve">
     <value>结算报告</value>
   </data>
+  <data name="RewardPayment" xml:space="preserve">
+    <value>奖励支付</value>
+  </data>
   <data name="JoinNovaCasinoNow" xml:space="preserve">
     <value>申请 Nova Casino 代理</value>
   </data>

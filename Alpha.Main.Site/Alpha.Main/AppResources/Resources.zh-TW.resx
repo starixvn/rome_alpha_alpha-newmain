@@ -659,19 +659,13 @@
     <value>查看</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>尋找 &lt;b&gt; 綜合指南 &lt;/b&gt; 和 &lt;b&gt; 詞匯表以供快速和簡單的參考。</value>
+    <value>&lt;p&gt;我們很高興為您介紹我們新的現金獎勵計劃. 獎勵金額由公司負責，會員一旦收到獎勵，並不能用於下注。. 獎勵將分配給上線，會員可以透過其代理去兌現。.&lt;/p&gt;&lt;p&gt;我們的新功能&lt;b&gt;獎勵支付&lt;/b&gt;支持您的下線支付管理，確保所有獎勵的準確分配。&lt;/p&gt;</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>開始吧</value>
   </data>
   <data name="SessionExpired" xml:space="preserve">
     <value>您的登錄已超時。</value>
-  </data>
-  <data name="HighlightPopupNewFeatureIntro3" xml:space="preserve">
-    <value>複製報告中的數據而無需導出</value>
-  </data>
-  <data name="HighlightPopupNewFeatureIntro4" xml:space="preserve">
-    <value>在投注歷史中過濾注單</value>
   </data>
   <data name="FeedbackOnFunctionTitle" xml:space="preserve">
     <value>幫助我們改進{0}</value>
@@ -680,7 +674,7 @@
     <value>輸贏細節報告</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>探索 &lt;b&gt; 一站式手冊 &lt;/b&gt;！</value>
+    <value>歡迎加入&lt;b&gt;現金獎勵計劃&lt;/b&gt;！</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>一分鐘前</value>
@@ -697,11 +691,17 @@
   <data name="Here" xml:space="preserve">
     <value>此處</value>
   </data>
-  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>&lt;b&gt; 輕鬆導航 &lt;/b&gt; 和 &lt;b&gt; 提升您的熟練性 &lt;/b&gt;！</value>
-  </data>
   <data name="SetupChatbot" xml:space="preserve">
     <value>設置Chatbot</value>
+  </data>
+  <data name="RewardReceivable" xml:space="preserve">
+    <value>應收獎勵</value>
+  </data>
+  <data name="RewardPayable" xml:space="preserve">
+    <value>獎勵支付</value>
+  </data>
+  <data name="RewardPayableTooltip" xml:space="preserve">
+    <value>您可以分配給下線的金額。</value>
   </data>
   <data name="SyncedNovaCasinoPersonalMessage" xml:space="preserve">
     <value>尊敬的代理們，
@@ -711,6 +711,9 @@
  如有任何疑問，請聯系客服部。
  
  感謝您的持續合作！</value>
+  </data>
+  <data name="RewardReceivableTooltip" xml:space="preserve">
+    <value>您可以從上線收到的金額。</value>
   </data>
   <data name="NovaCasinoBriefIntroduction" xml:space="preserve">
     <value>Nova Casino 是一個具有多代理模式的新平台。立即加入以創建多個下線和玩家。

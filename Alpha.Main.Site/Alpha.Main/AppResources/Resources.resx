@@ -722,22 +722,16 @@
     <value>Check Out</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Find &lt;b&gt;consolidated guidelines&lt;/b&gt; and &lt;b&gt;glossary terms&lt;/b&gt; for quick and easy reference.</value>
+    <value>&lt;p&gt;We are excited to introduce our new Cash Reward Program. The company is responsible for the reward amounts, and once a Member receives their reward, it cannot be used for placing bets. Rewards will be distributed to uplines, and Members can cash out through their Agents.&lt;/p&gt;&lt;p&gt;Our new feature &lt;b&gt;Reward Payment&lt;/b&gt; supports your downline payment management, ensuring accurate distribution of all rewards.&lt;/p&gt;</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Explore the &lt;b&gt;One-Stop Handbook&lt;/b&gt;!</value>
+    <value>Welcome to the &lt;b&gt;Cash Reward Program&lt;/b&gt;!</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Get Started</value>
   </data>
   <data name="SessionExpired" xml:space="preserve">
     <value>Your login has timed out.</value>
-  </data>
-  <data name="HighlightPopupNewFeatureIntro3" xml:space="preserve">
-    <value>Copy data from Report without exporting</value>
-  </data>
-  <data name="HighlightPopupNewFeatureIntro4" xml:space="preserve">
-    <value>Filter tickets on Bet List</value>
   </data>
   <data name="FeedbackOnFunctionTitle" xml:space="preserve">
     <value>Help us improve {0}</value>
@@ -759,9 +753,6 @@
   </data>
   <data name="daysAgo" xml:space="preserve">
     <value>day(s) ago</value>
-  </data>
-  <data name="HighlightPopupNewFeatureIntro2" xml:space="preserve">
-    <value>&lt;b&gt;Navigate&lt;/b&gt; effortlessly and &lt;b&gt;boost your proficiency&lt;/b&gt;!</value>
   </data>
   <data name="SetupChatbot" xml:space="preserve">
     <value>Set Up Chatbot</value>
@@ -823,9 +814,9 @@ Note: Please change your &lt;b&gt;password&lt;/b&gt; the first time you click 'A
     <value>Reward Receivable</value>
   </data>
   <data name="RewardReceivableTooltip" xml:space="preserve">
-    <value>Total reward amount expected from the upline, but not yet confirmed</value>
+    <value>Amount you can receive from your upline.</value>
   </data>
   <data name="RewardPayableTooltip" xml:space="preserve">
-    <value>Total reward amount that you need to settle with your downlines, awaiting confirmation</value>
+    <value>Amount you can distribute to your downlines.</value>
   </data>
 </root>

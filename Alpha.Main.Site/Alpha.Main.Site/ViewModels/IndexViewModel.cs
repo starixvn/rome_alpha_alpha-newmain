@@ -9,6 +9,7 @@
     using Alpha.SecurityCode.Web;
     using Alpha.Web.Helpers;
     using Alpha.Web.Models;
+    using AlphaPlus.User.Models;
     using Configurations;
     using Helpers;
     using Models.Requests;
@@ -192,11 +193,11 @@
 
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
 
-        public bool HightLightFeaturePermission => AppSettings.SupportedNewHandbook && AppSettings.SiteLabel == "MBC";
+        public bool HightLightFeaturePermission => ((PageAccess)SubPageAccess).Transfer;
 
         public string HightLightFeatureImageName => "new_feature_litemode" + DarkModeName;
 
-        public string HightLightFeatureUrl => UrlHelper.MapHowToUsePath("~/Default");
+        public string HightLightFeatureUrl => MicroSites.TransferUrl("~/Reward/Payment");
 
         public bool IsEnableAutoTransfer { get; set; }
 
