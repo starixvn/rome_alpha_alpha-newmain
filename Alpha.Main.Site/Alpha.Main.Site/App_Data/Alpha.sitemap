@@ -165,6 +165,6 @@
     <siteMapNode resourceKey="BackupDomains" menuItemType="MemberInfoMenuItem"
                  functionType="[H]" appPath="MessageAppPath"
                  url="backupdomains/index"></siteMapNode>
-    <siteMapNode resourceKey="LoginToNovaCasino" appPath="MainAppPath" url="NovaCasino/SSO" />
+    <siteMapNode resourceKey="LoginToNovaCasino" appPath="MainAppPath" url="NovaCasino/SSO" menuItemType="NovaCasinoMenuItem" />
   </siteMapNode>
 </siteMap>
