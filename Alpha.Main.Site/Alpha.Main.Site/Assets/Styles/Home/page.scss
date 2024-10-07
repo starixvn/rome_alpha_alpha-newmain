@@ -173,11 +173,20 @@ html * {
             font-size: 17px;
             margin: 0;
 
-            &:not(.icon-chatbot) {
+            &:not(.icon-chatbot):not(.icon-logintonovacasino) {
                 transform: translate(0, -50%);
                 top: 50%;
             }
 
+            &.icon-logintonovacasino {
+                background: url(Images/logintonovacasino.svg) no-repeat !important;
+                box-shadow: none !important;
+                height: 20px;
+                width: 20px;
+                float: left;
+                top: 6px;
+                position: absolute;
+            }
             &.icon-chatbot {
                 background: url(Images/chatbot-intro.svg) no-repeat !important;
                 box-shadow: none !important;
@@ -281,8 +290,7 @@ html * {
         }
 
         &#menu-MYWATCHLIST, &#menu-SERCURITYCODE,
-        &#menu-MYTHRESHOLDS, &#menu-BACKUPDOMAINS,
-        &#menu-LOGINTONOVACASINO {
+        &#menu-MYTHRESHOLDS, &#menu-BACKUPDOMAINS, &#menu-LOGINTONOVACASINO {
             padding: 16px 0 0;
             margin-bottom: 0;
 

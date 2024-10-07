@@ -475,6 +475,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login To Nova Casino.
+        /// </summary>
+        public static string LoginToNovaCasino {
+            get {
+                return ResourceManager.GetString("LoginToNovaCasino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Master Agent List.
         /// </summary>
         public static string masterList {
