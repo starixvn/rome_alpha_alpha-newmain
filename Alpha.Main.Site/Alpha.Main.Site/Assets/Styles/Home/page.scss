@@ -77,7 +77,6 @@ html * {
     }
 }
 
-
 .bg-light {
     border-top: 1px solid #d3d3d3;
     background-color: #f7f7f9;
@@ -179,8 +178,6 @@ html * {
                 top: 50%;
             }
 
-
-
             &.icon-chatbot {
                 background: url(Images/chatbot-intro.svg) no-repeat !important;
                 box-shadow: none !important;
@@ -189,7 +186,6 @@ html * {
                 float: left;
                 top: 9px;
                 position: absolute;
-
 
                 &:before, &:after {
                     content: '';
@@ -276,7 +272,6 @@ html * {
                 background: #e5e5e5;
 
                 .icon {
-
                     &:not(.icon-chatbot) {
                         background: #fafafa;
                         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -286,7 +281,8 @@ html * {
         }
 
         &#menu-MYWATCHLIST, &#menu-SERCURITYCODE,
-        &#menu-MYTHRESHOLDS, &#menu-BACKUPDOMAINS {
+        &#menu-MYTHRESHOLDS, &#menu-BACKUPDOMAINS,
+        &#menu-LOGINTONOVACASINO {
             padding: 16px 0 0;
             margin-bottom: 0;
 
@@ -428,7 +424,6 @@ html * {
     margin-bottom: 0;
 }
 
-
 /********************************** Account Info ******************************************/
 .accountinfo-container {
     height: 100%;
@@ -560,7 +555,6 @@ html * {
 .piwik-noscript {
     border: 0;
 }
-
 
 .float-section {
     position: fixed;
@@ -979,7 +973,6 @@ html * {
 .feedback-modal {
     padding: 0 !important;
 
-
     .modal-content {
         .modal-header {
             padding: 0 11px;
@@ -1151,8 +1144,6 @@ html * {
         transform: rotate(180deg);
     }
 }
-
-
 
 //bootbox confirm use in modal revoke api
 .bootbox-confirm {
