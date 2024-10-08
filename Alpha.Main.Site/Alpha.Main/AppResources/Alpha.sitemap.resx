@@ -438,7 +438,7 @@
   <data name="SettlementReport" xml:space="preserve">
     <value>Settlement Report</value>
   </data>
-  <data name="LoginToNovaCasino" xml:space="preserve">
-    <value>Login To Nova Casino</value>
+  <data name="SigninToNovaCasino" xml:space="preserve">
+    <value>Sign in To Nova Casino</value>
   </data>
 </root>

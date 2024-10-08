@@ -862,6 +862,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sign in To Nova Casino.
+        /// </summary>
+        public static string SigninToNovaCasino {
+            get {
+                return ResourceManager.GetString("SigninToNovaCasino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Soccer.
         /// </summary>
         public static string soccer {

@@ -12,6 +12,7 @@ namespace Alpha.Main.Site.Controllers
     using Alpha.Web.Models;
     using AlphaPlus.User.Models;
     using MediatR;
+    using NovaCasino.API.Client.Configurations;
     using Requests.Dashboard.BalanceInfo;
     using ViewModels.Dashboard;
 
@@ -42,7 +43,7 @@ namespace Alpha.Main.Site.Controllers
                 return RedirectToAction("WhiteLabel");
             }
 
-            if (AppSettings.IsOfferedNovaCasino(userSession.Site, userLevelName, userSession.Currency))
+            if (NovaCasinoSettings.IsOfferedNovaCasino(userSession.Site, userLevelName, userSession.Currency))
             {
                 return RedirectToAction("NovaCasino");
             }

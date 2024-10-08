@@ -33,6 +33,7 @@
     using Main.Models;
     using Main.Models.Menus;
     using MediatR;
+    using NovaCasino.API.Client;
     using ONEbook.OTP.Helpers;
     using ONEbook.OTP.Services;
     using Services;
@@ -155,6 +156,8 @@
             container.RegisterPerWebRequest<UpdateUsageLanguageService, UpdateUsageLanguageServiceImpl>();
             container.RegisterSingleton(new CustomerClientConfiguration().Initialize());
             container.RegisterSingleton<ICustomerService, CustomerService>();
+            container.RegisterPerWebRequest<CustomerService, CustomerServiceImpl>();
+            container.RegisterPerWebRequest<INovaCasinoService, NovaCasinoService>();
         }
 
         private static void RegisterDataAccesses(Container container)

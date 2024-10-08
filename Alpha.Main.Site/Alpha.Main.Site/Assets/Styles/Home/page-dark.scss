@@ -77,7 +77,6 @@ html * {
     }
 }
 
-
 .bg-light {
     border-top: 1px solid #3C3C3C;
     background-color: #2B2B2B;
@@ -166,12 +165,12 @@ html * {
             font-size: 17px;
             margin: 0;
 
-            &:not(.icon-chatbot):not(.icon-logintonovacasino) {
+            &:not(.icon-chatbot):not(.icon-signintonovacasino) {
                 transform: translate(0, -50%);
                 top: 50%;
             }
 
-            &.icon-logintonovacasino {
+            &.icon-signintonovacasino {
                 background: url(Images/logintonovacasino.svg) no-repeat !important;
                 box-shadow: none !important;
                 height: 20px;
@@ -283,7 +282,6 @@ html * {
                 color: $menu-color-text;
 
                 .icon {
-
                     &:not(.icon-chatbot) {
                         background: #585858;
                         color: #ffffff;
@@ -294,11 +292,9 @@ html * {
         }
 
         &#menu-MYWATCHLIST, &#menu-SERCURITYCODE,
-        &#menu-MYTHRESHOLDS, &#menu-BACKUPDOMAINS, &#menu-LOGINTONOVACASINO {
+        &#menu-MYTHRESHOLDS, &#menu-BACKUPDOMAINS, &#menu-SIGNINTONOVACASINO {
             padding: 16px 0 0;
             margin-bottom: 0;
-
-
 
             a {
                 background: #2C2C2C;
@@ -468,7 +464,6 @@ html * {
     margin-bottom: 0;
 }
 
-
 /********************************** Account Info ******************************************/
 .accountinfo-container {
     height: 100%;
@@ -600,7 +595,6 @@ html * {
 .piwik-noscript {
     border: 0;
 }
-
 
 .float-section {
     position: fixed;
@@ -864,7 +858,6 @@ html * {
 .modal-maintenance {
     top: 20%;
 }
-
 
 .maintenance-box .icon-under-maintenance {
     position: relative;

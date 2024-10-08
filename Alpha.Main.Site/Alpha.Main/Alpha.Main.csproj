@@ -261,6 +261,8 @@
     <Compile Include="Constants\ProductId.cs" />
     <Compile Include="Constants\UMFunctionType.cs" />
     <Compile Include="Criteria\Banner\GetBannerCriteria.cs" />
+    <Compile Include="Criteria\Customer\GetUplineInfoCriteria.cs" />
+    <Compile Include="Criteria\Customer\UpdateSyncedNovaCasinoCommand.cs" />
     <Compile Include="Criteria\KickoutCustomerCriteria.cs" />
     <Compile Include="Criteria\Language\UpdateUsageLanguageCommand.cs" />
     <Compile Include="Criteria\LogoutCommand.cs" />
@@ -378,6 +380,7 @@
     <Compile Include="Services\ApiKeyService.cs" />
     <Compile Include="Services\BannerService.cs" />
     <Compile Include="Services\CacheRefService.cs" />
+    <Compile Include="Services\CustomerService.cs" />
     <Compile Include="Services\Impl\ApiKeyServiceImpl.cs" />
     <Compile Include="Services\Impl\BannerServiceImpl.cs" />
     <Compile Include="Services\Impl\CacheRefServiceImpl.cs" />
@@ -557,6 +560,12 @@
     <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\SonarAnalyzer.CFG.dll" />
     <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\SonarAnalyzer.CSharp.dll" />
     <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\SonarAnalyzer.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NovaCasino.API.Client\NovaCasino.API.Client.csproj">
+      <Project>{f2cecb4a-9c46-457e-a3cf-07714aeb422c}</Project>
+      <Name>NovaCasino.API.Client</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
