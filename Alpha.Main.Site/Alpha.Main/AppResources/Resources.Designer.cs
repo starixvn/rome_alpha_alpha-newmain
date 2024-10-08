@@ -547,7 +547,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Explore Now.
+        ///   Looks up a localized string similar to Get Started.
         /// </summary>
         public static string GetStarted {
             get {
@@ -637,7 +637,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Interested in building your own gaming brand?.
+        ///   Looks up a localized string similar to Welcome to &lt;b&gt;Member Betting Behavior&lt;/b&gt;!.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {

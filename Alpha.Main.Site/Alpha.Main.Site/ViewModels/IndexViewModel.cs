@@ -192,11 +192,11 @@
 
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
 
-        public bool HightLightFeaturePermission => false;
+        public bool HightLightFeaturePermission => AppSettings.IsOfferMemberBettingBehavior;
 
         public string HightLightFeatureImageName => "new_feature_litemode" + DarkModeName;
 
-        public string HightLightFeatureUrl => MicroSites.MainUrl($"~/Dashboard/WhiteLabel");
+        public string HightLightFeatureUrl => MicroSites.MemberInfoUrl($"~/MemberBettingBehavior/Index");
 
         public bool IsEnableAutoTransfer { get; set; }
 
