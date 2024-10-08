@@ -261,6 +261,13 @@
             && !NewReportsIgnoreSuperIds.Any(id => id == int.MaxValue)
             && !NewReportsIgnoreSuperIds.Any(id => id == srecommend);
 
+        public static bool IsUsedOldWinLossDetailReports(int srecommend)
+        {
+            var offerSites = Settings["OfferOldWinLossDetail:SuperIds"] ?? string.Empty;
+            return offerSites == "*" ||
+                offerSites.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Contains(srecommend.ToString());
+        }
+
         public static bool ShowOldCustomerList => Settings["ShowOldCustomerList"] == "1";
 
         public static IEnumerable<string> NewCaptchaLogCurrencies => string.IsNullOrWhiteSpace(Settings["NewCaptcha:LogCurrencies"])

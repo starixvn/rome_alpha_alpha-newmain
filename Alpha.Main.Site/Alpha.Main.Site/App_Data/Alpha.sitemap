@@ -19,6 +19,10 @@
       <siteMapNode resourceKey="agentwinlostdetail" appPath="ReportsAppPath" url="/winlossdetail/agentnew" roles="Master" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
       <siteMapNode resourceKey="masterwinlostdetail" appPath="ReportsAppPath" url="/winlossdetail/masternew" roles="Super" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
 
+      <siteMapNode menuItemType="OldReportsMenuItem" isOld="true" resourceKey="memberwinlossdetail" appPath="ReportsAppPath" url="/winlossdetail/memberold" roles="Agent" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode menuItemType="OldReportsMenuItem" isOld="true" resourceKey="agentwinlostdetail" appPath="ReportsAppPath" url="/winlossdetail/agentold" roles="Master" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode menuItemType="OldReportsMenuItem" isOld="true" resourceKey="masterwinlostdetail" appPath="ReportsAppPath" url="/winlossdetail/masterold" roles="Super" byPassProtectedMode="true" useDomainConfig="Report:Domain"></siteMapNode>
+
       <siteMapNode resourceKey="matchWinLostDetail" appPath="ReportsAppPath" url="/matchwinlossdetail/index" useDomainConfig="Report:Domain"></siteMapNode>
 
       <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="/winlossanalysis/member" roles="Agent" useDomainConfig="Report:Domain"></siteMapNode>
