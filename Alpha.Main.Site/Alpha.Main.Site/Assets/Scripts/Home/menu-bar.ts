@@ -31,7 +31,12 @@ var menuBar = {
         betlistCookieless: "/",
         betlistSessionId: "",
         authReportCount: 0,
-        authBetlistCount: 0
+        authBetlistCount: 0,
+        signInNovaCasinoMenu: null,
+        joinNovaCasinoNowMenu: null
+    },
+    resources: {
+        novaCasinoBriefIntroduction: ""
     },
 
     urls: {
@@ -72,6 +77,8 @@ var menuBar = {
         menuBar.domElements.reportSessionId =
             menuBar.domElements.betlistSessionId =
             menuBar.domElements.sessionId = $('#SessionId').val();
+        menuBar.domElements.signInNovaCasinoMenu = $("#menu-SIGNINTONOVACASINO a");
+        menuBar.domElements.joinNovaCasinoNowMenu = $("#menu-JOINNOVACASINONOW a");
 
         if (menuBar.domElements.reportDomain) {
             var authCookie = menuBar.topWindow.indexManager.currentUrlCookieName + "-" + menuBar.domElements.sessionId;
@@ -83,6 +90,8 @@ var menuBar = {
             $.cookie(authCookie, menuBar.domElements.sessionId, { path: '/' });
             $.cookie(authCookieBetlist, menuBar.domElements.sessionId, { path: '/' });
         }
+
+        menuBar.resources.novaCasinoBriefIntroduction = $("#NovaCasinoBriefIntroduction").val();
     },
 
     initSideBar: function () {
@@ -155,6 +164,22 @@ var menuBar = {
         });
 
         menuBar.domElements.closeIconOnMobile.click(menuBar.collapseSideBar);
+        menuBar.domElements.signInNovaCasinoMenu.unbind().bind("click", (event) => {
+            event.preventDefault();
+            menuBar.SSOToNovaCasino();
+        });
+        menuBar.domElements.joinNovaCasinoNowMenu.unbind().bind("click", (event) => {
+            event.preventDefault();
+            menuBar.topWindow.bootboxConfirm(menuBar.resources.novaCasinoBriefIntroduction, undefined, () => menuBar.SSOToNovaCasino());
+        });
+    },
+
+    SSOToNovaCasino: function () {
+        var ssoUrl = alpha.urls.mainRootPath + "NovaCasino/SSO";
+        $.post(ssoUrl, (response) => {
+            response.LaunchUrl && window.open(response.LaunchUrl, "_blank").focus();
+            window.location.reload();
+        });
     },
 
     clickAnnouncementItem: function (menu) {

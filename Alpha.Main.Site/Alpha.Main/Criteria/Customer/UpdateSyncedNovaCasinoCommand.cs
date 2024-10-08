@@ -1,16 +1,18 @@
-﻿using System;
-using Fanex.Data.Repository;
+﻿using Fanex.Data.Repository;
 
 namespace Alpha.Main.Criteria.Customer
 {
     public class UpdateSyncedNovaCasinoCommand : NonQueryCommand
     {
-        public UpdateSyncedNovaCasinoCommand(int custId)
+        public UpdateSyncedNovaCasinoCommand(int custId, string ip)
         {
             CustId = custId;
+            IP = ip;
         }
 
         public int CustId { get; }
+
+        public string IP { get; }
 
         public int ErrCode { get; set; }
 

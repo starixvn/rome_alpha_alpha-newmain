@@ -793,4 +793,18 @@
   <data name="ContactCSD" xml:space="preserve">
     <value>Contact our CSD for more details!</value>
   </data>
+  <data name="SyncedNovaCasinoPersonalMessage" xml:space="preserve">
+    <value>Dear Valued Agents,
+ 
+Your downline, “{0}” has successfully joined Nova Casino. Kindly provide their score promptly to ensure smooth processing.
+ 
+Should you have any questions, please contact the Customer Service Department.
+ 
+Thank you for your continued cooperation!</value>
+  </data>
+  <data name="NovaCasinoBriefIntroduction" xml:space="preserve">
+    <value>Nova Casino is a new platform with an Multiple Agents mode. Join now to create Multiple downlines and players.
+
+Note: Please change your password the first time you click 'Join' on the Nova Casino BO from the Agent site. Thanks</value>
+  </data>
 </root>

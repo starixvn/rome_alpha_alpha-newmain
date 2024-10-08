@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NovaCasino.API.Client.Models
 {
@@ -10,7 +6,7 @@ namespace NovaCasino.API.Client.Models
     {
         public string Seq => Guid.NewGuid().ToString();
 
-        public string TimeStamp => DateTime.UtcNow.ToString();
+        public string TimeStamp => DateTime.UtcNow.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
 
         public UserInfo UserInfo { get; set; }
     }

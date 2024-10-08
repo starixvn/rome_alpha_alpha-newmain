@@ -262,6 +262,7 @@
     <Compile Include="Constants\UMFunctionType.cs" />
     <Compile Include="Criteria\Banner\GetBannerCriteria.cs" />
     <Compile Include="Criteria\Customer\GetUplineInfoCriteria.cs" />
+    <Compile Include="Criteria\Customer\InsertPersonalMessageCommand.cs" />
     <Compile Include="Criteria\Customer\UpdateSyncedNovaCasinoCommand.cs" />
     <Compile Include="Criteria\KickoutCustomerCriteria.cs" />
     <Compile Include="Criteria\Language\UpdateUsageLanguageCommand.cs" />

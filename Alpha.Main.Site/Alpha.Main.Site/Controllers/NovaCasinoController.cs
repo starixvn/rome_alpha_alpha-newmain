@@ -1,4 +1,5 @@
-﻿using Alpha.Main.Services;
+﻿using Alpha.Main.Models;
+using Alpha.Main.Services;
 using Alpha.Web;
 using AlphaPlus.User.Models;
 using NovaCasino.API.Client;
@@ -11,12 +12,18 @@ namespace Alpha.Main.Site.Controllers
 {
     public class NovaCasinoController : BaseController
     {
+        private readonly IUser user;
         private readonly IUserSession userSession;
         private readonly CustomerService customerService;
         private readonly INovaCasinoService novaCasinoService;
 
-        public NovaCasinoController(IUserSession userSession, CustomerService customerService, INovaCasinoService novaCasinoService)
+        public NovaCasinoController(
+            IUser user,
+            IUserSession userSession,
+            CustomerService customerService,
+            INovaCasinoService novaCasinoService)
         {
+            this.user = user;
             this.userSession = userSession;
             this.customerService = customerService;
             this.novaCasinoService = novaCasinoService;
@@ -41,14 +48,13 @@ namespace Alpha.Main.Site.Controllers
 
             if (response.CustIds != null && response.CustIds.Any())
             {
-                Parallel.ForEach(response.CustIds, async custId =>
-                 {
-                     int value;
-                     if (int.TryParse(custId, out value))
-                     {
-                         await customerService.UpdateSyncedNovaCasino(value);
-                     }
-                 });
+                await customerService.UpdateSyncedNovaCasino(response.CustIds, userSession.UserLoginIp);
+            }
+
+            if (!user.IsSyncedNovaCasino)
+            {
+                user.IsSyncedNovaCasino = true;
+                await customerService.InsertPersonalMessage(request.UserInfo);
             }
 
             return Json(new { response.LaunchUrl }, JsonRequestBehavior.DenyGet);

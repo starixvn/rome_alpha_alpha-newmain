@@ -1196,6 +1196,17 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nova Casino is a new platform with an Multiple Agents mode. Join now to create Multiple downlines and players.
+        ///
+        ///Note: Please change your password the first time you click &apos;Join&apos; on the Nova Casino BO from the Agent site. Thanks.
+        /// </summary>
+        public static string NovaCasinoBriefIntroduction {
+            get {
+                return ResourceManager.GetString("NovaCasinoBriefIntroduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Old View.
         /// </summary>
         public static string OldView {
@@ -1624,6 +1635,21 @@ namespace Alpha.Main.AppResources {
         public static string SwitchView {
             get {
                 return ResourceManager.GetString("SwitchView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dear Valued Agents,
+        /// 
+        ///Your downline, “{0}” has successfully joined Nova Casino. Kindly provide their score promptly to ensure smooth processing.
+        /// 
+        ///Should you have any questions, please contact the Customer Service Department.
+        /// 
+        ///Thank you for your continued cooperation!.
+        /// </summary>
+        public static string SyncedNovaCasinoPersonalMessage {
+            get {
+                return ResourceManager.GetString("SyncedNovaCasinoPersonalMessage", resourceCulture);
             }
         }
         

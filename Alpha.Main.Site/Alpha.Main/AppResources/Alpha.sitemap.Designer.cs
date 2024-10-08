@@ -448,6 +448,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Apply Nova Casino Agent.
+        /// </summary>
+        public static string JoinNovaCasinoNow {
+            get {
+                return ResourceManager.GetString("JoinNovaCasinoNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last Bets.
         /// </summary>
         public static string LastBets {

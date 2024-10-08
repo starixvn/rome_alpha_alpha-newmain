@@ -703,4 +703,9 @@
   <data name="SetupChatbot" xml:space="preserve">
     <value>设置Chatbot</value>
   </data>
+  <data name="NovaCasinoBriefIntroduction" xml:space="preserve">
+    <value>全新上线！Nova Casino 打造无限代理模式，加入即可创建无限下线与玩家，轻松开启你的盈利之路！
+
+**注意：**首次从代理页面点击“加入”进入 Nova Casino 后台时，请务必修改密码。谢谢！</value>
+  </data>
 </root>

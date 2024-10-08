@@ -46,7 +46,7 @@
     <Setting Key="Age_CustomerSelProtectionCode" SpName="Age_CustomerSelProtectionCode" DbName="DBCust.CustDB.wsv_alp" Plain="0" />
     <Setting Key="Age_CustomerUpdProtectionCode" SpName="Age_CustomerUpdProtectionCode" DbName="DBCust.CustDB.wsv_alp" Plain="0" />
   </Function>
-  
+
   <Function Name="Write Log Change Theme Light/Dark">
     <Setting Key="Age_SwitchDarkMode" SpName="Age_SwitchDarkMode" DbName="DBCust.CustDB.wsv_alp" Plain="0" />
   </Function>
@@ -57,5 +57,9 @@
 
   <Function Name="Transfer Status">
     <Setting Key="Age_GetIsAllDayBalTransfer" SpName="Age_GetIsAllDayBalTransfer" DbName="DBCust.CustDB.wsv_alp" Plain="0" />
+  </Function>
+
+  <Function Name="Nova Casino">
+    <Setting Key="Age_CustomerUpdSynced" SpName="Age_CustomerUpdSynced" DbName="DBCust.CustDB.wsv_alp" Plain="0" />
   </Function>
 </Functions>

@@ -441,4 +441,7 @@
   <data name="SigninToNovaCasino" xml:space="preserve">
     <value>Sign in To Nova Casino</value>
   </data>
+  <data name="JoinNovaCasinoNow" xml:space="preserve">
+    <value>Apply Nova Casino Agent</value>
+  </data>
 </root>
