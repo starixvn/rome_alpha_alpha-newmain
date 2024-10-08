@@ -406,5 +406,7 @@
             (Settings["WhiteLabel:OfferedSites"] ?? string.Empty)
                 .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(site => site.Trim()), StringComparer.OrdinalIgnoreCase);
+
+        public static bool IsOfferMemberBettingBehavior { get; } = Settings["IsOfferMemberBettingBehavior"] == "1";
     }
 }
