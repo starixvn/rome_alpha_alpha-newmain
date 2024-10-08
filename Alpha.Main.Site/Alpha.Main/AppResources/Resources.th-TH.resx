@@ -659,7 +659,7 @@
     <value>รับข้อมูลเชิงลึกอันมีค่า เกี่ยวกับพฤติกรรมการเดิมพันของสมาชิกผ่าน&lt;b&gt;โปรไฟล์สมาชิก&lt;/b&gt; และ&lt;b&gt;สถิติการเดิมพัน&lt;/b&gt; เพื่อจัดการความเสี่ยงได้อย่างมีประสิทธิภาพ และใช้ตัดสินใจอย่างมีข้อมูล</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
-    <value>เริ่มต้นกันเลย</value>
+    <value>เริ่มต้น</value>
   </data>
   <data name="SessionExpired" xml:space="preserve">
     <value>การเข้าสู่ระบบของคุณหมดเวลาแล้ว</value>
@@ -677,7 +677,7 @@
     <value>รายงานรายละเอียดการแพ้ชนะ</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>สนใจที่จะสร้างแบรนด์เกมของคุณเองหรือ?</value>
+    <value>ยินดีต้อนรับสู่ &lt;b&gt;พฤติกรรมการเดิมพันของสมาชิก&lt;/b&gt;!</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>หนึ่งนาทีที่แล้ว</value>

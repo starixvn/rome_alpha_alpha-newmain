@@ -725,10 +725,10 @@
     <value>Gain valuable insights into Members' betting behaviors through &lt;b&gt;Member Profile&lt;/b&gt; and &lt;b&gt;Betting Statistics&lt;/b&gt; to effectively manage risk, and make informed decisions.</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Interested in building your own gaming brand?</value>
+    <value>Welcome to &lt;b&gt;Member Betting Behavior&lt;/b&gt;!</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
-    <value>Explore Now</value>
+    <value>Get Started</value>
   </data>
   <data name="SessionExpired" xml:space="preserve">
     <value>Your login has timed out.</value>
