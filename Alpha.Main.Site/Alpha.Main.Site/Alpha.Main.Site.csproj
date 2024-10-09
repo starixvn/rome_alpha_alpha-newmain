@@ -717,6 +717,8 @@
     <Content Include="Assets\Images\DashboardBanner\i7\banner_vi-VN.jpg" />
     <Content Include="Assets\Images\DashboardBanner\i1\banner_zh-CN.jpg" />
     <Content Include="Assets\Images\DashboardBanner\i1\banner_zh-TW.jpg" />
+    <Content Include="Assets\Images\DashboardBanner\NovaCasino\banner.png" />
+    <Content Include="Assets\Images\DashboardBanner\NovaCasino\banner_mobile.jpg" />
     <Content Include="Assets\Images\feedback.svg" />
     <Content Include="Assets\Images\autotransfer.svg" />
     <Content Include="Assets\Images\autotransfer-dark.svg" />
