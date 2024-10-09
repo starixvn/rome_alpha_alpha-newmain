@@ -58,22 +58,7 @@ namespace Alpha.Main.Site.Handlers
 
         private HttpClient CreateHttpClient()
         {
-            var httpClientHandler = new HttpClientHandler
-            {
-                ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
-            };
-
-            if (!string.IsNullOrWhiteSpace(AppSettings.WhiteLabelProxyUrl))
-            {
-                httpClientHandler.Proxy = new WebProxy
-                {
-                    Address = new Uri(AppSettings.WhiteLabelProxyUrl),
-                    BypassProxyOnLocal = false,
-                    UseDefaultCredentials = false
-                };
-            }
-
-            return new HttpClient(handler: httpClientHandler, disposeHandler: true)
+            return new HttpClient
             {
                 BaseAddress = AppSettings.WhiteLabelBackOfficeApiUri,
                 Timeout = TimeSpan.FromSeconds(15),
