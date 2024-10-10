@@ -177,8 +177,12 @@ var menuBar = {
     SSOToNovaCasino: function () {
         var ssoUrl = alpha.urls.mainRootPath + "NovaCasino/SSO";
         $.post(ssoUrl, (response) => {
-            response.LaunchUrl && window.open(response.LaunchUrl, "_blank").focus();
-            window.location.reload();
+            if (response.IsSuccessful) {
+                response.LaunchUrl && window.open(response.LaunchUrl, "_blank").focus();
+                window.location.reload();
+            } else {
+                menuBar.topWindow.bootboxAlert(response.Message);
+            }
         });
     },
 

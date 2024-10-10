@@ -1837,6 +1837,7 @@
     <Compile Include="ViewModels\Nickname\CreateNicknameViewModel.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
+    <Compile Include="ViewModels\NovaCasino\NovaCasinoSSOViewModel.cs" />
     <Compile Include="ViewModels\ProtectionCode\ProtectionCodeViewModel.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>

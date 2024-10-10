@@ -1,6 +1,9 @@
-﻿using Alpha.Main.Models;
+﻿using Alpha.Main.AppResources;
+using Alpha.Main.Models;
 using Alpha.Main.Services;
+using Alpha.Main.Site.ViewModels.NovaCasino;
 using Alpha.Web;
+using Alpha.Web.Models;
 using AlphaPlus.User.Models;
 using NovaCasino.API.Client;
 using NovaCasino.API.Client.Models;
@@ -32,6 +35,11 @@ namespace Alpha.Main.Site.Controllers
         [HttpPost]
         public async Task<ActionResult> SSO()
         {
+            if (userSession.IsInternal || userSession.IsSubAcc)
+            {
+                return Json(Main.Models.Result.CreateErrorResult(Security.NotAuthorized), JsonRequestBehavior.DenyGet);
+            }
+
             var uplines = await customerService.GetUplines(userSession.CustId);
             var request = new NovaCasinoSSORequest
             {
@@ -48,16 +56,16 @@ namespace Alpha.Main.Site.Controllers
 
             if (response.CustIds != null && response.CustIds.Any())
             {
-                await customerService.UpdateSyncedNovaCasino(response.CustIds, userSession.UserLoginIp);
+                await customerService.UpdateSyncedNovaCasino(response.CustIds, userSession.UserLoginIp, userSession.LangKey);
             }
 
-            if (!user.IsSyncedNovaCasino)
+            if (!user.IsSyncedNovaCasino && !Enumeration.FromValue<UserLevel>(userSession.RoleId).IsSuperLevel())
             {
                 user.IsSyncedNovaCasino = true;
                 await customerService.InsertPersonalMessage(request.UserInfo);
             }
 
-            return Json(new { response.LaunchUrl }, JsonRequestBehavior.DenyGet);
+            return Json(new NovaCasinoSSOViewModel { Code = 0, LaunchUrl = response.LaunchUrl }, JsonRequestBehavior.DenyGet);
         }
     }
 }

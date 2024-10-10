@@ -1196,9 +1196,9 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nova Casino is a new platform with an Multiple Agents mode. Join now to create Multiple downlines and players.
-        ///
-        ///Note: Please change your password the first time you click &apos;Join&apos; on the Nova Casino BO from the Agent site. Thanks.
+        ///   Looks up a localized string similar to Nova Casino is a new platform with an Multiple Agents mode. Apply now to create Multiple downlines and players.
+        ///&lt;br&gt;&lt;br&gt;
+        ///Note: Please change your &lt;b&gt;password&lt;/b&gt; the first time you click &apos;Apply&apos; on the Nova Casino Back Office from the Agent site. Thanks.
         /// </summary>
         public static string NovaCasinoBriefIntroduction {
             get {

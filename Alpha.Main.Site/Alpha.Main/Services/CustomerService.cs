@@ -16,7 +16,7 @@ namespace Alpha.Main.Services
     {
         Task<IEnumerable<User>> GetUplines(int custId);
 
-        Task UpdateSyncedNovaCasino(string[] custIds, string ip);
+        Task UpdateSyncedNovaCasino(string[] custIds, string ip, string language);
 
         Task InsertPersonalMessage(UserInfo userInfo);
     }
@@ -33,21 +33,25 @@ namespace Alpha.Main.Services
         public Task<IEnumerable<User>> GetUplines(int custId)
             => dynamicRepository.FetchAsync<User>(new GetUplineInfoCriteria(custId));
 
-        public Task InsertPersonalMessage(UserInfo userInfo)
+        public async Task InsertPersonalMessage(UserInfo userInfo)
         {
             var codeKeys = AppSettings.DisabledVietnamese ? Language.CodeNamesWithoutVietNamese : Language.CodeKeys;
             var personalMessages = codeKeys.ToDictionary(p => p.Key, p => string.Format(GetMessageTemplate(p.Key), userInfo.Username));
-            var command = new InsertPersonalMessageCommand(
-                JsonConvert.SerializeObject(userInfo.Upline),
-                personalMessages[Language.English],
-                personalMessages[Language.ChineseSimplified],
-                personalMessages[Language.ChineseTraditional],
-                personalMessages[Language.Thai],
-                personalMessages.ContainsKey(Language.Vietnamese) ? personalMessages[Language.Vietnamese] : null);
-            return dynamicRepository.ExecuteAsync(command);
+            var upline = userInfo.Upline.Where(x => x.RoleId != 5);
+            if (upline != null && upline.Any())
+            {
+                var command = new InsertPersonalMessageCommand(
+                    JsonConvert.SerializeObject(upline),
+                    personalMessages[Language.English],
+                    personalMessages[Language.ChineseSimplified],
+                    personalMessages[Language.ChineseTraditional],
+                    personalMessages[Language.Thai],
+                    personalMessages.ContainsKey(Language.Vietnamese) ? personalMessages[Language.Vietnamese] : null);
+                await dynamicRepository.ExecuteAsync(command);
+            }
         }
 
-        public Task UpdateSyncedNovaCasino(string[] custIds, string ip)
+        public Task UpdateSyncedNovaCasino(string[] custIds, string ip, string language)
         {
             var tasks = new List<Task>();
             foreach (var item in custIds)
@@ -57,7 +61,7 @@ namespace Alpha.Main.Services
                 {
                     tasks.Add(Task.Factory.StartNew(() =>
                     {
-                        var command = new UpdateSyncedNovaCasinoCommand(custId, ip);
+                        var command = new UpdateSyncedNovaCasinoCommand(custId, ip, language);
                         return dynamicRepository.ExecuteAsync(command);
                     }));
                 }
