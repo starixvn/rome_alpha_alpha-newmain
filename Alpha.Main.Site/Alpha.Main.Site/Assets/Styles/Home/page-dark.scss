@@ -178,6 +178,26 @@ html * {
                 float: left;
                 top: 6px;
                 position: absolute;
+
+                &:before, &:after {
+                    content: '';
+                    position: absolute;
+                    border-radius: 50%;
+                    z-index: 1;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background-color: transparent;
+                }
+
+                &:after {
+                    @include animation(cd-pulse 2s infinite);
+                }
+
+                &:before {
+                    @include animation(cd-pulse 2s infinite 4s);
+                }
             }
 
             &.icon-chatbot {
@@ -199,14 +219,6 @@ html * {
                     top: 0;
                     left: 0;
                     background-color: transparent;
-                }
-
-                &:after {
-                    @include animation(cd-pulse 2s infinite);
-                }
-
-                &:before {
-                    @include animation(cd-pulse 2s infinite 4s);
                 }
             }
 
