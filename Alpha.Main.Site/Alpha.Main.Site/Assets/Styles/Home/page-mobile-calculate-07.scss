@@ -260,7 +260,7 @@ body {
             }
         }
 
-        &#menu-JOINNOVACASINONOW {
+        &#menu-SIGNINTONOVACASINO, &#menu-JOINNOVACASINONOW {
             .txt-item {
                 color: #0389E2;
             }
@@ -289,6 +289,12 @@ body {
         &.icon-chatbot, &.icon-signintonovacasino, &.icon-joinnovacasinonow {
             transform: translate(0, -50%);
             top: 50%;
+        }
+
+        &.icon-signintonovacasino, &.icon-joinnovacasinonow {
+            width: calculateScale(18px);
+            height: calculateScale(18px);
+            background-size: cover !important;
         }
     }
 

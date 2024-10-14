@@ -13,7 +13,6 @@ body {
     border-top-width: calculateScale(1px);
 }
 
-
 // language flags
 
 .icon-flag:before {
@@ -52,7 +51,6 @@ body {
     background-position: calculateScale(1px) calculateScale(-24px);
 }
 
-
 // ripple effect
 .icon-logout:hover:after,
 .icon-collapse:hover:after,
@@ -76,8 +74,7 @@ body {
     font-size: calculateScale(15px);
 }
 
-
-/*************************  Float section ******************************/  
+/*************************  Float section ******************************/
 .float-section {
     left: 16px;
     right: unset;
@@ -96,7 +93,6 @@ body {
     }
 }
 
-
 .dropdown-menu > li > a {
     padding: calculateScale(3px) calculateScale(20px);
 }
@@ -108,8 +104,7 @@ body {
 
     .content {
         top: calculateScale(48px);
-
-		padding:0px !important;
+        padding: 0px !important;
     }
 
     .header {
@@ -132,7 +127,6 @@ body {
     width: 0;
     font-size: calculateScale($font-size);
     z-index: 9999;
-
 
     &.hidden-mobile {
         left: -100%;
@@ -245,7 +239,7 @@ body {
             padding: calculateScale(7px) 0 0 calculateScale(3px);
         }
 
-        &#menu-MYWATCHLIST, &#menu-SERCURITYCODE, &#menu-MYTHRESHOLDS {
+        &#menu-MYWATCHLIST, &#menu-SERCURITYCODE, &#menu-MYTHRESHOLDS, &#menu-SIGNINTONOVACASINO, &#menu-JOINNOVACASINONOW {
             padding: calculateScale(16px) 0 0;
             margin-bottom: 0;
 
@@ -266,6 +260,12 @@ body {
                 .icon {
                     font-size: calculateScale(20px) !important;
                 }
+            }
+        }
+
+        &#menu-SIGNINTONOVACASINO, &#menu-JOINNOVACASINONOW {
+            .txt-item {
+                color: #0389E2;
             }
         }
     }
@@ -289,9 +289,15 @@ body {
         height: calculateScale(24px);
         line-height: calculateScale(24px);
 
-        &.icon-chatbot {
+        &.icon-chatbot, &.icon-signintonovacasino, &.icon-joinnovacasinonow {
             transform: translate(0, -50%);
             top: 50%;
+        }
+
+        &.icon-signintonovacasino, &.icon-joinnovacasinonow {
+            width: calculateScale(18px);
+            height: calculateScale(18px);
+            background-size: cover !important;
         }
     }
 
@@ -310,7 +316,7 @@ body {
         margin-left: calculateScale(3px);
     }
 }
- 
+
 // Account search tool typeahead
 
 .typeahead {
@@ -390,7 +396,6 @@ body {
         font-size: calculateScale(22px);
     }
 }
-
 
 .profile-avatar {
     width: calculateScale(22px);
