@@ -1101,6 +1101,10 @@ html * {
     color: $popup-text-color;
     padding: 20px;
 
+    .sm {
+        display: none;
+    }
+
     .icon-close {
         position: absolute;
         top: 5px;
@@ -1144,7 +1148,7 @@ html * {
 
         img {
             display: block;
-            margin: 0 21px 0 0;
+            margin: 0 20px 0 0;
         }
 
         p {

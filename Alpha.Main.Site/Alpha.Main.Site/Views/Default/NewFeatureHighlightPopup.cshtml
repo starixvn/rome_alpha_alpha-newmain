@@ -6,9 +6,12 @@
             <span aria-hidden="true"></span>
         </button>
         <div class="text">
-            <img src="~/Assets/Images/@(Model.HightLightFeatureImageName).svg?v=@AppSettings.JsVersion" alt="@Resources.HighlightPopupNewFeatureTitle">
+            <div class="image">
+                <img src="~/Assets/Images/@(Model.HightLightFeatureImageName).svg?v=@AppSettings.JsVersion" alt="@Resources.HighlightPopupNewFeatureTitle">
+                <p class="sm"><span>@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</span></p>
+            </div>
             <div>
-                <p><span>@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</span></p>
+                <p class="pc"><span>@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</span></p>
                 @Html.Raw(Resources.HighlightPopupNewFeatureIntro)
                     <br />
                     @Html.Raw(Resources.HighlightPopupNewFeatureIntro2)
