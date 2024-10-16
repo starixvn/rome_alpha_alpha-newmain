@@ -703,4 +703,21 @@
   <data name="SetupChatbot" xml:space="preserve">
     <value>設置Chatbot</value>
   </data>
+  <data name="SyncedNovaCasinoPersonalMessage" xml:space="preserve">
+    <value>尊敬的代理們，
+ 
+ 您的下線 “{0}” 已成功加入 Nova Casino。請及時提供額度，以確保順利進行。
+ 
+ 如有任何疑問，請聯系客服部。
+ 
+ 感謝您的持續合作！</value>
+  </data>
+  <data name="NovaCasinoBriefIntroduction" xml:space="preserve">
+    <value>Nova Casino 是一個具有多代理模式的新平台。立即加入以創建多個下線和玩家。
+ &lt;br&gt;&lt;br&gt;
+ 注意：首次從代理網站點擊 Nova Casino 後台的 “申請” 時，請更改您在 Nova Casino 後台的 &lt;b&gt;密碼&lt;/b&gt;。謝謝</value>
+  </data>
+  <data name="SystemUnderMaintenance" xml:space="preserve">
+    <value>系統目前正在維護中，維護時間：{0} (下午） - {1}（下午） (GMT+8)，請稍後重試。 [503]</value>
+  </data>
 </root>

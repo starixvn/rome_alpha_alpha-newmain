@@ -704,8 +704,20 @@
     <value>设置Chatbot</value>
   </data>
   <data name="NovaCasinoBriefIntroduction" xml:space="preserve">
-    <value>全新上线！Nova Casino 打造无限代理模式，加入即可创建无限下线与玩家，轻松开启你的盈利之路！
-
-**注意：**首次从代理页面点击“加入”进入 Nova Casino 后台时，请务必修改密码。谢谢！</value>
+    <value>Nova Casino 是一个具有多代理模式的新平台。立即加入以创建多个下线和玩家。
+ &lt;br&gt;&lt;br&gt;
+ 注意：首次从代理网站点击 Nova Casino 后台的 “申请” 时，请更改您在 Nova Casino 后台的 &lt;b&gt;密码&lt;/b&gt;。谢谢</value>
+  </data>
+  <data name="SyncedNovaCasinoPersonalMessage" xml:space="preserve">
+    <value>尊敬的代理们，
+ 
+ 您的下线 “{0}” 已成功加入 Nova Casino。请及时提供额度，以确保顺利进行。
+ 
+ 如果您有任何疑问，请联系客服部。
+ 
+ 感谢您的持续合作！</value>
+  </data>
+  <data name="SystemUnderMaintenance" xml:space="preserve">
+    <value>系统目前正在维护中，维护时间：{0} (下午） - {1}（下午) (GMT+8)，请稍后重试。[503]</value>
   </data>
 </root>
