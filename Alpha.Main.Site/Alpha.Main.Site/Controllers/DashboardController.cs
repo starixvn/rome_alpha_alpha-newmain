@@ -12,7 +12,6 @@ namespace Alpha.Main.Site.Controllers
     using Alpha.Web.Models;
     using AlphaPlus.User.Models;
     using MediatR;
-    using NovaCasino.API.Client.Configurations;
     using Requests.Dashboard.BalanceInfo;
     using ViewModels.Dashboard;
 
@@ -76,8 +75,7 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet]
         public ActionResult NovaCasino()
         {
-            var viewModel = new ContactUsViewModel(Request.Headers["Host"]);
-            return View(viewModel);
+            return View();
         }
 
         [HttpGet]

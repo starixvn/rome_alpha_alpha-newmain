@@ -20,8 +20,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SonarQube", "SonarQube", "{
 		SonarQube\alpha-main\CSharp\SonarLint.xml = SonarQube\alpha-main\CSharp\SonarLint.xml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovaCasino.API.Client", "NovaCasino.API.Client\NovaCasino.API.Client.csproj", "{F2CECB4A-9C46-457E-A3CF-07714AEB422C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,10 +42,6 @@ Global
 		{27D51E95-AB7F-47AE-BA78-8A8381ACEC94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27D51E95-AB7F-47AE-BA78-8A8381ACEC94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27D51E95-AB7F-47AE-BA78-8A8381ACEC94}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F2CECB4A-9C46-457E-A3CF-07714AEB422C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F2CECB4A-9C46-457E-A3CF-07714AEB422C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F2CECB4A-9C46-457E-A3CF-07714AEB422C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F2CECB4A-9C46-457E-A3CF-07714AEB422C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,12 +1,11 @@
 ﻿using Alpha.Main.AppResources;
 using Alpha.Main.Models;
+using Alpha.Main.Models.NovaCasino;
 using Alpha.Main.Services;
 using Alpha.Main.Site.ViewModels.NovaCasino;
 using Alpha.Web;
 using Alpha.Web.Models;
 using AlphaPlus.User.Models;
-using NovaCasino.API.Client;
-using NovaCasino.API.Client.Models;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -52,7 +51,12 @@ namespace Alpha.Main.Site.Controllers
                     Upline = uplines.ToArray()
                 }
             };
+
             var response = await novaCasinoService.SSO(request);
+            if (response.IsFailed)
+            {
+                return Json(response, JsonRequestBehavior.DenyGet);
+            }
 
             if (response.CustIds != null && response.CustIds.Any())
             {

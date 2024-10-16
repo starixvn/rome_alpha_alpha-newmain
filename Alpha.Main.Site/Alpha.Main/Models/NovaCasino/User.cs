@@ -1,4 +1,4 @@
-﻿namespace NovaCasino.API.Client.Models
+﻿namespace Alpha.Main.Models.NovaCasino
 {
     public class User
     {

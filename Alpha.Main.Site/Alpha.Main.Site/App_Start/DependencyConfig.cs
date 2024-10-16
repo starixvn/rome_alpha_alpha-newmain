@@ -33,7 +33,6 @@
     using Main.Models;
     using Main.Models.Menus;
     using MediatR;
-    using NovaCasino.API.Client;
     using ONEbook.OTP.Helpers;
     using ONEbook.OTP.Services;
     using Services;

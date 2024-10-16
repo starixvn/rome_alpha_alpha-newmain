@@ -691,6 +691,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An error has occurred. Please contact Customer Service Department for assistance. Thank you. [500].
+        /// </summary>
+        public static string InternalServerError {
+            get {
+                return ResourceManager.GetString("InternalServerError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;Dear customers! Now you can login with your own nickname&lt;/div&gt;
         ///&lt;div&gt;... more secure and personalized.&lt;/div&gt;.
         /// </summary>
@@ -1650,6 +1659,15 @@ namespace Alpha.Main.AppResources {
         public static string SyncedNovaCasinoPersonalMessage {
             get {
                 return ResourceManager.GetString("SyncedNovaCasinoPersonalMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The system is currently under maintenance. Maintenance time: {0} - {1} (GMT+8). Please try again later. [503].
+        /// </summary>
+        public static string SystemUnderMaintenance {
+            get {
+                return ResourceManager.GetString("SystemUnderMaintenance", resourceCulture);
             }
         }
         

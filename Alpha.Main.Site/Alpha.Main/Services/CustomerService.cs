@@ -2,9 +2,9 @@
 using Alpha.Main.Configurations;
 using Alpha.Main.Constants;
 using Alpha.Main.Criteria.Customer;
+using Alpha.Main.Models.NovaCasino;
 using Fanex.Data.Repository;
 using Newtonsoft.Json;
-using NovaCasino.API.Client.Models;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
