@@ -21,7 +21,6 @@
         private DashboardController dashboardController;
         private IMediator mediator;
         private IUserSession userSession;
-        private IBotService botService;
 
         [SetUp]
         public void SetUp()
@@ -30,13 +29,12 @@
             userSession = Substitute.For<IUserSession>();
             userSession.RoleId.Returns(RoleId.Agent);
             userSession.SubPageAccess.Returns(new PageAccess());
-            botService = Substitute.For<IBotService>();
 
-            dashboardController = new DashboardController(mediator, userSession, botService);
+            dashboardController = new DashboardController(mediator, userSession);
         }
 
         [Test]
-        public async Task Index_Always_ReturnsViewWithDashboardViewModel()
+        public void Index_Always_ReturnsViewWithDashboardViewModel()
         {
             // Arrange
             var compareLogic = new CompareLogic();

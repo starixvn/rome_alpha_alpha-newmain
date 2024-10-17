@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    <style>
+        body {
+            background: transparent;
+        }
+
+        .icon-home {
+            margin-right: 0;
+        }
+
+            .icon-home:after {
+                content: none;
+            }
+
+        .text {
+            padding: 10px 0;
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .banner {
+            padding: 1px;
+        }
+
+            .banner img {
+                border-radius: 20px;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+                max-width: 100%
+            }
+
+        .sm {
+            display: none
+        }
+    </style>
+    <style media="screen and (max-device-width: 768px)">
+        .text {
+            font-size: 20px;
+        }
+
+        .sm {
+            display: block;
+            width: 100%;
+        }
+
+        .pc {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p class="text">@Html.Raw(string.Format(Resources.DashboardViewOverallInformation, "<span onclick=\"location.href=top.headerNav.urls.home;\" class=\"icon icon-home\"></span>"))</p>
+    <div class="banner">
+        <img class="pc" src="~/Assets/Images/DashboardBanner/NovaCasino/banner.jpg" alt="" />
+        <img class="sm" src="~/Assets/Images/DashboardBanner/NovaCasino/banner_mobile.jpg" alt="" />
+    </div>
+</body>
+</html>
