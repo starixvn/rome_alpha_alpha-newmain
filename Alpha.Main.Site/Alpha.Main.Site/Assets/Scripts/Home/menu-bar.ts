@@ -164,11 +164,11 @@ var menuBar = {
         });
 
         menuBar.domElements.closeIconOnMobile.click(menuBar.collapseSideBar);
-        menuBar.domElements.signInNovaCasinoMenu.unbind().bind("click", (event) => {
+        menuBar.domElements.signInNovaCasinoMenu.unbind().bind("click touchend", (event) => {
             event.preventDefault();
             menuBar.SSOToNovaCasino();
         });
-        menuBar.domElements.joinNovaCasinoNowMenu.unbind().bind("click", (event) => {
+        menuBar.domElements.joinNovaCasinoNowMenu.unbind().bind("click touchend", (event) => {
             event.preventDefault();
             menuBar.topWindow.bootboxConfirm(menuBar.resources.novaCasinoBriefIntroduction, undefined, () => menuBar.SSOToNovaCasino());
         });
@@ -178,8 +178,12 @@ var menuBar = {
         var ssoUrl = alpha.urls.mainRootPath + "NovaCasino/SSO";
         $.post(ssoUrl, (response) => {
             if (response.IsSuccessful) {
-                response.LaunchUrl && window.open(response.LaunchUrl, "_blank").focus();
-                window.location.reload();
+                if (response.LaunchUrl) {
+                    var popup = window.open("", "_blank");
+                    popup.document.title = "Nova Casino";
+                    popup.location.href = response.LaunchUrl;
+                    window.location.reload();
+                }
             } else {
                 menuBar.topWindow.bootboxAlert(response.Message);
             }

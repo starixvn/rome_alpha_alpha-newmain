@@ -63,10 +63,13 @@ namespace Alpha.Main.Site.Controllers
                 await customerService.UpdateSyncedNovaCasino(response.CustIds, userSession.UserLoginIp, userSession.LangKey);
             }
 
-            if (!user.IsSyncedNovaCasino && !Enumeration.FromValue<UserLevel>(userSession.RoleId).IsSuperLevel())
+            if (!user.IsSyncedNovaCasino)
             {
                 user.IsSyncedNovaCasino = true;
-                await customerService.InsertPersonalMessage(request.UserInfo);
+                if (!Enumeration.FromValue<UserLevel>(userSession.RoleId).IsSuperLevel())
+                {
+                    await customerService.InsertPersonalMessage(request.UserInfo);
+                }
             }
 
             return Json(new NovaCasinoSSOViewModel { Code = 0, LaunchUrl = response.LaunchUrl }, JsonRequestBehavior.DenyGet);
