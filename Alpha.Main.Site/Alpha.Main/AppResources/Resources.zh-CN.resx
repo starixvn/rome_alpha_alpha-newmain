@@ -659,7 +659,7 @@
     <value>查看</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>&lt;p&gt;我们很高兴为您介绍我们新的现金奖励计划. 奖励金额由公司负责，会员一旦收到奖励，并不能用于下注。. 奖励将分配给上线，会员可以通过其代理去兑现。&lt;/p&gt;&lt;p&gt;我们的新功能&lt;b&gt;奖励支付&lt;/b&gt;支持您的下线支付管理，确保所有奖励的准确分配。&lt;/p&gt;</value>
+    <value>&lt;p&gt;我们很高兴为您介绍我们新的现金奖金计划。奖金金额由公司负责，会员一旦收到奖金，并不能用于下注。奖金将分配给上线，会员可以通过其代理去兑现。&lt;/p&gt;&lt;p&gt;我们的新功能&lt;b&gt;奖金支付&lt;/b&gt;支持您的下线支付管理，确保所有奖金的准确分配。&lt;/p&gt;</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>开始吧</value>
@@ -674,7 +674,7 @@
     <value>输赢细节报告</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>欢迎加入&lt;b&gt;现金奖励计划&lt;/b&gt;！</value>
+    <value>欢迎加入&lt;b&gt;现金奖金计划&lt;/b&gt;！</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>一分钟前</value>
@@ -695,16 +695,19 @@
     <value>设置Chatbot</value>
   </data>
   <data name="RewardReceivable" xml:space="preserve">
-    <value>应收奖励</value>
+    <value>应收奖金</value>
   </data>
   <data name="RewardPayable" xml:space="preserve">
-    <value>奖励支付</value>
+    <value>奖金支付</value>
   </data>
   <data name="RewardPayableTooltip" xml:space="preserve">
     <value>您可以分配给下线的金额。</value>
   </data>
   <data name="RewardReceivableTooltip" xml:space="preserve">
     <value>您可以从上线收到的金额。</value>
+  </data>
+  <data name="Reward" xml:space="preserve">
+    <value>奖金</value>
   </data>
   <data name="NovaCasinoBriefIntroduction" xml:space="preserve">
     <value>Nova Casino 是一个具有多代理模式的新平台。立即加入以创建多个下线和玩家。

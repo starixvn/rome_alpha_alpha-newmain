@@ -804,9 +804,6 @@ Note: Please change your &lt;b&gt;password&lt;/b&gt; the first time you click 'A
   <data name="InternalServerError" xml:space="preserve">
     <value>An error has occurred. Please contact Customer Service Department for assistance. Thank you. [500]</value>
   </data>
-  <data name="Reward" xml:space="preserve">
-    <value>Reward</value>
-  </data>
   <data name="RewardPayable" xml:space="preserve">
     <value>Reward Payable</value>
   </data>
@@ -818,5 +815,8 @@ Note: Please change your &lt;b&gt;password&lt;/b&gt; the first time you click 'A
   </data>
   <data name="RewardPayableTooltip" xml:space="preserve">
     <value>Amount you can distribute to your downlines.</value>
+  </data>
+  <data name="Reward" xml:space="preserve">
+    <value>Reward</value>
   </data>
 </root>

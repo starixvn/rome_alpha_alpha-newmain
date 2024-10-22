@@ -771,4 +771,7 @@ Lưu ý: Vui lòng thay đổi &lt;b&gt;mật khẩu&lt;/b&gt; Nova Casino Back 
   <data name="InternalServerError" xml:space="preserve">
     <value>Đã xảy ra lỗi. Vui lòng liên hệ Bộ phận Chăm Sóc Khách hàng để được hỗ trợ. Xin cảm ơn. [500]</value>
   </data>
+  <data name="Reward" xml:space="preserve">
+    <value>Tiền thưởng</value>
+  </data>
 </root>
