@@ -47,7 +47,7 @@
       <HintPath>..\packages\AlphaPlus.Configurations.1.0.0\lib\netstandard2.0\AlphaPlus.Configurations.dll</HintPath>
     </Reference>
     <Reference Include="AlphaPlus.User.Models, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AlphaPlus.User.Models.1.2.0.1-scaleout001\lib\netstandard2.0\AlphaPlus.User.Models.dll</HintPath>
+      <HintPath>..\packages\AlphaPlus.User.Models.1.2.0.1\lib\netstandard2.0\AlphaPlus.User.Models.dll</HintPath>
     </Reference>
     <Reference Include="Base32, Version=1.0.0.26, Culture=neutral, PublicKeyToken=3427d4dc8cee30c6, processorArchitecture=MSIL">
       <HintPath>..\packages\Base32.1.0.0.26\lib\portable-net40+sl40+win+wp80\Base32.dll</HintPath>
@@ -298,7 +298,6 @@
     <Compile Include="Services\CacheRefServiceImplTests.cs" />
     <Compile Include="Services\ProfilePictureServicesTests.cs" />
     <Compile Include="Services\KickoutCustomerServiceImplTests.cs" />
-    <Compile Include="Services\NicknameServiceImplTests.cs" />
     <Compile Include="Services\PasswordServiceImplTests.cs" />
     <Compile Include="Services\ProtectionCodeServiceImplTests.cs" />
     <Compile Include="Services\SecurityCodeServiceImplTest.cs" />
