@@ -2,9 +2,10 @@
 {
     using Models;
     using Params.Nickname;
+    using System.Threading.Tasks;
 
     public interface NicknameService
     {
-        Result CreateNickname(CreateNicknameParam param, bool nickNameLoginOnly);
+        Task<Result> CreateNickname(CreateNicknameParam param, bool nickNameLoginOnly);
     }
 }

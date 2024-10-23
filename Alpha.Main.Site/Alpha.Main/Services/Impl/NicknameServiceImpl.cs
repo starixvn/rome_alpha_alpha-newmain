@@ -1,73 +1,40 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
-    using System.Text.RegularExpressions;
-    using AppResources;
-    using Criteria.Nickname;
-    using Fanex.Data.Repository;
+    using Fanex.Customer.Client.Params;
+    using Fanex.Customer.Client.Services;
     using Models;
     using Params.Nickname;
+    using System.Net;
+    using System.Threading.Tasks;
 
     public class NicknameServiceImpl : NicknameService
     {
-        private const int Code = 100;
-        private static readonly Regex NicknameRule = new Regex(@"^[a-zA-Z0-9]{5,20}$");
+        private readonly ICustomerService customerService;
 
-        private readonly IDynamicRepository dynamicRepository;
-
-        public NicknameServiceImpl(IDynamicRepository dynamicRepository)
+        public NicknameServiceImpl(ICustomerService customerService)
         {
-            this.dynamicRepository = dynamicRepository;
+            this.customerService = customerService;
         }
 
-        public Result CreateNickname(CreateNicknameParam param, bool nickNameLoginOnly)
+        public async Task<Result> CreateNickname(CreateNicknameParam param, bool nickNameLoginOnly)
         {
-            if (param.IsEnableUpdateNickname)
-            {
-                var result = ValidateAndCreateNickname(param);
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-                if (result.IsFailed)
-                {
-                    return result;
-                }
-            }
+            var nickNameRequest = new CreateNickNameParam(
+                param.CustId, 
+                param.SubAccountId, 
+                param.Nickname, 
+                param.IP, 
+                param.Site, 
+                param.CustDBGroupId, 
+                param.IsEnableUpdateNickname, 
+                param.LanguageKey);
 
-            return UpdateNicknameLoginOnly(
-                new UpdateNicknameLoginOnlyParam(param, nickNameLoginOnly));
-        }
+            var result = param.IsSubAccount ?
+                await customerService.CreateNickNameOfSubAcc(nickNameRequest)
+                : await customerService.CreateNickName(nickNameRequest);
 
-        private static bool IsValidNickName(string nickName)
-            => NicknameRule.IsMatch(nickName);
-
-        private Result ValidateAndCreateNickname(CreateNicknameParam param)
-        {
-            if (IsValidNickName(param.Nickname))
-            {
-                NicknameNonQueryCommand command = param.IsSubAccount
-                    ? new CreateSubAccountNicknameCommand(param.CustId, param.SubAccountId, param.Nickname, param.LanguageKey, param.IP)
-                    : new CreateNicknameCommand(param.CustId, param.Nickname, param.LanguageKey, param.IP);
-
-                return Execute(command);
-            }
-
-            return Result.CreateErrorResult(Resources.NicknameRule, Code);
-        }
-
-        private Result UpdateNicknameLoginOnly(UpdateNicknameLoginOnlyParam param)
-        {
-            NicknameNonQueryCommand command = param.IsSubAccount
-                ? new UpdateSubAccountNicknameLoginOnlyCommand(param.CustId, param.SubAccountId, param.NickNameLoginOnly, param.LanguageKey, param.IP)
-                : new UpdateNicknameLoginOnlyCommand(param.CustId, param.NickNameLoginOnly, param.LanguageKey, param.IP);
-
-            return Execute(command);
-        }
-
-        private Result Execute(NicknameNonQueryCommand command)
-        {
-            dynamicRepository.Execute(command);
-
-            return Result.CreateErrorResult(
-                command.ErrCode == 0 ? Resources.ConfiguredNicknameSuccessfully : command.ErrMsg,
-                command.ErrCode);
+            return new Result { Code = result.Code, Message = result.Message };
         }
     }
 }

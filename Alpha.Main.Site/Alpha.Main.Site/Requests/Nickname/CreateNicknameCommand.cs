@@ -5,7 +5,7 @@
     using Main.Models;
     using MediatR;
 
-    public class CreateNicknameCommand : IRequest<Result>
+    public class CreateNicknameCommand : IAsyncRequest<Result>
     {
         private readonly IUserSession userSession;
         private readonly NicknameChecker nicknameChecker;
@@ -29,7 +29,11 @@
 
         public string IP => userSession.UserLoginIp;
 
-        public string LanguageKey => userSession.LangKey;
+        public string Language => userSession.Language;
+
+        public string Site => userSession.Site;
+
+        public int CustDBGroupId => userSession.CustDBGroupId;
 
         public bool IsValid()
             => nicknameChecker.IsOfferForceLoginFlow;

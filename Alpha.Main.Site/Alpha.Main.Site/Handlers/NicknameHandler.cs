@@ -6,8 +6,9 @@
     using Params.Nickname;
     using Requests.Nickname;
     using Services;
+    using System.Threading.Tasks;
 
-    public class NicknameHandler : IRequestHandler<CreateNicknameCommand, Result>
+    public class NicknameHandler : IAsyncRequestHandler<CreateNicknameCommand, Result>
     {
         private readonly NicknameService nicknameService;
         private readonly IUserSession userSession;
@@ -20,20 +21,22 @@
             this.userSession = userSession;
         }
 
-        public Result Handle(CreateNicknameCommand message)
+        public async Task<Result> Handle(CreateNicknameCommand message)
         {
             var isEnableUpdateNickname = !message.IsDisableUpdateNickname;
             var nickname = message.Nickname == null ? string.Empty : message.Nickname.Trim();
             var isNicknameLoginOnly = true;
 
-            var result = nicknameService.CreateNickname(
+            var result = await nicknameService.CreateNickname(
                 new CreateNicknameParam(
                     message.ActorId,
                     message.SubAccountId,
                     nickname,
                     message.IP,
-                    message.LanguageKey,
-                    isEnableUpdateNickname),
+                    message.Language,
+                    message.Site,
+                    isEnableUpdateNickname,
+                    message.CustDBGroupId),
                 isNicknameLoginOnly);
 
             if (result.IsSuccessful)

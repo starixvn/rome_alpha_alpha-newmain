@@ -38,13 +38,6 @@
       <Mapping DataField="DeviceId" ObjectProperty="Id" />
     </Setting>
   </Function>
-
-  <Function Name="Nickname">
-    <Setting Key="Age_CustomerInsNickName" SpName="Age_CustomerInsNickName" DbName="DBCust.CustDB.wsv_alpv" Plain="0" />
-    <Setting Key="Age_CustomerUpdNicknameLoginOnly" SpName="Age_CustomerUpdNicknameLoginOnly" DbName="DBCust.CustDB.wsv_alpv" Plain="0" />
-    <Setting Key="Age_CustSubInsNickname" SpName="Age_CustSubInsNickname" DbName="DBCust.CustDB.wsv_alpv" Plain="0" />
-    <Setting Key="Age_CustSubUpdNicknameLoginOnly" SpName="Age_CustSubUpdNicknameLoginOnly" DbName="DBCust.CustDB.wsv_alpv" Plain="0" />
-  </Function>
   
   <Function Name="Indirect login">
     <Setting Key="Age_CustomerIndirectLoginAccountUpd" SpName="Age_CustomerIndirectLoginAccountUpd" DbName="DBCust.CustDB.wsv_alpv" Plain="0" />

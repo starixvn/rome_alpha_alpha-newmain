@@ -22,6 +22,9 @@
     using Fanex.Caching;
     using Fanex.Caching.Redis;
     using Fanex.Cryptography.Aes;
+    using Fanex.Customer.Client.Configurations;
+    using Fanex.Customer.Client.NETFramework;
+    using Fanex.Customer.Client.Services;
     using Fanex.Data.Repository;
     using Fanex.RemotingRef;
     using Handlers;
@@ -150,6 +153,8 @@
             container.RegisterPerWebRequest<ProtectionCodeService, ProtectionCodeServiceImpl>();
             container.RegisterPerWebRequest<ThemeService, ThemeServiceImpl>();
             container.RegisterPerWebRequest<UpdateUsageLanguageService, UpdateUsageLanguageServiceImpl>();
+            container.RegisterSingleton(new CustomerClientConfiguration().Initialize());
+            container.RegisterSingleton<ICustomerService, CustomerService>();
         }
 
         private static void RegisterDataAccesses(Container container)
