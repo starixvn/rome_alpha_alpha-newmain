@@ -154,8 +154,8 @@
             container.RegisterPerWebRequest<ThemeService, ThemeServiceImpl>();
             container.RegisterPerWebRequest<UpdateUsageLanguageService, UpdateUsageLanguageServiceImpl>();
             container.RegisterSingleton(new CustomerClientConfiguration().Initialize());
-            container.RegisterSingleton<ICustomerService, CustomerService>();
-            container.RegisterPerWebRequest<CustomerService, CustomerServiceImpl>();
+            container.RegisterSingleton<ICustomerService, Fanex.Customer.Client.Services.CustomerService>();
+            container.RegisterPerWebRequest<Services.CustomerService, CustomerServiceImpl>();
             container.RegisterPerWebRequest<INovaCasinoService, NovaCasinoService>();
         }
 
