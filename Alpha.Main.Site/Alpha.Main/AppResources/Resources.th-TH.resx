@@ -744,4 +744,7 @@
   <data name="SystemUnderMaintenance" xml:space="preserve">
     <value>ขณะนี้ระบบกำลังอยู่ในระหว่างการปรับปรุง เวลาปรับปรุง: {0} - {1} น (GMT+8). กรุณาลองใหม่อีกครั้งในภายหลัง [503]</value>
   </data>
+  <data name="InternalServerError" xml:space="preserve">
+    <value>เกิดข้อผิดพลาด โปรดติดต่อฝ่ายบริการลูกค้าเพื่อขอความช่วยเหลือ ขอบคุณ. [500]</value>
+  </data>
 </root>

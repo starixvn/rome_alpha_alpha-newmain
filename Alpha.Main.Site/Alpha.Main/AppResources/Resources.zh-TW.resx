@@ -720,4 +720,7 @@
   <data name="SystemUnderMaintenance" xml:space="preserve">
     <value>系統目前正在維護中，維護時間：{0} (下午） - {1}（下午） (GMT+8)，請稍後重試。 [503]</value>
   </data>
+  <data name="InternalServerError" xml:space="preserve">
+    <value>發生錯誤。請聯絡客戶服務部尋求協助。謝謝。 [500]</value>
+  </data>
 </root>

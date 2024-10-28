@@ -764,4 +764,7 @@ Lưu ý: Vui lòng thay đổi &lt;b&gt;mật khẩu&lt;/b&gt; Nova Casino Back 
   <data name="SystemUnderMaintenance" xml:space="preserve">
     <value>Hệ thống hiện đang bảo trì. Thời gian bảo trì: {0} - {1} (GMT+8). Vui lòng thử lại sau. [503]</value>
   </data>
+  <data name="InternalServerError" xml:space="preserve">
+    <value>Đã xảy ra lỗi. Vui lòng liên hệ Bộ phận Chăm Sóc Khách hàng để được hỗ trợ. Xin cảm ơn. [500]</value>
+  </data>
 </root>
