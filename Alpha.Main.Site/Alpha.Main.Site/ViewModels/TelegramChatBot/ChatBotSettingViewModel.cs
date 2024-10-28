@@ -42,8 +42,18 @@
         public bool IsEnableAutoTransfer { get; }
 
         public string HowToUseLink
-            => AppSettings.IsSiteLabel789y ?
-                MicroSites.MessageUrl("~/StaticMessage/Guide?id=167820") :
-                MicroSites.HowToUseUrl("~/Index.aspx?linktomessagesite=167819");
+        {
+            get
+            {
+                if (AppSettings.SupportedNewHandbook)
+                {
+                    return MicroSites.HowToUseUrl($"~/Default/GetBySlug?slug=telegram-chatbot");
+                }
+
+                return AppSettings.IsSiteLabel789y ?
+                    MicroSites.MessageUrl("~/StaticMessage/Guide?id=167820") :
+                    MicroSites.HowToUseUrl("~/Index.aspx?linktomessagesite=167819");
+            }
+        }
     }
 }

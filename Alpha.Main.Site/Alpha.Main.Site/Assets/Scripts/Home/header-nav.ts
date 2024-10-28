@@ -183,6 +183,12 @@ var headerNav = {
         var language = $(".list-language ." + currentLanguage + " > a").html();
 
         headerNav.domElements.languageSelectorContainer.html(language);
+
+        headerNav.domElements.languageSelectorContainer.click(() => {
+            var popupHighlight = $('.popup-highlight');
+            $('.popup-highlight').removeClass('highlight-left').addClass('highlight-top');
+            popupHighlight.css({ top: 50, right: 32 });
+        });
     },
 
     markMessageAsRead: function (type) {

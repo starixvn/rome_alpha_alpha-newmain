@@ -601,7 +601,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gain valuable insights into Members&apos; betting behaviors through &lt;b&gt;Member Profile&lt;/b&gt; and &lt;b&gt;Betting Statistics&lt;/b&gt; to effectively manage risk, and make informed decisions..
+        ///   Looks up a localized string similar to Find &lt;b&gt;consolidated guidelines&lt;/b&gt; and &lt;b&gt;glossary terms&lt;/b&gt; for quick and easy reference..
         /// </summary>
         public static string HighlightPopupNewFeatureIntro {
             get {
@@ -637,7 +637,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome to &lt;b&gt;Member Betting Behavior&lt;/b&gt;!.
+        ///   Looks up a localized string similar to Explore the &lt;b&gt;One-Stop Handbook&lt;/b&gt;!.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {
