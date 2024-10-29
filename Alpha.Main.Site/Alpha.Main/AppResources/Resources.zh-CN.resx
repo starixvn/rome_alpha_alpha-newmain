@@ -221,7 +221,7 @@
     <value>总平均</value>
   </data>
   <data name="yesterdayBalance" xml:space="preserve">
-    <value>昨天餘額</value>
+    <value>昨天余额</value>
   </data>
   <data name="yesterdayCashBalance" xml:space="preserve">
     <value>昨天现金余额</value>

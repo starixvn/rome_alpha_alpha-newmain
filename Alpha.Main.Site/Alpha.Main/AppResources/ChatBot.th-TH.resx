@@ -286,13 +286,13 @@
     <value>ยอดได้เสียเมื่อวาน</value>
   </data>
   <data name="MemberOutstanding" xml:space="preserve">
-    <value>การเดิมพันที่ยังไม่สิ้นสุดของ สมาชิก</value>
+    <value>เดิมพันที่ยังไม่สิ้นสุดของสมาชิก</value>
   </data>
   <data name="MemberCredit" xml:space="preserve">
     <value>เครดิตเมมเบอร์</value>
   </data>
   <data name="AgentOutstanding" xml:space="preserve">
-    <value>เอเย่นต์ยอดคงค้าง</value>
+    <value>เดิมพันที่ยังไม่สิ้นสุดของเอเย่นต์</value>
   </data>
   <data name="lblMessageSelfDestruct" xml:space="preserve">
     <value>ระยะเวลาการทำลายตนเองข้อความของ Chatbot's</value>
@@ -400,7 +400,7 @@
     <value>OTP หมดอายุ โปรด &lt;span id="btnResend" class="link resend-code"&gt;คลิกที่นี่&lt;/span&gt; เพื่อรับ OTP ใหม่</value>
   </data>
   <data name="Outstanding" xml:space="preserve">
-    <value>Outstanding</value>
+    <value>เดิมพันที่ยังไม่สิ้นสุด</value>
   </data>
   <data name="PersonalMessage" xml:space="preserve">
     <value>Personal Message</value>

@@ -164,7 +164,7 @@
     <value>ตั้งค่าใหม่</value>
   </data>
   <data name="Submit" xml:space="preserve">
-    <value>ตกลง</value>
+    <value>ส่ง</value>
   </data>
   <data name="titleVerifySecurityCode" xml:space="preserve">
     <value>ตรวจสอบรหัสรักษาความปลอดภัย</value>
@@ -505,6 +505,6 @@
     <value>สร้างรหัสผ่านครั้งเดียว (OTP)</value>
   </data>
   <data name="PositionTakingTemplate" xml:space="preserve">
-    <value>เทมเพลตค่าแบ่งสู้</value>
+    <value>เทมเพลตค่าความเสี่ยง</value>
   </data>
 </root>

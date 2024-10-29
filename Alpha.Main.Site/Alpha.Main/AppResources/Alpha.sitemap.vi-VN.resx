@@ -262,7 +262,7 @@
     <value>Lẻ/Chẵn + 1x2 + Hòa/Không Hòa</value>
   </data>
   <data name="parlay" xml:space="preserve">
-    <value>Cược Tổng Hợp</value>
+    <value>Cược Xiên</value>
   </data>
   <data name="reports" xml:space="preserve">
     <value>Báo cáo</value>
