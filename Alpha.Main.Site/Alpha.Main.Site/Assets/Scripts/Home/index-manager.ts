@@ -259,36 +259,11 @@ var indexManager = {
         return indexManager.isInternal ? "" : localStorage.getItem(indexManager.currentUrlCookieName);
     },
     closeAllOpenDropdowns: function (iframeWindow) {
-        const toggleDropdownSubMenu = () => {
-            var popupHighlight = $('.popup-highlight');
-            var ddnw = $("#header-dropdown-menu").width();
-
-            if ($('.dropdown.setting').hasClass('open')) {
-                $('.dropdown-submenu').find('.dropdown-menu').hide();
-                popupHighlight.removeClass('highlight-left').addClass('highlight-top');
-                popupHighlight.css({ top: 50, right: 32 });
-            } else {
-                setTimeout(() => {
-                    popupHighlight.removeClass('highlight-top').addClass('highlight-left');
-                    var mn = $("#header-dropdown-menu > li:not(':hidden')");
-                    var ptop = ((mn.length - 1) * 36 - 48 + 30);
-                    popupHighlight.css({
-                        top: ptop + 'px',
-                        right: ddnw + 56
-                    });
-                }, 100);
-            }
-        }
-
         const closeDropdownSubMenu = () => {
-            var popupHighlight = $('.popup-highlight');
             $('.dropdown-submenu').find('.dropdown-menu').hide();
-            popupHighlight.removeClass('highlight-left').addClass('highlight-top');
-            popupHighlight.css({ top: 50, right: 32 });
         }
 
         $(document).on('click touchend', closeDropdownSubMenu);
-        $('#btn-header-menu').on('click', toggleDropdownSubMenu);
 
         try {
             $(iframeWindow.document).on('click touchend', () => {

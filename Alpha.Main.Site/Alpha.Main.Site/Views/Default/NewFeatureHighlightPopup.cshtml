@@ -1,7 +1,7 @@
 ﻿@model IndexViewModel
 @if (Model.HightLightFeaturePermission)
 {
-    <div class="popup-highlight highlight-top hide" id="boxHighlightPopupNewFeature">
+    <div class="popup-highlight hide" id="boxHighlightPopupNewFeature">
         <button type="button" class="icon icon-close close" title="@Resources.close">
             <span aria-hidden="true"></span>
         </button>
@@ -13,8 +13,6 @@
             <div>
                 <p class="pc"><span>@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</span></p>
                 @Html.Raw(Resources.HighlightPopupNewFeatureIntro)
-                    <br />
-                    @Html.Raw(Resources.HighlightPopupNewFeatureIntro2)
             </div>
         </div>
         <div class="action">

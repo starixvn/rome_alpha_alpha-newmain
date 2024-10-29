@@ -293,6 +293,30 @@ body {
 .tooltip {
     pointer-events: none;
 
+    .ver2 & {
+        .tooltip-arrow {
+            &:after, &:before {
+                display: none;
+            }
+        }
+
+        &.right {
+            .tooltip-arrow {
+                border-right-color: #3e3e3e;
+            }
+        }
+
+        .tooltip-inner {
+            border: none;
+            background-color: #3e3e3e;
+            color: #CBCBCB;
+            width: 260px;
+            max-width: 260px;
+            font-size: 13px;
+            box-shadow: none;
+        }
+    }
+
     &.in {
         opacity: 1;
     }
