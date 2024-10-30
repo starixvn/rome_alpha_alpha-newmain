@@ -2,6 +2,7 @@
 
 var menuBar = {
     topWindow: null,
+    novaCasinoPopup: null,
     domElements: {
         subMenuItems: null,
         menuOpeners: null,
@@ -176,16 +177,17 @@ var menuBar = {
 
     SSOToNovaCasino: function () {
         var ssoUrl = alpha.urls.mainRootPath + "NovaCasino/SSO";
-        var popup = window.open("", "_blank");
-        popup.document.title = "Nova Casino";
+        if (menuBar.novaCasinoPopup == null) {
+            menuBar.novaCasinoPopup = window.open("", "_blank");
+        }
         $.post(ssoUrl, (response) => {
             if (response.IsSuccessful) {
                 if (response.LaunchUrl) {
-                    popup.location.href = response.LaunchUrl;
+                    menuBar.novaCasinoPopup.location.href = response.LaunchUrl;
                     window.location.reload();
                 }
             } else {
-                popup.close();
+                menuBar.novaCasinoPopup.close();
                 menuBar.topWindow.bootboxAlert(response.Message);
             }
         });
