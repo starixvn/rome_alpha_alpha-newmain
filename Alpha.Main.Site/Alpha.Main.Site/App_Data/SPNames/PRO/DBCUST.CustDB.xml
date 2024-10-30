@@ -27,13 +27,13 @@
   </Function>
 
   <Function Name="Otp">
-    <Setting Key="Age_OTP_CustomerOTPIns" SpName="Age_OTP_CustomerOTPIns" DbName="DBCUST.CustDB.wsv_alp"/>
-    <Setting Key="Age_OTP_CustomerOTPSel" SpName="Age_OTP_CustomerOTPSel" DbName="DBCUST.CustDB.wsv_alp"/>
-    <Setting Key="Age_OTP_CustomerOTPStatusUpd" SpName="Age_OTP_CustomerOTPStatusUpd" DbName="DBCUST.CustDB.wsv_alp"/>
-    <Setting Key="Age_OTP_CustomerCheckEnableOTP" SpName="Age_OTP_CustomerCheckEnableOTP" DbName="DBCUST.CustDB.wsv_alp"/>
-    <Setting Key="Age_OTP_CustomerOTPDel" SpName="Age_OTP_CustomerOTPDel" DbName="DBCUST.CustDB.wsv_alp"/>
-    <Setting Key="Age_OTP_CustomerStatusUpdAfterVerifiedOTP" SpName="Age_OTP_CustomerStatusUpdAfterVerifiedOTP" DbName="DBCUST.CustDB.wsv_alp"/>
-    <Setting Key="Age_OTP_CustomerOTPDeviceInfoIns" SpName="Age_OTP_CustomerOTPDeviceInfoIns" DbName="DBCUST.CustDB.wsv_alp"/>
+    <Setting Key="Age_OTP_CustomerOTPIns" SpName="Age_OTP_CustomerOTPIns" DbName="DBCUST.CustDB.wsv_alp" />
+    <Setting Key="Age_OTP_CustomerOTPSel" SpName="Age_OTP_CustomerOTPSel" DbName="DBCUST.CustDB.wsv_alp" />
+    <Setting Key="Age_OTP_CustomerOTPStatusUpd" SpName="Age_OTP_CustomerOTPStatusUpd" DbName="DBCUST.CustDB.wsv_alp" />
+    <Setting Key="Age_OTP_CustomerCheckEnableOTP" SpName="Age_OTP_CustomerCheckEnableOTP" DbName="DBCUST.CustDB.wsv_alp" />
+    <Setting Key="Age_OTP_CustomerOTPDel" SpName="Age_OTP_CustomerOTPDel" DbName="DBCUST.CustDB.wsv_alp" />
+    <Setting Key="Age_OTP_CustomerStatusUpdAfterVerifiedOTP" SpName="Age_OTP_CustomerStatusUpdAfterVerifiedOTP" DbName="DBCUST.CustDB.wsv_alp" />
+    <Setting Key="Age_OTP_CustomerOTPDeviceInfoIns" SpName="Age_OTP_CustomerOTPDeviceInfoIns" DbName="DBCUST.CustDB.wsv_alp" />
     <Setting Key="Age_OTP_CustomerOTPDeviceInfoSel" SpName="Age_OTP_CustomerOTPDeviceInfoSel" DbName="DBCUST.CustDB.wsv_alp">
       <Mapping DataField="DeviceId" ObjectProperty="Id" />
     </Setting>
@@ -51,7 +51,7 @@
     <Setting Key="Age_CustomerSelProtectionCode" SpName="Age_CustomerSelProtectionCode" DbName="DBCust.CustDB.wsv_alp" Plain="0" />
     <Setting Key="Age_CustomerUpdProtectionCode" SpName="Age_CustomerUpdProtectionCode" DbName="DBCust.CustDB.wsv_alp" Plain="0" />
   </Function>
-  
+
   <Function Name="Write Log Change Theme Light/Dark">
     <Setting Key="Age_SwitchDarkMode" SpName="Age_SwitchDarkMode" DbName="DBCust.CustDB.wsv_alp" Plain="0" />
   </Function>
@@ -62,5 +62,9 @@
 
   <Function Name="Transfer Status">
     <Setting Key="Age_GetIsAllDayBalTransfer" SpName="Age_GetIsAllDayBalTransfer" DbName="DBCust.CustDB.wsv_alp" Plain="0" />
+  </Function>
+
+  <Function Name="Nova Casino">
+    <Setting Key="Age_CustomerUpdSynced" SpName="Age_CustomerUpdSynced" DbName="DBCust.CustDB.wsv_alp" Plain="0" />
   </Function>
 </Functions>

@@ -727,4 +727,24 @@
   <data name="ContactCSD" xml:space="preserve">
     <value>ติดต่อฝ่ายบริการลูกค้าของเราตอนนี้!</value>
   </data>
+  <data name="SyncedNovaCasinoPersonalMessage" xml:space="preserve">
+    <value>เรียน ลูกค้าที่เคารพ 
+ 
+ ดาวน์ไลน์ของคุณ “{0}” ได้เข้าร่วม Nova Casino เรียบร้อยแล้ว กรุณาใส่วงเงินเครดิตโดยทันทีเพื่อให้การประมวลผลราบรื่น
+ 
+ หากคุณมีคำถามใด ๆ กรุณาติดต่อฝ่ายบริการลูกค้า
+ 
+ ขอบคุณค่ะ!</value>
+  </data>
+  <data name="NovaCasinoBriefIntroduction" xml:space="preserve">
+    <value>Nova Casino เป็นแพลตฟอร์มใหม่ที่มีโหมดตัวแทนหลายราย เข้าร่วมตอนนี้เพื่อสร้างดาวน์ไลน์และผู้เล่นที่หลากหลาย
+ &lt;br&gt;&lt;br&gt;
+ หมายเหตุ: โปรดเปลี่ยน&lt;b&gt;รหัสผ่าน&lt;/b&gt;ของคุณในแบ็กเอนด์ของ Nova Casino เมื่อคุณคลิก "สมัคร" บนแบ็กเอนด์ของ Nova Casino จากเว็บไซต์ตัวแทนเป็นครั้งแรก ขอบคุณค่ะ</value>
+  </data>
+  <data name="SystemUnderMaintenance" xml:space="preserve">
+    <value>ขณะนี้ระบบกำลังอยู่ในระหว่างการปรับปรุง เวลาปรับปรุง: {0} - {1} น (GMT+8). กรุณาลองใหม่อีกครั้งในภายหลัง [503]</value>
+  </data>
+  <data name="InternalServerError" xml:space="preserve">
+    <value>เกิดข้อผิดพลาด โปรดติดต่อฝ่ายบริการลูกค้าเพื่อขอความช่วยเหลือ ขอบคุณ. [500]</value>
+  </data>
 </root>

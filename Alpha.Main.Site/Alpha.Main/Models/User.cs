@@ -20,6 +20,8 @@
         bool IsEnabledTelegramOTP { get; set; }
 
         int CustId { get; set; }
+
+        bool IsSyncedNovaCasino { get; set; }
     }
 
     public class User : IUser
@@ -29,6 +31,7 @@
         private const string IsAdminCanUpdateSubAccountSessionKey = "IsAdminCanUpdateSubAccount";
         private const string IsEnabledTelegramOTPSessionKey = "IsEnabledTelegramOTP";
         private const string CustIdSessionKey = "CustId";
+        public const string IsSyncedNovaCasinoSessionKey = "IsSyncedNovaCasino";
 
         public bool ShowProgressiveJackpotGames => GetEnableProductsByGameName(Jackpot).Any(i => i != ProductId.Pragmatic);
 
@@ -62,6 +65,12 @@
             {
                 SetSessionValue(CustIdSessionKey, value);
             }
+        }
+
+        public bool IsSyncedNovaCasino
+        {
+            get => GetSessionValue<bool>(IsSyncedNovaCasinoSessionKey);
+            set => SetSessionValue(IsSyncedNovaCasinoSessionKey, value);
         }
 
         public void RemoveNewCaptchaByCurrency()

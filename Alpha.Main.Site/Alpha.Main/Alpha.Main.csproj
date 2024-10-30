@@ -251,6 +251,7 @@
       <DependentUpon>SettingType.resx</DependentUpon>
     </Compile>
     <Compile Include="Configurations\AppSettings.cs" />
+    <Compile Include="Configurations\NovaCasinoSettings.cs" />
     <Compile Include="Constants\ApiKeyScope.cs" />
     <Compile Include="Constants\BannerType.cs" />
     <Compile Include="Constants\ChatBotFunctionIds.cs" />
@@ -261,6 +262,9 @@
     <Compile Include="Constants\ProductId.cs" />
     <Compile Include="Constants\UMFunctionType.cs" />
     <Compile Include="Criteria\Banner\GetBannerCriteria.cs" />
+    <Compile Include="Criteria\Customer\GetUplineInfoCriteria.cs" />
+    <Compile Include="Criteria\Customer\InsertPersonalMessageCommand.cs" />
+    <Compile Include="Criteria\Customer\UpdateSyncedNovaCasinoCommand.cs" />
     <Compile Include="Criteria\KickoutCustomerCriteria.cs" />
     <Compile Include="Criteria\Language\UpdateUsageLanguageCommand.cs" />
     <Compile Include="Criteria\LogoutCommand.cs" />
@@ -325,6 +329,13 @@
     <Compile Include="Models\Banner\BannerItem.cs" />
     <Compile Include="Models\BalanceInfo\BalanceInfo.cs" />
     <Compile Include="Models\BalanceInfo\BalanceUpDayInfo.cs" />
+    <Compile Include="Models\NovaCasino\NovaCasinoSSORequest.cs" />
+    <Compile Include="Models\NovaCasino\NovaCasinoSSOResponse.cs" />
+    <Compile Include="Models\NovaCasino\NovaCasinoSSOResult.cs" />
+    <Compile Include="Models\NovaCasino\SSOSuccess.cs" />
+    <Compile Include="Models\NovaCasino\UnderMaintenance.cs" />
+    <Compile Include="Models\NovaCasino\User.cs" />
+    <Compile Include="Models\NovaCasino\UserInfo.cs" />
     <Compile Include="Models\ProfilePicture\ActorProfilePictureModel.cs" />
     <Compile Include="Models\TransferModel.cs" />
     <Compile Include="Models\UMMessage\UMMessageDTO.cs" />
@@ -378,6 +389,7 @@
     <Compile Include="Services\ApiKeyService.cs" />
     <Compile Include="Services\BannerService.cs" />
     <Compile Include="Services\CacheRefService.cs" />
+    <Compile Include="Services\CustomerService.cs" />
     <Compile Include="Services\Impl\ApiKeyServiceImpl.cs" />
     <Compile Include="Services\Impl\BannerServiceImpl.cs" />
     <Compile Include="Services\Impl\CacheRefServiceImpl.cs" />
@@ -399,6 +411,7 @@
     <Compile Include="Services\KickoutCustomerService.cs" />
     <Compile Include="Services\LogoutService.cs" />
     <Compile Include="Services\NicknameService.cs" />
+    <Compile Include="Services\NovaCasinoService.cs" />
     <Compile Include="Services\ProtectionCodeService.cs" />
     <Compile Include="Services\SimpleServiceLocator.cs" />
     <Compile Include="Services\StatisticsService.cs" />

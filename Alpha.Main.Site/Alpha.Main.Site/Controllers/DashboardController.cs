@@ -42,7 +42,7 @@ namespace Alpha.Main.Site.Controllers
                 return RedirectToAction("WhiteLabel");
             }
 
-            if (AppSettings.IsOfferedNovaCasino(userSession.Site, userLevelName, userSession.Currency))
+            if (NovaCasinoSettings.IsOfferedNovaCasino(userSession.Site, userLevelName, userSession.Currency))
             {
                 return RedirectToAction("NovaCasino");
             }
@@ -75,8 +75,7 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet]
         public ActionResult NovaCasino()
         {
-            var viewModel = new ContactUsViewModel(Request.Headers["Host"]);
-            return View(viewModel);
+            return View();
         }
 
         [HttpGet]

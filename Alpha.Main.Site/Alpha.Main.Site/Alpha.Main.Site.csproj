@@ -401,6 +401,9 @@
       <Link>SonarLint.xml</Link>
     </AdditionalFiles>
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DB053_DB054.bodb02.xml" />
+    <Content Include="App_Data\SPNames\INTERNAL.MNL\DBACC.bodb02.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBCUST.CustDB.xml" />
@@ -408,6 +411,9 @@
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBONUSER.ON_USER.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DB053_DB054.bodb02.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\SPNames\INTERNAL\DBACC.bodb02.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\SPNames\INTERNAL\DBAGE.bodb02.xml">
@@ -419,6 +425,9 @@
     <Content Include="App_Data\SPNames\INTERNAL\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBONUSER.ON_USER.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DB053_DB054.bodb02.xml" />
+    <Content Include="App_Data\SPNames\LOCAL\DBACC.bodb02.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\LOCAL\DBONUSER.ON_USER.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBCUST.CustDB.xml">
       <SubType>Designer</SubType>
@@ -434,6 +443,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\SPNames\MNL\DB053_DB054.bodb02.xml" />
+    <Content Include="App_Data\SPNames\MNL\DBACC.bodb02.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\MNL\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\MNL\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\MNL\DBCUST.CustDB.xml" />
@@ -445,12 +457,18 @@
     <Content Include="App_Data\SPNames\PRO\DB053_DB054.bodb02.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Data\SPNames\PRO\DBACC.bodb02.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\PRO\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\PRO\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\PRO\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\PRO\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\PRO\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\PRO\DBONUSER.ON_USER.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\SPNames\SIT\DBACC.bodb02.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\SPNames\SIT\DBAGE.bodb02.xml" />
@@ -462,6 +480,9 @@
     <Content Include="App_Data\SPNames\SIT\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\SIT\DBONUSER.ON_USER.xml" />
     <Content Include="App_Data\SPNames\UAT\DB053_DB054.bodb02.xml" />
+    <Content Include="App_Data\SPNames\UAT\DBACC.bodb02.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\UAT\DBAGE.bodb02.xml">
       <SubType>
       </SubType>
@@ -960,6 +981,7 @@
     <Content Include="Assets\styles\home\images\icon-close-feedback-dark.png" />
     <Content Include="Assets\styles\home\images\icon-close-feedback.png" />
     <Content Include="Assets\styles\home\images\icon-close-feedback2.png" />
+    <Content Include="Assets\styles\home\images\logintonovacasino.svg" />
     <Content Include="Assets\styles\home\images\white-label\bg-whitelabel.png" />
     <Content Include="Assets\styles\home\images\white-label\bg-whitelabel-sm.png" />
     <Content Include="Assets\styles\home\images\white-label\icon-letstalk.png" />
@@ -1615,6 +1637,7 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Controllers\NetworkSpeedController.cs" />
+    <Compile Include="Controllers\NovaCasinoController.cs" />
     <Compile Include="Controllers\PartialUMController.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -1814,6 +1837,7 @@
     <Compile Include="ViewModels\Nickname\CreateNicknameViewModel.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
+    <Compile Include="ViewModels\NovaCasino\NovaCasinoSSOViewModel.cs" />
     <Compile Include="ViewModels\ProtectionCode\ProtectionCodeViewModel.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>

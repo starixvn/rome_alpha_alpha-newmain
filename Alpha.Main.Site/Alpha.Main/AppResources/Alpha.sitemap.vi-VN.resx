@@ -435,4 +435,10 @@
   <data name="SettlementReport" xml:space="preserve">
     <value>Báo Cáo Quyết Toán</value>
   </data>
+  <data name="JoinNovaCasinoNow" xml:space="preserve">
+    <value>Đăng ký Đại lý Nova Casino</value>
+  </data>
+  <data name="SigninToNovaCasino" xml:space="preserve">
+    <value>Đăng nhập vào Nova Casino</value>
+  </data>
 </root>

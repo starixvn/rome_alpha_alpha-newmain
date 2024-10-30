@@ -691,6 +691,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An error has occurred. Please contact Customer Service Department for assistance. Thank you. [500].
+        /// </summary>
+        public static string InternalServerError {
+            get {
+                return ResourceManager.GetString("InternalServerError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;Dear customers! Now you can login with your own nickname&lt;/div&gt;
         ///&lt;div&gt;... more secure and personalized.&lt;/div&gt;.
         /// </summary>
@@ -1196,6 +1205,17 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nova Casino is a new platform with an Multiple Agents mode. Apply now to create Multiple downlines and players.
+        ///&lt;br&gt;&lt;br&gt;
+        ///Note: Please change your &lt;b&gt;password&lt;/b&gt; the first time you click &apos;Apply&apos; on the Nova Casino Back Office from the Agent site. Thanks.
+        /// </summary>
+        public static string NovaCasinoBriefIntroduction {
+            get {
+                return ResourceManager.GetString("NovaCasinoBriefIntroduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Old View.
         /// </summary>
         public static string OldView {
@@ -1624,6 +1644,30 @@ namespace Alpha.Main.AppResources {
         public static string SwitchView {
             get {
                 return ResourceManager.GetString("SwitchView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dear Valued Agents,
+        /// 
+        ///Your downline, “{0}” has successfully joined Nova Casino. Kindly provide their score promptly to ensure smooth processing.
+        /// 
+        ///Should you have any questions, please contact the Customer Service Department.
+        /// 
+        ///Thank you for your continued cooperation!.
+        /// </summary>
+        public static string SyncedNovaCasinoPersonalMessage {
+            get {
+                return ResourceManager.GetString("SyncedNovaCasinoPersonalMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The system is currently under maintenance. Maintenance time: {0} - {1} (GMT+8). Please try again later. [503].
+        /// </summary>
+        public static string SystemUnderMaintenance {
+            get {
+                return ResourceManager.GetString("SystemUnderMaintenance", resourceCulture);
             }
         }
         

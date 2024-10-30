@@ -94,8 +94,15 @@ namespace Alpha.Main
                 () => AppSettings.IsUsedOldWinLossDetailReports(Current.SRecommendId)),
             ["BonusDetailMenuItem"] = () => new MenuStatus(
                 () => AppSettings.AllowedSitesToViewBonusDetail.Contains(Current.Site.ToUpperInvariant())),
-            ["MemberBettingBehaviorMenuItem"] = () => new MenuStatus(() => AppSettings.IsOfferMemberBettingBehavior)
+            ["MemberBettingBehaviorMenuItem"] = () => new MenuStatus(() => AppSettings.IsOfferMemberBettingBehavior),
+            ["SigninNovaCasinoMenuItem"] = () => new MenuStatus(() => IsOfferedNovaCasino && new User().IsSyncedNovaCasino),
+            ["JoinNovaCasinoNowMenuItem"] = () => new MenuStatus(() => IsOfferedNovaCasino && !(new User().IsSyncedNovaCasino))
         };
+
+        private static bool IsOfferedNovaCasino => !Current.IsSubAcc && NovaCasinoSettings.IsOfferedNovaCasino(
+               Current.Site.ToUpperInvariant(),
+               Enumeration.FromValue<UserLevel>(Current.RoleId).DisplayName,
+               Current.Currency.ToUpperInvariant());
 
         private static bool TransferMenuItemVisible
             => !Current.IsSubAcc || Current.SubPageAccess.Transfer;
@@ -142,22 +149,19 @@ namespace Alpha.Main
             }
         }
 
-        private static Func<bool> showAccountInfo = () =>
-              {
-                  return Current == null ? false : Current.SubPageAccess.ViewMemberInfo && !Current.IsProtectedMode;
-              };
+        private static Func<bool> showAccountInfo = () => Current == null ? false : Current.SubPageAccess.ViewMemberInfo && !Current.IsProtectedMode;
 
         private static Func<string> getDefaultUrl = () =>
-              {
-                  if (HttpContext.Current == null)
-                  {
-                      return string.Empty;
-                  }
+                        {
+                            if (HttpContext.Current == null)
+                            {
+                                return string.Empty;
+                            }
 
-                  var defaultMainPage = HttpContext.Current.Response.ApplyAppPathModifier("~/Dashboard/Index");
+                            var defaultMainPage = HttpContext.Current.Response.ApplyAppPathModifier("~/Dashboard/Index");
 
-                  return defaultMainPage;
-              };
+                            return defaultMainPage;
+                        };
 
         public static Func<bool> ShowAccountInfo
         {
@@ -180,15 +184,15 @@ namespace Alpha.Main
         public static Func<bool> IsInternalFunc => () => Current.IsInternal;
 
         public static Func<string, string> BuildInvalidSessionUniqueKey => (string url) =>
-              {
-                  if (url.IndexOf("/winlossdetail/", StringComparison.OrdinalIgnoreCase) > -1
-                  && AppSettings.EnableLogDifferentSessionBetweenMainAndReports)
-                  {
-                      return $"{Current.CustId}-{Current.SubAccId}";
-                  }
+                        {
+                            if (url.IndexOf("/winlossdetail/", StringComparison.OrdinalIgnoreCase) > -1
+                            && AppSettings.EnableLogDifferentSessionBetweenMainAndReports)
+                            {
+                                return $"{Current.CustId}-{Current.SubAccId}";
+                            }
 
-                  return string.Empty;
-              };
+                            return string.Empty;
+                        };
 
         public static Func<string> BuildLanguageQueryString => () => $"lng={Current.Language}";
 

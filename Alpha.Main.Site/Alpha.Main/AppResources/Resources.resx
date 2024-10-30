@@ -793,4 +793,24 @@
   <data name="ContactCSD" xml:space="preserve">
     <value>Contact our CSD for more details!</value>
   </data>
+  <data name="SyncedNovaCasinoPersonalMessage" xml:space="preserve">
+    <value>Dear Valued Agents,
+ 
+Your downline, “{0}” has successfully joined Nova Casino. Kindly provide their score promptly to ensure smooth processing.
+ 
+Should you have any questions, please contact the Customer Service Department.
+ 
+Thank you for your continued cooperation!</value>
+  </data>
+  <data name="NovaCasinoBriefIntroduction" xml:space="preserve">
+    <value>Nova Casino is a new platform with an Multiple Agents mode. Apply now to create Multiple downlines and players.
+&lt;br&gt;&lt;br&gt;
+Note: Please change your &lt;b&gt;password&lt;/b&gt; the first time you click 'Apply' on the Nova Casino Back Office from the Agent site. Thanks</value>
+  </data>
+  <data name="SystemUnderMaintenance" xml:space="preserve">
+    <value>The system is currently under maintenance. Maintenance time: {0} - {1} (GMT+8). Please try again later. [503]</value>
+  </data>
+  <data name="InternalServerError" xml:space="preserve">
+    <value>An error has occurred. Please contact Customer Service Department for assistance. Thank you. [500]</value>
+  </data>
 </root>

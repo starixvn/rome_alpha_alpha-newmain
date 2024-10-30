@@ -747,4 +747,24 @@
   <data name="SetupChatbot" xml:space="preserve">
     <value>Cài Đặt Chatbot</value>
   </data>
+  <data name="SyncedNovaCasinoPersonalMessage" xml:space="preserve">
+    <value>Kính gửi Qúy Khách Hàng,
+
+Cấp dưới của quý vị, "{0}", đã chính thức tham gia Nova Casino. Vui lòng cung cấp điểm số của họ sớm nhất có thể để quá trình xử lý diễn ra thuận lợi. 
+
+Nếu có bất kỳ thắc mắc nào, vui lòng liên hệ Bộ phận Chăm sóc Khách hàng.
+
+Trân trọng cảm ơn sự hợp tác của quý vị!</value>
+  </data>
+  <data name="NovaCasinoBriefIntroduction" xml:space="preserve">
+    <value>Nova Casino là nền tảng mới hỗ trợ chế độ Đa Đại Lý.Tham gia ngay để phát triển nhiều cấp dưới và người chơi. 
+&lt;br&gt;&lt;br&gt;
+Lưu ý: Vui lòng thay đổi &lt;b&gt;mật khẩu&lt;/b&gt; Nova Casino Back Office của bạn ngay từ lần đầu tiên bạn nhấn "Đăng ký" trên Nova Casino Back Office từ trang Đại lý. Trân trọng.</value>
+  </data>
+  <data name="SystemUnderMaintenance" xml:space="preserve">
+    <value>Hệ thống hiện đang bảo trì. Thời gian bảo trì: {0} - {1} (GMT+8). Vui lòng thử lại sau. [503]</value>
+  </data>
+  <data name="InternalServerError" xml:space="preserve">
+    <value>Đã xảy ra lỗi. Vui lòng liên hệ Bộ phận Chăm Sóc Khách hàng để được hỗ trợ. Xin cảm ơn. [500]</value>
+  </data>
 </root>

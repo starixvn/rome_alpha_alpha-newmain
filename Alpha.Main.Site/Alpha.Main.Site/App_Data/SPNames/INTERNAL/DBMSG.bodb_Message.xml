@@ -6,5 +6,6 @@
     </Setting>
     <Setting Key="Dot_Msg_SetUsrMessage" SpName="Dot_Msg_SetUsrMessage" DbName="DBMSG.bodb_Message.wsv_alpv" Plain="0">
     </Setting>
+    <Setting Key="Age_SetMessage_Personal" SpName="Age_SetMessage_Personal" DbName="DBMSG.bodb_Message.wsv_alpv" Plain="0" />
   </Function>
 </Functions>
