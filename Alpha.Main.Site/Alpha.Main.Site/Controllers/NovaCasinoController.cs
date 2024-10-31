@@ -1,4 +1,5 @@
 ﻿using Alpha.Main.AppResources;
+using Alpha.Main.Configurations;
 using Alpha.Main.Models;
 using Alpha.Main.Models.NovaCasino;
 using Alpha.Main.Services;
@@ -34,7 +35,12 @@ namespace Alpha.Main.Site.Controllers
         [HttpPost]
         public async Task<ActionResult> SSO()
         {
-            if (userSession.IsInternal || userSession.IsSubAcc)
+            if (userSession.IsInternal
+                || userSession.IsSubAcc
+                || !NovaCasinoSettings.IsOfferedNovaCasino(
+                    userSession.Site.ToUpperInvariant(),
+                    Enumeration.FromValue<UserLevel>(userSession.RoleId).DisplayName,
+                    userSession.Currency.ToUpperInvariant()))
             {
                 return Json(Main.Models.Result.CreateErrorResult(Security.NotAuthorized), JsonRequestBehavior.DenyGet);
             }
