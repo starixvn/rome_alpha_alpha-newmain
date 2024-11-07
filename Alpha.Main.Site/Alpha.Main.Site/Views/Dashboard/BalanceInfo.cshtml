@@ -72,10 +72,6 @@
     <div class="group-title">@Resources.Reward</div>
     @RewardRow(Resources.RewardReceivable, Model.BalanceInfo.RewardReceivable ?? 0, Model.BalanceInfo.RewardCurrency, Resources.RewardReceivableTooltip)
     @RewardRow(Resources.RewardPayable, Model.BalanceInfo.RewardPayable ?? 0, Model.BalanceInfo.RewardCurrency, Resources.RewardPayableTooltip)
-        @if (Model.IsShowDirectMember)
-        {
-            @NumericRow(Resources.TotalDirectMember, balanceInfo.DirectMemberCredit)
-        }
 </div>
 <script>
 	$(document).ready(function () {

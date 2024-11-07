@@ -673,6 +673,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New Direct Member.
+        /// </summary>
+        public static string newDirectMember {
+            get {
+                return ResourceManager.GetString("newDirectMember", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New Master.
         /// </summary>
         public static string newMaster {

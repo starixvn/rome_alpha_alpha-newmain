@@ -58,6 +58,7 @@
       <siteMapNode resourceKey="newMaster" appPath="MemberInfoAppPath" url="CopyAccount?lv=4" menuItemType="CreateAccountMenuItem" roles="Super"></siteMapNode>
       <siteMapNode resourceKey="newAgent" appPath="MemberInfoAppPath" url="CopyAccount?lv=3" menuItemType="CreateAccountMenuItem" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="newMember" appPath="MemberInfoAppPath" url="CopyAccount?lv=2" menuItemType="CreateAccountMenuItem" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="newDirectMember" appPath="MemberInfoAppPath" url="Customer/CreateDirectMember" menuItemType="CreateDirectMemberMenuItem" roles="Super,Master"></siteMapNode>
       <siteMapNode resourceKey="PTTemplate" appPath="MemberInfoAppPath" url="PTTemplate/Index" menuItemType="PTTemplateMenuItem"></siteMapNode>
       <siteMapNode menuItemType="SubAccountMenuItem" resourceKey="subaccount" appPath="OldMainAppPath" url="_SubAcc/SubAccList.aspx" byPassProtectedModeInternal="true"></siteMapNode>
 

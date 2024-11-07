@@ -24,7 +24,6 @@
         
         public decimal DirectMemberCredit { get; set; }
 
-        public decimal DirectMemberCredit { get; set; }
         public decimal? RewardPayable { get; set; }
 
         public decimal? RewardReceivable { get; set; }
