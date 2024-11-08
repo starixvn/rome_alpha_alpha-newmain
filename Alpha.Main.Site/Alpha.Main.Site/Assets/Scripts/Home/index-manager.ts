@@ -473,7 +473,7 @@ var indexManager = {
                 }
             });
 
-            // indexManager.replaceCookieslessURL(newFeatureLink);
+             indexManager.replaceCookieslessURL(newFeatureLink);
         }
     },
 

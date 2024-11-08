@@ -192,11 +192,11 @@
 
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
 
-        public bool HightLightFeaturePermission => AppSettings.SupportedNewHandbook && AppSettings.SiteLabel == "MBC";
+        public bool HightLightFeaturePermission => AppSettings.EnableBetsListMonitoring && Enumeration.FromValue<UserLevel>(RoleId).IsNotAgentLevel() && (!IsSubAccount || message.ViewBetList ); 
 
         public string HightLightFeatureImageName => "new_feature_litemode" + DarkModeName;
 
-        public string HightLightFeatureUrl => UrlHelper.MapHowToUsePath("~/Default");
+        public string HightLightFeatureUrl => MicroSites.BetListsUrl($"~/MonitoringBets/Index");
 
         public bool IsEnableAutoTransfer { get; set; }
 

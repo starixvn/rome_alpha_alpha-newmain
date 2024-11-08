@@ -656,7 +656,7 @@
     <value>ออก</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>ค้นหา &lt;b&gt; คู่มือควบรวม &lt;/b&gt; และ &lt;b&gt; สารบัญคำศัพท์ &lt;/b&gt; สำหรับการอ้างอิงที่ง่ายและรวดเร็ว</value>
+    <value>ลดความเสี่ยงทางธุรกิจด้วย &lt;b&gt;เดิมพันล่าสุด&lt;/b&gt; โดยการตรวจสอบตั๋วเดิมพันที่กำลังดำเนินอยู่ของสมาชิกโดยใช้ตัวกรองแบบกำหนดเอง</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>เริ่มต้น</value>
@@ -677,7 +677,7 @@
     <value>รายงานรายละเอียดการแพ้ชนะ</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>สำรวจ &lt;b&gt; คู่มือแบบครบวงจร &lt;/b&gt;!</value>
+    <value>ค้นพบ &lt;b&gt;เดิมพันล่าสุด&lt;/b&gt; ฟังก์ชัน</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>หนึ่งนาทีที่แล้ว</value>

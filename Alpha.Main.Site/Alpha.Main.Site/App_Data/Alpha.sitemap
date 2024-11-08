@@ -81,7 +81,7 @@
     </siteMapNode>
     <!--/MemberInfo-->
     <siteMapNode resourceKey="BetLists" appPath="OldMainAppPath" menuItemType="BetListsMenuItem" functionType="[L]">
-      <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="/MonitoringBets/Index" roles="Agent" useDomainConfig="Betlist:Domain"></siteMapNode>
+      <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="/MonitoringBets/Index" useDomainConfig="Betlist:Domain"></siteMapNode>
       <siteMapNode resourceKey="searchTickets" appPath="BetListsAppPath" url="/SearchTickets/Index" useDomainConfig="Betlist:Domain"></siteMapNode>
       <siteMapNode resourceKey="cancelledBets" appPath="BetListsAppPath" url="/CancelledBet/Index" useDomainConfig="Betlist:Domain"></siteMapNode>
 

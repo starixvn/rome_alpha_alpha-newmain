@@ -95,5 +95,7 @@ namespace Alpha.Main.Site.Models.Requests
         public string Currency => userSession.Currency;
 
         public bool ViewMemberStatistic => userSession.SubPageAccess.ViewMemberInfo;
+
+        public bool ViewBetList => userSession.SubPageAccess.GetPermission(PageAccessType.ViewBetLists);
     }
 }

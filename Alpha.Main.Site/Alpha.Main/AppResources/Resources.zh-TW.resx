@@ -659,7 +659,7 @@
     <value>查看</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>尋找 &lt;b&gt; 綜合指南 &lt;/b&gt; 和 &lt;b&gt; 詞匯表以供快速和簡單的參考。</value>
+    <value>通過使用自定義篩選方式監控會員進行中的注單，使用&lt;b&gt;最後投注&lt;/b&gt;將風險降至最低。</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>開始吧</value>
@@ -680,7 +680,7 @@
     <value>輸贏細節報告</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>探索 &lt;b&gt; 一站式手冊 &lt;/b&gt;！</value>
+    <value>探索&lt;b&gt;最後投注&lt;/b&gt;功能</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>一分鐘前</value>

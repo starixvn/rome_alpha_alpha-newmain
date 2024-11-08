@@ -19,7 +19,7 @@ namespace Alpha.Main.AppResources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -601,7 +601,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Find &lt;b&gt;consolidated guidelines&lt;/b&gt; and &lt;b&gt;glossary terms&lt;/b&gt; for quick and easy reference..
+        ///   Looks up a localized string similar to Minimize business risk with &lt;b&gt;Last Bets&lt;/b&gt; by monitoring Member&apos;s running bet tickets using custom filters..
         /// </summary>
         public static string HighlightPopupNewFeatureIntro {
             get {
@@ -637,7 +637,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Explore the &lt;b&gt;One-Stop Handbook&lt;/b&gt;!.
+        ///   Looks up a localized string similar to Discover &lt;b&gt;Last Bets&lt;/b&gt; function.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {
