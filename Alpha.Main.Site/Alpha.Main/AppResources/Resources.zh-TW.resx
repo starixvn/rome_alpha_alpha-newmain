@@ -659,7 +659,7 @@
     <value>查看</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>通過&lt;b&gt;會員資料&lt;/b&gt;和&lt;b&gt;投注統計&lt;/b&gt;數據深入了解會員的投注行為，以最有效的管理風險並做出明智的決策。</value>
+    <value>尋找 &lt;b&gt; 綜合指南 &lt;/b&gt; 和 &lt;b&gt; 詞匯表以供快速和簡單的參考。</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>開始吧</value>
@@ -680,7 +680,7 @@
     <value>輸贏細節報告</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>歡迎來到&lt;b&gt;會員投注模式&lt;/b&gt;！</value>
+    <value>探索 &lt;b&gt; 一站式手冊 &lt;/b&gt;！</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>一分鐘前</value>

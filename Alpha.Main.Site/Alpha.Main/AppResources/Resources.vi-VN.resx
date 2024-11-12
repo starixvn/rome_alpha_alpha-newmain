@@ -741,9 +741,6 @@
   <data name="WinLossDetailReport" xml:space="preserve">
     <value>Báo Cáo Chi Tiết Thắng Thua</value>
   </data>
-  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Chào mừng bạn đến &lt;b&gt;Hành Vi Đặt Cược Member&lt;/b&gt;!</value>
-  </data>
   <data name="SetupChatbot" xml:space="preserve">
     <value>Cài Đặt Chatbot</value>
   </data>

@@ -380,12 +380,21 @@
         {
             get
             {
-                var label = SiteLabel;
                 var marketsSupportedNewHandbook = Settings["MarketsSupportedNewHandbook"];
+                if (string.IsNullOrWhiteSpace(marketsSupportedNewHandbook))
+                {
+                    return false;
+                }
 
-                return string.Equals("*", marketsSupportedNewHandbook, StringComparison.OrdinalIgnoreCase)
-                        || (!string.IsNullOrWhiteSpace(marketsSupportedNewHandbook)
-                            && ("," + marketsSupportedNewHandbook + ",").ToLowerInvariant().IndexOf(label.ToLowerInvariant()) != -1);
+                if (string.Equals("*", marketsSupportedNewHandbook, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+
+                var label = SiteLabel;
+                return marketsSupportedNewHandbook
+                    .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                    .Any(s => string.Equals(s, label, StringComparison.OrdinalIgnoreCase));
             }
         }
 
