@@ -50,6 +50,9 @@
       <Mapping DataField="total_agentActive" ObjectProperty="TotalAgentActive" />
       <Mapping DataField="total_agentClosed" ObjectProperty="TotalAgentClosed" />
       <Mapping DataField="total_agentSuspended" ObjectProperty="TotalAgentSuspended" />
+      <Mapping DataField="total_DirectmemberActive" ObjectProperty="TotalDirectMemberActive" />
+      <Mapping DataField="total_DirectmemberClosed" ObjectProperty="TotalDirectMemberClosed" />
+      <Mapping DataField="total_DirectmemberSuspended" ObjectProperty="TotalDirectMemberSuspended" />
     </Setting>
     <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg" DbName="DBBOF.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="total_outstanding" ObjectProperty="TotalOutstanding" />
@@ -63,6 +66,9 @@
       <Mapping DataField="total_masterActive" ObjectProperty="TotalMasterActive" />
       <Mapping DataField="total_masterClosed" ObjectProperty="TotalMasterClosed" />
       <Mapping DataField="total_masterSuspended" ObjectProperty="TotalMasterSuspended" />
+      <Mapping DataField="total_DirectmemberActive" ObjectProperty="TotalDirectMemberActive" />
+      <Mapping DataField="total_DirectmemberClosed" ObjectProperty="TotalDirectMemberClosed" />
+      <Mapping DataField="total_DirectmemberSuspended" ObjectProperty="TotalDirectMemberSuspended" />
     </Setting>
     <Setting Key="Age_CustomerSelTopWinningMembers_Ag" SpName="Age_CustomerSelTopWinningMembers_Ag" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="winlost" ObjectProperty="WinLoss" />

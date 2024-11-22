@@ -25,5 +25,11 @@
         public int TotalMasterSuspended { get; set; }
 
         public int NumberNewMembers { get; set; }
+
+        public int TotalDirectMemberActive { get; set; }
+
+        public int TotalDirectMemberClosed { get; set; }
+
+        public int TotalDirectMemberSuspended { get; set; }
     }
 }

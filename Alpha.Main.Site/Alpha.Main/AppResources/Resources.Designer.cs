@@ -457,6 +457,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Direct Member.
+        /// </summary>
+        public static string DirectMember {
+            get {
+                return ResourceManager.GetString("DirectMember", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disabled.
         /// </summary>
         public static string Disabled {
@@ -1857,6 +1866,15 @@ namespace Alpha.Main.AppResources {
         public static string totalBalance {
             get {
                 return ResourceManager.GetString("totalBalance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Direct Member.
+        /// </summary>
+        public static string TotalDirectMember {
+            get {
+                return ResourceManager.GetString("TotalDirectMember", resourceCulture);
             }
         }
         

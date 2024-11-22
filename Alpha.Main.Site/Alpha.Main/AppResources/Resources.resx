@@ -849,4 +849,10 @@ Note: Please change your &lt;b&gt;password&lt;/b&gt; the first time you click 'A
   <data name="WhiteLabelSkypeChat" xml:space="preserve">
     <value>User Click Skype Chat from White Label Banner: Username: {0}</value>
   </data>
+  <data name="DirectMember" xml:space="preserve">
+    <value>Direct Member</value>
+  </data>
+  <data name="TotalDirectMember" xml:space="preserve">
+    <value>Total Direct Member</value>
+  </data>
 </root>

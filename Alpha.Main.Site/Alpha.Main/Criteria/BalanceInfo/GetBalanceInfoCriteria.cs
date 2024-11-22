@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Criteria.BalanceInfo
 {
-    using System;
     using System.Collections.Generic;
     using Alpha.Web.Models;
     using Fanex.Data;
@@ -15,19 +14,16 @@
             [UserLevel.Super] = "Age_CustomerSelBalanceInfo_SAg"
         };
 
-        public GetBalanceInfoCriteria(UserLevel userLevel, int custId, DateTime moveBetsDay)
+        public GetBalanceInfoCriteria(UserLevel userLevel, int custId)
         {
             UserLevel = userLevel;
             CustId = custId;
-            MoveBetsDay = moveBetsDay;
         }
 
         [SpParam(Ignored = true)]
         public UserLevel UserLevel { get; }
 
         public int CustId { get; }
-
-        public DateTime MoveBetsDay { get; }
 
         public override string GetSettingKey() => SettingKeys[UserLevel];
 

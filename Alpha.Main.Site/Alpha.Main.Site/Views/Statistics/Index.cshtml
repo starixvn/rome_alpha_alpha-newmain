@@ -51,34 +51,36 @@
     </div>
 }
 
-<div class="container">
-    <div class="panel-title"><span class="icon-statistics"></span>@Resources.statistics</div>
-    <div class="group-title">@Resources.outstanding</div>
-    @NumericRow("dashboard-outstanding", Model.OutstandingLabel, statistics.Outstanding, Model.MemberOutstandingReportPath, Model.CanViewReports)
-    @NumericRow("dashboard-total-outstanding", Resources.totalOutstanding, statistics.TotalOutstanding, Model.MemberOutstandingReportPath, Model.CanViewReports)
+    <div class="container">
+        <div class="panel-title"><span class="icon-statistics"></span>@Resources.statistics</div>
+        <div class="group-title">@Resources.outstanding</div>
+        @NumericRow("dashboard-outstanding", Model.OutstandingLabel, statistics.Outstanding, Model.MemberOutstandingReportPath, Model.CanViewReports)
+        @NumericRow("dashboard-total-outstanding", Resources.totalOutstanding, statistics.TotalOutstanding, Model.MemberOutstandingReportPath, Model.CanViewReports)
 
-    <div class="group-title">@Resources.memberInfo</div>
+        <div class="group-title">@Resources.memberInfo</div>
 
-    @if (Model.UserLevel.IsSuperLevel())
-    {
-        @RenderTotalMemberInfo(Resources.master, statistics.TotalMasterActive, statistics.TotalMasterClosed, statistics.TotalMasterSuspended);
-        @RenderTotalMemberInfo(Resources.agent, statistics.TotalAgentActive, statistics.TotalAgentClosed, statistics.TotalAgentSuspended);
-        @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
-    }
-    else if (Model.UserLevel.IsMasterLevel())
-    {
-        @RenderTotalMemberInfo(Resources.agent, statistics.TotalAgentActive, statistics.TotalAgentClosed, statistics.TotalAgentSuspended);
-        @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
-    }
-    else if (Model.UserLevel.IsAgentLevel())
-    {
-        @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
-    }
+        @if (Model.UserLevel.IsSuperLevel())
+        {
+            @RenderTotalMemberInfo(Resources.master, statistics.TotalMasterActive, statistics.TotalMasterClosed, statistics.TotalMasterSuspended);
+            @RenderTotalMemberInfo(Resources.agent, statistics.TotalAgentActive, statistics.TotalAgentClosed, statistics.TotalAgentSuspended);
+            @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
+            @RenderTotalMemberInfo(Resources.DirectMember, statistics.TotalDirectMemberActive, statistics.TotalDirectMemberClosed, statistics.TotalDirectMemberSuspended);
+        }
+        else if (Model.UserLevel.IsMasterLevel())
+        {
+            @RenderTotalMemberInfo(Resources.agent, statistics.TotalAgentActive, statistics.TotalAgentClosed, statistics.TotalAgentSuspended);
+            @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
+            @RenderTotalMemberInfo(Resources.DirectMember, statistics.TotalDirectMemberActive, statistics.TotalDirectMemberClosed, statistics.TotalDirectMemberSuspended);
+        }
+        else if (Model.UserLevel.IsAgentLevel())
+        {
+            @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
+        }
 
-    @RenderDropdownTableMemberInfo(Resources.top10WinningMembers, "listTopWinningMembers", Url.Action("TopWinningMembers", "Statistics"))
-    @RenderDropdownTableMemberInfo(Resources.highestTurnoverOfTheMonth, "listTopTurnoverMembers", Url.Action("TopTurnoverMembers", "Statistics"))
-    @RenderDropdownTableMemberInfo($"{Resources.newMemberOfTheMonth}: {statistics.NumberNewMembers}", "listNewMembers", Url.Action("NewMembers", "Statistics"))
-</div>
+        @RenderDropdownTableMemberInfo(Resources.top10WinningMembers, "listTopWinningMembers", Url.Action("TopWinningMembers", "Statistics"))
+        @RenderDropdownTableMemberInfo(Resources.highestTurnoverOfTheMonth, "listTopTurnoverMembers", Url.Action("TopTurnoverMembers", "Statistics"))
+        @RenderDropdownTableMemberInfo($"{Resources.newMemberOfTheMonth}: {statistics.NumberNewMembers}", "listNewMembers", Url.Action("NewMembers", "Statistics"))
+    </div>
 @Html.Hidden("SessionID", Model.SessionID)
 <script>
 	$(document).ready(function () {

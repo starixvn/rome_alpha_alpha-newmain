@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Functions>
   <Function Name="Report">
-    <Setting Key="Age_CustomerSelBalanceInfo_Ag" SpName="Age_CustomerSelBalanceInfo_Ag_xtest" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelBalanceInfo_Ag" SpName="Age_CustomerSelBalanceInfo_Ag_uat2" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
       <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
       <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
@@ -11,7 +11,7 @@
       <Mapping DataField="givenCredit" ObjectProperty="GivenCredit" />
       <Mapping DataField="memberCredit" ObjectProperty="MemberCredit" />
     </Setting>
-    <Setting Key="Age_CustomerSelBalanceInfo_MAg" SpName="Age_CustomerSelBalanceInfo_MAg_xtest" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelBalanceInfo_MAg" SpName="Age_CustomerSelBalanceInfo_MAg_uat2" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
       <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
       <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
@@ -21,7 +21,7 @@
       <Mapping DataField="givenCredit" ObjectProperty="GivenCredit" />
       <Mapping DataField="memberCredit" ObjectProperty="MemberCredit" />
     </Setting>
-    <Setting Key="Age_CustomerSelBalanceInfo_SAg" SpName="Age_CustomerSelBalanceInfo_SAg_xtest" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelBalanceInfo_SAg" SpName="Age_CustomerSelBalanceInfo_SAg_uat2" DbName="DBAGE.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
       <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
       <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
@@ -40,7 +40,7 @@
       <Mapping DataField="total_memberClosed" ObjectProperty="TotalMemberClosed" />
       <Mapping DataField="total_memberSuspended" ObjectProperty="TotalMemberSuspended" />
     </Setting>
-    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg" DbName="DBBOF.bodb02.wsv_alp" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg_uat2" DbName="DBBOF.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="total_outstanding" ObjectProperty="TotalOutstanding" />
       <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
       <Mapping DataField="total_memberActive" ObjectProperty="TotalMemberActive" />
@@ -49,8 +49,11 @@
       <Mapping DataField="total_agentActive" ObjectProperty="TotalAgentActive" />
       <Mapping DataField="total_agentClosed" ObjectProperty="TotalAgentClosed" />
       <Mapping DataField="total_agentSuspended" ObjectProperty="TotalAgentSuspended" />
+      <Mapping DataField="total_DirectmemberActive" ObjectProperty="TotalDirectMemberActive" />
+      <Mapping DataField="total_DirectmemberClosed" ObjectProperty="TotalDirectMemberClosed" />
+      <Mapping DataField="total_DirectmemberSuspended" ObjectProperty="TotalDirectMemberSuspended" />
     </Setting>
-    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg" DbName="DBBOF.bodb02.wsv_alp" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg_uat2" DbName="DBBOF.bodb02.wsv_alp" Plain="0" TimeOut="600">
       <Mapping DataField="total_outstanding" ObjectProperty="TotalOutstanding" />
       <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
       <Mapping DataField="total_memberActive" ObjectProperty="TotalMemberActive" />
@@ -62,6 +65,9 @@
       <Mapping DataField="total_masterActive" ObjectProperty="TotalMasterActive" />
       <Mapping DataField="total_masterClosed" ObjectProperty="TotalMasterClosed" />
       <Mapping DataField="total_masterSuspended" ObjectProperty="TotalMasterSuspended" />
+      <Mapping DataField="total_DirectmemberActive" ObjectProperty="TotalDirectMemberActive" />
+      <Mapping DataField="total_DirectmemberClosed" ObjectProperty="TotalDirectMemberClosed" />
+      <Mapping DataField="total_DirectmemberSuspended" ObjectProperty="TotalDirectMemberSuspended" />
     </Setting>
   </Function>
 </Functions>
