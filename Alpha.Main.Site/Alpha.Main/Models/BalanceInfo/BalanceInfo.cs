@@ -21,5 +21,7 @@
         public decimal MemberCredit { get; set; }
 
         public decimal PendingTransfer3rd { get; set; }
+
+        public decimal DirectMemberCredit { get; set; }
     }
 }

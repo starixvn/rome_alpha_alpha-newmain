@@ -27,6 +27,7 @@
             SetLabelTextByUserLevel();
             CanViewReports = canViewReports;
             CanViewProduct = canViewProduct;
+            IsShowDirectMember = userLevel.IsNotAgentLevel();
         }
 
         public BalanceInfo BalanceInfo { get; }
@@ -52,6 +53,8 @@
         public string MemberTodayWinLossReportPath => GetMemberWinLossReportPathByDate(true);
 
         public string MemberYesterdayWinLossReportPath => GetMemberWinLossReportPathByDate(false);
+
+        public bool IsShowDirectMember { get; }
 
         private void SetLabelTextByUserLevel()
         {

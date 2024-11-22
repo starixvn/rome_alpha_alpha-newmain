@@ -1,5 +1,4 @@
-﻿@using Alpha.Main.Helpers
-@using Alpha.Main.Site.ViewModels.Dashboard.BalanceInfo
+﻿@using Alpha.Main.Site.ViewModels.Dashboard.BalanceInfo
 @model BalanceInfoViewModel
 
 @{
@@ -61,6 +60,10 @@
         </div>
         @NumericRow(Model.GivenCreditLabel, balanceInfo.GivenCredit)
         @NumericRow(Model.TotalDownlineCreditLabel, balanceInfo.MemberCredit)
+        @if (Model.IsShowDirectMember)
+        {
+            @NumericRow(Resources.TotalDirectMember, balanceInfo.DirectMemberCredit)
+        }
     </div>
 <script>
 	$(document).ready(function () {
