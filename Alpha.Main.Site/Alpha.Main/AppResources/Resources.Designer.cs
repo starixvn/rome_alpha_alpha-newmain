@@ -19,7 +19,7 @@ namespace Alpha.Main.AppResources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -1198,6 +1198,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to of.
+        /// </summary>
+        public static string of {
+            get {
+                return ResourceManager.GetString("of", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Old View.
         /// </summary>
         public static string OldView {
@@ -1212,6 +1221,15 @@ namespace Alpha.Main.AppResources {
         public static string outstanding {
             get {
                 return ResourceManager.GetString("outstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Page.
+        /// </summary>
+        public static string Page {
+            get {
+                return ResourceManager.GetString("Page", resourceCulture);
             }
         }
         
@@ -1351,6 +1369,51 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Let&apos;s explore Cash Reward Program and discover what it offers!.
+        /// </summary>
+        public static string RebateAndRetentionTour_Page1_Row1 {
+            get {
+                return ResourceManager.GetString("RebateAndRetentionTour_Page1_Row1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balance Info.
+        /// </summary>
+        public static string RebateAndRetentionTour_Page1_Row2 {
+            get {
+                return ResourceManager.GetString("RebateAndRetentionTour_Page1_Row2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A new function allows you to confirm rewards distributed to your downlines..
+        /// </summary>
+        public static string RebateAndRetentionTour_Page1_Row3 {
+            get {
+                return ResourceManager.GetString("RebateAndRetentionTour_Page1_Row3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A new report displays Member&apos;s reward transactions along with their feedback for transparency..
+        /// </summary>
+        public static string RebateAndRetentionTour_Page1_Row4 {
+            get {
+                return ResourceManager.GetString("RebateAndRetentionTour_Page1_Row4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Win/Loss Detail report now includes a new Reward column..
+        /// </summary>
+        public static string RebateAndRetentionTour_Page1_Row5 {
+            get {
+                return ResourceManager.GetString("RebateAndRetentionTour_Page1_Row5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove.
         /// </summary>
         public static string Remove {
@@ -1423,6 +1486,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reward Detail.
+        /// </summary>
+        public static string RewardDetail {
+            get {
+                return ResourceManager.GetString("RewardDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reward Payable.
         /// </summary>
         public static string RewardPayable {
@@ -1437,6 +1509,15 @@ namespace Alpha.Main.AppResources {
         public static string RewardPayableTooltip {
             get {
                 return ResourceManager.GetString("RewardPayableTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reward Payment.
+        /// </summary>
+        public static string RewardPayment {
+            get {
+                return ResourceManager.GetString("RewardPayment", resourceCulture);
             }
         }
         
@@ -1704,6 +1785,15 @@ namespace Alpha.Main.AppResources {
         public static string systemUpdate {
             get {
                 return ResourceManager.GetString("systemUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Take a tour.
+        /// </summary>
+        public static string TakeATour {
+            get {
+                return ResourceManager.GetString("TakeATour", resourceCulture);
             }
         }
         

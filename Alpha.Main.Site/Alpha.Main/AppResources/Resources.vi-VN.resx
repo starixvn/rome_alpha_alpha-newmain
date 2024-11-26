@@ -735,7 +735,7 @@
   <data name="WinLossDetailReport" xml:space="preserve">
     <value>Báo Cáo Chi Tiết Thắng Thua</value>
   </data>
-    <value>Chào mừng đến với &lt;b&gt;Chương trình Tiền thưởng&lt;/b&gt;!</value>
+  <value>Chào mừng đến với &lt;b&gt;Chương trình Tiền thưởng&lt;/b&gt;!</value>
   <data name="SetupChatbot" xml:space="preserve">
     <value>Cài Đặt Chatbot</value>
   </data>
@@ -773,5 +773,35 @@ Lưu ý: Vui lòng thay đổi &lt;b&gt;mật khẩu&lt;/b&gt; Nova Casino Back 
   </data>
   <data name="Reward" xml:space="preserve">
     <value>Tiền thưởng</value>
+  </data>
+  <data name="of" xml:space="preserve">
+    <value>trên</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Trang</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row1" xml:space="preserve">
+    <value>Cùng khám phá Chương trình Tiền thưởng và tìm hiểu những lợi ích mà nó mang lại!</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row2" xml:space="preserve">
+    <value>Tài Khoản</value>
+  </data>
+  <data name="RewardPayment" xml:space="preserve">
+    <value>Thanh toán tiền thưởng</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row3" xml:space="preserve">
+    <value>Chức năng mới cho phép bạn xác nhận các khoản tiền thưởng đã phân phối cho cấp dưới.</value>
+  </data>
+  <data name="RewardDetail" xml:space="preserve">
+    <value>Chi tiết tiền thưởng</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row4" xml:space="preserve">
+    <value>Báo cáo mới nhằm hiển thị các giao dịch tiền thưởng và phản hồi của Member để đảm bảo tính minh bạch.</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row5" xml:space="preserve">
+    <value>Báo cáo Chi tiết Thắng Thua hiện tại sẽ thêm một cột Tiền thưởng mới.</value>
+  </data>
+  <data name="TakeATour" xml:space="preserve">
+    <value>Khám Phá</value>
   </data>
 </root>

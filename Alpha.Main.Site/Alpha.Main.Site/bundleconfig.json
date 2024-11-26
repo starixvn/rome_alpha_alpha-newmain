@@ -335,6 +335,12 @@
       "Assets/scripts/telegramchatbot/add-account-telegram-chatbot.js"
     ]
   },
+  {
+    "outputFileName": "Assets/bundles/tour/rebate-and-retention.js",
+    "inputFiles": [
+      "Assets/scripts/tour/rebate-and-retention.js"
+    ]
+  },
   /************************** Dark Mode ************************/
   {
     "outputFileName": "Assets/bundles/default-index-dark.css",
@@ -454,6 +460,18 @@
     "outputFileName": "Assets/bundles/whitelabel.css",
     "inputFiles": [
       "Assets/Styles/home/whitelabel.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/tour/rebate-and-retention.css",
+    "inputFiles": [
+      "Assets/Styles/tour/rebate-and-retention.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/tour/rebate-and-retention-dark.css",
+    "inputFiles": [
+      "Assets/Styles/tour/rebate-and-retention-dark.css"
     ]
   }
 ]

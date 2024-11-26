@@ -752,8 +752,32 @@
  หากคุณมีคำถามใด ๆ กรุณาติดต่อฝ่ายบริการลูกค้า
  
  ขอบคุณค่ะ!</value>
+  </data>  
+  <data name="of" xml:space="preserve">
+    <value>ของ</value>
   </data>
   <data name="NotSetupWhiteLabelMessage" xml:space="preserve">
     <value>คุณยังไม่ได้ลงทะเบียนธุรกิจฉลากขาว โปรดติดต่อฝ่ายบริการลูกค้าของเราเพื่อขอความช่วยเหลือเพิ่มเติม</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>หน้า</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row1" xml:space="preserve">
+    <value>มาสำรวจโปรแกรมเงินรางวัลเงินสดแล้วดูว่ามีอะไรให้บ้าง!</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row2" xml:space="preserve">
+    <value>ข้อมูลยอดเงินคงเหลือ</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row3" xml:space="preserve">
+    <value>ฟังก์ชั่นใหม่ช่วยให้คุณยืนยันเงินรางวัลให้แจกจ่ายให้กับดาวน์ไลน์ของคุณ</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row4" xml:space="preserve">
+    <value>รายงานใหม่จะแสดงธุรกรรมเงินรางวัลของสมาชิกพร้อมกับข้อคิดเห็นเพื่อความโปร่งใส</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row5" xml:space="preserve">
+    <value>รายงานรายละเอียดการชนะ/แพ้มีคอลัมน์เงินรางวัลใหม่แล้วขณะนี้</value>
+  </data>
+  <data name="TakeATour" xml:space="preserve">
+    <value>ดูรายละเอียด</value>
   </data>
 </root>

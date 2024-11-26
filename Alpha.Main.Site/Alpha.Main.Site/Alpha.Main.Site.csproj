@@ -724,6 +724,14 @@
     <Content Include="Assets\bundles\suggest-telegram-otp.min.js">
       <DependentUpon>suggest-telegram-otp.js</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\tour\rebate-and-retention-dark.css" />
+    <Content Include="Assets\bundles\tour\rebate-and-retention-dark.min.css">
+      <DependentUpon>rebate-and-retention-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\tour\rebate-and-retention.css" />
+    <Content Include="Assets\bundles\tour\rebate-and-retention.js" />
+    <Content Include="Assets\bundles\tour\rebate-and-retention.min.css" />
+    <Content Include="Assets\bundles\tour\rebate-and-retention.min.js" />
     <Content Include="Assets\bundles\whitelabel.css" />
     <Content Include="Assets\bundles\whitelabel.min.css">
       <DependentUpon>whitelabel.css</DependentUpon>
@@ -1136,6 +1144,115 @@
     <Content Include="Assets\styles\telegramchatbot\register-account.min.css">
       <DependentUpon>register-account.css</DependentUpon>
     </Content>
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\en-Us\Page1-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\en-Us\Page1-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\en-Us\Page1-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\en-Us\Page2-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\en-Us\Page2-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\en-Us\Page2-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\en-Us\Page3-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\en-Us\Page3-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\en-Us\Page3-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\en-Us\Page4-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\en-Us\Page4-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\en-Us\Page4-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\en-Us\Page5-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\en-Us\Page5-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\en-Us\Page5-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ja-JP\Page1-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ja-JP\Page1-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ja-JP\Page1-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ja-JP\Page2-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ja-JP\Page2-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ja-JP\Page2-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ja-JP\Page3-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ja-JP\Page3-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ja-JP\Page3-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ja-JP\Page4-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ja-JP\Page4-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ja-JP\Page4-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ja-JP\Page5-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ja-JP\Page5-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ja-JP\Page5-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ko-KR\Page1-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ko-KR\Page1-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ko-KR\Page1-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ko-KR\Page2-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ko-KR\Page2-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ko-KR\Page2-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ko-KR\Page3-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ko-KR\Page3-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ko-KR\Page3-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ko-KR\Page4-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ko-KR\Page4-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ko-KR\Page4-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ko-KR\Page5-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ko-KR\Page5-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\ko-KR\Page5-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\th-TH\Page1-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\th-TH\Page1-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\th-TH\Page1-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\th-TH\Page2-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\th-TH\Page2-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\th-TH\Page2-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\th-TH\Page3-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\th-TH\Page3-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\th-TH\Page3-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\th-TH\Page4-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\th-TH\Page4-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\th-TH\Page4-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\th-TH\Page5-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\th-TH\Page5-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\th-TH\Page5-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\vi-VN\Page1-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\vi-VN\Page1-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\vi-VN\Page1-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\vi-VN\Page2-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\vi-VN\Page2-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\vi-VN\Page2-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\vi-VN\Page3-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\vi-VN\Page3-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\vi-VN\Page3-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\vi-VN\Page4-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\vi-VN\Page4-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\vi-VN\Page4-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\vi-VN\Page5-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\vi-VN\Page5-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\vi-VN\Page5-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-CN\Page1-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-CN\Page1-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-CN\Page1-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-CN\Page2-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-CN\Page2-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-CN\Page2-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-CN\Page3-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-CN\Page3-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-CN\Page3-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-CN\Page4-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-CN\Page4-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-CN\Page4-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-CN\Page5-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-CN\Page5-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-CN\Page5-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-TW\Page1-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-TW\Page1-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-TW\Page1-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-TW\Page2-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-TW\Page2-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-TW\Page2-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-TW\Page3-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-TW\Page3-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-TW\Page3-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-TW\Page4-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-TW\Page4-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-TW\Page4-lv4.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-TW\Page5-lv2.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-TW\Page5-lv3.png" />
+    <Content Include="Assets\styles\tour\images\rebate-and-retention\zh-TW\Page5-lv4.png" />
+    <Content Include="Assets\styles\tour\rebate-and-retention-dark.css" />
+    <Content Include="Assets\styles\tour\rebate-and-retention-dark.min.css" />
+    <Content Include="Assets\styles\tour\rebate-and-retention.css" />
+    <Content Include="Assets\styles\tour\rebate-and-retention.min.css" />
     <Content Include="Scripts\aes.js" />
     <Content Include="Alpha.Main.Site.Debug.ruleset" />
     <Content Include="Alpha.Main.Site.ruleset" />
@@ -1298,6 +1415,7 @@
     <Content Include="Views\Dashboard\Banner.cshtml" />
     <Content Include="Views\Dashboard\WhiteLabel.cshtml" />
     <Content Include="Views\Dashboard\NovaCasino.cshtml" />
+    <Content Include="Views\Tour\RebateAndRetention.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\apikey\apikey-management.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey-result.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey.ts" />
@@ -1512,6 +1630,8 @@
     <Content Include="Assets\styles\apikey\apikey.scss" />
     <Content Include="Assets\styles\apikey\apikey-dark.scss" />
     <Content Include="Assets\styles\home\whitelabel.scss" />
+    <Content Include="Assets\styles\tour\rebate-and-retention-dark.scss" />
+    <Content Include="Assets\styles\tour\rebate-and-retention.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -1597,6 +1717,7 @@
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\dashboard-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\notice-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\statistics-tests.ts" />
+    <TypeScriptCompile Include="Assets\scripts\tour\rebate-and-retention.ts" />
     <TypeScriptCompile Include="typings\globals\bootstrap\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\hammerjs\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jasmine\index.d.ts" />
@@ -1664,6 +1785,7 @@
     <Compile Include="Controllers\ThemeController.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
+    <Compile Include="Controllers\TourController.cs" />
     <Compile Include="Controllers\UMMessageController.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -1861,6 +1983,7 @@
     <Compile Include="ViewModels\TelegramChatBot\RegisterAccountViewModel.cs" />
     <Compile Include="ViewModels\TelegramChatBot\VerifyAccountViewModel.cs" />
     <Compile Include="ViewModels\WhiteLabel\WhiteLabelSSOResponse.cs" />
+    <Compile Include="ViewModels\Tour\TourViewModel.cs" />
     <Compile Include="ViewModels\WhiteLabel\WhiteLabelSSOResponseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

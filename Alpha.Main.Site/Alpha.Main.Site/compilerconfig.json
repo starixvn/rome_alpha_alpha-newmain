@@ -182,5 +182,13 @@
   {
     "outputFile": "Assets/styles/home/whitelabel.css",
     "inputFile": "Assets/styles/home/whitelabel.scss"
+  },
+  {
+    "outputFile": "Assets/styles/tour/rebate-and-retention.css",
+    "inputFile": "Assets/styles/tour/rebate-and-retention.scss"
+  },
+  {
+    "outputFile": "Assets/styles/tour/rebate-and-retention-dark.css",
+    "inputFile": "Assets/styles/tour/rebate-and-retention-dark.scss"
   }
 ]

@@ -143,7 +143,16 @@ div.messageBlock {
         cursor: all-scroll;
     }
 }
+.popup-tour-intro {
+    .modal-header {
+        display: none;
+    }
 
+    .modal-body{
+        padding: 0;
+        height: 540px!important;
+    }
+}
 @media only screen and (max-device-width : $screen-device-lower768) {
     .message-modal {
         left: 0;
@@ -153,6 +162,14 @@ div.messageBlock {
 
         .modal-sm {
             width: 100%;
+        }
+    }
+    .popup-tour-intro {
+        max-width: 97%;
+        left: 1.5% !important;
+        
+        .modal-body{
+            height: 400px !important;
         }
     }
 }
