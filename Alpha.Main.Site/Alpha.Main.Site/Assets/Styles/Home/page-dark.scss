@@ -1095,12 +1095,15 @@ html * {
     position: absolute;
     background: $popup-bg-black;
     border: 1px solid $popup-border-black;
-    top: 310px;
     left: 15px;
-    width: 400px;
+    width: 500px;
     z-index: 130;
     color: $popup-text-color;
     padding: 20px;
+
+    .sm {
+        display: none;
+    }
 
     .icon-close {
         position: absolute;
@@ -1145,7 +1148,7 @@ html * {
 
         img {
             display: block;
-            margin: 0 21px 0 0;
+            margin: 0 20px 0 0;
         }
 
         p {

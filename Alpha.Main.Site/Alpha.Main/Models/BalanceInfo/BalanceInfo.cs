@@ -21,5 +21,11 @@
         public decimal MemberCredit { get; set; }
 
         public decimal PendingTransfer3rd { get; set; }
+
+        public decimal? RewardPayable { get; set; }
+
+        public decimal? RewardReceivable { get; set; }
+
+        public string RewardCurrency { get; set; }
     }
 }

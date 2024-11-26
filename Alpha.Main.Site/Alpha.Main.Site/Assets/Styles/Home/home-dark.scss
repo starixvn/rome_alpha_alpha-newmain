@@ -29,6 +29,12 @@ body {
     font-size: 20px;
 }
 
+.reward .icon-information-outline {
+    float: none;
+    font-size: 16px;
+    margin: 0 0 4px 2px;
+}
+
 .tab-content > .tab-pane {
     padding: 8px 0;
     color: #CBCBCB;
@@ -285,6 +291,31 @@ body {
 
 // Customize tooltip
 .tooltip {
+    pointer-events: none;
+
+    .ver2 & {
+        .tooltip-arrow {
+            &:after, &:before {
+                display: none;
+            }
+        }
+
+        &.right {
+            .tooltip-arrow {
+                border-right-color: #3e3e3e;
+            }
+        }
+
+        .tooltip-inner {
+            border: none;
+            background-color: #3e3e3e;
+            color: #CBCBCB;
+            width: 260px;
+            max-width: 260px;
+            font-size: 13px;
+            box-shadow: none;
+        }
+    }
 
     &.in {
         opacity: 1;
@@ -302,10 +333,6 @@ body {
 
     &.top {
         .tooltip-arrow {
-            display: none;
-        }
-
-        .tooltip-inner {
             &:after, &:before {
                 bottom: 0;
                 left: 50%;
@@ -321,15 +348,48 @@ body {
                 border-top-color: #2E2E2E;
                 border-width: 8px;
                 margin-left: -8px;
-                margin-bottom: -10px;
+                bottom: -7px;
             }
 
             &:before {
                 border-color: transparent;
-                border-top-color: #999999;
-                border-width: 10px;
-                margin-left: -10px;
-                margin-bottom: -14px;
+                border-top-color: #9F9F9F;
+                border-width: 7px;
+                margin-left: -7px;
+                bottom: -8px;
+            }
+        }
+    }
+
+    &.right {
+        .tooltip-inner {
+        }
+
+        .tooltip-arrow {
+            &:after, &:before {
+                bottom: 0;
+                left: 50%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+            }
+
+            &:after {
+                border-color: transparent;
+                border-right-color: #2E2E2E;
+                border-width: 9px;
+                margin-left: -11px;
+                bottom: -10px;
+            }
+
+            &:before {
+                border-color: transparent;
+                border-right-color: #9F9F9F;
+                border-width: 9px;
+                margin-left: -12px;
+                bottom: -10px;
             }
         }
     }

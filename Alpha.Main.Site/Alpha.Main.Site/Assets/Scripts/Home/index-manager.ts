@@ -259,36 +259,11 @@ var indexManager = {
         return indexManager.isInternal ? "" : localStorage.getItem(indexManager.currentUrlCookieName);
     },
     closeAllOpenDropdowns: function (iframeWindow) {
-        const toggleDropdownSubMenu = () => {
-            var popupHighlight = $('.popup-highlight');
-            var ddnw = $("#header-dropdown-menu").width();
-
-            if ($('.dropdown.setting').hasClass('open')) {
-                $('.dropdown-submenu').find('.dropdown-menu').hide();
-                popupHighlight.removeClass('highlight-left').addClass('highlight-top');
-                popupHighlight.css({ top: 50, right: 32 });
-            } else {
-                setTimeout(() => {
-                    popupHighlight.removeClass('highlight-top').addClass('highlight-left');
-                    var mn = $("#header-dropdown-menu > li:not(':hidden')");
-                    var ptop = ((mn.length - 1) * 36 - 48 + 30);
-                    popupHighlight.css({
-                        top: ptop + 'px',
-                        right: ddnw + 56
-                    });
-                }, 100);
-            }
-        }
-
         const closeDropdownSubMenu = () => {
-            var popupHighlight = $('.popup-highlight');
             $('.dropdown-submenu').find('.dropdown-menu').hide();
-            popupHighlight.removeClass('highlight-left').addClass('highlight-top');
-            popupHighlight.css({ top: 50, right: 32 });
         }
 
         $(document).on('click touchend', closeDropdownSubMenu);
-        $('#btn-header-menu').on('click', toggleDropdownSubMenu);
 
         try {
             $(iframeWindow.document).on('click touchend', () => {
@@ -436,7 +411,7 @@ var indexManager = {
     //},
 
     initNewFeatureHighlightPopup: function () {
-        const leftMenu = $("#btn-header-menu");
+        const leftMenu = $("#menu-TRANSFER");
         if (!leftMenu.length) {
             return;
         }
@@ -447,12 +422,13 @@ var indexManager = {
         }
 
         // RedmineId should be included to make FeatureName is unique.
-        const featureName = "194377_AgencyHandbook";
+        const featureName = "209190_CashRewardProgram";
         const cookiesName = indexManager.hidePopupCookies + featureName;
         const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
 
         if (hidePopup !== "1") {
             popupManager.closeAllPopup();
+            box.css({ top: leftMenu.position().top + 80 });
             box.removeClass("hide");
 
             box.find(".icon-close").click(() => box.addClass("hide"));

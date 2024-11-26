@@ -734,6 +734,15 @@ body {
     left: 10px;
     right: auto;
     top: 63px !important;
+    width: 350px;
+
+    .sm {
+        display: block;
+    }
+
+    .pc {
+        display: none;
+    }
 
     &:before {
         right: auto;

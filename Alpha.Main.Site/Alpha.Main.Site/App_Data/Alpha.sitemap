@@ -119,28 +119,34 @@
       <siteMapNode menuItemType="AutoTransferMonitoringMenuItem" resourceKey="AutoTransferMonitoring" appPath="TransferAppPath" url="AutoTransfer/Monitoring?v4"></siteMapNode>
       <siteMapNode menuItemType="TransferAllAndClearCreditMenuItem" resourceKey="TransferAllAndClearCredit" appPath="TransferAppPath" url="TransferAllAndClearCredit/Index?v4"></siteMapNode>
       <siteMapNode menuItemType="TransferDownlineHistoryMenuItem" resourceKey="TransferToDownlineHistory" appPath="TransferAppPath" url="TransferToDownlineHistory/Index?v4"></siteMapNode>
+      <siteMapNode resourceKey="RewardPayment" appPath="TransferAppPath" url="Reward/Payment?v41"></siteMapNode>
     </siteMapNode>
     <siteMapNode resourceKey="transfer" menuItemType="TransferMenuItem" functionType="[C]" roles="Master">
       <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Master/AgentList.aspx?adbt={0}" functionType="[C]"></siteMapNode>
       <siteMapNode menuItemType="AutoTransferMonitoringMenuItem" resourceKey="AutoTransferMonitoring" appPath="TransferAppPath" url="AutoTransfer/Monitoring?v3"></siteMapNode>
       <siteMapNode menuItemType="TransferAllAndClearCreditMenuItem" resourceKey="TransferAllAndClearCredit" appPath="TransferAppPath" url="TransferAllAndClearCredit/Index?v3"></siteMapNode>
       <siteMapNode menuItemType="TransferDownlineHistoryMenuItem" resourceKey="TransferToDownlineHistory" appPath="TransferAppPath" url="TransferToDownlineHistory/Index?v3"></siteMapNode>
+      <siteMapNode resourceKey="RewardPayment" appPath="TransferAppPath" url="Reward/Payment?v31"></siteMapNode>
     </siteMapNode>
     <siteMapNode resourceKey="transfer" menuItemType="TransferMenuItem" functionType="[C]" roles="Agent">
       <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Agent/MemberList.aspx?adbt={0}" functionType="[C]"></siteMapNode>
       <siteMapNode menuItemType="AutoTransferMonitoringMenuItem" resourceKey="AutoTransferMonitoring" appPath="TransferAppPath" url="AutoTransfer/Monitoring?v2"></siteMapNode>
       <siteMapNode menuItemType="TransferDownlineHistoryMenuItem" resourceKey="TransferToDownlineHistory" appPath="TransferAppPath" url="TransferToDownlineHistory/Index?v2"></siteMapNode>
+      <siteMapNode resourceKey="RewardPayment" appPath="TransferAppPath" url="Reward/Payment?v21"></siteMapNode>
     </siteMapNode>
 
-    <siteMapNode resourceKey="transfer" menuItemType="SingleTransferMenuItem"
-                 appPath="OldMainAppPath" url="_Transfer/Super/MasterList.aspx?v=2&amp;adbt={0}"
-                 functionType="[C]" roles="Super"></siteMapNode>
-    <siteMapNode resourceKey="transfer" menuItemType="SingleTransferMenuItem"
-                 appPath="OldMainAppPath" url="_Transfer/Master/AgentList.aspx?v=2&amp;adbt={0}"
-                 functionType="[C]" roles="Master"></siteMapNode>
-    <siteMapNode resourceKey="transfer" menuItemType="SingleTransferMenuItem"
-                 appPath="OldMainAppPath" url="_Transfer/Agent/MemberList.aspx?v=2&amp;adbt={0}"
-                 functionType="[C]" roles="Agent"></siteMapNode>
+    <siteMapNode resourceKey="transfer" menuItemType="SingleTransferMenuItem" functionType="[C]" roles="Super">
+      <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Super/MasterList.aspx?v=2&amp;adbt={0}"></siteMapNode>
+      <siteMapNode resourceKey="RewardPayment" appPath="TransferAppPath" url="Reward/Payment?v42"></siteMapNode>
+    </siteMapNode>
+    <siteMapNode resourceKey="transfer" menuItemType="SingleTransferMenuItem" functionType="[C]" roles="Master">
+      <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Master/AgentList.aspx?v=2&amp;adbt={0}"></siteMapNode>
+      <siteMapNode resourceKey="RewardPayment" appPath="TransferAppPath" url="Reward/Payment?v32"></siteMapNode>
+    </siteMapNode>
+    <siteMapNode resourceKey="transfer" menuItemType="SingleTransferMenuItem" functionType="[C]" roles="Agent">
+      <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Agent/MemberList.aspx?v=2&amp;adbt={0}"></siteMapNode>
+      <siteMapNode resourceKey="RewardPayment" appPath="TransferAppPath" url="Reward/Payment?v22"></siteMapNode>
+    </siteMapNode>
 
     <siteMapNode resourceKey="viewLog" menuItemType="ViewLogMenuItem" functionType="[G]">
       <siteMapNode resourceKey="Setting" appPath="ViewLogsAppPath" url="Setting"></siteMapNode>

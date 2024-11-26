@@ -19,7 +19,7 @@ namespace Alpha.Main.AppResources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -601,7 +601,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Find &lt;b&gt;consolidated guidelines&lt;/b&gt; and &lt;b&gt;glossary terms&lt;/b&gt; for quick and easy reference..
+        ///   Looks up a localized string similar to &lt;p&gt;We are excited to introduce our new Cash Reward Program. The company is responsible for the reward amounts, and once a Member receives their reward, it cannot be used for placing bets. Rewards will be distributed to uplines, and Members can cash out through their Agents.&lt;/p&gt;&lt;p&gt;Our new feature &lt;b&gt;Reward Payment&lt;/b&gt; supports your downline payment management, ensuring accurate distribution of all rewards.&lt;/p&gt;.
         /// </summary>
         public static string HighlightPopupNewFeatureIntro {
             get {
@@ -610,34 +610,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;b&gt;Navigate&lt;/b&gt; effortlessly and &lt;b&gt;boost your proficiency&lt;/b&gt;!.
-        /// </summary>
-        public static string HighlightPopupNewFeatureIntro2 {
-            get {
-                return ResourceManager.GetString("HighlightPopupNewFeatureIntro2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Copy data from Report without exporting.
-        /// </summary>
-        public static string HighlightPopupNewFeatureIntro3 {
-            get {
-                return ResourceManager.GetString("HighlightPopupNewFeatureIntro3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Filter tickets on Bet List.
-        /// </summary>
-        public static string HighlightPopupNewFeatureIntro4 {
-            get {
-                return ResourceManager.GetString("HighlightPopupNewFeatureIntro4", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Explore the &lt;b&gt;One-Stop Handbook&lt;/b&gt;!.
+        ///   Looks up a localized string similar to Welcome to the &lt;b&gt;Cash Reward Program&lt;/b&gt;!.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {
@@ -1428,6 +1401,51 @@ namespace Alpha.Main.AppResources {
         public static string RequiredNewProtectionCode {
             get {
                 return ResourceManager.GetString("RequiredNewProtectionCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reward.
+        /// </summary>
+        public static string Reward {
+            get {
+                return ResourceManager.GetString("Reward", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reward Payable.
+        /// </summary>
+        public static string RewardPayable {
+            get {
+                return ResourceManager.GetString("RewardPayable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount you can distribute to your downlines..
+        /// </summary>
+        public static string RewardPayableTooltip {
+            get {
+                return ResourceManager.GetString("RewardPayableTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reward Receivable.
+        /// </summary>
+        public static string RewardReceivable {
+            get {
+                return ResourceManager.GetString("RewardReceivable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount you can receive from your upline..
+        /// </summary>
+        public static string RewardReceivableTooltip {
+            get {
+                return ResourceManager.GetString("RewardReceivableTooltip", resourceCulture);
             }
         }
         

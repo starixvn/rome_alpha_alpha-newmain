@@ -62,12 +62,26 @@ body {
     }
 }
 
-
-
-
 .icon-information-outline {
     margin-left: calculateScale(5px);
     font-size: calculateScale(20px);
+}
+
+.reward .icon-information-outline {
+    font-size: calculateScale(16px);
+
+    &:after {
+        margin-top: calculateScale(-1px);
+        margin-left: calculateScale(-1.8px);
+    }
+
+    
+}
+.tooltip {
+    font-size: calculateScale(12px);
+
+    &.right {
+    }
 }
 
 .tab-content > .tab-pane {
@@ -152,11 +166,11 @@ body {
             padding-top: calculateScale(2px);
             line-height: calculateScale(30px);
             background-color: #e3e3e3;
-            
+
             .icon-more {
                 top: calculateScale(2px);
                 margin-left: calculateScale(4px);
-            }      
+            }
         }
 
         .icon-plus, .icon-minus {
@@ -167,8 +181,8 @@ body {
     }
 
     &.statistic {
-        .active, 
-        .closed, 
+        .active,
+        .closed,
         .suspended {
             padding: 0 calculateScale(4px);
         }
@@ -200,7 +214,7 @@ body {
     .panel-title {
         display: none;
     }
-} 
+}
 
 
 .tblRpt thead th, .tblRpt tbody td, .tblRpt tfoot td {

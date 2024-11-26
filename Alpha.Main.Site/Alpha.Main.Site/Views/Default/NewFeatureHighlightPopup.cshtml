@@ -1,21 +1,18 @@
 ﻿@model IndexViewModel
 @if (Model.HightLightFeaturePermission)
 {
-    <div class="popup-highlight highlight-top hide" id="boxHighlightPopupNewFeature">
+    <div class="popup-highlight hide" id="boxHighlightPopupNewFeature">
         <button type="button" class="icon icon-close close" title="@Resources.close">
             <span aria-hidden="true"></span>
         </button>
         <div class="text">
-            <img src="~/Assets/Images/@(Model.HightLightFeatureImageName).svg?v=@AppSettings.JsVersion" alt="@Resources.HighlightPopupNewFeatureTitle">
+            <div class="image">
+                <img src="~/Assets/Images/@(Model.HightLightFeatureImageName).svg?v=@AppSettings.JsVersion" alt="@Resources.HighlightPopupNewFeatureTitle">
+                <p class="sm"><span>@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</span></p>
+            </div>
             <div>
-                <p>
-                    <span>@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</span>
-                </p>
-                <p>
-                    @Html.Raw(Resources.HighlightPopupNewFeatureIntro)
-                    <br />
-                    @Html.Raw(Resources.HighlightPopupNewFeatureIntro2)
-                </p>
+                <p class="pc"><span>@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</span></p>
+                @Html.Raw(Resources.HighlightPopupNewFeatureIntro)
             </div>
         </div>
         <div class="action">
@@ -23,9 +20,7 @@
                 <input id="chkHideHighlightPopupNewFeature" type="checkbox" />
                 <span>@Resources.doNotShowAgain</span>
             </label>
-            <a class="btn-submit" id="linkHighlightPopupCheckOut"
-               href="@Model.HightLightFeatureUrl"
-               target="_blank">@Resources.GetStarted</a>
+            <a class="btn-submit" id="linkHighlightPopupCheckOut" href="@Model.HightLightFeatureUrl" target="main">@Resources.GetStarted</a>
         </div>
     </div>
 }

@@ -721,7 +721,7 @@
     <value>Xem ngay</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>Hãy khám phá &lt;b&gt;Hồ Sơ Member&lt;/b&gt; và &lt;b&gt;Thống Kê Cược&lt;/b&gt; để hiểu rõ hơn về cách họ đặt cược. Điều này sẽ giúp bạn quản lý rủi ro một cách hiệu quả và đưa ra các quyết định chính xác hơn.</value>
+    <value>&lt;p&gt;Chúng tôi rất vui mừng giới thiệu Chương trình Tiền thưởng. Công ty sẽ chi trả toàn bộ tiền thưởng này, và khi Member đã nhận thưởng, số tiền này sẽ không được phép sử dụng để đặt cược. Tiền thưởng sẽ được phân phối cho các cấp trên, và Member có thể rút tiền qua Agent của mình.&lt;/p&gt;&lt;p&gt;Chức năng &lt;b&gt;Thanh toán Tiền thưởng&lt;/b&gt; giúp bạn quản lý việc thanh toán cho các cấp dưới, đảm bảo tất cả các khoản tiền thưởng được phân phối một cách chính xác.&lt;/p&gt;</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Bắt đầu</value>
@@ -729,20 +729,24 @@
   <data name="SessionExpired" xml:space="preserve">
     <value>Phiên làm việc đã hết hạn.</value>
   </data>
-  <data name="HighlightPopupNewFeatureIntro3" xml:space="preserve">
-    <value>Sao chép dữ liệu mà không cần xuất ra tệp</value>
-  </data>
-  <data name="HighlightPopupNewFeatureIntro4" xml:space="preserve">
-    <value>Lọc vé cược trên Danh Sách Cược</value>
-  </data>
   <data name="FeedbackOnFunctionTitle" xml:space="preserve">
     <value>Giúp chúng tôi cải thiện {0}</value>
   </data>
   <data name="WinLossDetailReport" xml:space="preserve">
     <value>Báo Cáo Chi Tiết Thắng Thua</value>
   </data>
+    <value>Chào mừng đến với &lt;b&gt;Chương trình Tiền thưởng&lt;/b&gt;!</value>
   <data name="SetupChatbot" xml:space="preserve">
     <value>Cài Đặt Chatbot</value>
+  </data>
+  <data name="RewardReceivable" xml:space="preserve">
+    <value>Tiền thưởng phải thu</value>
+  </data>
+  <data name="RewardPayable" xml:space="preserve">
+    <value>Tiền thưởng phải trả</value>
+  </data>
+  <data name="RewardPayableTooltip" xml:space="preserve">
+    <value>Số tiền bạn có thể phân phối cho các cấp dưới.</value>
   </data>
   <data name="SyncedNovaCasinoPersonalMessage" xml:space="preserve">
     <value>Kính gửi Qúy Khách Hàng,
@@ -752,6 +756,9 @@ Cấp dưới của quý vị, "{0}", đã chính thức tham gia Nova Casino. V
 Nếu có bất kỳ thắc mắc nào, vui lòng liên hệ Bộ phận Chăm sóc Khách hàng.
 
 Trân trọng cảm ơn sự hợp tác của quý vị!</value>
+  </data>
+  <data name="RewardReceivableTooltip" xml:space="preserve">
+    <value>Số tiền bạn có thể nhận từ cấp trên.</value>
   </data>
   <data name="NovaCasinoBriefIntroduction" xml:space="preserve">
     <value>Nova Casino là nền tảng mới hỗ trợ chế độ Đa Đại Lý.Tham gia ngay để phát triển nhiều cấp dưới và người chơi. 
@@ -763,5 +770,8 @@ Lưu ý: Vui lòng thay đổi &lt;b&gt;mật khẩu&lt;/b&gt; Nova Casino Back 
   </data>
   <data name="InternalServerError" xml:space="preserve">
     <value>Đã xảy ra lỗi. Vui lòng liên hệ Bộ phận Chăm Sóc Khách hàng để được hỗ trợ. Xin cảm ơn. [500]</value>
+  </data>
+  <data name="Reward" xml:space="preserve">
+    <value>Tiền thưởng</value>
   </data>
 </root>

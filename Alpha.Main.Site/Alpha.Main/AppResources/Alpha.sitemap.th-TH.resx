@@ -432,6 +432,9 @@
   <data name="SettlementReport" xml:space="preserve">
     <value>รายงานการชำระเงิน</value>
   </data>
+  <data name="RewardPayment" xml:space="preserve">
+    <value>การจ่ายเงินรางวัล</value>
+  </data>
   <data name="JoinNovaCasinoNow" xml:space="preserve">
     <value>สมัครตัวแทน Nova Casino</value>
   </data>
