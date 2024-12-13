@@ -29,4 +29,7 @@
   <Function Name="Alpha.Announcement">
     <Setting Key="Age_CustomerShowAnnouncement" SpName="Age_CustomerShowAnnouncement" DbName="DBAGE.bodb02.wsv_alpv" Plain="0" />
   </Function>
+  <Function Name="White Label">
+    <Setting Key="Age_WhitelLabelCheckExists" SpName="Age_WhitelLabelCheckExists" DbName="DBAGE.bodb02.wsv_alpv" Plain="0" />
+  </Function>
 </Functions>
