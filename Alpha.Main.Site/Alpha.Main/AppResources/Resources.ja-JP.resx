@@ -118,62 +118,62 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="close" xml:space="preserve">
-    <value>閉鎖</value>
+    <value>閉じる</value>
   </data>
   <data name="subAcc" xml:space="preserve">
-    <value>Sub Acc</value>
+    <value>サブアカウント</value>
   </data>
   <data name="admin" xml:space="preserve">
-    <value>Admin</value>
+    <value>管理者</value>
   </data>
   <data name="configNow" xml:space="preserve">
-    <value>設定</value>
+    <value>今すぐ設定</value>
   </data>
   <data name="introNickname" xml:space="preserve">
-    <value>&lt;div&gt;Dear customers! Now you can login with your own nickname&lt;/div&gt;
-&lt;div&gt;... more secure and personalized.&lt;/div&gt;</value>
+    <value>&lt;div&gt;お客様各位！これからはご自身のニックネームでログインできます。&lt;/div&gt;
+&lt;div&gt;... より安全でパーソナライズされた体験をお届けします。&lt;/div&gt;</value>
   </data>
   <data name="nickname" xml:space="preserve">
     <value>ニックネーム</value>
   </data>
   <data name="clickHere" xml:space="preserve">
-    <value>Click here</value>
+    <value>こちらをクリック</value>
   </data>
   <data name="uploadNow" xml:space="preserve">
-    <value>to upload now!</value>
+    <value>今すぐアップロード</value>
   </data>
   <data name="strNotAccessPage" xml:space="preserve">
-    <value>Sorry, You don't have permission to access this page.</value>
+    <value>申し訳ありません。このページにアクセスする権限がありません。</value>
   </data>
   <data name="Help" xml:space="preserve">
-    <value>Help</value>
+    <value>ヘルプ</value>
   </data>
   <data name="ContactUs" xml:space="preserve">
-    <value>Contact Us</value>
+    <value>お問い合わせ</value>
   </data>
   <data name="EditProfilePicture" xml:space="preserve">
-    <value>Profile Settings</value>
+    <value>プロフィール設定</value>
   </data>
   <data name="LoginOption" xml:space="preserve">
-    <value>Login option</value>
+    <value>ログインオプション</value>
   </data>
   <data name="password" xml:space="preserve">
     <value>パスワード</value>
   </data>
   <data name="SecurityCode" xml:space="preserve">
-    <value>Security Code</value>
+    <value>セキュリティコード</value>
   </data>
   <data name="OldView" xml:space="preserve">
-    <value>Old View</value>
+    <value>旧インターフェース</value>
   </data>
   <data name="accountInfo" xml:space="preserve">
-    <value>Account Info</value>
+    <value>アカウント情報</value>
   </data>
   <data name="mainMenu" xml:space="preserve">
-    <value>Main menu</value>
+    <value>主メニュー</value>
   </data>
   <data name="balanceInfo" xml:space="preserve">
-    <value>Balance Info</value>
+    <value>残高</value>
   </data>
   <data name="agent" xml:space="preserve">
     <value>エージェント</value>
@@ -182,211 +182,646 @@
     <value>マスター</value>
   </data>
   <data name="super" xml:space="preserve">
-    <value>Super </value>
+    <value>スーパー</value>
   </data>
   <data name="agentGivenCredit" xml:space="preserve">
-    <value>Agent Given Credit</value>
+    <value>エージェントの総クレジット限度額</value>
   </data>
   <data name="masterGivenCredit" xml:space="preserve">
-    <value>Master given credit</value>
+    <value>マスターの総クレジット限度額</value>
   </data>
   <data name="superGivenCredit" xml:space="preserve">
-    <value>Super given credit</value>
+    <value>スーパーの総クレジット限度額</value>
   </data>
   <data name="totalAgentCredit" xml:space="preserve">
-    <value>合計エージェント貸付</value>
+    <value>エージェント合計</value>
   </data>
   <data name="totalMasterCredit" xml:space="preserve">
-    <value>Total Master Credit</value>
+    <value>マスター合計</value>
   </data>
   <data name="totalMemberCredit" xml:space="preserve">
-    <value>合計メンバー貸付</value>
+    <value>メンバー合計</value>
   </data>
   <data name="cashBalance" xml:space="preserve">
-    <value>現金残高</value>
+    <value>残高</value>
   </data>
   <data name="currency" xml:space="preserve">
-    <value>Currency</value>
+    <value>通貨</value>
   </data>
   <data name="todayWinLoss" xml:space="preserve">
-    <value>Today Win Loss</value>
+    <value>今日の勝ち負け</value>
   </data>
   <data name="totalBalance" xml:space="preserve">
-    <value>合計残高</value>
+    <value>合計</value>
   </data>
   <data name="yesterdayBalance" xml:space="preserve">
-    <value>Yesterday Balance
-</value>
+    <value>昨日の残高</value>
   </data>
   <data name="yesterdayCashBalance" xml:space="preserve">
-    <value>Yesterday Cash Balance
-</value>
+    <value>昨日までの口座残高</value>
   </data>
   <data name="yesterdayTotalBalance" xml:space="preserve">
-    <value>Yesterday Total Balance
-</value>
+    <value>昨日までの総取引金額</value>
   </data>
   <data name="yesterdayWinLoss" xml:space="preserve">
-    <value>Yesterday Win Loss</value>
+    <value>昨日</value>
   </data>
   <data name="announcement" xml:space="preserve">
-    <value>Announcement</value>
+    <value>通知</value>
   </data>
   <data name="noInfo" xml:space="preserve">
-    <value>情報がありません</value>
+    <value>情報はありません</value>
   </data>
   <data name="more" xml:space="preserve">
-    <value>more</value>
+    <value>もっと</value>
   </data>
   <data name="totalActiveClosedSuspended" xml:space="preserve">
-    <value>Total active/closed/suspended</value>
+    <value>合計有効/解約/停止</value>
   </data>
   <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
-    <value>有効/閉鎖の合計エージェント</value>
+    <value>エージェント合計
+有効/解約/停止</value>
   </data>
   <data name="totalMasterACS" xml:space="preserve">
-    <value>Total Master active/closed/suspended</value>
+    <value>マスター合計
+有効/解約/停止</value>
   </data>
   <data name="statistics" xml:space="preserve">
-    <value>Statistics</value>
+    <value>統計</value>
   </data>
   <data name="highestTurnoverOfTheMonth" xml:space="preserve">
-    <value>Highest turnover members of the month</value>
+    <value>今月の売上高が最も高いメンバー</value>
   </data>
   <data name="newMemberOfTheMonth" xml:space="preserve">
-    <value>New members of the month</value>
+    <value>今月の新規メンバー</value>
   </data>
   <data name="superOutstanding" xml:space="preserve">
-    <value>Super Outstanding</value>
+    <value>スーパー</value>
   </data>
   <data name="top10WinningMembers" xml:space="preserve">
-    <value>Top 10 winning members</value>
+    <value>今月のトップ10勝利メンバー</value>
   </data>
   <data name="totalOutstanding" xml:space="preserve">
-    <value>合計未払い残高</value>
+    <value>未払い合計</value>
   </data>
   <data name="agentOutstanding" xml:space="preserve">
-    <value>エージェント未払い</value>
+    <value>エージェント</value>
   </data>
   <data name="masterOutstanding" xml:space="preserve">
-    <value>マスター未払い残高</value>
+    <value>マスター</value>
   </data>
   <data name="show" xml:space="preserve">
-    <value>Show</value>
+    <value>表示する</value>
   </data>
   <data name="member" xml:space="preserve">
-    <value>メンバー</value>
+    <value>メンバー </value>
   </data>
   <data name="turnover" xml:space="preserve">
-    <value>合計ベットポイント</value>
+    <value>賭金総額</value>
   </data>
   <data name="username" xml:space="preserve">
     <value>ユーザー名</value>
   </data>
   <data name="winningAmount" xml:space="preserve">
-    <value>Winning amount</value>
+    <value>勝ち額</value>
   </data>
   <data name="createdDate" xml:space="preserve">
-    <value>Create date</value>
+    <value>作成日</value>
   </data>
   <data name="givenCredit" xml:space="preserve">
-    <value>貸付金額</value>
+    <value>付与済み与信</value>
   </data>
   <data name="Notice_2" xml:space="preserve">
-    <value>Your betting limit value has been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines.</value>
+    <value>ベットリミット値がアップラインによって変更されました。&lt;br&gt;ご確認の上、ダウンラインの詳細をご確認ください。</value>
   </data>
   <data name="Notice_1_2" xml:space="preserve">
-    <value>Your minimum position taking and betting limit value have been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines.</value>
+    <value>あなたの最小保有ポジションとベットリミットの値が上層ラインによって変更されました。&lt;br&gt;ご確認いただき、下層ラインの詳細をご確認ください。</value>
   </data>
   <data name="Notice_1" xml:space="preserve">
-    <value>Your minimum position taking value has been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines.</value>
+    <value>あなたの最小保有ポジションの値が上層ラインによって変更されました。&lt;br&gt;ご確認のうえ、下層ラインの詳細をご確認ください。</value>
   </data>
   <data name="doNotShowAgain" xml:space="preserve">
-    <value>Do not show again</value>
+    <value>再表示しない</value>
   </data>
   <data name="PrivateMessage" xml:space="preserve">
-    <value>Private Message</value>
+    <value>プライベートメッセージ</value>
   </data>
   <data name="less" xml:space="preserve">
-    <value>less</value>
+    <value>少なく</value>
   </data>
   <data name="LogOut" xml:space="preserve">
-    <value>Log out</value>
+    <value>ログアウト</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>次へ</value>
   </data>
   <data name="submit" xml:space="preserve">
-    <value>送信</value>
+    <value>提出する</value>
   </data>
   <data name="to" xml:space="preserve">
-    <value>から</value>
+    <value>に</value>
   </data>
   <data name="from" xml:space="preserve">
-    <value>送金元</value>
+    <value>から</value>
   </data>
   <data name="outstanding" xml:space="preserve">
     <value>未払い</value>
   </data>
   <data name="NoInformationIsAvailable" xml:space="preserve">
-    <value>情報がありません</value>
+    <value>利用可能な情報はありません。</value>
   </data>
   <data name="Notice_3" xml:space="preserve">
-    <value>Your upline has enabled Fishing World for your downlines. Please go to setting page to configure your own PT settings.</value>
+    <value>あなたの上層ラインが、下層ライン向けにFishing Worldを有効にしました。設定ページにアクセスして、自分の保有ポジション設定を構成してください。</value>
   </data>
   <data name="highlights" xml:space="preserve">
-    <value>HIGHLIGHTS</value>
+    <value>ハイライト</value>
   </data>
   <data name="Total" xml:space="preserve">
     <value>合計</value>
   </data>
   <data name="ConfiguredNicknameSuccessfully" xml:space="preserve">
-    <value>Your nickname was configured successfully</value>
+    <value>あなたのニックネームは無事に設定されました。</value>
   </data>
   <data name="NicknameRule" xml:space="preserve">
-    <value>Nickname must be unique, only alphabet or numeric and should have at least a minimum of 5 characters and maximum of 20 characters.</value>
+    <value>ニックネームは一意である必要があり、アルファベットまたは数字のみ使用可能で、5文字以上20文字以下でなければなりません。</value>
   </data>
   <data name="NicknameCompanyPolicy" xml:space="preserve">
-    <value>To increase security and protect your account, you are required to login only by nickname.</value>
+    <value>セキュリティを強化し、アカウントを保護するため、ニックネームでのみログインする必要があります。</value>
   </data>
   <data name="NicknameEffectedFrom" xml:space="preserve">
-    <value>New policy will take effect from {0}.</value>
+    <value>新しい方針は {0} から施行されます。</value>
   </data>
   <data name="NicknameNote1" xml:space="preserve">
-    <value>You are not allowed to change your nickname afterward.</value>
+    <value>ニックネームを後から変更することはできません。</value>
   </data>
   <data name="NicknameNote2" xml:space="preserve">
-    <value>Only your direct upline can see your nickname.</value>
+    <value>あなたのニックネームは、直接の上層ラインだけが確認できます。</value>
   </data>
   <data name="SubAccNicknameNote2" xml:space="preserve">
-    <value>Only the main account user can see your nickname.</value>
+    <value>ニックネームはメインアカウントのユーザーのみが確認できます。</value>
   </data>
   <data name="NicknameOption1" xml:space="preserve">
-    <value>Login by username or nickname</value>
+    <value>ユーザー名またはニックネームでログイン</value>
   </data>
   <data name="NicknameOption2" xml:space="preserve">
-    <value>Login by nickname only</value>
+    <value>ニックネームのみでログイン</value>
   </data>
   <data name="NicknameSkipText" xml:space="preserve">
-    <value>Skip this step and go to Home Page</value>
+    <value>このステップをスキップしてホームページへ進む</value>
   </data>
   <data name="NicknameRules" xml:space="preserve">
-    <value>Nickname rules</value>
+    <value>ニックネーム規則</value>
   </data>
   <data name="PleaseChooseNickname" xml:space="preserve">
-    <value>Please choose your desired nickname</value>
+    <value>ご希望のニックネームをお選びください。</value>
   </data>
   <data name="PleaseSelectLoginByNickname" xml:space="preserve">
-    <value>Please select Login by nickname only</value>
+    <value>ニックネームのみでログインを選択してください。</value>
   </data>
   <data name="invalidCaptcha" xml:space="preserve">
-    <value>You input an invalid code</value>
+    <value>入力したコード「{0}」は無効です（「{1}」と比較中）。</value>
   </data>
   <data name="CreateMemberWithQRCode" xml:space="preserve">
-    <value>Create Member with QR Code</value>
+    <value>QRコードでメンバーを作成</value>
   </data>
   <data name="PendingTransfer3rd" xml:space="preserve">
-    <value>3rd Party Pending Transfer</value>
+    <value>第三者の保留中の振込</value>
+  </data>
+  <data name="ProfileClickTootip" xml:space="preserve">
+    <value>ここをクリックしてプロフィール設定を編集してください。</value>
+  </data>
+  <data name="ProfileLoginTip" xml:space="preserve">
+    <value>親愛なる代理店の皆様へ、
+当サイトを偽サイトと区別するため、デフォルトのプロフィール画像を設定いたしました。新しいプロフィール画像を選択するには、&lt;a class="change-picture-link" href="{0}" target="main" id="changePictureLink"&gt;こちらをクリック&lt;/a&gt;してください。&lt;/br&gt;さらに、言語設定を変更するには&lt;a class="change-picture-link" href="{1}" target="main"&gt;こちら&lt;/a&gt;をご利用ください&lt;/a&gt;。ご協力いただきありがとうございます。</value>
+  </data>
+  <data name="BrowserIsOutOfDate" xml:space="preserve">
+    <value>お使いのブラウザは古く、当ウェブサイトで正しく動作しない可能性があります。より良いサポートを受けるために、ぜひ新しいバージョンへのアップグレードを強くお勧めします。どうぞ、</value>
+  </data>
+  <data name="ClickToUpdateBrowser" xml:space="preserve">
+    <value>お使いのブラウザを更新するには、こちらをクリックしてください。</value>
+  </data>
+  <data name="BackOldViewText" xml:space="preserve">
+    <value>または、ホームページに移動するにはこちらをクリックしてください。</value>
+  </data>
+  <data name="ClickToBackOldView" xml:space="preserve">
+    <value>こちらをクリックして戻ってください。</value>
+  </data>
+  <data name="WarningOldViewDate" xml:space="preserve">
+    <value>古いバージョンはその日の終わりまで維持されます</value>
+  </data>
+  <data name="WarningText" xml:space="preserve">
+    <value>警告:</value>
+  </data>
+  <data name="TitleUnsupportBrowser" xml:space="preserve">
+    <value>ブラウザーの更新が必要です！
+</value>
+  </data>
+  <data name="HomeIconIntroduction" xml:space="preserve">
+    <value>ホームアイコン – ホームページへのアクセス</value>
+  </data>
+  <data name="TransferAndViewLogIntroduction" xml:space="preserve">
+    <value>「振込」と「ログ表示」は現在、メインメニューにあります。</value>
+  </data>
+  <data name="QuickMenuIntroduction" xml:space="preserve">
+    <value>アカウント設定へのクイックアクセス</value>
+  </data>
+  <data name="QuickMenu" xml:space="preserve">
+    <value>クイックメニュー</value>
+  </data>
+  <data name="SwitchView" xml:space="preserve">
+    <value>表示を切り替える</value>
+  </data>
+  <data name="BackOldViewIntroduction" xml:space="preserve">
+    <value>この新しいインターフェースにまだ慣れていませんか？ここをクリックして戻ってください。</value>
+  </data>
+  <data name="WarningOldVersionDeadline" xml:space="preserve">
+    <value>注意: 旧バージョンは〜までしか利用できません</value>
+  </data>
+  <data name="MainMenuIntroduction" xml:space="preserve">
+    <value>論理的な順序ですべてを一箇所にまとめて。</value>
+  </data>
+  <data name="ReportMenuIntroduction" xml:space="preserve">
+    <value>報告書の新機能は何ですか？こちらをクリックしてください。</value>
+  </data>
+  <data name="WinLossAnalysisChartIntroduction" xml:space="preserve">
+    <value>勝ち負け分析チャートはこちらです。</value>
+  </data>
+  <data name="CollapseExpandIcon" xml:space="preserve">
+    <value>折りたたみ/展開アイコン</value>
+  </data>
+  <data name="CollapseExpandIconIntroduction" xml:space="preserve">
+    <value>クリックしてスペースを解放してください。</value>
+  </data>
+  <data name="MainIntroductionTitle" xml:space="preserve">
+    <value>新しい外観と操作感をお試しください。</value>
+  </data>
+  <data name="MainIntroductionDescription" xml:space="preserve">
+    <value>より視覚的で便利です。</value>
+  </data>
+  <data name="NotNow" xml:space="preserve">
+    <value>今は違います</value>
+  </data>
+  <data name="QuickTour" xml:space="preserve">
+    <value>クイックツアー</value>
+  </data>
+  <data name="TransferMenuIntroduction" xml:space="preserve">
+    <value>振込は現在メインメニューにあります。</value>
+  </data>
+  <data name="ViewLogMenuIntroduction" xml:space="preserve">
+    <value>ログの表示は現在メインメニューにあります。</value>
+  </data>
+  <data name="ShowMainMenu" xml:space="preserve">
+    <value>メインメニューを表示</value>
+  </data>
+  <data name="GotIt" xml:space="preserve">
+    <value>わかりました</value>
+  </data>
+  <data name="Replay" xml:space="preserve">
+    <value>リプレイ</value>
+  </data>
+  <data name="Skip" xml:space="preserve">
+    <value>スキップ</value>
+  </data>
+  <data name="ReplayInstruction" xml:space="preserve">
+    <value>アイコンをクリックすることで、このツアーをもう一度再生できます。</value>
+  </data>
+  <data name="TakeTourInstruction" xml:space="preserve">
+    <value>このアイコンをクリックするとツアーを開始できます。</value>
+  </data>
+  <data name="QuickTourTooltip" xml:space="preserve">
+    <value>クイックツアー</value>
+  </data>
+  <data name="UpdatedSuccessfully" xml:space="preserve">
+    <value>正常に更新されました。</value>
+  </data>
+  <data name="lblBack" xml:space="preserve">
+    <value>戻る</value>
+  </data>
+  <data name="lblChangePassword" xml:space="preserve">
+    <value>パスワード変更</value>
+  </data>
+  <data name="lblresetpassword" xml:space="preserve">
+    <value>パスワードをリセット</value>
+  </data>
+  <data name="balance" xml:space="preserve">
+    <value>残高</value>
+  </data>
+  <data name="winloss" xml:space="preserve">
+    <value>勝ち負け</value>
+  </data>
+  <data name="credit" xml:space="preserve">
+    <value>与信</value>
+  </data>
+  <data name="memberInfo" xml:space="preserve">
+    <value>メンバー情報</value>
+  </data>
+  <data name="notice" xml:space="preserve">
+    <value>通知</value>
+  </data>
+  <data name="stats" xml:space="preserve">
+    <value>統計</value>
+  </data>
+  <data name="personalMessage" xml:space="preserve">
+    <value>個人メッセージ</value>
+  </data>
+  <data name="specialNotice" xml:space="preserve">
+    <value>特別通知</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>メッセージ</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>有効化済み</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>無効化済み</value>
+  </data>
+  <data name="ThereIsNoChange" xml:space="preserve">
+    <value>更新する変更はありません。</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="active" xml:space="preserve">
+    <value>有効</value>
+  </data>
+  <data name="closed" xml:space="preserve">
+    <value>閉鎖的</value>
+  </data>
+  <data name="suspended" xml:space="preserve">
+    <value>サスペンド済み</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>ロード中</value>
+  </data>
+  <data name="searchAccount" xml:space="preserve">
+    <value>アカウントを検索</value>
+  </data>
+  <data name="viewMessage" xml:space="preserve">
+    <value>メッセージを見る</value>
+  </data>
+  <data name="viewAnnouncement" xml:space="preserve">
+    <value>告知を見る</value>
+  </data>
+  <data name="changeLanguage" xml:space="preserve">
+    <value>言語を変更</value>
+  </data>
+  <data name="normalAnnouncement" xml:space="preserve">
+    <value>特別告知</value>
+  </data>
+  <data name="specialAnnouncement" xml:space="preserve">
+    <value>通常告知</value>
+  </data>
+  <data name="firstName" xml:space="preserve">
+    <value>名</value>
+  </data>
+  <data name="lastName" xml:space="preserve">
+    <value>姓</value>
+  </data>
+  <data name="NoPermissionAccessPage" xml:space="preserve">
+    <value>申し訳ありませんが、このページにアクセスする権限がありません。</value>
+  </data>
+  <data name="Request" xml:space="preserve">
+    <value>要求</value>
+  </data>
+  <data name="lblNew" xml:space="preserve">
+    <value>新しい</value>
+  </data>
+  <data name="systemUpdate" xml:space="preserve">
+    <value>システム</value>
+  </data>
+  <data name="DataProcessingNotification" xml:space="preserve">
+    <value>データ処理の通知</value>
+  </data>
+  <data name="DataProcessingIsInProgress" xml:space="preserve">
+    <value>データ処理が進行しております。</value>
+  </data>
+  <data name="IamNotARobot" xml:space="preserve">
+    <value>私はロボットではありません。</value>
+  </data>
+  <data name="UMAnnouncementTitle" xml:space="preserve">
+    <value>メンテナンスのお知らせ</value>
+  </data>
+  <data name="UMFrom" xml:space="preserve">
+    <value>から</value>
+  </data>
+  <data name="UMSchedule" xml:space="preserve">
+    <value>計画されたメンテナンスが実施されます（GMT +8）。この間、これらの機能は使用できません。</value>
+  </data>
+  <data name="UMSorryForInconvenience" xml:space="preserve">
+    <value>ご不便をおかけして申し訳ございません。</value>
+  </data>
+  <data name="UMTo" xml:space="preserve">
+    <value>に</value>
+  </data>
+  <data name="AllProducts" xml:space="preserve">
+    <value>全製品</value>
+  </data>
+  <data name="UMCustomerSettingsPattern" xml:space="preserve">
+    <value>&lt;strong&gt;Product&lt;/strong&gt; の &lt;strong&gt;SettingType&lt;/strong&gt;: &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; から &lt;span class="um-message-time"&gt;{1}&lt;/span&gt; までご利用いただけません。</value>
+  </data>
+  <data name="UMTransferPattern" xml:space="preserve">
+    <value>&lt;strong&gt;振込&lt;/strong&gt;: &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; から &lt;span class="um-message-time"&gt;{1}&lt;/span&gt; までご利用いただけません。</value>
+  </data>
+  <data name="UMNewAccountPattern" xml:space="preserve">
+    <value>&lt;strong&gt;新規アカウント&lt;/strong&gt;: &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; から &lt;span class="um-message-time"&gt;{1}&lt;/span&gt; までご利用いただけません。</value>
+  </data>
+  <data name="UMDearValuedCustomers" xml:space="preserve">
+    <value>大切なお客様へ</value>
+  </data>
+  <data name="DashboardViewOverallInformation" xml:space="preserve">
+    <value>{0} をクリックして全体情報をご確認ください。</value>
+  </data>
+  <data name="PartialUMAnnouncement" xml:space="preserve">
+    <value>より良い体験を提供するため、この機能をアップデート中です。そのため、この機能は一時的に停止しています（{0} - {1} (GMT+8)）。後ほどお試しください。ご不便をおかけして申し訳ございません。</value>
+  </data>
+  <data name="LiveMessage" xml:space="preserve">
+    <value>ライブメッセージ</value>
+  </data>
+  <data name="NewProtectionCode" xml:space="preserve">
+    <value>新しい保護コード</value>
+  </data>
+  <data name="ProtectionCode" xml:space="preserve">
+    <value>保護コード</value>
+  </data>
+  <data name="ConfirmProtectionCode" xml:space="preserve">
+    <value>保護コードを確定</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>作成</value>
+  </data>
+  <data name="NotMatchedConfirmProtectionCode" xml:space="preserve">
+    <value>それらの保護コードが一致しません。</value>
+  </data>
+  <data name="ProtectionCodeRule" xml:space="preserve">
+    <value>保護コードは6文字以上で、セキュリティコードと同じでも構いませんが、パスワードと同じにはできません。</value>
+  </data>
+  <data name="RequiredNewProtectionCode" xml:space="preserve">
+    <value>新しい保護コードが必要です。</value>
+  </data>
+  <data name="ShowProtectionCode" xml:space="preserve">
+    <value>保護コードを表示</value>
+  </data>
+  <data name="MinLengthNewProtectionCodeError" xml:space="preserve">
+    <value>保護コードは6文字以上である必要があります。</value>
+  </data>
+  <data name="RequiredConfirmProtectionCode" xml:space="preserve">
+    <value>保護コードの確定が必要とされています</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>更新する</value>
+  </data>
+  <data name="UpdateProtectionCodeSuccessfully" xml:space="preserve">
+    <value>保護コードにはUnicode文字やスペースを含めてはいけません。</value>
+  </data>
+  <data name="ContainsSpaceOrUnicodeCharacterError" xml:space="preserve">
+    <value>保護コードにはUnicode文字やスペースを含めてはいけません。</value>
+  </data>
+  <data name="ContactUs_Content" xml:space="preserve">
+    <value>カスタマーサービスのスペシャリストが代理店サイトで発生するご質問に対応いたします。</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>ダウンロード</value>
+  </data>
+  <data name="LetstalkIMID" xml:space="preserve">
+    <value>Letstalk IM ID</value>
+  </data>
+  <data name="SkypeID" xml:space="preserve">
+    <value>Skype ID</value>
+  </data>
+  <data name="ContactUsLegend" xml:space="preserve">
+    <value>より良いセキュリティのために</value>
+  </data>
+  <data name="AdvertisementMyWatchlist" xml:space="preserve">
+    <value>&lt;b&gt;簡単に&lt;/b&gt;&lt;b&gt;私のしきい値&lt;/b&gt;で勝敗をモニタリングしましょう。</value>
+  </data>
+  <data name="AdvertisementMyWatchlistGlobalThreshold" xml:space="preserve">
+    <value>私のしきい値: 保有ポジションに基づいて勝ち / 負けのしきい値を設定</value>
+  </data>
+  <data name="AdvertisementMyWatchlistGlobalThresholdDetail" xml:space="preserve">
+    <value>b&gt;リスク管理&lt;/b&gt; --&gt; 私のしきい値 --&gt; 勝ち / 負けのしきい値を設定</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>詳細を確認</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>はい</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>いいえ</value>
+  </data>
+  <data name="AdvertisementMyWatchlistGlobalThresholdDetailAgent" xml:space="preserve">
+    <value>&lt;b&gt;リスク管理&lt;/b&gt; --&gt; マイウォッチリスト - 私のしきい値 --&gt; 勝ち / 負けのしきい値を設定</value>
+  </data>
+  <data name="Feedback" xml:space="preserve">
+    <value>フィードバック</value>
+  </data>
+  <data name="FeedbackTitle" xml:space="preserve">
+    <value>改善にご協力ください！</value>
+  </data>
+  <data name="LoveToHear" xml:space="preserve">
+    <value>あなたからの声をお聞かせください。</value>
+  </data>
+  <data name="CheckOut" xml:space="preserve">
+    <value>チェックアウトする</value>
+  </data>
+  <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
+    <value>簡単に参照できる&lt;b&gt;統合ガイドライン&lt;/b&gt;と&lt;b&gt;用語集&lt;/b&gt;を見つけましょう。</value>
+  </data>
+  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
+    <value>&lt;b&gt;ワンストップハンドブック&lt;/b&gt;を探検しよう！</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>開始する</value>
+  </data>
+  <data name="SessionExpired" xml:space="preserve">
+    <value>ログインがタイムアウトしました。</value>
+  </data>
+  <data name="FeedbackOnFunctionTitle" xml:space="preserve">
+    <value>{0} の改善にご協力ください。</value>
+  </data>
+  <data name="WinLossDetailReport" xml:space="preserve">
+    <value>勝ち負け詳細報告書</value>
+  </data>
+  <data name="Here" xml:space="preserve">
+    <value>ここ</value>
+  </data>
+  <data name="minAgo" xml:space="preserve">
+    <value>1分前</value>
+  </data>
+  <data name="minsAgo" xml:space="preserve">
+    <value>～分前</value>
+  </data>
+  <data name="hoursAgo" xml:space="preserve">
+    <value>～時間前</value>
+  </data>
+  <data name="daysAgo" xml:space="preserve">
+    <value>～日前</value>
+  </data>
+  <data name="SetupChatbot" xml:space="preserve">
+    <value>チャットボットを設定</value>
+  </data>
+  <data name="WhiteLabel_Intro" xml:space="preserve">
+    <value>わずか&lt;span&gt;&lt;strong&gt;3&lt;/strong&gt;日未満&lt;/span&gt;で、自分だけの&lt;span&gt;ホワイトラベル&lt;/span&gt;プラットフォームを立ち上げましょう。</value>
+  </data>
+  <data name="TurnkeySolution" xml:space="preserve">
+    <value>ターンキーソリューション</value>
+  </data>
+  <data name="TurnkeySolution_Description" xml:space="preserve">
+    <value>わずか3日以内で、自分だけのゲームブランドを簡単に立ち上げ、カスタマイズできます。</value>
+  </data>
+  <data name="NoBadDebt" xml:space="preserve">
+    <value>不良債権なし</value>
+  </data>
+  <data name="NoBadDebt_Description" xml:space="preserve">
+    <value>プレイヤーの前払い入金により、ビジネスの不良債権リスクを排除します。</value>
+  </data>
+  <data name="RichProductsCollection" xml:space="preserve">
+    <value>豊かな製品のコレクション</value>
+  </data>
+  <data name="RichProductsCollection_Description" xml:space="preserve">
+    <value>幅広いゲームと製品でプレイヤーをワクワクさせましょう。</value>
+  </data>
+  <data name="Interested" xml:space="preserve">
+    <value>興味がありますか？</value>
+  </data>
+  <data name="ContactCSD" xml:space="preserve">
+    <value>詳しくは顧客サービス部門（CSD）までお問い合わせください！</value>
+  </data>
+  <data name="NovaCasinoBriefIntroduction" xml:space="preserve">
+    <value>Nova Casinoは新しいプラットフォームで、マルチエージェントモードをサポートしています。
+今すぐ申請して、さらに多くのダウンラインとプレイヤーを作成しましょう！&lt;br&gt;&lt;br&gt;
+注意: エージェントサイトのNova Casinoバックオフィスで「申請」を初めてクリックした際に、必ず&lt;b&gt;パスワード&lt;/b&gt;を変更してください。ありがとうございます。</value>
+  </data>
+  <data name="Reward" xml:space="preserve">
+    <value>賞金</value>
+  </data>
+  <data name="RewardPayableTooltip" xml:space="preserve">
+    <value>ダウンラインに分配できる金額</value>
+  </data>
+  <data name="SyncedNovaCasinoPersonalMessage" xml:space="preserve">
+    <value>親愛なるエージェントの皆様へ、
+
+あなたのダウンライン「{0}」がNova Casinoに正常に参加しました。円滑な処理を確保するために、速やかにスコアを提供してください。
+
+ご不明な点がございましたら、カスタマーサービス部門までお問い合わせください。
+
+引き続きご協力いただき、ありがとうございます！</value>
+  </data>
+  <data name="SystemUnderMaintenance" xml:space="preserve">
+    <value>システムは現在メンテナンス中です。メンテナンス時間: {0} - {1} (GMT+8)。後ほど再試行してください。[503]</value>
+  </data>
+  <data name="RewardReceivableTooltip" xml:space="preserve">
+    <value>アップラインから受け取れる金額。</value>
+  </data>
+  <data name="InternalServerError" xml:space="preserve">
+    <value>エラーが発生しました。サポートが必要な場合は、カスタマーサービス部門までお問い合わせください。ありがとうございます。[500]</value>
+  </data>
+  <data name="RewardPayable" xml:space="preserve">
+    <value>支払うべき賞金</value>
+  </data>
+  <data name="RewardReceivable" xml:space="preserve">
+    <value>未収賞金</value>
   </data>
   <data name="NotSetupWhiteLabelMessage" xml:space="preserve">
     <value>ホワイトラベルのビジネスにはまだご登録いただいておりません。 サポートが必要な場合は、弊社のカスタマーサービス部門までお問い合わせください。</value>

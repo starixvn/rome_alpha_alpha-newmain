@@ -468,6 +468,7 @@
     <EmbeddedResource Include="AppResources\Alpha.sitemap.zh-TW.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\ApiKey.ja-JP.resx" />
     <EmbeddedResource Include="AppResources\ApiKey.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ApiKey.Designer.cs</LastGenOutput>

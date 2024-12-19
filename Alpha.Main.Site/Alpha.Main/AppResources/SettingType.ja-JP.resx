@@ -118,66 +118,81 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="_0" xml:space="preserve">
-    <value>Customer Settings</value>
+    <value>顧客設定</value>
   </data>
   <data name="_1" xml:space="preserve">
-    <value>Position Taking</value>
+    <value>保有ポジション</value>
   </data>
   <data name="_10" xml:space="preserve">
-    <value>手数料</value>
+    <value>コミッション</value>
   </data>
   <data name="_11" xml:space="preserve">
-    <value>Product Status</value>
+    <value>製品ステータス</value>
   </data>
   <data name="_12" xml:space="preserve">
-    <value>Win Loss Limit</value>
+    <value>勝ち負け制限</value>
   </data>
   <data name="_13" xml:space="preserve">
-    <value>Product Status</value>
+    <value>製品ステータス</value>
   </data>
   <data name="_14" xml:space="preserve">
-    <value>手数料</value>
+    <value>コミッション</value>
   </data>
   <data name="_15" xml:space="preserve">
-    <value>手数料</value>
+    <value>コミッション</value>
   </data>
   <data name="_16" xml:space="preserve">
-    <value>Bet Setting</value>
+    <value>ベット設定</value>
   </data>
   <data name="_17" xml:space="preserve">
-    <value>Stake Level</value>
+    <value>賭け金レベル</value>
   </data>
   <data name="_18" xml:space="preserve">
-    <value>Position Taking</value>
+    <value>保有ポジション</value>
   </data>
   <data name="_19" xml:space="preserve">
-    <value>手数料</value>
+    <value>コミッション</value>
   </data>
   <data name="_2" xml:space="preserve">
-    <value>Bet Setting</value>
+    <value>ベット設定</value>
   </data>
   <data name="_22" xml:space="preserve">
-    <value>Win Loss Limit</value>
+    <value>勝ち負け制限</value>
   </data>
   <data name="_3" xml:space="preserve">
-    <value>手数料</value>
+    <value>コミッション</value>
   </data>
   <data name="_4" xml:space="preserve">
-    <value>Product Status</value>
+    <value>製品ステータス</value>
   </data>
   <data name="_5" xml:space="preserve">
-    <value>手数料</value>
+    <value>コミッション</value>
   </data>
   <data name="_6" xml:space="preserve">
-    <value>Win Loss Limit</value>
+    <value>勝ち負け制限</value>
   </data>
   <data name="_7" xml:space="preserve">
-    <value>Stake Level</value>
+    <value>賭け金レベル</value>
   </data>
   <data name="_8" xml:space="preserve">
-    <value>Stake Level</value>
+    <value>賭け金レベル</value>
   </data>
   <data name="_9" xml:space="preserve">
-    <value>Bet Setting</value>
+    <value>ベット設定</value>
+  </data>
+  <data name="_23" xml:space="preserve">
+    <value>ベット設定</value>
+  </data>
+  <data name="_25" xml:space="preserve">
+    <value>コミッション</value>
+  </data>
+  <data name="_26" xml:space="preserve">
+    <value>ベット設定</value>
+  </data>
+  <data name="_27" xml:space="preserve">
+    <value>パーレイ最大ペイアウト</value>
+  </data>
+  <data name="_28" xml:space="preserve">
+    <value>保有ポジション</value>
   </data>
 </root>

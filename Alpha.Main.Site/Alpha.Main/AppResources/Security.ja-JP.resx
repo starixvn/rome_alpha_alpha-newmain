@@ -118,186 +118,389 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="alertErrorSecCodeConfirm" xml:space="preserve">
-    <value>Security Codes do not match.</value>
+    <value>セキュリティコードが一致しません</value>
   </data>
   <data name="alertForcedChangeSCTitle" xml:space="preserve">
-    <value>You're required to change Security Code. Your new Security Code must be different from the one provided by your upline/CSD.&lt;br/&gt;
-Please use the form below to change your Security Code now.</value>
+    <value>あなたにはログインするたびに認証を行うためのセキュリティコードを設定することが求められています。&lt;br/&gt; 以下のフォームを使用して、今すぐセキュリティコードを設定してください。</value>
   </data>
   <data name="alertForcedChangeSCWithoutValidationTitle" xml:space="preserve">
-    <value>You're required to set your Security Code to authenticate later each time you log-in.&lt;br/&gt;
-Please use the form below to set your Security Code now.</value>
+    <value>あなたにはログインするたびに認証を行うためのセキュリティコードを設定することが求められています。</value>
   </data>
   <data name="alertInputWrongSecCode" xml:space="preserve">
-    <value>Wrong Security Code. Please try again.</value>
+    <value>誤ったセキュリティコードです。再度お試しください。</value>
   </data>
   <data name="alertOldSecCodeEmpty" xml:space="preserve">
-    <value>Please enter old Security Code</value>
+    <value>古いセキュリティコードを入力してください。</value>
   </data>
   <data name="alertSameSecCode" xml:space="preserve">
-    <value>Your new Security Code must be different from the current one.</value>
+    <value>新しいセキュリティコードは、現在のコードと違うものでなければなりません。</value>
   </data>
   <data name="alertSecCodeChangedOK" xml:space="preserve">
-    <value>Your Security Code has been changed successfully.</value>
+    <value>セキュリティコードが変更されました。</value>
   </data>
   <data name="alertSecCodeEmpty" xml:space="preserve">
-    <value>This field is required.</value>
+    <value>このフィールドは必須です。</value>
   </data>
   <data name="ConfirmSecurityCode" xml:space="preserve">
-    <value>Confirm Security Code</value>
+    <value>セキュリティコードを確定</value>
   </data>
   <data name="informSecCode" xml:space="preserve">
-    <value>Please input your security code before proceeding!</value>
+    <value>操作を進める前にセキュリティコードを入力してください！</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
-    <value>The Security Code does not meet the security requirements.</value>
+    <value>セキュリティコードがセキュリティ要件を満たしていません。</value>
   </data>
   <data name="oldSecCode" xml:space="preserve">
-    <value>Old Security Code</value>
+    <value>古いセキュリティコード</value>
   </data>
   <data name="titleResetSecCode" xml:space="preserve">
-    <value>Reset Security Code</value>
+    <value>セキュリティコードをリセット</value>
   </data>
   <data name="Reset" xml:space="preserve">
     <value>リセット</value>
   </data>
   <data name="Submit" xml:space="preserve">
-    <value>送信</value>
+    <value>提出する</value>
   </data>
   <data name="titleVerifySecurityCode" xml:space="preserve">
-    <value>Security Code Validation</value>
+    <value>セキュリティコードの有効性確認</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
-    <value>Learn more</value>
+    <value>詳細を確認</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>パスワード</value>
   </data>
   <data name="SecurityCodeValidation" xml:space="preserve">
-    <value>Security Code Validation</value>
+    <value>セキュリティコードの有効性確認</value>
   </data>
   <data name="NotAuthorized" xml:space="preserve">
-    <value>You are not authorized on this function</value>
+    <value>この機能を使用する権限がありません。</value>
   </data>
   <data name="SecurityCodeShower" xml:space="preserve">
-    <value>Hi {0}, please input the security code provided by your upline and create your own one.</value>
+    <value>{0}さん、セキュリティコードがリセットされました。新しいコードを設定してください。</value>
   </data>
   <data name="errUserName" xml:space="preserve">
-    <value>ユーザー名とパスワードを入力してください</value>
+    <value>ユーザー名とパスワードを入力してください。</value>
   </data>
   <data name="lblConfirmClosed" xml:space="preserve">
-    <value>Your account was closed so you're forced to logout. Please contact your upline for the assistance.</value>
+    <value>アカウントが閉鎖されたため、強制的にログアウトされました。上層ラインに連絡してサポートを受けてください。</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>入力</value>
   </data>
   <data name="loginWrong5Times" xml:space="preserve">
-    <value>You have entered wrong user name / password 6 times, please try again after 5 minutes.</value>
+    <value>ユーザー名またはパスワードを6回間違えました。5分後に再度お試しください。</value>
   </data>
   <data name="stringSessionLogged" xml:space="preserve">
-    <value>... Another session has been logged in ...\n Your session will be terminated!!! \n If that is not you, please contact your upline!!!</value>
+    <value>アカウントが別のセッションにログインされたため、ログアウトされました。このアクティビティに心当たりがない場合は、上層ラインに連絡してください</value>
   </data>
   <data name="undermaintenance" xml:space="preserve">
-    <value>We are having server maintenance, website will be unavailable from {0} until {1}. Sorry for the inconveniences caused!</value>
+    <value>現在サーバーメンテナンス中のため、ウェブサイトは{0}から{1}まで利用できません。ご不便をおかけして申し訳ありません！</value>
   </data>
   <data name="alertErrorConfirm" xml:space="preserve">
-    <value>パスワードが正しくありません。</value>
+    <value>パスワードが正しく確認されませんでした。</value>
   </data>
   <data name="alertInputOldPwd" xml:space="preserve">
-    <value>古いパスワードを入力してください</value>
+    <value>古いパスワードを入力してください！！！</value>
   </data>
   <data name="alertPasswordEmpty" xml:space="preserve">
-    <value>申し訳ございません 。パスワードを必ず入力してください!!!</value>
+    <value>申し訳ありませんが、パスワードを空にすることはできません！！！</value>
   </data>
   <data name="forcechangepwd" xml:space="preserve">
-    <value>You have to change your password at the first login.</value>
+    <value>初回ログイン時にパスワードを変更する必要があります。</value>
   </data>
   <data name="lblPasswordChangedOK" xml:space="preserve">
-    <value>Your password has been changed successfully.</value>
+    <value>パスワードが正常に変更されました。</value>
   </data>
   <data name="lblPasswordDAccountName" xml:space="preserve">
-    <value>Your password must not contain your username or nickname.</value>
+    <value>パスワードにはユーザー名またはニックネームを含めてはいけません。</value>
   </data>
   <data name="lblPasswordDOldOne" xml:space="preserve">
-    <value>Your new password must be totally different from your current one.</value>
+    <value>新しいパスワードは現在のパスワードと完全に異なるものである必要があります。</value>
   </data>
   <data name="lblPasswordExpired" xml:space="preserve">
-    <value>Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, we have decided to implement a password reset. 
-Please use the form below to change your password now.</value>
+    <value>お客様のセキュリティおよびプライバシーを最優先に考えています。そのため、データを保護するためにセキュリティ対策を継続的に改善しています。このため、パスワードリセットを行うことにしました。以下のフォームをご利用いただき、パスワードを変更してください。</value>
   </data>
   <data name="lblPasswordHint" xml:space="preserve">
-    <value>Note: You're strongly recommended to change your password periodically to enhance security.</value>
+    <value>注意: セキュリティを強化するため、定期的にパスワードを変更することを強くお勧めします。</value>
   </data>
   <data name="lblPasswordWrongRule" xml:space="preserve">
-    <value>Your password does not meet the minimum security requirement.</value>
+    <value>パスワードが最低限のセキュリティ要件を満たしていません。</value>
   </data>
   <data name="lblConfirmPassword" xml:space="preserve">
-    <value>パスワードの確認</value>
+    <value>パスワードを確認</value>
   </data>
   <data name="lblOldPassword" xml:space="preserve">
     <value>古いパスワード</value>
   </data>
   <data name="NewPassword" xml:space="preserve">
-    <value>パスワード</value>
+    <value>新規パスワード</value>
   </data>
   <data name="PasswordHint01" xml:space="preserve">
-    <value>Password must be at least 8 characters without white-space and contain at least 3 of the following:</value>
+    <value>パスワードは少なくとも8文字以上で、空白を含まず、以下のうち少なくとも3つを含める必要があります：</value>
   </data>
   <data name="PasswordHint02" xml:space="preserve">
-    <value>&lt;li&gt;Uppercase letter [A-Z]&lt;/li&gt;
-&lt;li&gt;Lowercase letter [a-z]&lt;/li&gt;
-&lt;li&gt;Numeric [0-9]&lt;/li&gt;
-&lt;li&gt;Special character (!,,#,etc..)&lt;/li&gt;</value>
+    <value>&lt;li&gt;大文字 [A-Z]&lt;/li&gt;
+&lt;li&gt;小文字 [a-z]&lt;/li&gt; 
+&lt;li&gt;数字 [0-9]&lt;/li&gt; 
+&lt;li&gt;特殊文字 (!, #, など)&lt;/li&gt;</value>
   </data>
   <data name="PasswordHint03" xml:space="preserve">
-    <value>&lt;p&gt;&lt;strong&gt;For example&lt;/strong&gt;: 59D7!4$h, 493abcDE&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: your password is cAsE sEnSiTiVe&lt;/p&gt;</value>
+    <value>&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt;: 59D7!4$h, 493abcDE&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;: パスワードは大文字と小文字を区別します&lt;/p&gt;</value>
   </data>
   <data name="PasswordRules" xml:space="preserve">
-    <value>Password rules</value>
+    <value>パスワード規則</value>
   </data>
   <data name="PasswordShower" xml:space="preserve">
-    <value>hi {0}, please create your own password</value>
+    <value>{0}さん、パスワードを変更してください。</value>
   </data>
   <data name="lblBack" xml:space="preserve">
     <value>戻る</value>
   </data>
   <data name="lblChangePassword" xml:space="preserve">
-    <value>パスワードの変更</value>
+    <value>パスワードを変更</value>
   </data>
   <data name="lblresetpassword" xml:space="preserve">
-    <value>Reset Password</value>
+    <value>パスワードをリセット</value>
   </data>
   <data name="lblPasswordRequire" xml:space="preserve">
-    <value>Password must be at least 8 characters without white-space and contain at least 3 of the following:
-
-  • Uppercase letter [A-Z] 
-  • Lowercase letter [a-z] 
-  • Numeric [0-9] 
-  • Special character (!,@,#,etc..)
-
-For example: 59D7!4$h, 493abcDE
-Notes: your password is cAsE sEnSiTiVe</value>
+    <value>パスワードは少なくとも8文字以上で、空白を含まず、以下のうち3つ以上を含む必要があります：
+・大文字 [A-Z]
+・小文字 [a-z]
+・数字 [0-9]
+・特殊文字 (!,@,#など)
+例: 59D7!4$h, 493abcDE
+注意: パスワードは大文字小文字を区別します。</value>
   </data>
   <data name="createSecurityCode" xml:space="preserve">
-    <value>Please create a Security Code which will be asked for any setting updates to make sure it is you.</value>
+    <value>設定を更新する際に本人確認のために使用されるセキュリティコードを作成してください。</value>
   </data>
   <data name="SecurityCodeRules02" xml:space="preserve">
-    <value>For example: 123456, 765432, 456789, etc. are NOT allowed.</value>
+    <value>例えば: 123456、765432、456789 などは使用できません。</value>
   </data>
   <data name="KickoutMessageByForceChangePassword" xml:space="preserve">
-    <value>You have been logged out because your account's password has been reset by your upline. Please log in again with the new password. If you have any questions, please contact your upline for assistance.</value>
+    <value>あなたのアカウントのパスワードが上層ラインによってリセットされたため、ログアウトされました。新しいパスワードで再度ログインしてください。ご不明な点がある場合は、上層ラインにお問い合わせください。</value>
   </data>
   <data name="VerifySecurityCodeShower" xml:space="preserve">
-    <value>Hi {0}</value>
+    <value>やあ、{0}さん</value>
   </data>
   <data name="SkipForceChangePasswordPlaceHolder" xml:space="preserve">
-    <value>Type "OK" to skip and accept the risk</value>
+    <value>「OK」と入力してスキップし、リスクを受け入れてください。</value>
   </data>
   <data name="SkipForceChangePasswordWarning" xml:space="preserve">
-    <value>Are you sure you want to keep your current password? Your security may be at risk if you don't change your password frequently.</value>
+    <value>古いパスワードを保持することに確信がありますか？頻繁にパスワードを変更しないと、セキュリティリスクが高まります。</value>
   </data>
   <data name="lblConfirmLocked" xml:space="preserve">
-    <value>Your account is locked and forced to log out due to multiple failed security checks. Please contact your upline to unlock.</value>
+    <value>あなたのアカウントは複数回のセキュリティチェック失敗によりロックされ、強制ログアウトされました。解除するには上層ラインにお問い合わせください。</value>
+  </data>
+  <data name="SecurityCode" xml:space="preserve">
+    <value>セキュリティコード</value>
+  </data>
+  <data name="SecurityCodeRules" xml:space="preserve">
+    <value>セキュリティコード規則</value>
+  </data>
+  <data name="SecurityCodeRules01" xml:space="preserve">
+    <value>セキュリティコードは6桁の数字で、少なくとも2種類の異なる数字を含み、連続した数字であってはいけません。</value>
+  </data>
+  <data name="ShowPassword" xml:space="preserve">
+    <value>パスワードを表示</value>
+  </data>
+  <data name="ShowSecurityCode" xml:space="preserve">
+    <value>セキュリティコードを表示</value>
+  </data>
+  <data name="PasswordHint04" xml:space="preserve">
+    <value>パスワードは6～10文字で、空白を含まず、少なくとも1つの大文字、1つの小文字、1つの数字を含める必要があります。（例: 493abcDE, 59D7!4$h）
+注意: パスワードは大文字と小文字を区別します。</value>
+  </data>
+  <data name="OtpHiMessage" xml:space="preserve">
+    <value>{0}さん、前回とは異なるデバイスまたはブラウザでログインしています。続行するにはOTPが必要です。</value>
+  </data>
+  <data name="InputOtpBeforeProceeding" xml:space="preserve">
+    <value>先に進む前にOTPを入力してください！</value>
+  </data>
+  <data name="OtpNotes" xml:space="preserve">
+    <value>センシティブな操作を実行する場合や異なるデバイス/ブラウザでログインする際にOTPが必要となります。OTP通知を有効にする前に、アカウントをモバイル認証アプリに追加するか、Telegramチャットボットと連携してください。</value>
+  </data>
+  <data name="RegisterMobileApplication" xml:space="preserve">
+    <value>モバイル認証アプリでOTPを設定する</value>
+  </data>
+  <data name="DownloadGoogleAuthenticator" xml:space="preserve">
+    <value>お使いのデバイスにGoogle Authenticatorをダウンロードしてください。</value>
+  </data>
+  <data name="GoogleAuthenticator" xml:space="preserve">
+    <value>Google Authenticator</value>
+  </data>
+  <data name="OtherAuthenticators" xml:space="preserve">
+    <value>SophosやMicrosoft Authenticatorなどの他の二要素認証アプリも対応しています。</value>
+  </data>
+  <data name="ScanQRCode" xml:space="preserve">
+    <value>Google AuthenticatorでこのQRコードをスキャンしてアカウントを作成してください。</value>
+  </data>
+  <data name="UnableScanQRCode" xml:space="preserve">
+    <value>QRコードをスキャンできませんか？</value>
+  </data>
+  <data name="ManualInputOtpKey" xml:space="preserve">
+    <value>下記のキーをGoogle Authenticatorの手動追加ページに入力し、「追加」をクリックしてください。</value>
+  </data>
+  <data name="Enter6DigitsOtp" xml:space="preserve">
+    <value>Google Authenticatorで生成された6桁のコードを以下のテキストボックスに入力し、「確認」をクリックして登録を完了してください。</value>
+  </data>
+  <data name="ClickToRemoveOtp" xml:space="preserve">
+    <value>下のボタンをクリックして、アカウントから登録デバイスを削除してください。</value>
+  </data>
+  <data name="RemoveOtp" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="EnableDisableOtp" xml:space="preserve">
+    <value>OTPの有効化/無効化</value>
+  </data>
+  <data name="EnableOtpViaMobileAuthenticatorApp" xml:space="preserve">
+    <value>モバイル認証アプリを介してOTPを有効にする</value>
+  </data>
+  <data name="OtpIsInvalidOrExpired" xml:space="preserve">
+    <value>あなたのOTPは無効または期限切れです</value>
+  </data>
+  <data name="AuthenticatorAppVerified" xml:space="preserve">
+    <value>あなたの認証アプリが確認されました。</value>
+  </data>
+  <data name="RemoveOtpWarning" xml:space="preserve">
+    <value>登録済みデバイスで生成されたOTPはシステムが受け付けなくなります。続行しますか？</value>
+  </data>
+  <data name="RemoveOtpSuccessMessage" xml:space="preserve">
+    <value>モバイル認証アカウントを削除し、TelegramのOTP通知を無効にしました。</value>
+  </data>
+  <data name="UpdateOtpStatusSuccess" xml:space="preserve">
+    <value>OTPステータスを正常に更新しました</value>
+  </data>
+  <data name="RemoveOtpForCust" xml:space="preserve">
+    <value>OTPを削除 - {0}</value>
+  </data>
+  <data name="ResetOtpWarning" xml:space="preserve">
+    <value>下層ラインのモバイル認証アカウントを削除し、下層ラインのTelegram OTP通知を無効にするために削除をクリックしてください。</value>
+  </data>
+  <data name="OtpValidation" xml:space="preserve">
+    <value>OTP 有効性確認</value>
+  </data>
+  <data name="ResetDownlineOtpWarning" xml:space="preserve">
+    <value>このユーザーの登録デバイスを削除しますか？</value>
+  </data>
+  <data name="RegenerateQR" xml:space="preserve">
+    <value>QRを再生成する</value>
+  </data>
+  <data name="UsernameWarning" xml:space="preserve">
+    <value>新しいアカウントは、あなたのユーザー名 {0} に名前が付けられます。</value>
+  </data>
+  <data name="ChangeIt" xml:space="preserve">
+    <value>変更しますか？</value>
+  </data>
+  <data name="OtpDatetimeWarning" xml:space="preserve">
+    <value>デバイスの日付と時刻設定は自動にする必要があります。</value>
+  </data>
+  <data name="Copied" xml:space="preserve">
+    <value>複写済み</value>
+  </data>
+  <data name="NoRegisterDeviceError" xml:space="preserve">
+    <value>このユーザーには削除する登録デバイスがありません。</value>
+  </data>
+  <data name="RemoveRegisteredDeviceSuccess" xml:space="preserve">
+    <value>登録デバイスの削除に成功しました。</value>
+  </data>
+  <data name="RemoveDisableOtpDownline" xml:space="preserve">
+    <value>無効ユーザーの登録デバイス削除が失敗しました。</value>
+  </data>
+  <data name="FailedToRemoveOtp" xml:space="preserve">
+    <value>登録デバイスの削除に失敗しました！</value>
+  </data>
+  <data name="AccountName" xml:space="preserve">
+    <value>アカウント名</value>
+  </data>
+  <data name="Verify" xml:space="preserve">
+    <value>確かめる</value>
+  </data>
+  <data name="LockAccountOtpMessage" xml:space="preserve">
+    <value>複数回のセキュリティチェック失敗により、アカウントがロックされました。解除するには上層ラインにお問い合わせください。</value>
+  </data>
+  <data name="OtpInvalidOrExpiredAndContactUpline" xml:space="preserve">
+    <value>OTPが無効または期限切れです。別のOTPをお試しいただくか、上層ラインに連絡してOTPをリセットしてください。</value>
+  </data>
+  <data name="Skip" xml:space="preserve">
+    <value>スキップ</value>
+  </data>
+  <data name="KickoutMessageByProtectedMode" xml:space="preserve">
+    <value>あなたのアカウントは強制的にログアウトされました。詳細は上層ラインにお問い合わせください。</value>
+  </data>
+  <data name="SwitchLabelOff" xml:space="preserve">
+    <value>オフ</value>
+  </data>
+  <data name="SwitchLabelOn" xml:space="preserve">
+    <value>オン</value>
+  </data>
+  <data name="AccessToBetLists" xml:space="preserve">
+    <value>ベットリストへのアクセス</value>
+  </data>
+  <data name="AccessToStatementReport" xml:space="preserve">
+    <value>ステートメントレポートへのアクセス</value>
+  </data>
+  <data name="CreateNewDownline" xml:space="preserve">
+    <value>新規下層ラインを作成</value>
+  </data>
+  <data name="MandatoryActions" xml:space="preserve">
+    <value>必須の行動</value>
+  </data>
+  <data name="OptionalAction" xml:space="preserve">
+    <value>任意の行動</value>
+  </data>
+  <data name="SCAskedOncePerSession" xml:space="preserve">
+    <value>以下の操作を行う前に、セッションごとに一度セキュリティコードが求められます。</value>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>振込</value>
+  </data>
+  <data name="UpdateDownlineCreditAndSettings" xml:space="preserve">
+    <value>下層ラインの付与済み与信と設定を更新</value>
+  </data>
+  <data name="UpdateSecurityInformation" xml:space="preserve">
+    <value>セキュリティ情報（パスワード、セキュリティコード、OTPなど）の更新</value>
+  </data>
+  <data name="UpdateSubAccInformation" xml:space="preserve">
+    <value>サブアカウントの情報を更新</value>
+  </data>
+  <data name="NewSecurityCode" xml:space="preserve">
+    <value>新しいセキュリティコード</value>
+  </data>
+  <data name="GenerateOTP" xml:space="preserve">
+    <value>OTPを生成する</value>
+  </data>
+  <data name="OTPViaTelegramDisabled" xml:space="preserve">
+    <value>Telegram OTP通知を無効化しました</value>
+  </data>
+  <data name="SetupOTPViaTelegramChatbot" xml:space="preserve">
+    <value>TelegramチャットボットでOTPを設定する</value>
+  </data>
+  <data name="OTPViaChatbotIntroduction" xml:space="preserve">
+    <value>Telegramチャットボットを利用すれば、代理店サイトにアクセスすることなく、重要なビジネスレポートを便利かつ安全に受け取ることができます。また、Telegram OTP通知を有効にすることで、OTPを簡単に受け取ることも可能です。</value>
+  </data>
+  <data name="ToSetupChatbot" xml:space="preserve">
+    <value>チャットボットを設定するには、以下の手順に従ってください。</value>
+  </data>
+  <data name="EnableOtpViaTelegramChatbot" xml:space="preserve">
+    <value>TelegramチャットボットでOTPを有効化する</value>
+  </data>
+  <data name="UnlinkTelegramChatbot" xml:space="preserve">
+    <value>アカウントからTelegramチャットボットを連携解除するには「連携解除」をクリックしてください。</value>
+  </data>
+  <data name="OtpViaTelegramSuggestion" xml:space="preserve">
+    <value>Telegramを通じてOTPを受け取れるようになりました。ぜひお試しください！</value>
+  </data>
+  <data name="OtpViaTelegramChatbot" xml:space="preserve">
+    <value>Telegramチャットボット経由のOTP</value>
+  </data>
+  <data name="RegisteredMobileApplication" xml:space="preserve">
+    <value>モバイル認証アプリによるOTP</value>
+  </data>
+  <data name="PositionTakingTemplate" xml:space="preserve">
+    <value>保有ポジションテンプレート</value>
   </data>
 </root>

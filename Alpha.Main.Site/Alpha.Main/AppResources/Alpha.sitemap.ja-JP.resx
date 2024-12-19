@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="agentwinloss" xml:space="preserve">
-    <value>エージェント勝ち負け</value>
+    <value>エージェント 勝ち負け</value>
   </data>
   <data name="agentwinlostdetail" xml:space="preserve">
-    <value>エージェント勝ち負け詳細</value>
+    <value>エージェントの勝ち負け詳細</value>
   </data>
   <data name="BetType24" xml:space="preserve">
     <value>ダブルチャンス</value>
@@ -130,37 +130,37 @@
     <value>両チーム／1 チーム／得点なし</value>
   </data>
   <data name="charts" xml:space="preserve">
-    <value>Charts</value>
+    <value>チャート</value>
   </data>
   <data name="consolidatedreport" xml:space="preserve">
-    <value>Consolidation</value>
+    <value>グループの勝敗</value>
   </data>
   <data name="correctscore" xml:space="preserve">
     <value>正しいスコア</value>
   </data>
   <data name="creditbalance" xml:space="preserve">
-    <value>貸付金額 / 残高</value>
+    <value>クレジット/残高</value>
   </data>
   <data name="customerlist" xml:space="preserve">
-    <value>お客様リスト</value>
+    <value>メンバーリスト</value>
   </data>
   <data name="dailywinlossanalysisreport" xml:space="preserve">
-    <value>Daily Winloss Analysis</value>
+    <value>毎日 勝ち負け分析</value>
   </data>
   <data name="fthtfglg" xml:space="preserve">
-    <value>FT &amp; HT FG/LG</value>
+    <value>フルタイム &amp; 前半戦 最初のゴール/最終ゴール</value>
   </data>
   <data name="fthttotalgoal" xml:space="preserve">
-    <value>FT &amp; HT Total Goal</value>
+    <value>フルタイム &amp; 前半戦 合計ゴール</value>
   </data>
   <data name="hr" xml:space="preserve">
-    <value>Racing</value>
+    <value>レーシング</value>
   </data>
   <data name="htft" xml:space="preserve">
-    <value>HT/FT</value>
+    <value>前半戦/フルタイム</value>
   </data>
   <data name="lbl1x2" xml:space="preserve">
-    <value>1 X 2</value>
+    <value>1X2</value>
   </data>
   <data name="agentList" xml:space="preserve">
     <value>エージェントリスト</value>
@@ -172,22 +172,22 @@
     <value>取り消されたベット</value>
   </data>
   <data name="commissionByBettype" xml:space="preserve">
-    <value>Commission By Bet Type</value>
+    <value>ベットタイプ別コミッション</value>
   </data>
   <data name="commssionhorseracing" xml:space="preserve">
-    <value>Racing Commission</value>
+    <value>レーシングコミッション</value>
   </data>
   <data name="forecast" xml:space="preserve">
-    <value>予想</value>
+    <value>予想 </value>
   </data>
   <data name="homeDrawAwayNoBet" xml:space="preserve">
-    <value>Home/Draw/Away No Bet</value>
+    <value>ホーム/引き分け/アウェイ ベットなし</value>
   </data>
   <data name="HOUL" xml:space="preserve">
     <value>ハンディキャップ/オーバー・アンダー/ライブ</value>
   </data>
   <data name="masterList" xml:space="preserve">
-    <value>Master Agent List</value>
+    <value>マスターリスト</value>
   </data>
   <data name="masterOutstanding" xml:space="preserve">
     <value>マスター未払い残高</value>
@@ -196,7 +196,7 @@
     <value>試合勝ち負け詳細</value>
   </data>
   <data name="memberCommission" xml:space="preserve">
-    <value>メンバー手数料</value>
+    <value>メンバーコミッション</value>
   </data>
   <data name="memberInfo" xml:space="preserve">
     <value>メンバー情報</value>
@@ -205,64 +205,64 @@
     <value>メンバー未払い</value>
   </data>
   <data name="memberWinLoss" xml:space="preserve">
-    <value>メンバー勝ち負け</value>
+    <value>メンバー 勝ち負け</value>
   </data>
   <data name="monitor" xml:space="preserve">
-    <value>Last Bets Monitoring</value>
+    <value>最後のベットの監視</value>
   </data>
   <data name="newAgent" xml:space="preserve">
     <value>新しいエージェント</value>
   </data>
   <data name="newMaster" xml:space="preserve">
-    <value>New Master</value>
+    <value>新しいマスター </value>
   </data>
   <data name="newMember" xml:space="preserve">
-    <value>新しいメンバー</value>
+    <value>新しいメンバー </value>
   </data>
   <data name="outRight" xml:space="preserve">
-    <value>即座</value>
+    <value>勝者予想</value>
   </data>
   <data name="positionTaking" xml:space="preserve">
     <value>保有ポジション (%)</value>
   </data>
   <data name="scoreMap" xml:space="preserve">
-    <value>Score Map</value>
+    <value>スコアマップ</value>
   </data>
   <data name="statement" xml:space="preserve">
-    <value>明細書</value>
+    <value>ステートメント</value>
   </data>
   <data name="winLossByBettype" xml:space="preserve">
-    <value>Win Loss By Bet Type</value>
+    <value>ベットタイプ別勝ち負け</value>
   </data>
   <data name="masterwinloss" xml:space="preserve">
-    <value>Master Win Loss</value>
+    <value>マスター 勝ち負け</value>
   </data>
   <data name="masterwinlostdetail" xml:space="preserve">
-    <value>Master Win Loss Detail</value>
+    <value>マスターの勝ち負け詳細</value>
   </data>
   <data name="matchwinloss" xml:space="preserve">
-    <value>Match Win Loss</value>
+    <value>試合 勝ち負け</value>
   </data>
   <data name="MemberWinLimit" xml:space="preserve">
-    <value>Member Win/Loss Limit</value>
+    <value>メンバー勝敗制限</value>
   </data>
   <data name="memberwinlossdetail" xml:space="preserve">
-    <value>Member Win Loss Detail</value>
+    <value>メンバーの勝ち負け詳細</value>
   </data>
   <data name="moneyline" xml:space="preserve">
     <value>マネーライン</value>
   </data>
   <data name="monthlywinlossanalysisreport" xml:space="preserve">
-    <value>Monthly Winloss Analysis</value>
+    <value>毎月 勝ち負け分析</value>
   </data>
   <data name="numbergame" xml:space="preserve">
-    <value>Number Game</value>
+    <value>ナンバーゲーム</value>
   </data>
   <data name="OE1x2DND" xml:space="preserve">
-    <value>奇数/偶数 + 1x2 + DND</value>
+    <value>奇数/偶数 + 1X2 + 引き分け/ノードロー</value>
   </data>
   <data name="parlay" xml:space="preserve">
-    <value>ミックスパーレー</value>
+    <value>パーレイ</value>
   </data>
   <data name="reports" xml:space="preserve">
     <value>報告書</value>
@@ -271,47 +271,46 @@
     <value>結果</value>
   </data>
   <data name="sportconsolidatedreport" xml:space="preserve">
-    <value>Sport Consolidated Report</value>
+    <value>スポーツの総括レポート</value>
   </data>
   <data name="subaccount" xml:space="preserve">
-    <value>Sub Account</value>
+    <value>サブアカウント</value>
   </data>
   <data name="totalbets" xml:space="preserve">
-    <value>合計ベット数</value>
+    <value>合計ベット</value>
   </data>
   <data name="winlossanalysis" xml:space="preserve">
-    <value>Win Loss Analysis</value>
+    <value>勝ち負け分析</value>
   </data>
   <data name="announcements" xml:space="preserve">
-    <value>Announcements</value>
+    <value>お知らせ</value>
   </data>
   <data name="login" xml:space="preserve">
     <value>入力</value>
   </data>
   <data name="normal" xml:space="preserve">
-    <value>Normal</value>
+    <value>普通</value>
   </data>
   <data name="personalMessage" xml:space="preserve">
-    <value>Personal Message</value>
+    <value>個人メッセージ</value>
   </data>
   <data name="special" xml:space="preserve">
-    <value>Special</value>
+    <value>特別</value>
   </data>
   <data name="status" xml:space="preserve">
-    <value>状態</value>
+    <value>ステータス</value>
   </data>
   <data name="transfer" xml:space="preserve">
-    <value>送金
-    </value>
+    <value>送金</value>
   </data>
   <data name="viewLog" xml:space="preserve">
-    <value>View Log</value>
+    <value>ログ表示</value>
   </data>
   <data name="statistics" xml:space="preserve">
-    <value>Your statistics</value>
+    <value>あなたの統計</value>
   </data>
   <data name="winLossAnalysisChart" xml:space="preserve">
-    <value>Win Loss Analysis Chart</value>
+    <value>勝ち負け分析チャート</value>
   </data>
   <data name="BetType13" xml:space="preserve">
     <value>クリーンシート</value>
@@ -323,46 +322,130 @@
     <value>3 ウェイハンディキャップ</value>
   </data>
   <data name="BetsAndForecast" xml:space="preserve">
-    <value>Bets &amp; Forecast</value>
+    <value>ベット＆予想</value>
   </data>
   <data name="soccer" xml:space="preserve">
     <value>サッカー</value>
   </data>
   <data name="credit" xml:space="preserve">
-    <value>Credit</value>
+    <value>クレジット</value>
   </data>
   <data name="Setting" xml:space="preserve">
-    <value>Setting</value>
+    <value>設定</value>
   </data>
   <data name="BetLists" xml:space="preserve">
     <value>ベットリスト</value>
   </data>
   <data name="TransferAllAndClearCredit" xml:space="preserve">
-    <value>Transfer All &amp; Clear Credit</value>
+    <value>すべてを転送してクレジットをクリア</value>
   </data>
   <data name="BetStatistics" xml:space="preserve">
-    <value>Risk Analysis</value>
+    <value>リスク解析</value>
   </data>
   <data name="IPMatching" xml:space="preserve">
-    <value>IP Matching</value>
+    <value>IP マッチング</value>
   </data>
   <data name="agentOutstandingNew" xml:space="preserve">
-    <value>Agent Outstanding (New)</value>
+    <value>エージェント未払い (新規）</value>
   </data>
   <data name="masterOutstandingNew" xml:space="preserve">
-    <value>Master Outstanding (New)</value>
+    <value>マスター未払い残高 (新規）</value>
   </data>
   <data name="memberOutstandingNew" xml:space="preserve">
-    <value>Member Outstanding (New)</value>
+    <value>メンバー未払い (新規）</value>
   </data>
   <data name="TransferToDownlineHistory" xml:space="preserve">
-    <value>Transfer To Downline History</value>
+    <value>ダウンラインへの送金履歴</value>
   </data>
   <data name="superWinLossDetailByPT" xml:space="preserve">
-    <value>Super Win Loss Detail By PT</value>
+    <value>保有ポジション別スーパー勝ち負け詳細</value>
   </data>
   <data name="Old" xml:space="preserve">
-    <value>Old</value>
+    <value>旧</value>
+  </data>
+  <data name="BetChoiceLimit" xml:space="preserve">
+    <value>ベット選択制限</value>
+  </data>
+  <data name="customerSetting" xml:space="preserve">
+    <value>顧客設定</value>
+  </data>
+  <data name="winLossByProduct" xml:space="preserve">
+    <value>製品別勝ち負け </value>
+  </data>
+  <data name="LastBets" xml:space="preserve">
+    <value>最新のベット</value>
+  </data>
+  <data name="Beta" xml:space="preserve">
+    <value>ベータ</value>
+  </data>
+  <data name="ProgressiveGamesContribution" xml:space="preserve">
+    <value>プログレッシブゲームの貢献</value>
+  </data>
+  <data name="systemUpdate" xml:space="preserve">
+    <value>システム</value>
+  </data>
+  <data name="chatbot" xml:space="preserve">
+    <value>チャットボット</value>
+  </data>
+  <data name="problemAccountList" xml:space="preserve">
+    <value>問題アカウントリスト</value>
+  </data>
+  <data name="BetChoiceMatching" xml:space="preserve">
+    <value>重複ベット</value>
+  </data>
+  <data name="IndirectLoginAccount" xml:space="preserve">
+    <value>間接ログインアカウント</value>
+  </data>
+  <data name="DormantAccountList" xml:space="preserve">
+    <value>休眠アカウントリスト</value>
+  </data>
+  <data name="BonusDetail" xml:space="preserve">
+    <value>ボーナス詳細</value>
+  </data>
+  <data name="BetCreditTracking" xml:space="preserve">
+    <value>ベットクレジット追跡</value>
+  </data>
+  <data name="MyWatchlist" xml:space="preserve">
+    <value>マイウォッチリスト</value>
+  </data>
+  <data name="SercurityCode" xml:space="preserve">
+    <value>セキュリティ</value>
+  </data>
+  <data name="riskManagement" xml:space="preserve">
+    <value>リスク管理</value>
+  </data>
+  <data name="MyThresholds" xml:space="preserve">
+    <value>私のしきい値</value>
+  </data>
+  <data name="BackupDomains" xml:space="preserve">
+    <value>利用可能なドメイン</value>
+  </data>
+  <data name="searchTickets" xml:space="preserve">
+    <value>チケットを検索</value>
+  </data>
+  <data name="AutoTransferMonitoring" xml:space="preserve">
+    <value>自動振込モニタ</value>
+  </data>
+  <data name="PTTemplate" xml:space="preserve">
+    <value>保有ポジションテンプレート</value>
+  </data>
+  <data name="MemberBettingBehavior" xml:space="preserve">
+    <value>メンバーのベッティング行動</value>
+  </data>
+  <data name="WhiteLabel" xml:space="preserve">
+    <value>ホワイトラベル</value>
+  </data>
+  <data name="SettlementReport" xml:space="preserve">
+    <value>精算報告書</value>
+  </data>
+  <data name="RewardPayment" xml:space="preserve">
+    <value>賞金の支払い</value>
+  </data>
+  <data name="SigninToNovaCasino" xml:space="preserve">
+    <value>Nova Casinoへのサインイン</value>
+  </data>
+  <data name="JoinNovaCasinoNow" xml:space="preserve">
+    <value>Nova Casinoエージェントに申請する</value>
   </data>
   <data name="SignInS1BackOffice" xml:space="preserve">
     <value>バックオフィスにログイン</value>

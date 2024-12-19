@@ -97,4 +97,409 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ChatBotTitle" xml:space="preserve">
+    <value>チャットボット</value>
+  </data>
+  <data name="ChatbotSetup" xml:space="preserve">
+    <value>チャットボットの設定</value>
+  </data>
+  <data name="InstallLetstalk" xml:space="preserve">
+    <value>Letstalkをインストールして、無料アカウントを作成してください。</value>
+  </data>
+  <data name="YourLetstalkAccount" xml:space="preserve">
+    <value>あなたのLetstalk ID</value>
+  </data>
+  <data name="link" xml:space="preserve">
+    <value>リンク</value>
+  </data>
+  <data name="unLink" xml:space="preserve">
+    <value>リンク解除</value>
+  </data>
+  <data name="lblVerificationCode" xml:space="preserve">
+    <value>確認コード</value>
+  </data>
+  <data name="Verify" xml:space="preserve">
+    <value>確認する</value>
+  </data>
+  <data name="Resend" xml:space="preserve">
+    <value>再送信</value>
+  </data>
+  <data name="VerificationCodeIsInvalidOrExpired" xml:space="preserve">
+    <value>無効または期限切れの確認コードです。もう一度試すか、新しいコードをリクエストしてください。</value>
+  </data>
+  <data name="UnsubscribeWarning" xml:space="preserve">
+    <value>Atomのリンクを解除すると、すべての機能が停止します。本当に続行しますか？</value>
+  </data>
+  <data name="FunctionReport" xml:space="preserve">
+    <value>報告書</value>
+  </data>
+  <data name="FunctionNotification" xml:space="preserve">
+    <value>通知</value>
+  </data>
+  <data name="AccountDoesNotExist" xml:space="preserve">
+    <value>Letstalk IDが存在しません。</value>
+  </data>
+  <data name="InvalidCaptcha" xml:space="preserve">
+    <value>キャプチャが無効です。</value>
+  </data>
+  <data name="AccountHasAlreadyBeenRegistered" xml:space="preserve">
+    <value>入力されたIDは、別のSMAアカウントにすでにリンクされ、確認されています。</value>
+  </data>
+  <data name="OverMaxAddAccountTimes" xml:space="preserve">
+    <value>本日はリクエスト回数が多すぎます。後でもう一度お試しください。</value>
+  </data>
+  <data name="Command" xml:space="preserve">
+    <value>コマンド</value>
+  </data>
+  <data name="ChatBotLanguage" xml:space="preserve">
+    <value>チャットボットの言語</value>
+  </data>
+  <data name="IntroReport" xml:space="preserve">
+    <value>照会したいレポートを有効化するために。</value>
+  </data>
+  <data name="IntroNotification" xml:space="preserve">
+    <value>受信したい通知を有効にするために。</value>
+  </data>
+  <data name="Read" xml:space="preserve">
+    <value>読む</value>
+  </data>
+  <data name="grossComm" xml:space="preserve">
+    <value>合計コミッション</value>
+  </data>
+  <data name="memberWinLoss" xml:space="preserve">
+    <value>メンバー勝ち負け</value>
+  </data>
+  <data name="personalMessageSample" xml:space="preserve">
+    <value>あなたの保有ポジションの最小値がアップラインによって変更されました。ご確認の上、ダウンラインの詳細をご確認ください。</value>
+  </data>
+  <data name="specialAnnouncementSample" xml:space="preserve">
+    <value>お客様各位: 2018年1月18日より、弊社は香港からのエージェントサイトへのアクセスを制限いたします。 ご理解のほど、よろしくお願いいたします。</value>
+  </data>
+  <data name="normalAnnouncementSample" xml:space="preserve">
+    <value>お知らせ：[eスポーツ] 試合が中止されました。すべての賭け金は返金されます。 ご理解のほど、よろしくお願いいたします。</value>
+  </data>
+  <data name="systemAnnouncementSample" xml:space="preserve">
+    <value>拝啓, &lt;br/&gt;エージェントの皆様 Macau Gamesに新しいゲームが追加されましたことをお知らせいたします。
+2018年10月5日より、ベット制限の設定が影響を受ける可能性がありますので、ご確認ください。&lt;br/&gt;よろしくお願いいたします。</value>
+  </data>
+  <data name="updateLanguageFailed" xml:space="preserve">
+    <value>チャットボットの言語を更新できませんでした。再度お試しください。</value>
+  </data>
+  <data name="expiredOrDidNotRecieveTheCode" xml:space="preserve">
+    <value>コードを受け取っていませんか？</value>
+  </data>
+  <data name="IntroChatbot" xml:space="preserve">
+    <value>&lt;strong&gt;エージェンシーチャットボットサービス&lt;/strong&gt;は、この&lt;strong&gt;Letstalk IM&lt;/strong&gt;と統合されており、&lt;strong&gt;このサイトにアクセスすることなく、ビジネスに関する最新かつ重要な情報を便利かつ安全に受け取ることができます。&lt;/strong&gt;&lt;br /&gt;チャットボットのセットアップを開始するには、以下の手順に従ってください。</value>
+  </data>
+  <data name="IntroLetstalk" xml:space="preserve">
+    <value>最も&lt;strong&gt;安全なメッセンジャー&lt;/strong&gt;であり、あなたの会話を強力に&lt;strong&gt;暗号化&lt;/strong&gt;します。</value>
+  </data>
+  <data name="letstalkIM" xml:space="preserve">
+    <value>Letstalk IM</value>
+  </data>
+  <data name="letstalkTechLmd" xml:space="preserve">
+    <value>Letstalk テクノロジー・リミテッド</value>
+  </data>
+  <data name="pleaseInputLetstalkAccount" xml:space="preserve">
+    <value>チャットボットサービスと連携するために、Letstalk ID（スクリーンネームではありません）を入力してください。</value>
+  </data>
+  <data name="AccountIsRequired" xml:space="preserve">
+    <value>Letstalk IDを入力してください。</value>
+  </data>
+  <data name="lblCaptcha" xml:space="preserve">
+    <value>キャプチャ</value>
+  </data>
+  <data name="verificationCodeIsRequired" xml:space="preserve">
+    <value>確認コードを入力してください。</value>
+  </data>
+  <data name="captchaIsRequired" xml:space="preserve">
+    <value>キャプチャを入力してください。</value>
+  </data>
+  <data name="reportExample" xml:space="preserve">
+    <value>レポート例</value>
+  </data>
+  <data name="notificationExample" xml:space="preserve">
+    <value>通知例</value>
+  </data>
+  <data name="howFunctionWorks" xml:space="preserve">
+    <value>機能の仕組み</value>
+  </data>
+  <data name="pleaseSet" xml:space="preserve">
+    <value>設定してください</value>
+  </data>
+  <data name="play" xml:space="preserve">
+    <value>見る</value>
+  </data>
+  <data name="playing" xml:space="preserve">
+    <value>視聴中</value>
+  </data>
+  <data name="EnterVerificationCode" xml:space="preserve">
+    <value>あなたのLetstalk IDを確認してください。</value>
+  </data>
+  <data name="IntroVerificationCode" xml:space="preserve">
+    <value>「&lt;strong&gt;Atom&lt;/strong&gt;」というボットがLetstalk IMを通じて6桁の確認コードを送信しました。Letstalk IDを確認するために、確認コードを入力してください。</value>
+  </data>
+  <data name="inputCommand" xml:space="preserve">
+    <value>コマンドを入力してください。</value>
+  </data>
+  <data name="systemAnnouncement" xml:space="preserve">
+    <value>システムからのお知らせ</value>
+  </data>
+  <data name="yesterdayWinLoss" xml:space="preserve">
+    <value>昨日の勝ち負け</value>
+  </data>
+  <data name="ChatbotName" xml:space="preserve">
+    <value>チャットボットの名前</value>
+  </data>
+  <data name="Atom" xml:space="preserve">
+    <value>Atom</value>
+  </data>
+  <data name="showQRCode" xml:space="preserve">
+    <value>QRコードを表示</value>
+  </data>
+  <data name="hideQRCode" xml:space="preserve">
+    <value>QRコードを非表示</value>
+  </data>
+  <data name="pleaseSetNotification" xml:space="preserve">
+    <value>設定してください</value>
+  </data>
+  <data name="LinkTooltip" xml:space="preserve">
+    <value>以下の機能を使用するために、Letstalk IDをチャットボットサービスと連携してください。</value>
+  </data>
+  <data name="VerifyTooltip" xml:space="preserve">
+    <value>以下の機能を使用するために、Letstalk IDを確認してください。</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>アカウント</value>
+  </data>
+  <data name="OutstandingHiddenDownlinesCount" xml:space="preserve">
+    <value>他の97人のメンバーは表示されていません。</value>
+  </data>
+  <data name="OutstandingHint" xml:space="preserve">
+    <value>ヒント：クイックコマンドを使用するには、/os 50 と入力してください。</value>
+  </data>
+  <data name="YesterdayTotalBalance" xml:space="preserve">
+    <value>昨日の残高</value>
+  </data>
+  <data name="TodayWinLoss" xml:space="preserve">
+    <value>今日の勝ち負け</value>
+  </data>
+  <data name="YesterdayWL" xml:space="preserve">
+    <value>昨日の勝ち負け</value>
+  </data>
+  <data name="MemberOutstanding" xml:space="preserve">
+    <value>メンバー未払い</value>
+  </data>
+  <data name="MemberCredit" xml:space="preserve">
+    <value>メンバークレジット</value>
+  </data>
+  <data name="AgentOutstanding" xml:space="preserve">
+    <value>エージェント未払い</value>
+  </data>
+  <data name="FifteenMinutes" xml:space="preserve">
+    <value>15分</value>
+  </data>
+  <data name="ThirtyMinutes" xml:space="preserve">
+    <value>30分</value>
+  </data>
+  <data name="OneHour" xml:space="preserve">
+    <value>1時間</value>
+  </data>
+  <data name="ThreeHours" xml:space="preserve">
+    <value>3時間</value>
+  </data>
+  <data name="SixHours" xml:space="preserve">
+    <value>6時間</value>
+  </data>
+  <data name="TwelveHours" xml:space="preserve">
+    <value>12時間</value>
+  </data>
+  <data name="OneDay" xml:space="preserve">
+    <value>1日</value>
+  </data>
+  <data name="ThreeDays" xml:space="preserve">
+    <value>3日</value>
+  </data>
+  <data name="SevenDays" xml:space="preserve">
+    <value>7日</value>
+  </data>
+  <data name="FifteenDays" xml:space="preserve">
+    <value>15日</value>
+  </data>
+  <data name="ThirtyDays" xml:space="preserve">
+    <value>30日</value>
+  </data>
+  <data name="lblMessageSelfDestruct" xml:space="preserve">
+    <value>チャットボットのメッセージは以下の時間後に自動的に削除されます</value>
+  </data>
+  <data name="UpdateMessageSelfDestructMessageFailedMessage" xml:space="preserve">
+    <value>自己削除期間の更新に失敗しました。もう一度お試しください。</value>
+  </data>
+  <data name="FunctionAction" xml:space="preserve">
+    <value>アクション</value>
+  </data>
+  <data name="PleaseSetAction" xml:space="preserve">
+    <value>設定してください</value>
+  </data>
+  <data name="IntroAction" xml:space="preserve">
+    <value>使用したいコマンドを有効にしてください。</value>
+  </data>
+  <data name="cloneAccountNotification" xml:space="preserve">
+    <value>リクエストを処理しています。しばらくお待ちください…</value>
+  </data>
+  <data name="cloneAccountSuccessMsg" xml:space="preserve">
+    <value>新しいメンバーが member01 からコピーされました。</value>
+  </data>
+  <data name="HintMessage" xml:space="preserve">
+    <value>ヒント：クイックコマンドを使用するには、次のように入力してください：</value>
+  </data>
+  <data name="actionExample" xml:space="preserve">
+    <value>アクションの例</value>
+  </data>
+  <data name="BalanceInfo" xml:space="preserve">
+    <value>残高情報</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>内容</value>
+  </data>
+  <data name="EnableDisable" xml:space="preserve">
+    <value>の有効化/無効化</value>
+  </data>
+  <data name="EnterOTP" xml:space="preserve">
+    <value>アカウントを確認するために、Telegramチャットボットから送信されたOTPを入力してください（OTPは3分以内に期限切れになります）：</value>
+  </data>
+  <data name="GeneratePrivateQRCode" xml:space="preserve">
+    <value>QRコードを生成</value>
+  </data>
+  <data name="HowItWorks" xml:space="preserve">
+    <value>使い方の説明</value>
+  </data>
+  <data name="InstallTelegram" xml:space="preserve">
+    <value>Google PlayやApp Storeからアプリをダウンロードするか、&lt;strong&gt;QRコードを表示&lt;/strong&gt;をクリックして、スマートフォンでQRコードをスキャンしてください。</value>
+  </data>
+  <data name="IntroTelegramChatbot" xml:space="preserve">
+    <value>&lt;strong&gt;Telegramチャットボット&lt;/strong&gt;を利用すると、エージェンシーサイトにアクセスせずに、チャットボットとやり取りすることで最新のビジネス情報を取得できます。このチャットボットは、無料で安全、暗号化され、クロスプラットフォーム対応のインスタントメッセージアプリであるTelegram上で動作します。&lt;br/&gt;
+チャットボットをセットアップするには、以下の手順に従ってください：</value>
+  </data>
+  <data name="IntroTelegramReports" xml:space="preserve">
+    <value>Telegramチャットボットは、エージェンシーサイトにアクセスすることなく、ビジネス運営に役立つさまざまなレポートや機能を提供します。&lt;br/&gt;
+チャットボットで "/help"と入力すると、コマンドの全リストが表示されます。</value>
+  </data>
+  <data name="InvalidOTP" xml:space="preserve">
+    <value>OTPが間違っています。もう一度お試しください。</value>
+  </data>
+  <data name="lblOTP" xml:space="preserve">
+    <value>OTP</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>通知/アラート</value>
+  </data>
+  <data name="NotificationAndSettings" xml:space="preserve">
+    <value>通知とアラート</value>
+  </data>
+  <data name="NotificationAndSettingsIntro" xml:space="preserve">
+    <value>Telegramチャットボットを設定して、通知やセキュリティアラートを受け取るようにしてください。</value>
+  </data>
+  <data name="OrUseThisLink" xml:space="preserve">
+    <value>またはこのリンクをクリックしてください：</value>
+  </data>
+  <data name="OTPIsRequired" xml:space="preserve">
+    <value>OTPを入力してください。</value>
+  </data>
+  <data name="Outstanding" xml:space="preserve">
+    <value>未払い残高</value>
+  </data>
+  <data name="PersonalMessage" xml:space="preserve">
+    <value>個人メッセージ</value>
+  </data>
+  <data name="ProblemAccount" xml:space="preserve">
+    <value>問題のあるアカウント</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>報告書</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>報告書</value>
+  </data>
+  <data name="ResendOTPSuccessfully" xml:space="preserve">
+    <value>OTPを再送しました。</value>
+  </data>
+  <data name="ScanQRCode" xml:space="preserve">
+    <value>このQRコードをスマートフォンでスキャンして、Telegramチャットボットを開いてください。</value>
+  </data>
+  <data name="SeeHowItWorks" xml:space="preserve">
+    <value>使い方の説明を見る</value>
+  </data>
+  <data name="SelectStartOnTelegramChatbot" xml:space="preserve">
+    <value>Telegramチャットボットで&lt;strong&gt;START&lt;/strong&gt;をクリックし、次のステップに進んでください。</value>
+  </data>
+  <data name="StartSettingUp" xml:space="preserve">
+    <value>電話番号を使用してTelegramにサインアップし、&lt;strong&gt;QRコードを生成&lt;/strong&gt;をクリックしてください。</value>
+  </data>
+  <data name="Telegram" xml:space="preserve">
+    <value>Telegram</value>
+  </data>
+  <data name="TelegramMessengerInc" xml:space="preserve">
+    <value>Telegram Messenger Inc.</value>
+  </data>
+  <data name="TodayWinLossNew" xml:space="preserve">
+    <value>今日の勝ち負け</value>
+  </data>
+  <data name="VerifyOTP" xml:space="preserve">
+    <value>OTPを確認してください。</value>
+  </data>
+  <data name="YesterdayWinLossNotificationDescription" xml:space="preserve">
+    <value>毎日、前日のAlphaの勝ち負け報告書の合計行をGMT-4の午後3:00に送信します。</value>
+  </data>
+  <data name="YouCanTurnOnOff" xml:space="preserve">
+    <value>上記の通知は、ここでオン/オフを切り替えるか、Telegramチャットボットの設定から変更できます。</value>
+  </data>
+  <data name="ChatID" xml:space="preserve">
+    <value>チャットID</value>
+  </data>
+  <data name="UnsubscribeTelegramBotWarning" xml:space="preserve">
+    <value>本当にリンクを解除してもよろしいですか？</value>
+  </data>
+  <data name="OTPIsExpiredMessage" xml:space="preserve">
+    <value>OTPの有効期限が切れました。新しいOTPを生成するには、&lt;span id="btnResend" class="link resend-code"&gt;こちらをクリック&lt;/span&gt;してください。</value>
+  </data>
+  <data name="HasUnlinkedMessage" xml:space="preserve">
+    <value>あなたのTelegramは{0}とのリンクが解除されました。</value>
+  </data>
+  <data name="StartBeforeInputOTP" xml:space="preserve">
+    <value>OTPを入力する前に、Telegramチャットボットで&lt;strong&gt;START&lt;/strong&gt;をクリックしてください。</value>
+  </data>
+  <data name="Introducing" xml:space="preserve">
+    <value>紹介します</value>
+  </data>
+  <data name="IntroducingContent" xml:space="preserve">
+    <value>24時間365日、バーチャルアシスタントがあなたのビジネスを簡単に運営できるようサポートします！</value>
+  </data>
+  <data name="IntroducingTitle" xml:space="preserve">
+    <value>{0} チャットボット Telegramで</value>
+  </data>
+  <data name="LatestNotifications" xml:space="preserve">
+    <value>最新の通知</value>
+  </data>
+  <data name="SetupNow" xml:space="preserve">
+    <value>今すぐ設定</value>
+  </data>
+  <data name="BalanceInfoReport" xml:space="preserve">
+    <value>残高情報報告書</value>
+  </data>
+  <data name="OutstandingReport" xml:space="preserve">
+    <value>未払い報告書</value>
+  </data>
+  <data name="WinLossReport" xml:space="preserve">
+    <value>勝ち負け報告書</value>
+  </data>
+  <data name="EnabledTelegramOtpNotification" xml:space="preserve">
+    <value>Telegram OTP通知が有効になりました</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>報告書/機能</value>
+  </data>
+  <data name="Feature" xml:space="preserve">
+    <value>報告書/機能</value>
+  </data>
 </root>
