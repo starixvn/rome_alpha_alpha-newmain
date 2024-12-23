@@ -90,4 +90,18 @@
     .wrapper-tour .inner{
         min-height: 360px;
     }
+    .content-page {
+        .title {
+            padding: 15px 40px 10px 15px;
+        }
+
+        p {
+            padding: 0px 40px 10px 15px;
+        }
+
+        img {
+            max-height: 262px;
+            margin: 0 auto;
+        }
+    }
 }

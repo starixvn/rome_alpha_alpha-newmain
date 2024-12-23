@@ -71,9 +71,15 @@ var indexManager = {
             indexManager.removeCustomCookies("messageForReloadSite");
         }
 
-        setTimeout(() => {
-            popupManager.openMultiple($("#TourURL").val(), null, 800, 495, null, null, null, null, null, null, { customClass: 'popup-tour-intro' });
-        }, 3000);
+        const cookiesName = "215625_CopyingSitesTour";
+        const hideTour = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
+        if (hideTour !== "1") {
+            setTimeout(() => {
+                popupManager.openMultiple($("#TourURL").val(), null, 800, 495, null, null, null, null, null, null, { customClass: 'popup-tour-intro' });
+
+                localStorage.setItem(indexManager.getCustomerCookiesName(cookiesName), "1");
+            }, 3000);
+        }
     },
 
     registerEvents: function () {
