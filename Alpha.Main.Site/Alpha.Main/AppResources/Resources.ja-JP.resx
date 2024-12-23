@@ -618,7 +618,7 @@
     <value>全製品</value>
   </data>
   <data name="UMCustomerSettingsPattern" xml:space="preserve">
-    <value>&lt;strong&gt;Product&lt;/strong&gt; の &lt;strong&gt;SettingType&lt;/strong&gt;: &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; から &lt;span class="um-message-time"&gt;{1}&lt;/span&gt; までご利用いただけません。</value>
+    <value>&lt;strong&gt;_Product_&lt;/strong&gt; の &lt;strong&gt;_SettingType_&lt;/strong&gt;: &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; から &lt;span class="um-message-time"&gt;{1}&lt;/span&gt; までご利用いただけません。</value>
   </data>
   <data name="UMTransferPattern" xml:space="preserve">
     <value>&lt;strong&gt;振込&lt;/strong&gt;: &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; から &lt;span class="um-message-time"&gt;{1}&lt;/span&gt; までご利用いただけません。</value>

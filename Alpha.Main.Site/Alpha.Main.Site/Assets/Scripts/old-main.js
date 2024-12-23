@@ -473,7 +473,8 @@ var bootboxLocale = {
     "en": "en",
     "ct": "zh_TW",
     "cs": "zh_CN",
-    "th": "th"
+    "th": "th",
+    "j": "ja"
 };
 
 window.bootboxConfirm = function (message, handleElement, acceptCallback, cancelCallback, popUpOptions) {

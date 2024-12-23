@@ -155,7 +155,7 @@
 必ずメモを取り、安全な場所に保管してください。</value>
   </data>
   <data name="AreYouSureRevokeAPIKey" xml:space="preserve">
-    <value>このAPIキーを取り消してもよろしいですか？</value>
+    <value>このAPIキーを取り消してもよろしいですか</value>
   </data>
   <data name="CantSelectTimeFromPast" xml:space="preserve">
     <value>期限日は過去の日付に設定できません。</value>
@@ -225,7 +225,7 @@
     <value>7～32文字</value>
   </data>
   <data name="APIKey_Intro" xml:space="preserve">
-    <value>&lt;span&gt; Agency APIは、APIサービスを通じてレポートにアクセスする新しい方法を提供します。カスタマイズされたAPIキーを作成することで、特定のニーズに合わせたレポートを取得できます。詳細については、APIドキュメントをご参照ください。</value>
+    <value>&lt;span&gt; エージェンシーAPIは、APIサービスを通じてレポートにアクセスする新しい方法を提供します。カスタマイズされたAPIキーを作成することで、特定のニーズに合わせたレポートを取得できます。詳細については、こちらの&lt;a id="lnk-api-guides" href="{0}" target="_blank"&gt;リンク&lt;/a&gt;のAPIドキュメントをご参照ください。&lt;/span&gt;</value>
   </data>
   <data name="APIKey_KeyNameInfo" xml:space="preserve">
     <value>APIキー名：管理を容易にするために、各APIキーを区別する一意の識別子です。</value>
