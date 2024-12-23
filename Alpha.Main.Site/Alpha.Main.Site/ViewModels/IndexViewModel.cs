@@ -193,11 +193,12 @@
 
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
 
-        public bool HightLightFeaturePermission => true;
+        public bool HightLightFeaturePermission => ((PageAccess)SubPageAccess).Transfer;
 
         public string HightLightFeatureImageName => "new_feature_litemode" + DarkModeName;
 
-        public string HightLightFeatureUrl => MicroSites.MainUrl("~/Tour/ProfilePicture");
+        public string HightLightFeatureUrl => MicroSites.TransferUrl("~/Reward/Payment");
+        public string TourUrl => MicroSites.MainUrl("~/Tour/ProfilePicture");
 
         public bool IsEnableAutoTransfer { get; set; }
 

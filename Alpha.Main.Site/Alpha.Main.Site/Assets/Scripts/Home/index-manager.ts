@@ -70,6 +70,10 @@ var indexManager = {
             window.bootboxAlert(messageForReloadSite);
             indexManager.removeCustomCookies("messageForReloadSite");
         }
+
+        setTimeout(() => {
+            popupManager.openMultiple($("#TourURL").val(), null, 800, 495, null, null, null, null, null, null, { customClass: 'popup-tour-intro' });
+        }, 3000);
     },
 
     registerEvents: function () {
@@ -411,7 +415,7 @@ var indexManager = {
     //},
 
     initNewFeatureHighlightPopup: function () {
-        const leftMenu = $("#profile");
+        const leftMenu = $("#menu-TRANSFER");
         if (!leftMenu.length) {
             return;
         }
@@ -422,13 +426,13 @@ var indexManager = {
         }
 
         // RedmineId should be included to make FeatureName is unique.
-        const featureName = "215625_ProfilePictureTour";
+        const featureName = "209190_CashRewardProgram";
         const cookiesName = indexManager.hidePopupCookies + featureName;
         const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
 
         if (hidePopup !== "1") {
             popupManager.closeAllPopup();
-            box.css({ top: leftMenu.position().top + 4 });
+            box.css({ top: leftMenu.position().top + 80 });
             box.removeClass("hide");
 
             box.find(".icon-close").click(() => box.addClass("hide"));

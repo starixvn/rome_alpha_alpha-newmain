@@ -655,15 +655,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Important Update to Login Process.
-        /// </summary>
-        public static string ImportantUpdateToLoginProcess {
-            get {
-                return ResourceManager.GetString("ImportantUpdateToLoginProcess", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Interested? .
         /// </summary>
         public static string Interested {

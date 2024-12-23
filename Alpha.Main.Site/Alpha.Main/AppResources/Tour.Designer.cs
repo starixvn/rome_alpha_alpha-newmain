@@ -61,7 +61,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to To enhance ....
+        ///   Looks up a localized string similar to To enhance account security, you will see your profile picture for verification after entering your username..
         /// </summary>
         public static string ProfilePicture_Page1_Row1 {
             get {
@@ -70,20 +70,38 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please review ....
+        ///   Looks up a localized string similar to New Secure Login Process Coming Soon.
         /// </summary>
-        public static string ProfilePicture_Page2_Row1 {
+        public static string ProfilePicture_Page1_Title {
             get {
-                return ResourceManager.GetString("ProfilePicture_Page2_Row1", resourceCulture);
+                return ResourceManager.GetString("ProfilePicture_Page1_Title", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to By setting &lt;a href=&quot;/site-accountinfo/ProfilePicture&quot; target=&quot;main&quot;&gt;Profile Picture&lt;/a&gt;.
+        ///   Looks up a localized string similar to Ensure your profile picture matches your account before entering your password..
+        /// </summary>
+        public static string ProfilePicture_Page2_Title {
+            get {
+                return ResourceManager.GetString("ProfilePicture_Page2_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update your profile picture anytime in Profile Settings using two options:.
         /// </summary>
         public static string ProfilePicture_Page3_Row1 {
             get {
                 return ResourceManager.GetString("ProfilePicture_Page3_Row1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Setting a profile picture helps you quickly identity the legitimate site and secure your privacy..
+        /// </summary>
+        public static string ProfilePicture_Page3_Title {
+            get {
+                return ResourceManager.GetString("ProfilePicture_Page3_Title", resourceCulture);
             }
         }
     }

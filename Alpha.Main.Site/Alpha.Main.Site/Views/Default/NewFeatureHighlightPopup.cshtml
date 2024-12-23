@@ -20,11 +20,7 @@
                 <input id="chkHideHighlightPopupNewFeature" type="checkbox" />
                 <span>@Resources.doNotShowAgain</span>
             </label>
-            <a class="btn-submit" id="linkHighlightPopupCheckOut"
-               href="#"
-               onclick="top.popupManager.open('@Model.HightLightFeatureUrl', null, 800, 495, null, null, null, null, null, null, {customClass :'popup-tour-intro'});">
-                @Resources.TakeATour
-            </a>
+            <a class="btn-submit" id="linkHighlightPopupCheckOut" href="@Model.HightLightFeatureUrl" target="main">@Resources.GetStarted</a>
         </div>
     </div>
 }

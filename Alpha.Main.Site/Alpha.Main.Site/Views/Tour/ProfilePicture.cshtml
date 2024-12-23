@@ -22,15 +22,16 @@
         <span class="icon-close" onclick="top.popupManager.closeAllPopup()"></span>
         <div class="inner">
             <div class="content-page content-page-1">
-                <div class="title">@Resources.ImportantUpdateToLoginProcess</div>
+                <div class="title">@Alpha.Main.AppResources.Tour.ProfilePicture_Page1_Title</div>
                 <p>@Alpha.Main.AppResources.Tour.ProfilePicture_Page1_Row1</p>
                 <img src="@Url.Content( $"{imagePath}/Page1-lv{roleId}.png")" alt="image tour" />
             </div>
             <div class="content-page content-page-2 hidden">
-                <p>@Alpha.Main.AppResources.Tour.ProfilePicture_Page2_Row1</p>
+                <div class="title">@Alpha.Main.AppResources.Tour.ProfilePicture_Page2_Title</div>
                 <img src="@Url.Content( $"{imagePath}/Page2-lv{roleId}.png")" alt="image tour" />
             </div>
             <div class="content-page content-page-3 hidden">
+                <div class="title">@Alpha.Main.AppResources.Tour.ProfilePicture_Page3_Title</div>
                 <p>@Html.Raw(Alpha.Main.AppResources.Tour.ProfilePicture_Page3_Row1)</p>
                 <img src="@Url.Content( $"{imagePath}/Page3-lv{roleId}.png")" alt="image tour" />
             </div>
