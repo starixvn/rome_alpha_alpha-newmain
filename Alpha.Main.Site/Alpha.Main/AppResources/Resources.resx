@@ -822,4 +822,16 @@ Note: Please change your &lt;b&gt;password&lt;/b&gt; the first time you click 'A
   <data name="Reward" xml:space="preserve">
     <value>Reward</value>
   </data>
+  <data name="TakeATour" xml:space="preserve">
+    <value>Take a tour</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="of" xml:space="preserve">
+    <value>of</value>
+  </data>
+  <data name="ImportantUpdateToLoginProcess" xml:space="preserve">
+    <value>Important Update to Login Process</value>
+  </data>
 </root>

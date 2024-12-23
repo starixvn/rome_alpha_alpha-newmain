@@ -335,6 +335,13 @@
       "Assets/scripts/telegramchatbot/add-account-telegram-chatbot.js"
     ]
   },
+  {
+    "outputFileName": "Assets/bundles/tour/profile-picture-tour.js",
+    "inputFiles": [
+      "Assets/scripts/tour/base-tour-controller.js",
+      "Assets/scripts/tour/profile-picture-tour.js"
+    ]
+  },
   /************************** Dark Mode ************************/
   {
     "outputFileName": "Assets/bundles/default-index-dark.css",
@@ -454,6 +461,18 @@
     "outputFileName": "Assets/bundles/whitelabel.css",
     "inputFiles": [
       "Assets/Styles/home/whitelabel.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/tour/common-tour.css",
+    "inputFiles": [
+      "Assets/Styles/tour/common-tour.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/tour/common-tour-dark.css",
+    "inputFiles": [
+      "Assets/Styles/tour/common-tour-dark.css"
     ]
   }
 ]

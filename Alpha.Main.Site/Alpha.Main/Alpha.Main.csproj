@@ -250,6 +250,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SettingType.resx</DependentUpon>
     </Compile>
+    <Compile Include="AppResources\Tour.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tour.resx</DependentUpon>
+    </Compile>
     <Compile Include="Configurations\AppSettings.cs" />
     <Compile Include="Configurations\NovaCasinoSettings.cs" />
     <Compile Include="Constants\ApiKeyScope.cs" />
@@ -558,6 +563,10 @@
     <EmbeddedResource Include="AppResources\SettingType.vi-VN.resx" />
     <EmbeddedResource Include="AppResources\SettingType.zh-CN.resx" />
     <EmbeddedResource Include="AppResources\SettingType.zh-TW.resx" />
+    <EmbeddedResource Include="AppResources\Tour.resx">
+      <LastGenOutput>Tour.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="CodeAnalysis\CustomDictionary.xml" />

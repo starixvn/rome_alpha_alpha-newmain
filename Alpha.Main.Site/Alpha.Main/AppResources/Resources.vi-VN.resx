@@ -735,7 +735,7 @@
   <data name="WinLossDetailReport" xml:space="preserve">
     <value>Báo Cáo Chi Tiết Thắng Thua</value>
   </data>
-    <value>Chào mừng đến với &lt;b&gt;Chương trình Tiền thưởng&lt;/b&gt;!</value>
+  <value>Chào mừng đến với &lt;b&gt;Chương trình Tiền thưởng&lt;/b&gt;!</value>
   <data name="SetupChatbot" xml:space="preserve">
     <value>Cài Đặt Chatbot</value>
   </data>
@@ -773,5 +773,14 @@ Lưu ý: Vui lòng thay đổi &lt;b&gt;mật khẩu&lt;/b&gt; Nova Casino Back 
   </data>
   <data name="Reward" xml:space="preserve">
     <value>Tiền thưởng</value>
+  </data>
+  <data name="TakeATour" xml:space="preserve">
+    <value>Khám Phá</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Trang</value>
+  </data>
+  <data name="of" xml:space="preserve">
+    <value>trên</value>
   </data>
 </root>
