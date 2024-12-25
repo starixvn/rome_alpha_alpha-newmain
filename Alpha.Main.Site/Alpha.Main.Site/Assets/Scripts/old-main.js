@@ -153,7 +153,6 @@ window.age = window.age || {
         else {
             try {
                 localStorage.removeItem(indexManager.currentUrlCookieName);
-                localStorage.removeItem(`215625_CopyingSitesTour_${$("#CustId").val()}_${$("#SubAccId").val()}`);
             }
             finally {
                 index.location = signOutUrl;

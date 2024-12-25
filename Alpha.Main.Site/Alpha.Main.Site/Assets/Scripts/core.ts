@@ -83,7 +83,6 @@ var alpha = {
                 else {
                     try {
                         localStorage.removeItem(indexManager.currentUrlCookieName);
-                        localStorage.removeItem(`215625_CopyingSitesTour_${$("#CustId").val()}_${$("#SubAccId").val()}`);
 					}
                     finally {
                         index.location = signOutUrl;
@@ -111,7 +110,6 @@ var alpha = {
                 else {
                     try {
                         indexManager.removeCookies();
-                        localStorage.removeItem(`215625_CopyingSitesTour_${$("#CustId").val()}_${$("#SubAccId").val()}`);
                     }
                     finally {
                         index.location = signOutUrl;
