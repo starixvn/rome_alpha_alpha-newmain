@@ -3,7 +3,7 @@
 @{ var language = Model.Language;
     var roleId = Model.RoleId;
 
-    var imagePath = $"~/Assets/styles/tour/images/profile-picture/{language}"; }
+    var imagePath = $"~/Assets/styles/tour/images/profile-picture/"; }
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,18 +22,18 @@
         <span class="icon-close" onclick="top.popupManager.closeAllPopup()"></span>
         <div class="inner">
             <div class="content-page content-page-1">
-                <div class="title">@Alpha.Main.AppResources.Tour.ProfilePicture_Page1_Title</div>
-                <p>@Alpha.Main.AppResources.Tour.ProfilePicture_Page1_Row1</p>
-                <img src="@Url.Content( $"{imagePath}/Page1-lv{roleId}.png")" alt="image tour" />
+                <div class="title">New Secure Login Process</div>
+                <p>To enhance account security, you will now see your profile picture for verification after entering your username.</p>
+                <img src="@Url.Content( $"{imagePath}/page1.png")" alt="tour introduction setting" />
             </div>
             <div class="content-page content-page-2 hidden">
-                <div class="title">@Alpha.Main.AppResources.Tour.ProfilePicture_Page2_Title</div>
-                <img src="@Url.Content( $"{imagePath}/Page2-lv{roleId}.png")" alt="image tour" />
+                <div class="title">Ensure your profile picture matches your account before entering your password.</div>
+                <img src="@Url.Content( $"{imagePath}/page2.png")" alt="tour introduction setting" />
             </div>
             <div class="content-page content-page-3 hidden">
-                <div class="title">@Alpha.Main.AppResources.Tour.ProfilePicture_Page3_Title</div>
-                <p>@Html.Raw(Alpha.Main.AppResources.Tour.ProfilePicture_Page3_Row1)</p>
-                <img src="@Url.Content( $"{imagePath}/Page3-lv{roleId}.png")" alt="image tour" />
+                <div class="title">Setting a profile picture helps you quickly identity the legitimate site and secure your privacy.</div>
+                <p>Update your profile picture anytime in <a href="">Profile Settings</a> using two options:</p>
+                <img src="@Url.Content( $"{imagePath}/page3.png")" alt="tour introduction setting" />
             </div>
         </div>
     </div>

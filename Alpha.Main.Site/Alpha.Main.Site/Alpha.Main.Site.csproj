@@ -1205,6 +1205,9 @@
     <Content Include="Assets\styles\tour\images\profile-picture\ko-KR\Page5-lv2.png" />
     <Content Include="Assets\styles\tour\images\profile-picture\ko-KR\Page5-lv3.png" />
     <Content Include="Assets\styles\tour\images\profile-picture\ko-KR\Page5-lv4.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\page1.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\page2.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\page3.png" />
     <Content Include="Assets\styles\tour\images\profile-picture\th-TH\Page1-lv2.png" />
     <Content Include="Assets\styles\tour\images\profile-picture\th-TH\Page1-lv3.png" />
     <Content Include="Assets\styles\tour\images\profile-picture\th-TH\Page1-lv4.png" />
