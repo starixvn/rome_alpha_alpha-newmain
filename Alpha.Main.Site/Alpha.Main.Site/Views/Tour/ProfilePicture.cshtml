@@ -1,9 +1,11 @@
 ﻿@using Alpha.Main.Site.ViewModels.Tour
 @model TourViewModel
-@{ var language = Model.Language;
+@{
+    var language = Model.Language;
     var roleId = Model.RoleId;
 
-    var imagePath = $"~/Assets/styles/tour/images/profile-picture/"; }
+    var imagePath = $"~/Assets/styles/tour/images/profile-picture/";
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +34,7 @@
             </div>
             <div class="content-page content-page-3 hidden">
                 <div class="title">@Alpha.Main.AppResources.Tour.ProfilePicture_Page3_Title</div>
-                <p>@Alpha.Main.AppResources.Tour.ProfilePicture_Page3_Row1</p>
+                <p>@Html.Raw(Alpha.Main.AppResources.Tour.ProfilePicture_Page3_Row1)</p>
                 <img src="@Url.Content( $"{imagePath}/page3.png")" alt="tour introduction setting" />
             </div>
         </div>
@@ -49,8 +51,8 @@
             <span class="page-btn-next"><i class="icon-caret-right"></i></span>
         </div>
     </div>
-    </div>
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     @StaticResources.RenderScripts("~/assets/bundles/tour/profile-picture-tour")
+    @Html.Hidden("ProfilePictureUrl", MicroSites.AccountInfoUrl("~/ProfilePicture"))
 </body>
 </html>

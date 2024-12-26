@@ -567,6 +567,9 @@
       <LastGenOutput>Tour.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\Tour.th-TH.resx" />
+    <EmbeddedResource Include="AppResources\Tour.zh-CN.resx" />
+    <EmbeddedResource Include="AppResources\Tour.zh-TW.resx" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="CodeAnalysis\CustomDictionary.xml" />

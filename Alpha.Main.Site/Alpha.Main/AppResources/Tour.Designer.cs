@@ -88,7 +88,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update your profile picture anytime in Profile Settings using two options:.
+        ///   Looks up a localized string similar to Update your profile picture anytime in &lt;a id=&quot;lnk-profile-picture&quot; href=&quot;./&quot; target=&quot;main&quot;&gt;Profile Settings&lt;/a&gt; using two options:.
         /// </summary>
         public static string ProfilePicture_Page3_Row1 {
             get {

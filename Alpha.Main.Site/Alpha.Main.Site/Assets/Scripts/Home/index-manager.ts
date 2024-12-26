@@ -70,10 +70,6 @@ var indexManager = {
             window.bootboxAlert(messageForReloadSite);
             indexManager.removeCustomCookies("messageForReloadSite");
         }
-
-        setTimeout(() => {
-            popupManager.openMultiple($("#TourURL").val(), null, 800, 495, null, null, null, null, null, null, { customClass: 'popup-tour-intro' });
-        }, 3000);
     },
 
     registerEvents: function () {
@@ -211,12 +207,21 @@ var indexManager = {
         if (indexManager.domElements.mainFrame
             && indexManager.domElements.mainFrame.length > 0) {
             indexManager.domElements.mainFrame.attr('src', currentUrl);
+            indexManager.showTour();
         }
         else {
             indexManager.domElements.content.append('<iframe frameborder="0" id="main" src="' + currentUrl + '" width="100%" height="100%" scrolling="auto" name="main" marginwidth="0" marginheight="0" allowtransparency="true" class="iframe-content"></iframe>');
             indexManager.domElements.mainFrame = $('#main');
+
+            var isShowTour = true;
+
             indexManager.domElements.mainFrame
                 .on('load.newmain', function () {
+                    if (isShowTour) {
+                        indexManager.showTour();
+                        isShowTour = false;
+                    }
+
                     if (indexManager.isReloadTopPage) {
                         window.top.location.reload();
                         return;
@@ -501,6 +506,12 @@ var indexManager = {
         var key = indexManager.getCustomerCookiesName(cookieName);
         localStorage.removeItem(key);
     },
+
+    showTour: function () {
+        setTimeout(() => {
+            popupManager.openMultiple($("#TourURL").val(), null, 800, 495, null, null, null, null, null, null, { customClass: 'popup-tour-intro' })
+        }, 3000);
+    }
 };
 
 

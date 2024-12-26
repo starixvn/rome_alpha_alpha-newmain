@@ -101,7 +101,7 @@
     <value>To enhance account security, you will see your profile picture for verification after entering your username.</value>
   </data>
   <data name="ProfilePicture_Page3_Row1" xml:space="preserve">
-    <value>Update your profile picture anytime in Profile Settings using two options:</value>
+    <value>Update your profile picture anytime in &lt;a id="lnk-profile-picture" href="./" target="main"&gt;Profile Settings&lt;/a&gt; using two options:</value>
   </data>
   <data name="ProfilePicture_Page1_Title" xml:space="preserve">
     <value>New Secure Login Process Coming Soon</value>

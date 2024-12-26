@@ -7,7 +7,7 @@
         this.$ = $;
     }
 
-    init = () => {
+    public init() {
         this.$(".page-btn-next").click(() => {
             this.currentPage++;
             this.showHideNextPrevButton();
