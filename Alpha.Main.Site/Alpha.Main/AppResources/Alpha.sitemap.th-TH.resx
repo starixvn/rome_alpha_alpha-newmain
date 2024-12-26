@@ -441,4 +441,7 @@
   <data name="SigninToNovaCasino" xml:space="preserve">
     <value>เข้าสู่ระบบ Nova Casino</value>
   </data>
+  <data name="SignInS1BackOffice" xml:space="preserve">
+    <value>ลงชื่อเข้าใช้ระบบหลังบ้าน</value>
+  </data>
 </root>

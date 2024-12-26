@@ -388,4 +388,7 @@
   <data name="PendingTransfer3rd" xml:space="preserve">
     <value>3rd Party Pending Transfer</value>
   </data>
+  <data name="NotSetupWhiteLabelMessage" xml:space="preserve">
+    <value>ホワイトラベルのビジネスにはまだご登録いただいておりません。 サポートが必要な場合は、弊社のカスタマーサービス部門までお問い合わせください。</value>
+  </data>
 </root>

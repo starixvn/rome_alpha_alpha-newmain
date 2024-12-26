@@ -784,6 +784,9 @@
   <data name="ContactCSD" xml:space="preserve">
     <value>Contact our CSD for more details!</value>
   </data>
+  <data name="NotSetupWhiteLabelMessage" xml:space="preserve">
+    <value>You haven't signed up White Label business yet. Please kindly contact our Customer Service Department for further support.</value>
+  </data>
   <data name="SyncedNovaCasinoPersonalMessage" xml:space="preserve">
     <value>Dear Valued Agents,
  

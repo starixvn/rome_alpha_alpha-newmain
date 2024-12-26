@@ -729,4 +729,7 @@
   <data name="InternalServerError" xml:space="preserve">
     <value>发生错误。请联系客户服务部寻求协助。谢谢。[500]</value>
   </data>
+  <data name="NotSetupWhiteLabelMessage" xml:space="preserve">
+    <value>您尚未注册白牌生意，请联系我们的客户服部以获取进一步的协助。</value>
+  </data>
 </root>

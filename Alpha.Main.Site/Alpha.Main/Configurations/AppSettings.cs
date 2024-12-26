@@ -422,5 +422,8 @@
                 .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(site => site.Trim()), StringComparer.OrdinalIgnoreCase);
         public static bool IsOfferMemberBettingBehavior { get; } = Settings["IsOfferMemberBettingBehavior"] == "1";
+        
+        public static Uri WhiteLabelBackOfficeApiUri => new Uri(Settings["WhiteLabel:BackOfficeApiUrl"]);
+        
     }
 }

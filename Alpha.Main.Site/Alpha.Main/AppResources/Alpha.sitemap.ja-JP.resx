@@ -364,4 +364,13 @@
   <data name="Old" xml:space="preserve">
     <value>Old</value>
   </data>
+  <data name="SignInS1BackOffice" xml:space="preserve">
+    <value>バックオフィスにログイン</value>
+  </data>
+  <data name="WhiteLabel" xml:space="preserve">
+    <value>ホワイトラベル</value>
+  </data>
+  <data name="SettlementReport" xml:space="preserve">
+    <value>精算報告書</value>
+  </data>
 </root>

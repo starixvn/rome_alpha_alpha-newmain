@@ -305,6 +305,7 @@
     <Compile Include="Criteria\Theme\LogChangeThemeCriteria.cs" />
     <Compile Include="Criteria\Transfer\GetIsAllDayBalTransferCriteria.cs" />
     <Compile Include="Criteria\UMMessage\GetUMMessageCriteria.cs" />
+    <Compile Include="Criteria\WhiteLabel\CheckExistsWhiteLabelCommand.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -432,6 +433,7 @@
     <Compile Include="Services\TransferService.cs" />
     <Compile Include="Services\UMMessageService.cs" />
     <Compile Include="Services\ThemeService.cs" />
+    <Compile Include="Services\WhiteLabelService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Alpha.Main.Debug.ruleset" />

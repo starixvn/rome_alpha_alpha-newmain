@@ -753,4 +753,7 @@
  
  ขอบคุณค่ะ!</value>
   </data>
+  <data name="NotSetupWhiteLabelMessage" xml:space="preserve">
+    <value>คุณยังไม่ได้ลงทะเบียนธุรกิจฉลากขาว โปรดติดต่อฝ่ายบริการลูกค้าของเราเพื่อขอความช่วยเหลือเพิ่มเติม</value>
+  </data>
 </root>
