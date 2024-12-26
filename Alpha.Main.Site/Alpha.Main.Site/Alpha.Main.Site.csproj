@@ -1933,15 +1933,7 @@
     <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\SonarAnalyzer.CSharp.dll" />
     <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\SonarAnalyzer.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\styles\tour\images\profile-picture\en-Us\" />
-    <Folder Include="Assets\styles\tour\images\profile-picture\ja-JP\" />
-    <Folder Include="Assets\styles\tour\images\profile-picture\ko-KR\" />
-    <Folder Include="Assets\styles\tour\images\profile-picture\th-TH\" />
-    <Folder Include="Assets\styles\tour\images\profile-picture\vi-VN\" />
-    <Folder Include="Assets\styles\tour\images\profile-picture\zh-CN\" />
-    <Folder Include="Assets\styles\tour\images\profile-picture\zh-TW\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

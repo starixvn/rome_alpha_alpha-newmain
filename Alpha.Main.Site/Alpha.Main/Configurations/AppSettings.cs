@@ -422,8 +422,27 @@
                 .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(site => site.Trim()), StringComparer.OrdinalIgnoreCase);
         public static bool IsOfferMemberBettingBehavior { get; } = Settings["IsOfferMemberBettingBehavior"] == "1";
-        
+
         public static Uri WhiteLabelBackOfficeApiUri => new Uri(Settings["WhiteLabel:BackOfficeApiUrl"]);
-        
+
+        public static string SiteLabelHash
+        {
+            get
+            {
+                var siteLabel = SiteLabel.ToLowerInvariant();
+
+                switch (siteLabel)
+                {
+                    case "mbc":
+                        return "sadsa";
+                    case "789y":
+                        return "sadsa";
+                    case "ibc":
+                        return "sadsadas";
+                    default:
+                        return "asdsadsadass";
+                }
+            }
+        }
     }
 }
