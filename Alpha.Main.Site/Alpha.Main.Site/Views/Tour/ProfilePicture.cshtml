@@ -2,10 +2,8 @@
 @model TourViewModel
 @{
     var language = Model.Language;
-    var roleId = Model.RoleId;
     var siteLabelHash = AppSettings.SiteLabelHash;
-
-    var imagePath = $"~/Assets/styles/tour/images/profile-picture/";
+    var imagePath = $"~/Assets/styles/tour/images/profile-picture/{language}";
 }
 
 <!DOCTYPE html>
@@ -27,16 +25,16 @@
             <div class="content-page content-page-1">
                 <div class="title">@Alpha.Main.AppResources.Tour.ProfilePicture_Page1_Title</div>
                 <p>@Alpha.Main.AppResources.Tour.ProfilePicture_Page1_Row1</p>
-                <img src="@Url.Content( $"{imagePath}/page1.png")" alt="tour introduction setting" />
+                <img src="@Url.Content( $"{imagePath}/page1-{siteLabelHash}.png")" alt="tour introduction setting" />
             </div>
             <div class="content-page content-page-2 hidden">
                 <div class="title">@Alpha.Main.AppResources.Tour.ProfilePicture_Page2_Title</div>
-                <img src="@Url.Content( $"{imagePath}/page2.png")" alt="tour introduction setting" />
+                <img src="@Url.Content( $"{imagePath}/page2-{siteLabelHash}.png")" alt="tour introduction setting" />
             </div>
             <div class="content-page content-page-3 hidden">
                 <div class="title">@Alpha.Main.AppResources.Tour.ProfilePicture_Page3_Title</div>
                 <p>@Html.Raw(Alpha.Main.AppResources.Tour.ProfilePicture_Page3_Row1)</p>
-                <img src="@Url.Content( $"{imagePath}/page3.png")" alt="tour introduction setting" />
+                <img src="@Url.Content( $"{imagePath}/page3-{siteLabelHash}.png")" alt="tour introduction setting" />
             </div>
         </div>
     </div>

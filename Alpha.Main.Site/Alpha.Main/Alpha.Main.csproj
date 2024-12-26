@@ -568,6 +568,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources\Tour.th-TH.resx" />
+    <EmbeddedResource Include="AppResources\Tour.vi-VN.resx" />
     <EmbeddedResource Include="AppResources\Tour.zh-CN.resx" />
     <EmbeddedResource Include="AppResources\Tour.zh-TW.resx" />
   </ItemGroup>

@@ -434,13 +434,13 @@
                 switch (siteLabel)
                 {
                     case "mbc":
-                        return "sadsa";
+                        return "cdkl";
                     case "789y":
-                        return "sadsa";
+                        return "ahzk";
                     case "ibc":
-                        return "sadsadas";
+                        return "defg";
                     default:
-                        return "asdsadsadass";
+                        return "cdkl";
                 }
             }
         }
