@@ -508,9 +508,11 @@ var indexManager = {
     },
 
     showTour: function () {
-        setTimeout(() => {
-            popupManager.openMultiple($("#TourURL").val(), null, 800, 495, null, null, null, null, null, null, { customClass: 'popup-tour-intro' })
-        }, 3000);
+        if ($("#OfferProfilePictureTour").val() === "1") {
+            setTimeout(() => {
+                popupManager.openMultiple($("#TourURL").val(), null, 800, 495, null, null, null, null, null, null, { customClass: 'popup-tour-intro' })
+            }, 3000);
+        }
     }
 };
 

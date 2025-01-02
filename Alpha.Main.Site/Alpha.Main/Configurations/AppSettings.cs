@@ -425,6 +425,8 @@
 
         public static Uri WhiteLabelBackOfficeApiUri => new Uri(Settings["WhiteLabel:BackOfficeApiUrl"]);
 
+        public static bool OfferProfilePictureTour => "1" == Settings["OfferProfilePictureTour"];
+
         public static string SiteLabelHash
         {
             get
