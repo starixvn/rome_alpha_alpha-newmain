@@ -144,6 +144,17 @@ div.messageBlock {
     }
 }
 
+.popup-tour-intro {
+    .modal-header {
+        display: none;
+    }
+
+    .modal-body {
+        padding: 0;
+        height: 540px !important;
+    }
+}
+
 @media only screen and (max-device-width : $screen-device-lower768) {
     .message-modal {
         left: 0;
@@ -153,6 +164,17 @@ div.messageBlock {
 
         .modal-sm {
             width: 100%;
+        }
+    }
+
+    .popup-tour-intro {
+        width: 100% !important;
+        left: 0 !important;
+        box-shadow: none!important;
+        padding: 0;
+
+        .modal-body {
+            height: 400px !important;
         }
     }
 }

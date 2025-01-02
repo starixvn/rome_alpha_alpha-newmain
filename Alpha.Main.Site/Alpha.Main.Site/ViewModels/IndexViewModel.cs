@@ -198,6 +198,7 @@
         public string HightLightFeatureImageName => "new_feature_litemode" + DarkModeName;
 
         public string HightLightFeatureUrl => MicroSites.TransferUrl("~/Reward/Payment");
+        public string TourUrl => MicroSites.MainUrl("~/Tour/ProfilePicture");
 
         public bool IsEnableAutoTransfer { get; set; }
 

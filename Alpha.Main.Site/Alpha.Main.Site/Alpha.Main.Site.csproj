@@ -724,6 +724,18 @@
     <Content Include="Assets\bundles\suggest-telegram-otp.min.js">
       <DependentUpon>suggest-telegram-otp.js</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\tour\common-tour-dark.css" />
+    <Content Include="Assets\bundles\tour\common-tour-dark.min.css">
+      <DependentUpon>common-tour-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\tour\common-tour.css" />
+    <Content Include="Assets\bundles\tour\common-tour.min.css">
+      <DependentUpon>common-tour.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\tour\profile-picture-tour.js" />
+    <Content Include="Assets\bundles\tour\profile-picture-tour.min.js">
+      <DependentUpon>profile-picture-tour.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\whitelabel.css" />
     <Content Include="Assets\bundles\whitelabel.min.css">
       <DependentUpon>whitelabel.css</DependentUpon>
@@ -1136,6 +1148,90 @@
     <Content Include="Assets\styles\telegramchatbot\register-account.min.css">
       <DependentUpon>register-account.css</DependentUpon>
     </Content>
+    <Content Include="Assets\styles\tour\common-tour-dark.css">
+      <DependentUpon>common-tour-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\tour\common-tour-dark.min.css">
+      <DependentUpon>common-tour-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\tour\common-tour.css">
+      <DependentUpon>common-tour.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\tour\common-tour.min.css">
+      <DependentUpon>common-tour.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\tour\images\profile-picture\en-US\page1-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\en-US\page1-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\en-US\page1-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\en-US\page2-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\en-US\page2-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\en-US\page2-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\en-US\page3-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\en-US\page3-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\en-US\page3-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ja-JP\page1-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ja-JP\page1-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ja-JP\page1-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ja-JP\page2-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ja-JP\page2-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ja-JP\page2-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ja-JP\page3-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ja-JP\page3-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ja-JP\page3-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ko-KR\page1-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ko-KR\page1-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ko-KR\page1-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ko-KR\page2-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ko-KR\page2-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ko-KR\page2-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ko-KR\page3-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ko-KR\page3-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\ko-KR\page3-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\page1-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\page1-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\page1-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\page2-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\page2-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\page2-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\page3-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\page3-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\page3-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\th-TH\page1-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\th-TH\page1-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\th-TH\page1-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\th-TH\page2-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\th-TH\page2-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\th-TH\page2-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\th-TH\page3-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\th-TH\page3-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\th-TH\page3-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\vi-VN\page1-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\vi-VN\page1-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\vi-VN\page1-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\vi-VN\page2-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\vi-VN\page2-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\vi-VN\page2-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\vi-VN\page3-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\vi-VN\page3-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\vi-VN\page3-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-CN\page1-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-CN\page1-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-CN\page1-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-CN\page2-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-CN\page2-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-CN\page2-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-CN\page3-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-CN\page3-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-CN\page3-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-TW\page1-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-TW\page1-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-TW\page1-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-TW\page2-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-TW\page2-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-TW\page2-defg.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-TW\page3-ahzk.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-TW\page3-cdkl.png" />
+    <Content Include="Assets\styles\tour\images\profile-picture\zh-TW\page3-defg.png" />
     <Content Include="Scripts\aes.js" />
     <Content Include="Alpha.Main.Site.Debug.ruleset" />
     <Content Include="Alpha.Main.Site.ruleset" />
@@ -1298,6 +1394,7 @@
     <Content Include="Views\Dashboard\Banner.cshtml" />
     <Content Include="Views\Dashboard\WhiteLabel.cshtml" />
     <Content Include="Views\Dashboard\NovaCasino.cshtml" />
+    <Content Include="Views\Tour\ProfilePicture.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\apikey\apikey-management.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey-result.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey.ts" />
@@ -1512,6 +1609,8 @@
     <Content Include="Assets\styles\apikey\apikey.scss" />
     <Content Include="Assets\styles\apikey\apikey-dark.scss" />
     <Content Include="Assets\styles\home\whitelabel.scss" />
+    <Content Include="Assets\styles\tour\common-tour-dark.scss" />
+    <Content Include="Assets\styles\tour\common-tour.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -1597,6 +1696,8 @@
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\dashboard-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\notice-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\statistics-tests.ts" />
+    <TypeScriptCompile Include="Assets\scripts\tour\profile-picture-tour.ts" />
+    <TypeScriptCompile Include="Assets\scripts\tour\base-tour-controller.ts" />
     <TypeScriptCompile Include="typings\globals\bootstrap\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\hammerjs\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jasmine\index.d.ts" />
@@ -1664,6 +1765,7 @@
     <Compile Include="Controllers\ThemeController.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
+    <Compile Include="Controllers\TourController.cs" />
     <Compile Include="Controllers\UMMessageController.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -1861,6 +1963,7 @@
     <Compile Include="ViewModels\TelegramChatBot\RegisterAccountViewModel.cs" />
     <Compile Include="ViewModels\TelegramChatBot\VerifyAccountViewModel.cs" />
     <Compile Include="ViewModels\WhiteLabel\WhiteLabelSSOResponse.cs" />
+    <Compile Include="ViewModels\Tour\TourViewModel.cs" />
     <Compile Include="ViewModels\WhiteLabel\WhiteLabelSSOResponseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

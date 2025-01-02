@@ -83,7 +83,7 @@ var alpha = {
                 else {
                     try {
                         localStorage.removeItem(indexManager.currentUrlCookieName);
-                    }
+					}
                     finally {
                         index.location = signOutUrl;
                     }

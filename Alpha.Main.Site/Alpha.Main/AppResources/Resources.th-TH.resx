@@ -753,7 +753,16 @@
  
  ขอบคุณค่ะ!</value>
   </data>
+  <data name="TakeATour" xml:space="preserve">
+    <value>ดูรายละเอียด</value>
+  </data>
   <data name="NotSetupWhiteLabelMessage" xml:space="preserve">
     <value>คุณยังไม่ได้ลงทะเบียนธุรกิจฉลากขาว โปรดติดต่อฝ่ายบริการลูกค้าของเราเพื่อขอความช่วยเหลือเพิ่มเติม</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>หน้า</value>
+  </data>
+  <data name="of" xml:space="preserve">
+    <value>ของ</value>
   </data>
 </root>

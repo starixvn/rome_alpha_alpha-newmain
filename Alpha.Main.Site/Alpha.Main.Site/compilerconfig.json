@@ -182,5 +182,13 @@
   {
     "outputFile": "Assets/styles/home/whitelabel.css",
     "inputFile": "Assets/styles/home/whitelabel.scss"
+  },
+  {
+    "outputFile": "Assets/styles/tour/common-tour.css",
+    "inputFile": "Assets/styles/tour/common-tour.scss"
+  },
+  {
+    "outputFile": "Assets/styles/tour/common-tour-dark.css",
+    "inputFile": "Assets/styles/tour/common-tour-dark.scss"
   }
 ]
