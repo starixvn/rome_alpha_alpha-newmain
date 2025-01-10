@@ -14,7 +14,7 @@ class WhiteLablePage {
 
     };
     showLiveChat = () => {
-        top.window.headerNav.showLiveChat();
+        // top.window.headerNav.showLiveChat();
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "WhiteLabel/BannerChat",

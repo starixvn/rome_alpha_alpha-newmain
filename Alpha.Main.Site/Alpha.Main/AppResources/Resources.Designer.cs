@@ -764,6 +764,33 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Limited offer: &lt;span class=&quot;fee&quot; &gt;  No setup fee&lt;/span&gt; for the next 10 signups!.
+        /// </summary>
+        public static string Limit_Offer_Date {
+            get {
+                return ResourceManager.GetString("Limit_Offer_Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Offer ends on January 31st, 2025..
+        /// </summary>
+        public static string Limit_Offer_End {
+            get {
+                return ResourceManager.GetString("Limit_Offer_End", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Claim your spot today!.
+        /// </summary>
+        public static string Limit_Offer_Link {
+            get {
+                return ResourceManager.GetString("Limit_Offer_Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Live Message.
         /// </summary>
         public static string LiveMessage {
@@ -1888,7 +1915,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turnkey Solution.
+        ///   Looks up a localized string similar to Win More Customers.
         /// </summary>
         public static string TurnkeySolution {
             get {
@@ -1897,7 +1924,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Effortlessly launch and personalize your own gaming brand in less than 3 days..
+        ///   Looks up a localized string similar to Expand your customer base with affiliates, referrals, and promotions that truly convert..
         /// </summary>
         public static string TurnkeySolution_Description {
             get {

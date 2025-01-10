@@ -695,10 +695,10 @@
     <value>เริ่มต้นแพลตฟอร์ม&lt;span&gt;ไวท์เลเบล&lt;/span&gt;ของคุณเอง ภายในเวลาไม่ถึง &lt;span&gt;&lt;strong&gt;3&lt;/strong&gt; วัน&lt;/span&gt;</value>
   </data>
   <data name="TurnkeySolution" xml:space="preserve">
-    <value>โซลูชั่นแบบครบวงจร</value>
+    <value>เพิ่มลูกค้าให้มากขึ้น</value>
   </data>
   <data name="TurnkeySolution_Description" xml:space="preserve">
-    <value>เปิดตัวและปรับแต่งแบรนด์เกมของคุณเองได้อย่างง่ายดายภายในเวลาไม่ถึง 3 วัน</value>
+    <value>ขยายฐานลูกค้าของคุณผ่านพันธมิตร การอ้างอิงและโปรโมชั่นที่สร้างลูกค้าได้อย่างแท้จริง</value>
   </data>
   <data name="NoBadDebt" xml:space="preserve">
     <value>ไม่มีหนี้เสีย</value>
@@ -764,5 +764,14 @@
   </data>
   <data name="of" xml:space="preserve">
     <value>ของ</value>
+  </data>
+  <data name="Limit_Offer_Date" xml:space="preserve">
+    <value>ข้อเสนอจำกัด: &lt;span class="fee" &gt; ไม่มีค่าธรรมเนียมการตั้งค่า &lt;/span&gt; สำหรับลงทะเบียน 10 รายการถัดไป!</value>
+  </data>
+  <data name="Limit_Offer_Link" xml:space="preserve">
+    <value>จองสิทธิของคุณวันนี้!</value>
+  </data>
+  <data name="Limit_Offer_End" xml:space="preserve">
+    <value>หมดเขต 31 ม.ค. 2568.</value>
   </data>
 </root>

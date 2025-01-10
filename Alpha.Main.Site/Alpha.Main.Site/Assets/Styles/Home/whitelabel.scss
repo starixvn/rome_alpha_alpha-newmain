@@ -1,8 +1,39 @@
 ﻿@import "_mixins.scss";
 body {
     background: transparent;
+    font-family: 'Anybody';
 }
+.offer {
+    padding: 2px;
+    background: linear-gradient(to bottom, #36592A 0%, #1E3716 100%);
 
+    .inner {
+        background: linear-gradient(180deg, #33472C 0%, #21331B 100%);
+        text-align: center;
+        color: #81A873;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 36px;
+        padding: 10px;
+
+        .icon-alert-circle {
+            color: #81A873;
+            font-size: 32px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .fee {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        a {
+            color: #00AAFF;
+            text-decoration: underline;
+        }
+    }
+}
 .icon-home {
     margin-right: 0;
 }
@@ -28,12 +59,12 @@ html {
     width: 100%;
     display: flex;
     flex-direction: column;
-    font-family: 'Anybody';
     font-weight: 400;
     border-radius: 5px;
+    padding-bottom: 20px;
 
     .intro {
-        padding: 30px 1.02rem 0 0.84rem;
+        padding: 30px 1rem 0 0.84rem;
         max-width: 1150px;
         color: #FFF;
         text-align: center;
@@ -41,10 +72,10 @@ html {
         font-style: normal;
         font-weight: 800;
         line-height: 54px;
-        margin: 0 auto 1.48rem;
+        margin: 0 auto 1.1rem;
 
         span {
-            color: #00C2FF;
+            color: #81A873;
 
             strong {
                 font-size: 60px;
@@ -56,89 +87,130 @@ html {
 
     .items {
         display: flex;
-        padding: 0px .2rem 40px .2rem;
+        padding: 0px .2rem 28px .2rem;
         align-self: stretch;
         position: relative;
         width: 100%;
-        max-width: 1472px;
+        max-width: 1481px;
         margin: 0 auto;
 
-        &:after {
-            position: absolute;
-            content: "";
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 1000px;
-            height: 1px;
-            background: rgb(63,169,245);
-            background: linear-gradient(90deg, rgba(63,169,245,0) 0%, rgba(63,169,245,1) 51%, rgba(63,169,245,0) 100%);
-        }
+
 
         .item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1 0 0;
-            padding: 0 .28rem 10px;
-            width: 32.75%;
-            border-radius: 8px;
-            background: linear-gradient(180deg, #0C77AE 0%, #004D95 100%);
-            box-shadow: 0px -8px 24px 0px rgba(255, 255, 255, 0.25) inset;
-            min-height: 270px;
+            width: 32.41%;
 
             + .item {
-                margin-left: 1.75%;
+                margin-left: 1.38%;
             }
 
             .image {
-                margin-top: -1.5rem;
-                z-index: 1;
-                margin-bottom: 0.09rem;
+                position: relative;
+                margin: 0 16px;
 
                 img {
-                    width: 2.51rem;
-                    margin: 0 auto;
-                    display: block;
+                    position: absolute;
+                    right: -28px;
+                    top: -80px;
+                    width: 57.4%;
+                }
+
+                .title {
+                    padding: 15px 45% 20px 20px;
+                    text-align: left;
+                    height: 142px;
+                    border-radius: 20px;
+                    background: radial-gradient(36.55% 111.97% at 71.26% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 22%, rgba(255, 255, 255, 0.45) 43%, rgba(255, 255, 255, 0.26) 62%, rgba(255, 255, 255, 0.12) 78%, rgba(255, 255, 255, 0.03) 91%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #B66D2D 24.76%, #8E4C12 105.34%);
+                    background-blend-mode: overlay, normal;
+                    font-size: 25px;
+                    line-height: 25.87px;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    font-size: 25px;
+                    color: #fff;
+                }
+            }
+
+            .description {
+                color: #8A4C15;
+                font-size: 23px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 32px;
+                background: linear-gradient(167.87deg, #FFE0C4 18.82%, #FFC592 92.81%);
+                border-radius: 0px 20px 20px 20px;
+                min-height: 144px;
+                padding: 24px 28px;
+                position: relative;
+                margin-top: -20px;
+
+                &:before {
+                    position: absolute;
+                    top: -26px;
+                    left: 0;
+                    content: url(../Home/Images/white-label/top-item2.png);
                 }
             }
 
             &:first-child {
-                border-radius: 1.5rem 8px 8px 8px;
+                .image {
+                    .title {
+                        background: radial-gradient(36.55% 111.97% at 71.26% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 22%, rgba(255, 255, 255, 0.45) 43%, rgba(255, 255, 255, 0.26) 62%, rgba(255, 255, 255, 0.12) 78%, rgba(255, 255, 255, 0.03) 91%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #025499 24.76%, #013F74 105.34%);
+                        background-blend-mode: overlay, normal;
+                    }
+                }
+
+                .description {
+                    color: #005581;
+                    background: linear-gradient(167.87deg, #B3E5FF 18.82%, #91C8FB 92.81%);
+
+                    &:before {
+                        content: url(../Home/Images/white-label/top-item1.png);
+                    }
+                }
             }
+
+
 
             &:last-child {
-                border-radius: 8px 1.5rem 8px 8px;
-            }
+                .image {
+                    .title {
+                        background: radial-gradient(36.55% 111.97% at 71.26% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 22%, rgba(255, 255, 255, 0.45) 43%, rgba(255, 255, 255, 0.26) 62%, rgba(255, 255, 255, 0.12) 78%, rgba(255, 255, 255, 0.03) 91%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #416635 24.76%, #2E4E23 105.34%);
+                        background-blend-mode: overlay, normal;
+                    }
+                }
 
-            .title {
-                color: #FFF;
-                text-align: center;
-                font-size: 28px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;
-            }
+                .description {
+                    color: #2E4E23;
+                    background: linear-gradient(167.87deg, #D6EBCF 18.82%, #C2DBBA 92.81%);
 
-            .description {
-                color: #A0DFFF;
-                text-align: center;
-                font-size: 24px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 36px; /* 150% */
+
+                    &:before {
+                        content: url(../Home/Images/white-label/top-item3.png);
+                    }
+                }
             }
         }
     }
 
     .bottom {
+        padding: 2px;
+        background: linear-gradient(to bottom, #36592A 0%, #1F3119 100%);
+        width: 100%;
+        max-width: 1441px;
+        border-radius: 100px;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+    .inner-bottom {
+        background: linear-gradient(to bottom, #33492A 0%, #1A2716 100%);
+        margin: 0 auto;
         display: flex;
-        padding: .6rem .7rem .25rem;
         justify-content: center;
-        align-items: flex-start;
-        gap: 0.4rem;
-        align-self: stretch;
+        align-items: center;
+        min-height: 140px;
+        border-radius: 100px;
+        padding: 0 50px;
 
 
         .left {
@@ -153,22 +225,12 @@ html {
             font-weight: 400;
             line-height: normal;
             position: relative;
-            padding-right: 15px;
+            padding-right: 10px;
 
-            &:after {
-                position: absolute;
-                content: "";
-                top: 50%;
-                transform: translateY(-50%);
-                right: -.4rem;
-                width: 1px;
-                height: 80px;
-                background: rgb(63,169,245);
-                background: linear-gradient(0deg, rgba(63,169,245,0) 0%, rgba(63,169,245,1) 51%, rgba(63,169,245,0) 100%);
-            }
+
 
             .title {
-                color: #00C2FF;
+                color: #81A873;
                 font-size: 32px;
                 font-style: normal;
                 font-weight: 700;
@@ -176,10 +238,18 @@ html {
             }
         }
 
+        .line {
+            width: 1px;
+            height: 80px;
+            margin: 0 40px 0 30px;
+            background: linear-gradient(to bottom, rgba(129,168,115,0) 0%,rgba(129,168,115,1) 50%,rgba(129,168,115,0) 100%);
+            background: linear-gradient(to bottom, rgba(129,168,115,0) 0%,rgba(129,168,115,1) 50%,rgba(129,168,115,0) 100%);
+        }
+
         .right {
             display: flex;
             gap: 0.4rem;
-            flex: 1 0 0;
+
 
             .messenger {
                 display: flex;
@@ -229,10 +299,117 @@ html {
         }
     }
 }
+@media only screen and (max-width: 1400px) {
+    .white-label {
+        .items {
+            .item {
+                .image {
+                    img {
+                        top: -50px;
+                    }
+                }
 
+                .description {
+                    margin-top: -10px;
+                }
+            }
+        }
+
+        .inner-bottom .line {
+            margin: 0 20px 0 10px;
+        }
+    }
+}
+@media only screen and (max-width: 1300px) {
+    .offer {
+        .inner{
+            font-size: 20px;
+            padding: 5px;
+        }
+    }
+    .white-label {
+        .intro {
+            padding: 15px 35px 0;
+            font-size: 35px;
+            margin-bottom: 60px;
+
+            span strong {
+                font-size: 50px;
+            }
+        }
+
+        .items {
+            .item {
+                .description {
+                    padding: 20px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1230px) {
+    .white-label .items .item .description {
+        font-size: 21px;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .offer .inner {
+        font-size: 18px;
+    }
+   
+}
+@media only screen and (max-width: 1050px) {
+    .white-label .items .item .description{
+        min-height: 170px;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .offer .inner {
+        font-size: 17px;
+    }
+    .white-label .intro {        
+        font-size: 32px; 
+    }
+    .white-label .inner-bottom {
+        .left {
+            font-size: 20px;
+
+            .title {
+                font-size: 28px;
+            }
+        }
+
+        .right .messenger {
+           
+            .icon img {
+                width: 50px;
+            }
+        }
+    }
+}
 @media only screen and (max-device-width: 768px) {
+    .offer {
+        .inner {
+            font-size: calculateScale(20px);
+            line-height: calculateScale(24px);
+            text-align: left;
+            position: relative;
+            padding: calculateScale(16px) calculateScale(12px) calculateScale(16px) calculateScale(52px);
+
+            .icon-alert-circle {
+                position: absolute;
+                top: calculateScale(16px);
+                left: calculateScale(12px);
+                font-size: calculateScale(32px)
+            }
+
+            a {
+                display: inline-block;
+            }
+        }
+    }
     .text {
-        font-size: 20px;
+        font-size: calculateScale(20px);
     }
     .wrapper-white-label {
         display: flex;
@@ -246,11 +423,11 @@ html {
         flex: 1;
 
         .intro {
-            padding: calculateScale(41px) calculateScale(16px) 0;
+            padding: calculateScale(40px) calculateScale(16px) 0;
             max-width: 100%;
             font-size: calculateScale(28px);
             line-height: calculateScale(32px);
-            margin: 0 auto calculateScale(56px);
+            margin: 0 auto calculateScale(48px);
 
             span {
                 strong {
@@ -261,7 +438,7 @@ html {
 
         .items {
             display: block;
-            padding: 0 calculateScale(16px) 0;
+            padding: 0 16px 0;
 
             &:after {
                 width: calc(100% - 32px);
@@ -277,42 +454,48 @@ html {
                 min-height: auto;
                 width: 100%;
                 margin-left: 0 !important;
-                margin-bottom: calculateScale(41px);
+                margin-bottom: calculateScale(32px);
 
                 .image {
-                    margin-top: calculateScale(-37px);
-                    margin-bottom: calculateScale(-3px);
-                    width: 100%;
+                    margin: 0 auto;
+                    width: 95%;
                     display: flex;
 
-
                     img {
-                        width: calculateScale(130px);
-                        height: calculateScale(130px);
-                        margin: 0 calculateScale(12px) 0 0;
+                        width: calculateScale(180px);
+                        top: calculateScale(-36px);
+                        right: calculateScale(-17px);
                         display: block;
+                    }
+
+                    .title {
+                        text-align: left;
+                        font-size: calculateScale(20px);
+                        line-height: calculateScale(20px);
+                        padding: calculateScale(18px) calculateScale(156px) 0 calculateScale(16px);
+                        width: 100%;
+                        height: calculateScale(123px);
                     }
                 }
 
-                &:first-child, &:last-child {
-                    border-radius: calculateScale(8px);
+                &:last-child {
+                    .description {
+                        //margin-top: calculateScale(-9px);
+                    }
                 }
 
 
                 .title {
-                    text-align: left;
-                    font-size: calculateScale(24px);
-                    line-height: calculateScale(30px);
-                    margin-top: calculateScale(38px);
-                    display: flex;
-                    align-items: center;
                 }
 
                 .description {
+                    width: 100%;
                     text-align: left;
                     font-size: calculateScale(20px);
-                    line-height: calculateScale(28px);
-                    padding: 0 calculateScale(26px) calculateScale(20px);
+                    line-height: calculateScale(30px);
+                    padding: calculateScale(20px) calculateScale(24px);
+                    margin-top: calculateScale(-35px);
+                    min-height: calculateScale(100px);
                 }
             }
         }
@@ -320,6 +503,13 @@ html {
         .bottom {
             display: block;
             padding: calculateScale(29px) calculateScale(16px) calculateScale(20px);
+            background: none;
+            position: relative;
+            .inner-bottom {
+                background: none;
+                flex-wrap: wrap;
+                padding: 0;
+            }
 
             .left {
                 display: block;
@@ -329,6 +519,7 @@ html {
                 line-height: calculateScale(20.7px);
                 text-align: center;
                 margin-bottom: calculateScale(27px);
+                padding: 0;
 
                 &:after {
                     display: none;
@@ -339,6 +530,15 @@ html {
                     line-height: calculateScale(24.84px);
                     margin-bottom: calculateScale(12px);
                 }
+            }
+
+            .line {
+                position: absolute;
+                top: 0;
+                left: 4.5%;
+                width: 91%;
+                height: 1px;
+                background: linear-gradient(to right, rgba(129, 168, 115, 0) 0%, #81a873 50%, rgba(129, 168, 115, 0) 100%)
             }
 
             .right {
