@@ -342,6 +342,13 @@
       "Assets/scripts/tour/profile-picture-tour.js"
     ]
   },
+  {
+    "outputFileName": "Assets/bundles/dashboard/whitelabel.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/dashboard/whitelabel.js"
+    ]
+  },
   /************************** Dark Mode ************************/
   {
     "outputFileName": "Assets/bundles/default-index-dark.css",

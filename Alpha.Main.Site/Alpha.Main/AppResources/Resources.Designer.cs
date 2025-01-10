@@ -1178,7 +1178,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You haven&apos;t signed up White Label business yet. Please kindly contact our CSD for further support..
+        ///   Looks up a localized string similar to You haven&apos;t signed up White Label business yet. Please kindly contact our Customer Service Department for further support..
         /// </summary>
         public static string NotSetupWhiteLabelMessage {
             get {
@@ -2100,6 +2100,15 @@ namespace Alpha.Main.AppResources {
         public static string WhiteLabel_Intro {
             get {
                 return ResourceManager.GetString("WhiteLabel_Intro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Click Live Chat from White Label Banner: Username: {0} | SubUserName: {1}.
+        /// </summary>
+        public static string WhiteLabelBannerChat {
+            get {
+                return ResourceManager.GetString("WhiteLabelBannerChat", resourceCulture);
             }
         }
         

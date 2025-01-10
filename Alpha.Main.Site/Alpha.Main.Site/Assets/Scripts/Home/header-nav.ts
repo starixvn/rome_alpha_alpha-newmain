@@ -357,17 +357,7 @@ var headerNav = {
         headerNav.checkNewMessage();
 
         headerNav.domElements.liveChat.one("click", function () {
-            LiveChatWidget.init();
-            LiveChatWidget.call("set_customer_name", $("#UsernameShowOnLiveChat").val());
-            LiveChatWidget.call("maximize");
-
-            LiveChatWidget.on("visibility_changed", function (data) {
-                data.visibility === "minimized" && LiveChatWidget.call("hide");
-            });
-
-            headerNav.domElements.liveChat.on("click", function () {
-                LiveChatWidget.call("maximize");
-            });
+            headerNav.showLiveChat();
         });
     },
 
@@ -418,6 +408,20 @@ var headerNav = {
         }
 
         return url.substr(0, i);
+    },
+
+    showLiveChat: () => {
+        LiveChatWidget.init();
+        LiveChatWidget.call("set_customer_name", $("#UsernameShowOnLiveChat").val());
+        LiveChatWidget.call("maximize");
+
+        LiveChatWidget.on("visibility_changed", function (data) {
+            data.visibility === "minimized" && LiveChatWidget.call("hide");
+        });
+
+        headerNav.domElements.liveChat.on("click", function () {
+            LiveChatWidget.call("maximize");
+        });
     }
 };
 

@@ -15,7 +15,10 @@
     <div class="wrapper-white-label">
         <p class="text">@Html.Raw(string.Format(Resources.DashboardViewOverallInformation, "<span onclick=\"location.href=top.headerNav.urls.home;\" class=\"icon icon-home\"></span>"))</p>
         <div class="white-label">
-            <div class="intro">@Html.Raw(Resources.WhiteLabel_Intro)</div>
+            <div class="intro">
+                <div id="lnk-livechat">Click Here</div>
+                @Html.Raw(Resources.WhiteLabel_Intro)
+            </div>
             <div class="items">
                 <div class="item">
                     <div class="image">
@@ -72,5 +75,7 @@
             </div>
         </div>
     </div>
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.RenderScripts("~/assets/bundles/dashboard/whitelabel")
 </body>
 </html>

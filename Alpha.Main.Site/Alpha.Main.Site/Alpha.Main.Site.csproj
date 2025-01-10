@@ -560,6 +560,10 @@
     <Content Include="Assets\bundles\contact-us\contact-us.min.css">
       <DependentUpon>contact-us.css</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\dashboard\whitelabel.js" />
+    <Content Include="Assets\bundles\dashboard\whitelabel.min.js">
+      <DependentUpon>whitelabel.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\default-dashboard.js" />
     <Content Include="Assets\bundles\default-dashboard.min.js">
       <DependentUpon>default-dashboard.js</DependentUpon>
@@ -1402,6 +1406,7 @@
     <TypeScriptCompile Include="Assets\scripts\advertisement\popup-advertisement.ts" />
     <TypeScriptCompile Include="Assets\scripts\components\daterangepicker.ts" />
     <TypeScriptCompile Include="Assets\scripts\components\multiselection-dropdown-default.ts" />
+    <TypeScriptCompile Include="Assets\scripts\dashboard\whitelabel.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\kick-out.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\suggest-telegram-otp.ts" />

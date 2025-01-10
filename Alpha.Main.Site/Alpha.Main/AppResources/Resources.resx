@@ -831,4 +831,7 @@ Note: Please change your &lt;b&gt;password&lt;/b&gt; the first time you click 'A
   <data name="of" xml:space="preserve">
     <value>of</value>
   </data>
+  <data name="WhiteLabelBannerChat" xml:space="preserve">
+    <value>User Click Live Chat from White Label Banner: Username: {0} | SubUserName: {1}</value>
+  </data>
 </root>
