@@ -761,10 +761,10 @@
     <value>Kickstart Your Own &lt;span&gt;White Label&lt;/span&gt; Platform In Less Than &lt;span&gt;&lt;strong&gt;3&lt;/strong&gt; Days&lt;/span&gt;</value>
   </data>
   <data name="TurnkeySolution" xml:space="preserve">
-    <value>Turnkey Solution</value>
+    <value>Win More Customers</value>
   </data>
   <data name="TurnkeySolution_Description" xml:space="preserve">
-    <value>Effortlessly launch and personalize your own gaming brand in less than 3 days.</value>
+    <value>Expand your customer base with affiliates, referrals, and promotions that truly convert.</value>
   </data>
   <data name="NoBadDebt" xml:space="preserve">
     <value>No Bad Debt</value>
@@ -830,5 +830,17 @@ Note: Please change your &lt;b&gt;password&lt;/b&gt; the first time you click 'A
   </data>
   <data name="of" xml:space="preserve">
     <value>of</value>
+  </data>
+  <data name="Limit_Offer_Date" xml:space="preserve">
+    <value>Limited offer: &lt;span class="fee" &gt;  No setup fee&lt;/span&gt; for the next 10 signups!</value>
+  </data>
+  <data name="Limit_Offer_Link" xml:space="preserve">
+    <value>Claim your spot today!</value>
+  </data>
+  <data name="Limit_Offer_End" xml:space="preserve">
+    <value>Offer ends on January 31st, 2025.</value>
+  </data>
+  <data name="WhiteLabelBannerChat" xml:space="preserve">
+    <value>User Click Live Chat from White Label Banner: Username: {0} | SubUserName: {1}</value>
   </data>
 </root>

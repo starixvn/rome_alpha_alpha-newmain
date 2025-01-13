@@ -15,6 +15,14 @@
     <div class="wrapper-white-label">
         <p class="text">@Html.Raw(string.Format(Resources.DashboardViewOverallInformation, "<span onclick=\"location.href=top.headerNav.urls.home;\" class=\"icon icon-home\"></span>"))</p>
         <div class="white-label">
+            <div class="offer">
+                <div class="inner">
+                    <span class="icon-alert-circle"></span>
+                    @Html.Raw(Resources.Limit_Offer_Date)
+                    <a href="@Model.ClaimSpotUrl" target="_blank" id="lnk-livechat">@Resources.Limit_Offer_Link</a>
+                    @Resources.Limit_Offer_End
+                </div>
+            </div>
             <div class="intro">@Html.Raw(Resources.WhiteLabel_Intro)</div>
             <div class="items">
                 <div class="item">
@@ -40,37 +48,41 @@
                 </div>
             </div>
             <div class="bottom">
-                <div class="left">
-                    <div class="title">@Resources.Interested</div>
-                    <div>@Resources.ContactCSD</div>
-                </div>
-                <div class="line"></div>
-                <div class="right">
-                    @if (Model.IsShowSkypeId)
-                    {
+                <div class="inner-bottom">
+                    <div class="left">
+                        <div class="title">@Resources.Interested</div>
+                        <div>@Resources.ContactCSD</div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="right">
+                        @if (Model.IsShowSkypeId)
+                        {
+                            <div class="messenger">
+                                <div class="icon">
+                                    <img src="~/Assets/Styles/Home/Images/white-label/icon-skype.png" />
+                                </div>
+                                <div class="info">
+                                    <div class="name">@Resources.SkypeID</div>
+                                    <div class="account">@Model.SkypeId</div>
+                                </div>
+                            </div>
+                        }
                         <div class="messenger">
                             <div class="icon">
-                                <img src="~/Assets/Styles/Home/Images/white-label/icon-skype.png" />
+                                <img src="~/Assets/Styles/Home/Images/white-label/icon-letstalk.png" />
                             </div>
                             <div class="info">
-                                <div class="name">@Resources.SkypeID</div>
-                                <div class="account">@Model.SkypeId</div>
+                                <div class="name">@Resources.LetstalkIMID</div>
+                                <div class="account">@Model.LetstalkId</div>
+                                <div class="better">@Resources.ContactUsLegend</div>
                             </div>
-                        </div>
-                    }
-                    <div class="messenger">
-                        <div class="icon">
-                            <img src="~/Assets/Styles/Home/Images/white-label/icon-letstalk.png" />
-                        </div>
-                        <div class="info">
-                            <div class="name">@Resources.LetstalkIMID</div>
-                            <div class="account">@Model.LetstalkId</div>
-                            <div class="better">@Resources.ContactUsLegend</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.RenderScripts("~/assets/bundles/dashboard/whitelabel")
 </body>
 </html>

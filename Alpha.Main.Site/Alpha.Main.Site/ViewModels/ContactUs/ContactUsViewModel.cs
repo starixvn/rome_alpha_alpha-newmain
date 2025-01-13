@@ -46,5 +46,8 @@
 
         public string LetstalkUrl
             => string.IsNullOrWhiteSpace(_letstalkUrl) ? DefaultLetstalkUrl : _letstalkUrl;
+
+        public string ClaimSpotUrl
+            => $"https://secure.livechatenterprise.com/customer/action/open_chat?license_id={AppSettings.LiveChatLicenseID}&groups=12&name=";
     }
 }
