@@ -115,6 +115,7 @@ var indexManager = {
                 popupManager.open(e.data.url, undefined, e.data.width, e.data.height, "modal-mobile-friendly");
             }
         }, false);
+
     },
 
     cachedDomElements: function () {

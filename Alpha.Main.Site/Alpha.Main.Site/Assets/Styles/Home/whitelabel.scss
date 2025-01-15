@@ -6,6 +6,15 @@ body {
 .offer {
     padding: 2px;
     background: linear-gradient(to bottom, #36592A 0%, #1E3716 100%);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+
+    &.end-offer {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
 
     .inner {
         background: linear-gradient(180deg, #33472C 0%, #21331B 100%);

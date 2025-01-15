@@ -901,7 +901,7 @@ html * {
             border-radius: 5px;
             width: 100%;
 
-            &[data-href] {
+            &[data-href], &[data-target-url] {
                 cursor: pointer;
             }
         }

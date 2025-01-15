@@ -68,7 +68,7 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet]
         public ActionResult WhiteLabel()
         {
-            var viewModel = new ContactUsViewModel(Request.Headers["Host"]);
+            var viewModel = new ContactUsViewModel(Request.Headers["Host"], userSession);
             return View(viewModel);
         }
 

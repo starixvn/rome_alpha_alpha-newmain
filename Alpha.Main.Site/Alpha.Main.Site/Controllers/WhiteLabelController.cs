@@ -44,10 +44,28 @@ namespace Alpha.Main.Site.Controllers
         }
 
         [HttpPost]
-        public async Task<JsonResult> BannerChat()
+        public async Task<JsonResult> BannerChat(string username)
         {
-            var subUsername = string.IsNullOrEmpty(userSession.SubUserName) ? "-" : userSession.SubUserName;
-            var message = string.Format(Resources.WhiteLabelBannerChat, userSession.UserName, subUsername);
+            var name = string.IsNullOrEmpty(username) ? "-" : username;
+            var message = string.Format(Resources.WhiteLabelBannerChat, name);
+            await logger.InfoAsync(message);
+            return Json(true);
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> BannerLog(string username)
+        {
+            var name = string.IsNullOrEmpty(username) ? "-" : username;
+            var message = string.Format(Resources.WhiteLabelBannerClick, name);
+            await logger.InfoAsync(message);
+            return Json(true);
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> SkypeChat(string username)
+        {
+            var name = string.IsNullOrEmpty(username) ? "-" : username;
+            var message = string.Format(Resources.WhiteLabelSkypeChat, name);
             await logger.InfoAsync(message);
             return Json(true);
         }

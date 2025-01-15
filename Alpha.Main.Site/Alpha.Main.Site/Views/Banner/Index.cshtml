@@ -7,14 +7,22 @@
         @for (int i = 0; i < maxBanners; i++)
         {
             var banner = Model.Banners[i];
+            var className = banner.LogClick ? "log-banner" : "";
             <div class="item @(i == 0 ? "active" : string.Empty)">
                 @if (string.IsNullOrWhiteSpace(banner.RedirectUrl))
                 {
-                    <img src="@Url.Content(banner.ImageSource)" />
+                    <img src="@Url.Content(banner.ImageSource)" class="img-banner @className" />
+                }
+                else if (string.IsNullOrWhiteSpace(banner.Target))
+                {
+                    <img data-href="@banner.RedirectUrl" src="@Url.Content(banner.ImageSource)" class="@className" />
                 }
                 else
                 {
-                    <img data-href="@banner.RedirectUrl" src="@Url.Content(banner.ImageSource)" />                
+                    <img src="@Url.Content(banner.ImageSource)"
+                         class="img-banner @className"
+                         data-target-url="@banner.RedirectUrl"
+                         data-target="@(banner.Target ?? "")" />
                 }
             </div>
         }
