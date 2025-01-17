@@ -841,6 +841,12 @@ Note: Please change your &lt;b&gt;password&lt;/b&gt; the first time you click 'A
     <value>Offer ends on January 31st, 2025.</value>
   </data>
   <data name="WhiteLabelBannerChat" xml:space="preserve">
-    <value>User Click Live Chat from White Label Banner: Username: {0} | SubUserName: {1}</value>
+    <value>User Click Live Chat from White Label Banner: Username: {0}</value>
+  </data>
+  <data name="WhiteLabelBannerClick" xml:space="preserve">
+    <value>User Click Banner: Username: {0}</value>
+  </data>
+  <data name="WhiteLabelSkypeChat" xml:space="preserve">
+    <value>User Click Skype Chat from White Label Banner: Username: {0}</value>
   </data>
 </root>

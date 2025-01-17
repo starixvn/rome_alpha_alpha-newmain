@@ -446,5 +446,7 @@
                 }
             }
         }
+
+        public static DateTime EndWhiteLabelOffer => DateTime.Parse(Settings["EndWhiteLabelOffer"]);
     }
 }

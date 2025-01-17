@@ -15,7 +15,8 @@
     <div class="wrapper-white-label">
         <p class="text">@Html.Raw(string.Format(Resources.DashboardViewOverallInformation, "<span onclick=\"location.href=top.headerNav.urls.home;\" class=\"icon icon-home\"></span>"))</p>
         <div class="white-label">
-            <div class="offer">
+
+            <div class="offer @(Model.IsEndWhiteLabelOffer ? "end-offer" : string.Empty) ">
                 <div class="inner">
                     <span class="icon-alert-circle"></span>
                     @Html.Raw(Resources.Limit_Offer_Date)
@@ -23,6 +24,7 @@
                     @Resources.Limit_Offer_End
                 </div>
             </div>
+
             <div class="intro">@Html.Raw(Resources.WhiteLabel_Intro)</div>
             <div class="items">
                 <div class="item">
@@ -57,7 +59,7 @@
                     <div class="right">
                         @if (Model.IsShowSkypeId)
                         {
-                            <div class="messenger">
+                            <div class="messenger lnk-skype">
                                 <div class="icon">
                                     <img src="~/Assets/Styles/Home/Images/white-label/icon-skype.png" />
                                 </div>
@@ -67,7 +69,7 @@
                                 </div>
                             </div>
                         }
-                        <div class="messenger">
+                        <div class="messenger lnk-lettalk">
                             <div class="icon">
                                 <img src="~/Assets/Styles/Home/Images/white-label/icon-letstalk.png" />
                             </div>
@@ -84,5 +86,7 @@
     </div>
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.RenderScripts("~/assets/bundles/dashboard/whitelabel")
+    @Html.Hidden("SkypeId", Model.SkypeId)
+    @Html.Hidden("Username", Model.Username)
 </body>
 </html>

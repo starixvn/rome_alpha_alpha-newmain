@@ -6,22 +6,25 @@
     using Alpha.Main.Services;
     using Alpha.Main.Site.Requests.Banner;
     using Alpha.Main.Site.ViewModels.Banner;
+    using AlphaPlus.User.Models;
     using MediatR;
 
     public class BannerHandler : IAsyncRequestHandler<BannerQuery, BannerViewModel>
     {
         private readonly BannerService bannerService;
+        private readonly IUserSession userSession;
 
-        public BannerHandler(BannerService bannerService)
+        public BannerHandler(BannerService bannerService, IUserSession userSession)
         {
             this.bannerService = bannerService;
+            this.userSession = userSession;
         }
 
         public async Task<BannerViewModel> Handle(BannerQuery message)
         {
             var banner = await bannerService.GetBanner(message.Language, message.Type);
 
-            return new BannerViewModel(message.Type, message.Language, ToBase64String(banner));
+            return new BannerViewModel(message.Type, message.Language, ToBase64String(banner), userSession);
         }
 
         private static string ToBase64String(BannerItem banner)

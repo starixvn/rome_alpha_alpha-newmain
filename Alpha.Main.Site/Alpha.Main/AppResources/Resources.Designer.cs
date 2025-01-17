@@ -2131,11 +2131,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User Click Live Chat from White Label Banner: Username: {0} | SubUserName: {1}.
+        ///   Looks up a localized string similar to User Click Live Chat from White Label Banner: Username: {0}.
         /// </summary>
         public static string WhiteLabelBannerChat {
             get {
                 return ResourceManager.GetString("WhiteLabelBannerChat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Click Banner: Username: {0}.
+        /// </summary>
+        public static string WhiteLabelBannerClick {
+            get {
+                return ResourceManager.GetString("WhiteLabelBannerClick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Click Skype Chat from White Label Banner: Username: {0}.
+        /// </summary>
+        public static string WhiteLabelSkypeChat {
+            get {
+                return ResourceManager.GetString("WhiteLabelSkypeChat", resourceCulture);
             }
         }
         
