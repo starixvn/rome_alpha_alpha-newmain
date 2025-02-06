@@ -444,4 +444,7 @@
   <data name="SigninToNovaCasino" xml:space="preserve">
     <value>Đăng nhập vào Nova Casino</value>
   </data>
+  <data name="newDirectMember" xml:space="preserve">
+    <value>Tạo Member Trực Tiếp</value>
+  </data>
 </root>

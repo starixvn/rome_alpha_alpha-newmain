@@ -444,4 +444,7 @@
   <data name="SignInS1BackOffice" xml:space="preserve">
     <value>登入后台</value>
   </data>
+  <data name="newDirectMember" xml:space="preserve">
+    <value>创建直系会员</value>
+  </data>
 </root>

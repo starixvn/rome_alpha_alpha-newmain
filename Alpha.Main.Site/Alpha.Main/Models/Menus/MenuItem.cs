@@ -104,7 +104,8 @@
                     menuLink = string.Format(menuLink, transferService.IsAllDayBalanceTransfer(user.CustId));
                 }
 
-                if (menuLink.IndexOf("PTTemplate/Index", StringComparison.OrdinalIgnoreCase) > -1)
+                if ((menuLink.IndexOf("PTTemplate/Index", StringComparison.OrdinalIgnoreCase) > -1)
+                    || (menuLink.IndexOf("Customer/CreateDirectMember", StringComparison.OrdinalIgnoreCase) > -1))
                 {
                     var languageParam = buildLanguageQueryStringFunc();
                     var darkModeParam = buildDarkModeQueryStringFunc();

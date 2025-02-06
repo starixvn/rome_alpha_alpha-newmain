@@ -1209,15 +1209,19 @@ html * {
             }
         }
 
-        .btn-submit {
+        .btn-submit, .btn-cancel {
             font-weight: 500;
             font-size: $font-size;
             margin: 0;
             line-height: 28px;
             margin-left: 10px;
+            display: inline-block;
+            &:hover{
+                color: inherit;
+            }
         }
 
-        a.btn-submit {
+        a.btn-submit, a.btn-cancel {
             text-decoration: none;
         }
     }

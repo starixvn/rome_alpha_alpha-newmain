@@ -1,7 +1,7 @@
 ﻿class BaseTourController {
     protected $: JQueryStatic;
     protected currentPage = 1;
-    protected maxPage = 3;
+    protected maxPage = 5;
 
     constructor($: JQueryStatic) {
         this.$ = $;

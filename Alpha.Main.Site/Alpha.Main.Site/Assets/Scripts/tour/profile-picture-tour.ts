@@ -1,5 +1,5 @@
 ﻿class ProfilePictureTour extends BaseTourController {
-    protected maxPage = 3;
+    protected maxPage = 5;
 
     public init() {
         super.init();

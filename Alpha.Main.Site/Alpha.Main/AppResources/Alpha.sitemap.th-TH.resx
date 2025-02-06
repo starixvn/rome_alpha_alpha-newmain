@@ -444,4 +444,7 @@
   <data name="SignInS1BackOffice" xml:space="preserve">
     <value>ลงชื่อเข้าใช้ระบบหลังบ้าน</value>
   </data>
+  <data name="newDirectMember" xml:space="preserve">
+    <value>สร้างสมาชิกโดยตรง</value>
+  </data>
 </root>
