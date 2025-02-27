@@ -421,7 +421,7 @@ var indexManager = {
     //},
 
     initNewFeatureHighlightPopup: function () {
-        const leftMenu = $("#menu-TRANSFER");
+        const leftMenu = $("#menu-MEMBERINFO");
         if (!leftMenu.length) {
             return;
         }
@@ -432,7 +432,7 @@ var indexManager = {
         }
 
         // RedmineId should be included to make FeatureName is unique.
-        const featureName = "209190_CashRewardProgram";
+        const featureName = "211969_DirectMember";
         const cookiesName = indexManager.hidePopupCookies + featureName;
         const hidePopup = localStorage.getItem(indexManager.getCustomerCookiesName(cookiesName));
 

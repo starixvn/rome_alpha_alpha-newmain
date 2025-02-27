@@ -112,4 +112,10 @@
   <data name="ProfilePicture_Page3_Title" xml:space="preserve">
     <value>Setting a profile picture helps you quickly identity the legitimate site and secure your privacy.</value>
   </data>
+  <data name="Index_Page1_Row1" xml:space="preserve">
+    <value>Go to &lt;a id="lnk-new-feature" href="javascript:;" target="main"&gt;Member Information &gt; Create Direct Member&lt;/a&gt; to get started.</value>
+  </data>
+  <data name="Index_Page1_Title" xml:space="preserve">
+    <value>Now you can create and fully manage your own Members.</value>
+  </data>
 </root>

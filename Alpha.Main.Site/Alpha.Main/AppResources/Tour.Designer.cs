@@ -19,7 +19,7 @@ namespace Alpha.Main.AppResources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Tour {
@@ -61,7 +61,25 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to To enhance account security, you will see your profile picture for verification after entering your username..
+        ///   Looks up a localized string similar to Go to &lt;a id=&quot;lnk-new-feature&quot; href=&quot;javascript:;&quot; target=&quot;main&quot;&gt;Member Information &gt; Create Direct Member&lt;/a&gt; to get started..
+        /// </summary>
+        public static string Index_Page1_Row1 {
+            get {
+                return ResourceManager.GetString("Index_Page1_Row1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Now you can create and fully manage your own Members..
+        /// </summary>
+        public static string Index_Page1_Title {
+            get {
+                return ResourceManager.GetString("Index_Page1_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Go to &lt;a id=&quot;lnk-profile-picture&quot; href=&quot;./&quot; &gt;Member Information &gt; New Direct Member&lt;/a&gt; to get started..
         /// </summary>
         public static string ProfilePicture_Page1_Row1 {
             get {

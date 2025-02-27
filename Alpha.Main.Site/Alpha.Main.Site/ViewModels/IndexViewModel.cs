@@ -193,11 +193,20 @@
 
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
 
-        public bool HightLightFeaturePermission => true;// ((PageAccess)SubPageAccess).Transfer;
+        public bool HightLightFeaturePermission
+        {
+            get
+            {
+                var actorLevel = Enumeration.FromValue<UserLevel>(message.RoleId);
+
+                return (actorLevel.IsSuperLevel() || actorLevel.IsMasterLevel()) && ((PageAccess)SubPageAccess).CreateAccount;
+            }
+        }
 
         public string HightLightFeatureImageName => "new_feature_litemode" + DarkModeName;
 
-        public string HightLightFeatureUrl => MicroSites.MainUrl("~/Tour/ProfilePicture");
+        public string HightLightFeatureUrl => MicroSites.MainUrl("~/Tour/Index");
+
         public string TourUrl => MicroSites.MainUrl("~/Tour/ProfilePicture");
 
         public bool IsEnableAutoTransfer { get; set; }

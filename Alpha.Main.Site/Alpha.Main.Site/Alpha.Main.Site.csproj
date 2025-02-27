@@ -736,6 +736,10 @@
     <Content Include="Assets\bundles\tour\common-tour.min.css">
       <DependentUpon>common-tour.css</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\tour\new-feature-tour.js" />
+    <Content Include="Assets\bundles\tour\new-feature-tour.min.js">
+      <DependentUpon>new-feature-tour.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\tour\profile-picture-tour.js" />
     <Content Include="Assets\bundles\tour\profile-picture-tour.min.js">
       <DependentUpon>profile-picture-tour.js</DependentUpon>
@@ -1443,6 +1447,7 @@
     <Content Include="Views\Dashboard\WhiteLabel.cshtml" />
     <Content Include="Views\Dashboard\NovaCasino.cshtml" />
     <Content Include="Views\Tour\ProfilePicture.cshtml" />
+    <Content Include="Views\Tour\Index.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\apikey\apikey-management.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey-result.ts" />
     <TypeScriptCompile Include="Assets\scripts\apikey\create-apikey.ts" />
@@ -1745,6 +1750,7 @@
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\dashboard-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\notice-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\statistics-tests.ts" />
+    <TypeScriptCompile Include="Assets\scripts\tour\new-feature-tour.ts" />
     <TypeScriptCompile Include="Assets\scripts\tour\profile-picture-tour.ts" />
     <TypeScriptCompile Include="Assets\scripts\tour\base-tour-controller.ts" />
     <TypeScriptCompile Include="typings\globals\bootstrap\index.d.ts" />
