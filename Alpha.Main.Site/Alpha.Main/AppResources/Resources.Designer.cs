@@ -610,7 +610,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;We are excited to introduce our new Cash Reward Program. The company is responsible for the reward amounts, and once a Member receives their reward, it cannot be used for placing bets. Rewards will be distributed to uplines, and Members can cash out through their Agents.&lt;/p&gt;&lt;p&gt;Our new feature &lt;b&gt;Reward Payment&lt;/b&gt; supports your downline payment management, ensuring accurate distribution of all rewards.&lt;/p&gt;.
+        ///   Looks up a localized string similar to We’re excited to announce that &lt;b&gt;you can now have your own Members!&lt;/b&gt; Create them directly and enjoy greater flexibility in organizing your downlines..
         /// </summary>
         public static string HighlightPopupNewFeatureIntro {
             get {
@@ -619,7 +619,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome to the &lt;b&gt;Cash Reward Program&lt;/b&gt;!.
+        ///   Looks up a localized string similar to Introducing &lt;b&gt;&quot;Create Direct Member&quot;&lt;/b&gt;!.
         /// </summary>
         public static string HighlightPopupNewFeatureTitle {
             get {

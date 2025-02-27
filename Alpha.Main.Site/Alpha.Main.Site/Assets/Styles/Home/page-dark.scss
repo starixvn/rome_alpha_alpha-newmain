@@ -1129,18 +1129,6 @@ html * {
         z-index: 3;
     }
 
-    &:after {
-        position: absolute;
-        content: "";
-        top: 73px;
-        left: -18px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 12px 18px 12px 0;
-        border-color: transparent #474747 transparent transparent;
-    }
-
     .text {
         display: flex;
         align-items: flex-start;

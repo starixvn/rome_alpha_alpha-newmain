@@ -659,7 +659,7 @@
     <value>查看</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>&lt;p&gt;我们很高兴为您介绍我们新的现金奖金计划。奖金金额由公司负责，会员一旦收到奖金，并不能用于下注。奖金将分配给上线，会员可以通过其代理去兑现。&lt;/p&gt;&lt;p&gt;我们的新功能&lt;b&gt;奖金支付&lt;/b&gt;支持您的下线支付管理，确保所有奖金的准确分配。&lt;/p&gt;</value>
+    <value>我们在此宣布&lt;b&gt;您现在可以拥有自己的会员&lt;/b&gt;！直接创建会员，并享受更大的灵活性组织您的下线。</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>开始吧</value>
@@ -674,7 +674,7 @@
     <value>输赢细节报告</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>欢迎加入&lt;b&gt;现金奖金计划&lt;/b&gt;！</value>
+    <value>介绍&lt;b&gt;“创建直系会员”&lt;/b&gt;！</value>
   </data>
   <data name="minAgo" xml:space="preserve">
     <value>一分钟前</value>

@@ -722,10 +722,10 @@
     <value>Check Out</value>
   </data>
   <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
-    <value>&lt;p&gt;We are excited to introduce our new Cash Reward Program. The company is responsible for the reward amounts, and once a Member receives their reward, it cannot be used for placing bets. Rewards will be distributed to uplines, and Members can cash out through their Agents.&lt;/p&gt;&lt;p&gt;Our new feature &lt;b&gt;Reward Payment&lt;/b&gt; supports your downline payment management, ensuring accurate distribution of all rewards.&lt;/p&gt;</value>
+    <value>We’re excited to announce that &lt;b&gt;you can now have your own Members!&lt;/b&gt; Create them directly and enjoy greater flexibility in organizing your downlines.</value>
   </data>
   <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
-    <value>Welcome to the &lt;b&gt;Cash Reward Program&lt;/b&gt;!</value>
+    <value>Introducing &lt;b&gt;"Create Direct Member"&lt;/b&gt;!</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
     <value>Get Started</value>

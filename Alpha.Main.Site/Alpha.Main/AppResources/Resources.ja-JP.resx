@@ -391,4 +391,10 @@
   <data name="NotSetupWhiteLabelMessage" xml:space="preserve">
     <value>ホワイトラベルのビジネスにはまだご登録いただいておりません。 サポートが必要な場合は、弊社のカスタマーサービス部門までお問い合わせください。</value>
   </data>
+  <data name="HighlightPopupNewFeatureIntro" xml:space="preserve">
+    <value>このたび、「スポーツブック設定の編集」機能を使用して、メンバーのコミッショングループを更新できるようになったことをお知らせいたします。なお、メンバーのコミッショングループを変更すると、そのコミッションに影響を与える可能性があることにご注意ください。</value>
+  </data>
+  <data name="HighlightPopupNewFeatureTitle" xml:space="preserve">
+    <value>親愛なる代理店の皆様、</value>
+  </data>
 </root>

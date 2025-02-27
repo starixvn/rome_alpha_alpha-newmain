@@ -8,23 +8,21 @@
         <div class="text">
             <div class="image">
                 <img src="~/Assets/Images/@(Model.HightLightFeatureImageName).svg?v=@AppSettings.JsVersion" alt="@Resources.HighlightPopupNewFeatureTitle">
+                <p class="sm">@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</p>
             </div>
             <div>
-                <p><span>@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</span></p>
-                @Html.Raw(Resources.HighlightPopupNewFeatureIntro)
+                <p class="pc"><span>@Html.Raw(Resources.HighlightPopupNewFeatureTitle)</span></p>
+                <p>@Html.Raw(Resources.HighlightPopupNewFeatureIntro)</p>
             </div>
         </div>
         <div class="action">
             <label class="label">
                 <input id="chkHideHighlightPopupNewFeature" type="checkbox" />
                 <span>@Resources.doNotShowAgain</span>
-            </label>
-            <div>
-                <a class="btn-cancel" href="#">@Resources.NotNow</a>
-                <a class="btn-submit" id="linkHighlightPopupCheckOut"
-                   href="#"
-                   onclick="top.popupManager.open('@Model.HightLightFeatureUrl', null, 800, 495, null, null, null, null, null, null, {customClass :'popup-tour-intro'});">@Resources.TakeATour</a>
-            </div>
+            </label>               
+            <a class="btn-submit" id="linkHighlightPopupCheckOut"
+                href="#"
+                onclick="top.popupManager.open('@Model.HightLightFeatureUrl', null, 800, 495, null, null, null, null, null, null, {customClass :'popup-tour-intro'});">@Resources.TakeATour</a>
         </div>
     </div>
 }

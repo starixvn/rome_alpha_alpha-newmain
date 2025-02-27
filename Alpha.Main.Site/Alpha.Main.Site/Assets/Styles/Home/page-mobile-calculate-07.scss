@@ -735,6 +735,7 @@ body {
     right: auto;
     top: 63px !important;
     width: 350px;
+
     .sm {
         display: block;
     }
@@ -758,9 +759,14 @@ body {
             align-items: flex-start;
             align-items: center;
             margin-bottom: 16px;
-            *{
+
+            * {
                 margin-bottom: 0;
             }
         }
+    }
+
+    .action .label input {
+        top: 2px;
     }
 }

@@ -19,7 +19,7 @@ namespace Alpha.Main.AppResources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Tour {
@@ -79,7 +79,43 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Go to &lt;a id=&quot;lnk-profile-picture&quot; href=&quot;./&quot; &gt;Member Information &gt; New Direct Member&lt;/a&gt; to get started..
+        ///   Looks up a localized string similar to Easily search and manage your Direct Members&apos; settings in Account Info..
+        /// </summary>
+        public static string Index_Page2_Title {
+            get {
+                return ResourceManager.GetString("Index_Page2_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your reports will include data of your Direct Members..
+        /// </summary>
+        public static string Index_Page3_Title {
+            get {
+                return ResourceManager.GetString("Index_Page3_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In Master Agent List, you can only view one level at a time..
+        /// </summary>
+        public static string Index_Page4_Title {
+            get {
+                return ResourceManager.GetString("Index_Page4_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In Transfer function, your Direct Members will be included, allowing you to transfer and configure for all downlines at once..
+        /// </summary>
+        public static string Index_Page5_Title {
+            get {
+                return ResourceManager.GetString("Index_Page5_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To enhance account security, you will see your profile picture for verification after entering your username..
         /// </summary>
         public static string ProfilePicture_Page1_Row1 {
             get {
