@@ -129,10 +129,6 @@ var briefProfile = {
     },
 
     showTooltipProfilePicture: function () {
-        if (indexManager.isBlockPage) {
-            return;
-        }
-
         if (briefProfile.domElements.profileTooltip.length > 0
             && briefProfile.isShowEditProfilePictureTooltip) {
             briefProfile.domElements.profileTooltip.show();
@@ -144,10 +140,6 @@ var briefProfile = {
     },
 
     showTooltipIntroNickname: function () {
-        if (indexManager.isBlockPage) {
-            return;
-        }
-
         if (briefProfile.domElements.toolTipBox.length > 0
             && briefProfile.isShowNickNameProfileTooltip) {
             briefProfile.domElements.toolTipBox.show();

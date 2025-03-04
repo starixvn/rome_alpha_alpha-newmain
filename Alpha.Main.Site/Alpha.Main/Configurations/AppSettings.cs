@@ -450,8 +450,10 @@
         public static DateTime EndWhiteLabelOffer => DateTime.Parse(Settings["EndWhiteLabelOffer"]);
 
         public static string WinningThresholdSurveySites => Settings["WinningThresholdSurveySites"];
+        public static string WinningThresholdSurveyExcludedSites => Settings["WinningThresholdSurveyExcludedSites"];
+        public static string WinningThresholdSurveyExcludedLines => Settings["WinningThresholdSurveyExcludedLines"];
 
-        public static bool IsSupport(string config, string value)
+        public static bool IsIncluded(string config, string value)
         {
             if (string.IsNullOrWhiteSpace(config))
             {

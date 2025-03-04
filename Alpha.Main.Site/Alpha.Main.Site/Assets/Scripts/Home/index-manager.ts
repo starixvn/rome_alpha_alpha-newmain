@@ -68,6 +68,7 @@ var indexManager = {
     },
 
     initAfterCheckSurvey: function () {
+        indexManager.isBlockPage = false;
         indexManager.initFeedbackGlobal();
         indexManager.initNewFeatureHighlightPopup();
 
@@ -90,10 +91,6 @@ var indexManager = {
         const eventer = window[eventMethod];
         const messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
         eventer(messageEvent, function (e) {
-            if (indexManager.isBlockPage) {
-                return;
-            }
-
             if (e.data.event_id === "daily-statement"
                 || e.data.event_id === "detail-statement") {
                 popupManager.open(e.data.url, e.data.title, 900);
@@ -219,10 +216,6 @@ var indexManager = {
             currentUrl = currentUrl.replace("Index2", "Index");
         }
 
-        if (indexManager.isBlockPage) {
-            return;
-        }
-
         if (indexManager.domElements.mainFrame
             && indexManager.domElements.mainFrame.length > 0) {
             indexManager.domElements.mainFrame.attr('src', currentUrl);
@@ -236,6 +229,10 @@ var indexManager = {
 
             indexManager.domElements.mainFrame
                 .on('load.newmain', function () {
+                    if (indexManager.isBlockPage) {
+                        return;
+                    }
+
                     if (isShowTour) {
                         indexManager.showTour();
                         isShowTour = false;
@@ -439,10 +436,6 @@ var indexManager = {
     //},
 
     initNewFeatureHighlightPopup: function () {
-        if (indexManager.isBlockPage) {
-            return;
-        }
-
         const leftMenu = $("#menu-TRANSFER");
         if (!leftMenu.length) {
             return;
@@ -531,6 +524,10 @@ var indexManager = {
     },
 
     showTour: function () {
+        if (indexManager.isBlockPage) {
+            return;
+        }
+
         if ($("#OfferProfilePictureTour").val() === "1") {
             setTimeout(() => {
                 popupManager.openMultiple($("#TourURL").val(), null, 800, 495, null, null, null, null, null, null, { customClass: 'popup-tour-intro' })
@@ -540,14 +537,13 @@ var indexManager = {
 
     initWinningThresholdSurvey: function () {
         if ($("#ShowWinningThresholdSurvey").val() === "0") {
-            indexManager.isBlockPage = false;
+            indexManager.initAfterCheckSurvey();
             return;
         }
 
         const feedbackId = 12;
         $.get(indexManager.urls.checkExistFeedback + feedbackId, function (result) {
             if (result.IsExist) {
-                indexManager.isBlockPage = false;
                 indexManager.initAfterCheckSurvey();
                 return;
             }

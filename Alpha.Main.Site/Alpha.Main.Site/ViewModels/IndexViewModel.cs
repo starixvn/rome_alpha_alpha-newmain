@@ -209,25 +209,12 @@
         {
             get
             {
-                if (message.RoleId != Alpha.Web.Models.UserLevel.Agent.Value ||
-                    !AppSettings.IsSupport(AppSettings.WinningThresholdSurveySites, message.Site))
-                {
-                    return false;
-                }
+                var isSupport = message.RoleId == Alpha.Web.Models.UserLevel.Agent.Value
+                    && AppSettings.IsIncluded(AppSettings.WinningThresholdSurveySites, message.Site)
+                    && !AppSettings.IsIncluded(AppSettings.WinningThresholdSurveyExcludedSites, message.Site)
+                    && !AppSettings.IsIncluded(AppSettings.WinningThresholdSurveyExcludedLines, message.MRecommendId.ToString());
 
-                var excludedSites = new List<string> { "611111", "KORIBC", "Hedging", "Special" };
-                if (excludedSites.Any(s => string.Equals(s, message.Site, StringComparison.OrdinalIgnoreCase)))
-                {
-                    return false;
-                }
-
-                var excludedLines = new List<int> { 16597391 };
-                if (excludedLines.Any(s => s == message.MRecommendId))
-                {
-                    return false;
-                }
-
-                return true;
+                return isSupport;
             }
         }
     }
