@@ -431,7 +431,7 @@ $(function () {
         headerNav.getServerTime(alpha.user.onUserId || "-1");
     };
 
-    indexManager.domElements.mainFrame.on('load.newmain', function () {
+    indexManager.domElements.mainFrame && indexManager.domElements.mainFrame.on('load.newmain', function () {
         headerNav.getServerTime(alpha.user.onUserId || "-1");
     });
 

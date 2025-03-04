@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Web;
     using Alpha.Main.AppResources;
@@ -203,5 +204,31 @@
         public bool IsEnableAutoTransfer { get; set; }
 
         public bool IsLinkedChatbot { get; set; }
+
+        public bool ShowWinningThresholdSurvey
+        {
+            get
+            {
+                if (message.RoleId != Alpha.Web.Models.UserLevel.Agent.Value ||
+                    !AppSettings.IsSupport(AppSettings.WinningThresholdSurveySites, message.Site))
+                {
+                    return false;
+                }
+
+                var excludedSites = new List<string> { "611111", "KORIBC", "Hedging", "Special" };
+                if (excludedSites.Any(s => string.Equals(s, message.Site, StringComparison.OrdinalIgnoreCase)))
+                {
+                    return false;
+                }
+
+                var excludedLines = new List<int> { 16597391 };
+                if (excludedLines.Any(s => s == message.MRecommendId))
+                {
+                    return false;
+                }
+
+                return true;
+            }
+        }
     }
 }

@@ -29,6 +29,7 @@ var indexManager = {
     recheckInIntervalMiliseconds: 30000,
     isInternal: true,
     isReloadTopPage: false,
+    isBlockPage: true,
 
     domElements: {
         mainFrame: null,
@@ -37,7 +38,9 @@ var indexManager = {
         accountInfoContent: null,
         pagePopup: null,
         feedbackFunction: null,
-        language: null
+        language: null,
+
+        winningThresholdSurveyPopup: null
     },
 
     urls: {
@@ -45,9 +48,11 @@ var indexManager = {
         feedback: alpha.urls.messageRootPath + 'Feedback/Index',
         checkExistFeedback: alpha.urls.messageRootPath + 'Feedback/CheckExist?id=',
         feedbackFunction: alpha.urls.messageRootPath + 'Feedback/Function?id=',
+        winningThresholdSurvey: alpha.urls.messageRootPath + 'Feedback/WinningThresholdSurvey',
     },
 
     init: function () {
+        indexManager.isBlockPage = true;
         alpha.detectResponsiveInformation();
         if (!alpha.core.IsIe8OrLower()) {
             $.material.init();
@@ -57,7 +62,12 @@ var indexManager = {
         indexManager.loadPartialViews();
         indexManager.registerEvents();
         indexManager.setCurrentUrl();
+        setTimeout(() => {
+            indexManager.initWinningThresholdSurvey();
+        }, 1000);
+    },
 
+    initAfterCheckSurvey: function () {
         indexManager.initFeedbackGlobal();
         indexManager.initNewFeatureHighlightPopup();
 
@@ -80,6 +90,10 @@ var indexManager = {
         const eventer = window[eventMethod];
         const messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
         eventer(messageEvent, function (e) {
+            if (indexManager.isBlockPage) {
+                return;
+            }
+
             if (e.data.event_id === "daily-statement"
                 || e.data.event_id === "detail-statement") {
                 popupManager.open(e.data.url, e.data.title, 900);
@@ -203,6 +217,10 @@ var indexManager = {
 
         if (currentUrl.indexOf(headerNav.urls.home) !== -1) {
             currentUrl = currentUrl.replace("Index2", "Index");
+        }
+
+        if (indexManager.isBlockPage) {
+            return;
         }
 
         if (indexManager.domElements.mainFrame
@@ -421,6 +439,10 @@ var indexManager = {
     //},
 
     initNewFeatureHighlightPopup: function () {
+        if (indexManager.isBlockPage) {
+            return;
+        }
+
         const leftMenu = $("#menu-TRANSFER");
         if (!leftMenu.length) {
             return;
@@ -514,6 +536,27 @@ var indexManager = {
                 popupManager.openMultiple($("#TourURL").val(), null, 800, 495, null, null, null, null, null, null, { customClass: 'popup-tour-intro' })
             }, 3000);
         }
+    },
+
+    initWinningThresholdSurvey: function () {
+        if ($("#ShowWinningThresholdSurvey").val() === "0") {
+            indexManager.isBlockPage = false;
+            return;
+        }
+
+        const feedbackId = 12;
+        $.get(indexManager.urls.checkExistFeedback + feedbackId, function (result) {
+            if (result.IsExist) {
+                indexManager.isBlockPage = false;
+                indexManager.initAfterCheckSurvey();
+                return;
+            }
+
+            indexManager.domElements.winningThresholdSurveyPopup = popupManager.open(
+                indexManager.urls.winningThresholdSurvey, undefined, 440, 380,
+                null, null, null, null, null, null,
+                { customClass: "feedback-survey-modal", disableDraggable: true });
+        });
     }
 };
 
