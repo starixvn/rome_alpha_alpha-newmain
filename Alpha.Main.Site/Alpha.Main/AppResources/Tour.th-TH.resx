@@ -132,4 +132,25 @@
   <data name="ProfilePicture_Page3_Row1" xml:space="preserve">
     <value>อัปเดตรูปโปรไฟล์ของคุณได้ตลอดเวลาใน&lt;a id="lnk-profile-picture" href="./" target="main"&gt;การตั้งค่าโปรไฟล์&lt;/a&gt;ได้ทั้งสองวิธี ดังต่อไปนี้:</value>
   </data>
+  <data name="Index_Page1_Row1" xml:space="preserve">
+    <value>ไปที่&lt;a id="lnk-new-feature" href="javascript:;" target="main"&gt;ข้อมูลสมาชิก &gt; สร้างสมาชิกโดยตรง&lt;/a&gt;ใหม่เพื่อเริ่มต้น</value>
+  </data>
+  <data name="Index_Page1_Title" xml:space="preserve">
+    <value>ขณะนี้คุณสามารถสร้างและจัดการสมาชิกของคุณเองได้อย่างสมบูรณ์</value>
+  </data>
+  <data name="Index_Page2_Title" xml:space="preserve">
+    <value>ค้นหาและจัดการการตั้งค่าสมาชิกโดยตรงของคุณได้อย่างง่ายดายในข้อมูลบัญชี.</value>
+  </data>
+  <data name="Index_Page3_Title" xml:space="preserve">
+    <value>รายงานของคุณจะรวมข้อมูลของสมาชิกโดยตรงของคุณ</value>
+  </data>
+  <data name="Index_Page4_Title_Master" xml:space="preserve">
+    <value>ใน&lt;b&gt;รายชื่อเอเย่นต์&lt;/b&gt; คุณสามารถดูได้ครั้งละหนึ่งระดับเท่านั้น</value>
+  </data>
+  <data name="Index_Page4_Title_Super" xml:space="preserve">
+    <value>ใน&lt;b&gt;รายชื่อตัวแทนหลัก&lt;/b&gt; คุณสามารถดูได้ครั้งละหนึ่งระดับเท่านั้น</value>
+  </data>
+  <data name="Index_Page5_Title" xml:space="preserve">
+    <value>ในฟังก์ชัน&lt;b&gt;ถ่ายโอน&lt;/b&gt; สมาชิกโดยตรงของคุณจะถูกรวมไว้ ทำให้คุณสามารถโอนและกำหนดค่าสำหรับดาวน์ไลน์ทั้งหมดได้ในคราวเดียว</value>
+  </data>
 </root>

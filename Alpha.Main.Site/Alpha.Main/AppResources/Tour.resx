@@ -138,16 +138,19 @@
   <data name="Index_Page1_Title" xml:space="preserve">
     <value>Now you can create and fully manage your own Members.</value>
   </data>
-  <data name="Index_Page2_Title" xml:space="preserve">
-    <value>Easily search and manage your Direct Members' settings in Account Info.</value>
-  </data>
   <data name="Index_Page3_Title" xml:space="preserve">
     <value>Your reports will include data of your Direct Members.</value>
   </data>
-  <data name="Index_Page4_Title" xml:space="preserve">
+  <data name="Index_Page4_Title_Super" xml:space="preserve">
     <value>In &lt;b&gt;Master Agent List&lt;/b&gt;, you can only view one level at a time.</value>
   </data>
   <data name="Index_Page5_Title" xml:space="preserve">
     <value>In &lt;b&gt;Transfer&lt;/b&gt; function, your Direct Members will be included, allowing you to transfer and configure for all downlines at once.</value>
+  </data>
+  <data name="Index_Page2_Title" xml:space="preserve">
+    <value>Easily search and manage your Direct Members' settings in Account Info.</value>
+  </data>
+  <data name="Index_Page4_Title_Master" xml:space="preserve">
+    <value>In &lt;b&gt;Agent List&lt;/b&gt;, you can only view one level at a time.</value>
   </data>
 </root>

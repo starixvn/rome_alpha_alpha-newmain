@@ -1,4 +1,6 @@
-﻿namespace Alpha.Main.Site.ViewModels.Tour
+﻿using Alpha.Web.Models;
+
+namespace Alpha.Main.Site.ViewModels.Tour
 {
     public class TourViewModel
     {
@@ -11,5 +13,7 @@
         public string Language { get; set; }
 
         public byte RoleId { get; set; }
+
+        public UserLevel UserLevel => Enumeration.FromValue<UserLevel>(RoleId);
     }
 }

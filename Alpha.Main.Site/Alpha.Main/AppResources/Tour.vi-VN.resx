@@ -132,4 +132,25 @@
   <data name="ProfilePicture_Page3_Title" xml:space="preserve">
     <value>Thiết lập hình đại diện giúp bạn dễ dàng nhận biết trang chính thức và bảo vệ tài khoản.</value>
   </data>
+  <data name="Index_Page1_Row1" xml:space="preserve">
+    <value>Vào &lt;a id="lnk-new-feature" href="javascript:;" target="main"&gt;Thông Tin Thành Viên &gt; Tạo Member Trực Tiếp&lt;/a&gt; để bắt đầu</value>
+  </data>
+  <data name="Index_Page1_Title" xml:space="preserve">
+    <value>Giờ đây, bạn có thể tự tạo và quản lý Member của mình một cách dễ dàng.</value>
+  </data>
+  <data name="Index_Page2_Title" xml:space="preserve">
+    <value>Dễ dàng tìm và quản lý cài đặt của Member Trực Tiếp trong mục Thông Tin.</value>
+  </data>
+  <data name="Index_Page3_Title" xml:space="preserve">
+    <value>Báo cáo của bạn sẽ bao gồm dữ liệu của Member Trực Tiếp.</value>
+  </data>
+  <data name="Index_Page4_Title_Master" xml:space="preserve">
+    <value>&lt;b&gt;Danh Sách Agent&lt;/b&gt; chỉ hiển thị một cấp tại một thời điểm.</value>
+  </data>
+  <data name="Index_Page4_Title_Super" xml:space="preserve">
+    <value>&lt;b&gt;Danh Sách Master&lt;/b&gt; chỉ hiển thị một cấp tại một thời điểm.</value>
+  </data>
+  <data name="Index_Page5_Title" xml:space="preserve">
+    <value>Chức năng &lt;b&gt;Chuyển Khoản&lt;b&gt; cho phép bạn chuyển tiền và thiết lập cho toàn bộ cấp dưới, bao gồm cả Member Trực Tiếp.</value>
+  </data>
 </root>

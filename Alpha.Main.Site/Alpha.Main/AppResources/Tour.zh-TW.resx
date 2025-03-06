@@ -132,4 +132,25 @@
   <data name="ProfilePicture_Page3_Row1" xml:space="preserve">
     <value>使用以下兩個選項可隨時在&lt;a id="lnk-profile-picture" href="./" target="main"&gt;個人設置&lt;/a&gt;中更新您的個人頭像：</value>
   </data>
+  <data name="Index_Page1_Row1" xml:space="preserve">
+    <value>前往&lt;a id="lnk-new-feature" href="javascript:;" target="main"&gt;會員資料 &gt; 創建直系會員&lt;/a&gt;即可開始。</value>
+  </data>
+  <data name="Index_Page1_Title" xml:space="preserve">
+    <value>現在您可以創建並完全管理自己的會員。</value>
+  </data>
+  <data name="Index_Page2_Title" xml:space="preserve">
+    <value>在用戶資料可以輕鬆搜索和管理您的直系會員設置。</value>
+  </data>
+  <data name="Index_Page3_Title" xml:space="preserve">
+    <value>您的報告將包括您直系會員的數據。</value>
+  </data>
+  <data name="Index_Page4_Title_Master" xml:space="preserve">
+    <value>在&lt;b&gt;代理名單中&lt;/b&gt;，您一次只能查看一個級別。</value>
+  </data>
+  <data name="Index_Page4_Title_Super" xml:space="preserve">
+    <value>在&lt;b&gt;總代理名單&lt;/b&gt;中，您一次只能查看一個級別。</value>
+  </data>
+  <data name="Index_Page5_Title" xml:space="preserve">
+    <value>在&lt;b&gt;轉賬&lt;/b&gt;功能中，您的直系會員將包括在內，允許您一次性轉賬和配置所有下線。</value>
+  </data>
 </root>

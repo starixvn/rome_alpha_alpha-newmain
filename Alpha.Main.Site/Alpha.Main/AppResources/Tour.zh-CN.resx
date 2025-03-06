@@ -132,4 +132,25 @@
   <data name="ProfilePicture_Page3_Row1" xml:space="preserve">
     <value>使用以下两个选项可随时在&lt;a id="lnk-profile-picture" href="./" target="main"&gt;个人设置&lt;/a&gt;中更新您的个人头像：</value>
   </data>
+  <data name="Index_Page1_Row1" xml:space="preserve">
+    <value>前往&lt;a id="lnk-new-feature" href="javascript:;" target="main"&gt;会员资料 &gt; 创建直系会员&lt;/a&gt;即可开始。</value>
+  </data>
+  <data name="Index_Page1_Title" xml:space="preserve">
+    <value>现在您可以创建并完全管理自己的会员。</value>
+  </data>
+  <data name="Index_Page2_Title" xml:space="preserve">
+    <value>在用户资料可以轻松搜索和管理您的直系会员设置。</value>
+  </data>
+  <data name="Index_Page3_Title" xml:space="preserve">
+    <value>您的报告将包括您直系会员的数据。</value>
+  </data>
+  <data name="Index_Page4_Title_Master" xml:space="preserve">
+    <value>在&lt;b&gt;代理名单中&lt;/b&gt;，您一次只能查看一个级别。</value>
+  </data>
+  <data name="Index_Page4_Title_Super" xml:space="preserve">
+    <value>在&lt;b&gt;总代理名单&lt;/b&gt;中，您一次只能查看一个级别。</value>
+  </data>
+  <data name="Index_Page5_Title" xml:space="preserve">
+    <value>在&lt;b&gt;转账&lt;/b&gt;功能中，您的直系会员将包括在内，允许您一次性转账和配置所有下线。</value>
+  </data>
 </root>
