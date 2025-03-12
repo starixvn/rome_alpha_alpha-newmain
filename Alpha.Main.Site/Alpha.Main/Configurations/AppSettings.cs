@@ -448,5 +448,26 @@
         }
 
         public static DateTime EndWhiteLabelOffer => DateTime.Parse(Settings["EndWhiteLabelOffer"]);
+
+        public static string WinningThresholdSurveySites => Settings["WinningThresholdSurveySites"];
+        public static string WinningThresholdSurveyExcludedSites => Settings["WinningThresholdSurveyExcludedSites"];
+        public static string WinningThresholdSurveyExcludedLines => Settings["WinningThresholdSurveyExcludedLines"];
+
+        public static bool IsIncluded(string config, string value)
+        {
+            if (string.IsNullOrWhiteSpace(config))
+            {
+                return false;
+            }
+
+            if (string.Equals("*", config, StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+
+            return config
+                .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                .Any(s => string.Equals(s.Trim(), value, StringComparison.OrdinalIgnoreCase));
+        }
     }
 }

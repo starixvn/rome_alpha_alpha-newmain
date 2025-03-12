@@ -95,5 +95,8 @@ namespace Alpha.Main.Site.Models.Requests
         public string Currency => userSession.Currency;
 
         public bool ViewMemberStatistic => userSession.SubPageAccess.ViewMemberInfo;
+
+        public string Site => userSession.Site;
+        public int MRecommendId => userSession.MRecommendId;
     }
 }

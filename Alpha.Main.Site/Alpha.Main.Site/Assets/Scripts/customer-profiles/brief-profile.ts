@@ -45,7 +45,7 @@ var briefProfile = {
         }
 
         briefProfile.setCountNickNameToolTip(++countNickNameToolTip);
-        
+
         briefProfile.showTooltipIntroNickname();
     },
 

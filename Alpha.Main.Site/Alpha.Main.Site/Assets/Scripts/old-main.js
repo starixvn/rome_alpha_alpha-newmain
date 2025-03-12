@@ -349,10 +349,12 @@ var AgeWnd = function () {
                 }
             });
 
-            popUp.tinyDraggable({
-                exclude: "a.icon-information-outline.icon-info, button.icon.icon-close.close",
-                resizeElement: options.resizable ? ".resizable-handle" : ""
-            });
+            if (!options. disableDraggable) {
+                popUp.tinyDraggable({
+                    exclude: "a.icon-information-outline.icon-info, button.icon.icon-close.close",
+                    resizeElement: options.resizable ? ".resizable-handle" : ""
+                });
+            }
 
             currentAgeWnd.popUp.push(popUp);
         },
@@ -1026,10 +1028,12 @@ var popupManager = {
     open: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes, options) {
         var handler = window.top.ageWnd;
         window.top.popupManager.openWithHanlder(handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes, options);
+        return handler;
     },
     openMultiple: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes, options) {
         var handler = window.top.ageWnd.createInstance();
         window.top.popupManager.openWithHanlder(handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes, options);
+        return handler;
     },
     openWithHanlder: function (handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes, options) {
         left = left || window.top.popupManager.leftPosition();
@@ -1045,6 +1049,7 @@ var popupManager = {
         top.ageWnd.close();
     },
     closeAllPopup: function () {
-        top.$('.modal[id^="page-popup-"]').remove();
+
+        top.$('.modal[id^="page-popup-"]:not(.feedback-survey-modal)').remove();
     }
 };
