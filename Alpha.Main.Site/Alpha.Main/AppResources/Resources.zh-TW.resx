@@ -741,4 +741,19 @@
   <data name="of" xml:space="preserve">
     <value>之第</value>
   </data>
+  <data name="RebateAndRetentionTour_Page1_Row1" xml:space="preserve">
+    <value>讓我們探討現金獎金計劃並看看它提供什麼！</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row2" xml:space="preserve">
+    <value>餘額資料</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row3" xml:space="preserve">
+    <value>新功能允許您確認分配給下線的獎金。</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row4" xml:space="preserve">
+    <value>新報告顯示會員的獎勵交易及其回饋，以提高透明度。</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row5" xml:space="preserve">
+    <value>輸贏資料報告現在包括一個新的獎勵欄位。</value>
+  </data>
 </root>

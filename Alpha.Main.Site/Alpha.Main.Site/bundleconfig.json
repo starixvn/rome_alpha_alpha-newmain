@@ -481,5 +481,12 @@
     "inputFiles": [
       "Assets/Styles/tour/common-tour-dark.css"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/tour/rebate-and-retention-tour.js",
+    "inputFiles": [
+      "Assets/Scripts/tour/base-tour-controller.js",
+      "Assets/Scripts/tour/rebate-and-retention-tour.js"
+    ]
   }
 ]

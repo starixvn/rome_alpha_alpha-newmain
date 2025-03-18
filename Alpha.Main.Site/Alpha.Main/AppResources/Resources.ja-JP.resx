@@ -391,4 +391,7 @@
   <data name="NotSetupWhiteLabelMessage" xml:space="preserve">
     <value>ホワイトラベルのビジネスにはまだご登録いただいておりません。 サポートが必要な場合は、弊社のカスタマーサービス部門までお問い合わせください。</value>
   </data>
+  <data name="RebateAndRetentionTour_Page1_Row2" xml:space="preserve">
+    <value>Balance Info</value>
+  </data>
 </root>

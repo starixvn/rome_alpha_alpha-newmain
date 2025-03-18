@@ -194,12 +194,13 @@
 
         public bool IsShowSuggestEnableTelegramOtp { get; set; }
 
-        public bool HightLightFeaturePermission => false;// ((PageAccess)SubPageAccess).Transfer;
+        public bool HightLightFeaturePermission => AppSettings.IsIncluded(AppSettings.RebateAndRetentionCustIds, message.CustId.ToString());
 
         public string HightLightFeatureImageName => "new_feature_litemode" + DarkModeName;
 
-        public string HightLightFeatureUrl => MicroSites.TransferUrl("~/Reward/Payment");
-        public string TourUrl => MicroSites.MainUrl("~/Tour/ProfilePicture");
+        public string HightLightFeatureUrl => MicroSites.MainUrl("~/Tour/RebateAndRetention");
+
+        public string TourUrl => MicroSites.MainUrl("~/Tour/RebateAndRetention");
 
         public bool IsEnableAutoTransfer { get; set; }
 
