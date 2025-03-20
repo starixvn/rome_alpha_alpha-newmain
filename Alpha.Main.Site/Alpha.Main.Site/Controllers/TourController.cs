@@ -20,5 +20,12 @@ namespace Alpha.Main.Site.Controllers
 
             return View(viewModel);
         }
+
+        public ActionResult RebateAndRetention()
+        {
+            var viewModel = new TourViewModel(userSession.Language, userSession.RoleId);
+
+            return View(viewModel);
+        }
     }
 }

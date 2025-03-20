@@ -453,6 +453,8 @@
         public static string WinningThresholdSurveyExcludedSites => Settings["WinningThresholdSurveyExcludedSites"];
         public static string WinningThresholdSurveyExcludedLines => Settings["WinningThresholdSurveyExcludedLines"];
 
+        public static string RebateAndRetentionCustIds => Settings["RebateAndRetentionCustIds"];
+
         public static bool IsIncluded(string config, string value)
         {
             if (string.IsNullOrWhiteSpace(config))

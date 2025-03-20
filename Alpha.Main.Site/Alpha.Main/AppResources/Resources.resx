@@ -849,4 +849,25 @@ Note: Please change your &lt;b&gt;password&lt;/b&gt; the first time you click 'A
   <data name="WhiteLabelSkypeChat" xml:space="preserve">
     <value>User Click Skype Chat from White Label Banner: Username: {0}</value>
   </data>
+  <data name="RewardDetail" xml:space="preserve">
+    <value>Reward Detail</value>
+  </data>
+  <data name="RewardPayment" xml:space="preserve">
+    <value>Reward Payment</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row1" xml:space="preserve">
+    <value>Let's explore Cash Reward Program and discover what it offers!</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row2" xml:space="preserve">
+    <value>Balance Info</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row3" xml:space="preserve">
+    <value>A new function allows you to confirm rewards distributed to your downlines.</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row4" xml:space="preserve">
+    <value>A new report displays Member's reward transactions along with their feedback for transparency.</value>
+  </data>
+  <data name="RebateAndRetentionTour_Page1_Row5" xml:space="preserve">
+    <value>The Win/Loss Detail report now includes a new Reward column.</value>
+  </data>
 </root>
