@@ -3,7 +3,7 @@
 class ToastMessage {
     getMessagesUrl = alpha.urls.messageRootPath + "ToastMessage/Get";
     markreadMessagesUrl = alpha.urls.messageRootPath + "ToastMessage/MarkRead";
-    getMessagesTimeout = 1000 * 60 * 5; // 5 minute
+    getMessagesTimeout = 1000 * 60 * 1; // 1 minute
 
     $: JQueryStatic;
     topWindow: any;
